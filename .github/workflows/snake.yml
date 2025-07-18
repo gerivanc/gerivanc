@@ -1,0 +1,37 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"  # Executa a cada 12 horas
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Permite executar manualmente
+
+jobs:
+  generate-snake:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Generate contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: gerivanc
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=#FFA500&color_dots=#e0f2ff,#a6d1ff,#72b0ff,#4796ff,#2d81dd
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: 🐍 Update contribution snake animation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
