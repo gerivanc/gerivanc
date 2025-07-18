@@ -32,6 +32,7 @@ Perfect for those exploring unconventional security techniques.
 
 ---
 # 📧 Contact
+
 📬 Feel free to explore my projects, open issues, or contribute via pull requests. Let’s build smarter, safer systems together!
 
 For questions or feedback, please contact: dean-grumbly-plop@duck.com.
