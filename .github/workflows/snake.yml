@@ -2,18 +2,18 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Executa a cada 12 horas
+    - cron: "0 */12 * * *"  # Runs every 12 hours
   push:
     branches:
       - main
-  workflow_dispatch:  # Permite execução manual
+  workflow_dispatch:  # Allows manual execution
 
 jobs:
   generate-snake:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Permissão explícita para o bot poder fazer push
+      contents: write  # Explicit permission for the bot to push
 
     steps:
       - name: 🧾 Checkout repository
@@ -26,7 +26,7 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=#006400&color_dots=#e0f2ff,#a6d1ff,#72b0ff,#4796ff,#2d81dd
+            dist/github-contribution-grid-snake.gif?color_snake=#FFA500&color_dots=#e0f2ff,#a6d1ff,#72b0ff,#4796ff,#2d81dd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
