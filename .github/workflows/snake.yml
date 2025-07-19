@@ -6,31 +6,31 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Allows manual execution
+  workflow_dispatch:  # Allows manual execution from Actions tab
 
 jobs:
   generate-snake:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Explicit permission for the bot to push
+      contents: write  # Grants permission for pushing changes
 
     steps:
       - name: 🧾 Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🐍 Generate contribution snake
+      - name: 🐍 Generate contribution snake animation
         uses: Platane/snk@v3
         with:
           github_user_name: gerivanc
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=#FFA500&color_dots=#e0f2ff,#a6d1ff,#72b0ff,#4796ff,#2d81dd
+            dist/github-contribution-grid-snake.gif?color_snake=#00FF00&color_dots=#004d00,#006400,#005a2c,#003f1f,#002b14
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🚀 Push to output branch
+      - name: 🚀 Push animation files to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
