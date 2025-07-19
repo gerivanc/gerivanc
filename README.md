@@ -17,18 +17,25 @@
 
 ### 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator)
 
-> 🔸 A powerful password generator built in **Python**, offering **20+ customizable modes**  
-> 🔸 Supports lengths from **15 to 128 characters** and delivers up to **833 bits of entropy**  
-> 🔸 Surpasses industry standards like **Proton© (75 bits)** and **NIST (80 bits)**  
-> 🔸 Designed for users who demand **maximum security and flexibility**
+🔸 A powerful password generator built in **Python**, offering **20+ customizable modes**
+  
+🔸 Supports lengths from **15 to 128 characters** and delivers up to **833 bits of entropy**
+  
+🔸 Surpasses industry standards like **Proton© (75 bits)** and **NIST (80 bits)**
+  
+🔸 Designed for users who demand **maximum security and flexibility**
 
 ---
 
 ### 🧬 [DNAPass Password Generator](https://github.com/gerivanc/DNAPass-Password-Generator)
 
-> 🧬 Written in modern **C++**, inspired by **DNA nucleotide sequences**  
-> 🧬 Fuses biological patterns with encryption to create **unique password schemes**  
-> 🧬 Ideal for anyone exploring **unconventional security techniques**
+🔸 Written in modern **C++**, inspired by **DNA nucleotide sequences**
+
+🔸 Secure by design, supports character **lengths from 8 to 128 characters**
+
+🔸 Fuses biological patterns with encryption to create **unique password schemes**
+ 
+🔸 Ideal for anyone exploring **unconventional security techniques**
 
 ---
 
