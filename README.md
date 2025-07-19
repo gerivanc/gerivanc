@@ -8,7 +8,7 @@
 🎯 I craft tools that help people protect their data with **intelligence and innovation**
 
 ![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
-![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20C%2B%2B%20%7C%20JavaScript-blue?style=flat-square)
+![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20C%2B%2B%20%7C%20CMake-red?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ---
