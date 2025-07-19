@@ -35,7 +35,7 @@
 ## 📌 About Me
 
 - 🧠 Exploring how to blend **science, security, and creativity** through code  
-- 💬 Languages I work with: **Python**, **C++**, occasionally **JavaScript**  
+- 💬 Languages I work with: **Python**, **C++**, occasionally **CMake**  
 - 🚀 Passionate about purposeful development with **real-world impact**  
 - 🤝 Open to **collaboration**, research, and fresh ideas from the community
 
