@@ -7,8 +7,11 @@
 💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**  
 🎯 I craft tools that help people protect their data with **intelligence and innovation**
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)&nbsp;
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)&nbsp;
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)&nbsp;
+![Cmake](https://img.shields.io/badge/Cmake-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
-![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20C%2B%2B%20%7C%20CMake-red?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ---
