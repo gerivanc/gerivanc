@@ -10,9 +10,9 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)&nbsp;
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)&nbsp;
-![Cmake](https://img.shields.io/badge/Cmake-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-0288D1?style=for-the-badge&logo=cmake&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=balance-scale&logoColor=white)
 ![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ---
 
