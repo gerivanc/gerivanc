@@ -1,6 +1,10 @@
 <!-- GitHub Profile README for Gerivan -->
 
-![snake gif](https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif?color_snake=#00FF88&color_dots=#1A1A1A,#2D2D2D,#4A4A4A,#00B7EB,#0088CC" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif?color_snake=#00FF88&color_dots=#1A1A1A,#2D2D2D,#4A4A4A,#00B7EB,#0088CC" />
+  <img alt="snake gif" src="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif" />
+</picture>
 
 # 👋 Hello! I'm Gerivan
 
@@ -10,8 +14,8 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)&nbsp;
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)&nbsp;
-![CMake](https://img.shields.io/badge/CMake-0288D1?style=for-the-badge&logo=cmake&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=balance-scale&logoColor=white)
+![CMake](https://img.shield.io/badge/CMake-0288D1?style=for-the-badge&logo=cmake&logoColor=white)
+![License](https://img.shield.io/badge/License-MIT-green?style=for-the-badge&logo=balance-scale&logoColor=white)
 ![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
 
 ---
