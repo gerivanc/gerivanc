@@ -58,3 +58,7 @@ Let's build smarter, safer systems together!
 
 📫 For questions or feedback, reach me at:  
 **`dean-grumbly-plop@duck.com`**
+
+---
+
+#### Copyright © 2025 Gerivan Costa dos Santos
