@@ -13,6 +13,7 @@
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)&nbsp;
+[![g++](https://img.shields.io/badge/g++-Compiler-A41E23?style=for-the-badge&logo=gnu&logoColor=white)](https://gcc.gnu.org/)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)&nbsp;
 ![CMake](https://img.shields.io/badge/CMake-0288D1?style=for-the-badge&logo=cmake&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=balance-scale&logoColor=white)
