@@ -19,22 +19,24 @@ jobs:
       - name: 🧾 Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🐍 Generate contribution snake
-        uses: Platane/snk@v3
+      - name: ⚙️ Set up Python
+        uses: actions/setup-python@v4
         with:
-          github_user_name: gerivanc
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=#00FF88&color_dots=#1A1A1A,#2D2D2D,#4A4A4A,#00B7EB,#0088CC
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.x'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Pillow
+
+      - name: 🐍 Generate custom contribution pattern
+        run: python generate_custom_pattern.py
 
       - name: 🚀 Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
           build_dir: dist
-          commit_message: 🐍 Update contribution snake animation
+          commit_message: "🐍 Update custom contribution pattern animation"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
