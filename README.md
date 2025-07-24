@@ -8,8 +8,8 @@
 
 # 👋 Hello! I'm Gerivan
 
-💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**  
-🎯 I craft tools that help people protect their data with **intelligence and innovation**
+### 💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**. 
+### 🎯 I craft tools that help people protect their data with **intelligence and innovation**.
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)&nbsp;
