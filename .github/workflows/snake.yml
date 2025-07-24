@@ -30,7 +30,7 @@ jobs:
           pip install Pillow
 
       - name: 🐍 Generate custom contribution pattern
-        run: python generate_custom_pattern.py
+        run: python .github/workflows/generate_custom_pattern.py
 
       - name: 🚀 Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
