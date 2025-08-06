@@ -21,6 +21,11 @@
 
 ---
 
+## 🔥 Follow Back or Fall Back! 🔥
+
+### 🚨 Attention, everyone! 🚨 To help our community grow and stay strong, it's important that we follow each other mutually 🤝💥 If you unfollow me, expect an instant unfollow back — no second thoughts! ❌👀 Too many profiles just follow to gain followers and then disappear... 😤 Let’s build something real — support and respect go both ways! 💯🔥 #FollowForFollow #MutualSupport #RespectTheCommunity 💬🌍
+
+---
 ## 🧪 Featured Projects
 
 ### 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator)
