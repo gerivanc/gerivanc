@@ -1,10 +1,14 @@
 <!-- GitHub Profile README for Gerivan -->
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif?color_snake=#00FF88&color_dots=#1A1A1A,#2D2D2D,#4A4A4A,#00B7EB,#0088CC" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif?color_snake=#00FF88&color_dots=#1A1A1A,#2D2D2D,#4A4A4A,#00B7EB,#0088CC" />
-  <img alt="snake gif" src="https://github.com/gerivanc/gerivanc/blob/output/github-contribution-grid-snake.gif" />
-</picture>
+<h3 style="color: #00ff00; text-shadow: 0 0 5px #00ff00;">🕵️‍♂️ CyberSnake Activity Matrix 🕵️‍♂️</h3>
+<p style="color: #00b7eb;">Dive into the digital abyss and watch my code commits morph into a neon serpent, weaving through the grid!</p>
+
+<!-- Dark snake with hacker glow -->
+![BEPb's GitHub Activity Graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
+
+<!-- Optional light mode, uncomment if needed -->
+<!-- <p style="color: #ff00ff;">🌌 Light Mode Serpent 🌌</p> -->
+<!-- ![BEPb's GitHub Activity Graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake.svg) -->
 
 # 👋 Hello! I'm Gerivan
 
