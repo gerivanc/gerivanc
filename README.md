@@ -52,7 +52,7 @@
 
 ### 🧬 [DNAPass Password Generator](https://github.com/gerivanc/DNAPass-Password-Generator)
 
-🔸 Written in modern **C++**, inspired by **DNA nucleotide sequences**
+🔸 Password generator written in modern **C++**, inspired by **DNA nucleotide sequences**
 
 🔸 Secure by design, supports character **lengths from 8 to 128 characters**
 
