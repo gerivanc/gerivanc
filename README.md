@@ -36,20 +36,6 @@
   <img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&&theme=transparent" alt="Productive Time"/>
 </div>
 
----
-
-# 📊 GitHub Stats
-
-<div align="center">
-  <img width="97%" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=8b5cf6&line=8b5cf6&point=bf91f3&hide_border=true" alt="Activity Graph"/>
-</div>
-
-<div align="center">
-  <img width="97%" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6" alt="GitHub Streak"/>
-</div>
-
----
-
 ## 🧪 Featured Projects
 
 ### 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator)
@@ -73,6 +59,18 @@
 🔸 Fuses biological patterns with encryption to create **unique password schemes**
  
 🔸 Ideal for anyone exploring **unconventional security techniques**
+
+---
+
+# 📊 GitHub Stats
+
+<div align="center">
+  <img width="97%" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=8b5cf6&line=8b5cf6&point=bf91f3&hide_border=true" alt="Activity Graph"/>
+</div>
+
+<div align="center">
+  <img width="97%" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6" alt="GitHub Streak"/>
+</div>
 
 ---
 
