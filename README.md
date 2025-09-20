@@ -25,11 +25,31 @@
 
 ---
 
-## 🔥 Follow Back or Fall Back! 🔥
+# 🎯 Profile Summary
 
-### 🚨 Attention, everyone! 🚨 To help our community grow and stay strong, it's important that we follow each other mutually 🤝💥 If you unfollow me, expect an instant unfollow back — no second thoughts! ❌👀 Too many profiles just follow to gain followers and then disappear... 😤 Let’s build something real — support and respect go both ways! 💯🔥 #FollowForFollow #MutualSupport #RespectTheCommunity 💬🌍
+<div align="center">
+  <img width="85%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=transparent" alt="Profile Details"/>
+</div>
+
+<div align="center">
+  <img width="40%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&&theme=transparent" alt="Stats"/>
+  <img width="40%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&&theme=transparent" alt="Productive Time"/>
+</div>
 
 ---
+
+# 📊 GitHub Stats
+
+<div align="center">
+  <img width="85%" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=8b5cf6&line=8b5cf6&point=bf91f3&hide_border=true" alt="Activity Graph"/>
+</div>
+
+<div align="center">
+  <img width="85%" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6" alt="GitHub Streak"/>
+</div>
+
+---
+
 ## 🧪 Featured Projects
 
 ### 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator)
