@@ -74,6 +74,21 @@
 
 ---
 
+# 📸🛠️ Take a peek at how I work on my projects
+Curious to see how I develop my projects? Then take a look 👀!
+
+To work on the code for my password generators — 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator) and 🧬 [DNAPass Password Generator](https://github.com/gerivanc/DNAPass-Password-Generator) — I use the [Notepad++](https://notepad-plus-plus.org/downloads/) editor. Simple, lightweight, and straight to the point, it helps me stay focused on what really matters: writing clean and functional code.
+
+Below, I’ve shared some screenshots of the project code so you can see how everything happens behind the scenes:
+
+### 🔐 EntroPy
+![EntroPy](https://drive.google.com/uc?export=download&id=1CULENN43sBYbu0e3jAHCBbJ6tcaNW35s)
+
+### 🧬 DNAPass
+![DNAPass](https://drive.google.com/uc?export=download&id=1eIgBGgmja890D07SgbaOMoFqcWKI-R7O)
+
+---
+
 ## 📌 About Me
 
 - 🧠 Exploring how to blend **science, security, and creativity** through code  
