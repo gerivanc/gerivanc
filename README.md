@@ -27,14 +27,24 @@
 
 # 🎯 Profile Summary
 
+<p align="center">
+ A summary of my portfolio from other activities. Here's a snapshot of my GitHub activity and stats!
+</p>
+
+<!-- Profile Details -->
 <div align="center">
-  <img width="97%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=transparent" alt="Profile Details"/>
+  <img width="97%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark" alt="Profile Details"/>
 </div>
 
+<br>
+
+<!-- Stats + Productive Time -->
 <div align="center">
-  <img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&&theme=transparent" alt="Stats"/>
-  <img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&&theme=transparent" alt="Productive Time"/>
+  <img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark" alt="Stats"/>
+  <img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark" alt="Productive Time"/>
 </div>
+
+<br>
 
 ## 🧪 Featured Projects
 
