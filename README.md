@@ -64,13 +64,15 @@
 
 # 📊 GitHub Stats
 
-<div align="center">
-  <img width="97%" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=8b5cf6&line=8b5cf6&point=bf91f3&hide_border=true" alt="Activity Graph"/>
-</div>
+Here are some charts that showcase my recent GitHub activity, contribution streak, and overall engagement with open-source projects. I strive to maintain a consistent routine of development and continuous learning!
 
-<div align="center">
-  <img width="97%" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6" alt="GitHub Streak"/>
-</div>
+<br>
+
+<div align="center"> <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=8b5cf6&line=8b5cf6&point=bf91f3&hide_border=true"/> </div>
+
+<br>
+
+<div align="center"> <img width="90%" alt="Contribution streak graph" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6"/> </div>
 
 ---
 
