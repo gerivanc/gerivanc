@@ -15,6 +15,8 @@
 ### 💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**. 
 ### 🎯 I craft tools that help people protect their data with **intelligence and innovation**.
 
+![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)&nbsp;
 ![g++](https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white)&nbsp;
