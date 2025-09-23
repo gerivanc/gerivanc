@@ -17,6 +17,8 @@
 
 ![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Kali Linux](https://img.shields.io/badge/kali_linux-557C94?style=flat-square&logo=kali-linux&logoColor=white)
+![Parrot OS](https://img.shields.io/badge/parrot_os-00B7EB?style=flat-square&logo=parrot&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)&nbsp;
 ![C++](https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)&nbsp;
 ![g++](https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white)&nbsp;
