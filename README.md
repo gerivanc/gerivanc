@@ -82,11 +82,11 @@ Here are some charts that showcase my recent GitHub activity, contribution strea
 
 <br>
 
-<div align="center"> <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=4CAF50&hide_border=true"/> </div>
+<div align="center"> <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=5bb7b6&hide_border=true"/> </div>
 
 <br>
 
-<div align="center"> <img width="90%" alt="Contribution streak graph" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=4CAF50&border=4CAF50"/> </div>
+<div align="center"> <img width="90%" alt="Contribution streak graph" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6"/> </div>
 
 ---
 
