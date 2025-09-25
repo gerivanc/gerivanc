@@ -31,9 +31,11 @@
 ---
 
 # 🚨🚧 Attention, curious minds! 🚧🚨 
-A phenomenal new project is coming soon, written in Python 🐍 — a true revolution in word generation like never before! My ideas? 💡 They're like the mind of a gossip lover 😂 — buzzing, restless, always chasing a story... But don’t worry! 😅 Instead of talking about other people’s lives, I channel all that energy into creating amazing and useful things.
+A phenomenal new project is coming soon, written in Python 🐍 — a true revolution in word generation like never before! 
 
-👉 Keep your eyes peeled — this project will get people talking, and it’s not gossip… it’s innovation! 💥
+💡 My ideas? They're like the mind of a gossip lover 😂 — buzzing, restless, always chasing a story... But don’t worry! 😅 Instead of talking about other people’s lives, I channel all that energy into creating amazing and useful things.
+
+📢 🔔 Keep your eyes peeled — this project will get people talking, and it’s not gossip… it’s innovation! 💥
 
 ---
 
@@ -98,7 +100,7 @@ Here are some charts that showcase my recent GitHub activity, contribution strea
 
 ---
 
-# 📸🛠️ Take a peek at how I work on my projects
+# 📸 🛠️ Take a peek at how I work on my projects
 Curious to see how I develop my projects? Then take a look 👀!
 
 To work on the code for my password generators — 🔐 [EntroPy Password Generator](https://github.com/gerivanc/EntroPy-Password-Generator) and 🧬 [DNAPass Password Generator](https://github.com/gerivanc/DNAPass-Password-Generator) — I use the [Notepad++](https://notepad-plus-plus.org/downloads/) editor. Simple, lightweight, and straight to the point, it helps me stay focused on what really matters: writing clean and functional code.
