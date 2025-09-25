@@ -12,9 +12,9 @@
 
 # 👋 Hello! I'm Gerivan
 
-### 💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**. 
-### 🎯 I craft tools that help people protect their data with **intelligence and innovation**.
-### ⭐🚀 Enjoyed a project? Drop a star! 🌟 It keeps me coding 💻, learning 📘, and sharing cool stuff with the dev community 👨‍💻👩‍💻
+#### 💻 Developer driven by **creativity and security**, passionate about algorithms that combine **digital and biological logic**. 
+#### 🎯 I craft tools that help people protect their data with **intelligence and innovation**.
+#### ⭐🚀 Enjoyed a project? Drop a star! 🌟 It keeps me coding 💻, learning 📘, and sharing cool stuff with the dev community 👨‍💻👩‍💻
 
 ![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
