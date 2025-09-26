@@ -1,4 +1,4 @@
-# Gerivan's GitHub Profile
+# Gerivan GitHub Profile
 
 ## 🕵️‍♂️ CyberSnake Activity Matrix 🕵️‍♂️
 Dive into the digital grid and watch my code commits weave a neon serpent through the matrix!
