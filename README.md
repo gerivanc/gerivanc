@@ -71,12 +71,10 @@ Charts highlighting my recent activity, contribution streak, and engagement with
 
 <div align="center">
   <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=d70f06&hide_border=true"/>
-</div>
-
-<br>
-
-<div align="center">
-  <img width="90%" alt="Contribution streak graph" src="https://streak-stats.demolab.com?user=gerivanc&theme=transparent&hide_border=true&card_width=1000&fire=8b5cf6&border=8b5cf6"/>
+  <br/><br/>
+  <img width="45%" alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+  <br/><br/>
+  <img width="35%" alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact"/>
 </div>
 
 ---
