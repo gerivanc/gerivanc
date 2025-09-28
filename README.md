@@ -36,14 +36,15 @@ A groundbreaking Python 🐍 project is in the works—a revolutionary tool for 
 A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.
 
 <div align="center">
-  <img width="90%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark" alt="Profile Details"/>
-</div>
+  <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+  <br/><br/>
 
-<br>
-
-<div align="center">
-  <img width="45%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark" alt="Stats"/>
-  <img width="45%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark" alt="Productive Time"/>
+  <table>
+    <tr>
+      <td><img width="100%" alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/></td>
+      <td><img width="100%" alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/></td>
+    </tr>
+  </table>
 </div>
 
 ---
@@ -72,9 +73,13 @@ Charts highlighting my recent activity, contribution streak, and engagement with
 <div align="center">
   <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=d70f06&hide_border=true"/>
   <br/><br/>
-  <img width="45%" alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
-  <br/><br/>
-  <img width="35%" alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact"/>
+
+  <table>
+    <tr>
+      <td><img width="100%" alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/></td>
+      <td><img width="100%" alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact"/></td>
+    </tr>
+  </table>
 </div>
 
 ---
