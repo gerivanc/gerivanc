@@ -1,15 +1,15 @@
-# Gerivan GitHub Profile
-
-## 🕵️‍♂️ CyberSnake Activity Matrix 🕵️‍♂️
+# 🕵️‍♂️ CyberSnake Activity Matrix 🕵️‍♂️
 Dive into the digital grid and watch my code commits weave a neon serpent through the matrix!
 
 ![BEPb's GitHub Activity Graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
 
-# 👋 Hello! I'm Gerivan
+# 👋 Welcome to My Digital Abyss
 
-#### 💻 A developer fueled by **creativity and security**, I’m passionate about crafting algorithms that blend **digital and biological logic**. 
-#### 🎯 I build tools to protect data with **intelligence and innovation**.
-#### ⭐🚀 Loved a project? Give it a star! 🌟 It keeps me coding 💻, learning 📘, and sharing with the dev community 👨‍💻👩‍💻.
+> _“Dive into the digital abyss. Follow Back or Fall Back!”_
+
+I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
+
+---
 
 ![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
@@ -25,45 +25,58 @@ Dive into the digital grid and watch my code commits weave a neon serpent throug
 
 ---
 
-## 🚨🚧 Upcoming Project Alert! 🚧🚨 
+## 🚨🚧 Upcoming Project Alert 🚧🚨 
 A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.
 
 📢 Keep your eyes peeled—this innovation will spark conversations! 💥
 
 ---
 
-## 🎯 Profile Summary
-A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.
-
-<div align="center">
-  <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
-  <br/><br/>
-
-  <table>
-    <tr>
-      <td><img width="100%" alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/></td>
-      <td><img width="100%" alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/></td>
-    </tr>
-  </table>
-</div>
+## 📌 Table of Contents
+- [🔐 Featured Projects](#-featured-projects)
+- [📊 GitHub Stats](#-github-stats)
+- [🎯 Profile Summary](#-profile-summary)
+- [📬 Contact](#-contact)
 
 ---
 
-## 🧪 Featured Projects
+## 🔐 Featured Projects
 
-### 🔐 [EntroPy Password Generator](https://github.com/gerivanc/entropy-password-generator)
-- A robust password generator built in **Python** with **20+ customizable modes**.
-- Supports lengths from **15 to 128 characters**, delivering up to **833 bits of entropy**.
-- Exceeds industry standards like **ProtonMail (75 bits)** and **NIST SP 800-63B (80 bits)**.
-- Perfect for users prioritizing **maximum security and flexibility**.
-- [View the code in action](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
+### 🧠 EntroPy — Entropy-Based Password Generator
+EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.
 
-### 🧬 [DNAPass Password Generator](https://github.com/gerivanc/dnapass-password-generator)
-- A modern **C++** password generator inspired by **DNA nucleotide sequences**.
-- Supports lengths from **8 to 128 characters** with secure-by-design architecture.
-- Combines biological patterns with encryption for **unique password schemes**.
-- Ideal for those exploring **innovative security techniques**.
-- [View the code in action](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
+---
+
+**Key Features:**
+- 🔒 **Entropy-Driven Security**: Uses real entropy to avoid predictable patterns.
+- 🧪 **Custom Algorithms**: Designed for cryptographic strength and uniqueness.
+- 🧠 **Security-Oriented Design**: Ideal for developers, researchers, and cybersecurity professionals.
+- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/EntroPy)
+- 💾 **View the code in action**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
+
+> _“Security isn’t just a feature — it’s the foundation.”_
+
+![--length 15 Output](https://drive.google.com/uc?export=download&id=1PIe4WGdyGwV1g5t18F7JQFYBQctfpoxO)
+
+> *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
+
+---
+
+### 🧬 DNAPass — Genetic Password Generator
+DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.
+
+**Key Features:**
+- 🧬 **Biological Encoding**: Converts DNA sequences into password strings.
+- 🔐 **Unique & Complex Output**: Each password is biologically inspired and mathematically robust.
+- 🌐 **Cross-Disciplinary Innovation**: Ideal for bioinformatics, research labs, and security enthusiasts.
+- 📦 **Repository**: [DNAPass](https://github.com/gerivanc/DNAPass)
+- 💾 **View the code in action**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
+
+> _“Where biology meets cybersecurity — and innovation begins.”_
+
+![length 45 Output](https://drive.google.com/uc?export=download&id=18jNvWh4z6dM6rJMb9XtG6UKX9fJPEq4v)
+
+> *Note*: Screenshot using the command: `echo "45" | ./dnapass_generator`. Demonstration image of the output result of the function.
 
 ---
 
@@ -84,33 +97,30 @@ Charts highlighting my recent activity, contribution streak, and engagement with
 
 ---
 
-## 📸 🛠️ How I Work
-Curious about my development process? I use **Notepad++**, a lightweight and efficient editor, to write clean, functional code for my projects like **EntroPy** and **DNAPass**.
+## 🎯 Profile Summary
+A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.
 
-### 🔐 EntroPy
-![--length 15 Output](https://drive.google.com/uc?export=download&id=1PIe4WGdyGwV1g5t18F7JQFYBQctfpoxO)
+<div align="center">
+  <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+  <br/><br/>
 
-> *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
-
-### 🧬 DNAPass
-![length 45 Output](https://drive.google.com/uc?export=download&id=18jNvWh4z6dM6rJMb9XtG6UKX9fJPEq4v)
-
-> *Note*: Screenshot using the command: `echo "45" | ./dnapass_generator`. Demonstration image of the output result of the function.
-
----
-
-## 📌 About Me
-- 🧠 Blending **science, security, and creativity** through code.
-- 💬 Languages: **Python**, **C++**, and occasionally **CMake**.
-- 🚀 Focused on impactful development with real-world applications.
-- 🤝 Open to **collaboration**, research, and fresh ideas from the community.
+  <table>
+    <tr>
+      <td><img width="100%" alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/></td>
+      <td><img width="100%" alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-## 📧 Contact
-💌 Explore my projects, open issues, or contribute via pull requests. Let’s build smarter, safer systems together!
+## 📬 Contact
 
-📫 Reach me at: **`dean-grumbly-plop@duck.com`**
+If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:
+
+- 📫 Reach me at: **`dean-grumbly-plop@duck.com`**
+- 🌍 Location: Brazil
+- 🧠 Open to collaborations and research projects
 
 ---
 
@@ -119,12 +129,7 @@ This repository is licensed under the [MIT License](https://github.com/gerivanc/
 
 ---
 
-## 🤝 How to Contribute
-1. Fork the repository.
-2. Create a branch (`git checkout -b feature/new-feature`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature/new-feature`).
-5. Open a Pull Request.
+> _“Code with purpose. Build with passion. Share with the world.”_
 
 ---
 
