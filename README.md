@@ -3,9 +3,11 @@ Dive into the digital grid and watch my code commits weave a neon serpent throug
 
 ![BEPb's GitHub Activity Graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
 
-# 👋 Welcome to My Digital Abyss
+# 👋 Welcome to My Digital Universe
 
-> _“Dive into the digital abyss. Follow Back or Fall Back!”_
+> _"Dive into the digital universe. Follow back or fall back!"_
+
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
 
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
 
@@ -37,6 +39,8 @@ A groundbreaking Python 🐍 project is in the works—a revolutionary tool for 
 - [📊 GitHub Stats](#-github-stats)
 - [🎯 Profile Summary](#-profile-summary)
 - [📬 Contact](#-contact)
+- [📜 License](#-license)
+- [🌐 Language Support](#-language-support)
 
 ---
 
@@ -126,6 +130,12 @@ If you'd like to collaborate, share ideas, or just chat about security and scien
 
 ## 📜 License
 This repository is licensed under the [MIT License](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).
+
+---
+
+## 🌐 Language Support
+- 🇺🇸 English — You're here!
+- 🇧🇷 [Versão em Português](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
 
 ---
 
