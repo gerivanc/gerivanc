@@ -57,7 +57,7 @@ EntroPy is a cutting-edge password generator that leverages real entropy to prod
 - 🔒 **Entropy-Driven Security**: Uses real entropy to avoid predictable patterns.
 - 🧪 **Custom Algorithms**: Designed for cryptographic strength and uniqueness.
 - 🧠 **Security-Oriented Design**: Ideal for developers, researchers, and cybersecurity professionals.
-- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/EntroPy)
+- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
 - 💾 **View the code in action**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
 
 > _“Security isn’t just a feature — it’s the foundation.”_
@@ -75,7 +75,7 @@ DNAPass is an innovative tool that transforms DNA sequences into complex, secure
 - 🧬 **Biological Encoding**: Converts DNA sequences into password strings.
 - 🔐 **Unique & Complex Output**: Each password is biologically inspired and mathematically robust.
 - 🌐 **Cross-Disciplinary Innovation**: Ideal for bioinformatics, research labs, and security enthusiasts.
-- 📦 **Repository**: [DNAPass](https://github.com/gerivanc/DNAPass)
+- 📦 **Repository**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
 - 💾 **View the code in action**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
 > _“Where biology meets cybersecurity — and innovation begins.”_
