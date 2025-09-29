@@ -8,6 +8,7 @@ Mergulhe na grade digital e veja meus commits de código formarem uma serpente n
 > _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
 
 Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
+Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
 
 ---
 
