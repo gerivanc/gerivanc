@@ -37,6 +37,7 @@ Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferra
 - [📊 Estatísticas do GitHub](#-estatísticas-do-github)
 - [🎯 Resumo do Perfil](#-resumo-do-perfil)
 - [📬 Contato](#-contato)
+- [📜 Licença](#-licença)
 
 ---
 
