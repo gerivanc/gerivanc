@@ -90,7 +90,7 @@ DNAPass is an innovative tool that transforms DNA sequences into complex, secure
 Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!
 
 <div align="center">
-  <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=cc883a&hide_border=true"/>
+  <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=a2122f&hide_border=true"/>
   <br/><br/>
 
   <table>
