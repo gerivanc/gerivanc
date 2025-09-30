@@ -5,7 +5,7 @@ Dive into the digital grid and watch my code commits weave a neon serpent throug
 
 # 👋 Welcome to My Digital Universe
 
-> _"Dive into the digital universe. Follow back or fall back!"_
+> _"Dive into the digital universe. Follow back or get out!"_
 
 > 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
 
