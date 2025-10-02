@@ -1,0 +1,32 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC (adjust for your time zone, e.g. '0 10 * * *' for 10am UTC+10)
+  workflow_dispatch:  # Allows manual triggering via Actions tab
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use default token for commits
+
+      - name: Update Stats Images
+        run: |
+          # Download fresh SVGs and replace in README
+          curl -o stats.svg "https://github-readme-stats.vercel.app/api?username=gerivanc&show_icons=true&theme=dark&hide_border=true&include_all_commits=true"
+          curl -o top-langs.svg "https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"
+          # For summary: curl -o summary.svg "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"
+          
+          # Replace placeholders in the README (e.g. use sed to change the src of the imgs)
+          sed -i 's|src="https://github-readme-stats.vercel.app/api?[^"]*"|src="'"$(pwd)"'/stats.svg"|' README.md
+          sed -i 's|src="https://github-readme-stats.vercel.app/api/top-langs/[^"]*"|src="'"$(pwd)"'/top-langs.svg"|' README.md
+          # For summary: sed -i 's|src="https://github-profile-summary-cards[^"]*"|src="'"$(pwd)"'/summary.svg"|' README.md
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Update GitHub stats [skip ci]"
+          file_pattern: README.md
