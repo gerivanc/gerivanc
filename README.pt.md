@@ -40,6 +40,7 @@ Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferra
 - [🎯 Resumo do Perfil](#-resumo-do-perfil)
 - [📬 Contato](#-contato)
 - [📜 Licença](#-licença)
+- [🌐 Suporte de idioma](#-suporte-de-idioma)
 
 ---
 
@@ -129,6 +130,12 @@ Se você quiser colaborar, compartilhar ideias ou apenas conversar sobre seguran
 
 ## 📜 Licença
 Este repositório está licenciado sob a [Licença MIT](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).
+
+---
+
+## 🌐 Suporte de idioma
+- 🇧🇷 Português — Você está aqui!
+- 🇺🇸 English — [English version](https://github.com/gerivanc/gerivanc/blob/main/README.md)
 
 ---
 
