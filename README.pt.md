@@ -94,7 +94,7 @@ Gráficos destacando minha atividade recente, sequência de contribuições e en
   <table>
     <tr>
       <td><img width="100%" alt="Estatísticas de sequência do Gerivan no GitHub" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/></td>
-      <td><img width="100%" alt="Linguagens mais usadas pelo Gerivan" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact"/></td>
+      <td><img width="100%" alt="Linguagens mais usadas pelo Gerivan" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/></td>
     </tr>
   </table>
 </div>
