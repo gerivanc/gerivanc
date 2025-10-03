@@ -1,7 +1,9 @@
 # 🕵️‍♂️ CyberSnake Activity Matrix 🕵️‍♂️
 Dive into the digital grid and watch my code commits weave a neon serpent through the matrix!
 
-![BEPb's GitHub Activity Graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
+## Matrix Rain
+Check out the Matrix Rain effect live:
+<iframe src="https://gerivanc.github.io/gerivanc/matrix/" width="100%" height="400" frameborder="0"></iframe>
 
 # 👋 Welcome to My Digital Universe
 
