@@ -124,9 +124,9 @@ A snapshot of my GitHub activity and contributions, showcasing my commitment to 
 
 If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:
 
-- 📫 Reach me at: **`dean-grumbly-plop@duck.com`**
-- 🌍 Location: Brazil
-- 🧠 Open to collaborations and research projects
+- 📫 Reach me at: **`dean-grumbly-plop@duck.com`**.
+- 🌍 Location: Brazil.
+- 🧠 Open to collaborations and research projects.
 
 ---
 
