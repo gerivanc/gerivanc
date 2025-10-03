@@ -2,8 +2,7 @@
 Dive into the digital grid and witness my code commits illuminate a cascading matrix rain!
 
 # Matrix Rain
-Check out the Matrix Rain effect live:
-<iframe src="https://gerivanc.github.io/gerivanc/matrix/" width="100%" height="400" frameborder="0"></iframe>
+Explore the Matrix Rain effect live: [Watch here](https://gerivanc.github.io/gerivanc/matrix/)
 
 # 👋 Welcome to My Digital Universe
 
