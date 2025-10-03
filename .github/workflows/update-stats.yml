@@ -1,0 +1,24 @@
+name: Update GitHub Stats
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC (adjust for your time zone, e.g. '0 10 * * *' for 10am UTC+10)
+  workflow_dispatch:  # Allows manual triggering via Actions tab
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use default token for commits
+
+      - name: Update Stats Images
+        run: |
+          # No need to download or replace if using external URLs
+          echo "Skipping local SVG download since using external URLs"
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Update GitHub stats [skip ci]"
+          file_pattern: README.md
