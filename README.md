@@ -1,8 +1,8 @@
 # 🕵️‍♂️ CyberMatrix Activity Grid 🕵️‍♂️
 Dive into the digital grid and witness my code commits illuminate a cascading matrix rain!
 
-# Matrix Rain
-Explore the Matrix Rain effect live: [Watch here](https://gerivanc.github.io/gerivanc/matrix/)
+#### Explore the Matrix Rain effect live
+<iframe src="https://gerivanc.github.io/gerivanc/matrix/" width="100%" height="400" frameborder="0"></iframe>
 
 # 👋 Welcome to My Digital Universe
 
@@ -63,10 +63,6 @@ EntroPy is a cutting-edge password generator that leverages real entropy to prod
 
 > _“Security isn’t just a feature — it’s the foundation.”_
 
-![--length 15 Output](https://drive.google.com/uc?export=download&id=1PIe4WGdyGwV1g5t18F7JQFYBQctfpoxO)
-
-> *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
-
 ---
 
 ### 🧬 DNAPass — Genetic Password Generator
@@ -80,10 +76,6 @@ DNAPass is an innovative tool that transforms DNA sequences into complex, secure
 - 💾 **View the code in action**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
 > _“Where biology meets cybersecurity — and innovation begins.”_
-
-![length 45 Output](https://drive.google.com/uc?export=download&id=18jNvWh4z6dM6rJMb9XtG6UKX9fJPEq4v)
-
-> *Note*: Screenshot using the command: `echo "45" | ./dnapass_generator`. Demonstration image of the output result of the function.
 
 ---
 
