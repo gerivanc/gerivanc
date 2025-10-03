@@ -96,7 +96,7 @@ Charts highlighting my recent activity, contribution streak, and engagement with
   <table>
     <tr>
       <td><img width="100%" alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/></td>
-      <td><img width="100%" alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact"/></td>
+      <td><img width="100%" alt="Gerivan top languages" src="/home/runner/work/gerivanc/gerivanc/top-langs.svg"/></td>
     </tr>
   </table>
 </div>
