@@ -1,8 +1,11 @@
 # 🕵️‍♂️ CyberMatrix Activity Grid 🕵️‍♂️
 Dive into the digital grid and witness my code commits illuminate a cascading matrix rain!
 
-#### Explore the Matrix Rain effect live
+Check out the Matrix Rain effect live (functional on GitHub Pages):
+
 <iframe src="https://gerivanc.github.io/gerivanc/matrix/" width="100%" height="400" frameborder="0"></iframe>
+
+> _**Note**: The full interactive effect can be experienced at https://gerivanc.github.io/gerivanc/_
 
 # 👋 Welcome to My Digital Universe
 
