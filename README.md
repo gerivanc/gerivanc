@@ -1,9 +1,18 @@
-# 🕵️‍♂️ CyberMatrix Activity Grid 🕵️‍♂️
-Dive into the digital grid and witness my code commits illuminate a cascading matrix rain!
+## 🔒 Review your account security knowledge with the typing animation 🚀
 
-Check out the Matrix Rain effect live (functional on GitHub Pages):
+Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by the CyberSnake Activity Matrix! This interactive resource features 30 witty phrases about strong passwords and two-factor authentication (2FA), perfect for developers and startups obsessed with security and style. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
 
-<iframe src="https://gerivanc.github.io/gerivanc/matrix/" width="100%" height="400" frameborder="0"></iframe>
+🔒 **Why it's awesome**:
+- Highlights password security with a dash of humor, mixing phrases in English and Portuguese.
+- Features a dynamic typing effect in a terminal-style interface.
+- Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
+
+📸 **Watch it live**: [Watch the typing animation](https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html)
+📂 **Source code**: [const phrases/typing-animation.html](https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html)
+
+Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
+
+<iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" width="600" height="200" frameborder="0" title="Grok Typing Animation"></iframe>
 
 > _**Note**: The full interactive effect can be experienced at https://gerivanc.github.io/gerivanc/_
 
