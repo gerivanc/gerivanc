@@ -20,15 +20,17 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-            max-width: 600px;
+            max-width: 100%;
             width: 100%;
             text-align: left;
+            box-sizing: border-box;
         }
         .typing {
             border-right: 2px solid #00ff88;
-            white-space: nowrap;
-            overflow: hidden;
+            white-space: pre-wrap; /* Allows line breaks */
+            overflow-wrap: break-word; /* Breaks long words */
             display: inline-block;
+            width: 100%; /* Ensures text fits the available width */
         }
         .typing::after {
             content: '|';
@@ -47,8 +49,6 @@
         const phrases = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
-			"120-character strong password + 2FA: secure protection that defeats any hacker's evil spell!",
-			"Senha segura com 120 caracteres + 2FA: proteção segura que vence o feitiço maligno de qualquer hacker!",
             "2FA: One key alone won’t lock the vault!",
             "2FA: Porque uma chave só não tranca o cofre!",
             "Clean code, strong password, safe life!",
@@ -61,8 +61,8 @@
             "Senhas curtas? Hackers adoram atalhos!",
             "Why 2FA? Trust is good, but verifying is better!",
             "Por que 2FA? Porque confiança é bom, mas verificar é melhor!",
-            "Debugged the code, but your password’s still '1234'?",
-            "Debuguei o código, mas sua senha ainda é '1234'?",
+            "Debugged the code, but your password’s<br> still '1234'?",
+            "Debuguei o código, mas sua senha<br> ainda é '1234'?",
             "Smart coders use 2FA and strong coffee!",
             "Programador esperto usa 2FA e café forte!",
             "Secure passwords: the firewall of your digital life!",
@@ -157,16 +157,16 @@
             "2FA: O escudo supremo do seu castelo cibernético!",
             "Password strength rivals a superhero’s origin!",
             "A força da senha rivaliza com a origem de um super-herói!",
-            "Cripte com o poder de um mestre jedi, use 2FA!",
             "Encrypt with a Jedi master’s power, use 2FA!",
+            "Cripte com o poder de um mestre jedi, use 2FA!",
             "Hackers crash against my 2FA firewall!",
             "Hackers se chocam contra meu firewall 2FA!",
             "2FA: The turbo boost of your digital shield!",
             "2FA: O turbo da sua proteção digital!",
             "My code’s a fortress, 2FA is the moat!",
             "Meu código é uma fortaleza, 2FA é o fosso!",
-            "Programe com glória, trave com 2FA!",
             "Code with glory, lock with 2FA!",
+            "Programe com glória, trave com 2FA!",
             "Weak passwords summon a digital storm!",
             "Senhas fracas convocam uma tempestade digital!"
         ];
@@ -174,38 +174,38 @@
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 2000;
+        const typingSpeed = 100; // Sets the typing speed in milliseconds
+        const deletingSpeed = 50; // Sets the deleting speed in milliseconds
+        const pauseTime = 2000; // Sets the pause duration between phrases in milliseconds
 
         function type() {
-            const textElement = document.getElementById('typing-text');
-            const currentPhrase = phrases[phraseIndex];
+            const textElement = document.getElementById('typing-text'); // Gets the typing text element
+            const currentPhrase = phrases[phraseIndex]; // Gets the current phrase from the array
 
             if (!isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex);
+                textElement.textContent = currentPhrase.substring(0, charIndex); // Displays the text character by character
                 charIndex++;
                 if (charIndex > currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, pauseTime);
+                    isDeleting = true; // Switches to deleting mode when the phrase is fully typed
+                    setTimeout(type, pauseTime); // Pauses before starting to delete
                 } else {
-                    setTimeout(type, typingSpeed);
+                    setTimeout(type, typingSpeed); // Continues typing at the set speed
                 }
             } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex);
+                textElement.textContent = currentPhrase.substring(0, charIndex); // Removes the text character by character
                 charIndex--;
                 if (charIndex < 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, typingSpeed);
+                    isDeleting = false; // Switches back to typing mode when the phrase is fully deleted
+                    phraseIndex = (phraseIndex + 1) % phrases.length; // Moves to the next phrase, looping back to the start
+                    setTimeout(type, typingSpeed); // Starts typing the next phrase
                 } else {
-                    setTimeout(type, deletingSpeed);
+                    setTimeout(type, deletingSpeed); // Continues deleting at the set speed
                 }
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            type();
+            type(); // Initiates the typing animation when the page loads
         });
     </script>
 </body>
