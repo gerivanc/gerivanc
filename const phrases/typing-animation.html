@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Typing Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+        }
+        .terminal {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+        }
+        .typing {
+            border-right: 2px solid #00ff88;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .typing::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <span class="typing" id="typing-text"></span>
+    </div>
+    <script>
+        const phrases = [
+            "Esqueceu a senha? Melhor que seja única!",
+            "Forgot your password? Better be unique!",
+            "2FA: Porque uma chave só não tranca o cofre!",
+            "2FA: One key alone won’t lock the vault!",
+            "Código limpo, senha forte, vida segura!",
+            "Clean code, strong password, safe life!",
+            "Programar é arte, mas senha fraca é cilada!",
+            "Coding is art, but weak passwords are a trap!",
+            "Autenticação em dois passos: dance com segurança!",
+            "Two-step authentication: dance with security!",
+            "Senhas curtas? Hackers adoram atalhos!",
+            "Short passwords? Hackers love shortcuts!",
+            "Por que 2FA? Porque confiança é bom, mas verificar é melhor!",
+            "Why 2FA? Trust is good, but verifying is better!",
+            "Debuguei o código, mas sua senha ainda é '1234'?",
+            "Debugged the code, but your password’s still '1234'?",
+            "Programador esperto usa 2FA e café forte!",
+            "Smart coders use 2FA and strong coffee!",
+            "Senhas seguras: o firewall da sua vida digital!",
+            "Secure passwords: the firewall of your digital life!",
+            "while(senhaFraca) { risco += 1; } Use 2FA!",
+            "while(weakPassword) { risk += 1; } Use 2FA!",
+            "Criptografia é poesia que hackers não entendem!",
+            "Cryptography is poetry hackers can’t read!",
+            "2FA: O superpoder contra invasores digitais!",
+            "2FA: The superpower against digital invaders!",
+            "Senha é como café: precisa ser forte e única!",
+            "Passwords are like coffee: strong and unique!",
+            "Programar é fácil, proteger sua conta é o desafio!",
+            "Coding is easy, securing your account is the challenge!",
+            "Hackers odeiam 2FA mais que bugs no código!",
+            "Hackers hate 2FA more than bugs in code!",
+            "Sua senha é 'admin'? Sério, vamos conversar!",
+            "Your password is 'admin'? Seriously, let’s talk!",
+            "2FA: Porque senhas sozinhas são de 1999!",
+            "2FA: Because solo passwords are so 1999!",
+            "try { senhaForte } catch(hack) { use 2FA! }",
+            "try { strongPassword } catch(hack) { use 2FA! }",
+            "Senhas seguras: o commit que salva sua vida!",
+            "Secure passwords: the commit that saves your life!",
+            "2FA ligado? Agora sim, código e alma protegidos!",
+            "2FA on? Now your code and soul are protected!",
+            "Senha fraca é como bug: todo mundo vê, menos você!",
+            "Weak passwords are like bugs: everyone sees them but you!",
+            "Autenticação forte: o merge que nunca falha!",
+            "Strong authentication: the merge that never fails!",
+            "Hackers tentam, mas 2FA diz 'Acesso negado!'",
+            "Hackers try, but 2FA says 'Access denied!'",
+            "Programe com paixão, proteja com 2FA!",
+            "Code with passion, protect with 2FA!",
+            "Senhas longas: a regex que hackers não passam!",
+            "Long passwords: the regex hackers can’t match!",
+            "2FA é o patch para sua segurança digital!",
+            "2FA is the patch for your digital security!",
+            "Código roda liso, mas sua senha é segura?",
+            "Code runs smoothly, but is your password secure?",
+            "Sem 2FA, sua conta é um pull request aberto!",
+            "No 2FA, your account is an open pull request!",
+            "Senha forte + 2FA = Hackers no modo 404!",
+            "Strong password + 2FA = Hackers in 404 mode!",
+            "Escreva código épico, mas proteja com 2FA!",
+            "Write epic code, but protect it with 2FA!"
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+
+        function type() {
+            const textElement = document.getElementById('typing-text');
+            const currentPhrase = phrases[phraseIndex];
+
+            if (!isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex);
+                charIndex++;
+                if (charIndex > currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseTime);
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex);
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(type, deletingSpeed);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            type();
+        });
+    </script>
+</body>
+</html>
