@@ -8,6 +8,7 @@ Dive into the digital grid with my **Typing Animation**, a neon-filled display i
 - Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
 
 📸 **Watch it live**: [Watch the typing animation](https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html)
+
 📂 **Source code**: [const phrases/typing-animation.html](https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html)
 
 Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
