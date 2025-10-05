@@ -16,15 +16,19 @@
         }
         .container {
             text-align: center;
+            width: 100%; /* Ensures the container uses all available width */
+            max-width: 1200px; /* Limits maximum width on large screens */
         }
         h1 {
             color: #00ff88;
             font-size: 2.5em;
             text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-            overflow-wrap: break-word; /* Quebra palavras longas */
-            white-space: normal; /* Permite quebra de linha automática */
-            max-width: 90vw; /* Limita a largura para evitar rolagem horizontal */
+            overflow-wrap: break-word; /* Break long words */
+            white-space: normal; /* Allows automatic line break */
+            max-width: 100%; /* Uses the entire available width of the container */
             margin: 0 auto;
+            padding: 20px; /* Adds padding to provide more interior space */
+            box-sizing: border-box; /* Includes full-width padding */
         }
         .cursor {
             display: inline-block;
