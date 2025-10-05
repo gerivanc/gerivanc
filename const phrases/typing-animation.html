@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grok Typing Animation</title>
+    <title>Typing Animation</title>
     <style>
         body {
+            background: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #1a1a1a;
-            font-family: 'Courier New', monospace;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
             color: #00ff88;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+            overflow-wrap: break-word; /* Quebra palavras longas */
+            white-space: normal; /* Permite quebra de linha automática */
+            max-width: 90vw; /* Limita a largura para evitar rolagem horizontal */
+            margin: 0 auto;
         }
-        .terminal {
-            background-color: #2e2e2e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-            max-width: 600px;
-            width: 100%;
-            text-align: left;
-        }
-        .typing {
-            border-right: 2px solid #00ff88;
-            white-space: nowrap;
-            overflow: hidden;
+        .cursor {
             display: inline-block;
-        }
-        .typing::after {
-            content: '|';
-            animation: blink 0.7s infinite;
+            width: 10px;
+            height: 1.5em;
+            background: #00ff88;
+            vertical-align: middle;
+            animation: blink 0.7s step-end infinite;
         }
         @keyframes blink {
             50% { opacity: 0; }
@@ -40,15 +40,15 @@
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <span class="typing" id="typing-text"></span>
+    <div class="container">
+        <h1 id="text"></h1>
     </div>
     <script>
-        const phrases = [
+        const texts = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
-			"120-character strong password + 2FA: secure protection that defeats any hacker's evil spell!",
-			"Senha segura com 120 caracteres + 2FA: proteção segura que vence o feitiço maligno de qualquer hacker!",
+            "120-character strong password + 2FA: secure protection that defeats any hacker's evil spell!",
+            "Senha segura com 120 caracteres + 2FA: proteção segura que vence o feitiço maligno de qualquer hacker!",
             "2FA: One key alone won’t lock the vault!",
             "2FA: Porque uma chave só não tranca o cofre!",
             "Clean code, strong password, safe life!",
@@ -157,56 +157,48 @@
             "2FA: O escudo supremo do seu castelo cibernético!",
             "Password strength rivals a superhero’s origin!",
             "A força da senha rivaliza com a origem de um super-herói!",
-            "Cripte com o poder de um mestre jedi, use 2FA!",
             "Encrypt with a Jedi master’s power, use 2FA!",
+            "Cripte com o poder de um mestre jedi, use 2FA!",
             "Hackers crash against my 2FA firewall!",
             "Hackers se chocam contra meu firewall 2FA!",
             "2FA: The turbo boost of your digital shield!",
             "2FA: O turbo da sua proteção digital!",
             "My code’s a fortress, 2FA is the moat!",
             "Meu código é uma fortaleza, 2FA é o fosso!",
-            "Programe com glória, trave com 2FA!",
             "Code with glory, lock with 2FA!",
+            "Programe com glória, trave com 2FA!",
             "Weak passwords summon a digital storm!",
             "Senhas fracas convocam uma tempestade digital!"
         ];
 
-        let phraseIndex = 0;
+        let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 2000;
-
+        const textElement = document.getElementById('text');
+        
         function type() {
-            const textElement = document.getElementById('typing-text');
-            const currentPhrase = phrases[phraseIndex];
-
-            if (!isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex);
-                charIndex++;
-                if (charIndex > currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, pauseTime);
-                } else {
-                    setTimeout(type, typingSpeed);
-                }
-            } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex);
-                charIndex--;
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                textElement.innerHTML = currentText.substring(0, charIndex--) + '<span class="cursor"></span>';
                 if (charIndex < 0) {
                     isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, typingSpeed);
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500);
                 } else {
-                    setTimeout(type, deletingSpeed);
+                    setTimeout(type, 50);
+                }
+            } else {
+                textElement.innerHTML = currentText.substring(0, charIndex++) + '<span class="cursor"></span>';
+                if (charIndex > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else {
+                    setTimeout(type, 100);
                 }
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            type();
-        });
+        type();
     </script>
 </body>
 </html>
