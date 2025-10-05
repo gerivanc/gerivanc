@@ -6,7 +6,7 @@
 
 ---
 
-Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by the CyberSnake Activity Matrix! This interactive resource features 30 witty phrases about strong passwords and two-factor authentication (2FA), perfect for developers and startups obsessed with security and style. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
+Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features 60 unique witty phrases about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
 
 ---
 
