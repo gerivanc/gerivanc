@@ -133,11 +133,126 @@
             50% { border-color: transparent; }
         }
 
-        .status {
+        .status-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 85%;
+            max-width: 95%;
             margin-top: 15px;
+            gap: 10px;
+        }
+
+        .status {
             color: var(--text-color);
             font-size: 14px;
             opacity: 0.8;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Progress Bar Styles */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: var(--container-bg);
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 0 5px var(--shadow-color);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px var(--shadow-color);
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px;
+            animation: move 1s linear infinite;
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
+        }
+
+        /* Visual Effects */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Text completion effect */
+        .text-complete {
+            animation: completeGlow 0.5s ease;
+        }
+
+        @keyframes completeGlow {
+            0% { 
+                text-shadow: 0 0 10px var(--primary-color); 
+            }
+            50% { 
+                text-shadow: 0 0 20px var(--primary-color), 
+                           0 0 30px var(--primary-color),
+                           0 0 40px var(--primary-color); 
+            }
+            100% { 
+                text-shadow: 0 0 10px var(--primary-color); 
+            }
         }
 
         /* Media query for mobile devices */
@@ -157,10 +272,18 @@
                 padding: 6px 12px;
                 font-size: 12px;
             }
+            
+            .status {
+                font-size: 12px;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body data-theme="dark">
+    <!-- Particles container for background effect -->
+    <div class="particles" id="particles"></div>
+    
     <div class="controls">
         <button class="control-btn" id="pause-btn">Pause</button>
         <button class="control-btn" id="resume-btn" style="display:none;">Resume</button>
@@ -177,7 +300,15 @@
     
     <div class="typing-container" id="typing-text"></div>
     
-    <div class="status" id="status">Playing: 1/200</div>
+    <div class="status-container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="status" id="status">
+            <span id="phrase-counter">Playing: 1/200</span>
+            <span id="timer">Time: 0:00</span>
+        </div>
+    </div>
 
     <!-- Hidden audio elements for keyboard sounds -->
     <audio id="keySound1" preload="auto">
@@ -194,6 +325,7 @@
     </audio>
 
     <script>
+        // Text phrases array
         const texts = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
@@ -408,6 +540,8 @@
         let isPaused = false;
         let soundEnabled = true;
         let timeoutId = null;
+        let startTime = null;
+        let timerInterval = null;
         
         // Constants
         const typingSpeed = 100;
@@ -421,6 +555,10 @@
         const skipBtn = document.getElementById('skip-btn');
         const soundBtn = document.getElementById('sound-btn');
         const statusElement = document.getElementById('status');
+        const phraseCounterElement = document.getElementById('phrase-counter');
+        const timerElement = document.getElementById('timer');
+        const progressBarElement = document.getElementById('progress-bar');
+        const particlesContainer = document.getElementById('particles');
         const themeButtons = document.querySelectorAll('.theme-btn');
 
         // Keyboard sound system
@@ -430,6 +568,7 @@
                 this.loadSounds();
             }
 
+            // Load keyboard sounds
             loadSounds() {
                 // Create realistic mechanical keyboard sounds using Web Audio API
                 for (let i = 0; i < 4; i++) {
@@ -437,6 +576,7 @@
                 }
             }
 
+            // Create individual key sound
             createKeySound(variant) {
                 try {
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -464,6 +604,7 @@
                 }
             }
 
+            // Play random key sound
             playRandomKeySound() {
                 if (!soundEnabled) return;
                 
@@ -506,6 +647,7 @@
                 }
             }
 
+            // Play spacebar sound (deeper)
             playSpaceSound() {
                 if (!soundEnabled) return;
                 
@@ -536,16 +678,62 @@
         // Initialize keyboard sound system
         const keyboardSound = new KeyboardSound();
 
-        function updateStatus() {
-            statusElement.textContent = `${isPaused ? 'Paused' : 'Playing'}: ${currentTextIndex + 1}/${texts.length}`;
+        // Create background particles
+        function createParticles() {
+            const particlesCount = 30;
+            
+            for (let i = 0; i < particlesCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position and animation delay
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
         }
 
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = ((currentTextIndex + 1) / texts.length) * 100;
+            progressBarElement.style.width = `${progress}%`;
+        }
+
+        // Update timer display
+        function updateTimer() {
+            if (!startTime) return;
+            
+            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsedSeconds / 60);
+            const seconds = elapsedSeconds % 60;
+            
+            timerElement.textContent = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Start timer
+        function startTimer() {
+            if (!startTime) {
+                startTime = Date.now();
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        }
+
+        // Update status display
+        function updateStatus() {
+            phraseCounterElement.textContent = `${isPaused ? 'Paused' : 'Playing'}: ${currentTextIndex + 1}/${texts.length}`;
+            updateProgressBar();
+        }
+
+        // Type animation function
         function type() {
             if (isPaused) return;
             
             const currentText = texts[currentTextIndex];
 
             if (isDeleting) {
+                // Deleting text
                 textElement.textContent = currentText.substring(0, charIndex--);
                 if (charIndex < 0) {
                     isDeleting = false;
@@ -560,8 +748,15 @@
                 }
                 timeoutId = setTimeout(type, deletingSpeed);
             } else {
+                // Typing text
                 textElement.textContent = currentText.substring(0, charIndex++);
                 if (charIndex > currentText.length) {
+                    // Text completed - add visual effect
+                    textElement.classList.add('text-complete');
+                    setTimeout(() => {
+                        textElement.classList.remove('text-complete');
+                    }, 500);
+                    
                     isDeleting = true;
                     timeoutId = setTimeout(type, delayBetweenTexts);
                     return;
@@ -581,24 +776,31 @@
             }
         }
 
+        // Pause animation
         function pauseAnimation() {
             isPaused = true;
             if (timeoutId) {
                 clearTimeout(timeoutId);
+            }
+            if (timerInterval) {
+                clearInterval(timerInterval);
             }
             pauseBtn.style.display = 'none';
             resumeBtn.style.display = 'inline-block';
             updateStatus();
         }
 
+        // Resume animation
         function resumeAnimation() {
             isPaused = false;
             pauseBtn.style.display = 'inline-block';
             resumeBtn.style.display = 'none';
+            startTimer();
             updateStatus();
             type();
         }
 
+        // Skip to next phrase
         function skipAnimation() {
             if (timeoutId) {
                 clearTimeout(timeoutId);
@@ -610,40 +812,17 @@
             type();
         }
 
+        // Toggle sound on/off
         function toggleSound() {
             soundEnabled = !soundEnabled;
             soundBtn.textContent = `Sound: ${soundEnabled ? 'On' : 'Off'}`;
         }
 
+        // Change theme
         function changeTheme(theme) {
             document.body.setAttribute('data-theme', theme);
             
             // Update active theme button
             themeButtons.forEach(btn => {
                 if (btn.getAttribute('data-theme') === theme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-
-        // Event listeners
-        document.addEventListener("DOMContentLoaded", () => {
-            updateStatus();
-            setTimeout(type, 1000);
-        });
-
-        pauseBtn.addEventListener('click', pauseAnimation);
-        resumeBtn.addEventListener('click', resumeAnimation);
-        skipBtn.addEventListener('click', skipAnimation);
-        soundBtn.addEventListener('click', toggleSound);
-
-        themeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                changeTheme(btn.getAttribute('data-theme'));
-            });
-        });
-    </script>
-</body>
-</html>
+                    btn.classList.add('
