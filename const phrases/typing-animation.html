@@ -6,54 +6,58 @@
     <title>Typing Animation</title>
     <style>
         body {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
         }
-        .container {
-            text-align: center;
-            width: 100%; /* Ensures the container uses all available width */
-            max-width: 1200px; /* Limits maximum width on large screens */
-        }
-        h1 {
-            color: #00ff88;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-            overflow-wrap: break-word; /* Break long words */
-            white-space: normal; /* Allows automatic line break */
-            max-width: 100%; /* Uses the entire available width of the container */
-            margin: 0 auto;
-            padding: 20px; /* Adds padding to provide more interior space */
-            box-sizing: border-box; /* Includes full-width padding */
-        }
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.5em;
-            background: #00ff88;
-            vertical-align: middle;
-            animation: blink 0.7s step-end infinite;
+        .typing-container {
+            font-size: clamp(1.8rem, 3vw, 3rem); /* Increased font size */
+            color: #00ff88; /* Green color from project 1 */
+            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; /* Green glow effect */
+            white-space: normal;
+            overflow: hidden;
+            border-right: 3px solid #00ff88; /* Green cursor */
+            width: 85%; /* Increased width */
+            min-width: 350px; /* Increased minimum width */
+            max-width: 95%; /* Increased maximum width */
+            padding: 20px; /* Increased padding */
+            background: rgba(0, 0, 0, 0.6); /* Slightly darker background for better contrast */
+            border-radius: 8px; /* Slightly larger border radius */
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); /* Green shadow */
+            word-wrap: break-word;
+            animation: blink 1s step-end infinite;
+            line-height: 1.4; /* Better line spacing */
         }
         @keyframes blink {
-            50% { opacity: 0; }
+            50% { border-color: transparent; }
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .typing-container {
+                font-size: clamp(1.5rem, 4vw, 2.5rem); /* Increased font size for mobile */
+                padding: 15px; /* Increased padding for mobile */
+                width: 90%; /* Increased width for mobile */
+                min-width: 280px; /* Increased minimum width for mobile */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="text"></h1>
-    </div>
+    <div class="typing-container" id="typing-text"></div>
+
     <script>
         const texts = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
             "120-character strong password + 2FA: secure protection that defeats any hacker's evil spell!",
             "Senha segura com 120 caracteres + 2FA: proteção segura que vence o feitiço maligno de qualquer hacker!",
-            "2FA: One key alone won’t lock the vault!",
+            "2FA: One key alone won't lock the vault!",
             "2FA: Porque uma chave só não tranca o cofre!",
             "Clean code, strong password, safe life!",
             "Código limpo, senha forte, vida segura!",
@@ -65,7 +69,7 @@
             "Senhas curtas? Hackers adoram atalhos!",
             "Why 2FA? Trust is good, but verifying is better!",
             "Por que 2FA? Porque confiança é bom, mas verificar é melhor!",
-            "Debugged the code, but your password’s still '1234'?",
+            "Debugged the code, but your password's still '1234'?",
             "Debuguei o código, mas sua senha ainda é '1234'?",
             "Smart coders use 2FA and strong coffee!",
             "Programador esperto usa 2FA e café forte!",
@@ -73,7 +77,7 @@
             "Senhas seguras: o firewall da sua vida digital!",
             "while(weakPassword) { risk += 1; } Use 2FA!",
             "while(senhaFraca) { risco += 1; } Use 2FA!",
-            "Cryptography is poetry hackers can’t read!",
+            "Cryptography is poetry hackers can't read!",
             "Criptografia é poesia que hackers não entendem!",
             "2FA: The superpower against digital invaders!",
             "2FA: O superpoder contra invasores digitais!",
@@ -83,7 +87,7 @@
             "Programar é fácil, proteger sua conta é o desafio!",
             "Hackers hate 2FA more than bugs in code!",
             "Hackers odeiam 2FA mais que bugs no código!",
-            "Your password is 'admin'? Seriously, let’s talk!",
+            "Your password is 'admin'? Seriously, let's talk!",
             "Sua senha é 'admin'? Sério, vamos conversar!",
             "2FA: Because solo passwords are so 1999!",
             "2FA: Porque senhas sozinhas são de 1999!",
@@ -101,7 +105,7 @@
             "Hackers tentam, mas 2FA diz 'Acesso negado!'",
             "Code with passion, protect with 2FA!",
             "Programe com paixão, proteja com 2FA!",
-            "Long passwords: the regex hackers can’t match!",
+            "Long passwords: the regex hackers can't match!",
             "Senhas longas: a regex que hackers não passam!",
             "2FA is the patch for your digital security!",
             "2FA é o patch para sua segurança digital!",
@@ -113,21 +117,21 @@
             "Senha forte + 2FA = Hackers no modo 404!",
             "Write epic code, but protect it with 2FA!",
             "Escreva código épico, mas proteja com 2FA!",
-            "Guard your data with a cyborg’s iron fist!",
+            "Guard your data with a cyborg's iron fist!",
             "Proteja seus dados com o punho de ferro de um ciborgue!",
             "2FA: The quantum shield of your online fortress!",
             "2FA: O escudo quântico da sua fortaleza online!",
-            "My password’s a time-traveling enigma!",
+            "My password's a time-traveling enigma!",
             "Minha senha é um enigma que viaja no tempo!",
-            "Secure code beats a hacker’s evil spell!",
+            "Secure code beats a hacker's evil spell!",
             "Código seguro vence o feitiço maligno de um hacker!",
-            "2FA: Your digital spaceship’s hyperdrive!",
+            "2FA: Your digital spaceship's hyperdrive!",
             "2FA: O hiperpropulsor da sua nave digital!",
             "Weak logins invite alien invasions!",
             "Logins fracos convidam invasões alienígenas!",
             "Encrypt like a ninja, lock with 2FA!",
             "Cripte como um ninja, trave com 2FA!",
-            "My password’s a treasure map for cyber pirates!",
+            "My password's a treasure map for cyber pirates!",
             "Minha senha é um mapa do tesouro para piratas cibernéticos!",
             "2FA turns hacks into sci-fi movie flops!",
             "2FA transforma hacks em fracassos de filmes de ficção científica!",
@@ -135,23 +139,23 @@
             "Programe forte, ou enfrente a revolta dos robôs!",
             "2FA: The lightsaber of your data defense!",
             "2FA: O sabre de luz da defesa dos seus dados!",
-            "Hackers flee from my password’s black hole!",
+            "Hackers flee from my password's black hole!",
             "Hackers fogem do buraco negro da minha senha!",
-            "Secure your stack with a wizard’s ward!",
+            "Secure your stack with a wizard's ward!",
             "Proteja sua pilha com a proteção de um mago!",
             "2FA: The sonic boom of cybersecurity!",
             "2FA: O estouro sônico da cibersegurança!",
-            "My login’s a riddle from a lost galaxy!",
+            "My login's a riddle from a lost galaxy!",
             "Meu login é um enigma de uma galáxia perdida!",
             "Code safe, or summon the digital dragons!",
             "Programe seguro, ou conjure os dragões digitais!",
             "2FA locks your account like a time vault!",
             "2FA tranca sua conta como um cofre do tempo!",
-            "Weak passwords fuel the hacker’s mothership!",
+            "Weak passwords fuel the hacker's mothership!",
             "Senhas fracas alimentam a nave-mãe dos hackers!",
             "2FA: Your cyber armor against dark forces!",
             "2FA: Sua armadura cibernética contra forças sombrias!",
-            "My password’s a symphony hackers can’t play!",
+            "My password's a symphony hackers can't play!",
             "Minha senha é uma sinfonia que hackers não conseguem tocar!",
             "Secure code is my galactic peace treaty!",
             "Código seguro é meu tratado de paz galáctico!",
@@ -159,110 +163,116 @@
             "Meu 2FA é um truque holográfico para hackers!",
             "2FA: The ultimate shield of your cyber castle!",
             "2FA: O escudo supremo do seu castelo cibernético!",
-            "Password strength rivals a superhero’s origin!",
+            "Password strength rivals a superhero's origin!",
             "A força da senha rivaliza com a origem de um super-herói!",
-            "Encrypt with a Jedi master’s power, use 2FA!",
+            "Encrypt with a Jedi master's power, use 2FA!",
             "Cripte com o poder de um mestre jedi, use 2FA!",
             "Hackers crash against my 2FA firewall!",
             "Hackers se chocam contra meu firewall 2FA!",
             "2FA: The turbo boost of your digital shield!",
             "2FA: O turbo da sua proteção digital!",
-            "My code’s a fortress, 2FA is the moat!",
+            "My code's a fortress, 2FA is the moat!",
             "Meu código é uma fortaleza, 2FA é o fosso!",
             "Code with glory, lock with 2FA!",
             "Programe com glória, trave com 2FA!",
             "Weak passwords summon a digital storm!",
             "Senhas fracas convocam uma tempestade digital!",
-            "2FA: Your shield against the dark web’s claws!",
+            "2FA: Your shield against the dark web's claws!",
             "2FA: Seu escudo contra as garras da dark web!",
             "Strong passwords keep hackers stuck in a loop!",
             "Senhas fortes mantêm hackers presos em um loop!",
             "Code secure, live without digital fear!",
             "Programe seguro, viva sem medo digital!",
-            "My password’s a labyrinth hackers can’t solve!",
+            "My password's a labyrinth hackers can't solve!",
             "Minha senha é um labirinto que hackers não resolvem!",
             "2FA: The gatekeeper of your cyber kingdom!",
             "2FA: O guardião do seu reino cibernético!",
-            "Weak passwords? A hacker’s open invitation!",
+            "Weak passwords? A hacker's open invitation!",
             "Senhas fracas? Um convite aberto para hackers!",
-            "Lock your data with 2FA’s cosmic key!",
+            "Lock your data with 2FA's cosmic key!",
             "Tranque seus dados com a chave cósmica do 2FA!",
-            "My login’s a puzzle from a distant star!",
+            "My login's a puzzle from a distant star!",
             "Meu login é um quebra-cabeça de uma estrela distante!",
             "2FA: The force field around your digital soul!",
             "2FA: O campo de força ao redor da sua alma digital!",
-            "Hackers stumble on my password’s quantum code!",
+            "Hackers stumble on my password's quantum code!",
             "Hackers tropeçam no código quântico da minha senha!",
-            "Secure your bits with a dragon’s fiery lock!",
+            "Secure your bits with a dragon's fiery lock!",
             "Proteja seus bits com o cadeado ardente de um dragão!",
             "2FA: The kryptonite to hacker dreams!",
             "2FA: A criptonita dos sonhos dos hackers!",
             "Code like a hero, secure like a vault!",
             "Programe como herói, proteja como cofre!",
-            "Weak passwords are a hacker’s playground!",
+            "Weak passwords are a hacker's playground!",
             "Senhas fracas são o parquinho dos hackers!",
             "2FA: The guardian angel of your online world!",
             "2FA: O anjo guardião do seu mundo online!",
-            "My password’s a fortress in a digital storm!",
+            "My password's a fortress in a digital storm!",
             "Minha senha é uma fortaleza em uma tempestade digital!",
             "Encrypt tight, sleep safe at night!",
             "Cripte bem, durma seguro à noite!",
             "2FA: The spell that keeps hackers at bay!",
             "2FA: O feitiço que mantém hackers afastados!",
-            "Hackers can’t crack my 2FA force field!",
+            "Hackers can't crack my 2FA force field!",
             "Hackers não quebram meu campo de força 2FA!",
             "Strong passwords: the code to digital peace!",
             "Senhas fortes: o código para a paz digital!",
-            "2FA: Your account’s invisible cloak!",
+            "2FA: Your account's invisible cloak!",
             "2FA: A capa invisível da sua conta!",
-            "My login’s a riddle wrapped in a mystery!",
+            "My login's a riddle wrapped in a mystery!",
             "Meu login é um enigma envolto em mistério!",
-            "Code with might, secure with 2FA’s light!",
+            "Code with might, secure with 2FA's light!",
             "Programe com força, proteja com a luz do 2FA!",
-            "Weak passwords spark a hacker’s delight!",
+            "Weak passwords spark a hacker's delight!",
             "Senhas fracas acendem a alegria dos hackers!",
             "2FA: The lock that stops the digital clock!",
             "2FA: A tranca que para o relógio digital!",
-            "My password’s a supernova hackers can’t touch!",
+            "My password's a supernova hackers can't touch!",
             "Minha senha é uma supernova que hackers não tocam!",
-            "Secure your code, or face the hacker’s probe!",
+            "Secure your code, or face the hacker's probe!",
             "Programe seguro, ou enfrente a sonda do hacker!",
-            "2FA: The ultimate code for your data’s abode!",
+            "2FA: The ultimate code for your data's abode!",
             "2FA: O código definitivo para a morada dos seus dados!",
-            "Hackers can’t dance to my password’s trance!",
+            "Hackers can't dance to my password's trance!",
             "Hackers não dançam ao transe da minha senha!",
-            "Lock your account with 2FA’s cosmic vault!",
+            "Lock your account with 2FA's cosmic vault!",
             "Tranque sua conta com o cofre cósmico do 2FA!"
         ];
 
-        let textIndex = 0;
+        let currentTextIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const textElement = document.getElementById('text');
-        
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenTexts = 2000;
+
         function type() {
-            const currentText = texts[textIndex];
+            const textElement = document.getElementById('typing-text');
+            const currentText = texts[currentTextIndex];
+
             if (isDeleting) {
-                textElement.innerHTML = currentText.substring(0, charIndex--) + '<span class="cursor"></span>';
+                textElement.textContent = currentText.substring(0, charIndex--);
                 if (charIndex < 0) {
                     isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
                     setTimeout(type, 500);
-                } else {
-                    setTimeout(type, 50);
+                    return;
                 }
+                setTimeout(type, deletingSpeed);
             } else {
-                textElement.innerHTML = currentText.substring(0, charIndex++) + '<span class="cursor"></span>';
+                textElement.textContent = currentText.substring(0, charIndex++);
                 if (charIndex > currentText.length) {
                     isDeleting = true;
-                    setTimeout(type, 2000);
-                } else {
-                    setTimeout(type, 100);
+                    setTimeout(type, delayBetweenTexts);
+                    return;
                 }
+                setTimeout(type, typingSpeed);
             }
         }
 
-        type();
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 1000);
+        });
     </script>
 </body>
 </html>
