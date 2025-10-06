@@ -16,13 +16,14 @@
             overflow: hidden;
         }
         .typing-container {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem); /* Adjusts font size for smaller screens */
             color: #00ffcc;
             text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
             white-space: normal;
             overflow: hidden;
             border-right: 3px solid #00ffcc;
-            width: 50ch; /* Character-based initial width */
+            width: 80%; /* Increases the initial width */
+            min-width: 300px; /* Ensures a minimum size */
             max-width: 90%; /* Maximum responsive limit */
             padding: 15px;
             background: rgba(0, 0, 0, 0.5);
@@ -33,6 +34,16 @@
         }
         @keyframes blink {
             50% { border-color: transparent; }
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .typing-container {
+                font-size: clamp(1.2rem, 3vw, 2rem); /* Smaller font size on mobile */
+                padding: 10px;
+                width: 85%; /* Increases width on small screens */
+                min-width: 250px;
+            }
         }
     </style>
 </head>
