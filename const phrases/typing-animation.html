@@ -310,20 +310,6 @@
         </div>
     </div>
 
-    <!-- Hidden audio elements for keyboard sounds -->
-    <audio id="keySound1" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==" type="audio/wav">
-    </audio>
-    <audio id="keySound2" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==" type="audio/wav">
-    </audio>
-    <audio id="keySound3" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==" type="audio/wav">
-    </audio>
-    <audio id="keySound4" preload="auto">
-        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==" type="audio/wav">
-    </audio>
-
     <script>
         // Text phrases array
         const texts = [
@@ -554,7 +540,6 @@
         const resumeBtn = document.getElementById('resume-btn');
         const skipBtn = document.getElementById('skip-btn');
         const soundBtn = document.getElementById('sound-btn');
-        const statusElement = document.getElementById('status');
         const phraseCounterElement = document.getElementById('phrase-counter');
         const timerElement = document.getElementById('timer');
         const progressBarElement = document.getElementById('progress-bar');
@@ -584,9 +569,9 @@
                     const gainNode = audioContext.createGain();
                     
                     // Different frequencies for different key types
-                    const baseFreq = 60 + (variant * 15); // 60Hz, 75Hz, 90Hz, 105Hz
+                    const baseFreq = 60 + (variant * 15);
                     
-                    oscillator.type = 'square'; // More mechanical sound
+                    oscillator.type = 'square';
                     oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
                     
                     // Realistic envelope for mechanical keyboard
@@ -622,7 +607,7 @@
                     const newGainNode = sound.context.createGain();
                     
                     const baseFreq = 60 + (sound.variant * 15);
-                    const randomVariance = (Math.random() - 0.5) * 20; // ±10Hz variation
+                    const randomVariance = (Math.random() - 0.5) * 20;
                     
                     newOscillator.type = 'square';
                     newOscillator.frequency.setValueAtTime(baseFreq + randomVariance, now);
@@ -651,14 +636,13 @@
             playSpaceSound() {
                 if (!soundEnabled) return;
                 
-                // Deeper sound for spacebar
                 try {
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     const oscillator = audioContext.createOscillator();
                     const gainNode = audioContext.createGain();
                     
-                    oscillator.type = 'sawtooth'; // Deeper, more resonant
-                    oscillator.frequency.setValueAtTime(45, audioContext.currentTime); // Lower frequency
+                    oscillator.type = 'sawtooth';
+                    oscillator.frequency.setValueAtTime(45, audioContext.currentTime);
                     
                     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
                     gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.003);
@@ -742,7 +726,7 @@
                     updateStatus();
                     return;
                 }
-                // Play backspace sound (softer)
+                // Play backspace sound
                 if (soundEnabled && Math.random() > 0.3) {
                     setTimeout(() => keyboardSound.playRandomKeySound(), 10);
                 }
@@ -768,7 +752,7 @@
                         // Spacebar - deeper sound
                         setTimeout(() => keyboardSound.playSpaceSound(), 15);
                     } else {
-                        // Regular keys - random timing for realism
+                        // Regular keys
                         setTimeout(() => keyboardSound.playRandomKeySound(), 10 + Math.random() * 20);
                     }
                 }
@@ -825,4 +809,34 @@
             // Update active theme button
             themeButtons.forEach(btn => {
                 if (btn.getAttribute('data-theme') === theme) {
-                    btn.classList.add('
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize the application
+        function init() {
+            createParticles();
+            updateStatus();
+            startTimer();
+            setTimeout(type, 1000);
+        }
+
+        // Event listeners
+        document.addEventListener("DOMContentLoaded", init);
+
+        pauseBtn.addEventListener('click', pauseAnimation);
+        resumeBtn.addEventListener('click', resumeAnimation);
+        skipBtn.addEventListener('click', skipAnimation);
+        soundBtn.addEventListener('click', toggleSound);
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeTheme(btn.getAttribute('data-theme'));
+            });
+        });
+    </script>
+</body>
+</html>
