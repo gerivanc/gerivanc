@@ -6,47 +6,35 @@
     <title>Typing Animation</title>
     <style>
         body {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
         }
-        .container {
-            text-align: center;
-            width: 100%; /* Ensures the container uses all available width */
-            max-width: 1200px; /* Limits maximum width on large screens */
-        }
-        h1 {
-            color: #00ff88;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-            overflow-wrap: break-word; /* Break long words */
-            white-space: normal; /* Allows automatic line break */
-            max-width: 100%; /* Uses the entire available width of the container */
-            margin: 0 auto;
-            padding: 20px; /* Adds padding to provide more interior space */
-            box-sizing: border-box; /* Includes full-width padding */
-        }
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.5em;
-            background: #00ff88;
-            vertical-align: middle;
-            animation: blink 0.7s step-end infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
+        .typing-container {
+            font-size: 2.5rem;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            white-space: normal; /* Changed to allow line breaks */
+            overflow: hidden;
+            border-right: 3px solid #00ffcc;
+            width: 80%; /* Increased to 80% of the screen */
+            max-width: 1200px; /* Maximum limit to prevent it from being too wide */
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            word-wrap: break-word; /* Ensures long words break */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="text"></h1>
-    </div>
+    <div class="typing-container" id="typing-text"></div>
+
     <script>
         const texts = [
             "Forgot your password? Better be unique!",
@@ -172,37 +160,103 @@
             "Code with glory, lock with 2FA!",
             "Programe com glória, trave com 2FA!",
             "Weak passwords summon a digital storm!",
-            "Senhas fracas convocam uma tempestade digital!"
+            "Senhas fracas convocam uma tempestade digital!",
+            "2FA: Your shield against the dark web’s claws!",
+            "2FA: Seu escudo contra as garras da dark web!",
+            "Strong passwords keep hackers stuck in a loop!",
+            "Senhas fortes mantêm hackers presos em um loop!",
+            "Code secure, live without digital fear!",
+            "Programe seguro, viva sem medo digital!",
+            "My password’s a labyrinth hackers can’t solve!",
+            "Minha senha é um labirinto que hackers não resolvem!",
+            "2FA: The gatekeeper of your cyber kingdom!",
+            "2FA: O guardião do seu reino cibernético!",
+            "Weak passwords? A hacker’s open invitation!",
+            "Senhas fracas? Um convite aberto para hackers!",
+            "Lock your data with 2FA’s cosmic key!",
+            "Tranque seus dados com a chave cósmica do 2FA!",
+            "My login’s a puzzle from a distant star!",
+            "Meu login é um quebra-cabeça de uma estrela distante!",
+            "2FA: The force field around your digital soul!",
+            "2FA: O campo de força ao redor da sua alma digital!",
+            "Hackers stumble on my password’s quantum code!",
+            "Hackers tropeçam no código quântico da minha senha!",
+            "Secure your bits with a dragon’s fiery lock!",
+            "Proteja seus bits com o cadeado ardente de um dragão!",
+            "2FA: The kryptonite to hacker dreams!",
+            "2FA: A criptonita dos sonhos dos hackers!",
+            "Code like a hero, secure like a vault!",
+            "Programe como herói, proteja como cofre!",
+            "Weak passwords are a hacker’s playground!",
+            "Senhas fracas são o parquinho dos hackers!",
+            "2FA: The guardian angel of your online world!",
+            "2FA: O anjo guardião do seu mundo online!",
+            "My password’s a fortress in a digital storm!",
+            "Minha senha é uma fortaleza em uma tempestade digital!",
+            "Encrypt tight, sleep safe at night!",
+            "Cripte bem, durma seguro à noite!",
+            "2FA: The spell that keeps hackers at bay!",
+            "2FA: O feitiço que mantém hackers afastados!",
+            "Hackers can’t crack my 2FA force field!",
+            "Hackers não quebram meu campo de força 2FA!",
+            "Strong passwords: the code to digital peace!",
+            "Senhas fortes: o código para a paz digital!",
+            "2FA: Your account’s invisible cloak!",
+            "2FA: A capa invisível da sua conta!",
+            "My login’s a riddle wrapped in a mystery!",
+            "Meu login é um enigma envolto em mistério!",
+            "Code with might, secure with 2FA’s light!",
+            "Programe com força, proteja com a luz do 2FA!",
+            "Weak passwords spark a hacker’s delight!",
+            "Senhas fracas acendem a alegria dos hackers!",
+            "2FA: The lock that stops the digital clock!",
+            "2FA: A tranca que para o relógio digital!",
+            "My password’s a supernova hackers can’t touch!",
+            "Minha senha é uma supernova que hackers não tocam!",
+            "Secure your code, or face the hacker’s probe!",
+            "Programe seguro, ou enfrente a sonda do hacker!",
+            "2FA: The ultimate code for your data’s abode!",
+            "2FA: O código definitivo para a morada dos seus dados!",
+            "Hackers can’t dance to my password’s trance!",
+            "Hackers não dançam ao transe da minha senha!",
+            "Lock your account with 2FA’s cosmic vault!",
+            "Tranque sua conta com o cofre cósmico do 2FA!"
         ];
 
-        let textIndex = 0;
+        let currentTextIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const textElement = document.getElementById('text');
-        
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenTexts = 2000;
+
         function type() {
-            const currentText = texts[textIndex];
+            const textElement = document.getElementById('typing-text');
+            const currentText = texts[currentTextIndex];
+
             if (isDeleting) {
-                textElement.innerHTML = currentText.substring(0, charIndex--) + '<span class="cursor"></span>';
+                textElement.textContent = currentText.substring(0, charIndex--);
                 if (charIndex < 0) {
                     isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
                     setTimeout(type, 500);
-                } else {
-                    setTimeout(type, 50);
+                    return;
                 }
+                setTimeout(type, deletingSpeed);
             } else {
-                textElement.innerHTML = currentText.substring(0, charIndex++) + '<span class="cursor"></span>';
+                textElement.textContent = currentText.substring(0, charIndex++);
                 if (charIndex > currentText.length) {
                     isDeleting = true;
-                    setTimeout(type, 2000);
-                } else {
-                    setTimeout(type, 100);
+                    setTimeout(type, delayBetweenTexts);
+                    return;
                 }
+                setTimeout(type, typingSpeed);
             }
         }
 
-        type();
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 1000);
+        });
     </script>
 </body>
 </html>
