@@ -6,12 +6,12 @@
     <title>Typing Animation - Security Tips</title>
     <style>
         :root {
-            --primary-color: #00ff88;
+            --primary-color: #00ffff; /* CYAN como cor primária */
             --background-dark: #1a1a1a;
             --background-gradient: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            --text-color: #00ff88;
+            --text-color: #00ffff; /* CYAN */
             --container-bg: rgba(0, 0, 0, 0.6);
-            --shadow-color: rgba(0, 255, 136, 0.4);
+            --shadow-color: rgba(0, 255, 255, 0.4); /* CYAN */
         }
 
         [data-theme="light"] {
@@ -23,13 +23,13 @@
             --shadow-color: rgba(0, 102, 204, 0.4);
         }
 
-        [data-theme="cyan"] {
-            --primary-color: #00ffff;
+        [data-theme="green"] {
+            --primary-color: #00ff88; /* VERDE no lugar do ciano */
             --background-dark: #000000;
             --background-gradient: linear-gradient(135deg, #000000, #003333);
-            --text-color: #00ffff;
+            --text-color: #00ff88; /* VERDE */
             --container-bg: rgba(0, 0, 0, 0.7);
-            --shadow-color: rgba(0, 255, 255, 0.4);
+            --shadow-color: rgba(0, 255, 136, 0.4); /* VERDE */
         }
 
         [data-theme="orange"] {
@@ -104,9 +104,9 @@
             transform: scale(1.1);
         }
 
-        .theme-green { background: #00ff88; }
+        .theme-cyan { background: #00ffff; } /* CYAN - primeiro botão */
         .theme-blue { background: #0066cc; }
-        .theme-cyan { background: #00ffff; }
+        .theme-green { background: #00ff88; } /* VERDE */
         .theme-orange { background: #ff7b25; }
 
         .typing-container {
@@ -291,9 +291,9 @@
         <button class="control-btn" id="sound-btn">Sound: On</button>
         
         <div class="theme-selector">
-            <div class="theme-btn theme-green active" data-theme="dark"></div>
+            <div class="theme-btn theme-cyan active" data-theme="dark"></div>
             <div class="theme-btn theme-blue" data-theme="light"></div>
-            <div class="theme-btn theme-cyan" data-theme="cyan"></div>
+            <div class="theme-btn theme-green" data-theme="green"></div>
             <div class="theme-btn theme-orange" data-theme="orange"></div>
         </div>
     </div>
@@ -305,13 +305,13 @@
             <div class="progress-bar" id="progress-bar"></div>
         </div>
         <div class="status" id="status">
-            <span id="phrase-counter">Playing: 1/200</span>
+            <span id="phrase-counter">Playing: 1/204</span>
             <span id="timer">Time: 0:00</span>
         </div>
     </div>
 
     <script>
-        // Text phrases array
+        // Text phrases array - 204 frases COMPLETAS
         const texts = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
