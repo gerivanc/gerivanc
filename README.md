@@ -1,8 +1,12 @@
-# 🔒 Review your account security knowledge with the typing animation 🚀
+# 👋 Welcome to My Digital Universe
 
-<iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" width="600" height="200" frameborder="0" title="Grok Typing Animation"></iframe>
+> _"Dive into the digital universe. Follow back or get out!"_
 
-> _**Note**: The full interactive effect can be experienced at [https://gerivanc.github.io/gerivanc/](https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html)_
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
+
+I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
+
+Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!
 
 ---
 
@@ -34,18 +38,6 @@ Dive into the digital grid with my **Typing Animation**, a neon-filled display i
 📂 **Source code**: [const phrases/typing-animation.html](https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html)
 
 Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
-
----
-
-# 👋 Welcome to My Digital Universe
-
-> _"Dive into the digital universe. Follow back or get out!"_
-
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
-
-I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
-
-Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!
 
 ---
 
