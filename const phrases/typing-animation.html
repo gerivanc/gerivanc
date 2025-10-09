@@ -6,12 +6,12 @@
     <title>Typing Animation - Security Tips</title>
     <style>
         :root {
-            --primary-color: #00ffff;
+            --primary-color: #00ffff; /* CYAN as primary color */
             --background-dark: #1a1a1a;
             --background-gradient: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            --text-color: #00ffff;
+            --text-color: #00ffff; /* CYAN */
             --container-bg: rgba(0, 0, 0, 0.6);
-            --shadow-color: rgba(0, 255, 255, 0.4);
+            --shadow-color: rgba(0, 255, 255, 0.4); /* CYAN */
         }
 
         [data-theme="light"] {
@@ -24,12 +24,12 @@
         }
 
         [data-theme="green"] {
-            --primary-color: #00ff88;
+            --primary-color: #00ff88; /* GREEN instead of cyan */
             --background-dark: #000000;
             --background-gradient: linear-gradient(135deg, #000000, #003333);
-            --text-color: #00ff88;
+            --text-color: #00ff88; /* VERDE */
             --container-bg: rgba(0, 0, 0, 0.7);
-            --shadow-color: rgba(0, 255, 136, 0.4);
+            --shadow-color: rgba(0, 255, 136, 0.4); /* VERDE */
         }
 
         [data-theme="orange"] {
@@ -47,33 +47,37 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 10px;
             font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
+            overflow: auto;
             transition: background 0.5s ease;
         }
 
         .controls {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 0 15px;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
         }
 
         .control-btn {
             background: var(--container-bg);
             color: var(--text-color);
             border: 1px solid var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 4px;
             cursor: pointer;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
+            font-size: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 0 5px var(--shadow-color);
+            white-space: nowrap;
         }
 
         .control-btn:hover {
@@ -83,12 +87,13 @@
 
         .theme-selector {
             display: flex;
-            gap: 8px;
+            gap: 6px;
+            margin-left: 10px;
         }
 
         .theme-btn {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             border: 2px solid white;
             cursor: pointer;
@@ -110,26 +115,26 @@
         .theme-orange { background: #ff7b25; }
 
         .typing-container {
-            font-size: clamp(1.8rem, 3vw, 3rem);
+            font-size: 14px; /* Reduced font size */
             color: var(--text-color);
-            text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-            white-space: pre-wrap; /* CORREÇÃO: Alterado para pre-wrap */
+            text-shadow: 0 0 5px var(--primary-color);
+            white-space: normal;
             overflow: hidden;
-            border-right: 3px solid var(--primary-color);
-            width: 85%;
-            min-width: 350px;
-            max-width: 95%;
-            padding: 20px;
+            border-right: 2px solid var(--primary-color);
+            width: 95%;
+            min-width: 300px;
+            max-width: 800px;
+            padding: 15px;
             background: var(--container-bg);
-            border-radius: 8px;
-            box-shadow: 0 0 15px var(--shadow-color);
+            border-radius: 6px;
+            box-shadow: 0 0 10px var(--shadow-color);
             word-wrap: break-word;
-            word-break: break-word; /* CORREÇÃO: Adicionado */
             animation: blink 1s step-end infinite;
-            line-height: 1.4;
+            line-height: 1.3;
             transition: all 0.5s ease;
-            overflow-wrap: break-word; /* CORREÇÃO: Adicionado */
-            hyphens: auto; /* CORREÇÃO: Adicionado */
+            min-height: 60px;
+            display: flex;
+            align-items: center;
         }
 
         @keyframes blink {
@@ -140,37 +145,38 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 85%;
-            max-width: 95%;
-            margin-top: 15px;
-            gap: 10px;
+            width: 95%;
+            max-width: 800px;
+            margin-top: 10px;
+            gap: 8px;
         }
 
         .status {
             color: var(--text-color);
-            font-size: 14px;
+            font-size: 11px;
             opacity: 0.8;
             display: flex;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
+        /* Progress Bar Styles */
         .progress-container {
             width: 100%;
-            height: 6px;
+            height: 4px;
             background: var(--container-bg);
-            border-radius: 3px;
+            border-radius: 2px;
             overflow: hidden;
-            box-shadow: 0 0 5px var(--shadow-color);
+            box-shadow: 0 0 3px var(--shadow-color);
         }
 
         .progress-bar {
             height: 100%;
             background: var(--primary-color);
-            border-radius: 3px;
+            border-radius: 2px;
             transition: width 0.5s ease;
-            box-shadow: 0 0 10px var(--shadow-color);
+            box-shadow: 0 0 5px var(--shadow-color);
             position: relative;
         }
 
@@ -191,15 +197,16 @@
                 transparent 75%,
                 transparent
             );
-            background-size: 20px 20px;
+            background-size: 15px 15px;
             animation: move 1s linear infinite;
         }
 
         @keyframes move {
             0% { background-position: 0 0; }
-            100% { background-position: 20px 0; }
+            100% { background-position: 15px 0; }
         }
 
+        /* Visual Effects */
         .particles {
             position: fixed;
             top: 0;
@@ -212,8 +219,8 @@
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             background: var(--primary-color);
             border-radius: 50%;
             opacity: 0;
@@ -237,73 +244,94 @@
             }
         }
 
+        /* Text completion effect */
         .text-complete {
             animation: completeGlow 0.5s ease;
         }
 
         @keyframes completeGlow {
             0% { 
-                text-shadow: 0 0 10px var(--primary-color); 
+                text-shadow: 0 0 5px var(--primary-color); 
             }
             50% { 
-                text-shadow: 0 0 20px var(--primary-color), 
-                           0 0 30px var(--primary-color),
-                           0 0 40px var(--primary-color); 
+                text-shadow: 0 0 10px var(--primary-color), 
+                           0 0 15px var(--primary-color); 
             }
             100% { 
-                text-shadow: 0 0 10px var(--primary-color); 
+                text-shadow: 0 0 5px var(--primary-color); 
             }
         }
 
-        /* CORREÇÕES PARA MOBILE */
+        /* Media query for mobile devices */
         @media (max-width: 768px) {
+            body {
+                padding: 8px;
+            }
+            
             .typing-container {
-                font-size: clamp(1.5rem, 4vw, 2.5rem);
-                padding: 15px;
-                width: 90%;
-                min-width: 280px;
-                white-space: pre-wrap !important;
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                min-height: 150px;
-                display: flex;
-                align-items: center;
+                font-size: 12px;
+                padding: 12px;
+                width: 92%;
+                min-width: 250px;
+                min-height: 50px;
             }
             
             .controls {
-                gap: 10px;
+                gap: 8px;
+                margin-bottom: 12px;
             }
             
             .control-btn {
-                padding: 6px 12px;
-                font-size: 12px;
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+            
+            .theme-btn {
+                width: 18px;
+                height: 18px;
             }
             
             .status {
-                font-size: 12px;
-                gap: 10px;
+                font-size: 10px;
+                gap: 8px;
+            }
+            
+            .progress-container {
+                height: 3px;
             }
         }
 
+        /* Extra small screens */
         @media (max-width: 480px) {
+            .controls {
+                flex-direction: column;
+                gap: 6px;
+            }
+            
+            .theme-selector {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            
             .typing-container {
-                font-size: clamp(1.2rem, 4vw, 2rem);
-                padding: 12px;
-                width: 95%;
-                min-width: 250px;
-                min-height: 120px;
+                font-size: 11px;
+                padding: 10px;
+                min-height: 45px;
             }
         }
     </style>
 </head>
 <body data-theme="dark">
+    <!-- Particles container for background effect -->
     <div class="particles" id="particles"></div>
     
     <div class="controls">
-        <button class="control-btn" id="pause-btn">Pause</button>
-        <button class="control-btn" id="resume-btn" style="display:none;">Resume</button>
-        <button class="control-btn" id="skip-btn">Skip</button>
-        <button class="control-btn" id="sound-btn">Sound: On</button>
+        <div class="controls-group">
+            <button class="control-btn" id="pause-btn">Pause</button>
+            <button class="control-btn" id="resume-btn" style="display:none;">Resume</button>
+            <button class="control-btn" id="skip-btn">Skip</button>
+            <button class="control-btn" id="sound-btn">Sound: On</button>
+        </div>
         
         <div class="theme-selector">
             <div class="theme-btn theme-cyan active" data-theme="dark"></div>
@@ -568,23 +596,28 @@
                 this.loadSounds();
             }
 
+            // Load keyboard sounds
             loadSounds() {
+                // Create realistic mechanical keyboard sounds using Web Audio API
                 for (let i = 0; i < 4; i++) {
                     this.sounds.push(this.createKeySound(i));
                 }
             }
 
+            // Create individual key sound
             createKeySound(variant) {
                 try {
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     const oscillator = audioContext.createOscillator();
                     const gainNode = audioContext.createGain();
                     
+                    // Different frequencies for different key types
                     const baseFreq = 60 + (variant * 15);
                     
                     oscillator.type = 'square';
                     oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
                     
+                    // Realistic envelope for mechanical keyboard
                     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
                     gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.002);
                     gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.08);
@@ -599,6 +632,7 @@
                 }
             }
 
+            // Play random key sound
             playRandomKeySound() {
                 if (!soundEnabled) return;
                 
@@ -608,8 +642,10 @@
                 try {
                     const now = sound.context.currentTime;
                     
+                    // Stop any existing sound
                     sound.oscillator.stop();
                     
+                    // Recreate oscillator for new sound
                     const newOscillator = sound.context.createOscillator();
                     const newGainNode = sound.context.createGain();
                     
@@ -619,6 +655,7 @@
                     newOscillator.type = 'square';
                     newOscillator.frequency.setValueAtTime(baseFreq + randomVariance, now);
                     
+                    // Mechanical keyboard envelope
                     newGainNode.gain.setValueAtTime(0, now);
                     newGainNode.gain.linearRampToValueAtTime(0.12, now + 0.001);
                     newGainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.06 + (Math.random() * 0.03));
@@ -629,6 +666,7 @@
                     newOscillator.start();
                     newOscillator.stop(now + 0.1);
                     
+                    // Update reference
                     sound.oscillator = newOscillator;
                     sound.gainNode = newGainNode;
                     
@@ -637,6 +675,7 @@
                 }
             }
 
+            // Play spacebar sound (deeper)
             playSpaceSound() {
                 if (!soundEnabled) return;
                 
@@ -668,12 +707,13 @@
 
         // Create background particles
         function createParticles() {
-            const particlesCount = 30;
+            const particlesCount = 20;
             
             for (let i = 0; i < particlesCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
+                // Random position and animation delay
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 10}s`;
                 particle.style.animationDuration = `${10 + Math.random() * 10}s`;
@@ -827,22 +867,18 @@
             setTimeout(type, 1000);
         }
 
-        // CORREÇÃO: Restaurar o evento DOMContentLoaded
-        document.addEventListener("DOMContentLoaded", function() {
-            // Adicionar event listeners
-            pauseBtn.addEventListener('click', pauseAnimation);
-            resumeBtn.addEventListener('click', resumeAnimation);
-            skipBtn.addEventListener('click', skipAnimation);
-            soundBtn.addEventListener('click', toggleSound);
+        // Event listeners
+        document.addEventListener("DOMContentLoaded", init);
 
-            themeButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    changeTheme(btn.getAttribute('data-theme'));
-                });
+        pauseBtn.addEventListener('click', pauseAnimation);
+        resumeBtn.addEventListener('click', resumeAnimation);
+        skipBtn.addEventListener('click', skipAnimation);
+        soundBtn.addEventListener('click', toggleSound);
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeTheme(btn.getAttribute('data-theme'));
             });
-
-            // Inicializar a aplicação
-            init();
         });
     </script>
 </body>
