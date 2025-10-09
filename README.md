@@ -2,7 +2,7 @@
 
 <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" width="600" height="200" frameborder="0" title="Grok Typing Animation"></iframe>
 
-> _**Note**: The full interactive effect can be experienced at https://gerivanc.github.io/gerivanc/_
+> _**Note**: The full interactive effect can be experienced at [https://gerivanc.github.io/gerivanc/](https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html)_
 
 ---
 
