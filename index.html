@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gerivan Costa - Digital Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -130,6 +130,7 @@
         .badges img {
             margin: 5px;
             transition: transform 0.3s;
+            max-width: 100px;
         }
         
         .badges img:hover {
@@ -320,35 +321,7 @@
         .container > * {
             animation: fadeIn 0.6s ease-out;
         }
-        
-        /* Responsive design for mobile devices */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            h2 {
-                font-size: 1.8em;
-            }
-            
-            h3 {
-                font-size: 1.5em;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            iframe {
-                height: 300px;
-            }
-        }
-        
+
         /* Table of contents styling */
         .toc {
             background: rgba(0, 100, 255, 0.1);
@@ -365,12 +338,6 @@
         
         .toc li {
             break-inside: avoid;
-        }
-        
-        @media (max-width: 768px) {
-            .toc ul {
-                columns: 1;
-            }
         }
         
         /* Contact information section */
@@ -402,6 +369,133 @@
         .language-switcher a:hover {
             background: rgba(0, 191, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+        }
+
+        /* Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                margin: 0;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 0;
+                width: 100%;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+                line-height: 1.2;
+            }
+            
+            h2 {
+                font-size: 1.6em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            iframe {
+                height: 200px;
+            }
+            
+            .project-card {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 8px 0;
+                text-align: center;
+            }
+            
+            .badges img {
+                margin: 3px;
+                max-width: 80px;
+            }
+            
+            .toc ul {
+                columns: 1;
+            }
+            
+            /* Ajuste específico para o header */
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+            }
+            
+            /* Ajuste para tabelas em mobile */
+            .table {
+                font-size: 0.9em;
+            }
+            
+            .table th, .table td {
+                padding: 8px;
+            }
+
+            /* Ajuste para o layout central em mobile */
+            .center {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Correção adicional para telas muito pequenas */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+            
+            iframe {
+                height: 180px;
+            }
+            
+            .badges img {
+                max-width: 70px;
+                margin: 2px;
+            }
+
+            .project-card {
+                padding: 12px;
+            }
+
+            .note, .alert, .toc {
+                padding: 12px;
+            }
+
+            blockquote {
+                padding: 15px;
+            }
         }
     </style>
 </head>
