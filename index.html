@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerivan Costa - Digital Universe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #0080ff;
+            --accent-color: #ff0080;
+            --success-color: #00ff80;
+            --warning-color: #ffaa00;
+            --dark-bg: #0a0a14;
+            --darker-bg: #050510;
+            --card-bg: rgba(15, 25, 35, 0.7);
+            --card-border: rgba(0, 255, 255, 0.3);
+            --text-color: #e0f0ff;
+            --text-muted: #a0b0c0;
+            --neon-green: #00BFFF;
+            --neon-green-dark: #1E90FF;
+        }
+        
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Main body styling with gradient background */
+        body {
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+        
+        /* Main container with glassmorphism effect */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Header section styling */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        /* Typography hierarchy with Orbitron font for headings */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            font-weight: 500;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        h4 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* Paragraph and text styling */
+        p {
+            margin: 15px 0;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+        
+        /* Link styling with hover effects */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        a:hover {
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+        
+        /* Badges container for technology icons */
+        .badges {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .badges img {
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .badges img:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Iframe styling for embedded content */
+        iframe {
+            width: 100%;
+            height: 220px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
+        }
+        
+        /* Note box for important information */
+        .note {
+            background: rgba(0, 100, 255, 0.1);
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Blockquote styling for quotes */
+        blockquote {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--neon-green);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        
+        blockquote p {
+            margin: 0;
+            color: var(--text-color);
+        }
+        
+        /* Table styling */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .table th, .table td {
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: rgba(0, 100, 255, 0.2);
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: rgba(0, 50, 100, 0.1);
+        }
+        
+        .table tr:hover {
+            background-color: rgba(0, 150, 255, 0.1);
+        }
+        
+        /* List styling */
+        ul, ol {
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+            color: var(--text-muted);
+        }
+        
+        /* Center alignment utility */
+        .center {
+            text-align: center;
+        }
+        
+        /* Code block styling */
+        pre {
+            background: rgba(10, 20, 30, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Inline code styling */
+        code {
+            background: rgba(0, 100, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Button styles with gradient and hover effects */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px;
+            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            box-shadow: 0 6px 16px rgba(0, 191, 255, 0.6);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        /* Grid layout for statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stats-grid img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+        
+        /* Project card styling */
+        .project-card {
+            background: rgba(15, 25, 35, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        /* Alert box for important notices */
+        .alert {
+            background: rgba(255, 200, 0, 0.1);
+            border: 1px solid rgba(255, 200, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            color: var(--warning-color);
+        }
+        
+        .alert h3 {
+            color: var(--warning-color);
+            margin-top: 0;
+        }
+        
+        /* Glow effect for text */
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container > * {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            h3 {
+                font-size: 1.5em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            iframe {
+                height: 300px;
+            }
+        }
+        
+        /* Table of contents styling */
+        .toc {
+            background: rgba(0, 100, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .toc ul {
+            columns: 2;
+            margin: 0;
+        }
+        
+        .toc li {
+            break-inside: avoid;
+        }
+        
+        @media (max-width: 768px) {
+            .toc ul {
+                columns: 1;
+            }
+        }
+        
+        /* Contact information section */
+        .contact-info {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--neon-green);
+        }
+        
+        /* Language switcher styling */
+        .language-switcher {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .language-switcher a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 16px;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--neon-green);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .language-switcher a:hover {
+            background: rgba(0, 191, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glow">🔒 Review your account security knowledge with the typing animation 🚀</h1>
+            
+            <!-- Embedded typing animation iframe -->
+            <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
+            
+            <div class="note">
+                <p><strong>💡 Note:</strong> The full interactive effect can be experienced at <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
+            </div>
+        </header>
+
+        <!-- Technology badges section -->
+        <div class="badges">
+            <img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows">
+            <img src="https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+            <img src="https://img.shields.io/badge/kali_linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" alt="Kali Linux">
+            <img src="https://img.shields.io/badge/parrot_os-00B7EB?style=flat-square&logo=parrot&logoColor=white" alt="Parrot OS">
+            <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python">
+            <img src="https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++">
+            <img src="https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white" alt="g++">
+            <img src="https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white" alt="Git">
+            <img src="https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white" alt="CMake">
+            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="License">
+            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Profile Views">
+        </div>
+
+        <!-- Main introduction -->
+        <p>Dive into the digital grid with my <strong>Typing Animation</strong>, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features <strong>102 unique witty phrases</strong> about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.</p>
+
+        <!-- Typing animation project card -->
+        <div class="project-card">
+            <h3>🔒 Why it's awesome:</h3>
+            <ul>
+                <li>Highlights password security with a dash of humor, mixing phrases in English and Portuguese.</li>
+                <li>Features a dynamic typing effect in a terminal-style interface.</li>
+                <li>Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="btn">📸 Watch it live</a>
+                <a href="https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html" class="btn btn-secondary">📂 Source code</a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 15px;"><em>Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!</em></p>
+        </div>
+
+        <!-- Welcome section -->
+        <h2>👋 Welcome to My Digital Universe</h2>
+        
+        <blockquote>
+            <p>"Dive into the digital universe. Follow back or get out!"</p>
+        </blockquote>
+
+        <!-- Language selection -->
+        <div class="language-switcher">
+            <strong>🌐 Language Support:</strong>
+            <a href="#">🇺🇸 English — You're here!</a>
+            <a href="https://github.com/gerivanc/gerivanc/blob/main/README.pt.md">🇧🇷 Portuguese Version</a>
+        </div>
+
+        <p>I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
+        
+        <p>Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!</p>
+
+        <!-- Upcoming project alert -->
+        <div class="alert">
+            <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
+            <p>A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.</p>
+            <p><strong>📢 Keep your eyes peeled—this innovation will spark conversations! 💥</strong></p>
+        </div>
+
+        <!-- Table of contents -->
+        <div class="toc">
+            <h3>📌 Table of Contents</h3>
+            <ul>
+                <li><a href="#featured-projects">🔐 Featured Projects</a></li>
+                <li><a href="#github-stats">📊 GitHub Stats</a></li>
+                <li><a href="#profile-summary">🎯 Profile Summary</a></li>
+                <li><a href="#contact">📬 Contact</a></li>
+                <li><a href="#license">📜 License</a></li>
+                <li><a href="#language-support">🌐 Language Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Featured projects section -->
+        <h2 id="featured-projects">🔐 Featured Projects</h2>
+
+        <!-- EntroPy Password Generator project card -->
+        <div class="project-card">
+            <h3>🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python</h3>
+            <p>EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.</p>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🔒 <strong>Entropy-Driven Security</strong>: Uses real entropy to avoid predictable patterns.</li>
+                <li>🧪 <strong>Custom Algorithms</strong>: Designed for cryptographic strength and uniqueness.</li>
+                <li>🧠 <strong>Security-Oriented Design</strong>: Ideal for developers, researchers, and cybersecurity professionals.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repository</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 View the code</a>
+            </div>
+            
+            <blockquote>
+                <p>"Security isn't just a feature — it's the foundation."</p>
+            </blockquote>
+        </div>
+
+        <!-- EntroPy Web Version project card -->
+        <div class="project-card">
+            <h3>🌐 EntroPy Password Generator - Web Version (Browser-Based Password Generator)</h3>
+            <p>EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.</p>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🎨 <strong>Three Block Interface</strong>: Predefined modes (1-20) + custom configuration</li>
+                <li>📱 <strong>Fully Responsive</strong>: Works perfectly on desktop and mobile devices</li>
+                <li>🔒 <strong>Real-time Entropy Calculation</strong>: Visual strength indicator and security warnings</li>
+                <li>⚡ <strong>Instant Generation</strong>: Fast, client-side password generation</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html" class="btn">🌍 Live Demo</a>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repository</a>
+                <a href="https://gerivanc.github.io/entropy-password-web/web/readme.html" class="btn btn-secondary">📚 Interactive Docs</a>
+            </div>
+            
+            <blockquote>
+                <p>"Enterprise-grade password security, now accessible in your browser."</p>
+            </blockquote>
+        </div>
+
+        <!-- DNAPass project card -->
+        <div class="project-card">
+            <h3>🧬 DNAPass Password Generator — Genetic Password Generator</h3>
+            <p>DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.</p>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🧬 <strong>Biological Encoding</strong>: Converts DNA sequences into password strings.</li>
+                <li>🔐 <strong>Unique & Complex Output</strong>: Each password is biologically inspired and mathematically robust.</li>
+                <li>🌐 <strong>Cross-Disciplinary Innovation</strong>: Ideal for bioinformatics, research labs, and security enthusiasts.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repository</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 View the code</a>
+            </div>
+            
+            <blockquote>
+                <p>"Where biology meets cybersecurity — and innovation begins."</p>
+            </blockquote>
+        </div>
+
+        <!-- GitHub Statistics section -->
+        <h2 id="github-stats">📊 GitHub Stats</h2>
+        <p>Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!</p>
+
+        <div class="center">
+            <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+        </div>
+
+        <div class="stats-grid">
+            <div>
+                <img alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+            </div>
+            <div>
+                <img alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
+            </div>
+        </div>
+
+        <!-- Profile summary section -->
+        <h2 id="profile-summary">🎯 Profile Summary</h2>
+        <p>A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.</p>
+
+        <div class="center">
+            <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+        </div>
+
+        <div class="stats-grid">
+            <div>
+                <img alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
+            </div>
+            <div>
+                <img alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
+            </div>
+        </div>
+
+        <!-- Contact information section -->
+        <h2 id="contact">📬 Contact</h2>
+        
+        <div class="contact-info">
+            <p>If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:</p>
+            <p>📫 Reach me at: <strong>dean-grumbly-plop@duck.com</strong></p>
+            <p>🌍 Location: Brazil</p>
+            <p>🧠 Open to collaborations and research projects</p>
+        </div>
+
+        <!-- License information -->
+        <h2 id="license">📜 License</h2>
+        <p>This repository is licensed under the <a href="https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md">MIT License</a>.</p>
+
+        <!-- Language support section -->
+        <h2 id="language-support">🌐 Language Support</h2>
+        <div class="language-switcher">
+            <a href="#">🇺🇸 English — You're here!</a>
+            <a href="https://github.com/gerivanc/gerivanc/blob/main/README.pt.md">🇧🇷 Portuguese Version</a>
+        </div>
+
+        <!-- Final quote -->
+        <blockquote>
+            <p>"Code with purpose. Build with passion. Share with the world."</p>
+        </blockquote>
+
+        <!-- Copyright footer -->
+        <div class="center">
+            <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
+        </div>
+    </div>
+</body>
+</html>
