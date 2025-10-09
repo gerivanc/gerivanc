@@ -6,6 +6,20 @@
 
 ---
 
+![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Kali Linux](https://img.shields.io/badge/kali_linux-557C94?style=flat-square&logo=kali-linux&logoColor=white)
+![Parrot OS](https://img.shields.io/badge/parrot_os-00B7EB?style=flat-square&logo=parrot&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)
+![C++](https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![g++](https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white)
+![Git](https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white)
+![CMake](https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white)
+![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
+
+---
+
 Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **102 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
 
 ---
@@ -21,6 +35,8 @@ Dive into the digital grid with my **Typing Animation**, a neon-filled display i
 
 Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
 
+---
+
 # 👋 Welcome to My Digital Universe
 
 > _"Dive into the digital universe. Follow back or get out!"_
@@ -30,20 +46,6 @@ Enhance your digital world with this animation, keep your accounts hack-proof, a
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
 
 Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!
-
----
-
-![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
-![Linux](https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Kali Linux](https://img.shields.io/badge/kali_linux-557C94?style=flat-square&logo=kali-linux&logoColor=white)
-![Parrot OS](https://img.shields.io/badge/parrot_os-00B7EB?style=flat-square&logo=parrot&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)
-![C++](https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
-![g++](https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white)
-![Git](https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white)
-![CMake](https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white)
-![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
 
 ---
 
@@ -66,7 +68,7 @@ A groundbreaking Python 🐍 project is in the works—a revolutionary tool for 
 
 ## 🔐 Featured Projects
 
-### 🧠 EntroPy — Entropy-Based Password Generator
+### 🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python
 EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.
 
 ---
@@ -82,7 +84,23 @@ EntroPy is a cutting-edge password generator that leverages real entropy to prod
 
 ---
 
-### 🧬 DNAPass — Genetic Password Generator
+### 🌐 EntroPy Password Generator - Web Version **(Browser-Based Password Generator)**
+EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.
+
+**Key Features:**
+- 🎨 **Three Block Interface**: Predefined modes (1-20) + custom configuration
+- 📱 **Fully Responsive**: Works perfectly on desktop and mobile devices
+- 🔒 **Real-time Entropy Calculation**: Visual strength indicator and security warnings
+- ⚡ **Instant Generation**: Fast, client-side password generation
+- 🌍 **Live Demo**: [Try it now!](https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html)
+- 📦 **Repository**: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
+- 📚 **Interactive Docs**: [Complete Documentation](https://gerivanc.github.io/entropy-password-web/web/readme.html)
+
+> _“Enterprise-grade password security, now accessible in your browser.”_
+
+---
+
+### 🧬 DNAPass Password Generator — Genetic Password Generator
 DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.
 
 **Key Features:**
