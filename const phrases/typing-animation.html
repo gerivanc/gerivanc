@@ -6,12 +6,12 @@
     <title>Typing Animation - Security Tips</title>
     <style>
         :root {
-            --primary-color: #00ffff; /* CYAN as primary color */
+            --primary-color: #00ffff;
             --background-dark: #1a1a1a;
             --background-gradient: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            --text-color: #00ffff; /* CYAN */
+            --text-color: #00ffff;
             --container-bg: rgba(0, 0, 0, 0.6);
-            --shadow-color: rgba(0, 255, 255, 0.4); /* CYAN */
+            --shadow-color: rgba(0, 255, 255, 0.4);
         }
 
         [data-theme="light"] {
@@ -24,12 +24,12 @@
         }
 
         [data-theme="green"] {
-            --primary-color: #00ff88; /* GREEN instead of cyan */
+            --primary-color: #00ff88;
             --background-dark: #000000;
             --background-gradient: linear-gradient(135deg, #000000, #003333);
-            --text-color: #00ff88; /* VERDE */
+            --text-color: #00ff88;
             --container-bg: rgba(0, 0, 0, 0.7);
-            --shadow-color: rgba(0, 255, 136, 0.4); /* VERDE */
+            --shadow-color: rgba(0, 255, 136, 0.4);
         }
 
         [data-theme="orange"] {
@@ -104,16 +104,16 @@
             transform: scale(1.1);
         }
 
-        .theme-cyan { background: #00ffff; } /* CYAN - first button */
+        .theme-cyan { background: #00ffff; }
         .theme-blue { background: #0066cc; }
-        .theme-green { background: #00ff88; } /* VERDE */
+        .theme-green { background: #00ff88; }
         .theme-orange { background: #ff7b25; }
 
         .typing-container {
             font-size: clamp(1.8rem, 3vw, 3rem);
             color: var(--text-color);
             text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-            white-space: normal;
+            white-space: pre-wrap; /* CORREÇÃO: Alterado para pre-wrap */
             overflow: hidden;
             border-right: 3px solid var(--primary-color);
             width: 85%;
@@ -124,9 +124,12 @@
             border-radius: 8px;
             box-shadow: 0 0 15px var(--shadow-color);
             word-wrap: break-word;
+            word-break: break-word; /* CORREÇÃO: Adicionado */
             animation: blink 1s step-end infinite;
             line-height: 1.4;
             transition: all 0.5s ease;
+            overflow-wrap: break-word; /* CORREÇÃO: Adicionado */
+            hyphens: auto; /* CORREÇÃO: Adicionado */
         }
 
         @keyframes blink {
@@ -153,7 +156,6 @@
             justify-content: center;
         }
 
-        /* Progress Bar Styles */
         .progress-container {
             width: 100%;
             height: 6px;
@@ -198,7 +200,6 @@
             100% { background-position: 20px 0; }
         }
 
-        /* Visual Effects */
         .particles {
             position: fixed;
             top: 0;
@@ -236,7 +237,6 @@
             }
         }
 
-        /* Text completion effect */
         .text-complete {
             animation: completeGlow 0.5s ease;
         }
@@ -255,13 +255,19 @@
             }
         }
 
-        /* Media query for mobile devices */
+        /* CORREÇÕES PARA MOBILE */
         @media (max-width: 768px) {
             .typing-container {
                 font-size: clamp(1.5rem, 4vw, 2.5rem);
                 padding: 15px;
                 width: 90%;
                 min-width: 280px;
+                white-space: pre-wrap !important;
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+                min-height: 150px;
+                display: flex;
+                align-items: center;
             }
             
             .controls {
@@ -278,10 +284,19 @@
                 gap: 10px;
             }
         }
+
+        @media (max-width: 480px) {
+            .typing-container {
+                font-size: clamp(1.2rem, 4vw, 2rem);
+                padding: 12px;
+                width: 95%;
+                min-width: 250px;
+                min-height: 120px;
+            }
+        }
     </style>
 </head>
 <body data-theme="dark">
-    <!-- Particles container for background effect -->
     <div class="particles" id="particles"></div>
     
     <div class="controls">
@@ -553,28 +568,23 @@
                 this.loadSounds();
             }
 
-            // Load keyboard sounds
             loadSounds() {
-                // Create realistic mechanical keyboard sounds using Web Audio API
                 for (let i = 0; i < 4; i++) {
                     this.sounds.push(this.createKeySound(i));
                 }
             }
 
-            // Create individual key sound
             createKeySound(variant) {
                 try {
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     const oscillator = audioContext.createOscillator();
                     const gainNode = audioContext.createGain();
                     
-                    // Different frequencies for different key types
                     const baseFreq = 60 + (variant * 15);
                     
                     oscillator.type = 'square';
                     oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
                     
-                    // Realistic envelope for mechanical keyboard
                     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
                     gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.002);
                     gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.08);
@@ -589,7 +599,6 @@
                 }
             }
 
-            // Play random key sound
             playRandomKeySound() {
                 if (!soundEnabled) return;
                 
@@ -599,10 +608,8 @@
                 try {
                     const now = sound.context.currentTime;
                     
-                    // Stop any existing sound
                     sound.oscillator.stop();
                     
-                    // Recreate oscillator for new sound
                     const newOscillator = sound.context.createOscillator();
                     const newGainNode = sound.context.createGain();
                     
@@ -612,7 +619,6 @@
                     newOscillator.type = 'square';
                     newOscillator.frequency.setValueAtTime(baseFreq + randomVariance, now);
                     
-                    // Mechanical keyboard envelope
                     newGainNode.gain.setValueAtTime(0, now);
                     newGainNode.gain.linearRampToValueAtTime(0.12, now + 0.001);
                     newGainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.06 + (Math.random() * 0.03));
@@ -623,7 +629,6 @@
                     newOscillator.start();
                     newOscillator.stop(now + 0.1);
                     
-                    // Update reference
                     sound.oscillator = newOscillator;
                     sound.gainNode = newGainNode;
                     
@@ -632,7 +637,6 @@
                 }
             }
 
-            // Play spacebar sound (deeper)
             playSpaceSound() {
                 if (!soundEnabled) return;
                 
@@ -670,7 +674,6 @@
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Random position and animation delay
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 10}s`;
                 particle.style.animationDuration = `${10 + Math.random() * 10}s`;
@@ -824,18 +827,22 @@
             setTimeout(type, 1000);
         }
 
-        // Event listeners
-        document.addEventListener("DOMContentLoaded", init);
+        // CORREÇÃO: Restaurar o evento DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Adicionar event listeners
+            pauseBtn.addEventListener('click', pauseAnimation);
+            resumeBtn.addEventListener('click', resumeAnimation);
+            skipBtn.addEventListener('click', skipAnimation);
+            soundBtn.addEventListener('click', toggleSound);
 
-        pauseBtn.addEventListener('click', pauseAnimation);
-        resumeBtn.addEventListener('click', resumeAnimation);
-        skipBtn.addEventListener('click', skipAnimation);
-        soundBtn.addEventListener('click', toggleSound);
-
-        themeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                changeTheme(btn.getAttribute('data-theme'));
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    changeTheme(btn.getAttribute('data-theme'));
+                });
             });
+
+            // Inicializar a aplicação
+            init();
         });
     </script>
 </body>
