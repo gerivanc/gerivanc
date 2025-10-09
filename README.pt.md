@@ -3,14 +3,6 @@ Mergulhe na grade digital e veja meus commits de código formarem uma serpente n
 
 ![Gráfico de Atividade GitHub do BEPb](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
 
-# 👋 Bem-vindo ao Meu Universo Digital
-
-> _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
-
-Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
-
-Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
-
 ---
 
 ![Windows](https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white)
@@ -24,6 +16,16 @@ Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para
 ![CMake](https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white)
 ![Licença](https://img.shields.io/badge/licença-MIT-green?style=flat-square&logo=balance-scale&logoColor=white)
 ![Visualizações do Perfil](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
+
+---
+
+# 👋 Bem-vindo ao Meu Universo Digital
+
+> _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
+
+Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
+
+Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
 
 ---
 
@@ -60,9 +62,22 @@ EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir
 
 > _“Segurança não é apenas uma funcionalidade — é a base.”_
 
-![Saída com comprimento 15](https://drive.google.com/uc?export=download&id=1PIe4WGdyGwV1g5t18F7JQFYBQctfpoxO)
+---
 
-> *Nota*: Captura de tela usando o comando: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Imagem de demonstração do resultado da função.
+### 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
+O EntroPy Web traz o poderoso gerador de senhas baseado em entropia diretamente para o seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação original em Python, oferecendo uma interface gráfica intuitiva acessível de qualquer dispositivo.
+
+Principais Recursos:
+
+- 🎨 Interface em Três Blocos: Modos predefinidos (1–20) + configuração personalizada.
+- 📱 Totalmente Responsivo: Funciona perfeitamente em desktops e dispositivos móveis.
+- 🔒 Cálculo de Entropia em Tempo Real: Indicador visual de força e alertas de segurança.
+- ⚡ Geração Instantânea: Geração rápida de senhas no lado do cliente.
+- 🌍 Demo ao Vivo: [Experimente agora!](https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html)
+- 📦 Repositório: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
+- 📚 Documentação Interativa: [Documentação Completa ](https://gerivanc.github.io/entropy-password-web/web/readme.html)
+
+> _“Segurança de senhas em nível empresarial, agora acessível no seu navegador.”_
 
 ---
 
@@ -77,10 +92,6 @@ DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas 
 - 💾 **Veja o código em ação**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
 > _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
-
-![Saída com comprimento 45](https://drive.google.com/uc?export=download&id=18jNvWh4z6dM6rJMb9XtG6UKX9fJPEq4v)
-
-> *Nota*: Captura de tela usando o comando: `echo "45" | ./dnapass_generator`. Imagem de demonstração do resultado da função.
 
 ---
 
