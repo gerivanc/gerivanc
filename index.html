@@ -371,6 +371,69 @@
             box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
         }
 
+        /* Welcome section styling */
+        .welcome-card {
+            background: rgba(15, 25, 35, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .welcome-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            opacity: 0.7;
+        }
+        
+        .welcome-quote {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--neon-green);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .welcome-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 4em;
+            color: var(--neon-green);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .star-icon {
+            display: inline-block;
+            animation: pulse 2s infinite;
+            margin-right: 5px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -411,6 +474,11 @@
             
             .project-card {
                 padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .welcome-card {
+                padding: 20px;
                 margin: 15px 0;
             }
             
@@ -488,6 +556,10 @@
             .project-card {
                 padding: 12px;
             }
+            
+            .welcome-card {
+                padding: 15px;
+            }
 
             .note, .alert, .toc {
                 padding: 12px;
@@ -549,20 +621,21 @@
         <!-- Welcome section -->
         <h2>👋 Welcome to My Digital Universe</h2>
         
-        <blockquote>
-            <p>"Dive into the digital universe. Follow back or get out!"</p>
-        </blockquote>
-
-        <!-- Language selection -->
-        <div class="language-switcher">
-            <strong>🌐 Language Support:</strong>
-            <a href="#">🇺🇸 English — You're here!</a>
-            <a href="https://github.com/gerivanc/gerivanc/blob/main/README.pt.md">🇧🇷 Portuguese Version</a>
+        <div class="welcome-card">
+            <div class="welcome-quote">
+                <p>"Dive into the digital universe. Follow back or get out!"</p>
+            </div>
+            
+            <p>I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
+            
+            <p>Did you like a project? <span class="star-icon">🌟</span> Give it a star! I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!</p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌐 <strong>Language Support:</strong> English (You're here!) | <a href="https://github.com/gerivanc/gerivanc/blob/main/README.pt.md">Português</a></p>
+                </div>
+            </div>
         </div>
-
-        <p>I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
-        
-        <p>Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!</p>
 
         <!-- Upcoming project alert -->
         <div class="alert">
