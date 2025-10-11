@@ -253,6 +253,7 @@
             background: rgba(0, 100, 255, 0.1);
             border-radius: 4px;
             border: 1px solid var(--card-border);
+            text-align: center;
         }
         
         /* Blockquote styling for quotes */
@@ -531,32 +532,6 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
-        }
-
-        /* Project Filters */
-        .project-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 30px 0;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: rgba(0, 100, 255, 0.1);
-            border: 1px solid var(--card-border);
-            border-radius: 25px;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Exo 2', sans-serif;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-color);
-            color: var(--dark-bg);
-            box-shadow: 0 0 15px var(--primary-color);
         }
 
         /* Timeline */
@@ -846,16 +821,6 @@
                 left: 40px !important;
             }
             
-            .project-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .filter-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-            
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
@@ -871,6 +836,7 @@
             
             .note p {
                 margin-bottom: 8px;
+                text-align: center;
             }
         }
 
@@ -974,17 +940,8 @@
             
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
-        
-        <!-- Note section with mobile-optimized link -->
         <div class="note">
-            <p><strong>💡 Note:</strong> For the full interactive experience, visit: 
-                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="desktop-link">
-                    https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
-                </a>
-            </p>
-            <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-mobile-link">
-                https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
-            </a>
+            <p><strong>💡 Note:</strong> For the full interactive experience, visit: <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
         </div>
         </header>
 
@@ -1040,16 +997,6 @@
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌐 <strong>Language Support:</strong> English (You're here!) | <a href="https://github.com/gerivanc/gerivanc/blob/main/README.pt.md">Português</a></p>
                 </div>
             </div>
-        </div>
-
-        <!-- Resto do código permanece igual -->
-        <!-- Project Filters -->
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="security">Security</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="python">Python</button>
-            <button class="filter-btn" data-filter="cpp">C++</button>
         </div>
 
         <!-- Interactive Terminal -->
@@ -1395,37 +1342,6 @@
                 ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
             }
         }
-
-        // Project Filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card[data-categories]');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.dataset.filter;
-                
-                // Update active filter button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.categories.includes(filter)) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
 
         // Animated Stats Counter - Updated with realistic numbers
         function animateValue(element, start, end, duration) {
