@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00ffff">
+    <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
     <title>Gerivan Costa - Digital Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
     <style>
         /* CSS Variables for consistent theming */
         :root {
@@ -21,6 +24,39 @@
             --text-muted: #a0b0c0;
             --neon-green: #00BFFF;
             --neon-green-dark: #1E90FF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --primary-color: #0080ff;
+            --secondary-color: #0055aa;
+            --accent-color: #ff0066;
+            --success-color: #00aa55;
+            --warning-color: #cc8800;
+            --dark-bg: #f0f5ff;
+            --darker-bg: #e0eaff;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(0, 128, 255, 0.3);
+            --text-color: #1a1a2e;
+            --text-muted: #4a5568;
+            --neon-green: #0080ff;
+            --neon-green-dark: #0055aa;
+        }
+
+        [data-theme="matrix"] {
+            --primary-color: #00ff41;
+            --secondary-color: #008f39;
+            --accent-color: #ff003c;
+            --success-color: #00ff41;
+            --warning-color: #ffff00;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --card-bg: rgba(10, 15, 10, 0.8);
+            --card-border: rgba(0, 255, 65, 0.3);
+            --text-color: #00ff41;
+            --text-muted: #008f39;
+            --neon-green: #00ff41;
+            --neon-green-dark: #008f39;
         }
         
         /* Reset and base styles */
@@ -43,6 +79,13 @@
                 radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
             color: var(--text-color);
             min-height: 100vh;
+            transition: var(--transition);
+        }
+
+        body.matrix-theme {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 20%);
         }
         
         /* Main container with glassmorphism effect */
@@ -55,6 +98,7 @@
             box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
             border: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
         
         /* Header section styling */
@@ -65,18 +109,61 @@
             border-bottom: 1px solid rgba(0, 255, 255, 0.2);
         }
         
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: var(--card-bg);
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-btn.active {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .theme-cyber { background: linear-gradient(45deg, #00ffff, #0080ff); }
+        .theme-light { background: linear-gradient(45deg, #0080ff, #66b3ff); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #00ff41, #008f39); }
+        
         /* Typography hierarchy with Orbitron font for headings */
         h1, h2, h3, h4 {
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
             text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+            transition: var(--transition);
         }
         
         h1 {
-            font-size: 3em;
+            font-size: 2.8em;
             margin-bottom: 10px;
             font-weight: 700;
             letter-spacing: 1px;
+            line-height: 1.2;
         }
         
         h2 {
@@ -108,13 +195,14 @@
             margin: 15px 0;
             color: var(--text-color);
             font-size: 1.1em;
+            transition: var(--transition);
         }
         
         /* Link styling with hover effects */
         a {
             color: var(--primary-color);
             text-decoration: none;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
         
         a:hover {
@@ -247,7 +335,7 @@
             font-weight: 600;
             margin: 10px;
             box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
-            transition: all 0.3s;
+            transition: var(--transition);
             text-decoration: none;
         }
         
@@ -283,7 +371,7 @@
             margin: 25px 0;
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
-            transition: all 0.3s;
+            transition: var(--transition);
         }
         
         .project-card:hover {
@@ -363,7 +451,7 @@
             background: rgba(0, 191, 255, 0.1);
             border: 1px solid var(--neon-green);
             border-radius: 5px;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
         
         .language-switcher a:hover {
@@ -379,7 +467,7 @@
             margin: 25px 0;
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
-            transition: all 0.3s;
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
@@ -433,7 +521,237 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-        
+
+        /* Project Filters */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: rgba(0, 100, 255, 0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            width: 45%;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* Terminal */
+        .terminal {
+            background: rgba(10, 10, 20, 0.9);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .terminal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+        }
+
+        .terminal-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .terminal-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .control-close { background: #ff5f56; }
+        .control-minimize { background: #ffbd2e; }
+        .control-maximize { background: #27c93f; }
+
+        .terminal-content {
+            line-height: 1.5;
+        }
+
+        .terminal-prompt {
+            color: var(--success-color);
+        }
+
+        .terminal-command {
+            color: var(--primary-color);
+        }
+
+        /* Animated Stats */
+        .stats-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Matrix Rain Effect */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        body.matrix-theme #matrix-canvas {
+            opacity: 0.3;
+        }
+
+        /* TV Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 25s linear infinite;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8em;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .hover-glow:hover {
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Install Prompt */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.3);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .install-prompt.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -451,6 +769,10 @@
             h1 {
                 font-size: 2em;
                 line-height: 1.2;
+            }
+            
+            .marquee-content {
+                font-size: 1.8em;
             }
             
             h2 {
@@ -498,26 +820,33 @@
                 columns: 1;
             }
             
-            /* Ajuste específico para o header */
-            header {
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-            }
-            
-            /* Ajuste para tabelas em mobile */
-            .table {
-                font-size: 0.9em;
-            }
-            
-            .table th, .table td {
-                padding: 8px;
-            }
-
-            /* Ajuste para o layout central em mobile */
-            .center {
-                display: flex;
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
                 flex-direction: column;
-                gap: 10px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                left: 40px !important;
+            }
+            
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .stats-dashboard {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -533,6 +862,10 @@
             
             h1 {
                 font-size: 1.8em;
+            }
+            
+            .marquee-content {
+                font-size: 1.5em;
             }
             
             h2 {
@@ -572,14 +905,36 @@
     </style>
 </head>
 <body>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Cyber Theme">🔷</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Light Theme">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme">🟩</div>
+    </div>
+
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <p>Install this app for better experience?</p>
+        <button class="btn" id="installBtn">Install</button>
+        <button class="btn btn-secondary" id="dismissBtn">Dismiss</button>
+    </div>
+
     <div class="container">
         <header>
-            <h1 class="glow">🔒 Review your account security knowledge with the typing animation 🚀</h1>
+            <!-- TV Marquee Title -->
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    🔒 Review your account security knowledge with the typing animation 🚀
+                </div>
+            </div>
             
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
         <div class="note">
-            <p><strong>💡 Note:</strong> For the full interactive experience, visit: <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
+            <p><strong>💡 Note:</strong> For the full interactive experience, visit: <a href="Note: For the full interactive">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
         </div>
         </header>
 
@@ -602,7 +957,7 @@
         <p>Dive into the digital grid with my <strong>Typing Animation</strong>, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features <strong>102 unique witty phrases</strong> about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.</p>
 
         <!-- Typing animation project card -->
-        <div class="project-card">
+        <div class="project-card" data-categories="web security">
             <h3>🔒 Why it's awesome:</h3>
             <ul>
                 <li>Highlights password security with a dash of humor, mixing phrases in English and Portuguese.</li>
@@ -637,6 +992,88 @@
             </div>
         </div>
 
+        <!-- Project Filters -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="cpp">C++</button>
+        </div>
+
+        <!-- Interactive Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-title">gerivan@digital-universe:~</div>
+                <div class="terminal-controls">
+                    <div class="terminal-control control-close"></div>
+                    <div class="terminal-control control-minimize"></div>
+                    <div class="terminal-control control-maximize"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></div>
+                <div>gerivan-costa | Security Developer | Open Source Enthusiast</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projects/</span></div>
+                <div>entropy-password-generator/ dnapass-generator/ typing-animation/</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat skills.txt</span></div>
+                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
+            </div>
+        </div>
+
+        <!-- Animated Stats Dashboard -->
+        <div class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-number" id="projectsCount">0</div>
+                <div class="stat-label">Public Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="commitsCount">0</div>
+                <div class="stat-label">Total Commits</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="reposCount">0</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="contributionsCount">0</div>
+                <div class="stat-label">Contributions</div>
+            </div>
+        </div>
+
+        <!-- Project Timeline -->
+        <h2>📅 Project Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">April 2025 - Present</div>
+                <h4>EntroPy Password Generator</h4>
+                <p>Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.</p>
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">July 2025 - Present</div>
+                <h4>GitHub Profile & Digital Universe</h4>
+                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
+                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">July 2025 - Present</div>
+                <h4>DNAPass Password Generator</h4>
+                <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">October 2025 - Present</div>
+                <h4>EntroPy Web Version</h4>
+                <p>Browser-based implementation of EntroPy password generator with responsive design and real-time entropy calculation.</p>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+        </div>
+
         <!-- Upcoming project alert -->
         <div class="alert">
             <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
@@ -661,7 +1098,7 @@
         <h2 id="featured-projects">🔐 Featured Projects</h2>
 
         <!-- EntroPy Password Generator project card -->
-        <div class="project-card">
+        <div class="project-card" data-categories="security python">
             <h3>🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python</h3>
             <p>EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.</p>
             
@@ -683,7 +1120,7 @@
         </div>
 
         <!-- EntroPy Web Version project card -->
-        <div class="project-card">
+        <div class="project-card" data-categories="security web">
             <h3>🌐 EntroPy Password Generator - Web Version (Browser-Based Password Generator)</h3>
             <p>EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.</p>
             
@@ -707,7 +1144,7 @@
         </div>
 
         <!-- DNAPass project card -->
-        <div class="project-card">
+        <div class="project-card" data-categories="security cpp">
             <h3>🧬 DNAPass Password Generator — Genetic Password Generator</h3>
             <p>DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.</p>
             
@@ -826,6 +1263,272 @@
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
             <p><strong>Profile view Github Pages Copyright © 2025</strong></p>
         </div>
-    </div> <!-- Close container div - English version -->
+    </div>
+
+    <script>
+        // Theme Switching
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        const matrixCanvas = document.getElementById('matrix-canvas');
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                
+                // Update active button
+                themeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update body theme
+                body.setAttribute('data-theme', theme);
+                
+                // Handle matrix theme
+                if (theme === 'matrix') {
+                    body.classList.add('matrix-theme');
+                    initMatrixRain();
+                } else {
+                    body.classList.remove('matrix-theme');
+                    stopMatrixRain();
+                }
+            });
+        });
+
+        // Matrix Rain Effect
+        function initMatrixRain() {
+            const canvas = matrixCanvas;
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Matrix characters
+            const chars = "01010101010101010101010101010101";
+            const charArray = chars.split("");
+            const font_size = 14;
+            const columns = canvas.width / font_size;
+            const drops = [];
+            
+            // Initialize drops
+            for (let x = 0; x < columns; x++) {
+                drops[x] = Math.floor(Math.random() * canvas.height / font_size);
+            }
+            
+            function draw() {
+                // Semi-transparent black background for trail effect
+                ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = "#00ff41";
+                ctx.font = font_size + "px monospace";
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * font_size, drops[i] * font_size);
+                    
+                    if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            // Store interval ID to stop later
+            matrixRainInterval = setInterval(draw, 35);
+        }
+
+        function stopMatrixRain() {
+            if (matrixRainInterval) {
+                clearInterval(matrixRainInterval);
+                const ctx = matrixCanvas.getContext('2d');
+                ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+            }
+        }
+
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card[data-categories]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                // Update active filter button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.categories.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Animated Stats Counter - Updated with realistic numbers
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Initialize stats animation when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Updated stats based on your GitHub profile
+                    animateValue(document.getElementById('projectsCount'), 0, 4, 2000);
+                    animateValue(document.getElementById('commitsCount'), 0, 127, 2000);
+                    animateValue(document.getElementById('reposCount'), 0, 4, 2000);
+                    animateValue(document.getElementById('contributionsCount'), 0, 86, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats-dashboard'));
+
+        // Terminal Typing Animation
+        const commands = [
+            "git status --short",
+            "python --version",
+            "whoami",
+            "ls -la",
+            "cat README.md",
+            "echo 'Hello World!'"
+        ];
+
+        let currentCommand = 0;
+        let currentChar = 0;
+        const typingElement = document.getElementById('typing-command');
+
+        function typeCommand() {
+            if (currentChar < commands[currentCommand].length) {
+                typingElement.textContent += commands[currentCommand].charAt(currentChar);
+                currentChar++;
+                setTimeout(typeCommand, 100);
+            } else {
+                setTimeout(eraseCommand, 1000);
+            }
+        }
+
+        function eraseCommand() {
+            if (currentChar > 0) {
+                typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
+                currentChar--;
+                setTimeout(eraseCommand, 50);
+            } else {
+                currentCommand = (currentCommand + 1) % commands.length;
+                setTimeout(typeCommand, 500);
+            }
+        }
+
+        // Start typing animation
+        setTimeout(typeCommand, 2000);
+
+        // PWA Installation
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+        const dismissBtn = document.getElementById('dismissBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            setTimeout(() => {
+                installPrompt.classList.add('show');
+            }, 3000);
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installPrompt.classList.remove('show');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        dismissBtn.addEventListener('click', () => {
+            installPrompt.classList.remove('show');
+        });
+
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Micro-interactions
+        document.querySelectorAll('.hover-glow').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.textShadow = `0 0 10px ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.textShadow = '';
+            });
+        });
+
+        // Responsive canvas resize
+        window.addEventListener('resize', () => {
+            if (body.classList.contains('matrix-theme')) {
+                matrixCanvas.width = window.innerWidth;
+                matrixCanvas.height = window.innerHeight;
+            }
+        });
+
+        // Add loading animation to images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1)';
+            });
+            
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.9)';
+            img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+
+        // Marquee animation pause on hover
+        const marquee = document.querySelector('.marquee-content');
+        if (marquee) {
+            marquee.addEventListener('mouseenter', () => {
+                marquee.style.animationPlayState = 'paused';
+            });
+            
+            marquee.addEventListener('mouseleave', () => {
+                marquee.style.animationPlayState = 'running';
+            });
+        }
+    </script>
 </body>
 </html>
