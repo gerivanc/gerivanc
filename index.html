@@ -432,19 +432,40 @@
         }
         
         .toc ul {
-            columns: 2;
+            columns: 1;
             margin: 0;
+            list-style: none;
+            padding-left: 0;
         }
         
         .toc li {
             break-inside: avoid;
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .toc a:hover {
+            background: rgba(0, 191, 255, 0.1);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
         }
         
         /* Contact information section */
         .contact-info {
-            text-align: center;
+            text-align: left;
             margin: 30px 0;
-            padding: 20px;
+            padding: 25px;
             background: rgba(0, 191, 255, 0.1);
             border-radius: 8px;
             border: 1px solid var(--neon-green);
@@ -838,48 +859,6 @@
             100% { transform: translateX(100%); }
         }
 
-        /* 3D Cube Animation - REMOVED: User didn't adapt to it */
-        /* .cube-container {
-            perspective: 1000px;
-            margin: 40px auto;
-            width: 200px;
-            height: 200px;
-        }
-
-        .cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: cube-rotate 20s infinite linear;
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(0, 100, 255, 0.1);
-            border: 2px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            color: var(--primary-color);
-            text-shadow: 0 0 10px var(--primary-color);
-        }
-
-        .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
-        .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
-        .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
-        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
-        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
-        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
-
-        @keyframes cube-rotate {
-            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
-            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-        } */
-
         /* Particle Animation */
         .particles-container {
             position: fixed;
@@ -997,26 +976,13 @@
                 grid-template-columns: 1fr;
             }
 
-            /* .cube-container {
-                width: 150px;
-                height: 150px;
+            /* Text justification for mobile - REQUESTED CHANGE */
+            .welcome-card p, .project-card p {
+                text-align: justify;
             }
-
-            .cube-face {
-                width: 150px;
-                height: 150px;
-                font-size: 1.5em;
-            }
-
-            .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(75px); }
-            .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(75px); }
-            .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
-            .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
-            .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
-            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); } */
         }
 
-        /* Correção adicional para telas muito pequenas */
+        /* Additional fix for very small screens */
         @media (max-width: 480px) {
             body {
                 padding: 5px;
@@ -1072,24 +1038,6 @@
                 font-size: 0.85em;
                 padding: 6px;
             }
-
-            /* .cube-container {
-                width: 120px;
-                height: 120px;
-            }
-
-            .cube-face {
-                width: 120px;
-                height: 120px;
-                font-size: 1.2em;
-            }
-
-            .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(60px); }
-            .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(60px); }
-            .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(60px); }
-            .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(60px); }
-            .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(60px); }
-            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); } */
         }
     </style>
 </head>
@@ -1126,7 +1074,7 @@
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
             
-            <!-- CORREÇÃO APLICADA: Link always visible on all screens -->
+            <!-- CORRECTION APPLIED: Link always visible on all screens -->
             <div class="note">
                 <p><strong>💡 Note:</strong> For the full interactive experience, visit:</p>
                 <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-link">
@@ -1189,196 +1137,27 @@
             </div>
         </div>
 
-        <!-- 3D Cube Animation - REMOVED: User didn't adapt to it -->
+        <!-- REQUESTED CHANGE: Table of Contents moved below Welcome section -->
+        <div class="toc">
+            <h3>📑 Table of Contents</h3>
+            <ul>
+                <li><a href="#featured-projects">🔐 Featured Projects</a></li>
+                <li><a href="#skills">💻 Skills & Technologies</a></li>
+                <li><a href="#neural-network">🧠 Neural Network Visualizer</a></li>
+                <li><a href="#project-timeline">📅 Project Timeline</a></li>
+                <li><a href="#terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</a></li>
+                <li><a href="#github-stats">📊 GitHub Stats</a></li>
+                <li><a href="#profile-summary">🎯 Profile Summary</a></li>
+                <li><a href="#contact">📬 Contact Information</a></li>
+                <li><a href="#license">📜 License</a></li>
+                <li><a href="#language-support">🌐 Language Support</a></li>
+            </ul>
+        </div>
 
         <!-- Project Filters - UPDATED: Removed most filter buttons -->
         <div class="project-filters">
             <!-- REMOVED: All Projects, Security, Web, Python, C++ buttons -->
             <button class="filter-btn" data-filter="ai">AI</button>
-        </div>
-
-        <!-- Interactive Terminal -->
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="terminal-title">gerivan@digital-universe:~</div>
-                <div class="terminal-controls">
-                    <div class="terminal-control control-close"></div>
-                    <div class="terminal-control control-minimize"></div>
-                    <div class="terminal-control control-maximize"></div>
-                </div>
-            </div>
-            <div class="terminal-content">
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></div>
-                <div>gerivan-costa | Security Developer | Open Source Enthusiast</div>
-                <br>
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projects/</span></div>
-                <div>entropy-password-generator/ dnapass-generator/ typing-animation/ neural-network-visualizer/</div>
-                <br>
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat skills.txt</span></div>
-                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux | Machine Learning</div>
-                <br>
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
-            </div>
-        </div>
-
-        <!-- Animated Stats Dashboard -->
-        <div class="stats-dashboard">
-            <div class="stat-card">
-                <div class="stat-number" id="projectsCount">0</div>
-                <div class="stat-label">Public Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="commitsCount">0</div>
-                <div class="stat-label">Total Commits</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="reposCount">0</div>
-                <div class="stat-label">Repositories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="contributionsCount">0</div>
-                <div class="stat-label">Contributions</div>
-            </div>
-        </div>
-
-        <!-- Skills & Technologies Section -->
-        <h2>💻 Skills & Technologies</h2>
-        
-        <div class="skills-container">
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>Python Development</span>
-                    <span id="python-skill">95%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="95"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>Web Security</span>
-                    <span id="security-skill">88%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="88"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>Machine Learning</span>
-                    <span id="ml-skill">82%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="82"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>Linux Administration</span>
-                    <span id="linux-skill">90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>C++ Programming</span>
-                    <span id="cpp-skill">85%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Neural Network Visualizer Section -->
-        <h2>🧠 Neural Network Visualizer</h2>
-        
-        <div class="project-card" data-categories="ai web">
-            <h3>Interactive Neural Network Visualization</h3>
-            <p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
-            
-            <div class="neural-network" id="neuralNetwork">
-                <!-- Neural network will be generated by JavaScript -->
-            </div>
-            
-            <h4>Key Features:</h4>
-            <ul>
-                <li>🎯 <strong>Real-time Training Visualization</strong>: Watch weights and biases update during training</li>
-                <li>🔍 <strong>Layer-by-Layer Inspection</strong>: Deep dive into each network layer</li>
-                <li>📊 <strong>Activation Pattern Analysis</strong>: Visualize how data flows through the network</li>
-                <li>⚡ <strong>Interactive Parameter Control</strong>: Adjust learning rates and architectures on the fly</li>
-            </ul>
-            
-            <div class="center">
-                <button class="btn" id="startTraining">Start Training Visualization</button>
-                <button class="btn btn-secondary" id="resetNetwork">Reset Network</button>
-            </div>
-            
-            <blockquote>
-                <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
-            </blockquote>
-        </div>
-
-        <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
-        <h2>📅 Project Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">April 2025 - Present</div>
-                <h4>EntroPy Password Generator</h4>
-                <p>Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.</p>
-                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
-                <h4>GitHub Profile & Digital Universe</h4>
-                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
-                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
-                <h4>DNAPass Password Generator</h4>
-                <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
-                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">August 2025 - Present</div>
-                <h4>EntroPy Password Generator - Web Version</h4>
-                <p>Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.</p>
-                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">October 2025 - Present</div>
-                <h4>Neural Network Visualizer</h4>
-                <p>Interactive AI visualization tool that makes machine learning accessible and understandable.</p>
-                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Coming Soon</a>
-            </div>
-        </div>
-
-        <!-- Upcoming project alert -->
-        <div class="alert">
-            <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
-            <p>A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.</p>
-            <p><strong>📢 Keep your eyes peeled—this innovation will spark conversations! 💥</strong></p>
-        </div>
-
-        <!-- Table of contents -->
-        <div class="toc">
-            <h3>📌 Table of Contents</h3>
-            <ul>
-                <li><a href="#featured-projects">🔐 Featured Projects</a></li>
-                <li><a href="#skills">💻 Skills & Technologies</a></li>
-                <li><a href="#neural-network">🧠 Neural Network Visualizer</a></li>
-                <li><a href="#github-stats">📊 GitHub Stats</a></li>
-                <li><a href="#profile-summary">🎯 Profile Summary</a></li>
-                <li><a href="#contact">📬 Contact Information</a></li>
-                <li><a href="#license">📜 License</a></li>
-            </ul>
         </div>
 
         <!-- Featured projects section -->
@@ -1452,6 +1231,179 @@
             </blockquote>
         </div>
 
+        <!-- Skills & Technologies Section -->
+        <h2 id="skills">💻 Skills & Technologies</h2>
+        
+        <div class="skills-container">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Python Development</span>
+                    <span id="python-skill">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="95"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Web Security</span>
+                    <span id="security-skill">88%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="88"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Machine Learning</span>
+                    <span id="ml-skill">82%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="82"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Linux Administration</span>
+                    <span id="linux-skill">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>C++ Programming</span>
+                    <span id="cpp-skill">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neural Network Visualizer Section -->
+        <h2 id="neural-network">🧠 Neural Network Visualizer</h2>
+        
+        <div class="project-card" data-categories="ai web">
+            <h3>Interactive Neural Network Visualization</h3>
+            <p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
+            
+            <div class="neural-network" id="neuralNetwork">
+                <!-- Neural network will be generated by JavaScript -->
+            </div>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🎯 <strong>Real-time Training Visualization</strong>: Watch weights and biases update during training</li>
+                <li>🔍 <strong>Layer-by-Layer Inspection</strong>: Deep dive into each network layer</li>
+                <li>📊 <strong>Activation Pattern Analysis</strong>: Visualize how data flows through the network</li>
+                <li>⚡ <strong>Interactive Parameter Control</strong>: Adjust learning rates and architectures on the fly</li>
+            </ul>
+            
+            <div class="center">
+                <button class="btn" id="startTraining">Start Training Visualization</button>
+                <button class="btn btn-secondary" id="resetNetwork">Reset Network</button>
+            </div>
+            
+            <blockquote>
+                <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
+            </blockquote>
+        </div>
+
+        <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
+        <h2 id="project-timeline">📅 Project Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">April 2025 - Present</div>
+                <h4>EntroPy Password Generator</h4>
+                <p>Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.</p>
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">July 2025 - Present</div>
+                <h4>GitHub Profile & Digital Universe</h4>
+                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
+                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">July 2025 - Present</div>
+                <h4>DNAPass Password Generator</h4>
+                <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">August 2025 - Present</div>
+                <h4>EntroPy Password Generator - Web Version</h4>
+                <p>Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.</p>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">October 2025 - Present</div>
+                <h4>Neural Network Visualizer</h4>
+                <p>Interactive AI visualization tool that makes machine learning accessible and understandable.</p>
+                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Coming Soon</a>
+            </div>
+        </div>
+
+        <!-- Upcoming project alert -->
+        <div class="alert">
+            <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
+            <p>A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.</p>
+            <p><strong>📢 Keep your eyes peeled—this innovation will spark conversations! 💥</strong></p>
+        </div>
+
+        <!-- REQUESTED CHANGE: Terminal with updated title -->
+        <h2 id="terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</h2>
+        
+        <!-- Interactive Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-title">📟 Terminal Session [gerivan@digital-universe:~]</div>
+                <div class="terminal-controls">
+                    <div class="terminal-control control-close"></div>
+                    <div class="terminal-control control-minimize"></div>
+                    <div class="terminal-control control-maximize"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></div>
+                <div>gerivan-costa | Security Developer | Open Source Enthusiast</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projects/</span></div>
+                <div>entropy-password-generator/ dnapass-generator/ typing-animation/ neural-network-visualizer/</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat skills.txt</span></div>
+                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux | Machine Learning</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
+            </div>
+        </div>
+
+        <!-- Animated Stats Dashboard -->
+        <div class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-number" id="projectsCount">0</div>
+                <div class="stat-label">Public Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="commitsCount">0</div>
+                <div class="stat-label">Total Commits</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="reposCount">0</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="contributionsCount">0</div>
+                <div class="stat-label">Contributions</div>
+            </div>
+        </div>
+
         <!-- GitHub Statistics section -->
         <h2 id="github-stats">📊 GitHub Stats</h2>
         <p>Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!</p>
@@ -1486,17 +1438,26 @@
             </div>
         </div>
 
-        <!-- Contact information section - UPDATED: Renamed and added more information -->
+        <!-- REQUESTED CHANGE: Contact information section - Improved formatting -->
         <h2 id="contact">📬 Contact Information</h2>
         
         <div class="contact-info">
-            <p>If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:</p>
-            <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></p>
-            <p>📚 <strong>Portfolio:</strong> <a href="https://gerivanc.github.io">gerivanc.github.io</a></p>
-            <p>📫 <strong>Email:</strong> dean-grumbly-plop@duck.com</p>
-            <p>🌍 <strong>Location:</strong> Brazil</p>
-            <p>🧠 <strong>Open to collaborations and research projects</strong></p>
-            <div style="margin-top: 15px;">
+            <h3>Key Contact Methods:</h3>
+            <ul>
+                <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></li>
+                <li>📚 <strong>Portfolio:</strong> <a href="https://gerivanc.github.io">gerivanc.github.io</a></li>
+                <li>📫 <strong>Email:</strong> dean-grumbly-plop@duck.com</li>
+                <li>🌍 <strong>Location:</strong> Brazil</li>
+            </ul>
+            
+            <h3>Professional Focus:</h3>
+            <ul>
+                <li>🧠 <strong>Open to collaborations and research projects</strong></li>
+                <li>🔒 <strong>Specialized in security-focused development</strong></li>
+                <li>🌐 <strong>Active in open source community contributions</strong></li>
+            </ul>
+            
+            <div style="margin-top: 20px; text-align: center;">
                 <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Send Email</a>
                 <a href="https://github.com/gerivanc" class="btn btn-secondary">GitHub Profile</a>
                 <a href="https://gerivanc.github.io" class="btn btn-secondary">Portfolio</a>
