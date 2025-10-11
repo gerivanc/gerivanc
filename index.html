@@ -244,16 +244,16 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .note-mobile-link {
-            display: none;
+        .note-link {
             word-break: break-all;
-            font-size: 0.9em;
+            display: block;
             margin-top: 8px;
             padding: 8px;
             background: rgba(0, 100, 255, 0.1);
             border-radius: 4px;
             border: 1px solid var(--card-border);
             text-align: center;
+            font-size: 0.9em;
         }
         
         /* Blockquote styling for quotes */
@@ -534,6 +534,32 @@
             100% { transform: scale(1); }
         }
 
+        /* Project Filters */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: rgba(0, 100, 255, 0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
         /* Timeline */
         .timeline {
             position: relative;
@@ -738,6 +764,142 @@
             opacity: 1;
         }
 
+        /* Neural Network Visualization */
+        .neural-network {
+            position: relative;
+            height: 300px;
+            background: rgba(10, 20, 30, 0.7);
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .neural-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            transform-origin: left center;
+        }
+
+        /* Skills Progress Bars */
+        .skills-container {
+            margin: 30px 0;
+        }
+
+        .skill-item {
+            margin: 20px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: between;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(0, 100, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-dark));
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* 3D Cube Animation */
+        .cube-container {
+            perspective: 1000px;
+            margin: 40px auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: cube-rotate 20s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 100, 255, 0.1);
+            border: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+        .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+        .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+
+        @keyframes cube-rotate {
+            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+        /* Particle Animation */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -821,23 +983,37 @@
                 left: 40px !important;
             }
             
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
 
-            /* Mobile-specific link adjustments */
-            .note a {
-                display: none;
+            .cube-container {
+                width: 150px;
+                height: 150px;
             }
-            
-            .note-mobile-link {
-                display: block;
+
+            .cube-face {
+                width: 150px;
+                height: 150px;
+                font-size: 1.5em;
             }
-            
-            .note p {
-                margin-bottom: 8px;
-                text-align: center;
-            }
+
+            .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(75px); }
+            .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(75px); }
+            .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
+            .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
+            .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
+            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }
         }
 
         /* Correção adicional para telas muito pequenas */
@@ -892,28 +1068,37 @@
                 padding: 15px;
             }
 
-            .note-mobile-link {
+            .note-link {
                 font-size: 0.85em;
                 padding: 6px;
             }
-        }
 
-        /* Ajuste para telas muito pequenas (iPhone SE etc) */
-        @media (max-width: 375px) {
-            .marquee-content {
-                font-size: 1.3em;
+            .cube-container {
+                width: 120px;
+                height: 120px;
             }
-            
-            .note-mobile-link {
-                font-size: 0.8em;
-                word-break: break-all;
+
+            .cube-face {
+                width: 120px;
+                height: 120px;
+                font-size: 1.2em;
             }
+
+            .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(60px); }
+            .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(60px); }
+            .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(60px); }
+            .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(60px); }
+            .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(60px); }
+            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); }
         }
     </style>
 </head>
 <body>
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
+
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles"></div>
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
@@ -940,9 +1125,14 @@
             
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
-        <div class="note">
-            <p><strong>💡 Note:</strong> For the full interactive experience, visit: <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
-        </div>
+            
+            <!-- CORREÇÃO APLICADA: Link sempre visível em todas as telas -->
+            <div class="note">
+                <p><strong>💡 Note:</strong> For the full interactive experience, visit:</p>
+                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-link">
+                    https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
+                </a>
+            </div>
         </header>
 
         <!-- Technology badges section -->
@@ -999,6 +1189,28 @@
             </div>
         </div>
 
+        <!-- 3D Cube Animation -->
+        <div class="cube-container">
+            <div class="cube">
+                <div class="cube-face">🚀</div>
+                <div class="cube-face">🔒</div>
+                <div class="cube-face">🧠</div>
+                <div class="cube-face">⚡</div>
+                <div class="cube-face">🌐</div>
+                <div class="cube-face">💻</div>
+            </div>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="cpp">C++</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+        </div>
+
         <!-- Interactive Terminal -->
         <div class="terminal">
             <div class="terminal-header">
@@ -1014,10 +1226,10 @@
                 <div>gerivan-costa | Security Developer | Open Source Enthusiast</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projects/</span></div>
-                <div>entropy-password-generator/ dnapass-generator/ typing-animation/</div>
+                <div>entropy-password-generator/ dnapass-generator/ typing-animation/ neural-network-visualizer/</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat skills.txt</span></div>
-                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux</div>
+                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux | Machine Learning</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
             </div>
@@ -1043,6 +1255,90 @@
             </div>
         </div>
 
+        <!-- Skills & Technologies Section -->
+        <h2>💻 Skills & Technologies</h2>
+        
+        <div class="skills-container">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Python Development</span>
+                    <span id="python-skill">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="95"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Web Security</span>
+                    <span id="security-skill">88%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="88"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Machine Learning</span>
+                    <span id="ml-skill">82%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="82"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Linux Administration</span>
+                    <span id="linux-skill">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>C++ Programming</span>
+                    <span id="cpp-skill">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neural Network Visualizer Section -->
+        <h2>🧠 Neural Network Visualizer</h2>
+        
+        <div class="project-card" data-categories="ai web">
+            <h3>Interactive Neural Network Visualization</h3>
+            <p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
+            
+            <div class="neural-network" id="neuralNetwork">
+                <!-- Neural network will be generated by JavaScript -->
+            </div>
+            
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🎯 <strong>Real-time Training Visualization</strong>: Watch weights and biases update during training</li>
+                <li>🔍 <strong>Layer-by-Layer Inspection</strong>: Deep dive into each network layer</li>
+                <li>📊 <strong>Activation Pattern Analysis</strong>: Visualize how data flows through the network</li>
+                <li>⚡ <strong>Interactive Parameter Control</strong>: Adjust learning rates and architectures on the fly</li>
+            </ul>
+            
+            <div class="center">
+                <button class="btn" id="startTraining">Start Training Visualization</button>
+                <button class="btn btn-secondary" id="resetNetwork">Reset Network</button>
+            </div>
+            
+            <blockquote>
+                <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
+            </blockquote>
+        </div>
+
         <!-- Project Timeline -->
         <h2>📅 Project Timeline</h2>
         <div class="timeline">
@@ -1066,9 +1362,9 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">October 2025 - Present</div>
-                <h4>EntroPy Web Version</h4>
-                <p>Browser-based implementation of EntroPy password generator with responsive design and real-time entropy calculation.</p>
-                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+                <h4>Neural Network Visualizer</h4>
+                <p>Interactive AI visualization tool that makes machine learning accessible and understandable.</p>
+                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Coming Soon</a>
             </div>
         </div>
 
@@ -1084,11 +1380,12 @@
             <h3>📌 Table of Contents</h3>
             <ul>
                 <li><a href="#featured-projects">🔐 Featured Projects</a></li>
+                <li><a href="#skills">💻 Skills & Technologies</a></li>
+                <li><a href="#neural-network">🧠 Neural Network Visualizer</a></li>
                 <li><a href="#github-stats">📊 GitHub Stats</a></li>
                 <li><a href="#profile-summary">🎯 Profile Summary</a></li>
                 <li><a href="#contact">📬 Contact</a></li>
                 <li><a href="#license">📜 License</a></li>
-                <li><a href="#language-support">🌐 Language Support</a></li>
             </ul>
         </div>
 
@@ -1205,6 +1502,10 @@
             <p>📫 Reach me at: <strong>dean-grumbly-plop@duck.com</strong></p>
             <p>🌍 Location: Brazil</p>
             <p>🧠 Open to collaborations and research projects</p>
+            <div style="margin-top: 15px;">
+                <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Send Email</a>
+                <a href="https://github.com/gerivanc" class="btn btn-secondary">GitHub Profile</a>
+            </div>
         </div>
 
         <!-- License information -->
@@ -1292,6 +1593,7 @@
         });
 
         // Matrix Rain Effect
+        let matrixRainInterval;
         function initMatrixRain() {
             const canvas = matrixCanvas;
             const ctx = canvas.getContext('2d');
@@ -1343,7 +1645,38 @@
             }
         }
 
-        // Animated Stats Counter - Updated with realistic numbers
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card[data-categories]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                // Update active filter button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.categories.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Animated Stats Counter
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -1362,7 +1695,6 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Updated stats based on your GitHub profile
                     animateValue(document.getElementById('projectsCount'), 0, 4, 2000);
                     animateValue(document.getElementById('commitsCount'), 0, 127, 2000);
                     animateValue(document.getElementById('reposCount'), 0, 4, 2000);
@@ -1373,6 +1705,22 @@
         });
 
         observer.observe(document.querySelector('.stats-dashboard'));
+
+        // Skills Animation
+        const skillProgresses = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skillProgresses.forEach(progress => {
+                        const width = progress.getAttribute('data-width');
+                        progress.style.width = width + '%';
+                    });
+                    skillObserver.disconnect();
+                }
+            });
+        });
+
+        skillObserver.observe(document.querySelector('.skills-container'));
 
         // Terminal Typing Animation
         const commands = [
@@ -1412,6 +1760,115 @@
         // Start typing animation
         setTimeout(typeCommand, 2000);
 
+        // Neural Network Visualization
+        const neuralNetwork = document.getElementById('neuralNetwork');
+        let neuralInterval;
+
+        function createNeuralNetwork() {
+            neuralNetwork.innerHTML = '';
+            const layers = [4, 6, 8, 6, 4]; // Number of nodes in each layer
+            const nodePositions = [];
+            
+            layers.forEach((nodeCount, layerIndex) => {
+                for (let i = 0; i < nodeCount; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'neural-node';
+                    
+                    const x = (layerIndex + 1) * (neuralNetwork.offsetWidth / (layers.length + 1));
+                    const y = (i + 1) * (neuralNetwork.offsetHeight / (nodeCount + 1));
+                    
+                    node.style.left = x + 'px';
+                    node.style.top = y + 'px';
+                    
+                    neuralNetwork.appendChild(node);
+                    nodePositions.push({x, y, layer: layerIndex});
+                }
+            });
+            
+            // Create connections
+            nodePositions.forEach((node, index) => {
+                nodePositions.forEach((targetNode, targetIndex) => {
+                    if (node.layer < targetNode.layer && Math.random() > 0.7) {
+                        const connection = document.createElement('div');
+                        connection.className = 'neural-connection';
+                        
+                        const dx = targetNode.x - node.x;
+                        const dy = targetNode.y - node.y;
+                        const length = Math.sqrt(dx * dx + dy * dy);
+                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                        
+                        connection.style.width = length + 'px';
+                        connection.style.left = node.x + 'px';
+                        connection.style.top = node.y + 'px';
+                        connection.style.transform = `rotate(${angle}deg)`;
+                        connection.style.opacity = Math.random() * 0.5 + 0.3;
+                        
+                        neuralNetwork.appendChild(connection);
+                    }
+                });
+            });
+        }
+
+        function animateNeuralNetwork() {
+            const nodes = document.querySelectorAll('.neural-node');
+            const connections = document.querySelectorAll('.neural-connection');
+            
+            nodes.forEach(node => {
+                node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
+                node.style.opacity = 0.5 + Math.random() * 0.5;
+            });
+            
+            connections.forEach(conn => {
+                conn.style.opacity = 0.2 + Math.random() * 0.3;
+            });
+        }
+
+        document.getElementById('startTraining').addEventListener('click', () => {
+            createNeuralNetwork();
+            neuralInterval = setInterval(animateNeuralNetwork, 500);
+        });
+
+        document.getElementById('resetNetwork').addEventListener('click', () => {
+            clearInterval(neuralInterval);
+            neuralNetwork.innerHTML = '';
+        });
+
+        // Particle Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = posX + 'vw';
+                particle.style.top = posY + 'vh';
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Add floating animation for particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0) translateX(0); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
         // PWA Installation
         let deferredPrompt;
         const installPrompt = document.getElementById('installPrompt');
@@ -1441,28 +1898,10 @@
             installPrompt.classList.remove('show');
         });
 
-        // Service Worker Registration for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-
-        // Micro-interactions
-        document.querySelectorAll('.hover-glow').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.textShadow = `0 0 10px ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.textShadow = '';
-            });
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createNeuralNetwork();
         });
 
         // Responsive canvas resize
@@ -1471,6 +1910,7 @@
                 matrixCanvas.width = window.innerWidth;
                 matrixCanvas.height = window.innerHeight;
             }
+            createNeuralNetwork();
         });
 
         // Add loading animation to images
