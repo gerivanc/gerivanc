@@ -534,7 +534,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Project Filters */
+        /* Project Filters - Updated: removed most buttons */
         .project-filters {
             display: flex;
             justify-content: center;
@@ -838,8 +838,8 @@
             100% { transform: translateX(100%); }
         }
 
-        /* 3D Cube Animation */
-        .cube-container {
+        /* 3D Cube Animation - REMOVED: User didn't adapt to it */
+        /* .cube-container {
             perspective: 1000px;
             margin: 40px auto;
             width: 200px;
@@ -878,7 +878,7 @@
         @keyframes cube-rotate {
             0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
             100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-        }
+        } */
 
         /* Particle Animation */
         .particles-container {
@@ -997,7 +997,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .cube-container {
+            /* .cube-container {
                 width: 150px;
                 height: 150px;
             }
@@ -1013,7 +1013,7 @@
             .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
             .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
             .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
-            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }
+            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); } */
         }
 
         /* Correção adicional para telas muito pequenas */
@@ -1073,7 +1073,7 @@
                 padding: 6px;
             }
 
-            .cube-container {
+            /* .cube-container {
                 width: 120px;
                 height: 120px;
             }
@@ -1089,7 +1089,7 @@
             .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(60px); }
             .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(60px); }
             .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(60px); }
-            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); }
+            .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); } */
         }
     </style>
 </head>
@@ -1126,7 +1126,7 @@
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
             
-            <!-- CORREÇÃO APLICADA: Link sempre visível em todas as telas -->
+            <!-- CORREÇÃO APLICADA: Link always visible on all screens -->
             <div class="note">
                 <p><strong>💡 Note:</strong> For the full interactive experience, visit:</p>
                 <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-link">
@@ -1189,25 +1189,11 @@
             </div>
         </div>
 
-        <!-- 3D Cube Animation -->
-        <div class="cube-container">
-            <div class="cube">
-                <div class="cube-face">🚀</div>
-                <div class="cube-face">🔒</div>
-                <div class="cube-face">🧠</div>
-                <div class="cube-face">⚡</div>
-                <div class="cube-face">🌐</div>
-                <div class="cube-face">💻</div>
-            </div>
-        </div>
+        <!-- 3D Cube Animation - REMOVED: User didn't adapt to it -->
 
-        <!-- Project Filters -->
+        <!-- Project Filters - UPDATED: Removed most filter buttons -->
         <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="security">Security</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="python">Python</button>
-            <button class="filter-btn" data-filter="cpp">C++</button>
+            <!-- REMOVED: All Projects, Security, Web, Python, C++ buttons -->
             <button class="filter-btn" data-filter="ai">AI</button>
         </div>
 
@@ -1339,7 +1325,7 @@
             </blockquote>
         </div>
 
-        <!-- Project Timeline -->
+        <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
         <h2>📅 Project Timeline</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -1359,6 +1345,12 @@
                 <h4>DNAPass Password Generator</h4>
                 <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">August 2025 - Present</div>
+                <h4>EntroPy Password Generator - Web Version</h4>
+                <p>Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.</p>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">October 2025 - Present</div>
@@ -1384,7 +1376,7 @@
                 <li><a href="#neural-network">🧠 Neural Network Visualizer</a></li>
                 <li><a href="#github-stats">📊 GitHub Stats</a></li>
                 <li><a href="#profile-summary">🎯 Profile Summary</a></li>
-                <li><a href="#contact">📬 Contact</a></li>
+                <li><a href="#contact">📬 Contact Information</a></li>
                 <li><a href="#license">📜 License</a></li>
             </ul>
         </div>
@@ -1494,17 +1486,20 @@
             </div>
         </div>
 
-        <!-- Contact information section -->
-        <h2 id="contact">📬 Contact</h2>
+        <!-- Contact information section - UPDATED: Renamed and added more information -->
+        <h2 id="contact">📬 Contact Information</h2>
         
         <div class="contact-info">
             <p>If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:</p>
-            <p>📫 Reach me at: <strong>dean-grumbly-plop@duck.com</strong></p>
-            <p>🌍 Location: Brazil</p>
-            <p>🧠 Open to collaborations and research projects</p>
+            <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></p>
+            <p>📚 <strong>Portfolio:</strong> <a href="https://gerivanc.github.io">gerivanc.github.io</a></p>
+            <p>📫 <strong>Email:</strong> dean-grumbly-plop@duck.com</p>
+            <p>🌍 <strong>Location:</strong> Brazil</p>
+            <p>🧠 <strong>Open to collaborations and research projects</strong></p>
             <div style="margin-top: 15px;">
                 <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Send Email</a>
                 <a href="https://github.com/gerivanc" class="btn btn-secondary">GitHub Profile</a>
+                <a href="https://gerivanc.github.io" class="btn btn-secondary">Portfolio</a>
             </div>
         </div>
 
@@ -1645,7 +1640,7 @@
             }
         }
 
-        // Project Filtering
+        // Project Filtering - UPDATED: Only AI filter remains
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card[data-categories]');
 
@@ -1722,14 +1717,50 @@
 
         skillObserver.observe(document.querySelector('.skills-container'));
 
-        // Terminal Typing Animation
+        // Terminal Typing Animation - UPDATED: Added installation and usage commands
         const commands = [
-            "git status --short",
-            "python --version",
-            "whoami",
-            "ls -la",
-            "cat README.md",
-            "echo 'Hello World!'"
+            "📦 Stable Version Installation (PyPI)",
+            "python3 -m venv venv-stablepypi",
+            "source venv-stablepypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install entropy-password-generator",
+            "pip list",
+            "",
+            "🧪 Development Version Installation (Test PyPI)",
+            "python3 -m venv venv-testpypi",
+            "source venv-testpypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
+            "pip list",
+            "",
+            "🧩 Block I (All with ambiguous characters, length 24)",
+            "python3 entropy_password_generator/password_generator.py --mode 1:",
+            "Generated password: &\\]*y>fhqs*e<.+fl=~ijy-i",
+            "Entropy: 138.75 bits;",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 2:",
+            "Generated password: JRYAHHASE[|&`M`B)!!EQ$RD",
+            "Entropy: 138.75 bits;",
+            "",
+            "🌀 Block II (Mixed configurations)",
+            "python3 entropy_password_generator/password_generator.py --mode 11:",
+            "Generated password: ?*WjM\\MR-.JkQr5",
+            "Entropy: 95.10 bits;",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 15:",
+            "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
+            "Entropy: 152.16 bits.",
+            "",
+            "🎨 Block III (Using Custom Configuration)",
+            "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
+            "Generated password: P#Zm+e;7Lv{iI9W",
+            "Entropy: 97.62 bits.",
+            "",
+            "python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous:",
+            "Generated password: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
+            "Entropy: 833.00 bits."
         ];
 
         let currentCommand = 0;
