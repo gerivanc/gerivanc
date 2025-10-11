@@ -243,6 +243,17 @@
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
         }
+
+        .note-mobile-link {
+            display: none;
+            word-break: break-all;
+            font-size: 0.9em;
+            margin-top: 8px;
+            padding: 8px;
+            background: rgba(0, 100, 255, 0.1);
+            border-radius: 4px;
+            border: 1px solid var(--card-border);
+        }
         
         /* Blockquote styling for quotes */
         blockquote {
@@ -848,6 +859,19 @@
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
+
+            /* Mobile-specific link adjustments */
+            .note a {
+                display: none;
+            }
+            
+            .note-mobile-link {
+                display: block;
+            }
+            
+            .note p {
+                margin-bottom: 8px;
+            }
         }
 
         /* Correção adicional para telas muito pequenas */
@@ -901,6 +925,23 @@
             blockquote {
                 padding: 15px;
             }
+
+            .note-mobile-link {
+                font-size: 0.85em;
+                padding: 6px;
+            }
+        }
+
+        /* Ajuste para telas muito pequenas (iPhone SE etc) */
+        @media (max-width: 375px) {
+            .marquee-content {
+                font-size: 1.3em;
+            }
+            
+            .note-mobile-link {
+                font-size: 0.8em;
+                word-break: break-all;
+            }
         }
     </style>
 </head>
@@ -933,8 +974,17 @@
             
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
+        
+        <!-- Note section with mobile-optimized link -->
         <div class="note">
-            <p><strong>💡 Note:</strong> For the full interactive experience, visit: <a href="Note: For the full interactive">https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html</a></p>
+            <p><strong>💡 Note:</strong> For the full interactive experience, visit: 
+                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="desktop-link">
+                    https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
+                </a>
+            </p>
+            <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-mobile-link">
+                https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
+            </a>
         </div>
         </header>
 
@@ -992,6 +1042,7 @@
             </div>
         </div>
 
+        <!-- Resto do código permanece igual -->
         <!-- Project Filters -->
         <div class="project-filters">
             <button class="filter-btn active" data-filter="all">All Projects</button>
