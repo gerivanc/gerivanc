@@ -2,7 +2,7 @@
 
 > _"Dive into the digital universe. Follow back or get out!"_
 
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://gerivanc.github.io/gerivanc/index-pt.html)
 
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
 
@@ -157,7 +157,7 @@ This repository is licensed under the [MIT License](https://github.com/gerivanc/
 
 ## 🌐 Language Support
 - 🇺🇸 English — You're here!
-- 🇧🇷 [Versão em Português](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)
+- 🇧🇷 [Versão em Português](https://gerivanc.github.io/gerivanc/index-pt.html)
 
 ---
 
