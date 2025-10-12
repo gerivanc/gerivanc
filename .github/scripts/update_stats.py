@@ -6,53 +6,51 @@ from github import Github
 def get_total_commits(user):
     """Calcula o total de commits de forma mais eficiente"""
     total_commits = 0
-    for repo in user.get_repos():
-        if not repo.fork:  # Ignorar forks
-            try:
-                # Método mais rápido: usar a API de participation
-                stats = repo.get_stats_participation()
-                if stats and stats.all:
-                    # stats.all contém commits por semana, somamos todos
-                    total_commits += sum(stats.all)
-            except:
-                # Fallback: estimativa baseada no tamanho do repo
+    try:
+        for repo in user.get_repos():
+            if not repo.fork:  # Ignorar forks
                 try:
-                    # Repositórios com mais stars/forks geralmente têm mais commits
-                    estimated_commits = max(repo.stargazers_count * 2, repo.forks_count * 5, 10)
-                    total_commits += estimated_commits
+                    # Método simplificado: usar contagem de commits do repo
+                    commits = repo.get_commits()
+                    total_commits += commits.totalCount
                 except:
-                    total_commits += 15  # Valor mínimo padrão
-    return total_commits
+                    # Fallback para repositórios vazios ou sem acesso
+                    continue
+    except Exception as e:
+        print(f"Erro ao calcular commits: {e}")
+        total_commits = user.public_repos * 20  # Estimativa fallback
+    
+    return min(total_commits, 1000)  # Limite máximo
 
 def get_contributions_estimate(user):
     """Estima contribuições de forma mais realista"""
     try:
-        # Buscar eventos recentes (mais eficiente)
-        events = list(user.get_public_events()[:100])  # Limitar para performance
+        # Estimativa baseada em repositórios e atividade
+        base_contributions = user.public_repos * 10
         
-        contribution_types = ['PushEvent', 'PullRequestEvent', 'IssuesEvent', 'CreateEvent', 'DeleteEvent']
-        contribution_count = sum(1 for event in events if event.type in contribution_types)
+        # Adicionar baseado em seguidores e stars
+        additional_contributions = user.followers * 2
         
-        # Ajustar baseado na atividade geral
-        if user.public_repos > 0:
-            base_contributions = user.public_repos * 5
-            return max(contribution_count * 3, base_contributions)
-        else:
-            return contribution_count * 3
-            
+        return base_contributions + additional_contributions
     except Exception as e:
         print(f"Erro ao calcular contribuições: {e}")
-        return user.public_repos * 8  # Fallback
+        return user.public_repos * 15
 
 def main():
     try:
         # Configurações
         token = os.getenv('GITHUB_TOKEN')
-        username = 'gerivanc'  # Seu username fixo
+        username = 'gerivanc'
+        
+        print(f"🔑 Iniciando coleta de estatísticas para {username}...")
         
         # Inicializar GitHub API
         g = Github(token)
         user = g.get_user(username)
+        
+        print(f"👤 Usuário encontrado: {user.name}")
+        print(f"📁 Repositórios públicos: {user.public_repos}")
+        print(f"👥 Seguidores: {user.followers}")
         
         # Coletar estatísticas
         stats = {
@@ -65,19 +63,18 @@ def main():
             'following': user.following
         }
         
-        # Garantir que o diretório time existe ✅ CORRIGIDO: data → time
+        print("📊 Estatísticas coletadas:")
+        for key, value in stats.items():
+            print(f"   {key}: {value}")
+        
+        # Garantir que o diretório time existe
         os.makedirs('time', exist_ok=True)
         
-        # Salvar estatísticas ✅ CORRIGIDO: data → time
+        # Salvar estatísticas
         with open('time/stats.json', 'w', encoding='utf-8') as f:
             json.dump(stats, f, indent=2, ensure_ascii=False)
         
-        print("✅ Estatísticas atualizadas com sucesso!")
-        print(f"📊 Projetos: {stats['projectsCount']}")
-        print(f"📁 Repositórios: {stats['reposCount']}")
-        print(f"🔨 Commits: {stats['commitsCount']}")
-        print(f"🎯 Contribuições: {stats['contributionsCount']}")
-        print(f"👥 Seguidores: {stats['followers']}")
+        print("✅ Estatísticas salvas com sucesso!")
         
     except Exception as e:
         print(f"❌ Erro crítico: {e}")
@@ -91,8 +88,8 @@ def main():
             'followers': 0,
             'following': 0
         }
-        os.makedirs('time', exist_ok=True)  # ✅ CORRIGIDO: data → time
-        with open('time/stats.json', 'w', encoding='utf-8') as f:  # ✅ CORRIGIDO: data → time
+        os.makedirs('time', exist_ok=True)
+        with open('time/stats.json', 'w', encoding='utf-8') as f:
             json.dump(fallback_stats, f, indent=2, ensure_ascii=False)
         print("📝 Arquivo de fallback criado")
 
