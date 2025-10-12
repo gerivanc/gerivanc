@@ -1287,10 +1287,10 @@
         </div>
 
         <!-- Neural Network Visualizer Section -->
-	// Neural Network Visualization - CORRIGIDO
-	let neuralInterval;
+// Neural Network Visualization - CORRIGIDO
+let neuralInterval;
 
-	function createNeuralNetwork() {
+function createNeuralNetwork() {
     const neuralNetwork = document.getElementById('neuralNetwork');
     if (!neuralNetwork) return;
     
@@ -1319,7 +1319,7 @@
         }
     });
     
-		// Criar conexões apenas entre camadas adjacentes
+    // Criar conexões apenas entre camadas adjacentes
     for (let layerIndex = 0; layerIndex < layers.length - 1; layerIndex++) {
         const currentLayerNodes = nodePositions.filter(node => node.layer === layerIndex);
         const nextLayerNodes = nodePositions.filter(node => node.layer === layerIndex + 1);
@@ -1342,13 +1342,13 @@
                     connection.style.opacity = Math.random() * 0.3 + 0.2;
                     
                     neuralNetwork.appendChild(connection);
-					}
-				});
-			});
-		}
-	}
+                }
+            });
+        });
+    }
+}
 
-	function animateNeuralNetwork() {
+function animateNeuralNetwork() {
     const nodes = document.querySelectorAll('.neural-node');
     const connections = document.querySelectorAll('.neural-connection');
     
@@ -1358,19 +1358,19 @@
         node.style.transform = `scale(${scale})`;
         node.style.opacity = opacity;
         node.style.boxShadow = `0 0 ${5 + Math.random() * 10}px var(--primary-color)`;
-		});
+    });
     
     connections.forEach(conn => {
         conn.style.opacity = 0.1 + Math.random() * 0.4;
         conn.style.background = `linear-gradient(90deg, transparent, var(--primary-color), transparent)`;
-		});
-	}
+    });
+}
 
-		// Inicializar após o DOM carregar
-		document.addEventListener('DOMContentLoaded', function() {
-		// Configurar event listeners para os botões
-		const startBtn = document.getElementById('startTraining');
-		const resetBtn = document.getElementById('resetNetwork');
+// Inicializar após o DOM carregar
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar event listeners para os botões
+    const startBtn = document.getElementById('startTraining');
+    const resetBtn = document.getElementById('resetNetwork');
     
     if (startBtn) {
         startBtn.addEventListener('click', function() {
@@ -1400,19 +1400,19 @@
             setTimeout(() => {
                 this.textContent = "Reiniciar Rede";
             }, 2000);
-			});
-		}
+        });
+    }
     
-		// Criar rede neural inicial
-			setTimeout(createNeuralNetwork, 1000);
-		});
+    // Criar rede neural inicial
+    setTimeout(createNeuralNetwork, 1000);
+});
 
-		// Redimensionar ao ajustar janela
-		window.addEventListener('resize', function() {
-			if (neuralInterval) {
-				createNeuralNetwork();
-			}
-		});
+// Redimensionar ao ajustar janela
+window.addEventListener('resize', function() {
+    if (neuralInterval) {
+        createNeuralNetwork();
+    }
+});
 
         <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
         <h2 id="project-timeline">📅 Project Timeline</h2>
