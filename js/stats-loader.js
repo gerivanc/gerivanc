@@ -1,29 +1,50 @@
 // js/stats-loader.js
 class StatsDashboard {
     constructor() {
-        this.statsFile = '../time/stats.json'; // ✅ CORRIGIDO: data → time
+        this.statsFile = 'https://gerivanc.github.io/gerivanc/time/stats.json'; // ✅ URL ABSOLUTA
         this.init();
     }
 
     async init() {
         try {
+            console.log('🚀 Iniciando carregamento de estatísticas...');
             await this.loadStats();
             this.startCounterAnimations();
         } catch (error) {
-            console.error('Erro ao carregar estatísticas:', error);
+            console.error('❌ Erro ao carregar estatísticas:', error);
             this.setFallbackValues();
         }
     }
 
     async loadStats() {
-        const response = await fetch(this.statsFile);
-        if (!response.ok) throw new Error('Arquivo de estatísticas não encontrado');
+        console.log('📁 Buscando arquivo:', this.statsFile);
         
-        this.stats = await response.json();
-        console.log('Estatísticas carregadas:', this.stats);
+        // Adicionar timestamp para evitar cache
+        const url = this.statsFile + '?t=' + Date.now();
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const text = await response.text();
+        console.log('📄 Resposta bruta:', text);
+        
+        const data = JSON.parse(text);
+        console.log('📊 Dados parseados:', data);
+        
+        this.stats = data;
     }
 
     startCounterAnimations() {
+        if (!this.stats) {
+            console.warn('⚠️ Nenhum dado de estatísticas disponível');
+            this.setFallbackValues();
+            return;
+        }
+
+        console.log('🎯 Iniciando animações com dados:', this.stats);
+
         const statsMap = {
             'projectsCount': 'projectsCount',
             'commitsCount': 'commitsCount', 
@@ -32,8 +53,20 @@ class StatsDashboard {
         };
 
         Object.entries(statsMap).forEach(([elementId, statKey]) => {
-            if (this.stats[statKey] !== undefined) {
-                this.animateCounter(elementId, this.stats[statKey]);
+            const value = this.stats[statKey];
+            if (value !== undefined && value !== null && !isNaN(value)) {
+                console.log(`🎯 Animando ${elementId}: ${value}`);
+                this.animateCounter(elementId, value);
+            } else {
+                console.warn(`⚠️ Valor inválido para ${statKey}:`, value);
+                // Usar fallback para este campo específico
+                const fallbackValues = {
+                    'projectsCount': 15,
+                    'commitsCount': 200,
+                    'reposCount': 8,
+                    'contributionsCount': 120
+                };
+                this.animateCounter(elementId, fallbackValues[statKey]);
             }
         });
     }
@@ -41,42 +74,57 @@ class StatsDashboard {
     animateCounter(elementId, targetValue) {
         const element = document.getElementById(elementId);
         if (!element) {
-            console.warn(`Elemento ${elementId} não encontrado`);
+            console.warn(`❌ Elemento ${elementId} não encontrado no DOM`);
             return;
         }
 
+        console.log(`🔢 Iniciando animação para ${elementId}: 0 → ${targetValue}`);
+        
         const duration = 2000;
-        const step = targetValue / (duration / 16);
-        let currentValue = 0;
+        let startValue = 0;
+        let startTime = null;
 
-        const timer = setInterval(() => {
-            currentValue += step;
-            if (currentValue >= targetValue) {
-                currentValue = targetValue;
-                clearInterval(timer);
+        function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / duration, 1);
+            
+            // Easing function para animação suave
+            const currentValue = Math.floor(startValue + (targetValue - startValue) * percentage);
+            
+            element.textContent = currentValue.toLocaleString();
+            
+            if (percentage < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = targetValue.toLocaleString();
+                console.log(`✅ Animação concluída para ${elementId}: ${targetValue}`);
             }
-            element.textContent = Math.floor(currentValue).toLocaleString();
-        }, 16);
+        }
+
+        requestAnimationFrame(animate);
     }
 
     setFallbackValues() {
+        console.log('🔄 Usando valores de fallback');
         const fallbackStats = {
             'projectsCount': 15,
-            'commitsCount': 120,
+            'commitsCount': 200,
             'reposCount': 8,
-            'contributionsCount': 45
+            'contributionsCount': 120
         };
 
         Object.entries(fallbackStats).forEach(([elementId, value]) => {
             const element = document.getElementById(elementId);
             if (element) {
-                element.textContent = value;
+                this.animateCounter(elementId, value);
             }
         });
     }
 }
 
-// Inicializar quando o DOM estiver carregado
+// Inicialização
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('📄 DOM carregado, iniciando dashboard...');
     new StatsDashboard();
 });
