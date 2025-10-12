@@ -157,7 +157,7 @@ This repository is licensed under the [MIT License](https://github.com/gerivanc/
 
 ## 🌐 Language Support
 - 🇺🇸 English — You're here!
-- 🇧🇷 [Versão em Português](https://gerivanc.github.io/gerivanc/index-pt.html)
+- 🇧🇷 [Portuguese Version](https://gerivanc.github.io/gerivanc/index-pt.html)
 
 ---
 
