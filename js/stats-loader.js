@@ -35,10 +35,10 @@ class StatsDashboard {
         if (!this.stats) return;
 
         const stats = [
-            { id: 'projectsCount', value: this.stats.projectsCount || 15 },
-            { id: 'commitsCount', value: this.stats.commitsCount || 200 },
-            { id: 'reposCount', value: this.stats.reposCount || 15 },
-            { id: 'contributionsCount', value: this.stats.contributionsCount || 120 }
+            { id: 'projectsCount', value: this.stats.projectsCount || 8 },       // ✅ PERSONALIZADO
+            { id: 'commitsCount', value: this.stats.commitsCount || 250 },       // ✅ PERSONALIZADO
+            { id: 'reposCount', value: this.stats.reposCount || 12 },            // ✅ PERSONALIZADO
+            { id: 'contributionsCount', value: this.stats.contributionsCount || 150 } // ✅ PERSONALIZADO
         ];
 
         stats.forEach((stat, index) => {
@@ -76,10 +76,10 @@ class StatsDashboard {
 
     setFallbackValues() {
         const fallbackStats = [
-            { id: 'projectsCount', value: 15 },
-            { id: 'commitsCount', value: 200 },
-            { id: 'reposCount', value: 8 },
-            { id: 'contributionsCount', value: 120 }
+            { id: 'projectsCount', value: 8 },       // ✅ PERSONALIZADO
+            { id: 'commitsCount', value: 250 },      // ✅ PERSONALIZADO
+            { id: 'reposCount', value: 12 },         // ✅ PERSONALIZADO
+            { id: 'contributionsCount', value: 150 } // ✅ PERSONALIZADO
         ];
 
         fallbackStats.forEach((stat, index) => {
