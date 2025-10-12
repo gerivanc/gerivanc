@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00ffff">
+    <meta name="description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <title>Gerivan Costa - Universo Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #0080ff;
+            --accent-color: #ff0080;
+            --success-color: #00ff80;
+            --warning-color: #ffaa00;
+            --dark-bg: #0a0a14;
+            --darker-bg: #050510;
+            --card-bg: rgba(15, 25, 35, 0.7);
+            --card-border: rgba(0, 255, 255, 0.3);
+            --text-color: #e0f0ff;
+            --text-muted: #a0b0c0;
+            --neon-green: #00BFFF;
+            --neon-green-dark: #1E90FF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --primary-color: #0080ff;
+            --secondary-color: #0055aa;
+            --accent-color: #ff0066;
+            --success-color: #00aa55;
+            --warning-color: #cc8800;
+            --dark-bg: #f0f5ff;
+            --darker-bg: #e0eaff;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(0, 128, 255, 0.3);
+            --text-color: #1a1a2e;
+            --text-muted: #4a5568;
+            --neon-green: #0080ff;
+            --neon-green-dark: #0055aa;
+        }
+
+        [data-theme="matrix"] {
+            --primary-color: #00ff41;
+            --secondary-color: #008f39;
+            --accent-color: #ff003c;
+            --success-color: #00ff41;
+            --warning-color: #ffff00;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --card-bg: rgba(10, 15, 10, 0.8);
+            --card-border: rgba(0, 255, 65, 0.3);
+            --text-color: #00ff41;
+            --text-muted: #008f39;
+            --neon-green: #00ff41;
+            --neon-green-dark: #008f39;
+        }
+        
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Main body styling with gradient background */
+        body {
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: var(--transition);
+        }
+
+        body.matrix-theme {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 20%);
+        }
+        
+        /* Main container with glassmorphism effect */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        /* Header section styling */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: var(--card-bg);
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-btn.active {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .theme-cyber { background: linear-gradient(45deg, #00ffff, #0080ff); }
+        .theme-light { background: linear-gradient(45deg, #0080ff, #66b3ff); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #00ff41, #008f39); }
+        
+        /* Typography hierarchy with Orbitron font for headings */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            font-weight: 500;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        h4 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* Paragraph and text styling */
+        p {
+            margin: 15px 0;
+            color: var(--text-color);
+            font-size: 1.1em;
+            transition: var(--transition);
+        }
+        
+        /* Link styling with hover effects */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+        
+        /* Badges container for technology icons */
+        .badges {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .badges img {
+            margin: 5px;
+            transition: transform 0.3s;
+            max-width: 100px;
+        }
+        
+        .badges img:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Iframe styling for embedded content */
+        iframe {
+            width: 100%;
+            height: 220px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
+        }
+        
+        /* Note box for important information */
+        .note {
+            background: rgba(0, 100, 255, 0.1);
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .note-link {
+            word-break: break-all;
+            display: block;
+            margin-top: 8px;
+            padding: 8px;
+            background: rgba(0, 100, 255, 0.1);
+            border-radius: 4px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        /* Blockquote styling for quotes */
+        blockquote {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--neon-green);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        
+        blockquote p {
+            margin: 0;
+            color: var(--text-color);
+        }
+        
+        /* Table styling */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .table th, .table td {
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: rgba(0, 100, 255, 0.2);
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: rgba(0, 50, 100, 0.1);
+        }
+        
+        .table tr:hover {
+            background-color: rgba(0, 150, 255, 0.1);
+        }
+        
+        /* List styling */
+        ul, ol {
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        li {
+            margin: 10px 0;
+            color: var(--text-muted);
+        }
+        
+        /* Center alignment utility */
+        .center {
+            text-align: center;
+        }
+        
+        /* Code block styling */
+        pre {
+            background: rgba(10, 20, 30, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Inline code styling */
+        code {
+            background: rgba(0, 100, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Button styles with gradient and hover effects */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px;
+            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            box-shadow: 0 6px 16px rgba(0, 191, 255, 0.6);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        /* Grid layout for statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stats-grid img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+        
+        /* Project card styling */
+        .project-card {
+            background: rgba(15, 25, 35, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        /* Alert box for important notices */
+        .alert {
+            background: rgba(255, 200, 0, 0.1);
+            border: 1px solid rgba(255, 200, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            color: var(--warning-color);
+        }
+        
+        .alert h3 {
+            color: var(--warning-color);
+            margin-top: 0;
+        }
+        
+        /* Glow effect for text */
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container > * {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Table of contents styling */
+        .toc {
+            background: rgba(0, 100, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .toc ul {
+            columns: 1;
+            margin: 0;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            break-inside: avoid;
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .toc a:hover {
+            background: rgba(0, 191, 255, 0.1);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+        
+        /* Contact information section */
+        .contact-info {
+            text-align: left;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--neon-green);
+        }
+        
+        /* Language switcher styling */
+        .language-switcher {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .language-switcher a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 16px;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--neon-green);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .language-switcher a:hover {
+            background: rgba(0, 191, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+        }
+
+        /* Welcome section styling */
+        .welcome-card {
+            background: rgba(15, 25, 35, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .welcome-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            opacity: 0.7;
+        }
+        
+        .welcome-quote {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--neon-green);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .welcome-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 4em;
+            color: var(--neon-green);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .star-icon {
+            display: inline-block;
+            animation: pulse 2s infinite;
+            margin-right: 5px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Project Filters - Updated: removed most buttons */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: rgba(0, 100, 255, 0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            width: 45%;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* Terminal */
+        .terminal {
+            background: rgba(10, 10, 20, 0.9);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .terminal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+        }
+
+        .terminal-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .terminal-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .control-close { background: #ff5f56; }
+        .control-minimize { background: #ffbd2e; }
+        .control-maximize { background: #27c93f; }
+
+        .terminal-content {
+            line-height: 1.5;
+        }
+
+        .terminal-prompt {
+            color: var(--success-color);
+        }
+
+        .terminal-command {
+            color: var(--primary-color);
+        }
+
+        /* Animated Stats */
+        .stats-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Matrix Rain Effect */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        body.matrix-theme #matrix-canvas {
+            opacity: 0.3;
+        }
+
+        /* TV Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 25s linear infinite;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8em;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .hover-glow:hover {
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Install Prompt */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.3);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .install-prompt.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Neural Network Visualization */
+        .neural-network {
+            position: relative;
+            height: 300px;
+            background: rgba(10, 20, 30, 0.7);
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .neural-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            transform-origin: left center;
+        }
+
+        /* Skills Progress Bars */
+        .skills-container {
+            margin: 30px 0;
+        }
+
+        .skill-item {
+            margin: 20px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: between;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(0, 100, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-dark));
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Particle Animation */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                margin: 0;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 0;
+                width: 100%;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+                line-height: 1.2;
+            }
+            
+            .marquee-content {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.6em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            iframe {
+                height: 200px;
+            }
+            
+            .project-card {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .welcome-card {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 8px 0;
+                text-align: center;
+            }
+            
+            .badges img {
+                margin: 3px;
+                max-width: 80px;
+            }
+            
+            .toc ul {
+                columns: 1;
+            }
+            
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                left: 40px !important;
+            }
+            
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .stats-dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            /* Text justification for mobile - REQUESTED CHANGE */
+            .welcome-card p, .project-card p {
+                text-align: justify;
+            }
+        }
+
+        /* Additional fix for very small screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .marquee-content {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+            
+            iframe {
+                height: 180px;
+            }
+            
+            .badges img {
+                max-width: 70px;
+                margin: 2px;
+            }
+
+            .project-card {
+                padding: 12px;
+            }
+            
+            .welcome-card {
+                padding: 15px;
+            }
+
+            .note, .alert, .toc {
+                padding: 12px;
+            }
+
+            blockquote {
+                padding: 15px;
+            }
+
+            .note-link {
+                font-size: 0.85em;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber">🔷</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix">🟩</div>
+    </div>
+
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <p>Instalar este app para melhor experiência?</p>
+        <button class="btn" id="installBtn">Instalar</button>
+        <button class="btn btn-secondary" id="dismissBtn">Dispensar</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <!-- TV Marquee Title -->
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    🔒 Revise seu conhecimento sobre segurança de conta com a animação de digitação 🚀
+                </div>
+            </div>
+            
+            <!-- Embedded typing animation iframe -->
+            <iframe src="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" frameborder="0" title="Animação de Digitação Grok"></iframe>
+            
+            <!-- CORRECTION APPLIED: Link always visible on all screens -->
+            <div class="note">
+                <p><strong>💡 Nota:</strong> Para a experiência interativa completa, visite:</p>
+                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="note-link">
+                    https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html
+                </a>
+            </div>
+        </header>
+
+        <!-- Technology badges section -->
+        <div class="badges">
+            <img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows">
+            <img src="https://img.shields.io/badge/linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+            <img src="https://img.shields.io/badge/kali_linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" alt="Kali Linux">
+            <img src="https://img.shields.io/badge/parrot_os-00B7EB?style=flat-square&logo=parrot&logoColor=white" alt="Parrot OS">
+            <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python">
+            <img src="https://img.shields.io/badge/c++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++">
+            <img src="https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white" alt="g++">
+            <img src="https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white" alt="Git">
+            <img src="https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white" alt="CMake">
+            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="Licença">
+            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Visualizações do Perfil">
+        </div>
+
+        <!-- Main introduction -->
+        <p>Mergulhe na grade digital com minha <strong>Animação de Digitação</strong>, uma exibição neon inspirada na Matrix de Atividade do CyberSnake! Este recurso interativo apresenta <strong>102 frases únicas e inteligentes</strong> sobre senhas fortes e autenticação de dois fatores (2FA), perfeito para desenvolvedores e startups obcecados por segurança e estilo. Construído com HTML, CSS e JavaScript, é uma adição elegante aos seus projetos, ecoando a vibe de ferramentas exclusivas como Dealsbe.</p>
+
+        <!-- Typing animation project card -->
+        <div class="project-card" data-categories="web security">
+            <h3>🔒 Por que é incrível:</h3>
+            <ul>
+                <li>Destaca a segurança de senhas com um toque de humor, misturando frases em inglês e português.</li>
+                <li>Apresenta um efeito de digitação dinâmico em uma interface estilo terminal.</li>
+                <li>Combina perfeitamente com a estética neon da Matrix de Atividade do CyberSnake.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html" class="btn">📸 Assista ao vivo</a>
+                <a href="https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html" class="btn btn-secondary">📂 Código fonte</a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seu mundo digital com esta animação, mantenha suas contas à prova de hackers e programe com a mesma paixão do EntroPy e DNAPass!</em></p>
+        </div>
+
+        <!-- Welcome section -->
+        <h2>👋 Bem-vindo ao Meu Universo Digital</h2>
+        
+        <div class="welcome-card">
+            <div class="welcome-quote">
+                <p>"Mergulhe no universo digital. Siga de volta ou caia fora!"</p>
+            </div>
+            
+            <p>Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.</p>
+            
+            <p>Gostou de um projeto? <span class="star-icon">🌟</span> Dê uma estrela! Considero isso um incentivo para continuar aprendendo, programando e compartilhando com a comunidade de desenvolvedores, porque uma ideia gera outra ideia ainda melhor!</p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌐 <strong>Suporte de Idioma:</strong> Português (Você está aqui!) | <a href="https://gerivanc.github.io/gerivanc/">English Version</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- REQUESTED CHANGE: Table of Contents moved below Welcome section -->
+        <div class="toc">
+            <h3>📑 Índice</h3>
+            <ul>
+                <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
+                <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
+                <li><a href="#neural-network">🧠 Visualizador de Rede Neural</a></li>
+                <li><a href="#project-timeline">📅 Linha do Tempo dos Projetos</a></li>
+                <li><a href="#terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</a></li>
+                <li><a href="#github-stats">📊 Estatísticas do GitHub</a></li>
+                <li><a href="#profile-summary">🎯 Resumo do Perfil</a></li>
+                <li><a href="#contact">📬 Informações de Contato</a></li>
+                <li><a href="#license">📜 Licença</a></li>
+                <li><a href="#language-support">🌐 Suporte de Idioma</a></li>
+            </ul>
+        </div>
+
+        <!-- Project Filters - UPDATED: Removed most filter buttons -->
+        <div class="project-filters">
+            <!-- REMOVED: All Projects, Security, Web, Python, C++ buttons -->
+            <button class="filter-btn" data-filter="ai">IA</button>
+        </div>
+
+        <!-- Featured projects section -->
+        <h2 id="featured-projects">🔐 Projetos em Destaque</h2>
+
+        <!-- EntroPy Password Generator project card -->
+        <div class="project-card" data-categories="security python">
+            <h3>🧠 EntroPy Password Generator - um gerador de senhas seguro e personalizável desenvolvido em Python</h3>
+            <p>EntroPy é um gerador de senhas de última geração que aproveita a entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.</p>
+            
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>🔒 <strong>Segurança Baseada em Entropia</strong>: Usa entropia real para evitar padrões previsíveis.</li>
+                <li>🧪 <strong>Algoritmos Personalizados</strong>: Projetados para força criptográfica e singularidade.</li>
+                <li>🧠 <strong>Design Orientado à Segurança</strong>: Ideal para desenvolvedores, pesquisadores e profissionais de cybersecurity.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 Ver código</a>
+            </div>
+            
+            <blockquote>
+                <p>"Segurança não é apenas um recurso — é a fundação."</p>
+            </blockquote>
+        </div>
+
+        <!-- EntroPy Web Version project card -->
+        <div class="project-card" data-categories="security web">
+            <h3>🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado em Navegador)</h3>
+            <p>EntroPy Web traz a poderosa geração de senhas baseada em entropia para seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação Python original enquanto oferece uma interface gráfica intuitiva acessível de qualquer dispositivo.</p>
+            
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>🎨 <strong>Interface de Três Blocos</strong>: Modos predefinidos (1-20) + configuração personalizada</li>
+                <li>📱 <strong>Totalmente Responsivo</strong>: Funciona perfeitamente em dispositivos desktop e móveis</li>
+                <li>🔒 <strong>Cálculo de Entropia em Tempo Real</strong>: Indicador visual de força e avisos de segurança</li>
+                <li>⚡ <strong>Geração Instantânea</strong>: Geração rápida de senhas no lado do cliente</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html" class="btn">🌍 Demo Ao Vivo</a>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repositório</a>
+                <a href="https://gerivanc.github.io/entropy-password-web/web/readme.html" class="btn btn-secondary">📚 Documentação Interativa</a>
+            </div>
+            
+            <blockquote>
+                <p>"Segurança de senhas de nível empresarial, agora acessível em seu navegador."</p>
+            </blockquote>
+        </div>
+
+        <!-- DNAPass project card -->
+        <div class="project-card" data-categories="security cpp">
+            <h3>🧬 DNAPass Password Generator — Gerador de Senhas Genético</h3>
+            <p>DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass introduz uma nova abordagem para geração de senhas que une biotecnologia e segurança digital.</p>
+            
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>🧬 <strong>Codificação Biológica</strong>: Converte sequências de DNA em strings de senha.</li>
+                <li>🔐 <strong>Saída Única e Complexa</strong>: Cada senha é inspirada biologicamente e matematicamente robusta.</li>
+                <li>🌐 <strong>Inovação Interdisciplinar</strong>: Ideal para bioinformática, laboratórios de pesquisa e entusiastas de segurança.</li>
+            </ul>
+            
+            <div class="center">
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 Ver código</a>
+            </div>
+            
+            <blockquote>
+                <p>"Onde a biologia encontra a cybersecurity — e a inovação começa."</p>
+            </blockquote>
+        </div>
+
+        <!-- Skills & Technologies Section -->
+        <h2 id="skills">💻 Habilidades & Tecnologias</h2>
+        
+        <div class="skills-container">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Desenvolvimento Python</span>
+                    <span id="python-skill">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="95"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Segurança Web</span>
+                    <span id="security-skill">88%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="88"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Machine Learning</span>
+                    <span id="ml-skill">82%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="82"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Administração Linux</span>
+                    <span id="linux-skill">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Programação C++</span>
+                    <span id="cpp-skill">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neural Network Visualizer Section -->
+        <h2 id="neural-network">🧠 Visualizador de Rede Neural</h2>
+        
+        <div class="project-card" data-categories="ai web">
+            <h3>Visualização Interativa de Rede Neural</h3>
+            <p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprendendo e se adaptando em tempo real, com conexões dinâmicas de nós e padrões de ativação.</p>
+            
+            <div class="neural-network" id="neuralNetwork">
+                <!-- Neural network will be generated by JavaScript -->
+            </div>
+            
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>🎯 <strong>Visualização de Treinamento em Tempo Real</strong>: Observe pesos e vieses atualizando durante o treinamento</li>
+                <li>🔍 <strong>Inspeção Camada por Camada</strong>: Mergulhe profundamente em cada camada da rede</li>
+                <li>📊 <strong>Análise de Padrões de Ativação</strong>: Visualize como os dados fluem através da rede</li>
+                <li>⚡ <strong>Controle Interativo de Parâmetros</strong>: Ajuste taxas de aprendizado e arquiteturas rapidamente</li>
+            </ul>
+            
+            <div class="center">
+                <button class="btn" id="startTraining">Iniciar Visualização de Treinamento</button>
+                <button class="btn btn-secondary" id="resetNetwork">Reiniciar Rede</button>
+            </div>
+            
+            <blockquote>
+                <p>"Visualizar redes neurais não é apenas sobre entender IA—é sobre ver a inteligência nascendo."</p>
+            </blockquote>
+        </div>
+
+        <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
+        <h2 id="project-timeline">📅 Linha do Tempo dos Projetos</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Abril 2025 - Presente</div>
+                <h4>EntroPy Password Generator</h4>
+                <p>Gerador de senhas avançado usando fontes de entropia real para máxima segurança. Baseado em Python com algoritmos criptográficos.</p>
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Julho 2025 - Presente</div>
+                <h4>Perfil GitHub & Universo Digital</h4>
+                <p>Portfólio pessoal mostrando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
+                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visitar Perfil</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Julho 2025 - Presente</div>
+                <h4>DNAPass Password Generator</h4>
+                <p>Gerador de senhas inovador baseado em codificação de sequência de DNA e princípios de criptografia biológica.</p>
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Agosto 2025 - Presente</div>
+                <h4>EntroPy Password Generator - Versão Web</h4>
+                <p>Implementação baseada em navegador do gerador de senhas de entropia com design responsivo e indicadores de segurança em tempo real.</p>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Outubro 2025 - Presente</div>
+                <h4>Visualizador de Rede Neural</h4>
+                <p>Ferramenta de visualização de IA interativa que torna o machine learning acessível e compreensível.</p>
+                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Em Breve</a>
+            </div>
+        </div>
+
+        <!-- Upcoming project alert -->
+        <div class="alert">
+            <h3>🚨🚧 Alerta de Projeto em Desenvolvimento 🚧🚨</h3>
+            <p>Um projeto revolucionário em Python 🐍 está em desenvolvimento—uma ferramenta revolucionária para geração de palavras! Fique ligado para um divisor de águas no processamento de dados seguro e criativo.</p>
+            <p><strong>📢 Fique de olho—esta inovação vai gerar conversas! 💥</strong></p>
+        </div>
+
+        <!-- REQUESTED CHANGE: Terminal with updated title -->
+        <h2 id="terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</h2>
+        
+        <!-- Interactive Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-title">📟 Sessão Terminal [gerivan@universo-digital:~]</div>
+                <div class="terminal-controls">
+                    <div class="terminal-control control-close"></div>
+                    <div class="terminal-control control-minimize"></div>
+                    <div class="terminal-control control-maximize"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></div>
+                <div>gerivan-costa | Desenvolvedor de Segurança | Entusiasta de Código Aberto</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projetos/</span></div>
+                <div>entropy-password-generator/ dnapass-generator/ typing-animation/ neural-network-visualizer/</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat habilidades.txt</span></div>
+                <div>Python 🐍 | C++ | Segurança Web | Criptografia | Linux | Machine Learning</div>
+                <br>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
+            </div>
+        </div>
+
+        <!-- Animated Stats Dashboard -->
+        <div class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-number" id="projectsCount">0</div>
+                <div class="stat-label">Projetos Públicos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="commitsCount">0</div>
+                <div class="stat-label">Total de Commits</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="reposCount">0</div>
+                <div class="stat-label">Repositórios</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="contributionsCount">0</div>
+                <div class="stat-label">Contribuições</div>
+            </div>
+        </div>
+
+        <!-- GitHub Statistics section -->
+        <h2 id="github-stats">📊 Estatísticas do GitHub</h2>
+        <p>Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto. Busco desenvolvimento consistente e aprendizado contínuo!</p>
+
+        <div class="center">
+            <img width="90%" alt="Gráfico de atividade recente do GitHub de Gerivan" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+        </div>
+
+        <div class="stats-grid">
+            <div>
+                <img alt="Estatísticas de sequência do GitHub de Gerivan" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+            </div>
+            <div>
+                <img alt="Linguagens principais de Gerivan" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
+            </div>
+        </div>
+
+        <!-- Profile summary section -->
+        <h2 id="profile-summary">🎯 Resumo do Perfil</h2>
+        <p>Um instantâneo da minha atividade e contribuições no GitHub, mostrando meu compromisso com a programação e projetos de código aberto.</p>
+
+        <div class="center">
+            <img width="90%" alt="Detalhes do Perfil" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+        </div>
+
+        <div class="stats-grid">
+            <div>
+                <img alt="Estatísticas" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
+            </div>
+            <div>
+                <img alt="Tempo Produtivo" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
+            </div>
+        </div>
+
+        <!-- REQUESTED CHANGE: Contact information section - Improved formatting -->
+        <h2 id="contact">📬 Informações de Contato</h2>
+        
+        <div class="contact-info">
+            <h3>Principais Métodos de Contato:</h3>
+            <ul>
+                <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></li>
+                <li>📚 <strong>Portfólio:</strong> <a href="https://gerivanc.github.io/gerivanc">gerivanc.github.io/gerivanc</a></li>
+                <li>📫 <strong>Email:</strong> dean-grumbly-plop@duck.com</li>
+                <li>🌍 <strong>Localização:</strong> Brasil</li>
+            </ul>
+            
+            <h3>Foco Profissional:</h3>
+            <ul>
+                <li>🧠 <strong>Aberto para colaborações e projetos de pesquisa</strong></li>
+                <li>🔒 <strong>Especializado em desenvolvimento focado em segurança</strong></li>
+                <li>🌐 <strong>Ativo em contribuições para a comunidade de código aberto</strong></li>
+            </ul>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Enviar Email</a>
+                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil GitHub</a>
+                <a href="https://gerivanc.github.io/gerivanc" class="btn btn-secondary">Portfólio</a>
+            </div>
+        </div>
+
+        <!-- License information -->
+        <h2 id="license">📜 Licença</h2>
+        <p>Este repositório está licenciado sob a <a href="https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md">Licença MIT</a>.</p>
+
+        <!-- Language support section -->
+        <h2 id="language-support">🌐 Suporte de Idioma</h2>
+        <div class="language-switcher">
+            <a href="https://gerivanc.github.io/gerivanc/">
+                <span style="font-size: 1.2em;">🇺🇸</span> Versão em Inglês
+            </a>
+            <a href="#">
+                <span style="font-size: 1.2em;">🇧🇷</span> Português — Você está aqui!
+            </a>
+        </div>
+
+        <!-- Final quote with floating box design -->
+        <div style="
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            backdrop-filter: blur(10px);
+        ">
+            <p style="
+                margin: 0;
+                color: var(--primary-color);
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.2em;
+                font-weight: 500;
+                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            ">"Programe com propósito. Construa com paixão. Compartilhe com o mundo."</p>
+        </div>
+
+        <!-- Copyright footer styles - Portuguese language -->
+        <style>
+        .center p {
+            margin: 2px 0;
+            line-height: 1.2;
+            color: cyan; /* Cyan color for copyright text */
+            transition: color 0.3s ease; /* Smooth transition effect */
+        }
+        .center p:hover {
+            color: #00B7EB; /* Darker cyan on hover - Portuguese version */
+        }
+        </style>
+
+        <!-- Copyright footer - Portuguese language -->
+        <div class="center">          
+            <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
+            <p><strong>Visualização de perfil Github Pages Copyright © 2025</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Theme Switching
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        const matrixCanvas = document.getElementById('matrix-canvas');
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                
+                // Update active button
+                themeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update body theme
+                body.setAttribute('data-theme', theme);
+                
+                // Handle matrix theme
+                if (theme === 'matrix') {
+                    body.classList.add('matrix-theme');
+                    initMatrixRain();
+                } else {
+                    body.classList.remove('matrix-theme');
+                    stopMatrixRain();
+                }
+            });
+        });
+
+        // Matrix Rain Effect
+        let matrixRainInterval;
+        function initMatrixRain() {
+            const canvas = matrixCanvas;
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Matrix characters
+            const chars = "01010101010101010101010101010101";
+            const charArray = chars.split("");
+            const font_size = 14;
+            const columns = canvas.width / font_size;
+            const drops = [];
+            
+            // Initialize drops
+            for (let x = 0; x < columns; x++) {
+                drops[x] = Math.floor(Math.random() * canvas.height / font_size);
+            }
+            
+            function draw() {
+                // Semi-transparent black background for trail effect
+                ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = "#00ff41";
+                ctx.font = font_size + "px monospace";
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * font_size, drops[i] * font_size);
+                    
+                    if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            // Store interval ID to stop later
+            matrixRainInterval = setInterval(draw, 35);
+        }
+
+        function stopMatrixRain() {
+            if (matrixRainInterval) {
+                clearInterval(matrixRainInterval);
+                const ctx = matrixCanvas.getContext('2d');
+                ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+            }
+        }
+
+        // Project Filtering - UPDATED: Only AI filter remains
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card[data-categories]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                // Update active filter button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.categories.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Animated Stats Counter
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Initialize stats animation when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue(document.getElementById('projectsCount'), 0, 4, 2000);
+                    animateValue(document.getElementById('commitsCount'), 0, 127, 2000);
+                    animateValue(document.getElementById('reposCount'), 0, 4, 2000);
+                    animateValue(document.getElementById('contributionsCount'), 0, 86, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats-dashboard'));
+
+        // Skills Animation
+        const skillProgresses = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skillProgresses.forEach(progress => {
+                        const width = progress.getAttribute('data-width');
+                        progress.style.width = width + '%';
+                    });
+                    skillObserver.disconnect();
+                }
+            });
+        });
+
+        skillObserver.observe(document.querySelector('.skills-container'));
+
+        // Terminal Typing Animation - TRANSLATED: Added installation and usage commands in Portuguese
+        const commands = [
+            "📦 Instalação da Versão Estável (PyPI)",
+            "python3 -m venv venv-stablepypi",
+            "source venv-stablepypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install entropy-password-generator",
+            "pip list",
+            "",
+            "🧪 Instalação da Versão de Desenvolvimento (Test PyPI)",
+            "python3 -m venv venv-testpypi",
+            "source venv-testpypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
+            "pip list",
+            "",
+            "🧩 Bloco I (Todos com caracteres ambíguos, comprimento 24)",
+            "python3 entropy_password_generator/password_generator.py --mode 1:",
+            "Senha gerada: &\\]*y>fhqs*e<.+fl=~ijy-i",
+            "Entropia: 138.75 bits;",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 2:",
+            "Senha gerada: JRYAHHASE[|&`M`B)!!EQ$RD",
+            "Entropia: 138.75 bits;",
+            "",
+            "🌀 Bloco II (Configurações mistas)",
+            "python3 entropy_password_generator/password_generator.py --mode 11:",
+            "Senha gerada: ?*WjM\\MR-.JkQr5",
+            "Entropia: 95.10 bits;",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 15:",
+            "Senha gerada: #Cxn8S$G8q&PrGF*9F$}(UDd",
+            "Entropia: 152.16 bits.",
+            "",
+            "🎨 Bloco III (Usando Configuração Personalizada)",
+            "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
+            "Senha gerada: P#Zm+e;7Lv{iI9W",
+            "Entropia: 97.62 bits.",
+            "",
+            "python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous:",
+            "Senha gerada: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
+            "Entropia: 833.00 bits."
+        ];
+
+        let currentCommand = 0;
+        let currentChar = 0;
+        const typingElement = document.getElementById('typing-command');
+
+        function typeCommand() {
+            if (currentChar < commands[currentCommand].length) {
+                typingElement.textContent += commands[currentCommand].charAt(currentChar);
+                currentChar++;
+                setTimeout(typeCommand, 100);
+            } else {
+                setTimeout(eraseCommand, 1000);
+            }
+        }
+
+        function eraseCommand() {
+            if (currentChar > 0) {
+                typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
+                currentChar--;
+                setTimeout(eraseCommand, 50);
+            } else {
+                currentCommand = (currentCommand + 1) % commands.length;
+                setTimeout(typeCommand, 500);
+            }
+        }
+
+        // Start typing animation
+        setTimeout(typeCommand, 2000);
+
+        // Neural Network Visualization
+        const neuralNetwork = document.getElementById('neuralNetwork');
+        let neuralInterval;
+
+        function createNeuralNetwork() {
+            neuralNetwork.innerHTML = '';
+            const layers = [4, 6, 8, 6, 4]; // Number of nodes in each layer
+            const nodePositions = [];
+            
+            layers.forEach((nodeCount, layerIndex) => {
+                for (let i = 0; i < nodeCount; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'neural-node';
+                    
+                    const x = (layerIndex + 1) * (neuralNetwork.offsetWidth / (layers.length + 1));
+                    const y = (i + 1) * (neuralNetwork.offsetHeight / (nodeCount + 1));
+                    
+                    node.style.left = x + 'px';
+                    node.style.top = y + 'px';
+                    
+                    neuralNetwork.appendChild(node);
+                    nodePositions.push({x, y, layer: layerIndex});
+                }
+            });
+            
+            // Create connections
+            nodePositions.forEach((node, index) => {
+                nodePositions.forEach((targetNode, targetIndex) => {
+                    if (node.layer < targetNode.layer && Math.random() > 0.7) {
+                        const connection = document.createElement('div');
+                        connection.className = 'neural-connection';
+                        
+                        const dx = targetNode.x - node.x;
+                        const dy = targetNode.y - node.y;
+                        const length = Math.sqrt(dx * dx + dy * dy);
+                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                        
+                        connection.style.width = length + 'px';
+                        connection.style.left = node.x + 'px';
+                        connection.style.top = node.y + 'px';
+                        connection.style.transform = `rotate(${angle}deg)`;
+                        connection.style.opacity = Math.random() * 0.5 + 0.3;
+                        
+                        neuralNetwork.appendChild(connection);
+                    }
+                });
+            });
+        }
+
+        function animateNeuralNetwork() {
+            const nodes = document.querySelectorAll('.neural-node');
+            const connections = document.querySelectorAll('.neural-connection');
+            
+            nodes.forEach(node => {
+                node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
+                node.style.opacity = 0.5 + Math.random() * 0.5;
+            });
+            
+            connections.forEach(conn => {
+                conn.style.opacity = 0.2 + Math.random() * 0.3;
+            });
+        }
+
+        document.getElementById('startTraining').addEventListener('click', () => {
+            createNeuralNetwork();
+            neuralInterval = setInterval(animateNeuralNetwork, 500);
+        });
+
+        document.getElementById('resetNetwork').addEventListener('click', () => {
+            clearInterval(neuralInterval);
+            neuralNetwork.innerHTML = '';
+        });
+
+        // Particle Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = posX + 'vw';
+                particle.style.top = posY + 'vh';
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Add floating animation for particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0) translateX(0); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // PWA Installation
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+        const dismissBtn = document.getElementById('dismissBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            setTimeout(() => {
+                installPrompt.classList.add('show');
+            }, 3000);
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installPrompt.classList.remove('show');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        dismissBtn.addEventListener('click', () => {
+            installPrompt.classList.remove('show');
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createNeuralNetwork();
+        });
+
+        // Responsive canvas resize
+        window.addEventListener('resize', () => {
+            if (body.classList.contains('matrix-theme')) {
+                matrixCanvas.width = window.innerWidth;
+                matrixCanvas.height = window.innerHeight;
+            }
+            createNeuralNetwork();
+        });
+
+        // Add loading animation to images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1)';
+            });
+            
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.9)';
+            img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+
+        // Marquee animation pause on hover
+        const marquee = document.querySelector('.marquee-content');
+        if (marquee) {
+            marquee.addEventListener('mouseenter', () => {
+                marquee.style.animationPlayState = 'paused';
+            });
+            
+            marquee.addEventListener('mouseleave', () => {
+                marquee.style.animationPlayState = 'running';
+            });
+        }
+    </script>
+</body>
+</html>
