@@ -2,8 +2,8 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
-  workflow_dispatch:  # Allows manual execution
+    - cron: '0 0 * * *'  # Executa diariamente à meia-noite UTC
+  workflow_dispatch:  # Permite execução manual
   push:
     branches: [ main ]
 
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0  # IMPORTANT: To access commit history
+          fetch-depth: 0  # IMPORTANTE: Para acessar histórico de commits
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -42,6 +42,6 @@ jobs:
           commit_message: "🤖 Update GitHub stats [skip ci]"
           file_pattern: |
             README.md
-            data/stats.json
+            time/stats.json  # ✅ CORRIGIDO: data → time
           commit_user_name: 'GitHub Actions'
           commit_user_email: 'actions@github.com'
