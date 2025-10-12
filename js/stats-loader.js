@@ -1,7 +1,7 @@
 // js/stats-loader.js
 class StatsDashboard {
     constructor() {
-        this.statsFile = '../time/stats.json';
+        this.statsFile = '../time/stats.json'; // ✅ CORRIGIDO: data → time
         this.init();
     }
 
@@ -10,17 +10,17 @@ class StatsDashboard {
             await this.loadStats();
             this.startCounterAnimations();
         } catch (error) {
-            console.error('Error loading statistics:', error);
+            console.error('Erro ao carregar estatísticas:', error);
             this.setFallbackValues();
         }
     }
 
     async loadStats() {
         const response = await fetch(this.statsFile);
-        if (!response.ok) throw new Error('Statistics file not found');
+        if (!response.ok) throw new Error('Arquivo de estatísticas não encontrado');
         
         this.stats = await response.json();
-        console.log('Statistics loaded:', this.stats);
+        console.log('Estatísticas carregadas:', this.stats);
     }
 
     startCounterAnimations() {
@@ -32,7 +32,7 @@ class StatsDashboard {
         };
 
         Object.entries(statsMap).forEach(([elementId, statKey]) => {
-            if (this.stats[statKey]) {
+            if (this.stats[statKey] !== undefined) {
                 this.animateCounter(elementId, this.stats[statKey]);
             }
         });
@@ -41,7 +41,7 @@ class StatsDashboard {
     animateCounter(elementId, targetValue) {
         const element = document.getElementById(elementId);
         if (!element) {
-            console.warn(`Elemento ${elementId} not found`);
+            console.warn(`Elemento ${elementId} não encontrado`);
             return;
         }
 
@@ -76,7 +76,7 @@ class StatsDashboard {
     }
 }
 
-// Initialize when DOM is loaded
+// Inicializar quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     new StatsDashboard();
 });
