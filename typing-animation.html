@@ -512,4 +512,374 @@
             "2FA: O anjo guardião do seu mundo online!",
             "My password's a fortress in a digital storm!",
             "Minha senha é uma fortaleza em uma tempestade digital!",
-     
+            "Encrypt tight, sleep safe at night!",
+            "Cripte bem, durma seguro à noite!",
+            "2FA: The spell that keeps hackers at bay!",
+            "2FA: O feitiço que mantém hackers afastados!",
+            "Hackers can't crack my 2FA force field!",
+            "Hackers não quebram meu campo de força 2FA!",
+            "Strong passwords: the code to digital peace!",
+            "Senhas fortes: o código para a paz digital!",
+            "2FA: Your account's invisible cloak!",
+            "2FA: A capa invisível da sua conta!",
+            "My login's a riddle wrapped in a mystery!",
+            "Meu login é um enigma envolto em mistério!",
+            "Code with might, secure with 2FA's light!",
+            "Programe com força, proteja com a luz do 2FA!",
+            "Weak passwords spark a hacker's delight!",
+            "Senhas fracas acendem a alegria dos hackers!",
+            "2FA: The lock that stops the digital clock!",
+            "2FA: A tranca que para o relógio digital!",
+            "My password's a supernova hackers can't touch!",
+            "Minha senha é uma supernova que hackers não tocam!",
+            "Secure your code, or face the hacker's probe!",
+            "Programe seguro, ou enfrente a sonda do hacker!",
+            "2FA: The ultimate code for your data's abode!",
+            "2FA: O código definitivo para a morada dos seus dados!",
+            "Hackers can't dance to my password's trance!",
+            "Hackers não dançam ao transe da minha senha!",
+            "Lock your account with 2FA's cosmic vault!",
+            "Tranque sua conta com o cofre cósmico do 2FA!",
+            "Update passwords like you update code - regularly!",
+            "Atualize senhas como atualiza código - regularmente!",
+            "Password reuse is like using the same key for everything!",
+            "Reutilizar senha é como usar a mesma chave para tudo!",
+            "Security isn't a feature, it's a foundation!",
+            "Segurança não é um recurso, é uma fundação!",
+            "Your password should be like good code - hard to break!",
+            "Sua senha deve ser como bom código - difícil de quebrar!",
+            "2FA: The second lock on your digital door!",
+            "2FA: A segunda fechadura na sua porta digital!",
+            "Strong authentication is the first line of defense!",
+            "Autenticação forte é a primeira linha de defesa!",
+            "Biometrics + 2FA = Your digital DNA protection!",
+            "Biometria + 2FA = Sua proteção de DNA digital!",
+            "Password manager: your vault for digital keys!",
+            "Gerenciador de senhas: seu cofre para chaves digitais!",
+            "Security breaches start with weak authentication!",
+            "Violações de segurança começam com autenticação fraca!",
+            "Your account security is your digital signature!",
+            "A segurança da sua conta é sua assinatura digital!"
+        ];
+
+        // State variables
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+        let soundEnabled = true;
+        let timeoutId = null;
+        let startTime = null;
+        let timerInterval = null;
+        
+        // Constants
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenTexts = 2000;
+
+        // DOM elements
+        const textElement = document.getElementById('typing-text');
+        const pauseBtn = document.getElementById('pause-btn');
+        const resumeBtn = document.getElementById('resume-btn');
+        const skipBtn = document.getElementById('skip-btn');
+        const soundBtn = document.getElementById('sound-btn');
+        const phraseCounterElement = document.getElementById('phrase-counter');
+        const timerElement = document.getElementById('timer');
+        const progressBarElement = document.getElementById('progress-bar');
+        const particlesContainer = document.getElementById('particles');
+        const themeButtons = document.querySelectorAll('.theme-btn');
+
+        // Keyboard sound system
+        class KeyboardSound {
+            constructor() {
+                this.sounds = [];
+                this.loadSounds();
+            }
+
+            // Load keyboard sounds
+            loadSounds() {
+                // Create realistic mechanical keyboard sounds using Web Audio API
+                for (let i = 0; i < 4; i++) {
+                    this.sounds.push(this.createKeySound(i));
+                }
+            }
+
+            // Create individual key sound
+            createKeySound(variant) {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    // Different frequencies for different key types
+                    const baseFreq = 60 + (variant * 15);
+                    
+                    oscillator.type = 'square';
+                    oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
+                    
+                    // Realistic envelope for mechanical keyboard
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.002);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.08);
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    return { oscillator, gainNode, context: audioContext, variant };
+                } catch (e) {
+                    console.log('Web Audio API not supported, using fallback');
+                    return null;
+                }
+            }
+
+            // Play random key sound
+            playRandomKeySound() {
+                if (!soundEnabled) return;
+                
+                const sound = this.sounds[Math.floor(Math.random() * this.sounds.length)];
+                if (!sound) return;
+
+                try {
+                    const now = sound.context.currentTime;
+                    
+                    // Stop any existing sound
+                    sound.oscillator.stop();
+                    
+                    // Recreate oscillator for new sound
+                    const newOscillator = sound.context.createOscillator();
+                    const newGainNode = sound.context.createGain();
+                    
+                    const baseFreq = 60 + (sound.variant * 15);
+                    const randomVariance = (Math.random() - 0.5) * 20;
+                    
+                    newOscillator.type = 'square';
+                    newOscillator.frequency.setValueAtTime(baseFreq + randomVariance, now);
+                    
+                    // Mechanical keyboard envelope
+                    newGainNode.gain.setValueAtTime(0, now);
+                    newGainNode.gain.linearRampToValueAtTime(0.12, now + 0.001);
+                    newGainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.06 + (Math.random() * 0.03));
+                    
+                    newOscillator.connect(newGainNode);
+                    newGainNode.connect(sound.context.destination);
+                    
+                    newOscillator.start();
+                    newOscillator.stop(now + 0.1);
+                    
+                    // Update reference
+                    sound.oscillator = newOscillator;
+                    sound.gainNode = newGainNode;
+                    
+                } catch (e) {
+                    // Silent fail if audio context is not available
+                }
+            }
+
+            // Play spacebar sound (deeper)
+            playSpaceSound() {
+                if (!soundEnabled) return;
+                
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.type = 'sawtooth';
+                    oscillator.frequency.setValueAtTime(45, audioContext.currentTime);
+                    
+                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.003);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.12);
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 0.15);
+                } catch (e) {
+                    // Silent fail
+                }
+            }
+        }
+
+        // Initialize keyboard sound system
+        const keyboardSound = new KeyboardSound();
+
+        // Create background particles
+        function createParticles() {
+            const particlesCount = 20;
+            
+            for (let i = 0; i < particlesCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position and animation delay
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = ((currentTextIndex + 1) / texts.length) * 100;
+            progressBarElement.style.width = `${progress}%`;
+        }
+
+        // Update timer display
+        function updateTimer() {
+            if (!startTime) return;
+            
+            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsedSeconds / 60);
+            const seconds = elapsedSeconds % 60;
+            
+            timerElement.textContent = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Start timer
+        function startTimer() {
+            if (!startTime) {
+                startTime = Date.now();
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        }
+
+        // Update status display
+        function updateStatus() {
+            phraseCounterElement.textContent = `${isPaused ? 'Paused' : 'Playing'}: ${currentTextIndex + 1}/${texts.length}`;
+            updateProgressBar();
+        }
+
+        // Type animation function
+        function type() {
+            if (isPaused) return;
+            
+            const currentText = texts[currentTextIndex];
+
+            if (isDeleting) {
+                // Deleting text
+                textElement.textContent = currentText.substring(0, charIndex--);
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    timeoutId = setTimeout(type, 500);
+                    updateStatus();
+                    return;
+                }
+                // Play backspace sound
+                if (soundEnabled && Math.random() > 0.3) {
+                    setTimeout(() => keyboardSound.playRandomKeySound(), 10);
+                }
+                timeoutId = setTimeout(type, deletingSpeed);
+            } else {
+                // Typing text
+                textElement.textContent = currentText.substring(0, charIndex++);
+                if (charIndex > currentText.length) {
+                    // Text completed - add visual effect
+                    textElement.classList.add('text-complete');
+                    setTimeout(() => {
+                        textElement.classList.remove('text-complete');
+                    }, 500);
+                    
+                    isDeleting = true;
+                    timeoutId = setTimeout(type, delayBetweenTexts);
+                    return;
+                }
+                // Play typing sound with realistic timing
+                if (soundEnabled) {
+                    const currentChar = currentText.charAt(charIndex - 1);
+                    if (currentChar === ' ') {
+                        // Spacebar - deeper sound
+                        setTimeout(() => keyboardSound.playSpaceSound(), 15);
+                    } else {
+                        // Regular keys
+                        setTimeout(() => keyboardSound.playRandomKeySound(), 10 + Math.random() * 20);
+                    }
+                }
+                timeoutId = setTimeout(type, typingSpeed);
+            }
+        }
+
+        // Pause animation
+        function pauseAnimation() {
+            isPaused = true;
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            pauseBtn.style.display = 'none';
+            resumeBtn.style.display = 'inline-block';
+            updateStatus();
+        }
+
+        // Resume animation
+        function resumeAnimation() {
+            isPaused = false;
+            pauseBtn.style.display = 'inline-block';
+            resumeBtn.style.display = 'none';
+            startTimer();
+            updateStatus();
+            type();
+        }
+
+        // Skip to next phrase
+        function skipAnimation() {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            isDeleting = false;
+            currentTextIndex = (currentTextIndex + 1) % texts.length;
+            charIndex = 0;
+            updateStatus();
+            type();
+        }
+
+        // Toggle sound on/off
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            soundBtn.textContent = `Sound: ${soundEnabled ? 'On' : 'Off'}`;
+        }
+
+        // Change theme
+        function changeTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            
+            // Update active theme button
+            themeButtons.forEach(btn => {
+                if (btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize the application
+        function init() {
+            createParticles();
+            updateStatus();
+            startTimer();
+            setTimeout(type, 1000);
+        }
+
+        // Event listeners
+        document.addEventListener("DOMContentLoaded", init);
+
+        pauseBtn.addEventListener('click', pauseAnimation);
+        resumeBtn.addEventListener('click', resumeAnimation);
+        skipBtn.addEventListener('click', skipAnimation);
+        soundBtn.addEventListener('click', toggleSound);
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeTheme(btn.getAttribute('data-theme'));
+            });
+        });
+    </script>
+</body>
+</html>
