@@ -1,11 +1,8 @@
 name: Update GitHub Stats
-
 on:
   schedule:
-    - cron: '0 0 * * *'  # Executa diariamente à meia-noite UTC
-  workflow_dispatch:  # Permite execução manual
-  push:
-    branches: [ main ]
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC (adjust for your time zone, e.g. '0 10 * * *' for 10am UTC+10)
+  workflow_dispatch:  # Allows manual triggering via Actions tab
 
 jobs:
   update:
@@ -13,35 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0  # IMPORTANTE: Para acessar histórico de commits
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install PyGithub
-
-      - name: Update stats.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/update_stats.py
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use default token for commits
 
       - name: Update Stats Images
         run: |
+          # No need to download or replace if using external URLs
           echo "Skipping local SVG download since using external URLs"
 
-      - name: Commit and Push Changes
+      - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 Update GitHub stats [skip ci]"
-          file_pattern: |
-            README.md
-            time/stats.json  # ✅ CORRIGIDO: data → time
-          commit_user_name: 'GitHub Actions'
-          commit_user_email: 'actions@github.com'
+          file_pattern: README.md
