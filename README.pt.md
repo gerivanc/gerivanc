@@ -146,7 +146,7 @@ Este repositório está licenciado sob a [Licença MIT](https://github.com/geriv
 
 ## 🌐 Suporte de idioma
 - 🇧🇷 Português — Você está aqui!
-- 🇺🇸 English — [English version](https://gerivanc.github.io/gerivanc)
+- 🇺🇸 English — [English version](https://gerivan.me)
 
 ---
 
