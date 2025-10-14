@@ -1038,6 +1038,16 @@
                 font-size: 0.85em;
                 padding: 6px;
             }
+			
+        /* Glass box for mobile text justification */
+        .intro-text {
+            background: rgba(0, 100, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            margin: 15px 0;
+            backdrop-filter: blur(5px);
+			}				
         }
     </style>
 </head>
@@ -1097,7 +1107,11 @@
         </div>
 
         <!-- Main introduction -->
-        <p>Dive into the digital grid with my <strong>Typing Animation</strong>, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features <strong>102 unique witty phrases</strong> about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.</p>
+				<div class="intro-text">
+			<p>Plug into the grid with my <strong>Typing Animation</strong>, a high-performance HTML/CSS/JavaScript module inspired by <em>CyberSnake’s Activity Matrix</em>. This isn’t just eye candy — it’s a security awareness engine disguised as a neon display.</p>
+			<p>Featuring <strong>204 curated phrases</strong> that challenge your assumptions about password hygiene and 2FA, this tool asks the uncomfortable questions: Are your passwords truly random — or just “creative” variations of your pet’s name? Are you storing credentials securely — or trusting your browser’s memory a little too much? Is your password strength measurable — or just wishful thinking? Do your passwords follow a pattern? Because if they do, they’re predictable. And if they’re predictable, they’re breakable.</p>  
+			<p>Ideal for developers, startups, and anyone building with security in mind, this module adds <strong>visual impact and behavioral friction</strong> — the kind that makes users pause and think before typing “123456” again. It’s the kind of UX that doesn’t just look cool — it makes your stack smarter.</p>
+		</div>
 
         <!-- Typing animation project card -->
         <div class="project-card" data-categories="web security">
