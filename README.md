@@ -2,7 +2,7 @@
 
 > _"Dive into the digital universe. Follow back or get out!"_
 
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://gerivanc.github.io/gerivanc/index-pt.html)
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](http://gerivan.me/index-pt.html)
 
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
 
@@ -33,9 +33,9 @@ Dive into the digital grid with my **Typing Animation**, a neon-filled display i
 - Features a dynamic typing effect in a terminal-style interface.
 - Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
 
-📸 **Watch it live**: [Watch the typing animation](https://gerivanc.github.io/gerivanc/const%20phrases/typing-animation.html)
+📸 **Watch it live**: [Watch the typing animation](https://gerivan.me/typing-animation.html)
 
-📂 **Source code**: [const phrases/typing-animation.html](https://github.com/gerivanc/gerivanc/blob/main/const%20phrases/typing-animation.html)
+📂 **Source code**: [Constphrases](https://github.com/gerivanc/gerivanc/blob/main/typing-animation.html)
 
 Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
 
@@ -157,7 +157,7 @@ This repository is licensed under the [MIT License](https://github.com/gerivanc/
 
 ## 🌐 Language Support
 - 🇺🇸 English — You're here!
-- 🇧🇷 [Portuguese Version](https://gerivanc.github.io/gerivanc/index-pt.html)
+- 🇧🇷 [Portuguese Version](http://gerivan.me/index-pt.html)
 
 ---
 
