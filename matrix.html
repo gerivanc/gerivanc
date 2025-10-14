@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Rain</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+        canvas {
+            display: block;
+        }
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #0f0;
+            font-size: 12px;
+            z-index: 100;
+        }
+        .controls button {
+            background: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        .controls button:hover {
+            background: #0f0;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="toggleRain()">⏸️ Pause</button>
+        <button onclick="changeSpeed(1)">⏩ Faster</button>
+        <button onclick="changeSpeed(-1)">⏪ Slower</button>
+        <button onclick="changeColor()">🎨 Color</button>
+    </div>
+    <canvas id="matrix"></canvas>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        // Configuração inicial
+        let isRaining = true;
+        let speed = 15;
+        let color = '#0f0';
+        const colors = ['#0f0', '#0ff', '#f0f', '#ff0', '#f00', '#00f'];
+
+        // Configurar canvas
+        function setupCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Caracteres para o efeito Matrix
+        const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const charArray = chars.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        // Inicializar gotas
+        function initDrops() {
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
+            }
+        }
+
+        // Desenhar matriz
+        function drawMatrix() {
+            if (!isRaining) return;
+
+            // Fundo semi-transparente para efeito de rastro
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = color;
+            ctx.font = `${fontSize}px 'Courier New'`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+
+                ctx.fillText(text, x, y);
+
+                // Reiniciar gota quando chegar ao final
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                // Mover gota
+                drops[i]++;
+            }
+        }
+
+        // Controles
+        function toggleRain() {
+            isRaining = !isRaining;
+            if (isRaining) {
+                animate();
+            }
+        }
+
+        function changeSpeed(delta) {
+            speed = Math.max(5, Math.min(50, speed + delta * 5));
+        }
+
+        function changeColor() {
+            const currentIndex = colors.indexOf(color);
+            color = colors[(currentIndex + 1) % colors.length];
+        }
+
+        // Loop de animação
+        function animate() {
+            if (isRaining) {
+                drawMatrix();
+                setTimeout(() => requestAnimationFrame(animate), 1000 / speed);
+            }
+        }
+
+        // Inicialização
+        window.addEventListener('resize', () => {
+            setupCanvas();
+            initDrops();
+        });
+
+        setupCanvas();
+        initDrops();
+        animate();
+
+        // Adicionar interação com o mouse
+        let mouseX = 0;
+        let mouseY = 0;
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Efeito interativo - as gotas "fogem" do mouse
+        function interactiveEffect() {
+            if (mouseX > 0 && mouseY > 0) {
+                const col = Math.floor(mouseX / fontSize);
+                const row = Math.floor(mouseY / fontSize);
+                
+                // Afetar gotas próximas ao cursor
+                for (let i = Math.max(0, col - 5); i < Math.min(columns, col + 5); i++) {
+                    if (Math.abs(drops[i] - row) < 10) {
+                        drops[i] += 2; // Acelera as gotas próximas
+                    }
+                }
+            }
+            mouseX = mouseY = 0; // Reset para evitar efeito contínuo
+        }
+
+        // Adicionar efeito interativo ao loop principal
+        const originalDraw = drawMatrix;
+        drawMatrix = function() {
+            interactiveEffect();
+            originalDraw();
+        };
+    </script>
+</body>
+</html>
