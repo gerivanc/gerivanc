@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#00ffff">
+	<meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               script-src 'self' 'unsafe-inline'; 
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+               font-src 'self' https://fonts.gstatic.com; 
+               img-src 'self' https://*.githubusercontent.com https://img.shields.io https://komarev.com;">
     <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
     <title>Gerivan Costa - Digital Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -996,8 +1002,8 @@
             .stats-dashboard {
                 grid-template-columns: 1fr;
 				
-			}	
-				
+            }
+
 		/* CONTRAST ENHANCEMENT FOR MOBILE */
 			.project-card,
 			.welcome-card,
@@ -1044,7 +1050,7 @@
 			}
         }
 
-        /* Text justification for mobile - REQUESTED CHANGE */
+            /* Text justification for mobile - REQUESTED CHANGE */
             .welcome-card p, .project-card p {
                 text-align: justify;
             }
@@ -1120,7 +1126,7 @@
 			.intro-text {
 				text-align: justify;
 				text-justify: inter-word;
-			}			
+			}						
         }
     </style>
 </head>
@@ -1133,16 +1139,16 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Cyber Theme">🔷</div>
-        <div class="theme-btn theme-light" data-theme="light" title="Light Theme">☀️</div>
-        <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme">🟩</div>
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber">🔷</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix">🟩</div>
     </div>
 
     <!-- Install Prompt -->
     <div class="install-prompt" id="installPrompt">
-        <p>Install this app for better experience?</p>
-        <button class="btn" id="installBtn">Install</button>
-        <button class="btn btn-secondary" id="dismissBtn">Dismiss</button>
+        <p>Instalar este app para melhor experiência?</p>
+        <button class="btn" id="installBtn">Instalar</button>
+        <button class="btn btn-secondary" id="dismissBtn">Dispensar</button>
     </div>
 
     <div class="container">
@@ -1150,17 +1156,17 @@
             <!-- TV Marquee Title -->
             <div class="marquee-container">
                 <div class="marquee-content">
-                    🔒 Review your account security knowledge with the typing animation 🚀
+                    🔒 Revise seu conhecimento sobre segurança de conta com a animação de digitação 🚀
                 </div>
             </div>
             
             <!-- Embedded typing animation iframe -->
-            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
+            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Animação de Digitação Grok"></iframe>
             
             <!-- CORRECTION APPLIED: Link always visible on all screens -->
             <div style="text-align: center; margin-top: 20px;">
                 <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡 <strong>Note:</strong> For the full interactive experience, visit | <a href="https://gerivan.me/typing-animation.html">Constant phrases</a></p>
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡 <strong>Nota:</strong> Para a experiência interativa completa, visite | <a href="https://gerivan.me/typing-animation.html">Frases constantes</a></p>
                 </div>
         </header>
 
@@ -1175,154 +1181,154 @@
             <img src="https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white" alt="g++">
             <img src="https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white" alt="Git">
             <img src="https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white" alt="CMake">
-            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="License">
-            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Profile Views">
+            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="Licença">
+            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Visualizações do Perfil">
         </div>
 
         <!-- Main introduction -->
 				<div class="intro-text">
-			<p>Plug into the grid with my <strong>Typing Animation</strong>, a high-performance HTML/CSS/JavaScript module inspired by <em>CyberSnake’s Activity Matrix</em>. This isn’t just eye candy — it’s a security awareness engine disguised as a neon display.</p>
-			<p>Featuring <strong>204 curated phrases</strong> that challenge your assumptions about password hygiene and 2FA, this tool asks the uncomfortable questions: Are your passwords truly random — or just “creative” variations of your pet’s name? Are you storing credentials securely — or trusting your browser’s memory a little too much? Is your password strength measurable — or just wishful thinking? Do your passwords follow a pattern? Because if they do, they’re predictable. And if they’re predictable, they’re breakable.</p>  
-			<p>Ideal for developers, startups, and anyone building with security in mind, this module adds <strong>visual impact and behavioral friction</strong> — the kind that makes users pause and think before typing “123456” again. It’s the kind of UX that doesn’t just look cool — it makes your stack smarter.</p>
+			<p>Conecte-se à grade digital com minha <strong>Typing Animation</strong>, um módulo HTML/CSS/JavaScript de alto desempenho inspirado na <em>Activity Matrix do CyberSnake</em>. Isso não é apenas estética — é um motor de conscientização sobre segurança disfarçado de exibição neon.</p>
+			<p>Apresentando <strong>204 frases selecionadas</strong> que desafiam suas suposições sobre higiene de senhas e autenticação em dois fatores (2FA), esta ferramenta faz perguntas incômodas: Suas senhas são realmente aleatórias — ou apenas variações “criativas” do nome do seu pet? Você está armazenando credenciais com segurança — ou confiando demais na memória do navegador? A força das suas senhas é mensurável — ou apenas otimismo? Suas senhas seguem um padrão? Porque se seguem, são previsíveis. E se são previsíveis, são vulneráveis.</p>
+			<p>Ideal para desenvolvedores, startups e qualquer pessoa que construa com foco em segurança, este módulo adiciona <strong>impacto visual e fricção comportamental</strong> — do tipo que faz o usuário parar e pensar antes de digitar “123456” novamente. É o tipo de experiência que não apenas parece sofisticada — ela torna sua stack mais inteligente.</p>
 		</div>
 
         <!-- Typing animation project card -->
         <div class="project-card" data-categories="web security">
-            <h3>🔒 Why it's awesome:</h3>
+            <h3>🔒 Por que é incrível:</h3>
             <ul>
-                <li>Highlights password security with a dash of humor, mixing phrases in English and Portuguese.</li>
-                <li>Features a dynamic typing effect in a terminal-style interface.</li>
-                <li>Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.</li>
+                <li>Destaca a segurança de senhas com um toque de humor, misturando frases em inglês e português.</li>
+                <li>Apresenta um efeito de digitação dinâmico em uma interface estilo terminal.</li>
+                <li>Combina perfeitamente com a estética neon da Matrix de Atividade do CyberSnake.</li>
             </ul>
             
             <div class="center">
-                <a href="https://gerivan.me/typing-animation.html" class="btn">📸 Watch it live</a>
-                <a href="https://gerivan.me/typing-animation.html" class="btn btn-secondary">📂 Source code</a>
+                <a href="https://gerivan.me/typing-animation.html" class="btn">📸 Assista ao vivo</a>
+                <a href="https://gerivan.me/typing-animation.html" class="btn btn-secondary">📂 Código fonte</a>
             </div>
             
-            <p style="text-align: center; margin-top: 15px;"><em>Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!</em></p>
+            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seu mundo digital com esta animação, mantenha suas contas à prova de hackers e programe com a mesma paixão do EntroPy e DNAPass!</em></p>
         </div>
 
         <!-- Welcome section -->
-        <h2>👋 Welcome to My Digital Universe</h2>
+        <h2>👋 Bem-vindo ao Meu Universo Digital</h2>
         
         <div class="welcome-card">
             <div class="welcome-quote">
-                <p>"Dive into the digital universe. Follow back or get out!"</p>
+                <p>"Mergulhe no universo digital. Siga de volta ou caia fora!"</p>
             </div>
             
-            <p>I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
+            <p>Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.</p>
             
-            <p>Did you like a project? <span class="star-icon">🌟</span> Give it a star! I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!</p>
+            <p>Gostou de um projeto? <span class="star-icon">🌟</span> Dê uma estrela! Considero isso um incentivo para continuar aprendendo, programando e compartilhando com a comunidade de desenvolvedores, porque uma ideia gera outra ideia ainda melhor!</p>
             
             <div style="text-align: center; margin-top: 20px;">
                 <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌐 <strong>Language Support:</strong> English (You're here!) | <a href="https://gerivan.me/index-pt.html">Português</a></p>
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌐 <strong>Suporte de Idioma:</strong> Português (Você está aqui!) | <a href="https://gerivan.me">English Version</a></p>
                 </div>
             </div>
         </div>
 
         <!-- REQUESTED CHANGE: Table of Contents moved below Welcome section -->
         <div class="toc">
-            <h3>📑 Table of Contents</h3>
+            <h3>📑 Índice</h3>
             <ul>
-                <li><a href="#featured-projects">🔐 Featured Projects</a></li>
-                <li><a href="#skills">💻 Skills & Technologies</a></li>
-                <li><a href="#neural-network">🧠 Neural Network Visualizer</a></li>
-                <li><a href="#project-timeline">📅 Project Timeline</a></li>
-                <li><a href="#terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</a></li>
-                <li><a href="#github-stats">📊 GitHub Stats</a></li>
-                <li><a href="#profile-summary">🎯 Profile Summary</a></li>
-                <li><a href="#contact">📬 Contact Information</a></li>
-                <li><a href="#license">📜 License</a></li>
-                <li><a href="#language-support">🌐 Language Support</a></li>
+                <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
+                <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
+                <li><a href="#neural-network">🧠 Visualizador de Rede Neural</a></li>
+                <li><a href="#project-timeline">📅 Linha do Tempo dos Projetos</a></li>
+                <li><a href="#terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</a></li>
+                <li><a href="#github-stats">📊 Estatísticas do GitHub</a></li>
+                <li><a href="#profile-summary">🎯 Resumo do Perfil</a></li>
+                <li><a href="#contact">📬 Informações de Contato</a></li>
+                <li><a href="#license">📜 Licença</a></li>
+                <li><a href="#language-support">🌐 Suporte de Idioma</a></li>
             </ul>
         </div>
 
         <!-- Project Filters - UPDATED: Removed most filter buttons -->
         <div class="project-filters">
             <!-- REMOVED: All Projects, Security, Web, Python, C++ buttons -->
-            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="ai">IA</button>
         </div>
 
         <!-- Featured projects section -->
-        <h2 id="featured-projects">🔐 Featured Projects</h2>
+        <h2 id="featured-projects">🔐 Projetos em Destaque</h2>
 
         <!-- EntroPy Password Generator project card -->
         <div class="project-card" data-categories="security python">
-            <h3>🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python</h3>
-            <p>EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.</p>
+            <h3>🧠 EntroPy Password Generator - um gerador de senhas seguro e personalizável desenvolvido em Python</h3>
+            <p>EntroPy é um gerador de senhas de última geração que aproveita a entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.</p>
             
-            <h4>Key Features:</h4>
+            <h4>Características Principais:</h4>
             <ul>
-                <li>🔒 <strong>Entropy-Driven Security</strong>: Uses real entropy to avoid predictable patterns.</li>
-                <li>🧪 <strong>Custom Algorithms</strong>: Designed for cryptographic strength and uniqueness.</li>
-                <li>🧠 <strong>Security-Oriented Design</strong>: Ideal for developers, researchers, and cybersecurity professionals.</li>
+                <li>🔒 <strong>Segurança Baseada em Entropia</strong>: Usa entropia real para evitar padrões previsíveis.</li>
+                <li>🧪 <strong>Algoritmos Personalizados</strong>: Projetados para força criptográfica e singularidade.</li>
+                <li>🧠 <strong>Design Orientado à Segurança</strong>: Ideal para desenvolvedores, pesquisadores e profissionais de cybersecurity.</li>
             </ul>
             
             <div class="center">
-                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 View the code</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 Ver código</a>
             </div>
             
             <blockquote>
-                <p>"Security isn't just a feature — it's the foundation."</p>
+                <p>"Segurança não é apenas um recurso — é a fundação."</p>
             </blockquote>
         </div>
 
         <!-- EntroPy Web Version project card -->
         <div class="project-card" data-categories="security web">
-            <h3>🌐 EntroPy Password Generator - Web Version (Browser-Based Password Generator)</h3>
-            <p>EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.</p>
+            <h3>🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado em Navegador)</h3>
+            <p>EntroPy Web traz a poderosa geração de senhas baseada em entropia para seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação Python original enquanto oferece uma interface gráfica intuitiva acessível de qualquer dispositivo.</p>
             
-            <h4>Key Features:</h4>
+            <h4>Características Principais:</h4>
             <ul>
-                <li>🎨 <strong>Three Block Interface</strong>: Predefined modes (1-20) + custom configuration</li>
-                <li>📱 <strong>Fully Responsive</strong>: Works perfectly on desktop and mobile devices</li>
-                <li>🔒 <strong>Real-time Entropy Calculation</strong>: Visual strength indicator and security warnings</li>
-                <li>⚡ <strong>Instant Generation</strong>: Fast, client-side password generation</li>
+                <li>🎨 <strong>Interface de Três Blocos</strong>: Modos predefinidos (1-20) + configuração personalizada</li>
+                <li>📱 <strong>Totalmente Responsivo</strong>: Funciona perfeitamente em dispositivos desktop e móveis</li>
+                <li>🔒 <strong>Cálculo de Entropia em Tempo Real</strong>: Indicador visual de força e avisos de segurança</li>
+                <li>⚡ <strong>Geração Instantânea</strong>: Geração rápida de senhas no lado do cliente</li>
             </ul>
             
             <div class="center">
-                <a href="https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html" class="btn">🌍 Live Demo</a>
-                <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repository</a>
-                <a href="https://gerivanc.github.io/entropy-password-web/web/readme.html" class="btn btn-secondary">📚 Interactive Docs</a>
+                <a href="https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html" class="btn">🌍 Demo Ao Vivo</a>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repositório</a>
+                <a href="https://gerivanc.github.io/entropy-password-web/web/readme.html" class="btn btn-secondary">📚 Documentação Interativa</a>
             </div>
             
             <blockquote>
-                <p>"Enterprise-grade password security, now accessible in your browser."</p>
+                <p>"Segurança de senhas de nível empresarial, agora acessível em seu navegador."</p>
             </blockquote>
         </div>
 
         <!-- DNAPass project card -->
         <div class="project-card" data-categories="security cpp">
-            <h3>🧬 DNAPass Password Generator — Genetic Password Generator</h3>
-            <p>DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.</p>
+            <h3>🧬 DNAPass Password Generator — Gerador de Senhas Genético</h3>
+            <p>DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass introduz uma nova abordagem para geração de senhas que une biotecnologia e segurança digital.</p>
             
-            <h4>Key Features:</h4>
+            <h4>Características Principais:</h4>
             <ul>
-                <li>🧬 <strong>Biological Encoding</strong>: Converts DNA sequences into password strings.</li>
-                <li>🔐 <strong>Unique & Complex Output</strong>: Each password is biologically inspired and mathematically robust.</li>
-                <li>🌐 <strong>Cross-Disciplinary Innovation</strong>: Ideal for bioinformatics, research labs, and security enthusiasts.</li>
+                <li>🧬 <strong>Codificação Biológica</strong>: Converte sequências de DNA em strings de senha.</li>
+                <li>🔐 <strong>Saída Única e Complexa</strong>: Cada senha é inspirada biologicamente e matematicamente robusta.</li>
+                <li>🌐 <strong>Inovação Interdisciplinar</strong>: Ideal para bioinformática, laboratórios de pesquisa e entusiastas de segurança.</li>
             </ul>
             
             <div class="center">
-                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 View the code</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 Ver código</a>
             </div>
             
             <blockquote>
-                <p>"Where biology meets cybersecurity — and innovation begins."</p>
+                <p>"Onde a biologia encontra a cybersecurity — e a inovação começa."</p>
             </blockquote>
         </div>
 
         <!-- Skills & Technologies Section -->
-        <h2 id="skills">💻 Skills & Technologies</h2>
+        <h2 id="skills">💻 Habilidades & Tecnologias</h2>
         
         <div class="skills-container">
             <div class="skill-item">
                 <div class="skill-name">
-                    <span>Python Development</span>
+                    <span>Desenvolvimento Python</span>
                     <span id="python-skill">95%</span>
                 </div>
                 <div class="skill-bar">
@@ -1332,7 +1338,7 @@
             
             <div class="skill-item">
                 <div class="skill-name">
-                    <span>Web Security</span>
+                    <span>Segurança Web</span>
                     <span id="security-skill">88%</span>
                 </div>
                 <div class="skill-bar">
@@ -1352,7 +1358,7 @@
             
             <div class="skill-item">
                 <div class="skill-name">
-                    <span>Linux Administration</span>
+                    <span>Administração Linux</span>
                     <span id="linux-skill">90%</span>
                 </div>
                 <div class="skill-bar">
@@ -1362,7 +1368,7 @@
             
             <div class="skill-item">
                 <div class="skill-name">
-                    <span>C++ Programming</span>
+                    <span>Programação C++</span>
                     <span id="cpp-skill">85%</span>
                 </div>
                 <div class="skill-bar">
@@ -1372,83 +1378,83 @@
         </div>
 
         <!-- Neural Network Visualizer Section -->
-        <h2 id="neural-network">🧠 Neural Network Visualizer</h2>
+        <h2 id="neural-network">🧠 Visualizador de Rede Neural</h2>
         
         <div class="project-card" data-categories="ai web">
-            <h3>Interactive Neural Network Visualization</h3>
-            <p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
+            <h3>Visualização Interativa de Rede Neural</h3>
+            <p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprendendo e se adaptando em tempo real, com conexões dinâmicas de nós e padrões de ativação.</p>
             
             <div class="neural-network" id="neuralNetwork">
                 <!-- Neural network will be generated by JavaScript -->
             </div>
             
-            <h4>Key Features:</h4>
+            <h4>Características Principais:</h4>
             <ul>
-                <li>🎯 <strong>Real-time Training Visualization</strong>: Watch weights and biases update during training</li>
-                <li>🔍 <strong>Layer-by-Layer Inspection</strong>: Deep dive into each network layer</li>
-                <li>📊 <strong>Activation Pattern Analysis</strong>: Visualize how data flows through the network</li>
-                <li>⚡ <strong>Interactive Parameter Control</strong>: Adjust learning rates and architectures on the fly</li>
+                <li>🎯 <strong>Visualização de Treinamento em Tempo Real</strong>: Observe pesos e vieses atualizando durante o treinamento</li>
+                <li>🔍 <strong>Inspeção Camada por Camada</strong>: Mergulhe profundamente em cada camada da rede</li>
+                <li>📊 <strong>Análise de Padrões de Ativação</strong>: Visualize como os dados fluem através da rede</li>
+                <li>⚡ <strong>Controle Interativo de Parâmetros</strong>: Ajuste taxas de aprendizado e arquiteturas rapidamente</li>
             </ul>
             
             <div class="center">
-                <button class="btn" id="startTraining">Start Training Visualization</button>
-                <button class="btn btn-secondary" id="resetNetwork">Reset Network</button>
+                <button class="btn" id="startTraining">Iniciar Visualização de Treinamento</button>
+                <button class="btn btn-secondary" id="resetNetwork">Reiniciar Rede</button>
             </div>
             
             <blockquote>
-                <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
+                <p>"Visualizar redes neurais não é apenas sobre entender IA—é sobre ver a inteligência nascendo."</p>
             </blockquote>
         </div>
 
         <!-- Project Timeline - UPDATED: Added EntroPy Web Version project -->
-        <h2 id="project-timeline">📅 Project Timeline</h2>
+        <h2 id="project-timeline">📅 Linha do Tempo dos Projetos</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-date">April 2025 - Present</div>
+                <div class="timeline-date">Abril 2025 - Presente</div>
                 <h4>EntroPy Password Generator</h4>
-                <p>Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.</p>
-                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+                <p>Gerador de senhas avançado usando fontes de entropia real para máxima segurança. Baseado em Python com algoritmos criptográficos.</p>
+                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
-                <h4>GitHub Profile & Digital Universe</h4>
-                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
-                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
+                <div class="timeline-date">Julho 2025 - Presente</div>
+                <h4>Perfil GitHub & Universo Digital</h4>
+                <p>Portfólio pessoal mostrando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
+                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visitar Perfil</a>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
+                <div class="timeline-date">Julho 2025 - Presente</div>
                 <h4>DNAPass Password Generator</h4>
-                <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
-                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+                <p>Gerador de senhas inovador baseado em codificação de sequência de DNA e princípios de criptografia biológica.</p>
+                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">August 2025 - Present</div>
-                <h4>EntroPy Password Generator - Web Version</h4>
-                <p>Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.</p>
-                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+                <div class="timeline-date">Agosto 2025 - Presente</div>
+                <h4>EntroPy Password Generator - Versão Web</h4>
+                <p>Implementação baseada em navegador do gerador de senhas de entropia com design responsivo e indicadores de segurança em tempo real.</p>
+                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">October 2025 - Present</div>
-                <h4>Neural Network Visualizer</h4>
-                <p>Interactive AI visualization tool that makes machine learning accessible and understandable.</p>
-                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Coming Soon</a>
+                <div class="timeline-date">Outubro 2025 - Presente</div>
+                <h4>Visualizador de Rede Neural</h4>
+                <p>Ferramenta de visualização de IA interativa que torna o machine learning acessível e compreensível.</p>
+                <a href="#" class="btn" style="margin: 10px 0; display: inline-block;">Em Breve</a>
             </div>
         </div>
 
         <!-- Upcoming project alert -->
         <div class="alert">
-            <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
-            <p>A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.</p>
-            <p><strong>📢 Keep your eyes peeled—this innovation will spark conversations! 💥</strong></p>
+            <h3>🚨🚧 Alerta de Projeto em Desenvolvimento 🚧🚨</h3>
+            <p>Um projeto revolucionário em Python 🐍 está em desenvolvimento—uma ferramenta revolucionária para geração de palavras! Fique ligado para um divisor de águas no processamento de dados seguro e criativo.</p>
+            <p><strong>📢 Fique de olho—esta inovação vai gerar conversas! 💥</strong></p>
         </div>
 
         <!-- REQUESTED CHANGE: Terminal with updated title -->
-        <h2 id="terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</h2>
+        <h2 id="terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</h2>
         
         <!-- Interactive Terminal -->
         <div class="terminal">
             <div class="terminal-header">
-                <div class="terminal-title">📟 Terminal Session [gerivan@digital-universe:~]</div>
+                <div class="terminal-title">📟 Sessão Terminal [gerivan@universo-digital:~]</div>
                 <div class="terminal-controls">
                     <div class="terminal-control control-close"></div>
                     <div class="terminal-control control-minimize"></div>
@@ -1457,13 +1463,13 @@
             </div>
             <div class="terminal-content">
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></div>
-                <div>gerivan-costa | Security Developer | Open Source Enthusiast</div>
+                <div>gerivan-costa | Desenvolvedor de Segurança | Entusiasta de Código Aberto</div>
                 <br>
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projects/</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">ls projetos/</span></div>
                 <div>entropy-password-generator/ dnapass-generator/ typing-animation/ neural-network-visualizer/</div>
                 <br>
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat skills.txt</span></div>
-                <div>Python 🐍 | C++ | Web Security | Cryptography | Linux | Machine Learning</div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cat habilidades.txt</span></div>
+                <div>Python 🐍 | C++ | Segurança Web | Criptografia | Linux | Machine Learning</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
             </div>
@@ -1490,77 +1496,77 @@
         </div>
 
         <!-- GitHub Statistics section -->
-        <h2 id="github-stats">📊 GitHub Stats</h2>
-        <p>Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!</p>
+        <h2 id="github-stats">📊 Estatísticas do GitHub</h2>
+        <p>Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto. Busco desenvolvimento consistente e aprendizado contínuo!</p>
 
         <div class="center">
-            <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+            <img width="90%" alt="Gráfico de atividade recente do GitHub de Gerivan" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
         </div>
 
         <div class="stats-grid">
             <div>
-                <img alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+                <img alt="Estatísticas de sequência do GitHub de Gerivan" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
             </div>
             <div>
-                <img alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
+                <img alt="Linguagens principais de Gerivan" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
             </div>
         </div>
 
         <!-- Profile summary section -->
-        <h2 id="profile-summary">🎯 Profile Summary</h2>
-        <p>A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.</p>
+        <h2 id="profile-summary">🎯 Resumo do Perfil</h2>
+        <p>Um instantâneo da minha atividade e contribuições no GitHub, mostrando meu compromisso com a programação e projetos de código aberto.</p>
 
         <div class="center">
-            <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+            <img width="90%" alt="Detalhes do Perfil" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
         </div>
 
         <div class="stats-grid">
             <div>
-                <img alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
+                <img alt="Estatísticas" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
             </div>
             <div>
-                <img alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
+                <img alt="Tempo Produtivo" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
             </div>
         </div>
 
         <!-- REQUESTED CHANGE: Contact information section - Improved formatting -->
-        <h2 id="contact">📬 Contact Information</h2>
+        <h2 id="contact">📬 Informações de Contato</h2>
         
         <div class="contact-info">
-            <h3>Key Contact Methods:</h3>
+            <h3>Principais Métodos de Contato:</h3>
             <ul>
                 <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></li>
-                <li>📚 <strong>Repositories:</strong> <a href="https://github.com/gerivanc?tab=repositories">github.com/gerivanc?tab=repositories</a></li>
+                <li>📚 <strong>Repositórios:</strong> <a href="https://github.com/gerivanc?tab=repositories">gerivanc.github.io/gerivanc</a></li>
                 <li>📫 <strong>Email:</strong> dean-grumbly-plop@duck.com</li>
-                <li>🌍 <strong>Location:</strong> Brazil</li>
+                <li>🌍 <strong>Localização:</strong> Brasil</li>
             </ul>
             
-            <h3>Professional Focus:</h3>
+            <h3>Foco Profissional:</h3>
             <ul>
-                <li>🧠 <strong>Open to collaborations and research projects</strong></li>
-                <li>🔒 <strong>Specialized in security-focused development</strong></li>
-                <li>🌐 <strong>Active in open source community contributions</strong></li>
+                <li>🧠 <strong>Aberto para colaborações e projetos de pesquisa</strong></li>
+                <li>🔒 <strong>Especializado em desenvolvimento focado em segurança</strong></li>
+                <li>🌐 <strong>Ativo em contribuições para a comunidade de código aberto</strong></li>
             </ul>
             
             <div style="margin-top: 20px; text-align: center;">
-                <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Send Email</a>
-                <a href="https://github.com/gerivanc" class="btn btn-secondary">GitHub Profile</a>
-                <a href="https://github.com/gerivanc?tab=repositories" class="btn btn-secondary">Repositories</a>
+                <a href="mailto:dean-grumbly-plop@duck.com" class="btn">Enviar Email</a>
+                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil GitHub</a>
+                <a href="https://github.com/gerivanc?tab=repositories" class="btn btn-secondary">Repositórios</a>
             </div>
         </div>
 
         <!-- License information -->
-        <h2 id="license">📜 License</h2>
-        <p>This repository is licensed under the <a href="https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md">MIT License</a>.</p>
+        <h2 id="license">📜 Licença</h2>
+        <p>Este repositório está licenciado sob a <a href="https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md">Licença MIT</a>.</p>
 
         <!-- Language support section -->
-        <h2 id="language-support">🌐 Language Support</h2>
+        <h2 id="language-support">🌐 Suporte de Idioma</h2>
         <div class="language-switcher">
-            <a href="#">
-                <span style="font-size: 1.2em;">🇺🇸</span> English — You're here!
+            <a href="https://gerivan.me">
+                <span style="font-size: 1.2em;">🇺🇸</span> Versão em Inglês
             </a>
-            <a href="https://gerivan.me/index-pt.html">
-                <span style="font-size: 1.2em;">🇧🇷</span> Portuguese Version
+            <a href="#">
+                <span style="font-size: 1.2em;">🇧🇷</span> Português — Você está aqui!
             </a>
         </div>
 
@@ -1582,10 +1588,10 @@
                 font-size: 1.2em;
                 font-weight: 500;
                 text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-            ">"Code with purpose. Build with passion. Share with the world."</p>
+            ">"Programe com propósito. Construa com paixão. Compartilhe com o mundo."</p>
         </div>
 
-        <!-- Copyright footer styles - English language -->
+        <!-- Copyright footer styles - Portuguese language -->
         <style>
         .center p {
             margin: 2px 0;
@@ -1594,11 +1600,11 @@
             transition: color 0.3s ease; /* Smooth transition effect */
         }
         .center p:hover {
-            color: #00B7EB; /* Darker cyan on hover - English version */
+            color: #00B7EB; /* Darker cyan on hover - Portuguese version */
         }
         </style>
 
-        <!-- Copyright footer - English language -->
+        <!-- Copyright footer - Portuguese language -->
         <div class="center">          
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
         </div>
@@ -1762,9 +1768,9 @@
 
         skillObserver.observe(document.querySelector('.skills-container'));
 
-        // Terminal Typing Animation - UPDATED: Added installation and usage commands
+        // Terminal Typing Animation - TRANSLATED: Added installation and usage commands in Portuguese
         const commands = [
-            "📦 Stable Version Installation (PyPI)",
+            "📦 Instalação da Versão Estável (PyPI)",
             "python3 -m venv venv-stablepypi",
             "source venv-stablepypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -1772,7 +1778,7 @@
             "pip install entropy-password-generator",
             "pip list",
             "",
-            "🧪 Development Version Installation (Test PyPI)",
+            "🧪 Instalação da Versão de Desenvolvimento (Test PyPI)",
             "python3 -m venv venv-testpypi",
             "source venv-testpypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -1780,32 +1786,32 @@
             "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
             "pip list",
             "",
-            "🧩 Block I (All with ambiguous characters, length 24)",
+            "🧩 Bloco I (Todos com caracteres ambíguos, comprimento 24)",
             "python3 entropy_password_generator/password_generator.py --mode 1:",
-            "Generated password: &\\]*y>fhqs*e<.+fl=~ijy-i",
-            "Entropy: 138.75 bits;",
+            "Senha gerada: &\\]*y>fhqs*e<.+fl=~ijy-i",
+            "Entropia: 138.75 bits;",
             "",
             "python3 entropy_password_generator/password_generator.py --mode 2:",
-            "Generated password: JRYAHHASE[|&`M`B)!!EQ$RD",
-            "Entropy: 138.75 bits;",
+            "Senha gerada: JRYAHHASE[|&`M`B)!!EQ$RD",
+            "Entropia: 138.75 bits;",
             "",
-            "🌀 Block II (Mixed configurations)",
+            "🌀 Bloco II (Configurações mistas)",
             "python3 entropy_password_generator/password_generator.py --mode 11:",
-            "Generated password: ?*WjM\\MR-.JkQr5",
-            "Entropy: 95.10 bits;",
+            "Senha gerada: ?*WjM\\MR-.JkQr5",
+            "Entropia: 95.10 bits;",
             "",
             "python3 entropy_password_generator/password_generator.py --mode 15:",
-            "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
-            "Entropy: 152.16 bits.",
+            "Senha gerada: #Cxn8S$G8q&PrGF*9F$}(UDd",
+            "Entropia: 152.16 bits.",
             "",
-            "🎨 Block III (Using Custom Configuration)",
+            "🎨 Bloco III (Usando Configuração Personalizada)",
             "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
-            "Generated password: P#Zm+e;7Lv{iI9W",
-            "Entropy: 97.62 bits.",
+            "Senha gerada: P#Zm+e;7Lv{iI9W",
+            "Entropia: 97.62 bits.",
             "",
             "python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous:",
-            "Generated password: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
-            "Entropy: 833.00 bits."
+            "Senha gerada: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
+            "Entropia: 833.00 bits."
         ];
 
         let currentCommand = 0;
@@ -1974,10 +1980,44 @@
             installPrompt.classList.remove('show');
         });
 
+		// === 🔒 SANITIZATION OF INPUT FOR FORMS ===
+			function sanitizeInput(input) {
+				if (typeof input !== 'string') return '';
+				const div = document.createElement('div');
+				div.textContent = input;
+				return div.innerHTML;
+			}
+
+			function validateEmail(email) {
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return emailRegex.test(email);
+			}
+
+			function validateURL(url) {
+				try {
+					new URL(url);
+					return true;
+				} catch {
+					return false;
+				}
+			}
+
+		// === 🔗 PROTECTION OF EXTERNAL LINKS ===
+			function secureExternalLinks() {
+				document.querySelectorAll('a[href^="http"]').forEach(link => {
+					if (link.hostname !== window.location.hostname) {
+						link.setAttribute('rel', 'noopener noreferrer');
+						link.setAttribute('target', '_blank');
+					}
+		});
+			console.log('🔒 External links protected with noopener/noreferrer');
+			}
+
         // Initialize animations
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             createNeuralNetwork();
+			secureExternalLinks();
         });
 
         // Responsive canvas resize
