@@ -6,7 +6,6 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -23,6 +22,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "categories": ["personal", "portfolio"]
+  ]
 }
