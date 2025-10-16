@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#00ffff">
+	<meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               script-src 'self' 'unsafe-inline'; 
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+               font-src 'self' https://fonts.gstatic.com; 
+               img-src 'self' https://*.githubusercontent.com https://img.shields.io https://komarev.com;">
     <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
     <title>Gerivan Costa - Digital Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1974,10 +1980,44 @@
             installPrompt.classList.remove('show');
         });
 
+		// === 🔒 SANITIZATION OF INPUT FOR FORMS ===
+			function sanitizeInput(input) {
+				if (typeof input !== 'string') return '';
+				const div = document.createElement('div');
+				div.textContent = input;
+				return div.innerHTML;
+			}
+
+			function validateEmail(email) {
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return emailRegex.test(email);
+			}
+
+			function validateURL(url) {
+				try {
+					new URL(url);
+					return true;
+				} catch {
+					return false;
+				}
+			}
+
+		// === 🔗 PROTECTION OF EXTERNAL LINKS ===
+			function secureExternalLinks() {
+				document.querySelectorAll('a[href^="http"]').forEach(link => {
+					if (link.hostname !== window.location.hostname) {
+						link.setAttribute('rel', 'noopener noreferrer');
+						link.setAttribute('target', '_blank');
+					}
+		});
+			console.log('🔒 External links protected with noopener/noreferrer');
+			}
+
         // Initialize animations
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             createNeuralNetwork();
+			secureExternalLinks();
         });
 
         // Responsive canvas resize
