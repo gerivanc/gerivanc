@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CONTENT SECURITY POLICY -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   style-src 'self' 'unsafe-inline'; 
+                   script-src 'self' 'unsafe-inline';
+                   connect-src 'none';
+                   media-src 'none';
+                   object-src 'none';
+                   frame-ancestors 'none';">
     <title>Typing Animation - Security Tips</title>
     <style>
         :root {
@@ -704,6 +713,19 @@
 
         // Initialize keyboard sound system
         const keyboardSound = new KeyboardSound();
+		
+		// === ENTRANCE SANITATION ===
+		function sanitizeUserInput(input) {
+			if (typeof input !== 'string') return '';
+			return input
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;')
+				.replace(/'/g, '&#x27;')
+				.replace(/\//g, '&#x2F;')
+				.replace(/\\/g, '&#x5C;')
+				.replace(/`/g, '&#96;');
+		}
 
         // Create background particles
         function createParticles() {
