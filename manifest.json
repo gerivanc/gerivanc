@@ -1,7 +1,7 @@
 {
-  "name": "Gerivan - Meu Site",
+  "name": "Gerivan Portfolio",
   "short_name": "Gerivan",
-  "description": "Site pessoal de Gerivan",
+  "description": "Gerivan's personal portfolio",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
