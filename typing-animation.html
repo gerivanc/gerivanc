@@ -32,12 +32,12 @@
         }
 
         [data-theme="green"] {
-            --primary-color: #00ff88; /* GREEN instead of cyan */
+            --primary-color: #00ff88;
             --background-dark: #000000;
             --background-gradient: linear-gradient(135deg, #000000, #003333);
-            --text-color: #00ff88; /* VERDE */
+            --text-color: #00ff88;
             --container-bg: rgba(0, 0, 0, 0.7);
-            --shadow-color: rgba(0, 255, 136, 0.4); /* VERDE */
+            --shadow-color: rgba(0, 255, 136, 0.4);
         }
 
         [data-theme="orange"] {
@@ -123,7 +123,7 @@
         .theme-orange { background: #ff7b25; }
 
         .typing-container {
-            font-size: 14px; /* Reduced font size */
+            font-size: 14px;
             color: var(--text-color);
             text-shadow: 0 0 5px var(--primary-color);
             white-space: normal;
@@ -169,7 +169,6 @@
             justify-content: center;
         }
 
-        /* Progress Bar Styles */
         .progress-container {
             width: 100%;
             height: 4px;
@@ -214,7 +213,6 @@
             100% { background-position: 15px 0; }
         }
 
-        /* Visual Effects */
         .particles {
             position: fixed;
             top: 0;
@@ -252,7 +250,6 @@
             }
         }
 
-        /* Text completion effect */
         .text-complete {
             animation: completeGlow 0.5s ease;
         }
@@ -270,7 +267,6 @@
             }
         }
 
-        /* Statistics Modal */
         .stats-modal {
             display: none;
             position: fixed;
@@ -356,7 +352,6 @@
             z-index: 999;
         }
 
-        /* Media query for mobile devices */
         @media (max-width: 768px) {
             body {
                 padding: 8px;
@@ -406,7 +401,6 @@
             }
         }
 
-        /* Extra small screens */
         @media (max-width: 480px) {
             .controls {
                 flex-direction: column;
@@ -427,13 +421,12 @@
     </style>
 </head>
 <body data-theme="dark">
-    <!-- Particles container for background effect -->
     <div class="particles" id="particles"></div>
     
     <!-- Statistics Modal -->
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="stats-modal" id="stats-modal">
-        <h3>📊 Statistics of Progress</h3>
+        <h3>📊 Real-Time Statistics</h3>
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-value" id="stat-completed">0</div>
@@ -445,11 +438,11 @@
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="stat-percentage">0%</div>
-                <div class="stat-label">Progress</div>
+                <div class="stat-label">General Progress</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="stat-time">0:00</div>
-                <div class="stat-label">Elapsed Time</div>
+                <div class="stat-label">Total Time</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="stat-remaining">204</div>
@@ -457,7 +450,15 @@
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="stat-avg-time">0s</div>
-                <div class="stat-label">Time per Sentence</div>
+                <div class="stat-label">Average per Sentence</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-current-speed">0 cps</div>
+                <div class="stat-label">Current Speed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-eta">--:--</div>
+                <div class="stat-label">Time Remaining</div>
             </div>
         </div>
         <button class="close-stats" id="close-stats">Close Statistics</button>
@@ -496,8 +497,8 @@
         const texts = [
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
-            "120-character strong password + 2FA: secure protection that defeats any hacker's evil spell!",
-            "Senha segura com 120 caracteres + 2FA: proteção segura que vence o feitiço maligno de qualquer hacker!",
+            "Secure password with 120 characters + 2FA: impenetrable protection against the darkest tricks of hackers!",
+            "Senha segura com 120 caracteres + 2FA: segurança impenetrável contra as artimanhas mais sombrias dos hackers!",
             "2FA: One key alone won't lock the vault!",
             "2FA: Porque uma chave só não tranca o cofre!",
             "Clean code, strong password, safe life!",
@@ -700,7 +701,7 @@
             "A segurança da sua conta é sua assinatura digital!"
         ];
 
-        // State variables
+        // State variables - AGORA COM ESTATÍSTICAS DINÂMICAS
         let currentTextIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -708,9 +709,16 @@
         let timeoutId = null;
         let startTime = null;
         let timerInterval = null;
+        let statsInterval = null;
+        
+        // NOVAS VARIÁVEIS PARA ESTATÍSTICAS DINÂMICAS
         let completedPhrases = 0;
         let phraseStartTime = null;
-        
+        let totalCharactersTyped = 0;
+        let currentPhraseStartTime = null;
+        let lastUpdateTime = null;
+        let currentTypingSpeed = 0;
+
         // Constants
         const typingSpeed = 100;
         const deletingSpeed = 50;
@@ -738,6 +746,8 @@
         const statTime = document.getElementById('stat-time');
         const statRemaining = document.getElementById('stat-remaining');
         const statAvgTime = document.getElementById('stat-avg-time');
+        const statCurrentSpeed = document.getElementById('stat-current-speed');
+        const statEta = document.getElementById('stat-eta');
 
         // Create background particles
         function createParticles() {
@@ -747,7 +757,6 @@
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Random position and animation delay
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 10}s`;
                 particle.style.animationDuration = `${10 + Math.random() * 10}s`;
@@ -777,8 +786,13 @@
         function startTimer() {
             if (!startTime) {
                 startTime = Date.now();
-                phraseStartTime = Date.now();
+                currentPhraseStartTime = Date.now();
+                lastUpdateTime = Date.now();
                 timerInterval = setInterval(updateTimer, 1000);
+                
+                // Iniciar atualização das estatísticas em tempo real
+                if (statsInterval) clearInterval(statsInterval);
+                statsInterval = setInterval(updateStatistics, 500);
             }
         }
 
@@ -788,24 +802,51 @@
             updateProgressBar();
         }
 
-        // Update statistics
+        // CALCULATE STATISTICS IN REAL TIME
         function updateStatistics() {
-            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            if (!startTime) return;
+            
+            const now = Date.now();
+            const elapsedSeconds = Math.floor((now - startTime) / 1000);
             const minutes = Math.floor(elapsedSeconds / 60);
             const seconds = elapsedSeconds % 60;
-            const avgTimePerPhrase = completedPhrases > 0 ? Math.floor(elapsedSeconds / completedPhrases) : 0;
             
+            // Calculate current typing speed (characters per second)
+            if (lastUpdateTime && !isDeleting && !isPaused) {
+                const timeDiff = (now - lastUpdateTime) / 1000;
+                if (timeDiff > 0) {
+                    currentTypingSpeed = Math.round(1 / timeDiff);
+                }
+            }
+            lastUpdateTime = now;
+            
+            // Calculate average time per sentence
+            const avgTimePerPhrase = completedPhrases > 0 ? 
+                Math.round(elapsedSeconds / completedPhrases) : 0;
+            
+            // Calculate ETA (Estimated Time Remaining)
+            const remainingPhrases = texts.length - completedPhrases;
+            const etaSeconds = avgTimePerPhrase > 0 ? 
+                remainingPhrases * avgTimePerPhrase : 0;
+            const etaMinutes = Math.floor(etaSeconds / 60);
+            const etaSecs = etaSeconds % 60;
+            const etaFormatted = etaSeconds > 0 ? 
+                `${etaMinutes}:${etaSecs.toString().padStart(2, '0')}` : '--:--';
+            
+            // UPDATE STATISTICS DISPLAY
             statCompleted.textContent = completedPhrases;
             statTotal.textContent = texts.length;
             statPercentage.textContent = `${Math.round((completedPhrases / texts.length) * 100)}%`;
             statTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            statRemaining.textContent = texts.length - completedPhrases;
+            statRemaining.textContent = remainingPhrases;
             statAvgTime.textContent = `${avgTimePerPhrase}s`;
+            statCurrentSpeed.textContent = `${currentTypingSpeed} cps`;
+            statEta.textContent = etaFormatted;
         }
 
         // Show statistics modal
         function showStatistics() {
-            updateStatistics();
+            updateStatistics(); // Atualizar antes de mostrar
             statsModal.style.display = 'block';
             modalOverlay.style.display = 'block';
         }
@@ -816,7 +857,7 @@
             modalOverlay.style.display = 'none';
         }
 
-        // Type animation function
+        // Type animation function - STATISTICS TRACKING
         function type() {
             if (isPaused) return;
             
@@ -829,17 +870,19 @@
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
                     completedPhrases++;
-                    phraseStartTime = Date.now();
+                    currentPhraseStartTime = Date.now();
+                    totalCharactersTyped += currentText.length;
                     timeoutId = setTimeout(type, 500);
                     updateStatus();
                     return;
                 }
                 timeoutId = setTimeout(type, deletingSpeed);
             } else {
-                // Typing text
+                // Typing text - TRACK TYPED CHARACTERS
                 textElement.textContent = currentText.substring(0, charIndex++);
+                
                 if (charIndex > currentText.length) {
-                    // Text completed - add visual effect
+                    // Text completed
                     textElement.classList.add('text-complete');
                     setTimeout(() => {
                         textElement.classList.remove('text-complete');
@@ -849,6 +892,7 @@
                     timeoutId = setTimeout(type, delayBetweenTexts);
                     return;
                 }
+                
                 timeoutId = setTimeout(type, typingSpeed);
             }
         }
@@ -861,6 +905,9 @@
             }
             if (timerInterval) {
                 clearInterval(timerInterval);
+            }
+            if (statsInterval) {
+                clearInterval(statsInterval);
             }
             pauseBtn.style.display = 'none';
             resumeBtn.style.display = 'inline-block';
@@ -877,7 +924,7 @@
             type();
         }
 
-        // Skip to next phrase
+        // Skip to next phrase - UPDATE STATISTICS
         function skipAnimation() {
             if (timeoutId) {
                 clearTimeout(timeoutId);
@@ -886,7 +933,7 @@
             currentTextIndex = (currentTextIndex + 1) % texts.length;
             charIndex = 0;
             completedPhrases++;
-            phraseStartTime = Date.now();
+            currentPhraseStartTime = Date.now();
             updateStatus();
             type();
         }
@@ -895,7 +942,6 @@
         function changeTheme(theme) {
             document.body.setAttribute('data-theme', theme);
             
-            // Update active theme button
             themeButtons.forEach(btn => {
                 if (btn.getAttribute('data-theme') === theme) {
                     btn.classList.add('active');
