@@ -270,6 +270,92 @@
             }
         }
 
+        /* Statistics Modal */
+        .stats-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--container-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 0 20px var(--shadow-color);
+            z-index: 1000;
+            min-width: 300px;
+            max-width: 500px;
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .stats-modal h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            border: 1px solid var(--shadow-color);
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .close-stats {
+            background: var(--container-bg);
+            color: var(--text-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .close-stats:hover {
+            background: var(--primary-color);
+            color: var(--background-dark);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
         /* Media query for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -307,6 +393,17 @@
             .progress-container {
                 height: 3px;
             }
+
+            .stats-modal {
+                min-width: 280px;
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
         }
 
         /* Extra small screens */
@@ -333,12 +430,45 @@
     <!-- Particles container for background effect -->
     <div class="particles" id="particles"></div>
     
+    <!-- Statistics Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="stats-modal" id="stats-modal">
+        <h3>📊 Estatísticas de Progresso</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value" id="stat-completed">0</div>
+                <div class="stat-label">Frases Concluídas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-total">204</div>
+                <div class="stat-label">Total de Frases</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-percentage">0%</div>
+                <div class="stat-label">Progresso</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-time">0:00</div>
+                <div class="stat-label">Tempo Decorrido</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-remaining">204</div>
+                <div class="stat-label">Frases Restantes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stat-avg-time">0s</div>
+                <div class="stat-label">Tempo por Frase</div>
+            </div>
+        </div>
+        <button class="close-stats" id="close-stats">Fechar Estatísticas</button>
+    </div>
+    
     <div class="controls">
         <div class="controls-group">
             <button class="control-btn" id="pause-btn">Pause</button>
             <button class="control-btn" id="resume-btn" style="display:none;">Resume</button>
             <button class="control-btn" id="skip-btn">Skip</button>
-            <button class="control-btn" id="sound-btn">Sound: On</button>
+            <button class="control-btn" id="stats-btn">📊 Estatísticas</button>
         </div>
         
         <div class="theme-selector">
@@ -575,10 +705,11 @@
         let charIndex = 0;
         let isDeleting = false;
         let isPaused = false;
-        let soundEnabled = true;
         let timeoutId = null;
         let startTime = null;
         let timerInterval = null;
+        let completedPhrases = 0;
+        let phraseStartTime = null;
         
         // Constants
         const typingSpeed = 100;
@@ -590,141 +721,23 @@
         const pauseBtn = document.getElementById('pause-btn');
         const resumeBtn = document.getElementById('resume-btn');
         const skipBtn = document.getElementById('skip-btn');
-        const soundBtn = document.getElementById('sound-btn');
+        const statsBtn = document.getElementById('stats-btn');
         const phraseCounterElement = document.getElementById('phrase-counter');
         const timerElement = document.getElementById('timer');
         const progressBarElement = document.getElementById('progress-bar');
         const particlesContainer = document.getElementById('particles');
         const themeButtons = document.querySelectorAll('.theme-btn');
+        const statsModal = document.getElementById('stats-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const closeStatsBtn = document.getElementById('close-stats');
 
-        // Keyboard sound system
-        class KeyboardSound {
-            constructor() {
-                this.sounds = [];
-                this.loadSounds();
-            }
-
-            // Load keyboard sounds
-            loadSounds() {
-                // Create realistic mechanical keyboard sounds using Web Audio API
-                for (let i = 0; i < 4; i++) {
-                    this.sounds.push(this.createKeySound(i));
-                }
-            }
-
-            // Create individual key sound
-            createKeySound(variant) {
-                try {
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-                    
-                    // Different frequencies for different key types
-                    const baseFreq = 60 + (variant * 15);
-                    
-                    oscillator.type = 'square';
-                    oscillator.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
-                    
-                    // Realistic envelope for mechanical keyboard
-                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-                    gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.002);
-                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.08);
-                    
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-                    
-                    return { oscillator, gainNode, context: audioContext, variant };
-                } catch (e) {
-                    console.log('Web Audio API not supported, using fallback');
-                    return null;
-                }
-            }
-
-            // Play random key sound
-            playRandomKeySound() {
-                if (!soundEnabled) return;
-                
-                const sound = this.sounds[Math.floor(Math.random() * this.sounds.length)];
-                if (!sound) return;
-
-                try {
-                    const now = sound.context.currentTime;
-                    
-                    // Stop any existing sound
-                    sound.oscillator.stop();
-                    
-                    // Recreate oscillator for new sound
-                    const newOscillator = sound.context.createOscillator();
-                    const newGainNode = sound.context.createGain();
-                    
-                    const baseFreq = 60 + (sound.variant * 15);
-                    const randomVariance = (Math.random() - 0.5) * 20;
-                    
-                    newOscillator.type = 'square';
-                    newOscillator.frequency.setValueAtTime(baseFreq + randomVariance, now);
-                    
-                    // Mechanical keyboard envelope
-                    newGainNode.gain.setValueAtTime(0, now);
-                    newGainNode.gain.linearRampToValueAtTime(0.12, now + 0.001);
-                    newGainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.06 + (Math.random() * 0.03));
-                    
-                    newOscillator.connect(newGainNode);
-                    newGainNode.connect(sound.context.destination);
-                    
-                    newOscillator.start();
-                    newOscillator.stop(now + 0.1);
-                    
-                    // Update reference
-                    sound.oscillator = newOscillator;
-                    sound.gainNode = newGainNode;
-                    
-                } catch (e) {
-                    // Silent fail if audio context is not available
-                }
-            }
-
-            // Play spacebar sound (deeper)
-            playSpaceSound() {
-                if (!soundEnabled) return;
-                
-                try {
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-                    
-                    oscillator.type = 'sawtooth';
-                    oscillator.frequency.setValueAtTime(45, audioContext.currentTime);
-                    
-                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-                    gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.003);
-                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.12);
-                    
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-                    
-                    oscillator.start();
-                    oscillator.stop(audioContext.currentTime + 0.15);
-                } catch (e) {
-                    // Silent fail
-                }
-            }
-        }
-
-        // Initialize keyboard sound system
-        const keyboardSound = new KeyboardSound();
-		
-		// === ENTRANCE SANITATION ===
-		function sanitizeUserInput(input) {
-			if (typeof input !== 'string') return '';
-			return input
-				.replace(/</g, '&lt;')
-				.replace(/>/g, '&gt;')
-				.replace(/"/g, '&quot;')
-				.replace(/'/g, '&#x27;')
-				.replace(/\//g, '&#x2F;')
-				.replace(/\\/g, '&#x5C;')
-				.replace(/`/g, '&#96;');
-		}
+        // Statistics elements
+        const statCompleted = document.getElementById('stat-completed');
+        const statTotal = document.getElementById('stat-total');
+        const statPercentage = document.getElementById('stat-percentage');
+        const statTime = document.getElementById('stat-time');
+        const statRemaining = document.getElementById('stat-remaining');
+        const statAvgTime = document.getElementById('stat-avg-time');
 
         // Create background particles
         function createParticles() {
@@ -764,6 +777,7 @@
         function startTimer() {
             if (!startTime) {
                 startTime = Date.now();
+                phraseStartTime = Date.now();
                 timerInterval = setInterval(updateTimer, 1000);
             }
         }
@@ -772,6 +786,34 @@
         function updateStatus() {
             phraseCounterElement.textContent = `${isPaused ? 'Paused' : 'Playing'}: ${currentTextIndex + 1}/${texts.length}`;
             updateProgressBar();
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsedSeconds / 60);
+            const seconds = elapsedSeconds % 60;
+            const avgTimePerPhrase = completedPhrases > 0 ? Math.floor(elapsedSeconds / completedPhrases) : 0;
+            
+            statCompleted.textContent = completedPhrases;
+            statTotal.textContent = texts.length;
+            statPercentage.textContent = `${Math.round((completedPhrases / texts.length) * 100)}%`;
+            statTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            statRemaining.textContent = texts.length - completedPhrases;
+            statAvgTime.textContent = `${avgTimePerPhrase}s`;
+        }
+
+        // Show statistics modal
+        function showStatistics() {
+            updateStatistics();
+            statsModal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+        }
+
+        // Hide statistics modal
+        function hideStatistics() {
+            statsModal.style.display = 'none';
+            modalOverlay.style.display = 'none';
         }
 
         // Type animation function
@@ -786,13 +828,11 @@
                 if (charIndex < 0) {
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    completedPhrases++;
+                    phraseStartTime = Date.now();
                     timeoutId = setTimeout(type, 500);
                     updateStatus();
                     return;
-                }
-                // Play backspace sound
-                if (soundEnabled && Math.random() > 0.3) {
-                    setTimeout(() => keyboardSound.playRandomKeySound(), 10);
                 }
                 timeoutId = setTimeout(type, deletingSpeed);
             } else {
@@ -808,17 +848,6 @@
                     isDeleting = true;
                     timeoutId = setTimeout(type, delayBetweenTexts);
                     return;
-                }
-                // Play typing sound with realistic timing
-                if (soundEnabled) {
-                    const currentChar = currentText.charAt(charIndex - 1);
-                    if (currentChar === ' ') {
-                        // Spacebar - deeper sound
-                        setTimeout(() => keyboardSound.playSpaceSound(), 15);
-                    } else {
-                        // Regular keys
-                        setTimeout(() => keyboardSound.playRandomKeySound(), 10 + Math.random() * 20);
-                    }
                 }
                 timeoutId = setTimeout(type, typingSpeed);
             }
@@ -856,14 +885,10 @@
             isDeleting = false;
             currentTextIndex = (currentTextIndex + 1) % texts.length;
             charIndex = 0;
+            completedPhrases++;
+            phraseStartTime = Date.now();
             updateStatus();
             type();
-        }
-
-        // Toggle sound on/off
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            soundBtn.textContent = `Sound: ${soundEnabled ? 'On' : 'Off'}`;
         }
 
         // Change theme
@@ -894,12 +919,21 @@
         pauseBtn.addEventListener('click', pauseAnimation);
         resumeBtn.addEventListener('click', resumeAnimation);
         skipBtn.addEventListener('click', skipAnimation);
-        soundBtn.addEventListener('click', toggleSound);
+        statsBtn.addEventListener('click', showStatistics);
+        closeStatsBtn.addEventListener('click', hideStatistics);
+        modalOverlay.addEventListener('click', hideStatistics);
 
         themeButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 changeTheme(btn.getAttribute('data-theme'));
             });
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && statsModal.style.display === 'block') {
+                hideStatistics();
+            }
         });
     </script>
 </body>
