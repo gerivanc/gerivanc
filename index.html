@@ -1103,7 +1103,7 @@
 			background: var(--primary-color);
 			border-radius: 50%;
 			box-shadow: 0 0 10px var(--primary-color);
-			transition: all 0.3s ease; /* Transição suave */
+			transition: all 0.3s ease; /* Smooth transition */
 		}
 
 		.neural-connection {
@@ -1111,8 +1111,44 @@
 			height: 2px;
 			background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
 			transform-origin: left center;
-			transition: opacity 0.3s ease; /* Transição suave */
+			transition: opacity 0.3s ease; /* Smooth transition */
 		}		
+
+		/* Neural Network Visualizer CSS FOR MOBILE */
+		@media (max-width: 768px) {
+			.neural-network {
+				height: 250px !important;
+				min-height: 250px;
+				touch-action: manipulation;
+			}
+			
+			.neural-node {
+				width: 16px !important;
+				height: 16px !important;
+			}
+			
+			.neural-connection {
+				height: 1px !important;
+			}
+			
+			/* Melhorar área de clique dos botões */
+			#startTraining, #resetNetwork {
+				min-height: 44px; /* Tamanho mínimo recomendado para touch */
+				padding: 12px 20px;
+				font-size: 16px; /* Previne zoom no iOS */
+				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
+				touch-action: manipulation;
+			}
+		}
+
+		/* Estilos específicos para touch devices */
+		@media (hover: none) and (pointer: coarse) {
+			#startTraining:active, #resetNetwork:active {
+				transform: scale(0.95);
+				transition: transform 0.1s;
+			}
+		}
 
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
@@ -2216,13 +2252,13 @@
         // Start typing animation
         setTimeout(typeCommand, 2000);
 
-		// Neural Network Visualization - CORRECTED CODE
+		// Neural Network Visualization - FIX FOR MOBILE
 		const neuralNetwork = document.getElementById('neuralNetwork');
 		let neuralInterval;
 
 		function createNeuralNetwork() {
 			neuralNetwork.innerHTML = '';
-			const layers = [4, 6, 8, 6, 4]; // Number of nodes in each layer
+			const layers = [4, 6, 8, 6, 4];
 			const nodePositions = [];
 			
 			layers.forEach((nodeCount, layerIndex) => {
@@ -2279,21 +2315,61 @@
 			});
 		}
 
-		// FIX: Creates static neural network initially
-		document.addEventListener('DOMContentLoaded', () => {
-			createNeuralNetwork(); // Creates the static neural network when the page loads
-		});
+		// FIX FOR MOBILE- Event listeners melhorados
+		function initNeuralNetwork() {
+			const startBtn = document.getElementById('startTraining');
+			const resetBtn = document.getElementById('resetNetwork');
+			
+			if (startBtn && resetBtn) {
+				// Remove existing event listeners to avoid duplication
+				startBtn.replaceWith(startBtn.cloneNode(true));
+				resetBtn.replaceWith(resetBtn.cloneNode(true));
+				
+				// New event listeners
+				document.getElementById('startTraining').addEventListener('click', startTraining);
+				document.getElementById('startTraining').addEventListener('touchstart', startTraining);
+				
+				document.getElementById('resetNetwork').addEventListener('click', resetTraining);
+				document.getElementById('resetNetwork').addEventListener('touchstart', resetTraining);
+				
+				console.log('🧠 Neural Network buttons initialized');
+			}
+		}
 
-		document.getElementById('startTraining').addEventListener('click', () => {
-			createNeuralNetwork(); // Recreate the network before starting animation
+		function startTraining(e) {
+			if (e) e.preventDefault();
+			createNeuralNetwork();
 			neuralInterval = setInterval(animateNeuralNetwork, 500);
+			console.log('🚀 Training started');
+		}
+
+		function resetTraining(e) {
+			if (e) e.preventDefault();
+			clearInterval(neuralInterval);
+			createNeuralNetwork();
+			console.log('🔄 Network reset');
+		}
+
+		// Correct initialization for mobile
+		document.addEventListener('DOMContentLoaded', function() {
+			createNeuralNetwork();
+			
+			// Delay to ensure buttons are available
+			setTimeout(initNeuralNetwork, 100);
+			
+			// Fallback - try again after 1 second
+			setTimeout(() => {
+				if (!document.getElementById('startTraining').hasEventListener) {
+					initNeuralNetwork();
+				}
+			}, 1000);
 		});
 
-		// FIX: Reset now recreates the static neural network
-		document.getElementById('resetNetwork').addEventListener('click', () => {
-			clearInterval(neuralInterval); // For the animation
-			createNeuralNetwork(); // Recreates the static neural network
-		});
+		// Helper to check if element has event listener
+		Element.prototype.hasEventListener = function(type) {
+			const events = this._events || (this._events = {});
+			return !!(events[type] && events[type].length > 0);
+		};
 
         // Particle Animation
         function createParticles() {
