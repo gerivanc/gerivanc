@@ -977,40 +977,58 @@
 		}
 
 		/* Status Colors */
-		.status-indicator.online {
+		.status-indicator.security-matrix {
 			background: var(--success-color);
 			box-shadow: 0 0 15px var(--success-color);
 		}
 
-		.status-indicator.online::after {
+		.status-indicator.security-matrix::after {
 			border: 2px solid var(--success-color);
 		}
 
-		.status-indicator.active {
+		.status-indicator.neural-network {
 			background: var(--primary-color);
 			box-shadow: 0 0 15px var(--primary-color);
 		}
 
-		.status-indicator.active::after {
+		.status-indicator.neural-network::after {
 			border: 2px solid var(--primary-color);
 		}
 
-		.status-indicator.secure {
+		.status-indicator.armor-encryption {
 			background: var(--neon-green);
 			box-shadow: 0 0 15px var(--neon-green);
 		}
 
-		.status-indicator.secure::after {
+		.status-indicator.armor-encryption::after {
 			border: 2px solid var(--neon-green);
 		}
 
-		.status-indicator.optimized {
+		.status-indicator.code-quality {
 			background: var(--warning-color);
 			box-shadow: 0 0 15px var(--warning-color);
 		}
 
-		.status-indicator.optimized::after {
+		.status-indicator.code-quality::after {
 			border: 2px solid var(--warning-color);
+		}
+		
+		.status-indicator.activity-monitor {
+			background: var(--neon-green);
+			box-shadow: 0 0 15px var(--neon-green);
+		}
+
+		.status-indicator.activity-monitor::after {
+			border: 2px solid var(--neon-green);
+		}
+		
+		.status-indicator.data-stream {
+			background: var(--warning-color);
+			box-shadow: 0 0 15px var(--neon-green-dark);
+		}
+
+		.status-indicator.data-stream::after {
+			border: 2px solid var(--neon-green-dark);
 		}
 
 		.status-text {
@@ -1065,6 +1083,16 @@
 		.status-item:nth-child(4) .status-pulse {
 			background: var(--warning-color);
 			animation-delay: 1.5s;
+		}
+		
+		.status-item:nth-child(5) .status-pulse {
+			background: var(--primary-color);
+			animation-delay: 2.5s;
+		}
+		
+		.status-item:nth-child(6) .status-pulse {
+			background: var(--neon-green);
+			animation-delay: 3s;
 		}
 
         /* Responsive design for mobile devices */
@@ -1702,25 +1730,35 @@
         <!-- Animated Stats Dashboard -->
 		<div class="system-status">
 			<div class="status-item">
-				<div class="status-indicator online" data-status="online"></div>
-				<div class="status-text">Security Matrix: <span class="status-value">ONLINE</span></div>
+				<div class="status-indicator security-matrix" data-status="authentication is not optional"></div>
+				<div class="status-text">Security Matrix: <span class="status-value">AUTHENTICATION IS NOT OPTIONAL</span></div>
 				<div class="status-pulse"></div>
 			</div>
 			<div class="status-item">
-				<div class="status-indicator active" data-status="training"></div>
-				<div class="status-text">Neural Network: <span class="status-value">TRAINING</span></div>
+				<div class="status-indicator neural-network" data-status="active predictive authentication"></div>
+				<div class="status-text">Neural Network: <span class="status-value">ACTIVE PREDICTIVE AUTHENTICATION</span></div>
 				<div class="status-pulse"></div>
 			</div>
 			<div class="status-item">
-				<div class="status-indicator secure" data-status="active"></div>
-				<div class="status-text">Encryption: <span class="status-value">ACTIVE</span></div>
+				<div class="status-indicator armor-encryption" data-status="armor is non-negotiable"></div>
+				<div class="status-text">Encryption: <span class="status-value">ARMOR IS NON-NEGOTIABLE</span></div>
 				<div class="status-pulse"></div>
 			</div>
 			<div class="status-item">
-				<div class="status-indicator optimized" data-status="optimized"></div>
-				<div class="status-text">Code Quality: <span class="status-value">OPTIMIZED</span></div>
+				<div class="status-indicator code-quality" data-status="every line matters"></div>
+				<div class="status-text">Code Quality: <span class="status-value">EVERY LINE MATTERS</span></div>
 				<div class="status-pulse"></div>
 			</div>
+			<div class="status-item">
+				<div class="status-indicator activity-monitor" data-status="everything is being recorded, stored and monitored"></div>
+				<div class="status-text">Activity-Monitor: <span class="status-value">EVERYTHING IS BEING RECORDED, MONITORED AND STORED</span></div>
+				<div class="status-pulse"></div>
+			</div>			
+			<div class="status-item">
+				<div class="status-indicator data-stream" data-status="visible flow, real risk"></div>
+				<div class="status-text">Data Stream: <span class="status-value">VISIBLE FLOW, REAL RISK</span></div>
+				<div class="status-pulse"></div>
+			</div>			
         </div>
 
         <!-- GitHub Statistics section -->
