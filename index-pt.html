@@ -1095,6 +1095,25 @@
 			animation-delay: 3s;
 		}
 
+		/* Neural Network Visualizer */
+		.neural-node {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background: var(--primary-color);
+			border-radius: 50%;
+			box-shadow: 0 0 10px var(--primary-color);
+			transition: all 0.3s ease; /* Transição suave */
+		}
+
+		.neural-connection {
+			position: absolute;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+			transform-origin: left center;
+			transition: opacity 0.3s ease; /* Transição suave */
+		}	
+
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -2197,78 +2216,84 @@
         // Start typing animation
         setTimeout(typeCommand, 2000);
 
-        // Neural Network Visualization
-        const neuralNetwork = document.getElementById('neuralNetwork');
-        let neuralInterval;
+		// Neural Network Visualization - CORRECTED CODE
+		const neuralNetwork = document.getElementById('neuralNetwork');
+		let neuralInterval;
 
-        function createNeuralNetwork() {
-            neuralNetwork.innerHTML = '';
-            const layers = [4, 6, 8, 6, 4]; // Number of nodes in each layer
-            const nodePositions = [];
-            
-            layers.forEach((nodeCount, layerIndex) => {
-                for (let i = 0; i < nodeCount; i++) {
-                    const node = document.createElement('div');
-                    node.className = 'neural-node';
-                    
-                    const x = (layerIndex + 1) * (neuralNetwork.offsetWidth / (layers.length + 1));
-                    const y = (i + 1) * (neuralNetwork.offsetHeight / (nodeCount + 1));
-                    
-                    node.style.left = x + 'px';
-                    node.style.top = y + 'px';
-                    
-                    neuralNetwork.appendChild(node);
-                    nodePositions.push({x, y, layer: layerIndex});
-                }
-            });
-            
-            // Create connections
-            nodePositions.forEach((node, index) => {
-                nodePositions.forEach((targetNode, targetIndex) => {
-                    if (node.layer < targetNode.layer && Math.random() > 0.7) {
-                        const connection = document.createElement('div');
-                        connection.className = 'neural-connection';
-                        
-                        const dx = targetNode.x - node.x;
-                        const dy = targetNode.y - node.y;
-                        const length = Math.sqrt(dx * dx + dy * dy);
-                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                        
-                        connection.style.width = length + 'px';
-                        connection.style.left = node.x + 'px';
-                        connection.style.top = node.y + 'px';
-                        connection.style.transform = `rotate(${angle}deg)`;
-                        connection.style.opacity = Math.random() * 0.5 + 0.3;
-                        
-                        neuralNetwork.appendChild(connection);
-                    }
-                });
-            });
-        }
+		function createNeuralNetwork() {
+			neuralNetwork.innerHTML = '';
+			const layers = [4, 6, 8, 6, 4]; // Number of nodes in each layer
+			const nodePositions = [];
+			
+			layers.forEach((nodeCount, layerIndex) => {
+				for (let i = 0; i < nodeCount; i++) {
+					const node = document.createElement('div');
+					node.className = 'neural-node';
+					
+					const x = (layerIndex + 1) * (neuralNetwork.offsetWidth / (layers.length + 1));
+					const y = (i + 1) * (neuralNetwork.offsetHeight / (nodeCount + 1));
+					
+					node.style.left = x + 'px';
+					node.style.top = y + 'px';
+					
+					neuralNetwork.appendChild(node);
+					nodePositions.push({x, y, layer: layerIndex});
+				}
+			});
+			
+			// Create connections
+			nodePositions.forEach((node, index) => {
+				nodePositions.forEach((targetNode, targetIndex) => {
+					if (node.layer < targetNode.layer && Math.random() > 0.7) {
+						const connection = document.createElement('div');
+						connection.className = 'neural-connection';
+						
+						const dx = targetNode.x - node.x;
+						const dy = targetNode.y - node.y;
+						const length = Math.sqrt(dx * dx + dy * dy);
+						const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+						
+						connection.style.width = length + 'px';
+						connection.style.left = node.x + 'px';
+						connection.style.top = node.y + 'px';
+						connection.style.transform = `rotate(${angle}deg)`;
+						connection.style.opacity = Math.random() * 0.5 + 0.3;
+						
+						neuralNetwork.appendChild(connection);
+					}
+				});
+			});
+		}
 
-        function animateNeuralNetwork() {
-            const nodes = document.querySelectorAll('.neural-node');
-            const connections = document.querySelectorAll('.neural-connection');
-            
-            nodes.forEach(node => {
-                node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
-                node.style.opacity = 0.5 + Math.random() * 0.5;
-            });
-            
-            connections.forEach(conn => {
-                conn.style.opacity = 0.2 + Math.random() * 0.3;
-            });
-        }
+		function animateNeuralNetwork() {
+			const nodes = document.querySelectorAll('.neural-node');
+			const connections = document.querySelectorAll('.neural-connection');
+			
+			nodes.forEach(node => {
+				node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
+				node.style.opacity = 0.5 + Math.random() * 0.5;
+			});
+			
+			connections.forEach(conn => {
+				conn.style.opacity = 0.2 + Math.random() * 0.3;
+			});
+		}
 
-        document.getElementById('startTraining').addEventListener('click', () => {
-            createNeuralNetwork();
-            neuralInterval = setInterval(animateNeuralNetwork, 500);
-        });
+		// FIX: Creates static neural network initially
+		document.addEventListener('DOMContentLoaded', () => {
+			createNeuralNetwork(); // Creates the static neural network when the page loads
+		});
 
-        document.getElementById('resetNetwork').addEventListener('click', () => {
-            clearInterval(neuralInterval);
-            neuralNetwork.innerHTML = '';
-        });
+		document.getElementById('startTraining').addEventListener('click', () => {
+			createNeuralNetwork(); // Recreate the network before starting animation
+			neuralInterval = setInterval(animateNeuralNetwork, 500);
+		});
+
+		// FIX: Reset now recreates the static neural network
+		document.getElementById('resetNetwork').addEventListener('click', () => {
+			clearInterval(neuralInterval); // For the animation
+			createNeuralNetwork(); // Recreates the static neural network
+		});
 
         // Particle Animation
         function createParticles() {
