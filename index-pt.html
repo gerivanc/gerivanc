@@ -21,8 +21,8 @@
 	<!-- Meta tags para PWA -->
 	<meta name="theme-color" content="#000000">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
-    <title>Gerivan Costa - Building secure tools with open source</title>
+    <meta name="description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <title>Gerivan Costa - Construindo ferramentas seguras com código aberto</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <style>
@@ -917,6 +917,184 @@
             box-shadow: 0 0 10px var(--primary-color);
         }
 
+		/* System Status Dashboard */
+		.system-status {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 20px;
+			margin: 30px 0;
+		}
+
+		.status-item {
+			background: var(--card-bg);
+			padding: 25px;
+			border-radius: 12px;
+			border: 1px solid var(--card-border);
+			display: flex;
+			align-items: center;
+			gap: 15px;
+			position: relative;
+			overflow: hidden;
+			transition: var(--transition);
+			backdrop-filter: blur(10px);
+		}
+
+		.status-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+			border-color: var(--primary-color);
+		}
+
+		.status-item::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: linear-gradient(90deg, var(--primary-color), transparent);
+			opacity: 0.7;
+		}
+
+		.status-indicator {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			position: relative;
+			flex-shrink: 0;
+			transition: all 0.3s ease;
+		}
+
+		.status-indicator::after {
+			content: '';
+			position: absolute;
+			top: -4px;
+			left: -4px;
+			right: -4px;
+			bottom: -4px;
+			border-radius: 50%;
+			animation: pulse 2s infinite;
+		}
+
+		/* Status Colors */
+		.status-indicator.security-matrix {
+			background: var(--success-color);
+			box-shadow: 0 0 15px var(--success-color);
+		}
+
+		.status-indicator.security-matrix::after {
+			border: 2px solid var(--success-color);
+		}
+
+		.status-indicator.neural-network {
+			background: var(--primary-color);
+			box-shadow: 0 0 15px var(--primary-color);
+		}
+
+		.status-indicator.neural-network::after {
+			border: 2px solid var(--primary-color);
+		}
+
+		.status-indicator.armor-encryption {
+			background: var(--neon-green);
+			box-shadow: 0 0 15px var(--neon-green);
+		}
+
+		.status-indicator.armor-encryption::after {
+			border: 2px solid var(--neon-green);
+		}
+
+		.status-indicator.code-quality {
+			background: var(--warning-color);
+			box-shadow: 0 0 15px var(--warning-color);
+		}
+
+		.status-indicator.code-quality::after {
+			border: 2px solid var(--warning-color);
+		}
+		
+		.status-indicator.activity-monitor {
+			background: var(--neon-green);
+			box-shadow: 0 0 15px var(--neon-green);
+		}
+
+		.status-indicator.activity-monitor::after {
+			border: 2px solid var(--neon-green);
+		}
+		
+		.status-indicator.data-stream {
+			background: var(--warning-color);
+			box-shadow: 0 0 15px var(--neon-green-dark);
+		}
+
+		.status-indicator.data-stream::after {
+			border: 2px solid var(--neon-green-dark);
+		}
+
+		.status-text {
+			flex: 1;
+			font-family: 'Orbitron', sans-serif;
+			font-size: 1.1em;
+			color: var(--text-color);
+		}
+
+		.status-value {
+			color: var(--primary-color);
+			font-weight: 700;
+			text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+			transition: all 0.3s ease;
+		}
+
+		.status-pulse {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			animation: statusPulse 1.5s infinite;
+		}
+
+		/* Pulsing Animation */
+		@keyframes pulse {
+			0% { transform: scale(0.8); opacity: 1; }
+			70% { transform: scale(2); opacity: 0; }
+			100% { transform: scale(2); opacity: 0; }
+		}
+
+		@keyframes statusPulse {
+			0%, 100% { opacity: 0.3; }
+			50% { opacity: 1; }
+		}
+
+		/* Status-specific animations */
+		.status-item:nth-child(1) .status-pulse {
+			background: var(--success-color);
+			animation-delay: 0s;
+		}
+
+		.status-item:nth-child(2) .status-pulse {
+			background: var(--primary-color);
+			animation-delay: 0.5s;
+		}
+
+		.status-item:nth-child(3) .status-pulse {
+			background: var(--neon-green);
+			animation-delay: 1s;
+		}
+
+		.status-item:nth-child(4) .status-pulse {
+			background: var(--warning-color);
+			animation-delay: 1.5s;
+		}
+		
+		.status-item:nth-child(5) .status-pulse {
+			background: var(--primary-color);
+			animation-delay: 2.5s;
+		}
+		
+		.status-item:nth-child(6) .status-pulse {
+			background: var(--neon-green);
+			animation-delay: 3s;
+		}
+
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -1013,8 +1191,71 @@
             .stats-dashboard {
                 grid-template-columns: 1fr;
 				
-            }
+			}
 
+					@media (max-width: 768px) {
+			.system-status {
+				grid-template-columns: 1fr;
+				gap: 15px;
+			}
+			
+			.status-item {
+				padding: 20px;
+				gap: 12px;
+			}
+			
+			.status-text {
+				font-size: 1em;
+			}
+			
+			.status-indicator {
+				width: 14px;
+				height: 14px;
+			}
+			
+			/* Better contrast for mobile */
+			.status-item {
+				background: rgba(15, 25, 35, 0.95) !important;
+				backdrop-filter: blur(5px);
+			}
+			
+			[data-theme="light"] .status-item {
+				background: rgba(255, 255, 255, 0.98) !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+		@media (max-width: 480px) {
+			.system-status {
+				gap: 12px;
+			}
+			
+			.status-item {
+				padding: 15px;
+				gap: 10px;
+			}
+			
+			.status-text {
+				font-size: 0.95em;
+			}
+		}
+       
+			/* === SYSTEM STATUS EXTRA SMALL SCREENS === */
+			.system-status {
+				gap: 12px;
+			}
+			
+			.status-item {
+				padding: 15px;
+				gap: 10px;
+			}
+			
+			.status-text {
+				font-size: 0.95em;
+			}
+			/* === END SYSTEM STATUS EXTRA SMALL === */			
+		}			
+				
 		/* CONTRAST ENHANCEMENT FOR MOBILE */
 			.project-card,
 			.welcome-card,
@@ -1061,7 +1302,7 @@
 			}
         }
 
-            /* Text justification for mobile - REQUESTED CHANGE */
+        /* Text justification for mobile - REQUESTED CHANGE */
             .welcome-card p, .project-card p {
                 text-align: justify;
             }
@@ -1137,7 +1378,7 @@
 			.intro-text {
 				text-align: justify;
 				text-justify: inter-word;
-			}						
+			}			
         }
     </style>
 </head>
@@ -1487,23 +1728,37 @@
         </div>
 
         <!-- Animated Stats Dashboard -->
-        <div class="stats-dashboard">
-            <div class="stat-card">
-                <div class="stat-number" id="projectsCount">0</div>
-                <div class="stat-label">Public Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="commitsCount">0</div>
-                <div class="stat-label">Total Commits</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="reposCount">0</div>
-                <div class="stat-label">Repositories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="contributionsCount">0</div>
-                <div class="stat-label">Contributions</div>
-            </div>
+		<div class="system-status">
+			<div class="status-item">
+				<div class="status-indicator security-matrix" data-status="autenticação não é opcional"></div>
+				<div class="status-text">Matriz de Segurança: <span class="status-value">AUTENTICAÇÃO NÃO É OPCIONAL</span></div>
+				<div class="status-pulse"></div>
+			</div>
+			<div class="status-item">
+				<div class="status-indicator neural-network" data-status="autenticação preditiva ativa"></div>
+				<div class="status-text">Rede Neural: <span class="status-value">AUTENTICAÇÃO PREDITIVA ATIVA</span></div>
+				<div class="status-pulse"></div>
+			</div>
+			<div class="status-item">
+				<div class="status-indicator armor-encryption" data-status="blindagem não é negociável"></div>
+				<div class="status-text">Criptografia: <span class="status-value">BLINDAGEM NÃO É NEGOCIÁVEL</span></div>
+				<div class="status-pulse"></div>
+			</div>
+			<div class="status-item">
+				<div class="status-indicator code-quality" data-status="cada linha importa"></div>
+				<div class="status-text">Qualidade do código: <span class="status-value">CADA LINHA IMPORTA</span></div>
+				<div class="status-pulse"></div>
+			</div>
+			<div class="status-item">
+				<div class="status-indicator activity-monitor" data-status="tudo está sendo registrado, armazenado e monitorado"></div>
+				<div class="status-text">Monitor de Atividade: <span class="status-value">TUDO ESTÁ SENDO REGISTRADO, ARMAZENADO E MONITORADO  </span></div>
+				<div class="status-pulse"></div>
+			</div>			
+			<div class="status-item">
+				<div class="status-indicator data-stream" data-status="fluxo visível, risco real"></div>
+				<div class="status-text">Fluxo de dados: <span class="status-value">FLUXO VISÍVEL, RISCO REAL</span></div>
+				<div class="status-pulse"></div>
+			</div>						
         </div>
 
         <!-- GitHub Statistics section -->
@@ -1748,20 +2003,77 @@
             window.requestAnimationFrame(step);
         }
 
-        // Initialize stats animation when in viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateValue(document.getElementById('projectsCount'), 0, 4, 2000);
-                    animateValue(document.getElementById('commitsCount'), 0, 127, 2000);
-                    animateValue(document.getElementById('reposCount'), 0, 4, 2000);
-                    animateValue(document.getElementById('contributionsCount'), 0, 86, 2000);
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
+		// System Status Animation
+		const statusObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					animateSystemStatus();
+					statusObserver.unobserve(entry.target);
+				}
+			});
+		});
 
-        observer.observe(document.querySelector('.stats-dashboard'));
+		// Start observing system status
+		const systemStatusElement = document.querySelector('.system-status');
+		if (systemStatusElement) {
+			statusObserver.observe(systemStatusElement);
+		}
+
+		function animateSystemStatus() {
+			const statusItems = document.querySelectorAll('.status-item');
+			const statusValues = document.querySelectorAll('.status-value');
+			
+			// Animate items entrance
+			statusItems.forEach((item, index) => {
+				item.style.opacity = '0';
+				item.style.transform = 'translateX(-50px)';
+				
+				setTimeout(() => {
+					item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+					item.style.opacity = '1';
+					item.style.transform = 'translateX(0)';
+				}, index * 200);
+			});
+			
+			// Animate status values with typing effect
+			statusValues.forEach((value, index) => {
+				const originalText = value.textContent;
+				value.textContent = '';
+				
+				setTimeout(() => {
+					typeStatusText(value, originalText, 0);
+				}, 1000 + (index * 300));
+			});
+			
+			// Add random status fluctuations for realism
+			startStatusFluctuations();
+		}
+
+		function typeStatusText(element, text, index) {
+			if (index < text.length) {
+				element.textContent += text.charAt(index);
+				setTimeout(() => typeStatusText(element, text, index + 1), 100);
+			}
+		}
+
+		function startStatusFluctuations() {
+			setInterval(() => {
+				const statusItems = document.querySelectorAll('.status-item');
+				const randomIndex = Math.floor(Math.random() * statusItems.length);
+				const randomItem = statusItems[randomIndex];
+				const statusIndicator = randomItem.querySelector('.status-indicator');
+				const statusValue = randomItem.querySelector('.status-value');
+				
+				// Brief fluctuation effect
+				statusIndicator.style.transform = 'scale(1.3)';
+				statusValue.style.color = 'var(--accent-color)';
+				
+				setTimeout(() => {
+					statusIndicator.style.transform = 'scale(1)';
+					statusValue.style.color = 'var(--primary-color)';
+				}, 300);
+			}, 5000);
+		}
 
         // Skills Animation
         const skillProgresses = document.querySelectorAll('.skill-progress');
@@ -1777,11 +2089,14 @@
             });
         });
 
-        skillObserver.observe(document.querySelector('.skills-container'));
+        const skillsContainer = document.querySelector('.skills-container');
+        if (skillsContainer) {
+            skillObserver.observe(skillsContainer);
+        }
 
-        // Terminal Typing Animation - TRANSLATED: Added installation and usage commands in Portuguese
+        // Terminal Typing Animation - UPDATED: Added installation and usage commands
         const commands = [
-            "📦 Instalação da Versão Estável (PyPI)",
+            "📦 Stable Version Installation (PyPI)",
             "python3 -m venv venv-stablepypi",
             "source venv-stablepypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -1789,7 +2104,7 @@
             "pip install entropy-password-generator",
             "pip list",
             "",
-            "🧪 Instalação da Versão de Desenvolvimento (Test PyPI)",
+            "🧪 Development Version Installation (Test PyPI)",
             "python3 -m venv venv-testpypi",
             "source venv-testpypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -1797,32 +2112,32 @@
             "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
             "pip list",
             "",
-            "🧩 Bloco I (Todos com caracteres ambíguos, comprimento 24)",
+            "🧩 Block I (All with ambiguous characters, length 24)",
             "python3 entropy_password_generator/password_generator.py --mode 1:",
-            "Senha gerada: &\\]*y>fhqs*e<.+fl=~ijy-i",
-            "Entropia: 138.75 bits;",
+            "Generated password: &\\]*y>fhqs*e<.+fl=~ijy-i",
+            "Entropy: 138.75 bits;",
             "",
             "python3 entropy_password_generator/password_generator.py --mode 2:",
-            "Senha gerada: JRYAHHASE[|&`M`B)!!EQ$RD",
-            "Entropia: 138.75 bits;",
+            "Generated password: JRYAHHASE[|&`M`B)!!EQ$RD",
+            "Entropy: 138.75 bits;",
             "",
-            "🌀 Bloco II (Configurações mistas)",
+            "🌀 Block II (Mixed configurations)",
             "python3 entropy_password_generator/password_generator.py --mode 11:",
-            "Senha gerada: ?*WjM\\MR-.JkQr5",
-            "Entropia: 95.10 bits;",
+            "Generated password: ?*WjM\\MR-.JkQr5",
+            "Entropy: 95.10 bits;",
             "",
             "python3 entropy_password_generator/password_generator.py --mode 15:",
-            "Senha gerada: #Cxn8S$G8q&PrGF*9F$}(UDd",
-            "Entropia: 152.16 bits.",
+            "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
+            "Entropy: 152.16 bits.",
             "",
-            "🎨 Bloco III (Usando Configuração Personalizada)",
+            "🎨 Block III (Using Custom Configuration)",
             "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
-            "Senha gerada: P#Zm+e;7Lv{iI9W",
-            "Entropia: 97.62 bits.",
+            "Generated password: P#Zm+e;7Lv{iI9W",
+            "Entropy: 97.62 bits.",
             "",
             "python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous:",
-            "Senha gerada: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
-            "Entropia: 833.00 bits."
+            "Generated password: Yoj|F6j~A8SJ%izZ|)#mhi6`oR~75|.;*$9xS7GIF8R[UE1?,OQD7ak\\Nf-MKJx]a6nbf3A*SQXlq{xNeWGIs&;}N.G;6ldKoEZS)nTWht68A^3vz;9JpFol[-OQ`1Y^",
+            "Entropy: 833.00 bits."
         ];
 
         let currentCommand = 0;
@@ -2064,6 +2379,40 @@
                 marquee.style.animationPlayState = 'running';
             });
         }
+
+        // Additional system status effects (commented out for now)
+        /*
+        function addSystemSounds() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                function createBeep(frequency, duration) {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = frequency;
+                    oscillator.type = 'sine';
+                    
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + duration);
+                }
+                
+                document.querySelectorAll('.status-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        createBeep(800, 0.1);
+                    });
+                });
+            } catch (e) {
+                console.log('Audio context not supported');
+            }
+        }
+        */
     </script>
 </body>
 </html>
