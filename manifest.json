@@ -6,44 +6,45 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "icons": [
+"icons": [
     {
-      "src": "/buildingsecure.ico",
-      "sizes": "64x64",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "/buildingsecure.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-	{
-	  "src": "/g2.ico",
-      "sizes": "256x228",
-      "type": "image/x-icon"
+        "src": "/buildingsecure.ico",
+        "sizes": "64x64",
+        "type": "image/x-icon"
     },
     {
-      "src": "/g2.png",
-      "sizes": "939x864",
-      "type": "image/png"
-    },
-	  "src": "/g3.ico",
-      "sizes": "256x249",
-      "type": "image/x-icon"
+        "src": "/buildingsecure.png",
+        "sizes": "256x256",
+        "type": "image/png"
     },
     {
-      "src": "/g3.png",
-      "sizes": "906x807",
-      "type": "image/png"
-    },
-	  "src": "/g4.ico",
-      "sizes": "256x234",
-      "type": "image/x-icon"
+        "src": "/g2.ico",
+        "sizes": "256x228",
+        "type": "image/x-icon"
     },
     {
-      "src": "/g4.png",
-      "sizes": "893x816",
-      "type": "image/png"
+        "src": "/g2.png",
+        "sizes": "939x864",
+        "type": "image/png"
+    },
+    {
+        "src": "/g3.ico",
+        "sizes": "256x249",
+        "type": "image/x-icon"
+    },
+    {
+        "src": "/g3.png",
+        "sizes": "986x887", // ou "906x807" conforme o segundo arquivo
+        "type": "image/png"
+    },
+    {
+        "src": "/g4.ico",
+        "sizes": "256x234",
+        "type": "image/x-icon"
+    },
+    {
+        "src": "/g4.png",
+        "sizes": "893x816",
+        "type": "image/png"
     }
-  ]
-}
+]
