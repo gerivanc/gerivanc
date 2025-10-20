@@ -267,91 +267,6 @@
             }
         }
 
-        .stats-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--container-bg);
-            border: 1px solid var(--primary-color);
-            border-radius: 6px;
-            padding: 20px;
-            box-shadow: 0 0 20px var(--shadow-color);
-            z-index: 1000;
-            min-width: 300px;
-            max-width: 500px;
-            color: var(--text-color);
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .stats-modal h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-            text-align: center;
-            border-bottom: 1px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 8px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            border: 1px solid var(--shadow-color);
-        }
-
-        .stat-value {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 10px;
-            opacity: 0.8;
-            text-align: center;
-        }
-
-        .close-stats {
-            background: var(--container-bg);
-            color: var(--text-color);
-            border: 1px solid var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Courier New', Courier, monospace;
-            width: 100%;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .close-stats:hover {
-            background: var(--primary-color);
-            color: var(--background-dark);
-        }
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-        }
-
         @media (max-width: 768px) {
             body {
                 padding: 8px;
@@ -388,17 +303,6 @@
             .progress-container {
                 height: 3px;
             }
-
-            .stats-modal {
-                min-width: 280px;
-                max-width: 90%;
-                padding: 15px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -423,53 +327,11 @@
 <body data-theme="dark">
     <div class="particles" id="particles"></div>
     
-    <!-- Statistics Modal -->
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="stats-modal" id="stats-modal">
-        <h3>📊 Real-Time Statistics</h3>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-value" id="stat-completed">0</div>
-                <div class="stat-label">Completed Sentences</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-total">204</div>
-                <div class="stat-label">Total Sentences</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-percentage">0%</div>
-                <div class="stat-label">General Progress</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-time">0:00</div>
-                <div class="stat-label">Total Time</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-remaining">204</div>
-                <div class="stat-label">Remaining Sentences</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-avg-time">0s</div>
-                <div class="stat-label">Average per Sentence</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-current-speed">0 cps</div>
-                <div class="stat-label">Current Speed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-eta">--:--</div>
-                <div class="stat-label">Time Remaining</div>
-            </div>
-        </div>
-        <button class="close-stats" id="close-stats">Close Statistics</button>
-    </div>
-    
     <div class="controls">
         <div class="controls-group">
             <button class="control-btn" id="pause-btn">Pause</button>
             <button class="control-btn" id="resume-btn" style="display:none;">Resume</button>
             <button class="control-btn" id="skip-btn">Skip</button>
-            <button class="control-btn" id="stats-btn">📊 Statistics</button>
         </div>
         
         <div class="theme-selector">
@@ -701,7 +563,7 @@
             "A segurança da sua conta é sua assinatura digital!"
         ];
 
-        // State variables - AGORA COM ESTATÍSTICAS DINÂMICAS
+        // State variables
         let currentTextIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -709,15 +571,6 @@
         let timeoutId = null;
         let startTime = null;
         let timerInterval = null;
-        let statsInterval = null;
-        
-        // NOVAS VARIÁVEIS PARA ESTATÍSTICAS DINÂMICAS
-        let completedPhrases = 0;
-        let phraseStartTime = null;
-        let totalCharactersTyped = 0;
-        let currentPhraseStartTime = null;
-        let lastUpdateTime = null;
-        let currentTypingSpeed = 0;
 
         // Constants
         const typingSpeed = 100;
@@ -729,25 +582,11 @@
         const pauseBtn = document.getElementById('pause-btn');
         const resumeBtn = document.getElementById('resume-btn');
         const skipBtn = document.getElementById('skip-btn');
-        const statsBtn = document.getElementById('stats-btn');
         const phraseCounterElement = document.getElementById('phrase-counter');
         const timerElement = document.getElementById('timer');
         const progressBarElement = document.getElementById('progress-bar');
         const particlesContainer = document.getElementById('particles');
         const themeButtons = document.querySelectorAll('.theme-btn');
-        const statsModal = document.getElementById('stats-modal');
-        const modalOverlay = document.getElementById('modal-overlay');
-        const closeStatsBtn = document.getElementById('close-stats');
-
-        // Statistics elements
-        const statCompleted = document.getElementById('stat-completed');
-        const statTotal = document.getElementById('stat-total');
-        const statPercentage = document.getElementById('stat-percentage');
-        const statTime = document.getElementById('stat-time');
-        const statRemaining = document.getElementById('stat-remaining');
-        const statAvgTime = document.getElementById('stat-avg-time');
-        const statCurrentSpeed = document.getElementById('stat-current-speed');
-        const statEta = document.getElementById('stat-eta');
 
         // Create background particles
         function createParticles() {
@@ -786,13 +625,7 @@
         function startTimer() {
             if (!startTime) {
                 startTime = Date.now();
-                currentPhraseStartTime = Date.now();
-                lastUpdateTime = Date.now();
                 timerInterval = setInterval(updateTimer, 1000);
-                
-                // Iniciar atualização das estatísticas em tempo real
-                if (statsInterval) clearInterval(statsInterval);
-                statsInterval = setInterval(updateStatistics, 500);
             }
         }
 
@@ -802,62 +635,7 @@
             updateProgressBar();
         }
 
-        // CALCULATE STATISTICS IN REAL TIME
-        function updateStatistics() {
-            if (!startTime) return;
-            
-            const now = Date.now();
-            const elapsedSeconds = Math.floor((now - startTime) / 1000);
-            const minutes = Math.floor(elapsedSeconds / 60);
-            const seconds = elapsedSeconds % 60;
-            
-            // Calculate current typing speed (characters per second)
-            if (lastUpdateTime && !isDeleting && !isPaused) {
-                const timeDiff = (now - lastUpdateTime) / 1000;
-                if (timeDiff > 0) {
-                    currentTypingSpeed = Math.round(1 / timeDiff);
-                }
-            }
-            lastUpdateTime = now;
-            
-            // Calculate average time per sentence
-            const avgTimePerPhrase = completedPhrases > 0 ? 
-                Math.round(elapsedSeconds / completedPhrases) : 0;
-            
-            // Calculate ETA (Estimated Time Remaining)
-            const remainingPhrases = texts.length - completedPhrases;
-            const etaSeconds = avgTimePerPhrase > 0 ? 
-                remainingPhrases * avgTimePerPhrase : 0;
-            const etaMinutes = Math.floor(etaSeconds / 60);
-            const etaSecs = etaSeconds % 60;
-            const etaFormatted = etaSeconds > 0 ? 
-                `${etaMinutes}:${etaSecs.toString().padStart(2, '0')}` : '--:--';
-            
-            // UPDATE STATISTICS DISPLAY
-            statCompleted.textContent = completedPhrases;
-            statTotal.textContent = texts.length;
-            statPercentage.textContent = `${Math.round((completedPhrases / texts.length) * 100)}%`;
-            statTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            statRemaining.textContent = remainingPhrases;
-            statAvgTime.textContent = `${avgTimePerPhrase}s`;
-            statCurrentSpeed.textContent = `${currentTypingSpeed} cps`;
-            statEta.textContent = etaFormatted;
-        }
-
-        // Show statistics modal
-        function showStatistics() {
-            updateStatistics(); // Atualizar antes de mostrar
-            statsModal.style.display = 'block';
-            modalOverlay.style.display = 'block';
-        }
-
-        // Hide statistics modal
-        function hideStatistics() {
-            statsModal.style.display = 'none';
-            modalOverlay.style.display = 'none';
-        }
-
-        // Type animation function - STATISTICS TRACKING
+        // Type animation function
         function type() {
             if (isPaused) return;
             
@@ -869,16 +647,13 @@
                 if (charIndex < 0) {
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
-                    completedPhrases++;
-                    currentPhraseStartTime = Date.now();
-                    totalCharactersTyped += currentText.length;
                     timeoutId = setTimeout(type, 500);
                     updateStatus();
                     return;
                 }
                 timeoutId = setTimeout(type, deletingSpeed);
             } else {
-                // Typing text - TRACK TYPED CHARACTERS
+                // Typing text
                 textElement.textContent = currentText.substring(0, charIndex++);
                 
                 if (charIndex > currentText.length) {
@@ -906,9 +681,6 @@
             if (timerInterval) {
                 clearInterval(timerInterval);
             }
-            if (statsInterval) {
-                clearInterval(statsInterval);
-            }
             pauseBtn.style.display = 'none';
             resumeBtn.style.display = 'inline-block';
             updateStatus();
@@ -924,7 +696,7 @@
             type();
         }
 
-        // Skip to next phrase - UPDATE STATISTICS
+        // Skip to next phrase
         function skipAnimation() {
             if (timeoutId) {
                 clearTimeout(timeoutId);
@@ -932,8 +704,6 @@
             isDeleting = false;
             currentTextIndex = (currentTextIndex + 1) % texts.length;
             charIndex = 0;
-            completedPhrases++;
-            currentPhraseStartTime = Date.now();
             updateStatus();
             type();
         }
@@ -965,21 +735,11 @@
         pauseBtn.addEventListener('click', pauseAnimation);
         resumeBtn.addEventListener('click', resumeAnimation);
         skipBtn.addEventListener('click', skipAnimation);
-        statsBtn.addEventListener('click', showStatistics);
-        closeStatsBtn.addEventListener('click', hideStatistics);
-        modalOverlay.addEventListener('click', hideStatistics);
 
         themeButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 changeTheme(btn.getAttribute('data-theme'));
             });
-        });
-
-        // Close modal with ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && statsModal.style.display === 'block') {
-                hideStatistics();
-            }
         });
     </script>
 </body>
