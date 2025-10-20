@@ -34,7 +34,7 @@
     },
     {
         "src": "/g3.png",
-        "sizes": "986x887", // ou "906x807" conforme o segundo arquivo
+        "sizes": "906x807",
         "type": "image/png"
     },
     {
