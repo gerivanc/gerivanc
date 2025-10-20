@@ -84,9 +84,9 @@ EntroPy Web brings the powerful entropy-based password generation to your browse
 - 📱 **Fully Responsive**: Works perfectly on desktop and mobile devices
 - 🔒 **Real-time Entropy Calculation**: Visual strength indicator and security warnings
 - ⚡ **Instant Generation**: Fast, client-side password generation
-- 🌍 **Live Demo**: [Try it now!](https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html)
+- 🌍 **Live Demo**: [Try it now!](https://entropy.gerivan.me/entropyweb.html)
 - 📦 **Repository**: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
-- 📚 **Interactive Docs**: [Complete Documentation](https://gerivanc.github.io/entropy-password-web/web/readme.html)
+- 📚 **Interactive Docs**: [Complete Documentation](https://entropy.gerivan.me)
 
 > _“Enterprise-grade password security, now accessible in your browser.”_
 
