@@ -73,9 +73,9 @@ Principais Recursos:
 - 📱 Totalmente Responsivo: Funciona perfeitamente em desktops e dispositivos móveis.
 - 🔒 Cálculo de Entropia em Tempo Real: Indicador visual de força e alertas de segurança.
 - ⚡ Geração Instantânea: Geração rápida de senhas no lado do cliente.
-- 🌍 Demo ao Vivo: [Experimente agora!](https://gerivanc.github.io/entropy-password-web/web/entropy-password-generator.html)
+- 🌍 Demo ao Vivo: [Experimente agora!](https://entropy.gerivan.me/entropyweb.html)
 - 📦 Repositório: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
-- 📚 Documentação Interativa: [Documentação Completa ](https://gerivanc.github.io/entropy-password-web/web/readme.html)
+- 📚 Documentação Interativa: [Documentação Completa ](https://entropy.gerivan.me)
 
 > _“Segurança de senhas em nível empresarial, agora acessível no seu navegador.”_
 
