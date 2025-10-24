@@ -24,20 +24,17 @@ Did you like a project? Give it a star! 🌟. I consider it an incentive to keep
 
 ---
 
-Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **102 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
-
----
-
-## 🔒 **Why it's awesome**:
+## 📘 Enhance your digital world with this animation, keep your accounts hack-proof
+### 🔒 **Why it's awesome**:
 - Highlights password security with a dash of humor, mixing phrases in English and Portuguese.
 - Features a dynamic typing effect in a terminal-style interface.
 - Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
+Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!.
 
+Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **204 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
+Review your knowledge of password security and 2FA. View now! 
 📸 **Watch it live**: [Watch the typing animation](https://gerivan.me/typing-animation.html)
-
 📂 **Source code**: [Constphrases](https://github.com/gerivanc/gerivanc/blob/main/typing-animation.html)
-
-Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!
 
 ---
 
@@ -99,10 +96,26 @@ DNAPass is an innovative tool that transforms DNA sequences into complex, secure
 - 🧬 **Biological Encoding**: Converts DNA sequences into password strings.
 - 🔐 **Unique & Complex Output**: Each password is biologically inspired and mathematically robust.
 - 🌐 **Cross-Disciplinary Innovation**: Ideal for bioinformatics, research labs, and security enthusiasts.
+- 🌍 **Live Demo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
+- 📚 **Interactive Docs**: [Complete Documentation](https://dnapass.gerivan.me/)
 - 📦 **Repository**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
 - 💾 **View the code in action**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
 > _“Where biology meets cybersecurity — and innovation begins.”_
+
+---
+
+### 🤖 Transformers —  Interactive Neural Network Visualizer
+Interactive tool for visualizing an artificial neural network, illustrating data flow from the input layer through hidden layers to the output layer.
+
+**Key Features:**
+- 🧩 **Interactive Network Configuration**: Configurable hidden layers (1-5).
+- 🧠 **Real-time Visualization**: Visual representation of neurons and connections.
+- 🎓 **Educational Components**: Step-by-step activation propagation.
+- 🌍 **Live Demo**: [Try it now!](https://transformers.gerivan.me/)
+- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/transformers)
+
+> _“Unleash the power of attention — visualize, explore, and transform neural intelligence in real time.”_
 
 ---
 
