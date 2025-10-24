@@ -1,7 +1,10 @@
-# 🕵️‍♂️ Matriz de Atividade CyberSnake 🕵️‍♂️
-Mergulhe na grade digital e veja meus commits de código formarem uma serpente neon através da matriz!
+# 👋 Bem-vindo ao Meu Universo Digital
 
-![Gráfico de Atividade GitHub do BEPb](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake-dark.svg)
+> _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
+
+Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
+
+Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
 
 ---
 
@@ -16,16 +19,6 @@ Mergulhe na grade digital e veja meus commits de código formarem uma serpente n
 ![CMake](https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white)
 ![Licença](https://img.shields.io/badge/licença-MIT-green?style=flat-square&logo=balance-scale&logoColor=white)
 ![Visualizações do Perfil](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
-
----
-
-# 👋 Bem-vindo ao Meu Universo Digital
-
-> _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
-
-Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
-
-Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
 
 ---
 
@@ -88,10 +81,26 @@ DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas 
 - 🧬 **Codificação Biológica**: Converte sequências de DNA em strings de senha.
 - 🔐 **Saída Única e Complexa**: Cada senha é inspirada biologicamente e matematicamente robusta.
 - 🌐 **Inovação Interdisciplinar**: Ideal para bioinformática, laboratórios de pesquisa e entusiastas da segurança.
+- 🌍 **Demo ao Vivo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
+- 📚 **Documentação Interativa**: [Complete Documentation](https://dnapass.gerivan.me/)
 - 📦 **Repositório**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
 - 💾 **Veja o código em ação**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
 > _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
+
+---
+
+### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
+Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
+
+**Principais Características:**
+- 🧩 **Configuração Interativa da Rede**: Camadas ocultas configuráveis (1 a 5).
+- 🧠 **Visualização em Tempo Real**: Visual representation of neurons and connections.
+- 🎓 **Componentes Educacionais**: Step-by-step activation propagation.
+- 🌍 **Demo ao Vivo**: [Try it now!](https://transformers.gerivan.me/)
+- 📦 **Repositório**: [Transformers ](https://github.com/gerivanc/transformers)
+
+> _“Liberte o poder da atenção — visualize, explore e transforme a inteligência neural em tempo real.”_
 
 ---
 
