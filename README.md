@@ -57,35 +57,20 @@ A groundbreaking Python 🐍 project is in the works—a revolutionary tool for 
 
 ## 🔐 Featured Projects
 
-### 🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python
-EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.
-
 ---
 
-**Key Features:**
-- 🔒 **Entropy-Driven Security**: Uses real entropy to avoid predictable patterns.
-- 🧪 **Custom Algorithms**: Designed for cryptographic strength and uniqueness.
-- 🧠 **Security-Oriented Design**: Ideal for developers, researchers, and cybersecurity professionals.
-- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
-- 💾 **View the code in action**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
-
-> _“Security isn’t just a feature — it’s the foundation.”_
-
----
-
-### 🌐 EntroPy Password Generator - Web Version **(Browser-Based Password Generator)**
-EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.
+### 🤖 Transformers —  Interactive Neural Network Visualizer
+Interactive tool for visualizing an artificial neural network, illustrating data flow from the input layer through hidden layers to the output layer.
 
 **Key Features:**
-- 🎨 **Three Block Interface**: Predefined modes (1-20) + custom configuration
-- 📱 **Fully Responsive**: Works perfectly on desktop and mobile devices
-- 🔒 **Real-time Entropy Calculation**: Visual strength indicator and security warnings
-- ⚡ **Instant Generation**: Fast, client-side password generation
-- 🌍 **Live Demo**: [Try it now!](https://entropy.gerivan.me/entropyweb.html)
-- 📚 **Interactive Docs**: [Complete Documentation](https://entropy.gerivan.me)
-- 📦 **Repository**: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
+- 🧩 **Interactive Network Configuration**: Configurable hidden layers (1-5).
+- 🧠 **Real-time Visualization**: Visual representation of neurons and connections.
+- 🎓 **Educational Components**: Step-by-step activation propagation.
+- 🌍 **Live Demo**: [Try it now!](https://transformers.gerivan.me/neural.html)
+- 📚 **Interactive Docs**: [Complete Documentation](https://transformers.gerivan.me/)
+- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/transformers)
 
-> _“Enterprise-grade password security, now accessible in your browser.”_
+> _“Unleash the power of attention — visualize, explore, and transform neural intelligence in real time.”_
 
 ---
 
@@ -105,17 +90,33 @@ DNAPass is an innovative tool that transforms DNA sequences into complex, secure
 
 ---
 
-### 🤖 Transformers —  Interactive Neural Network Visualizer
-Interactive tool for visualizing an artificial neural network, illustrating data flow from the input layer through hidden layers to the output layer.
+### 🌐 EntroPy Password Generator - Web Version **(Browser-Based Password Generator)**
+EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.
 
 **Key Features:**
-- 🧩 **Interactive Network Configuration**: Configurable hidden layers (1-5).
-- 🧠 **Real-time Visualization**: Visual representation of neurons and connections.
-- 🎓 **Educational Components**: Step-by-step activation propagation.
-- 🌍 **Live Demo**: [Try it now!](https://transformers.gerivan.me/)
-- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/transformers)
+- 🎨 **Three Block Interface**: Predefined modes (1-20) + custom configuration
+- 📱 **Fully Responsive**: Works perfectly on desktop and mobile devices
+- 🔒 **Real-time Entropy Calculation**: Visual strength indicator and security warnings
+- ⚡ **Instant Generation**: Fast, client-side password generation
+- 🌍 **Live Demo**: [Try it now!](https://entropy.gerivan.me/entropyweb.html)
+- 📚 **Interactive Docs**: [Complete Documentation](https://entropy.gerivan.me)
+- 📦 **Repository**: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
 
-> _“Unleash the power of attention — visualize, explore, and transform neural intelligence in real time.”_
+> _“Enterprise-grade password security, now accessible in your browser.”_
+
+---
+
+### 🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python
+EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.
+
+**Key Features:**
+- 🔒 **Entropy-Driven Security**: Uses real entropy to avoid predictable patterns.
+- 🧪 **Custom Algorithms**: Designed for cryptographic strength and uniqueness.
+- 🧠 **Security-Oriented Design**: Ideal for developers, researchers, and cybersecurity professionals.
+- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
+- 💾 **View the code in action**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
+
+> _“Security isn’t just a feature — it’s the foundation.”_
 
 ---
 
