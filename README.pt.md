@@ -22,6 +22,21 @@ Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para
 
 ---
 
+## 📘 Aprimore seu mundo digital com esta animação, mantenha suas contas à prova de hackers
+
+### 🔒 **Por que é incrível**:
+- Destaca a segurança de senhas com uma pitada de humor, misturando frases em inglês e português.
+- Apresenta um efeito de digitação dinâmico em uma interface estilo terminal.
+- Combina perfeitamente com a estética neon da Matriz de Atividades do CyberSnake.
+Aprimore seu mundo digital com esta animação, mantenha suas contas à prova de hackers e programe com a mesma paixão do EntroPy e do DNAPass!
+
+Mergulhe na grade digital com minha **Animação de Digitação**, uma exibição cheia de neon inspirada na Matriz de Atividades do CyberSnake! Este recurso interativo apresenta **204 frases espirituosas exclusivas** sobre senhas fortes e autenticação de dois fatores (2FA), perfeitas para desenvolvedores e startups obcecados por segurança e estilo. Construído com HTML, CSS e JavaScript, é uma adição elegante aos seus projetos, ecoando a vibe de ferramentas exclusivas como o Dealsbe.
+Revise seus conhecimentos sobre segurança de senhas e 2FA. Assista agora!
+📸 **Assista ao vivo**: [Assista à animação de digitação](https://gerivan.me/typing-animation.html)
+📂 **Código-fonte**: [Frases constantes](https://github.com/gerivanc/gerivanc/blob/main/typing-animation.html)
+
+---
+
 ## 🚨🚧 Alerta de Projeto Futuro 🚧🚨 
 Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferramenta inovadora para geração de palavras! Fique ligado para uma mudança de jogo no processamento de dados seguro e criativo.
 
@@ -41,20 +56,34 @@ Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferra
 
 ## 🔐 Projetos em Destaque
 
-### 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
-EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.
+### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
+Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
+
+**Principais Características:**
+- 🧩 **Configuração Interativa da Rede**: Camadas ocultas configuráveis (1 a 5).
+- 🧠 **Visualização em Tempo Real**: Visual representation of neurons and connections.
+- 🎓 **Componentes Educacionais**: Step-by-step activation propagation.
+- 🌍 **Demo ao Vivo**: [Try it now!](https://transformers.gerivan.me/neural.html)
+- 📚 Documentação Interativa: [Documentação Completa ](https://transformers.gerivan.me)
+- 📦 **Repositório**: [Transformers ](https://github.com/gerivanc/transformers)
+
+> _“Liberte o poder da atenção — visualize, explore e transforme a inteligência neural em tempo real.”_
 
 ---
 
+### 🧬 DNAPass — Gerador de Senhas Genético
+DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass apresenta uma abordagem nova para a geração de senhas, unindo biotecnologia e segurança digital.
+
 **Principais Características:**
-- 🔒 **Segurança Baseada em Entropia**: Usa entropia real para evitar padrões previsíveis.
-- 🧪 **Algoritmos Personalizados**: Projetado para força criptográfica e unicidade.
-- 🧠 **Design Voltado para Segurança**: Ideal para desenvolvedores, pesquisadores e profissionais de cibersegurança.
-- 📦 **Repositório**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
-- 💾 **Veja o código em ação**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
+- 🧬 **Codificação Biológica**: Converte sequências de DNA em strings de senha.
+- 🔐 **Saída Única e Complexa**: Cada senha é inspirada biologicamente e matematicamente robusta.
+- 🌐 **Inovação Interdisciplinar**: Ideal para bioinformática, laboratórios de pesquisa e entusiastas da segurança.
+- 🌍 **Demo ao Vivo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
+- 📚 **Documentação Interativa**: [Complete Documentation](https://dnapass.gerivan.me/)
+- 📦 **Repositório**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
+- 💾 **Veja o código em ação**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
 
-> _“Segurança não é apenas uma funcionalidade — é a base.”_
-
+> _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
 ---
 
 ### 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
@@ -74,33 +103,17 @@ Principais Recursos:
 
 ---
 
-### 🧬 DNAPass — Gerador de Senhas Genético
-DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass apresenta uma abordagem nova para a geração de senhas, unindo biotecnologia e segurança digital.
+### 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
+EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.
 
 **Principais Características:**
-- 🧬 **Codificação Biológica**: Converte sequências de DNA em strings de senha.
-- 🔐 **Saída Única e Complexa**: Cada senha é inspirada biologicamente e matematicamente robusta.
-- 🌐 **Inovação Interdisciplinar**: Ideal para bioinformática, laboratórios de pesquisa e entusiastas da segurança.
-- 🌍 **Demo ao Vivo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
-- 📚 **Documentação Interativa**: [Complete Documentation](https://dnapass.gerivan.me/)
-- 📦 **Repositório**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
-- 💾 **Veja o código em ação**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
+- 🔒 **Segurança Baseada em Entropia**: Usa entropia real para evitar padrões previsíveis.
+- 🧪 **Algoritmos Personalizados**: Projetado para força criptográfica e unicidade.
+- 🧠 **Design Voltado para Segurança**: Ideal para desenvolvedores, pesquisadores e profissionais de cibersegurança.
+- 📦 **Repositório**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
+- 💾 **Veja o código em ação**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
 
-> _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
-
----
-
-### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
-Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
-
-**Principais Características:**
-- 🧩 **Configuração Interativa da Rede**: Camadas ocultas configuráveis (1 a 5).
-- 🧠 **Visualização em Tempo Real**: Visual representation of neurons and connections.
-- 🎓 **Componentes Educacionais**: Step-by-step activation propagation.
-- 🌍 **Demo ao Vivo**: [Try it now!](https://transformers.gerivan.me/)
-- 📦 **Repositório**: [Transformers ](https://github.com/gerivanc/transformers)
-
-> _“Liberte o poder da atenção — visualize, explore e transforme a inteligência neural em tempo real.”_
+> _“Segurança não é apenas uma funcionalidade — é a base.”_
 
 ---
 
