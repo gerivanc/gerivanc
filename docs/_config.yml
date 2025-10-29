@@ -1,0 +1,7 @@
+title: "Gerivan's personal portfolio"
+description: "Building secure tools with open source."
+theme: jekyll-theme-minimal
+include: [".nojekyll", "*.html", "*.md", "docs/"]
+exclude: ["README.md"]
+plugins:
+  - jekyll-sitemap
