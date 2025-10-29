@@ -1,7 +1,7 @@
 title: "Gerivan's personal portfolio"
 description: "Building secure tools with open source."
 theme: jekyll-theme-minimal
-include: [".nojekyll", "*.html", "*.md", "*index.html", "docs/"]
-exclude: ["README.md", "README.pt.md"]
+include: [".nojekyll", "*.html", "*.ico", "*.png", "*.json", "_headers", "CNAME"]
+exclude: []  # Remove as exclusões já que os READMEs estão renomeados
 plugins:
   - jekyll-sitemap
