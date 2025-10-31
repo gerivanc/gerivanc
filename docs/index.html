@@ -1115,41 +1115,73 @@
             transition: opacity 0.3s ease; /* Smooth transition */
         }		
 
-        /* Neural Network Visualizer CSS FOR MOBILE */
-        @media (max-width: 768px) {
-            .neural-network {
-                height: 250px !important;
-                min-height: 250px;
-                touch-action: manipulation;
-            }
-            
-            .neural-node {
-                width: 16px !important;
-                height: 16px !important;
-            }
-            
-            .neural-connection {
-                height: 1px !important;
-            }
-            
-            /* Melhorar área de clique dos botões */
-            #startTraining, #resetNetwork {
-                min-height: 44px; /* Tamanho mínimo recomendado para touch */
-                padding: 12px 20px;
-                font-size: 16px; /* Previne zoom no iOS */
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
-                touch-action: manipulation;
-            }
-        }
+		/* Enhanced Mobile Neural Network Styles */
+		@media (max-width: 768px) {
+			.neural-network {
+				height: 250px !important;
+				min-height: 250px;
+				touch-action: manipulation;
+				-webkit-overflow-scrolling: touch;
+			}
+			
+			.neural-node {
+				width: 16px !important;
+				height: 16px !important;
+				transition: all 0.2s ease !important;
+			}
+			
+			.neural-connection {
+				height: 1px !important;
+				transition: opacity 0.2s ease !important;
+			}
+			
+			/* Improved touch targets */
+			#startTraining, #resetNetwork {
+				min-height: 44px;
+				min-width: 44px;
+				padding: 12px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
+				touch-action: manipulation;
+				user-select: none;
+				border: 2px solid transparent;
+				transition: all 0.2s ease;
+			}
+			
+			/* Active state feedback */
+			#startTraining:active, #resetNetwork:active {
+				transform: scale(0.95);
+				border-color: var(--primary-color);
+			}
+		}
 
-        /* Estilos específicos para touch devices */
-        @media (hover: none) and (pointer: coarse) {
-            #startTraining:active, #resetNetwork:active {
-                transform: scale(0.95);
-                transition: transform 0.1s;
-            }
-        }
+		/* Specific touch device optimizations */
+		@media (hover: none) and (pointer: coarse) {
+			.neural-network {
+				/* Improve scrolling performance */
+				transform: translateZ(0);
+				backface-visibility: hidden;
+				perspective: 1000;
+			}
+			
+			/* Prevent text selection on buttons */
+			#startTraining, #resetNetwork {
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+
+		/* High-resolution display optimizations */
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			.neural-node {
+				/* Crisper rendering on retina displays */
+				image-rendering: -webkit-optimize-contrast;
+				image-rendering: crisp-edges;
+			}
+		}
 
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
@@ -2239,7 +2271,7 @@
         // Start typing animation
         setTimeout(typeCommand, 2000);
 
-		// Neural Network Visualization - FIX FOR MOBILE
+		// Neural Network Visualization - MOBILE FIX
 		const neuralNetwork = document.getElementById('neuralNetwork');
 		let neuralInterval;
 
@@ -2253,8 +2285,12 @@
 					const node = document.createElement('div');
 					node.className = 'neural-node';
 					
-					const x = (layerIndex + 1) * (neuralNetwork.offsetWidth / (layers.length + 1));
-					const y = (i + 1) * (neuralNetwork.offsetHeight / (nodeCount + 1));
+					// Use clientWidth/clientHeight for more reliable dimensions
+					const containerWidth = neuralNetwork.clientWidth || neuralNetwork.offsetWidth;
+					const containerHeight = neuralNetwork.clientHeight || neuralNetwork.offsetHeight;
+					
+					const x = (layerIndex + 1) * (containerWidth / (layers.length + 1));
+					const y = (i + 1) * (containerHeight / (nodeCount + 1));
 					
 					node.style.left = x + 'px';
 					node.style.top = y + 'px';
@@ -2302,61 +2338,93 @@
 			});
 		}
 
-		// FIX FOR MOBILE- Event listeners melhorados
+		// FIXED: Improved mobile event handling
 		function initNeuralNetwork() {
 			const startBtn = document.getElementById('startTraining');
 			const resetBtn = document.getElementById('resetNetwork');
 			
 			if (startBtn && resetBtn) {
-				// Remove existing event listeners to avoid duplication
+				// Clear any existing event listeners first
 				startBtn.replaceWith(startBtn.cloneNode(true));
 				resetBtn.replaceWith(resetBtn.cloneNode(true));
 				
-				// New event listeners
-				document.getElementById('startTraining').addEventListener('click', startTraining);
-				document.getElementById('startTraining').addEventListener('touchstart', startTraining);
+				// Get new references after cloning
+				const newStartBtn = document.getElementById('startTraining');
+				const newResetBtn = document.getElementById('resetNetwork');
 				
-				document.getElementById('resetNetwork').addEventListener('click', resetTraining);
-				document.getElementById('resetNetwork').addEventListener('touchstart', resetTraining);
+				// Add both click and touch events with proper handling
+				const handleStart = (e) => {
+					if (e.cancelable) e.preventDefault();
+					startTraining();
+				};
 				
-				console.log('🧠 Neural Network buttons initialized');
+				const handleReset = (e) => {
+					if (e.cancelable) e.preventDefault();
+					resetTraining();
+				};
+				
+				// Add event listeners
+				newStartBtn.addEventListener('click', handleStart);
+				newStartBtn.addEventListener('touchstart', handleStart, { passive: false });
+				
+				newResetBtn.addEventListener('click', handleReset);
+				newResetBtn.addEventListener('touchstart', handleReset, { passive: false });
+				
+				console.log('🧠 Neural Network buttons initialized with mobile support');
 			}
 		}
 
-		function startTraining(e) {
-			if (e) e.preventDefault();
+		function startTraining() {
 			createNeuralNetwork();
+			if (neuralInterval) clearInterval(neuralInterval);
 			neuralInterval = setInterval(animateNeuralNetwork, 500);
 			console.log('🚀 Training started');
 		}
 
-		function resetTraining(e) {
-			if (e) e.preventDefault();
-			clearInterval(neuralInterval);
+		function resetTraining() {
+			if (neuralInterval) {
+				clearInterval(neuralInterval);
+				neuralInterval = null;
+			}
 			createNeuralNetwork();
 			console.log('🔄 Network reset');
 		}
 
-		// Correct initialization for mobile
+		// Improved initialization with error handling
 		document.addEventListener('DOMContentLoaded', function() {
-			createNeuralNetwork();
-			
-			// Delay to ensure buttons are available
-			setTimeout(initNeuralNetwork, 100);
-			
-			// Fallback - try again after 1 second
-			setTimeout(() => {
-				if (!document.getElementById('startTraining').hasEventListener) {
-					initNeuralNetwork();
-				}
-			}, 1000);
+			// Initial neural network creation
+			if (document.getElementById('neuralNetwork')) {
+				createNeuralNetwork();
+				
+				// Initialize buttons with retry mechanism
+				let initAttempts = 0;
+				const maxInitAttempts = 3;
+				
+				const tryInitButtons = () => {
+					if (document.getElementById('startTraining') && document.getElementById('resetNetwork')) {
+						initNeuralNetwork();
+					} else if (initAttempts < maxInitAttempts) {
+						initAttempts++;
+						setTimeout(tryInitButtons, 500);
+					} else {
+						console.warn('⚠️ Neural network buttons not found after maximum attempts');
+					}
+				};
+				
+				setTimeout(tryInitButtons, 100);
+			}
 		});
 
-		// Helper to check if element has event listener
-		Element.prototype.hasEventListener = function(type) {
-			const events = this._events || (this._events = {});
-			return !!(events[type] && events[type].length > 0);
-		};
+		// Enhanced responsive handling
+		window.addEventListener('resize', () => {
+			if (document.getElementById('neuralNetwork')) {
+				// Debounce resize events for performance
+				clearTimeout(window.neuralResizeTimeout);
+				window.neuralResizeTimeout = setTimeout(() => {
+					createNeuralNetwork();
+				}, 250);
+			}
+		});
 
         // Particle Animation
         function createParticles() {
