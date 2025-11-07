@@ -155,7 +155,7 @@ Um resumo da minha atividade e contribuições no GitHub, mostrando meu compromi
 
 Se você quiser colaborar, compartilhar ideias ou apenas conversar sobre segurança e ciência, sinta-se à vontade para entrar em contato:
 
-- 📫 Me contate em: **`dean-grumbly-plop@duck.com`**
+- 📫 Me contate em: **`ask@gerivan.me`**
 - 🌍 Localização: Brasil
 - 🧠 Aberto a colaborações e projetos de pesquisa
 
