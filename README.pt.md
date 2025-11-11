@@ -1,7 +1,5 @@
 # 👋 Bem-vindo ao Meu Universo Digital
 
-> _“Mergulhe no universo digital. Siga de volta ou caia fora!”_
-
 Eu sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que misturam inovação com propósito, sempre focados em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.
 
 Gostou de um projeto? Dê uma estrela! 🌟. Eu considero como um incentivo para continuar: aprendendo, programando e compartilhando com a comunidade de desenvolvedores, pois uma ideia gera outra ideia ainda melhor!
@@ -37,14 +35,14 @@ Revise seus conhecimentos sobre segurança de senhas e 2FA. Assista agora!
 
 ---
 
-## 🚨🚧 Alerta de Projeto Futuro 🚧🚨 
+# 🚨🚧 Alerta de Projeto Futuro 🚧🚨 
 Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferramenta inovadora para geração de palavras! Fique ligado para uma mudança de jogo no processamento de dados seguro e criativo.
 
 📢 Mantenha os olhos abertos — essa inovação vai gerar conversas! 💥
 
 ---
 
-## 📌 Índice
+# 📌 Índice
 - [🔐 Projetos em Destaque](#-projetos-em-destaque)
 - [📊 Estatísticas do GitHub](#-estatísticas-do-github)
 - [🎯 Resumo do Perfil](#-resumo-do-perfil)
@@ -54,9 +52,28 @@ Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferra
 
 ---
 
-## 🔐 Projetos em Destaque
+# 🔐 Projetos em Destaque
 
-### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
+---
+
+## 🤖 XPhrase Generation — Gerador de frases expressivas — robusto, moderno e minimalista
+O XPhrase Generation é um gerador de frases multilíngue projetado para uso em interfaces de linha de comando (CLI). Ele cria frases expressivas e aleatórias usando palavras em 🇬🇧 inglês, 🇩🇪 alemão e 🇧🇷 português, interligadas com caracteres especiais e dígitos.
+
+A randomização com forte nível de criptografia é obtida por meio de um gerador de números aleatórios de cadeia de comando (CSPRNG), através da combinação de palavras em diferentes idiomas, caracteres especiais e dígitos. Essa construção aumenta significativamente a entropia da frase, tornando-a inviável de ser quebrada usando métodos tradicionais de força bruta, mesmo em frases mais curtas.
+
+**Principais Recursos:**
+- ✨ **Configuração de Rede Interativa**: Camadas ocultas configuráveis ​​(1-5).
+- 🔢 Pelo menos um caractere especial: **!@#$%^&*()_+-=[]{}|;:,.<>?~\\**.
+- 🔢 Pelo menos um caractere dígito: **0123456789**.
+- 💯 Escrito **100% em Python**: Gera frases com 3 a 21 palavras.
+- 🌍 **Demonstração ao vivo**: Atualmente em produção, a página específica para geração de frases copiáveis.
+- 📚 **Documentação interativa**: [Documentação completa](https://xphrase.gerivan.me/)
+- 📦 **Repositório**: [Transformers](https://github.com/gerivanc/xphrase)
+
+> _“Liberte sua criatividade — Crie frases únicas com XPhrase!”_
+
+---
+## 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
 Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
 
 **Principais Características:**
@@ -71,7 +88,7 @@ Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o f
 
 ---
 
-### 🧬 DNAPass — Gerador de Senhas Genético
+## 🧬 DNAPass — Gerador de Senhas Genético
 DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass apresenta uma abordagem nova para a geração de senhas, unindo biotecnologia e segurança digital.
 
 **Principais Características:**
@@ -86,7 +103,7 @@ DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas 
 > _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
 ---
 
-### 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
+## 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
 O EntroPy Web traz o poderoso gerador de senhas baseado em entropia diretamente para o seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação original em Python, oferecendo uma interface gráfica intuitiva acessível de qualquer dispositivo.
 
 Principais Recursos:
@@ -103,7 +120,7 @@ Principais Recursos:
 
 ---
 
-### 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
+## 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
 EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.
 
 **Principais Características:**
@@ -117,7 +134,7 @@ EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir
 
 ---
 
-## 📊 Estatísticas do GitHub
+# 📊 Estatísticas do GitHub
 Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto. Eu me esforço por desenvolvimento consistente e aprendizado contínuo!
 
 <div align="center">
@@ -134,7 +151,7 @@ Gráficos destacando minha atividade recente, sequência de contribuições e en
 
 ---
 
-## 🎯 Resumo do Perfil
+# 🎯 Resumo do Perfil
 Um resumo da minha atividade e contribuições no GitHub, mostrando meu compromisso com a programação e projetos de código aberto.
 
 <div align="center">
@@ -151,7 +168,7 @@ Um resumo da minha atividade e contribuições no GitHub, mostrando meu compromi
 
 ---
 
-## 📬 Contato
+# 📬 Contato
 
 Se você quiser colaborar, compartilhar ideias ou apenas conversar sobre segurança e ciência, sinta-se à vontade para entrar em contato:
 
@@ -161,12 +178,12 @@ Se você quiser colaborar, compartilhar ideias ou apenas conversar sobre seguran
 
 ---
 
-## 📜 Licença
+# 📜 Licença
 Este repositório está licenciado sob a [Licença MIT](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).
 
 ---
 
-## 🌐 Suporte de idioma
+# 🌐 Suporte de idioma
 - 🇧🇷 Português — Você está aqui!
 - 🇺🇸 English — [English version](https://gerivan.me)
 
