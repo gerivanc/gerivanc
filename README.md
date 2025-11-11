@@ -38,10 +38,10 @@ Review your knowledge of password security and 2FA. View now!
 
 ---
 
-## 🚨🚧 Upcoming Project Alert 🚧🚨 
-A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.
+# 🚨🚧 Project Completed Alert 🚧🚨 
+XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!
 
-📢 Keep your eyes peeled—this innovation will spark conversations! 💥
+📢 Check it out now! [XPhrase](https://xphrase.gerivan.me/)💥
 
 ---
 
@@ -56,6 +56,24 @@ A groundbreaking Python 🐍 project is in the works—a revolutionary tool for 
 ---
 
 ## 🔐 Featured Projects
+
+---
+
+### 🤖 XPhrase Generation —  Expressive phrase generator — strong, modern, and minimalist
+XPhrase Generation is a multilingual phrase generator designed for command-line interface (CLI) usage. It creates expressive, randomized phrases using words from 🇬🇧 English, 🇩🇪 German, and 🇧🇷 Portuguese, interlinked with special characters and digits.
+
+Cryptographic-strength randomization via CSPRNG, achieved through the combination of words in different languages, special characters, and digits. This construction significantly increases the entropy of the phrase, making it unfeasible to break using traditional brute-force methods, even in shorter phrases.
+
+**Key Features:**
+- ✨ **Interactive Network Configuration**: Configurable hidden layers (1-5).
+- 🔢 At least one special character: **!@#$%^&*()_+-=[]{}|;:,.<>?~\\**.
+- 🔢 At least one digit character: **0123456789**. 
+- 💯 Written **100% in Python**: Generates phrases with 3 to 21 words.
+- 🌍 **Live Demo**: Currently in production is the specific page for generating copyable phrases.
+- 📚 **Interactive Docs**: [Complete Documentation](https://xphrase.gerivan.me/)
+- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/xphrase)
+
+> _“Unleash your creativity — Create unique phrases with XPhrase!.”_
 
 ---
 
