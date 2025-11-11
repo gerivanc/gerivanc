@@ -1183,6 +1183,128 @@
 			}
 		}
 
+		/* === MOBILE FLOATING BUTTON === */
+		.floating-btn-mobile {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 60px;
+			height: 60px;
+			min-width: 44px;
+			min-height: 44px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+			color: white;
+			border: none;
+			font-size: 24px;
+			cursor: pointer;
+			box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+			z-index: 1001;
+			transition: var(--transition);
+			touch-action: manipulation;
+			-webkit-tap-highlight-color: transparent;
+			user-select: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.floating-btn-mobile:active {
+			transform: scale(0.95);
+			box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
+		}
+
+		/* Actions Menu */
+		.fab-menu-mobile {
+			position: fixed;
+			bottom: 90px;
+			right: 20px;
+			display: none;
+			flex-direction: column;
+			gap: 15px;
+			z-index: 1000;
+		}
+
+		.fab-menu-mobile.open {
+			display: flex;
+		}
+
+		.fab-action-mobile {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: var(--card-bg);
+			border: 1px solid var(--card-border);
+			color: var(--text-color);
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-size: 18px;
+			transition: var(--transition);
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+		}
+
+		.fab-action-mobile:active {
+			transform: scale(0.9);
+		}
+
+		.action-label {
+			font-size: 10px;
+			margin-top: 2px;
+			font-family: 'Exo 2', sans-serif;
+		}
+
+		/* Menu Animations */
+		.fab-action-mobile {
+			animation: fabAppear 0.3s ease-out forwards;
+			opacity: 0;
+			transform: translateY(20px) scale(0.8);
+		}
+
+		.fab-menu-mobile.open .fab-action-mobile:nth-child(1) { animation-delay: 0.1s; }
+		.fab-menu-mobile.open .fab-action-mobile:nth-child(2) { animation-delay: 0.2s; }
+		.fab-menu-mobile.open .fab-action-mobile:nth-child(3) { animation-delay: 0.3s; }
+
+		@keyframes fabAppear {
+			to {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+		}
+
+		/* Responsividade Mobile */
+		@media (max-width: 768px) {
+			.floating-btn-mobile {
+				width: 56px;
+				height: 56px;
+				bottom: 16px;
+				right: 16px;
+			}
+			
+			.fab-menu-mobile {
+				bottom: 82px;
+				right: 16px;
+			}
+			
+			.fab-action-mobile {
+				width: 48px;
+				height: 48px;
+				font-size: 16px;
+			}
+		}
+
+		/* Para telas muito pequenas */
+		@media (max-width: 480px) {
+			.floating-btn-mobile {
+				width: 52px;
+				height: 52px;
+				bottom: 12px;
+				right: 12px;
+			}
+		}
+
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             body {
@@ -1749,7 +1871,7 @@
 		</blockquote>
 	</div>
 
-        <!-- DNAPass project card -->
+        <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
             <h3>🚀 XPHRASE GENERATION — Expressive phrase generator — strong, modern, and minimalist</h3>
             <p>XPhrase Generation is a multilingual phrase generator designed for command-line interface (CLI) usage. It creates expressive, randomized phrases using words from Portuguese, English, and German, interlinked with special characters and digits.</p>
@@ -1814,12 +1936,18 @@
             </div>			
         </div>
 
-        <!-- Upcoming project alert -->
-        <div class="alert">
-            <h3>🚨🚧 Upcoming Project Alert 🚧🚨</h3>
-            <p>A groundbreaking Python 🐍 project is in the works—a revolutionary tool for word generation! Stay tuned for a game-changer in secure, creative data processing.</p>
-            <p><strong>📢 Keep your eyes peeled—this innovation will spark conversations! 💥</strong></p>
-        </div>
+		<!-- Upcoming project alert -->
+		<div class="alert">
+			<h3>🚨🚧 Project Completed Alert 🚧🚨</h3>
+			<p>XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!</p>
+			<ul>
+			<li>🎛️ <strong>Random Mode</strong>: based on patterns or with entropy control — you choose how to create.</li>
+			<li>🔐 <strong>Designed to be safe</strong>: creative and highly customizable.</li>
+			</ul>
+			<div class="center">
+				<a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Interactive Documentation</a>	
+			</div>
+		</div>
 
         <!-- Terminal with updated title -->
         <h2 id="terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</h2>
@@ -2018,6 +2146,27 @@
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
         </div>
     </div>
+
+		<!-- Mobile Floating Button -->
+		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
+			<span class="fab-icon">⚡</span>
+		</button>
+
+		<!-- Floating Actions Menu (Optional) -->
+		<div class="fab-menu-mobile" id="fabMenuMobile">
+			<button class="fab-action-mobile" data-action="scroll-top">
+				<span>⬆️</span>
+				<span class="action-label">Top</span>
+			</button>
+			<button class="fab-action-mobile" data-action="theme-switch">
+				<span>🎨</span>
+				<span class="action-label">Theme</span>
+			</button>
+			<button class="fab-action-mobile" data-action="contact">
+				<span>📧</span>
+				<span class="action-label">Contact</span>
+			</button>
+		</div>
 
     <script>
         // Theme Switching
@@ -2430,30 +2579,44 @@
 			console.log('🔄 Network reset');
 		}
 
-		// Improved initialization with error handling
-		document.addEventListener('DOMContentLoaded', function() {
-			// Initial neural network creation
-			if (document.getElementById('neuralNetwork')) {
-				createNeuralNetwork();
-				
-				// Initialize buttons with retry mechanism
-				let initAttempts = 0;
-				const maxInitAttempts = 3;
-				
-				const tryInitButtons = () => {
-					if (document.getElementById('startTraining') && document.getElementById('resetNetwork')) {
-						initNeuralNetwork();
-					} else if (initAttempts < maxInitAttempts) {
-						initAttempts++;
-						setTimeout(tryInitButtons, 500);
-					} else {
-						console.warn('⚠️ Neural network buttons not found after maximum attempts');
-					}
-				};
-				
-				setTimeout(tryInitButtons, 100);
-			}
-		});
+		// Single DOMContentLoaded listener
+	document.addEventListener('DOMContentLoaded', function() {
+		console.log('🚀 Initializing all components...');
+		
+		// Initialize components in the correct order
+		createParticles();
+		secureExternalLinks();
+		
+		// Neural Network
+		if (document.getElementById('neuralNetwork')) {
+			createNeuralNetwork();
+			
+			// Initialize buttons with retry mechanism
+			let initAttempts = 0;
+			const maxInitAttempts = 3;
+			
+			const tryInitButtons = () => {
+				if (document.getElementById('startTraining') && document.getElementById('resetNetwork')) {
+					initNeuralNetwork();
+				} else if (initAttempts < maxInitAttempts) {
+					initAttempts++;
+					setTimeout(tryInitButtons, 500);
+				} else {
+					console.warn('⚠️ Neural network buttons not found after maximum attempts');
+				}
+			};
+			
+			setTimeout(tryInitButtons, 100);
+		}
+		
+		// ✅ INITIALIZE FLOATING BUTTON
+		initFloatingButton();
+		
+		// Terminal animation
+		setTimeout(typeCommand, 2000);
+		
+		console.log('✅ All components initialized successfully');
+	});
 
 		// Enhanced responsive handling
 		window.addEventListener('resize', () => {
@@ -2564,6 +2727,218 @@
 				});
 				console.log('🔒 External links protected with noopener/noreferrer');
 			}
+
+		// === MOBILE FLOATING BUTTON ===
+		class FloatingButtonMobile {
+			constructor() {
+				this.floatingBtn = document.getElementById('floatingBtnMobile');
+				this.fabMenu = document.getElementById('fabMenuMobile');
+				this.isMenuOpen = false;
+				
+				console.log('🔧 FloatingButtonMobile constructor called');
+				console.log('🔧 Button element:', this.floatingBtn);
+				console.log('🔧 Menu element:', this.fabMenu);
+				
+				this.init();
+			}
+			
+			init() {
+				console.log('🚀 Initializing floating button...');
+				
+				if (!this.floatingBtn) {
+					console.error('❌ Floating button element not found!');
+					return;
+				}
+				
+				if (!this.fabMenu) {
+					console.warn('⚠️ Floating menu element not found, continuing without menu');
+				}
+				
+				// Main event with touch and click support
+				this.floatingBtn.addEventListener('click', this.toggleMenu.bind(this));
+				this.floatingBtn.addEventListener('touchend', (e) => {
+					e.preventDefault();
+					this.toggleMenu(e);
+				});
+				
+				// Close menu when tapping away
+				document.addEventListener('click', this.handleOutsideClick.bind(this));
+				document.addEventListener('touchstart', this.handleOutsideClick.bind(this));
+				
+				// Prevent closing when touching menu buttons
+				if (this.fabMenu) {
+					this.fabMenu.addEventListener('click', (e) => {
+						e.stopPropagation();
+						this.handleAction(e);
+					});
+				}
+				
+				// Visual feedback during touch
+				this.floatingBtn.addEventListener('touchstart', this.handleTouchStart.bind(this));
+				this.floatingBtn.addEventListener('touchend', this.handleTouchEnd.bind(this));
+				
+				console.log('✅ Floating button initialized successfully');
+			}
+			
+			toggleMenu(e) {
+				console.log('🎯 Toggle menu called, current state:', this.isMenuOpen);
+				
+				if (e) {
+					e.stopPropagation();
+					e.preventDefault();
+				}
+				
+				this.isMenuOpen = !this.isMenuOpen;
+				
+				if (this.fabMenu) {
+					this.fabMenu.classList.toggle('open', this.isMenuOpen);
+					console.log('📱 Menu open state:', this.isMenuOpen);
+				}
+				
+				// Haptic feedback if available
+				if (navigator.vibrate) {
+					navigator.vibrate(10);
+				}
+				
+				// Animate the main button
+				this.floatingBtn.style.transform = this.isMenuOpen ? 'rotate(45deg)' : 'rotate(0)';
+			}
+			
+			handleOutsideClick(e) {
+				if (this.isMenuOpen && 
+					!this.floatingBtn.contains(e.target) && 
+					(!this.fabMenu || !this.fabMenu.contains(e.target))) {
+					console.log('👆 Outside click detected, closing menu');
+					this.isMenuOpen = false;
+					if (this.fabMenu) {
+						this.fabMenu.classList.remove('open');
+					}
+					this.floatingBtn.style.transform = 'rotate(0)';
+				}
+			}
+			
+			handleTouchStart() {
+				this.floatingBtn.style.transform = 'scale(0.95)';
+			}
+			
+			handleTouchEnd() {
+				if (!this.isMenuOpen) {
+					this.floatingBtn.style.transform = 'scale(1)';
+				}
+			}
+			
+			handleAction(e) {
+				const actionBtn = e.target.closest('.fab-action-mobile');
+				if (!actionBtn) return;
+				
+				const action = actionBtn.dataset.action;
+				console.log('🎯 Action triggered:', action);
+				
+				// Visual feedback
+				actionBtn.style.transform = 'scale(0.9)';
+				setTimeout(() => {
+					actionBtn.style.transform = 'scale(1)';
+				}, 150);
+				
+				// Execute action
+				this.executeAction(action);
+				
+				// Close menu after action
+				this.toggleMenu();
+			}
+			
+			executeAction(action) {
+				console.log('⚡ Executing action:', action);
+				
+				switch(action) {
+					case 'scroll-top':
+						this.scrollToTop();
+						break;
+					case 'theme-switch':
+						this.cycleTheme();
+						break;
+					case 'contact':
+						this.scrollToContact();
+						break;
+					default:
+						console.warn('⚠️ Unknown action:', action);
+				}
+			}
+			
+			scrollToTop() {
+				console.log('⬆️ Scrolling to top...');
+				
+				// Multiple methods for compatibility
+				try {
+					// Method 1: Smooth scroll (modern browsers)
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+					
+					// Method 2: Fallback for older browsers
+					setTimeout(() => {
+						document.documentElement.scrollTop = 0;
+						document.body.scrollTop = 0;
+					}, 100);
+					
+					console.log('✅ Scroll to top executed');
+				} catch (error) {
+					console.error('❌ Scroll error:', error);
+					// Method 3: Direct scroll as last resort
+					window.scrollTo(0, 0);
+				}
+			}
+			
+			cycleTheme() {
+				console.log('🎨 Cycling theme...');
+				const themes = ['cyber', 'light', 'matrix'];
+				const currentTheme = document.body.getAttribute('data-theme') || 'cyber';
+				const currentIndex = themes.indexOf(currentTheme);
+				const nextIndex = (currentIndex + 1) % themes.length;
+				const nextTheme = themes[nextIndex];
+				
+				console.log('🔄 Switching to theme:', nextTheme);
+				
+				// Trigger click on corresponding theme button
+				const themeBtn = document.querySelector(`[data-theme="${nextTheme}"]`);
+				if (themeBtn) {
+					themeBtn.click();
+				} else {
+					console.error('❌ Theme button not found for:', nextTheme);
+				}
+			}
+			
+			scrollToContact() {
+				console.log('📧 Scrolling to contact...');
+				const contactSection = document.getElementById('contact');
+				if (contactSection) {
+					contactSection.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+					console.log('✅ Scrolled to contact section');
+				} else {
+					console.error('❌ Contact section not found');
+				}
+			}
+		}
+
+		// ✅ Floating button secure boot with error handling
+		function initFloatingButton() {
+			console.log('🔧 Initializing floating button...');
+			
+			if (document.getElementById('floatingBtnMobile')) {
+				try {
+					new FloatingButtonMobile();
+					console.log('✅ Floating button initialized successfully');
+				} catch (error) {
+					console.error('❌ Floating button initialization failed:', error);
+				}
+			} else {
+				console.error('❌ Floating button element not found in DOM');
+			}
+		}
 
         // Initialize animations
         document.addEventListener('DOMContentLoaded', () => {
