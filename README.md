@@ -1,7 +1,5 @@
 # 👋 Welcome to My Digital Universe
 
-> _"Dive into the digital universe. Follow back or get out!"_
-
 > 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](http://gerivan.me/index-pt.html)
 
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
