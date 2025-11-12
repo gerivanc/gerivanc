@@ -57,7 +57,7 @@ XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to us
 
 ---
 
-### 🤖 XPhrase Generation —  Expressive phrase generator — strong, modern, and minimalist
+### ✨💡🔤 XPhrase Generation —  Expressive phrase generator — strong, modern, and minimalist
 XPhrase Generation is a multilingual phrase generator designed for command-line interface (CLI) usage. It creates expressive, randomized phrases using words from 🇬🇧 English, 🇩🇪 German, and 🇧🇷 Portuguese, interlinked with special characters and digits.
 
 Cryptographic-strength randomization via CSPRNG, achieved through the combination of words in different languages, special characters, and digits. This construction significantly increases the entropy of the phrase, making it unfeasible to break using traditional brute-force methods, even in shorter phrases.
@@ -136,7 +136,7 @@ EntroPy is a cutting-edge password generator that leverages real entropy to prod
 
 ---
 
-## 📊 GitHub Stats
+# 📊 GitHub Stats
 Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!
 
 <div align="center">
@@ -153,7 +153,7 @@ Charts highlighting my recent activity, contribution streak, and engagement with
 
 ---
 
-## 🎯 Profile Summary
+# 🎯 Profile Summary
 A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.
 
 <div align="center">
@@ -170,7 +170,7 @@ A snapshot of my GitHub activity and contributions, showcasing my commitment to 
 
 ---
 
-## 📬 Contact
+# 📬 Contact
 
 If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:
 
@@ -180,18 +180,18 @@ If you'd like to collaborate, share ideas, or just chat about security and scien
 
 ---
 
-## 📜 License
+# 📜 License
 This repository is licensed under the [MIT License](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).
 
 ---
 
-## 🌐 Language Support
+# 🌐 Language Support
 - 🇺🇸 English — You're here!
 - 🇧🇷 [Portuguese Version](http://gerivan.me/index-pt.html)
 
 ---
 
-> _“Code with purpose. Build with passion. Share with the world.”_
+> _“It's not about how many lines you write. It's about the impact they make when executed.”_
 
 ---
 
