@@ -35,10 +35,10 @@ Revise seus conhecimentos sobre segurança de senhas e 2FA. Assista agora!
 
 ---
 
-# 🚨🚧 Alerta de Projeto Futuro 🚧🚨 
-Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferramenta inovadora para geração de palavras! Fique ligado para uma mudança de jogo no processamento de dados seguro e criativo.
+# 🚨🚧 Alerta de Projeto Concluído 🚧🚨
+Projeto XPhrase: Inovação Concluída e Disponível! 🐍 O XPhrase está pronto para usar! Uma poderosa ferramenta em Python que gera palavras de forma inteligente, segura e versátil!
 
-📢 Mantenha os olhos abertos — essa inovação vai gerar conversas! 💥
+📢 Confira agora mesmo! [XPhrase](https://xphrase.gerivan.me/)💥
 
 ---
 
@@ -56,7 +56,7 @@ Um projeto revolucionário em Python 🐍 está em desenvolvimento — uma ferra
 
 ---
 
-## 🤖 XPhrase Generation — Gerador de frases expressivas — robusto, moderno e minimalista
+### ✨💡🔤 XPhrase Generation — Gerador de frases expressivas — robusto, moderno e minimalista
 O XPhrase Generation é um gerador de frases multilíngue projetado para uso em interfaces de linha de comando (CLI). Ele cria frases expressivas e aleatórias usando palavras em 🇬🇧 inglês, 🇩🇪 alemão e 🇧🇷 português, interligadas com caracteres especiais e dígitos.
 
 A randomização com forte nível de criptografia é obtida por meio de um gerador de números aleatórios de cadeia de comando (CSPRNG), através da combinação de palavras em diferentes idiomas, caracteres especiais e dígitos. Essa construção aumenta significativamente a entropia da frase, tornando-a inviável de ser quebrada usando métodos tradicionais de força bruta, mesmo em frases mais curtas.
@@ -73,7 +73,7 @@ A randomização com forte nível de criptografia é obtida por meio de um gerad
 > _“Liberte sua criatividade — Crie frases únicas com XPhrase!”_
 
 ---
-## 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
+### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
 Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
 
 **Principais Características:**
@@ -88,7 +88,7 @@ Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o f
 
 ---
 
-## 🧬 DNAPass — Gerador de Senhas Genético
+### 🧬 DNAPass — Gerador de Senhas Genético
 DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass apresenta uma abordagem nova para a geração de senhas, unindo biotecnologia e segurança digital.
 
 **Principais Características:**
@@ -103,7 +103,7 @@ DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas 
 > _“Onde a biologia encontra a cibersegurança — e a inovação começa.”_
 ---
 
-## 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
+### 🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado no Navegador)
 O EntroPy Web traz o poderoso gerador de senhas baseado em entropia diretamente para o seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação original em Python, oferecendo uma interface gráfica intuitiva acessível de qualquer dispositivo.
 
 Principais Recursos:
@@ -120,7 +120,7 @@ Principais Recursos:
 
 ---
 
-## 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
+### 🧠 EntroPy — Gerador de Senhas Baseado em Entropia
 EntroPy é um gerador de senhas de ponta que utiliza entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.
 
 **Principais Características:**
@@ -189,7 +189,7 @@ Este repositório está licenciado sob a [Licença MIT](https://github.com/geriv
 
 ---
 
-> _“Programe com propósito. Construa com paixão. Compartilhe com o mundo.”_
+> _“Não é sobre quantas linhas você escreve. É sobre o impacto que elas causam quando são executadas.”_
 
 ---
 
