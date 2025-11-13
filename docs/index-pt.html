@@ -594,32 +594,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Project Filters - Updated: removed most buttons */
-        .project-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 30px 0;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background: rgba(0, 100, 255, 0.1);
-            border: 1px solid var(--card-border);
-            border-radius: 25px;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Exo 2', sans-serif;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-color);
-            color: var(--dark-bg);
-            box-shadow: 0 0 15px var(--primary-color);
-        }
-
         /* Timeline */
         .timeline {
             position: relative;
@@ -1387,17 +1361,7 @@
                 width: calc(100% - 60px);
                 left: 40px !important;
             }
-            
-            .project-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .filter-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-            
+                        
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
@@ -1684,12 +1648,6 @@
                 <li><a href="#license">📜 Licença</a></li>
                 <li><a href="#language-support">🌐 Suporte de Idioma</a></li>
             </ul>
-        </div>
-
-        <!-- Project Filters - UPDATED: Removed most filter buttons -->
-        <div class="project-filters">
-            <!-- REMOVED: All Projects, Security, Web, Python, C++ buttons -->
-            <button class="filter-btn" data-filter="ai">IA</button>
         </div>
 
         <!-- Featured projects section -->
@@ -2241,37 +2199,6 @@
                 ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
             }
         }
-
-        // Project Filtering - UPDATED: Only AI filter remains
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card[data-categories]');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.dataset.filter;
-                
-                // Update active filter button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.categories.includes(filter)) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
 
         // Animated Stats Counter
         function animateValue(element, start, end, duration) {
