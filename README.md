@@ -69,7 +69,7 @@ Cryptographic-strength randomization via CSPRNG, achieved through the combinatio
 - 💯 Written **100% in Python**: Generates phrases with 3 to 21 words.
 - 🌍 **Live Demo**: Currently in production is the specific page for generating copyable phrases.
 - 📚 **Interactive Docs**: [Complete Documentation](https://xphrase.gerivan.me/)
-- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/xphrase)
+- 📦 **Repository**: [XPhrase](https://github.com/gerivanc/xphrase)
 
 > _“Unleash your creativity — Create unique phrases with XPhrase!.”_
 
