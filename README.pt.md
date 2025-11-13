@@ -68,7 +68,7 @@ A randomização com forte nível de criptografia é obtida por meio de um gerad
 - 💯 Escrito **100% em Python**: Gera frases com 3 a 21 palavras.
 - 🌍 **Demonstração ao vivo**: Atualmente em produção, a página específica para geração de frases copiáveis.
 - 📚 **Documentação interativa**: [Documentação completa](https://xphrase.gerivan.me/)
-- 📦 **Repositório**: [Transformers](https://github.com/gerivanc/xphrase)
+- 📦 **Repositório**: [XPhrase](https://github.com/gerivanc/xphrase)
 
 > _“Liberte sua criatividade — Crie frases únicas com XPhrase!”_
 
