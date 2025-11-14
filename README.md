@@ -1,10 +1,10 @@
-# 👋 Welcome to My Digital Universe
+# 👋 Welcome to My Digital Universe  
 
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](http://gerivan.me/index-pt.html)
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](http://gerivan.me/index-pt.html)  
 
-I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.
+I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.  
 
-Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!
+Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!  
 
 ---
 
@@ -22,28 +22,28 @@ Did you like a project? Give it a star! 🌟. I consider it an incentive to keep
 
 ---
 
-## 📘 Enhance your digital world with this animation, keep your accounts hack-proof
-### 🔒 **Why it's awesome**:
-- Highlights password security with a dash of humor, mixing phrases in English and Portuguese.
+## 📘 Enhance your digital world with this animation, keep your accounts hack-proof  
+### 🔒 **Why it's awesome**:  
+- Highlights password security with a dash of humor, mixing phrases in English and Portuguese.  
 - Features a dynamic typing effect in a terminal-style interface.
 - Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
 Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!.
 
-Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **204 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.
-Review your knowledge of password security and 2FA. View now! 
+Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **204 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.  
+Review your knowledge of password security and 2FA. View now!
 📸 **Watch it live**: [Watch the typing animation](https://gerivan.me/typing-animation.html)
 📂 **Source code**: [Constphrases](https://github.com/gerivanc/gerivanc/blob/main/typing-animation.html)
 
 ---
 
-# 🚨🚧 Project Completed Alert 🚧🚨 
-XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!
+# 🚨🚧 Project Completed Alert 🚧🚨   
+XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!  
 
 📢 Check it out now! [XPhrase](https://xphrase.gerivan.me/)💥
 
 ---
 
-## 📌 Table of Contents
+## 📌 Table of Contents  
 - [🔐 Featured Projects](#-featured-projects)
 - [📊 GitHub Stats](#-github-stats)
 - [🎯 Profile Summary](#-profile-summary)
