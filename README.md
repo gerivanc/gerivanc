@@ -39,7 +39,7 @@ Review your knowledge of password security and 2FA. View now!
 # 🚨🚧 Project Completed Alert 🚧🚨   
 XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!  
 
-📢 Check it out now! [XPhrase](https://xphrase.gerivan.me/)💥
+📢 Check it out now! [XPhrase](https://xphrase.gerivan.me/xphrase.html)💥
 
 ---
 
@@ -67,7 +67,7 @@ Cryptographic-strength randomization via CSPRNG, achieved through the combinatio
 - 🔢 At least one special character: **!@#$%^&*()_+-=[]{}|;:,.<>?~\\**.
 - 🔢 At least one digit character: **0123456789**. 
 - 💯 Written **100% in Python**: Generates phrases with 3 to 21 words.
-- 🌍 **Live Demo**: Currently in production is the specific page for generating copyable phrases.
+- 🌍 **Live Demo**: [Try it now!](https://xphrase.gerivan.me/xphrase.html)
 - 📚 **Interactive Docs**: [Complete Documentation](https://xphrase.gerivan.me/)
 - 📦 **Repository**: [XPhrase](https://github.com/gerivanc/xphrase)
 
@@ -75,14 +75,15 @@ Cryptographic-strength randomization via CSPRNG, achieved through the combinatio
 
 ---
 
-### 🤖 Transformers —  Interactive Neural Network Visualizer
-Interactive tool for visualizing an artificial neural network, illustrating data flow from the input layer through hidden layers to the output layer.
+### 🤖 Cyber Neural Network Visualization & 🧠 Transformers Neural Network — Interactive Visualizer
+Dual-mode interactive tool for visualizing artificial neural networks and Transformer architectures, illustrating complex machine learning concepts through real-time visual representations.
 
 **Key Features:**
 - 🧩 **Interactive Network Configuration**: Configurable hidden layers (1-5).
 - 🧠 **Real-time Visualization**: Visual representation of neurons and connections.
 - 🎓 **Educational Components**: Step-by-step activation propagation.
-- 🌍 **Live Demo**: [Try it now!](https://transformers.gerivan.me/neural.html)
+- 🌍 **Live Demo**: [Transformers Neural Network](https://transformers.gerivan.me/transformers.html)
+- 🌍 **Live Demo**: [Cyber Neural Network](https://transformers.gerivan.me/neural.html)
 - 📚 **Interactive Docs**: [Complete Documentation](https://transformers.gerivan.me/)
 - 📦 **Repository**: [Transformers ](https://github.com/gerivanc/transformers)
 
