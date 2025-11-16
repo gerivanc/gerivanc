@@ -38,7 +38,7 @@ Revise seus conhecimentos sobre segurança de senhas e 2FA. Assista agora!
 # 🚨🚧 Alerta de Projeto Concluído 🚧🚨
 Projeto XPhrase: Inovação Concluída e Disponível! 🐍 O XPhrase está pronto para usar! Uma poderosa ferramenta em Python que gera palavras de forma inteligente, segura e versátil!
 
-📢 Confira agora mesmo! [XPhrase](https://xphrase.gerivan.me/)💥
+📢 Confira agora mesmo! [XPhrase](https://xphrase.gerivan.me/xphrase.html)💥
 
 ---
 
@@ -66,21 +66,22 @@ A randomização com forte nível de criptografia é obtida por meio de um gerad
 - 🔢 Pelo menos um caractere especial: **!@#$%^&*()_+-=[]{}|;:,.<>?~\\**.
 - 🔢 Pelo menos um caractere dígito: **0123456789**.
 - 💯 Escrito **100% em Python**: Gera frases com 3 a 21 palavras.
-- 🌍 **Demonstração ao vivo**: Atualmente em produção, a página específica para geração de frases copiáveis.
+- 🌍 **Demo ao Vivo**: [Experimente agora!](https://xphrase.gerivan.me/xphrase.html)
 - 📚 **Documentação interativa**: [Documentação completa](https://xphrase.gerivan.me/)
 - 📦 **Repositório**: [XPhrase](https://github.com/gerivanc/xphrase)
 
 > _“Liberte sua criatividade — Crie frases únicas com XPhrase!”_
 
 ---
-### 🤖 Transformers —  Visualizador Interativo de Redes Neurais 
-Ferramenta interativa para visualizar uma rede neural artificial, ilustrando o fluxo de dados desde a camada de entrada, passando pelas camadas ocultas, até a camada de saída..
+### 🤖 Cyber Neural Network Visualization & 🧠 Transformers Neural Network — Interactive Visualizer 
+Ferramenta interativa de modo duplo para visualizar redes neurais artificiais e arquiteturas Transformer, ilustrando conceitos complexos de aprendizado de máquina por meio de representações visuais em tempo real.
 
 **Principais Características:**
 - 🧩 **Configuração Interativa da Rede**: Camadas ocultas configuráveis (1 a 5).
 - 🧠 **Visualização em Tempo Real**: Visual representation of neurons and connections.
 - 🎓 **Componentes Educacionais**: Step-by-step activation propagation.
-- 🌍 **Demo ao Vivo**: [Try it now!](https://transformers.gerivan.me/neural.html)
+- 🌍 **Demo ao Vivo**: [Transformers Neural Network](https://transformers.gerivan.me/transformers.html)
+- 🌍 **Demo ao Vivo**: [Cyber Neural Network](https://transformers.gerivan.me/neural.html)
 - 📚 Documentação Interativa: [Documentação Completa ](https://transformers.gerivan.me)
 - 📦 **Repositório**: [Transformers ](https://github.com/gerivanc/transformers)
 
@@ -95,7 +96,7 @@ DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas 
 - 🧬 **Codificação Biológica**: Converte sequências de DNA em strings de senha.
 - 🔐 **Saída Única e Complexa**: Cada senha é inspirada biologicamente e matematicamente robusta.
 - 🌐 **Inovação Interdisciplinar**: Ideal para bioinformática, laboratórios de pesquisa e entusiastas da segurança.
-- 🌍 **Demo ao Vivo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
+- 🌍 **Demo ao Vivo**: [Experimente agora!](https://dnapass.gerivan.me/dnapass.html)
 - 📚 **Documentação Interativa**: [Complete Documentation](https://dnapass.gerivan.me/)
 - 📦 **Repositório**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
 - 💾 **Veja o código em ação**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
@@ -112,7 +113,7 @@ Principais Recursos:
 - 📱 Totalmente Responsivo: Funciona perfeitamente em desktops e dispositivos móveis.
 - 🔒 Cálculo de Entropia em Tempo Real: Indicador visual de força e alertas de segurança.
 - ⚡ Geração Instantânea: Geração rápida de senhas no lado do cliente.
-- 🌍 Demo ao Vivo: [Experimente agora!](https://entropy.gerivan.me/entropyweb.html)
+- 🌍 **Demo ao Vivo**: [Experimente agora!](https://entropy.gerivan.me/entropyweb.html)
 - 📚 Documentação Interativa: [Documentação Completa ](https://entropy.gerivan.me)
 - 📦 Repositório: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
 
