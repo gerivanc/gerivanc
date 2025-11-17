@@ -35,7 +35,7 @@ Revise seus conhecimentos sobre segurança de senhas e 2FA. Assista agora!
 
 ---
 
-# 🚨🚧 Alerta de Projeto Concluído 🚧🚨
+# 📢✅ Alerta de Projeto Concluído 📢✅
 Projeto XPhrase: Inovação Concluída e Disponível! 🐍 O XPhrase está pronto para usar! Uma poderosa ferramenta em Python que gera palavras de forma inteligente, segura e versátil!
 
 📢 Confira agora mesmo! [XPhrase](https://xphrase.gerivan.me/xphrase.html)💥
