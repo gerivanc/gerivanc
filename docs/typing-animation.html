@@ -11,42 +11,50 @@
                connect-src 'none';
                media-src 'none';
                object-src 'none';">
-    <title>Typing Animation - Security Tips</title>
+    <title>Typing Animation - Christmas Security Tips</title>
     <style>
         :root {
-            --primary-color: #00ffff; /* CYAN as primary color */
+            --primary-color: #d32f2f; /* RED as primary color */
+            --secondary-color: #388e3c; /* GREEN as secondary color */
+            --accent-color: #ffd54f; /* GOLD as accent color */
             --background-dark: #1a1a1a;
             --background-gradient: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            --text-color: #00ffff; /* CYAN */
+            --text-color: #d32f2f; /* RED */
             --container-bg: rgba(0, 0, 0, 0.6);
-            --shadow-color: rgba(0, 255, 255, 0.4); /* CYAN */
+            --shadow-color: rgba(211, 47, 47, 0.4); /* RED */
         }
 
-        [data-theme="light"] {
-            --primary-color: #0066cc;
-            --background-dark: #f0f0f0;
-            --background-gradient: linear-gradient(135deg, #e0e0e0, #a0c8ff);
-            --text-color: #0066cc;
-            --container-bg: rgba(255, 255, 255, 0.8);
-            --shadow-color: rgba(0, 102, 204, 0.4);
+        [data-theme="christmas"] {
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --background-dark: #0a1f0a;
+            --background-gradient: linear-gradient(135deg, #0a1f0a, #1a472a);
+            --text-color: #d32f2f;
+            --container-bg: rgba(10, 31, 10, 0.7);
+            --shadow-color: rgba(211, 47, 47, 0.4);
         }
 
-        [data-theme="green"] {
-            --primary-color: #00ff88;
-            --background-dark: #000000;
-            --background-gradient: linear-gradient(135deg, #000000, #003333);
-            --text-color: #00ff88;
-            --container-bg: rgba(0, 0, 0, 0.7);
-            --shadow-color: rgba(0, 255, 136, 0.4);
+        [data-theme="snow"] {
+            --primary-color: #388e3c;
+            --secondary-color: #d32f2f;
+            --accent-color: #ffd54f;
+            --background-dark: #0a1a2a;
+            --background-gradient: linear-gradient(135deg, #0a1a2a, #1a2b3a);
+            --text-color: #388e3c;
+            --container-bg: rgba(10, 26, 42, 0.7);
+            --shadow-color: rgba(56, 142, 60, 0.4);
         }
 
-        [data-theme="orange"] {
-            --primary-color: #ff7b25;
-            --background-dark: #261a0a;
-            --background-gradient: linear-gradient(135deg, #261a0a, #6b421e);
-            --text-color: #ff7b25;
-            --container-bg: rgba(38, 26, 10, 0.7);
-            --shadow-color: rgba(255, 123, 37, 0.4);
+        [data-theme="gold"] {
+            --primary-color: #ffd54f;
+            --secondary-color: #d32f2f;
+            --accent-color: #388e3c;
+            --background-dark: #2a1a0a;
+            --background-gradient: linear-gradient(135deg, #2a1a0a, #4a3a1a);
+            --text-color: #ffd54f;
+            --container-bg: rgba(42, 26, 10, 0.7);
+            --shadow-color: rgba(255, 213, 79, 0.4);
         }
 
         body {
@@ -75,9 +83,9 @@
         }
 
         .control-btn {
-            background: var(--container-bg);
-            color: var(--text-color);
-            border: 1px solid var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: 1px solid var(--accent-color);
             padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
@@ -89,8 +97,8 @@
         }
 
         .control-btn:hover {
-            background: var(--primary-color);
-            color: var(--background-dark);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: scale(1.05);
         }
 
         .theme-selector {
@@ -113,14 +121,13 @@
         }
 
         .theme-btn.active {
-            border: 2px solid gold;
+            border: 2px solid var(--accent-color);
             transform: scale(1.1);
         }
 
-        .theme-cyan { background: #00ffff; }
-        .theme-blue { background: #0066cc; }
-        .theme-green { background: #00ff88; }
-        .theme-orange { background: #ff7b25; }
+        .theme-christmas { background: linear-gradient(135deg, #d32f2f, #388e3c); }
+        .theme-snow { background: linear-gradient(135deg, #388e3c, #d32f2f); }
+        .theme-gold { background: linear-gradient(135deg, #ffd54f, #d32f2f); }
 
         .typing-container {
             font-size: 14px;
@@ -180,7 +187,7 @@
 
         .progress-bar {
             height: 100%;
-            background: var(--primary-color);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             border-radius: 2px;
             transition: width 0.5s ease;
             box-shadow: 0 0 5px var(--shadow-color);
@@ -213,7 +220,7 @@
             100% { background-position: 15px 0; }
         }
 
-        .particles {
+        .snowflakes {
             position: fixed;
             top: 0;
             left: 0;
@@ -223,29 +230,29 @@
             z-index: -1;
         }
 
-        .particle {
+        .snowflake {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--primary-color);
+            width: 8px;
+            height: 8px;
+            background: white;
             border-radius: 50%;
             opacity: 0;
-            animation: float 10s infinite linear;
+            animation: fall 10s infinite linear;
         }
 
-        @keyframes float {
+        @keyframes fall {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                transform: translateY(-10px) rotate(0deg);
                 opacity: 0;
             }
             10% {
-                opacity: 0.7;
+                opacity: 0.8;
             }
             90% {
-                opacity: 0.7;
+                opacity: 0.8;
             }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -260,7 +267,7 @@
             }
             50% { 
                 text-shadow: 0 0 10px var(--primary-color), 
-                           0 0 15px var(--primary-color); 
+                           0 0 15px var(--accent-color); 
             }
             100% { 
                 text-shadow: 0 0 5px var(--primary-color); 
@@ -324,8 +331,8 @@
         }
     </style>
 </head>
-<body data-theme="dark">
-    <div class="particles" id="particles"></div>
+<body data-theme="christmas">
+    <div class="snowflakes" id="snowflakes"></div>
     
     <div class="controls">
         <div class="controls-group">
@@ -335,10 +342,9 @@
         </div>
         
         <div class="theme-selector">
-            <div class="theme-btn theme-cyan active" data-theme="dark"></div>
-            <div class="theme-btn theme-blue" data-theme="light"></div>
-            <div class="theme-btn theme-green" data-theme="green"></div>
-            <div class="theme-btn theme-orange" data-theme="orange"></div>
+            <div class="theme-btn theme-christmas active" data-theme="christmas"></div>
+            <div class="theme-btn theme-snow" data-theme="snow"></div>
+            <div class="theme-btn theme-gold" data-theme="gold"></div>
         </div>
     </div>
     
@@ -585,22 +591,22 @@
         const phraseCounterElement = document.getElementById('phrase-counter');
         const timerElement = document.getElementById('timer');
         const progressBarElement = document.getElementById('progress-bar');
-        const particlesContainer = document.getElementById('particles');
+        const snowflakesContainer = document.getElementById('snowflakes');
         const themeButtons = document.querySelectorAll('.theme-btn');
 
-        // Create background particles
-        function createParticles() {
-            const particlesCount = 20;
+        // Create background snowflakes
+        function createSnowflakes() {
+            const snowflakesCount = 30;
             
-            for (let i = 0; i < particlesCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+            for (let i = 0; i < snowflakesCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
                 
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 10}s`;
-                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.animationDelay = `${Math.random() * 10}s`;
+                snowflake.style.animationDuration = `${8 + Math.random() * 10}s`;
                 
-                particlesContainer.appendChild(particle);
+                snowflakesContainer.appendChild(snowflake);
             }
         }
 
@@ -723,7 +729,7 @@
 
         // Initialize the application
         function init() {
-            createParticles();
+            createSnowflakes();
             updateStatus();
             startTimer();
             setTimeout(type, 1000);
