@@ -1,6 +1,6 @@
 # 👋 Welcome to My Digital Universe  
 
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](http://gerivan.me/index-pt.html)  
+> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)  
 
 I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.  
 
