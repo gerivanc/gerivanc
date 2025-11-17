@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#00ffff">
+    <meta name="theme-color" content="#d32f2f">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' 'unsafe-inline'; 
@@ -19,53 +19,63 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- Meta tags for PWA -->
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#c62828">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
-    <title>Gerivan Costa - Building secure tools with open source</title>
+    <title>Gerivan Costa - Merry Christmas! Building secure tools with open source</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <style>
         /* CSS Variables for consistent theming */
         :root {
-            --primary-color: #00ffff;
-            --secondary-color: #0080ff;
-            --accent-color: #ff0080;
-            --success-color: #00ff80;
-            --warning-color: #ffaa00;
-            --dark-bg: #0a0a14;
-            --darker-bg: #050510;
-            --card-bg: rgba(15, 25, 35, 0.7);
-            --card-border: rgba(0, 255, 255, 0.3);
-            --text-color: #e0f0ff;
-            --text-muted: #a0b0c0;
-            --neon-green: #00BFFF;
-            --neon-green-dark: #1E90FF;
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --dark-bg: #1b5e20;
+            --darker-bg: #0d3010;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(211, 47, 47, 0.3);
+            --text-color: #1a1a1a;
+            --text-muted: #5d4037;
+            --neon-green: #d32f2f;
+            --neon-green-dark: #b71c1c;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
-            --primary-color: #0080ff;
-            --secondary-color: #0055aa;
-            --accent-color: #ff0066;
-            --success-color: #00aa55;
-            --warning-color: #cc8800;
-            --dark-bg: #f0f5ff;
-            --darker-bg: #e0eaff;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --card-border: rgba(0, 128, 255, 0.3);
-            --text-color: #1a1a2e;
-            --text-muted: #4a5568;
-            --neon-green: #0080ff;
-            --neon-green-dark: #0055aa;
-            --primary-color: #0066cc;
-            --secondary-color: #004499;
-            --text-color: #1a202c;
-            --text-muted: #4a5568;
-            --card-bg: rgba(255, 255, 255, 0.98);
-            --card-border: rgba(0, 102, 204, 0.3);			
+            --primary-color: #c62828;
+            --secondary-color: #2e7d32;
+            --accent-color: #ffb300;
+            --success-color: #388e3c;
+            --warning-color: #ef6c00;
+            --dark-bg: #f5f5f5;
+            --darker-bg: #e0e0e0;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-border: rgba(198, 40, 40, 0.3);
+            --text-color: #212121;
+            --text-muted: #5d4037;
+            --neon-green: #c62828;
+            --neon-green-dark: #b71c1c;
         }
 
+        [data-theme="matrix"] {
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --dark-bg: #0d3010;
+            --darker-bg: #061a08;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(211, 47, 47, 0.3);
+            --text-color: #1a1a1a;
+            --text-muted: #5d4037;
+            --neon-green: #d32f2f;
+            --neon-green-dark: #b71c1c;
+        }
+        
         /* Specific rules for card colors in light mode for accessibility */
         [data-theme="light"] .project-card,
         [data-theme="light"] .welcome-card,
@@ -78,26 +88,10 @@
         [data-theme="light"] .note,
         [data-theme="light"] .alert,
         [data-theme="light"] .toc {
-            background: rgba(0, 102, 204, 0.15);
-            border-color: rgba(0, 102, 204, 0.4);		
+            background: rgba(198, 40, 40, 0.15);
+            border-color: rgba(198, 40, 40, 0.4);		
         }
 
-        [data-theme="matrix"] {
-            --primary-color: #00ff41;
-            --secondary-color: #008f39;
-            --accent-color: #ff003c;
-            --success-color: #00ff41;
-            --warning-color: #ffff00;
-            --dark-bg: #0a0a0a;
-            --darker-bg: #000000;
-            --card-bg: rgba(10, 15, 10, 0.8);
-            --card-border: rgba(0, 255, 65, 0.3);
-            --text-color: #00ff41;
-            --text-muted: #008f39;
-            --neon-green: #00ff41;
-            --neon-green-dark: #008f39;
-        }
-        
         /* Reset and base styles */
         * {
             margin: 0;
@@ -113,9 +107,9 @@
             padding: 20px;
             background-color: var(--dark-bg);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 213, 79, 0.1) 0%, transparent 50%);
             color: var(--text-color);
             min-height: 100vh;
             transition: var(--transition);
@@ -123,8 +117,8 @@
 
         body.matrix-theme {
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%);
         }
         
         /* Main container with glassmorphism effect */
@@ -134,10 +128,31 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
             border: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Christmas decorations */
+        .container::before {
+            content: "🎄";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        .container::after {
+            content: "❄️";
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 20px;
+            z-index: 1;
         }
         
         /* Header section styling */
@@ -145,7 +160,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         /* Theme Switcher */
@@ -185,15 +200,15 @@
             box-shadow: 0 0 10px var(--primary-color);
         }
 
-        .theme-cyber { background: linear-gradient(45deg, #00ffff, #0080ff); }
-        .theme-light { background: linear-gradient(45deg, #0080ff, #66b3ff); color: white; }
-        .theme-matrix { background: linear-gradient(45deg, #00ff41, #008f39); }
+        .theme-cyber { background: linear-gradient(45deg, #d32f2f, #388e3c); }
+        .theme-light { background: linear-gradient(45deg, #c62828, #66bb6a); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #d32f2f, #2e7d32); }
         
         /* Typography hierarchy with Orbitron font for headings */
         h1, h2, h3, h4 {
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
             transition: var(--transition);
         }
         
@@ -210,7 +225,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
             font-weight: 500;
         }
         
@@ -245,7 +260,7 @@
         }
         
         a:hover {
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
         }
         
         /* Badges container for technology icons */
@@ -271,12 +286,12 @@
             border: 1px solid var(--card-border);
             border-radius: 8px;
             margin: 20px 0;
-            box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
         }
         
         /* Note box for important information */
         .note {
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             padding: 15px;
             border-left: 4px solid var(--primary-color);
             margin: 20px 0;
@@ -288,7 +303,7 @@
             display: block;
             margin-top: 8px;
             padding: 8px;
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             border-radius: 4px;
             border: 1px solid var(--card-border);
             text-align: center;
@@ -297,9 +312,9 @@
         
         /* Blockquote styling for quotes */
         blockquote {
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--neon-green);
+            border-left: 4px solid var(--accent-color);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -315,28 +330,28 @@
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         .table th, .table td {
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
             padding: 12px;
             text-align: left;
         }
         
         .table th {
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
             font-weight: 500;
         }
         
         .table tr:nth-child(even) {
-            background-color: rgba(0, 50, 100, 0.1);
+            background-color: rgba(211, 47, 47, 0.1);
         }
         
         .table tr:hover {
-            background-color: rgba(0, 150, 255, 0.1);
+            background-color: rgba(211, 47, 47, 0.1);
         }
         
         /* List styling */
@@ -362,14 +377,14 @@
             border-radius: 8px;
             overflow-x: auto;
             margin: 20px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
             color: var(--primary-color);
             font-family: 'Courier New', monospace;
         }
         
         /* Inline code styling */
         code {
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             padding: 2px 6px;
             border-radius: 4px;
             color: var(--primary-color);
@@ -380,18 +395,18 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+            background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
             color: white;
             border-radius: 5px;
             font-weight: 600;
             margin: 10px;
-            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
             transition: var(--transition);
             text-decoration: none;
         }
         
         .btn:hover {
-            box-shadow: 0 6px 16px rgba(0, 191, 255, 0.6);
+            box-shadow: 0 6px 16px rgba(211, 47, 47, 0.6);
             transform: translateY(-2px);
             color: white;
         }
@@ -416,25 +431,34 @@
         
         /* Project card styling */
         .project-card {
-            background: rgba(15, 25, 35, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.2);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card::before {
+            content: "🎁";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
             border-color: var(--primary-color);
         }
         
         /* Alert box for important notices */
         .alert {
-            background: rgba(255, 200, 0, 0.1);
-            border: 1px solid rgba(255, 200, 0, 0.3);
+            background: rgba(255, 213, 79, 0.1);
+            border: 1px solid rgba(255, 213, 79, 0.3);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
@@ -448,7 +472,7 @@
         
         /* Glow effect for text */
         .glow {
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
         }
         
         /* Fade in animation */
@@ -463,11 +487,11 @@
 
         /* Table of contents styling */
         .toc {
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         .toc ul {
@@ -481,7 +505,7 @@
             break-inside: avoid;
             margin: 12px 0;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.1);
         }
 
         .toc li:last-child {
@@ -496,8 +520,8 @@
         }
 
         .toc a:hover {
-            background: rgba(0, 191, 255, 0.1);
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            background: rgba(211, 47, 47, 0.1);
+            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
         }
         
         /* Contact information section */
@@ -505,9 +529,9 @@
             text-align: left;
             margin: 30px 0;
             padding: 25px;
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             border-radius: 8px;
-            border: 1px solid var(--neon-green);
+            border: 1px solid var(--accent-color);
         }
         
         /* Language switcher styling */
@@ -520,25 +544,25 @@
             display: inline-block;
             margin: 0 10px;
             padding: 8px 16px;
-            background: rgba(0, 191, 255, 0.1);
-            border: 1px solid var(--neon-green);
+            background: rgba(211, 47, 47, 0.1);
+            border: 1px solid var(--primary-color);
             border-radius: 5px;
             transition: var(--transition);
         }
         
         .language-switcher a:hover {
-            background: rgba(0, 191, 255, 0.2);
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+            background: rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
         }
 
         /* Welcome section styling */
         .welcome-card {
-            background: rgba(15, 25, 35, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.2);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -546,7 +570,7 @@
         
         .welcome-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
             border-color: var(--primary-color);
         }
         
@@ -562,9 +586,9 @@
         }
         
         .welcome-quote {
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--neon-green);
+            border-left: 4px solid var(--accent-color);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -577,7 +601,7 @@
             top: -10px;
             left: 10px;
             font-size: 4em;
-            color: var(--neon-green);
+            color: var(--accent-color);
             opacity: 0.3;
             font-family: serif;
         }
@@ -621,7 +645,7 @@
             background: var(--card-bg);
             border-radius: 10px;
             border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
         }
 
@@ -635,7 +659,7 @@
 
         .timeline-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
         }
 
         .timeline-date {
@@ -654,7 +678,7 @@
             margin: 30px 0;
             font-family: 'Courier New', monospace;
             color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
         }
 
         .terminal-header {
@@ -718,7 +742,7 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
         }
 
         .stat-number {
@@ -765,7 +789,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8em;
             color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
         }
 
         @keyframes marquee {
@@ -786,7 +810,7 @@
             border: 1px solid var(--primary-color);
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
             z-index: 1000;
             transform: translateY(100px);
             opacity: 0;
@@ -802,7 +826,7 @@
         .neural-network {
             position: relative;
             height: 300px;
-            background: rgba(10, 20, 30, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             margin: 30px 0;
             border: 1px solid var(--card-border);
@@ -843,14 +867,14 @@
 
         .skill-bar {
             height: 8px;
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             border-radius: 4px;
             overflow: hidden;
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-dark));
+            background: linear-gradient(90deg, var(--primary-color), var(--neon-green-dark));
             border-radius: 4px;
             transition: width 1.5s ease-in-out;
             position: relative;
@@ -916,7 +940,7 @@
 
         .status-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
             border-color: var(--primary-color);
         }
 
@@ -971,12 +995,12 @@
         }
 
         .status-indicator.armor-encryption {
-            background: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
+            background: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .status-indicator.armor-encryption::after {
-            border: 2px solid var(--neon-green);
+            border: 2px solid var(--primary-color);
         }
 
         .status-indicator.code-quality {
@@ -989,12 +1013,12 @@
         }
         
         .status-indicator.activity-monitor {
-            background: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
+            background: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .status-indicator.activity-monitor::after {
-            border: 2px solid var(--neon-green);
+            border: 2px solid var(--primary-color);
         }
         
         .status-indicator.data-stream {
@@ -1016,7 +1040,7 @@
         .status-value {
             color: var(--primary-color);
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
             transition: all 0.3s ease;
         }
 
@@ -1051,7 +1075,7 @@
         }
 
         .status-item:nth-child(3) .status-pulse {
-            background: var(--neon-green);
+            background: var(--primary-color);
             animation-delay: 2s;
         }
 
@@ -1167,12 +1191,12 @@
 			min-width: 44px;
 			min-height: 44px;
 			border-radius: 50%;
-			background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+			background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
 			color: white;
 			border: none;
 			font-size: 24px;
 			cursor: pointer;
-			box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+			box-shadow: 0 4px 20px rgba(211, 47, 47, 0.4);
 			z-index: 1001;
 			transition: var(--transition);
 			touch-action: manipulation;
@@ -1185,7 +1209,7 @@
 
 		.floating-btn-mobile:active {
 			transform: scale(0.95);
-			box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
+			box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
 		}
 
 		/* Actions Menu */
@@ -1387,7 +1411,7 @@
             
             /* Better contrast for mobile */
             .status-item {
-                background: rgba(15, 25, 35, 0.95) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
                 backdrop-filter: blur(5px);
             }
             
@@ -1404,7 +1428,7 @@
             .alert,
             .toc,
             .contact-info {
-                background: rgba(15, 25, 35, 0.95) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
                 backdrop-filter: blur(5px);
                 border: 1px solid var(--card-border);
             }
@@ -1419,7 +1443,7 @@
             [data-theme="light"] .toc,
             [data-theme="light"] .contact-info {
                 background: rgba(255, 255, 255, 0.98) !important;
-                border: 1px solid rgba(0, 102, 204, 0.3);
+                border: 1px solid rgba(198, 40, 40, 0.3);
             }
             
             /* Increase text contrast */
@@ -1432,7 +1456,7 @@
             
             /* More solid main container */
             .container {
-                background: rgba(15, 25, 35, 0.98);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(10px);
             }
             
@@ -1450,10 +1474,10 @@
             }
             
             .intro-text {
-                background: rgba(0, 100, 255, 0.1);
+                background: rgba(211, 47, 47, 0.1);
                 padding: 15px;
                 border-radius: 8px;
-                border: 1px solid rgba(0, 255, 255, 0.2);
+                border: 1px solid rgba(211, 47, 47, 0.2);
                 margin: 15px 0;
                 backdrop-filter: blur(5px);
             }
@@ -1529,9 +1553,37 @@
                 font-size: 0.95em;
             }
         }
+
+        /* Christmas Snow Animation */
+        @keyframes snow {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #fff;
+            font-size: 1em;
+            text-shadow: 0 0 5px #fff;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            animation-name: snow;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .snowflake:nth-child(5n) { color: #ffd54f; }
+        .snowflake:nth-child(3n) { color: #e8f5e9; }
     </style>
 </head>
 <body>
+    <!-- Christmas Snowflakes -->
+    <div id="snowflakes"></div>
+
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
 
@@ -1540,7 +1592,7 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Cyber Theme">🔷</div>
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Christmas Theme">🎄</div>
         <div class="theme-btn theme-light" data-theme="light" title="Light Theme">☀️</div>
         <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme">🟩</div>
     </div>
@@ -1554,10 +1606,10 @@
 
     <div class="container">
         <header>
-            <!-- TV Marquee Title - UPDATED: New impactful phrase -->
+            <!-- TV Marquee Title - UPDATED: Christmas message -->
             <div class="marquee-container">
                 <div class="marquee-content">
-                    Everything you already know can align with everything you still need to learn about online account security. Are you ready to explore new methods, or would you prefer to stay with what you have?
+                    🎄 Merry Christmas! May this season bring peace, joy, and digital security for all! 🎅
                 </div>
             </div>
             
@@ -1566,9 +1618,9 @@
             
             <!-- CORRECTION APPLIED: Link always visible on all screens -->
             <div style="text-align: center; margin-top: 20px;">
-                <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡 <strong>Note:</strong> For the full interactive experience, visit | <a href="https://gerivan.me/typing-animation.html">Constant phrases</a></p>
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌍 <strong>Language support for this page:</strong> English (You're here!) , visit | <a href="https://gerivan.me/index-pt.html">Portuguese</a></p>
+                <div style="display: inline-block; padding: 10px 20px; background: rgba(211, 47, 47, 0.1); border-radius: 8px; border: 1px solid var(--accent-color);">
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🎁 <strong>Christmas Gift:</strong> For the full interactive experience, visit | <a href="https://gerivan.me/typing-animation.html">Constant phrases</a></p>
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌍 <strong>Language support for this page:</strong> English (You are here!) , visit | <a href="https://gerivan.me/index-pt.html">Portuguese</a></p>
                 </div>
         </header>
 
@@ -1587,47 +1639,47 @@
             <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Profile Views">
         </div>
 
-        <!-- Typing animation project card - UPDATED: Moved 204 phrases description here -->
+        <!-- Typing animation project card - UPDATED: Christmas theme -->
         <div class="project-card" data-categories="web security">
-            <h3>🔒Typing Animation — Why it's awesome:</h3>
-            <p style="text-align: justify;">Experience my <strong>Typing Animation</strong> - a high-performance HTML/CSS/JavaScript security awareness module. Featuring <strong>204 curated phrases</strong> that challenge assumptions about password hygiene and 2FA, this tool transforms security education into an engaging visual experience.</p>
-            <p style="text-align: justify;">By combining visual impact with behavioral friction, it encourages users to rethink password practices before typing predictable patterns like "123456" again. This isn't just aesthetics—it's smart security UX that makes your digital environment more resilient.</p>			
-            <p style="text-align: justify;">It presents a visual impact combined with behavioral friction, transforming security education into an engaging experience that encourages users to rethink their password practices.</p>
+            <h3>🎁 Typing Animation — Special Christmas Gift:</h3>
+            <p style="text-align: justify;">Experience my <strong>Typing Animation</strong> - a high-performance security awareness module in HTML/CSS/JavaScript. Featuring <strong>204 carefully selected phrases</strong> that challenge assumptions about password hygiene and 2FA, this tool transforms security education into an engaging visual experience.</p>
+            <p style="text-align: justify;">Combining visual impact with behavioral friction, it encourages users to rethink password practices before typing predictable patterns like "123456" again. This is not just aesthetics - it's smart security user experience that makes your digital environment more resilient.</p>			
+            <p style="text-align: justify;">Features visual impact combined with behavioral friction, transforming security education into an engaging experience that encourages users to rethink their password practices.</p>
             <ul>
-                <li>Highlights password security with a dash of humor, mixing phrases in English and Portuguese.</li>
+                <li>Highlights password security with a touch of humor, mixing phrases in English and Portuguese.</li>
                 <li>Features a dynamic typing effect in a terminal-style interface.</li>
-                <li>Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.</li>
+                <li>Seamlessly blends with the Christmas aesthetic of the Portfolio.</li>
             </ul>
             
             <div class="center">
-                <a href="https://gerivan.me/typing-animation.html" class="btn">📸 Watch it live</a>
-                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📂 Source code</a>
+                <a href="https://gerivan.me/typing-animation.html" class="btn">🎄 View live</a>
+                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📦 Source code</a>
             </div>
             
-            <p style="text-align: center; margin-top: 15px;"><em>Enhance your knowledge with 204 animated phrases, protect your accounts with strong passwords, biometrics, and 2FA, and review your security practices.</em></p>
+            <p style="text-align: center; margin-top: 15px;"><em>Enhance your knowledge with 204 animated phrases, protect your accounts with strong passwords, biometrics and 2FA, and review your security practices.</em></p>
         </div>
 
-        <!-- Welcome section - UPDATED: Expanded with project information and justified text -->
-        <h2>👋 Welcome to My Digital Universe</h2>
+        <!-- Welcome section - UPDATED: Christmas theme -->
+        <h2>🎅 Welcome to My Digital Christmas Universe</h2>
         
         <div class="welcome-card">
             <div class="welcome-quote">
-                <p>"If your security relies solely on fingerprints and SMS codes, congrats — you’ve already lost to the hacker and the nosy aunt who watched you unlock your phone."</p>
+                <p>"If your security depends only on fingerprints and SMS codes, congratulations — you've already lost to the hacker and the curious aunt who saw you unlock your phone."</p>
             </div>
             
-            <p style="text-align: justify;">I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
+            <p style="text-align: justify;">I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that combine innovation with purpose, always focused on continuous learning and meaningful contributions to the open source community.</p>
             
-            <p style="text-align: justify;">My portfolio showcases cutting-edge tools like the <strong>Transformers Interactive Neural Network Visualizer</strong>, which demonstrates the future of information visualization through interconnected neural networks. This represents the next frontier in understanding complex data flows through artificial intelligence systems.</p>
+            <p style="text-align: justify;">My portfolio features cutting-edge tools like the <strong>Transformers Interactive Neural Network Visualizer</strong>, which demonstrates the future of information visualization through interconnected neural networks. This represents the next frontier in understanding complex data flows through artificial intelligence systems.</p>
   
-            <p style="text-align: justify;">The <strong>Cyber Neural Network</strong> visualizer demonstrates the future of information visualization through interconnected neural networks. It is based on a <strong>Multi-Layer Perceptron (MLP)</strong> architecture, <strong>(introduced in the paper "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, featuring real-time forward propagation visualization. This represents the next frontier in understanding complex data flows within artificial intelligence systems.</p>
+            <p style="text-align: justify;">The <strong>Cyber Neural Network</strong> visualizer demonstrates the future of information visualization through interconnected neural networks. It's based on a <strong>Multi-Layer Perceptron (MLP)</strong> architecture, <strong>(introduced in the paper "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, featuring real-time forward propagation visualization. This represents the next frontier in understanding complex data flows within artificial intelligence systems.</p>
 			
-            <p style="text-align: justify;">The <strong>Transformer Neural Network</strong> visualizer refers, in the context of modern AI, specifically to the <strong>"Transformer"</strong> architecture (introduced in the paper “Attention is All You Need” – Vaswani et al., 2017), used in models like <strong>BERT, GPT, and Grok</strong>. This architecture is revolutionary for replacing recurrent networks <strong>(RNN/LSTM)</strong> with <strong>self-attention</strong> mechanisms, enabling efficient parallel processing of entire sequences without strict temporal dependencies. It "transforms" data representations through <strong>encoder/decoder</strong> blocks with </strong>multi-head</strong> attention.</p>			
+            <p style="text-align: justify;">The <strong>Transformer Neural Network</strong> visualizer refers, in the context of modern AI, specifically to the <strong>"Transformer"</strong> architecture (introduced in the paper "Attention is All You Need" – Vaswani et al., 2017), used in models like <strong>BERT, GPT and Grok</strong>. This architecture is revolutionary for replacing recurrent networks <strong>(RNN/LSTM)</strong> with <strong>self-attention</strong> mechanisms, enabling efficient parallel processing of entire sequences without strict temporal dependencies. It "transforms" data representations through <strong>encoder/decoder</strong> blocks with <strong>multi-head</strong> attention.</p>			
   
-            <p style="text-align: justify;">Explore innovative security solutions like <strong>DNAPass Password Generator</strong>, which bridges biotechnology and digital security by transforming DNA sequences into cryptographically secure passwords. This groundbreaking approach introduces biological encoding to password generation, creating truly unique and complex authentication systems.</p>
+            <p style="text-align: justify;">Explore innovative security solutions like the <strong>DNAPass Password Generator</strong>, which unites biotechnology and digital security by transforming DNA sequences into cryptographically secure passwords. This innovative approach introduces biological encoding into password generation, creating truly unique and complex authentication systems.</p>
             
-            <p style="text-align: justify;">Discover the <strong>EntroPy Password Generator ecosystem</strong>, featuring both Python CLI versions for Windows/Linux and responsive web implementations. The entropy-driven security model ensures maximum randomness and brute-force resistance by leveraging real entropy sources rather than predictable pseudo-random algorithms.</p>
+            <p style="text-align: justify;">Discover the <strong>EntroPy Password Generator</strong> ecosystem, featuring Python CLI versions for Windows/Linux and responsive web implementations. The entropy-driven security model ensures maximum randomness and resistance to brute force attacks, leveraging real entropy sources instead of predictable pseudo-random algorithms.</p>
 
-			<p style="text-align: justify;"><strong>XPhrase Generation</strong> is an expressive phrase generator that <strong>uses 4,000 specific words selected from three languages — English, Portuguese, and German</strong>  — to create sentences. The project allows generating either a single phrase or multiple phrases, always with a length between 3 and 21 words. In single-phrase mode, the system asks for the desired word count and produces one sentence accordingly. In multiple-phrase mode, it first defines the number of words per phrase and then the number of phrases, between 5 and 10, ensuring consistency in length. Each word must contain at least one special character and one digit, and the final word must end with a capital letter. The order of languages is randomized, making the output varied and dynamic.</p>
+			<p style="text-align: justify;"><strong>XPhrase Generation</strong> is an expressive phrase generator that <strong>uses 4,000 specific words selected from three languages — English, Portuguese and German</strong> — to create sentences. The project allows generating a single phrase or multiple phrases, always with a length between 3 and 21 words. In single phrase mode, the system asks for the desired number of words and produces a sentence accordingly. In multiple phrase mode, it first defines the number of words per phrase and then the number of phrases, between 5 and 10, ensuring consistency in length. Each word must contain at least one special character and one digit, and the final word must end with an uppercase letter. The language order is randomized, making the output varied and dynamic.</p>
         </div>
 
         <!-- Table of Contents -->
@@ -1639,7 +1691,7 @@
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
                 <li><a href="#project-timeline">📅 Project Timeline</a></li>
                 <li><a href="#terminal-session">📟 Terminal Session [gerivan@digital-universe:~]</a></li>
-                <li><a href="#github-stats">📊 GitHub Stats</a></li>
+                <li><a href="#github-stats">📊 GitHub Statistics</a></li>
                 <li><a href="#profile-summary">🎯 Profile Summary</a></li>
                 <li><a href="#contact">📬 Contact Information</a></li>
                 <li><a href="#license">📜 License</a></li>
@@ -1653,66 +1705,66 @@
         <!-- EntroPy Password Generator project card -->
         <div class="project-card" data-categories="security python">
             <h3>🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python</h3>
-            <p>EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.</p>
+            <p>EntroPy is a next-generation password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy accesses entropy sources to ensure maximum randomness and resistance to brute force attacks.</p>
             
             <h4>Key Features:</h4>
             <ul>
                 <li>🔒 <strong>Entropy-Driven Security</strong>: Uses real entropy to avoid predictable patterns.</li>
                 <li>🧪 <strong>Custom Algorithms</strong>: Designed for cryptographic strength and uniqueness.</li>
-                <li>🧠 <strong>Security-Oriented Design</strong>: Ideal for developers, researchers, and cybersecurity professionals.</li>
+                <li>🧠 <strong>Security-First Design</strong>: Ideal for developers, researchers, and cybersecurity professionals.</li>
             </ul>
             
             <div class="center">
                 <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 View the code</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 View code</a>
             </div>
             
             <blockquote>
-                <p>"Security isn't just a feature — it's the foundation."</p>
+                <p>"Security is not just a feature — it's the foundation."</p>
             </blockquote>
         </div>
 
         <!-- EntroPy Web Version project card -->
         <div class="project-card" data-categories="security web">
             <h3>🌐 EntroPy Password Generator - Web Version (Browser-Based Password Generator)</h3>
-            <p>EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.</p>
+            <p>EntroPy Web brings powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation, offering an intuitive graphical interface accessible from any device.</p>
             
             <h4>Key Features:</h4>
             <ul>
-                <li>🎨 <strong>Three Block Interface</strong>: Predefined modes (1-20) + custom configuration</li>
-                <li>📱 <strong>Fully Responsive</strong>: Works perfectly on desktop and mobile devices</li>
-                <li>🔒 <strong>Real-time Entropy Calculation</strong>: Visual strength indicator and security warnings</li>
-                <li>⚡ <strong>Instant Generation</strong>: Fast, client-side password generation</li>
+                <li>🎨 <strong>Three-Block Interface</strong>: Predefined modes (1-20) + custom configuration</li>
+                <li>📱 <strong>Fully Responsive</strong>: Works seamlessly on desktop and mobile devices</li>
+                <li>🔒 <strong>Real-Time Entropy Calculation</strong>: Visual strength indicator and security warnings</li>
+                <li>⚡ <strong>Instant Generation</strong>: Fast client-side password generation</li>
             </ul>
             
             <div class="center">
                 <a href="https://entropy.gerivan.me/entropyweb.html" class="btn">🌍 Live Demo</a>
-                <a href="https://entropy.gerivan.me/" class="btn btn-secondary">📚 Interactive Docs</a>				
+                <a href="https://entropy.gerivan.me/" class="btn btn-secondary">📚 Interactive Documentation</a>				
                 <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repository</a>
             </div>
             
             <blockquote>
-                <p>"Enterprise-grade password security, now accessible in your browser."</p>
+                <p>"Enterprise-level password security, now accessible in your browser."</p>
             </blockquote>
         </div>
 
         <!-- DNAPass project card -->
         <div class="project-card" data-categories="security cpp">
             <h3>🧬 DNAPass Password Generator — Genetic Password Generator</h3>
-            <p>DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.</p>
+            <p>DNAPass is an innovative tool that transforms DNA sequences into complex and secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a new approach to password generation that unites biotechnology and digital security.</p>
             
             <h4>Key Features:</h4>
             <ul>
                 <li>🧬 <strong>Biological Encoding</strong>: Converts DNA sequences into password strings.</li>
-                <li>🔐 <strong>Unique & Complex Output</strong>: Each password is biologically inspired and mathematically robust.</li>
-                <li>🌐 <strong>Cross-Disciplinary Innovation</strong>: Ideal for bioinformatics, research labs, and security enthusiasts.</li>
+                <li>🔐 <strong>Unique and Complex Output</strong>: Each password is biologically inspired and mathematically robust.</li>
+                <li>🌐 <strong>Interdisciplinary Innovation</strong>: Ideal for bioinformatics, research labs, and security enthusiasts.</li>
             </ul>
             
             <div class="center">
                 <a href="https://dnapass.gerivan.me/dnapass.html" class="btn">🌍 Live Demo</a>
-                <a href="https://dnapass.gerivan.me" class="btn btn-secondary">📚 Interactive Docs</a>				
+                <a href="https://dnapass.gerivan.me" class="btn btn-secondary">📚 Interactive Documentation</a>				
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 View the code</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 View code</a>
             </div>
             
             <blockquote>
@@ -1780,7 +1832,7 @@
 
 	<div class="project-card" data-categories="ai web">
 		<h3>Neural Network Visualizer</h3>
-		<p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
+		<p>An advanced visualization tool that brings artificial intelligence to life! Watch neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>
 		
 		<div class="neural-network" id="neuralNetwork">
 			<!-- Neural network will be generated by JavaScript -->
@@ -1793,19 +1845,19 @@
     
 	<h3>Dual System - Key Features:</h4>
 	<h4>🧠 Transformer Neural Network</h2>
-	<p>Full implementation of the Transformer architecture, featuring:</p>
+	<p>Complete implementation of the Transformer architecture, featuring:</p>
 	<ul>
 		<li>🎯 <strong>Real-time training with TensorFlow.js in the browser.</strong>: Attention mechanism implementations</li>
-		<li>🔍 <strong>Dual architecture modes (decoder-only GPT style vs encoder-decoder T5 style).</strong>: Real transformer architecture mathematics</li>
+		<li>🔍 <strong>Dual architecture modes (GPT-style decoder-only vs T5-style encoder-decoder).</strong>: Real transformer architecture mathematics</li>
 		<li>📊 <strong>Multi-head attention visualization with color-coded attention heads.</strong>: Multi-head attention patterns</li>
-		<li>⚡ <strong>Animated forward/backward propagation with gradient flow visualization.</strong>: Live embedded image projection in 2D space</li>
+		<li>⚡ <strong>Animated forward/backward propagation with gradient flow visualization.</strong>: Live embedding projection into 2D space</li>
 	</ul>
 
 	<h4>🤖 Cyber Neural Network</h2>
-	<p>An abstract artistic representation of neural network principles, featuring:</p>
+	<p>An artistic abstract representation of neural network principles, featuring:</p>
 	<ul>
-		<li>🎯 <strong>Dual-mode rendering (Cyber/Tech aesthetic vs Complex modes).</strong>: Graph theory and network topology principles</li>
-		<li>🔍 <strong>Interactive physics engine with nodal repulsion and force calculations.</strong>: Visual hierarchy and information encoding</li>
+		<li>🎯 <strong>Dual rendering modes (Cyber/Tech aesthetic vs Complex modes).</strong>: Graph theory principles and network topology</li>
+		<li>🔍 <strong>Interactive physics engine with node repulsion and force calculations.</strong>: Visual hierarchy and information encoding</li>
 		<li>📊 <strong>Real-time performance optimization with spatial partitioning algorithms.</strong>: Interactive physics simulations</li>
 		<li>⚡ <strong>Advanced visual effects including multi-layer glow and gradient connections.</strong>: Performance optimization techniques</li>
 	</ul>
@@ -1814,32 +1866,32 @@
     <div class="center">
         <a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Live Demo - Transformers Neural Network</a>
         <a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Live Demo - Cyber Neural Network</a>		
-        <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Interactive Docs</a>
+        <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Interactive Documentation</a>
     </div>
     
     <blockquote>
-        <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
+        <p>"Visualizing neural networks isn't just about understanding AI — it's about seeing intelligence being born."</p>
 		</blockquote>
 	</div>
 
         <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
-            <h3>🚀 XPHRASE GENERATION — Expressive phrase generator — strong, modern, and minimalist</h3>
-            <p>XPhrase Generation is a multilingual phrase generator designed for command-line interface (CLI) usage. It creates expressive, randomized phrases using words from Portuguese, English, and German, interlinked with special characters and digits.</p>
+            <h3>🚀 XPHRASE GENERATION — Expressive phrase generator — strong, modern and minimalist</h3>
+            <p>XPhrase Generation is a multilingual phrase generator designed for command line interface (CLI) use. It creates expressive and randomized phrases using words from Portuguese, English and German, interconnected with special characters and digits.</p>
             
             <h4>Key Features:</h4>
             <ul>
-			<li>💯 <strong>It contains 4,000 specific and unique words</strong>: selected from the vocabulary of three different languages.</li>
-			<li>🖥️ <strong>Unique and Complex Output</strong>: This project was created by selecting words to generate sentences in three languages: English, Portuguese, and German.</li>
-			<li>🌐 <strong>Interdisciplinary Innovation</strong>: Words are randomly selected and mixed across languages.</li>
+			<li>💯 <strong>Contains 4,000 specific and unique words</strong>: selected from the vocabulary of three different languages.</li>
+			<li>🖥️ <strong>Unique and Complex Output</strong>: This project was created by selecting words to generate sentences in three languages: English, Portuguese and German.</li>
+			<li>🌐 <strong>Interdisciplinary Innovation</strong>: Words are randomly selected and mixed between languages.</li>
             </ul>
             
             <div class="center">
 
 				<a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Live Demo - XPhrase Generation</a>
-                <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Interactive Docs</a>				
+                <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Interactive Documentation</a>				
                 <a href="https://github.com/gerivanc/xphrase/" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 View the code</a>
+                <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 View code</a>
             </div>
             
             <blockquote>
@@ -1859,7 +1911,7 @@
             <div class="timeline-item">
                 <div class="timeline-date">July 2025 - Present</div>
                 <h4>GitHub Profile & Digital Universe</h4>
-                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
+                <p>Personal portfolio featuring security projects, open source contributions, and developer journey.</p>
                 <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
             </div>
             <div class="timeline-item">
@@ -1883,18 +1935,18 @@
             <div class="timeline-item">
                 <div class="timeline-date">November 2025 - Present</div>
                 <h4>XPHRASE GENERATION</h4>
-                <p>Expressive phrase generator — strong, modern, and minimalist.</p>
+                <p>Expressive phrase generator — strong, modern and minimalist.</p>
                 <a href="https://github.com/gerivanc/xphrase" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
             </div>			
         </div>
 
 		<!-- Upcoming project alert -->
 		<div class="alert">
-			<h3>🚨🚧 Project Completed Alert 🚧🚨</h3>
-			<p>XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!</p>
+			<h3>🚨🚧 Project Completion Alert 🚧🚨</h3>
+			<p>XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready for use! A powerful Python tool that generates words intelligently, securely and versatile!</p>
 			<ul>
 			<li>🎛️ <strong>Random Mode</strong>: based on patterns or with entropy control — you choose how to create.</li>
-			<li>🔐 <strong>Designed to be safe</strong>: creative and highly customizable.</li>
+			<li>🔐 <strong>Designed to be secure</strong>: creative and highly customizable.</li>
 			</ul>
 			<div class="center">
 				<a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Interactive Documentation</a>	
@@ -1984,25 +2036,25 @@
         </div>
 
         <!-- GitHub Statistics section -->
-        <h2 id="github-stats">📊 GitHub Stats</h2>
-        <p>Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!</p>
+        <h2 id="github-stats">📊 GitHub Statistics</h2>
+        <p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects. I strive for consistent development and continuous learning!</p>
 
         <div class="center">
-            <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+            <img width="90%" alt="Gerivan's recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
         </div>
 
         <div class="stats-grid">
             <div>
-                <img alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+                <img alt="Gerivan's GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
             </div>
             <div>
-                <img alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
+                <img alt="Gerivan's top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
             </div>
         </div>
 
         <!-- Profile summary section -->
         <h2 id="profile-summary">🎯 Profile Summary</h2>
-        <p>A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.</p>
+        <p>A snapshot of my GitHub activity and contributions, showing my commitment to coding and open source projects.</p>
 
         <div class="center">
             <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
@@ -2031,7 +2083,7 @@
             <h3>Professional Focus:</h3>
             <ul>
                 <li>🧠 <strong>Open to collaborations and research projects</strong></li>
-                <li>🔒 <strong>Creation and development focused on security.</strong></li>
+                <li>🔒 <strong>Security-focused creation and development.</strong></li>
                 <li>🌐 <strong>Active in open source community contributions</strong></li>
             </ul>
             
@@ -2050,7 +2102,7 @@
         <h2 id="language-support">🌐 Language Support</h2>
         <div class="language-switcher">
             <a href="#">
-                <span style="font-size: 1.2em;">🇺🇸</span> English — You're here!
+                <span style="font-size: 1.2em;">🇺🇸</span> English — You are here!
             </a>
             <a href="https://gerivan.me/index-pt.html">
                 <span style="font-size: 1.2em;">🇧🇷</span> Portuguese Version
@@ -2059,13 +2111,13 @@
 
         <!-- Final quote with floating box design -->
         <div style="
-            background: rgba(0, 191, 255, 0.1);
-            border: 1px solid var(--neon-green);
+            background: rgba(255, 213, 79, 0.1);
+            border: 1px solid var(--accent-color);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 213, 79, 0.3);
             backdrop-filter: blur(10px);
         ">
             <p style="
@@ -2074,7 +2126,7 @@
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1.2em;
                 font-weight: 500;
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+                text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
             ">"It's not about how many lines you write. It's about the impact they make when executed."</p>
         </div>
 
@@ -2083,23 +2135,24 @@
         .center p {
             margin: 2px 0;
             line-height: 1.2;
-            color: --neon-green; /* Dodger Blue color for copyright text */
+            color: var(--primary-color);
             transition: color 0.3s ease; /* Smooth transition effect */
         }
         .center p:hover {
-            color: #1E90FF; /* Dodger Blue - Portuguese version */
+            color: var(--secondary-color);
         }
         </style>
 
         <!-- Copyright footer - English language -->
         <div class="center">          
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
+            <p><strong>🎄 Merry Christmas and Happy New Year! 🎅</strong></p>
         </div>
     </div>
 
 		<!-- Mobile Floating Button -->
 		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
-			<span class="fab-icon">⚡</span>
+			<span class="fab-icon">🎄</span>
 		</button>
 
 		<!-- Floating Actions Menu (Optional) -->
@@ -2119,6 +2172,30 @@
 		</div>
 
     <script>
+        // Christmas Snow Animation
+        function createSnowflakes() {
+            const snowflakesContainer = document.getElementById('snowflakes');
+            const snowflakeCount = 50;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                
+                const size = Math.random() * 1.5 + 0.5;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+                
+                snowflake.style.fontSize = size + 'em';
+                snowflake.style.left = posX + 'vw';
+                snowflake.style.animationDuration = duration + 's';
+                snowflake.style.animationDelay = delay + 's';
+                
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
+
         // Theme Switching
         const themeButtons = document.querySelectorAll('.theme-btn');
         const body = document.body;
@@ -2157,7 +2234,7 @@
             canvas.height = window.innerHeight;
             
             // Matrix characters
-            const chars = "01010101010101010101010101010101";
+            const chars = "🎄🎅❄️🌟🔴🟢🎁";
             const charArray = chars.split("");
             const font_size = 14;
             const columns = canvas.width / font_size;
@@ -2173,7 +2250,7 @@
                 ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
-                ctx.fillStyle = "#00ff41";
+                ctx.fillStyle = "#d32f2f";
                 ctx.font = font_size + "px monospace";
                 
                 for (let i = 0; i < drops.length; i++) {
@@ -2307,7 +2384,7 @@
 
         // Terminal Typing Animation - UPDATED: Added installation and usage commands
         const commands = [
-            "📦 Stable Version Installation (PyPI)",
+            "🎄 Stable Version Installation (PyPI)",
             "python3 -m venv venv-stablepypi",
             "source venv-stablepypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -2315,7 +2392,7 @@
             "pip install entropy-password-generator",
             "pip list",
             "",
-            "🧪 Development Version Installation (Test PyPI)",
+            "🎁 Development Version Installation (Test PyPI)",
             "python3 -m venv venv-testpypi",
             "source venv-testpypi/bin/activate",
             "python -m ensurepip --upgrade",
@@ -2323,7 +2400,7 @@
             "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
             "pip list",
             "",
-            "🧩 Block I (All with ambiguous characters, length 24)",
+            "🔴 Block I (All with ambiguous characters, length 24)",
             "python3 entropy_password_generator/password_generator.py --mode 1:",
             "Generated password: &\\]*y>fhqs*e<.+fl=~ijy-i",
             "Entropy: 138.75 bits;",
@@ -2332,7 +2409,7 @@
             "Generated password: JRYAHHASE[|&`M`B)!!EQ$RD",
             "Entropy: 138.75 bits;",
             "",
-            "🌀 Block II (Mixed configurations)",
+            "🟢 Block II (Mixed settings)",
             "python3 entropy_password_generator/password_generator.py --mode 11:",
             "Generated password: ?*WjM\\MR-.JkQr5",
             "Entropy: 95.10 bits;",
@@ -2341,7 +2418,7 @@
             "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
             "Entropy: 152.16 bits.",
             "",
-            "🎨 Block III (Using Custom Configuration)",
+            "🎅 Block III (Using Custom Configuration)",
             "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
             "Generated password: P#Zm+e;7Lv{iI9W",
             "Entropy: 97.62 bits.",
@@ -2503,6 +2580,7 @@
 		console.log('🚀 Initializing all components...');
 		
 		// Initialize components in the correct order
+		createSnowflakes();
 		createParticles();
 		secureExternalLinks();
 		
@@ -2861,6 +2939,7 @@
 
         // Initialize animations
         document.addEventListener('DOMContentLoaded', () => {
+            createSnowflakes();
             createParticles();
             createNeuralNetwork();
 			secureExternalLinks();
