@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#00ffff">
+    <meta name="theme-color" content="#d32f2f">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' 'unsafe-inline'; 
@@ -11,61 +11,71 @@
                    font-src 'self' https://fonts.gstatic.com; 
                    img-src 'self' data: https://*.githubusercontent.com https://img.shields.io https://komarev.com https://github-readme-activity-graph.vercel.app https://nirzak-streak-stats.vercel.app https://github-readme-stats.vercel.app https://github-profile-summary-cards.vercel.app https://vercel.app https://vercel.live;
                    frame-src 'self' https://gerivan.me https://*.githubusercontent.com;">
-	<!-- Favicon -->
-	<link rel="icon" href="/g2.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/g2.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" href="/g3.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
-	<!-- Manifest -->
-	<link rel="manifest" href="/manifest.json">
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
 
-	<!-- Meta tags para PWA -->
-	<meta name="theme-color" content="#000000">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
-    <title>Gerivan Costa - Construindo ferramentas seguras com código aberto</title>
+    <!-- Meta tags for PWA -->
+    <meta name="theme-color" content="#c62828">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
+    <title>Gerivan Costa - Feliz Natal! Building secure tools with open source</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <style>
         /* CSS Variables for consistent theming */
         :root {
-            --primary-color: #00ffff;
-            --secondary-color: #0080ff;
-            --accent-color: #ff0080;
-            --success-color: #00ff80;
-            --warning-color: #ffaa00;
-            --dark-bg: #0a0a14;
-            --darker-bg: #050510;
-            --card-bg: rgba(15, 25, 35, 0.7);
-            --card-border: rgba(0, 255, 255, 0.3);
-            --text-color: #e0f0ff;
-            --text-muted: #a0b0c0;
-            --neon-green: #00BFFF;
-            --neon-green-dark: #1E90FF;
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --dark-bg: #1b5e20;
+            --darker-bg: #0d3010;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(211, 47, 47, 0.3);
+            --text-color: #1a1a1a;
+            --text-muted: #5d4037;
+            --neon-green: #d32f2f;
+            --neon-green-dark: #b71c1c;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
-            --primary-color: #0080ff;
-            --secondary-color: #0055aa;
-            --accent-color: #ff0066;
-            --success-color: #00aa55;
-            --warning-color: #cc8800;
-            --dark-bg: #f0f5ff;
-            --darker-bg: #e0eaff;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --card-border: rgba(0, 128, 255, 0.3);
-            --text-color: #1a1a2e;
-            --text-muted: #4a5568;
-            --neon-green: #0080ff;
-            --neon-green-dark: #0055aa;
-            --primary-color: #0066cc;
-            --secondary-color: #004499;
-            --text-color: #1a202c;
-            --text-muted: #4a5568;
-            --card-bg: rgba(255, 255, 255, 0.98);
-            --card-border: rgba(0, 102, 204, 0.3);			
+            --primary-color: #c62828;
+            --secondary-color: #2e7d32;
+            --accent-color: #ffb300;
+            --success-color: #388e3c;
+            --warning-color: #ef6c00;
+            --dark-bg: #f5f5f5;
+            --darker-bg: #e0e0e0;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-border: rgba(198, 40, 40, 0.3);
+            --text-color: #212121;
+            --text-muted: #5d4037;
+            --neon-green: #c62828;
+            --neon-green-dark: #b71c1c;
         }
 
+        [data-theme="matrix"] {
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --dark-bg: #0d3010;
+            --darker-bg: #061a08;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(211, 47, 47, 0.3);
+            --text-color: #1a1a1a;
+            --text-muted: #5d4037;
+            --neon-green: #d32f2f;
+            --neon-green-dark: #b71c1c;
+        }
+        
         /* Specific rules for card colors in light mode for accessibility */
         [data-theme="light"] .project-card,
         [data-theme="light"] .welcome-card,
@@ -78,26 +88,10 @@
         [data-theme="light"] .note,
         [data-theme="light"] .alert,
         [data-theme="light"] .toc {
-            background: rgba(0, 102, 204, 0.15);
-            border-color: rgba(0, 102, 204, 0.4);		
+            background: rgba(198, 40, 40, 0.15);
+            border-color: rgba(198, 40, 40, 0.4);		
         }
 
-        [data-theme="matrix"] {
-            --primary-color: #00ff41;
-            --secondary-color: #008f39;
-            --accent-color: #ff003c;
-            --success-color: #00ff41;
-            --warning-color: #ffff00;
-            --dark-bg: #0a0a0a;
-            --darker-bg: #000000;
-            --card-bg: rgba(10, 15, 10, 0.8);
-            --card-border: rgba(0, 255, 65, 0.3);
-            --text-color: #00ff41;
-            --text-muted: #008f39;
-            --neon-green: #00ff41;
-            --neon-green-dark: #008f39;
-        }
-        
         /* Reset and base styles */
         * {
             margin: 0;
@@ -113,9 +107,9 @@
             padding: 20px;
             background-color: var(--dark-bg);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 213, 79, 0.1) 0%, transparent 50%);
             color: var(--text-color);
             min-height: 100vh;
             transition: var(--transition);
@@ -123,8 +117,8 @@
 
         body.matrix-theme {
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%);
         }
         
         /* Main container with glassmorphism effect */
@@ -134,10 +128,31 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
             border: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Christmas decorations */
+        .container::before {
+            content: "🎄";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        .container::after {
+            content: "❄️";
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 20px;
+            z-index: 1;
         }
         
         /* Header section styling */
@@ -145,7 +160,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         /* Theme Switcher */
@@ -185,15 +200,15 @@
             box-shadow: 0 0 10px var(--primary-color);
         }
 
-        .theme-cyber { background: linear-gradient(45deg, #00ffff, #0080ff); }
-        .theme-light { background: linear-gradient(45deg, #0080ff, #66b3ff); color: white; }
-        .theme-matrix { background: linear-gradient(45deg, #00ff41, #008f39); }
+        .theme-cyber { background: linear-gradient(45deg, #d32f2f, #388e3c); }
+        .theme-light { background: linear-gradient(45deg, #c62828, #66bb6a); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #d32f2f, #2e7d32); }
         
         /* Typography hierarchy with Orbitron font for headings */
         h1, h2, h3, h4 {
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
             transition: var(--transition);
         }
         
@@ -210,7 +225,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
             font-weight: 500;
         }
         
@@ -245,7 +260,7 @@
         }
         
         a:hover {
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
         }
         
         /* Badges container for technology icons */
@@ -271,12 +286,12 @@
             border: 1px solid var(--card-border);
             border-radius: 8px;
             margin: 20px 0;
-            box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
         }
         
         /* Note box for important information */
         .note {
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             padding: 15px;
             border-left: 4px solid var(--primary-color);
             margin: 20px 0;
@@ -288,7 +303,7 @@
             display: block;
             margin-top: 8px;
             padding: 8px;
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             border-radius: 4px;
             border: 1px solid var(--card-border);
             text-align: center;
@@ -297,9 +312,9 @@
         
         /* Blockquote styling for quotes */
         blockquote {
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--neon-green);
+            border-left: 4px solid var(--accent-color);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -315,28 +330,28 @@
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         .table th, .table td {
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
             padding: 12px;
             text-align: left;
         }
         
         .table th {
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
             font-weight: 500;
         }
         
         .table tr:nth-child(even) {
-            background-color: rgba(0, 50, 100, 0.1);
+            background-color: rgba(211, 47, 47, 0.1);
         }
         
         .table tr:hover {
-            background-color: rgba(0, 150, 255, 0.1);
+            background-color: rgba(211, 47, 47, 0.1);
         }
         
         /* List styling */
@@ -362,14 +377,14 @@
             border-radius: 8px;
             overflow-x: auto;
             margin: 20px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
             color: var(--primary-color);
             font-family: 'Courier New', monospace;
         }
         
         /* Inline code styling */
         code {
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             padding: 2px 6px;
             border-radius: 4px;
             color: var(--primary-color);
@@ -380,18 +395,18 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+            background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
             color: white;
             border-radius: 5px;
             font-weight: 600;
             margin: 10px;
-            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
             transition: var(--transition);
             text-decoration: none;
         }
         
         .btn:hover {
-            box-shadow: 0 6px 16px rgba(0, 191, 255, 0.6);
+            box-shadow: 0 6px 16px rgba(211, 47, 47, 0.6);
             transform: translateY(-2px);
             color: white;
         }
@@ -416,25 +431,34 @@
         
         /* Project card styling */
         .project-card {
-            background: rgba(15, 25, 35, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.2);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card::before {
+            content: "🎁";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
             border-color: var(--primary-color);
         }
         
         /* Alert box for important notices */
         .alert {
-            background: rgba(255, 200, 0, 0.1);
-            border: 1px solid rgba(255, 200, 0, 0.3);
+            background: rgba(255, 213, 79, 0.1);
+            border: 1px solid rgba(255, 213, 79, 0.3);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
@@ -448,7 +472,7 @@
         
         /* Glow effect for text */
         .glow {
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
         }
         
         /* Fade in animation */
@@ -463,11 +487,11 @@
 
         /* Table of contents styling */
         .toc {
-            background: rgba(0, 100, 255, 0.1);
+            background: rgba(211, 47, 47, 0.1);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.2);
         }
         
         .toc ul {
@@ -481,7 +505,7 @@
             break-inside: avoid;
             margin: 12px 0;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(211, 47, 47, 0.1);
         }
 
         .toc li:last-child {
@@ -496,8 +520,8 @@
         }
 
         .toc a:hover {
-            background: rgba(0, 191, 255, 0.1);
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            background: rgba(211, 47, 47, 0.1);
+            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
         }
         
         /* Contact information section */
@@ -505,9 +529,9 @@
             text-align: left;
             margin: 30px 0;
             padding: 25px;
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             border-radius: 8px;
-            border: 1px solid var(--neon-green);
+            border: 1px solid var(--accent-color);
         }
         
         /* Language switcher styling */
@@ -520,25 +544,25 @@
             display: inline-block;
             margin: 0 10px;
             padding: 8px 16px;
-            background: rgba(0, 191, 255, 0.1);
-            border: 1px solid var(--neon-green);
+            background: rgba(211, 47, 47, 0.1);
+            border: 1px solid var(--primary-color);
             border-radius: 5px;
             transition: var(--transition);
         }
         
         .language-switcher a:hover {
-            background: rgba(0, 191, 255, 0.2);
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+            background: rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
         }
 
         /* Welcome section styling */
         .welcome-card {
-            background: rgba(15, 25, 35, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.2);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -546,7 +570,7 @@
         
         .welcome-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
             border-color: var(--primary-color);
         }
         
@@ -562,9 +586,9 @@
         }
         
         .welcome-quote {
-            background: rgba(0, 191, 255, 0.1);
+            background: rgba(255, 213, 79, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--neon-green);
+            border-left: 4px solid var(--accent-color);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -577,7 +601,7 @@
             top: -10px;
             left: 10px;
             font-size: 4em;
-            color: var(--neon-green);
+            color: var(--accent-color);
             opacity: 0.3;
             font-family: serif;
         }
@@ -621,7 +645,7 @@
             background: var(--card-bg);
             border-radius: 10px;
             border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
         }
 
@@ -635,7 +659,7 @@
 
         .timeline-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
         }
 
         .timeline-date {
@@ -654,7 +678,7 @@
             margin: 30px 0;
             font-family: 'Courier New', monospace;
             color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
         }
 
         .terminal-header {
@@ -718,7 +742,7 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
         }
 
         .stat-number {
@@ -765,7 +789,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8em;
             color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
         }
 
         @keyframes marquee {
@@ -786,7 +810,7 @@
             border: 1px solid var(--primary-color);
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
             z-index: 1000;
             transform: translateY(100px);
             opacity: 0;
@@ -802,7 +826,7 @@
         .neural-network {
             position: relative;
             height: 300px;
-            background: rgba(10, 20, 30, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             margin: 30px 0;
             border: 1px solid var(--card-border);
@@ -843,14 +867,14 @@
 
         .skill-bar {
             height: 8px;
-            background: rgba(0, 100, 255, 0.2);
+            background: rgba(211, 47, 47, 0.2);
             border-radius: 4px;
             overflow: hidden;
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-dark));
+            background: linear-gradient(90deg, var(--primary-color), var(--neon-green-dark));
             border-radius: 4px;
             transition: width 1.5s ease-in-out;
             position: relative;
@@ -916,7 +940,7 @@
 
         .status-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
             border-color: var(--primary-color);
         }
 
@@ -971,12 +995,12 @@
         }
 
         .status-indicator.armor-encryption {
-            background: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
+            background: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .status-indicator.armor-encryption::after {
-            border: 2px solid var(--neon-green);
+            border: 2px solid var(--primary-color);
         }
 
         .status-indicator.code-quality {
@@ -989,12 +1013,12 @@
         }
         
         .status-indicator.activity-monitor {
-            background: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
+            background: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .status-indicator.activity-monitor::after {
-            border: 2px solid var(--neon-green);
+            border: 2px solid var(--primary-color);
         }
         
         .status-indicator.data-stream {
@@ -1016,7 +1040,7 @@
         .status-value {
             color: var(--primary-color);
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
             transition: all 0.3s ease;
         }
 
@@ -1051,7 +1075,7 @@
         }
 
         .status-item:nth-child(3) .status-pulse {
-            background: var(--neon-green);
+            background: var(--primary-color);
             animation-delay: 2s;
         }
 
@@ -1167,12 +1191,12 @@
 			min-width: 44px;
 			min-height: 44px;
 			border-radius: 50%;
-			background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+			background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
 			color: white;
 			border: none;
 			font-size: 24px;
 			cursor: pointer;
-			box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+			box-shadow: 0 4px 20px rgba(211, 47, 47, 0.4);
 			z-index: 1001;
 			transition: var(--transition);
 			touch-action: manipulation;
@@ -1185,7 +1209,7 @@
 
 		.floating-btn-mobile:active {
 			transform: scale(0.95);
-			box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
+			box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
 		}
 
 		/* Actions Menu */
@@ -1361,7 +1385,7 @@
                 width: calc(100% - 60px);
                 left: 40px !important;
             }
-                        
+            
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
@@ -1387,7 +1411,7 @@
             
             /* Better contrast for mobile */
             .status-item {
-                background: rgba(15, 25, 35, 0.95) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
                 backdrop-filter: blur(5px);
             }
             
@@ -1404,7 +1428,7 @@
             .alert,
             .toc,
             .contact-info {
-                background: rgba(15, 25, 35, 0.95) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
                 backdrop-filter: blur(5px);
                 border: 1px solid var(--card-border);
             }
@@ -1419,7 +1443,7 @@
             [data-theme="light"] .toc,
             [data-theme="light"] .contact-info {
                 background: rgba(255, 255, 255, 0.98) !important;
-                border: 1px solid rgba(0, 102, 204, 0.3);
+                border: 1px solid rgba(198, 40, 40, 0.3);
             }
             
             /* Increase text contrast */
@@ -1432,7 +1456,7 @@
             
             /* More solid main container */
             .container {
-                background: rgba(15, 25, 35, 0.98);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(10px);
             }
             
@@ -1450,10 +1474,10 @@
             }
             
             .intro-text {
-                background: rgba(0, 100, 255, 0.1);
+                background: rgba(211, 47, 47, 0.1);
                 padding: 15px;
                 border-radius: 8px;
-                border: 1px solid rgba(0, 255, 255, 0.2);
+                border: 1px solid rgba(211, 47, 47, 0.2);
                 margin: 15px 0;
                 backdrop-filter: blur(5px);
             }
@@ -1529,9 +1553,37 @@
                 font-size: 0.95em;
             }
         }
+
+        /* Christmas Snow Animation */
+        @keyframes snow {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #fff;
+            font-size: 1em;
+            text-shadow: 0 0 5px #fff;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            animation-name: snow;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .snowflake:nth-child(5n) { color: #ffd54f; }
+        .snowflake:nth-child(3n) { color: #e8f5e9; }
     </style>
 </head>
 <body>
+    <!-- Christmas Snowflakes -->
+    <div id="snowflakes"></div>
+
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
 
@@ -1540,34 +1592,34 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber">🔷</div>
-        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro">☀️</div>
-        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix">🟩</div>
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Christmas Theme">🎄</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Light Theme">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme">🟩</div>
     </div>
 
     <!-- Install Prompt -->
     <div class="install-prompt" id="installPrompt">
-        <p>Instalar este app para melhor experiência?</p>
-        <button class="btn" id="installBtn">Instalar</button>
-        <button class="btn btn-secondary" id="dismissBtn">Dispensar</button>
+        <p>Install this app for better experience?</p>
+        <button class="btn" id="installBtn">Install</button>
+        <button class="btn btn-secondary" id="dismissBtn">Dismiss</button>
     </div>
 
     <div class="container">
         <header>
-            <!-- TV Marquee Title -->
+            <!-- TV Marquee Title - UPDATED: Christmas message -->
             <div class="marquee-container">
                 <div class="marquee-content">
-                    Tudo o que você já sabe pode se alinhar com tudo o que você ainda precisa aprender sobre segurança de contas online. Você está disposto(a) a explorar novos métodos ou prefere continuar do jeito que está?
+                    🎄 Feliz Natal! Que esta época traga paz, alegria e segurança digital para todos! 🎅
                 </div>
             </div>
             
             <!-- Embedded typing animation iframe -->
-            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Animação de Digitação Grok"></iframe>
+            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
             
             <!-- CORRECTION APPLIED: Link always visible on all screens -->
             <div style="text-align: center; margin-top: 20px;">
-                <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡<strong>Nota:</strong> Para a experiência interativa completa, visite | <a href="https://gerivan.me/typing-animation.html">Frases constantes</a></p>
+                <div style="display: inline-block; padding: 10px 20px; background: rgba(211, 47, 47, 0.1); border-radius: 8px; border: 1px solid var(--accent-color);">
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🎁 <strong>Presente de Natal:</strong> Para a experiência interativa completa, visite | <a href="https://gerivan.me/typing-animation.html">Frases constantes</a></p>
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌍 <strong>Suporte de idioma para esta página</strong>, português (você está aqui!) , visite | <a href="https://gerivan.me/">English</a></p>
                 </div>
         </header>
@@ -1583,61 +1635,61 @@
             <img src="https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white" alt="g++">
             <img src="https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white" alt="Git">
             <img src="https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white" alt="CMake">
-            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="Licença">
-            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Visualizações do Perfil">
+            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="License">
+            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Profile Views">
         </div>
 
-        <!-- Typing animation project card - UPDATED: Moved 204 phrases description here -->
+        <!-- Typing animation project card - UPDATED: Christmas theme -->
         <div class="project-card" data-categories="web security">
-            <h3>🔒Animação de digitação — Por que é incrível:</h3>
-            <p style="text-align: justify;">Experimente minha <strong>animação de digitação</strong> — um módulo de conscientização sobre segurança de alto desempenho em HTML/CSS/JavaScript. Com <strong>204 frases selecionadas</strong> que desafiam suposições sobre higiene de senhas e autenticação de dois fatores (2FA), esta ferramenta transforma a educação em segurança em uma experiência visual envolvente.</p>
-            <p style="text-align: justify;">Ao combinar impacto visual com fricção comportamental, ela incentiva os usuários a repensarem suas práticas de senha antes de digitarem padrões previsíveis como "123456" novamente. Isso não é apenas estética — é uma experiência de usuário inteligente em segurança que torna seu ambiente digital mais resiliente.</p>			
-            <p style="text-align: justify;">Apresenta impacto visual com atrito comportamental, ele transforma a educação em segurança em uma experiência envolvente que incentiva os usuários a repensarem suas práticas de senhas.</p>
+            <h3>🎁 Typing Animation — Presente de Natal Especial:</h3>
+            <p style="text-align: justify;">Experimente minha <strong>Typing Animation</strong> - um módulo de conscientização de segurança de alto desempenho em HTML/CSS/JavaScript. Apresentando <strong>204 frases cuidadosamente selecionadas</strong> que desafiam suposições sobre higiene de senhas e 2FA, esta ferramenta transforma a educação em segurança em uma experiência visual envolvente.</p>
+            <p style="text-align: justify;">Combinando impacto visual com atrito comportamental, incentiva os usuários a repensar as práticas de senha antes de digitar padrões previsíveis como "123456" novamente. Isso não é apenas estética - é uma experiência de usuário de segurança inteligente que torna seu ambiente digital mais resiliente.</p>			
+            <p style="text-align: justify;">Apresenta um impacto visual combinado com atrito comportamental, transformando a educação em segurança em uma experiência envolvente que incentiva os usuários a repensar suas práticas de senha.</p>
             <ul>
                 <li>Destaca a segurança de senhas com um toque de humor, misturando frases em inglês e português.</li>
-                <li>Apresenta um efeito de digitação dinâmico em uma interface estilo terminal.</li>
-                <li>Combina perfeitamente com a estética neon da Matrix de Atividade do CyberSnake.</li>
+                <li>Apresenta um efeito de digitação dinâmica em uma interface estilo terminal.</li>
+                <li>Combina perfeitamente com a estética natalina do Portfólio.</li>
             </ul>
             
             <div class="center">
-                <a href="https://gerivan.me/typing-animation.html" class="btn">📸 Assista ao vivo</a>
-                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📂 Código fonte</a>
+                <a href="https://gerivan.me/typing-animation.html" class="btn">🎄 Ver ao vivo</a>
+                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📦 Código fonte</a>
             </div>
             
-            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seus conhecimentos com as 204 frases animadas, proteja suas contas com senhas fortes, biometria e 2FA, e reveja suas práticas de segurança.</em></p>
+            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seu conhecimento com 204 frases animadas, proteja suas contas com senhas fortes, biometria e 2FA, e revise suas práticas de segurança.</em></p>
         </div>
 
-        <!-- Welcome section - UPDATED: Expanded with project information and justified text -->
-        <h2>👋 Bem-vindo ao Meu Universo Digital</h2>
+        <!-- Welcome section - UPDATED: Christmas theme -->
+        <h2>🎅 Bem-vindo ao Meu Universo Digital de Natal</h2>
         
         <div class="welcome-card">
             <div class="welcome-quote">
-                <p>"Se sua segurança depende só da digital e do código por SMS, parabéns: você já perdeu para o hacker e para a tia curiosa que viu você desbloquear o celular."</p>
+                <p>"Se sua segurança depende apenas de impressões digitais e códigos SMS, parabéns — você já perdeu para o hacker e para a tia curiosa que viu você desbloquear o telefone."</p>
             </div>
             
-			<p style="text-align: justify;">Sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que unem inovação e propósito, sempre com foco em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.</p>
+            <p style="text-align: justify;">Sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que combinam inovação com propósito, sempre focados no aprendizado contínuo e em contribuições significativas para a comunidade de código aberto.</p>
+            
+            <p style="text-align: justify;">Meu portfólio apresenta ferramentas de ponta como o <strong>Transformers Interactive Neural Network Visualizer</strong>, que demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos por meio de sistemas de inteligência artificial.</p>
+  
+            <p style="text-align: justify;">O visualizador de <strong>Cyber Neural Network</strong> demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. É baseado em uma arquitetura <strong>Multi-Layer Perceptron (MLP)</strong>, <strong>(introduzida no artigo "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, apresentando visualização de propagação direta em tempo real. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos dentro de sistemas de inteligência artificial.</p>
+			
+            <p style="text-align: justify;">O visualizador de <strong>Transformer Neural Network</strong> refere-se, no contexto da IA moderna, especificamente à arquitetura <strong>"Transformer"</strong> (introduzida no artigo "Attention is All You Need" – Vaswani et al., 2017), usada em modelos como <strong>BERT, GPT e Grok</strong>. Esta arquitetura é revolucionária por substituir redes recorrentes <strong>(RNN/LSTM)</strong> por mecanismos de <strong>auto-atenção</strong>, permitindo o processamento paralelo eficiente de sequências inteiras sem dependências temporais estritas. Ela "transforma" representações de dados por meio de blocos <strong>encoder/decoder</strong> com atenção de <strong>múltiplas cabeças</strong>.</p>			
+  
+            <p style="text-align: justify;">Explore soluções de segurança inovadoras como o <strong>DNAPass Password Generator</strong>, que une biotecnologia e segurança digital transformando sequências de DNA em senhas criptograficamente seguras. Esta abordagem inovadora introduz codificação biológica na geração de senhas, criando sistemas de autenticação verdadeiramente únicos e complexos.</p>
+            
+            <p style="text-align: justify;">Descubra o ecossistema <strong>EntroPy Password Generator</strong>, apresentando versões Python CLI para Windows/Linux e implementações web responsivas. O modelo de segurança orientado por entropia garante máxima aleatoriedade e resistência a ataques de força bruta, aproveitando fontes de entropia reais em vez de algoritmos pseudo-aleatórios previsíveis.</p>
 
-			<p style="text-align: justify;">Meu portfólio apresenta ferramentas de ponta como os visualizadores interativos: <strong>Visualização de Redes Neurais Cibernéticas</strong> e <strong>Redes Neurais Transformers</strong>.</p>
-
-			<p style="text-align: justify;">O visualizador de <strong>Redes Neurais Cibernéticas</strong> que demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. É baseado em uma arquitetura de <strong>Multi-Layer Perceptron (MLP)</strong>, <strong>(apresentada no artigo: "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, com visualização de propagação forward em tempo real. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos em sistemas de inteligência artificial.</p>
-
-			<p style="text-align: justify;"><p style="text-align: justify;">O visualizador de <strong>Redes Neurais Transformers</strong>, que no contexto da IA moderna, <strong>"Transformers"</strong> refere-se especificamente à <strong>arquitetura Transformer</strong> (introduzida no paper “Attention is All You Need” – Vaswani et al., 2017), usada em modelos como <strong>BERT, GPT e Grok</strong>. Essa arquitetura é revolucionária por substituir redes recorrentes <strong>(RNN/LSTM)</strong> por mecanismos de atenção <strong>self-attention</strong>, permitindo processar sequências inteiras em paralelo de forma eficiente, sem dependência temporal estrita. Ela <strong>"transforma"</strong> representações de dados através de blocos de <strong>encoders/decoders</strong> com <strong>heads</strong> de atenção múltipla.</p>
-
-			<p style="text-align: justify;">Explore soluções inovadoras de segurança como o <strong>Gerador de Senhas DNAPass</strong>, que conecta biotecnologia e segurança digital ao transformar sequências de DNA em senhas criptograficamente seguras. Essa abordagem revolucionária introduz a codificação biológica na geração de senhas, criando sistemas de autenticação verdadeiramente únicos e complexos.</p>
-
-			<p style="text-align: justify;">Descubra o <strong>ecossistema EntroPy Password Generator</strong>, com versões em Python via linha de comando para Windows/Linux e implementações web responsivas. O modelo de segurança baseado em entropia garante máxima aleatoriedade e resistência a ataques de força bruta ao utilizar fontes reais de entropia em vez de algoritmos pseudoaleatórios previsíveis.</p>
-
-			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivas que <strong>utiliza 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou múltiplas frases, sempre com comprimento entre 3 e 21 palavras. No modo de frase única, o sistema solicita a quantidade desejada de palavras e produz uma sentença correspondente. No modo de múltiplas frases, primeiro é definida a quantidade de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no tamanho. Cada palavra deve conter ao menos um caractere especial e um dígito, e a última palavra precisa terminar com letra maiúscula. A ordem dos idiomas é aleatória, tornando o resultado variado e dinâmico.</p>
+			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivo que <strong>usa 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou várias frases, sempre com um comprimento entre 3 e 21 palavras. No modo de frase única, o sistema pergunta pelo número desejado de palavras e produz uma sentença de acordo. No modo de múltiplas frases, ele primeiro define o número de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no comprimento. Cada palavra deve conter pelo menos um caractere especial e um dígito, e a palavra final deve terminar com uma letra maiúscula. A ordem dos idiomas é randomizada, tornando a saída variada e dinâmica.</p>
         </div>
-		
-        <!-- REQUESTED CHANGE: Table of Contents moved below Welcome section -->
+
+        <!-- Table of Contents -->
         <div class="toc">
             <h3>📑 Índice</h3>
             <ul>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
                 <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
-                <li><a href="#neural-network">🧠 Rede Neural Transformers e 🤖 Rede Neural Cibernética</a></li>
-                <li><a href="#project-timeline">📅 Linha do Tempo dos Projetos</a></li>
+                <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
+                <li><a href="#project-timeline">📅 Linha do Tempo do Projeto</a></li>
                 <li><a href="#terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</a></li>
                 <li><a href="#github-stats">📊 Estatísticas do GitHub</a></li>
                 <li><a href="#profile-summary">🎯 Resumo do Perfil</a></li>
@@ -1653,29 +1705,29 @@
         <!-- EntroPy Password Generator project card -->
         <div class="project-card" data-categories="security python">
             <h3>🧠 EntroPy Password Generator - um gerador de senhas seguro e personalizável desenvolvido em Python</h3>
-            <p>EntroPy é um gerador de senhas de última geração que aproveita a entropia real para produzir senhas altamente seguras e imprevisíveis. Diferente dos geradores tradicionais que dependem de algoritmos pseudoaleatórios, o EntroPy utiliza fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.</p>
+            <p>EntroPy é um gerador de senhas de última geração que aproveita a entropia real para produzir senhas altamente seguras e imprevisíveis. Ao contrário dos geradores tradicionais que dependem de algoritmos pseudo-aleatórios, o EntroPy acessa fontes de entropia para garantir máxima aleatoriedade e resistência a ataques de força bruta.</p>
             
             <h4>Características Principais:</h4>
             <ul>
-                <li>🔒 <strong>Segurança Baseada em Entropia</strong>: Usa entropia real para evitar padrões previsíveis.</li>
-                <li>🧪 <strong>Algoritmos Personalizados</strong>: Projetados para força criptográfica e singularidade.</li>
-                <li>🧠 <strong>Design Orientado à Segurança</strong>: Ideal para desenvolvedores, pesquisadores e profissionais de cybersecurity.</li>
+                <li>🔒 <strong>Segurança Orientada por Entropia</strong>: Usa entropia real para evitar padrões previsíveis.</li>
+                <li>🧪 <strong>Algoritmos Personalizados</strong>: Projetado para força criptográfica e singularidade.</li>
+                <li>🧠 <strong>Design Orientado para Segurança</strong>: Ideal para desenvolvedores, pesquisadores e profissionais de cybersecurity.</li>
             </ul>
             
             <div class="center">
                 <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repositório</a>
-                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 Ver código</a>
+                <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 Ver o código</a>
             </div>
             
             <blockquote>
-                <p>"Segurança não é apenas um recurso — é a fundação."</p>
+                <p>"A segurança não é apenas um recurso — é a base."</p>
             </blockquote>
         </div>
 
         <!-- EntroPy Web Version project card -->
         <div class="project-card" data-categories="security web">
             <h3>🌐 EntroPy Password Generator - Versão Web (Gerador de Senhas Baseado em Navegador)</h3>
-            <p>EntroPy Web traz a poderosa geração de senhas baseada em entropia para seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação Python original enquanto oferece uma interface gráfica intuitiva acessível de qualquer dispositivo.</p>
+            <p>EntroPy Web traz a poderosa geração de senhas baseada em entropia para o seu navegador! Esta versão web responsiva mantém todos os recursos de segurança da implementação Python original, oferecendo uma interface gráfica intuitiva acessível a partir de qualquer dispositivo.</p>
             
             <h4>Características Principais:</h4>
             <ul>
@@ -1686,7 +1738,7 @@
             </ul>
             
             <div class="center">
-                <a href="https://entropy.gerivan.me/entropyweb.html" class="btn">🌍 Demo Ao Vivo</a>
+                <a href="https://entropy.gerivan.me/entropyweb.html" class="btn">🌍 Demonstração Ao Vivo</a>
                 <a href="https://entropy.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>				
                 <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repositório</a>
             </div>
@@ -1698,8 +1750,8 @@
 
         <!-- DNAPass project card -->
         <div class="project-card" data-categories="security cpp">
-            <h3>🧬 DNAPass Password Generator — Gerador de Senhas Genético</h3>
-            <p>DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass introduz uma nova abordagem para geração de senhas que une biotecnologia e segurança digital.</p>
+            <h3>🧬 DNAPass Password Generator — Gerador de Senhas Genéticas</h3>
+            <p>DNAPass é uma ferramenta inovadora que transforma sequências de DNA em senhas complexas e seguras. Ao codificar dados biológicos em formatos criptográficos, o DNAPass introduz uma nova abordagem para a geração de senhas que une biotecnologia e segurança digital.</p>
             
             <h4>Características Principais:</h4>
             <ul>
@@ -1709,10 +1761,10 @@
             </ul>
             
             <div class="center">
-                <a href="https://dnapass.gerivan.me/dnapass.html" class="btn">🌍 Demo Ao Vivo</a>
+                <a href="https://dnapass.gerivan.me/dnapass.html" class="btn">🌍 Demonstração Ao Vivo</a>
                 <a href="https://dnapass.gerivan.me" class="btn btn-secondary">📚 Documentação Interativa</a>				
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repositório</a>
-                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 Veja o código</a>
+                <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 Ver o código</a>
             </div>
             
             <blockquote>
@@ -1775,79 +1827,80 @@
             </div>
         </div>
 
-        <!-- Neural Network Visualizer Section -->
-        <h2 id="neural-network">🧠 Rede Neural Transformers e 🤖 Rede Neural Cibernética</h2>
-        
-        <div class="project-card" data-categories="ai web">
-            <h3>Visualizador de Rede Neural</h3>
-            <p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprendendo e se adaptando em tempo real, com conexões dinâmicas de nós e padrões de ativação.</p>
-            
-            <div class="neural-network" id="neuralNetwork">
-                <!-- Neural network will be generated by JavaScript -->
-            </div>
+	<!-- Neural Network Visualizer Section -->
+	<h2 id="neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</h2>
 
-            <div class="center">
-				<button class="btn" id="startTraining">Iniciar Visualização de Treinamento</button>
-				<button class="btn btn-secondary" id="resetNetwork">Reiniciar Rede</button>					
-            </div>
-            
-            <h3>Duplo sistema - Principais características:</h4>
-			<h4>🧠 Rede Neural Transformers</h2>
-			<p>Implementação completa da arquitetura Transformer, apresentando:</p>
-			<ul>
-				<li>🎯 <strong>Treinamento em tempo real com TensorFlow.js no navegador.</strong>: Implementações de mecanismos de atenção</li>
-				<li>🔍 <strong>Modos de arquitetura dupla (decodificador apenas no estilo GPT vs codificador-decodificador no estilo T5).</strong>: Matemática da arquitetura do transformador real</li>
-				<li>📊 <strong>Visualização da atenção de múltiplas cabeças com cabeças de atenção codificadas por cores.</strong>: Padrões de atenção multi-cabeça</li>
-				<li>⚡ <strong>Propagação animada para frente/para trás com visualização de fluxo de gradiente.</strong>: Projeção de imagens incorporadas ao vivo em espaço 2D</li>
-			</ul>
+	<div class="project-card" data-categories="ai web">
+		<h3>Neural Network Visualizer</h3>
+		<p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprenderem e se adaptarem em tempo real, com conexões de nós dinâmicas e padrões de ativação.</p>
+		
+		<div class="neural-network" id="neuralNetwork">
+			<!-- Neural network will be generated by JavaScript -->
+		</div>
 
-			<h4>🤖 Rede Neural Cibernética</h2>
-			<p>Uma representação artística abstrata dos princípios das redes neurais, apresentando:</p>
-			<ul>
-				<li>🎯 <strong>Renderização em modo duplo (modos estéticos Cyber/Tech vs. Complexo).</strong>: Princípios da teoria dos grafos e da topologia de redes</li>
-				<li>🔍 <strong>Motor de física interativo com repulsão nodal e cálculos de força.</strong>: Hierarquia visual e codificação de informações</li>
-				<li>📊 <strong>Otimização de desempenho em tempo real com algoritmos de particionamento espacial .</strong>: Simulações interativas de física</li>
-				<li>⚡ <strong>Efeitos visuais avançados, incluindo brilho multicamadas e conexões de gradiente.</strong>: Técnicas de otimização de desempenho</li>
-			</ul>
-          
-            <div class="center">
-                <a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Demo Ao Vivo - Rede Neural Transformers</a>	
-                <a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Demo Ao Vivo - Rede Neural Cibernética</a>			
-                <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Documentação Interativa</a>		
-            </div>
-            
-            <blockquote>
-                <p>"Visualizar redes neurais não é apenas sobre entender IA—é sobre ver a inteligência nascendo."</p>
-            </blockquote>
-        </div>
+    <div class="center">
+        <button class="btn" id="startTraining">Iniciar Visualização de Treinamento</button>
+        <button class="btn btn-secondary" id="resetNetwork">Redefinir Rede</button>		
+    </div>
+    
+	<h3>Sistema Duplo - Características Principais:</h4>
+	<h4>🧠 Transformer Neural Network</h2>
+	<p>Implementação completa da arquitetura Transformer, apresentando:</p>
+	<ul>
+		<li>🎯 <strong>Treinamento em tempo real com TensorFlow.js no navegador.</strong>: Implementações de mecanismo de atenção</li>
+		<li>🔍 <strong>Modos de arquitetura dupla (estilo GPT somente decodificador vs estilo T5 codificador-decodificador).</strong>: Matemática de arquitetura de transformer real</li>
+		<li>📊 <strong>Visualização de atenção de múltiplas cabeças com cabeças de atenção codificadas por cores.</strong>: Padrões de atenção de múltiplas cabeças</li>
+		<li>⚡ <strong>Propagação direta/retrospectiva animada com visualização de fluxo de gradiente.</strong>: Projeção de imagem incorporada ao vivo no espaço 2D</li>
+	</ul>
+
+	<h4>🤖 Cyber Neural Network</h2>
+	<p>Uma representação artística abstrata dos princípios de rede neural, apresentando:</p>
+	<ul>
+		<li>🎯 <strong>Renderização de modo duplo (estética Cyber/Tecnológica vs modos Complexos).</strong>: Princípios de teoria de grafos e topologia de rede</li>
+		<li>🔍 <strong>Motor de física interativo com repulsão nodal e cálculos de força.</strong>: Hierarquia visual e codificação de informações</li>
+		<li>📊 <strong>Otimização de desempenho em tempo real com algoritmos de particionamento espacial.</strong>: Simulações de física interativas</li>
+		<li>⚡ <strong>Efeitos visuais avançados incluindo brilho multicamada e conexões de gradiente.</strong>: Técnicas de otimização de desempenho</li>
+	</ul>
+
+    
+    <div class="center">
+        <a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Demonstração Ao Vivo - Transformers Neural Network</a>
+        <a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Demonstração Ao Vivo - Cyber Neural Network</a>		
+        <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Documentação Interativa</a>
+    </div>
+    
+    <blockquote>
+        <p>"Visualizar redes neurais não é apenas entender a IA — é ver a inteligência nascendo."</p>
+		</blockquote>
+	</div>
 
         <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
-            <h3>🚀 XPHRASE GERAÇÃO — Gerador de frases expressivas — forte, moderno e minimalista</h3>
-            <p>XPhrase Generation é um gerador de frases multilíngue projetado para uso em interfaces de linha de comando (CLI). Ele cria frases expressivas e aleatórias usando palavras em português, inglês e alemão, interligadas com caracteres especiais e dígitos.</p>
+            <h3>🚀 XPHRASE GENERATION — Gerador de frases expressivas — forte, moderno e minimalista</h3>
+            <p>XPhrase Generation é um gerador de frases multilíngue projetado para uso em interface de linha de comando (CLI). Ele cria frases expressivas e randomizadas usando palavras do português, inglês e alemão, interligadas com caracteres especiais e dígitos.</p>
             
             <h4>Características Principais:</h4>
             <ul>
 			<li>💯 <strong>Contém 4.000 palavras específicas e únicas</strong>: selecionadas do vocabulário de três idiomas diferentes.</li>
-			<li>🖥️ <strong>Saída Única e Complexa</strong>: Este projeto foi criado selecionando palavras para gerar frases em três idiomas: inglês, português e alemão.</li>
-			<li>🌐 <strong>Inovação Interdisciplinar</strong>: As palavras são selecionadas aleatoriamente e misturadas entre os idiomas.</li>
+			<li>🖥️ <strong>Saída Única e Complexa</strong>: Este projeto foi criado selecionando palavras para gerar sentenças em três idiomas: inglês, português e alemão.</li>
+			<li>🌐 <strong>Inovação Interdisciplinar</strong>: As palavras são selecionadas aleatoriamente e misturadas entre idiomas.</li>
             </ul>
             
             <div class="center">
 
-				<a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Demo Ao Vivo - XPhrase Generation</a>	
-                <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>		
-                <a href="https://github.com/gerivanc/xphrase/" class="btn">📦 Repository</a>
-                <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 Veja o código</a>
+				<a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Demonstração Ao Vivo - XPhrase Generation</a>
+                <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>				
+                <a href="https://github.com/gerivanc/xphrase/" class="btn">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 Ver o código</a>
             </div>
             
             <blockquote>
-                <p>"Liberte a sua criatividade — Gere frases únicas com XPhrase!."</p>
+                <p>"Libere sua criatividade — Crie frases únicas com XPhrase!."</p>
             </blockquote>
         </div>
 
-        <!-- Project Timeline  -->
-        <h2 id="project-timeline">📅 Linha do Tempo dos Projetos</h2>
+        <!-- Project Timeline -->
+        <h2 id="project-timeline">📅 Linha do Tempo do Projeto</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date">Abril 2025 - Presente</div>
@@ -1857,14 +1910,14 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Julho 2025 - Presente</div>
-                <h4>Perfil GitHub & Universo Digital</h4>
-                <p>Portfólio pessoal mostrando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
+                <h4>GitHub Profile & Digital Universe</h4>
+                <p>Portfólio pessoal apresentando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
                 <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visitar Perfil</a>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Julho 2025 - Presente</div>
                 <h4>DNAPass Password Generator</h4>
-                <p>Gerador de senhas inovador baseado em codificação de sequência de DNA e princípios de criptografia biológica.</p>
+                <p>Gerador de senhas inovador baseado na codificação de sequências de DNA e princípios de criptografia biológica.</p>
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
@@ -1875,31 +1928,31 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Outubro 2025 - Presente</div>
-                <h4>Rede Neural Transformers e Rede Neural Cibernética</h4>
-                <p>Ferramenta de visualização de IA interativa que torna o machine learning acessível e compreensível.</p>
+                <h4>Transformers Neural Network & Cyber Neural Network</h4>
+                <p>Ferramenta de visualização de IA interativa que torna o aprendizado de máquina acessível e compreensível.</p>
                 <a href="https://github.com/gerivanc/transformers" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Novembro 2025 - Presente</div>
-                <h4>XPHRASE - Gerador de Frases </h4>
+                <h4>XPHRASE GENERATION</h4>
                 <p>Gerador de frases expressivas — forte, moderno e minimalista.</p>
                 <a href="https://github.com/gerivanc/xphrase" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>			
         </div>
 
-        <!-- Upcoming project alert -->
-        <div class="alert">
-            <h3>🚨🚧 Alerta de Projeto Concluído 🚧🚨</h3>
-            <p>Projeto XPhrase: Inovação Concluída e Disponível! 🐍 O XPhrase está pronto para uso! Uma ferramenta poderosa em Python que gera palavras com inteligência, segurança e versatilidade!</p>
-            <ul>
-			<li>🎛️ <strong>Modo aleatório</strong>: baseado em padrões ou com controle de entropia — você escolhe como criar.</li>
-			<li>🔐 <strong>Pensado para ser seguro</strong>: criativo e altamente personalizável.</li>
-            </ul>
-            <div class="center">			
-                <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>	
-            </div>			
-        </div>
-		
+		<!-- Upcoming project alert -->
+		<div class="alert">
+			<h3>🚨🚧 Alerta de Projeto Concluído 🚧🚨</h3>
+			<p>Projeto XPhrase: Inovação Concluída e Disponível! 🐍 XPhrase está pronto para uso! Uma ferramenta Python poderosa que gera palavras de forma inteligente, segura e versátil!</p>
+			<ul>
+			<li>🎛️ <strong>Modo Aleatório</strong>: baseado em padrões ou com controle de entropia — você escolhe como criar.</li>
+			<li>🔐 <strong>Projetado para ser seguro</strong>: criativo e altamente personalizável.</li>
+			</ul>
+			<div class="center">
+				<a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>	
+			</div>
+		</div>
+
         <!-- Terminal with updated title -->
         <h2 id="terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</h2>
         
@@ -1914,7 +1967,7 @@
                 </div>
             </div>
             <div class="terminal-content">
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~]</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">total 26648</span></div>
                 <div>-rw------- 1 user user | 3434 May 27 00:42 | 'eval "$(ssh-agent -s)"'</div>
@@ -1923,12 +1976,12 @@
                 <div>drwxr-xr-x 1 user user | 0 Jul 17 15:03 | build</div>
                 <div>-rw------- 1 user user | 3389 May 27 00:38 | celular</div>
                 <div>drwxr-xr-x 1 user user | 288 Oct  5 01:41 | dnapass-password-generator</div>
-                <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>
-                <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>					
+                <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
+                <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
                 <br>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>		
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>				
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~]</span></div>				
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~/entropy-password-generator]</span></div>				
 				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">total 136</span></div>
 				<div>-rw-r--r-- 1 user user | 434 Oct  5 01:32 | .gitignore</div>
@@ -1942,7 +1995,7 @@
 				<div>-rw-r--r-- 1 user user | 4152 Oct  5 01:32 | SECURITY.md</div>
 				<div>drwxr-xr-x 1 user user | 86 Oct  5 01:32 | entropy_password_generator</div>
 				<div>-rw-r--r-- 1 user user | 1398 Oct  5 01:32 | pyproject.toml</div>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~/entropy-password-generator]</span></div>
 				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ </span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
             </div>
@@ -1984,35 +2037,35 @@
 
         <!-- GitHub Statistics section -->
         <h2 id="github-stats">📊 Estatísticas do GitHub</h2>
-        <p>Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto. Busco desenvolvimento consistente e aprendizado contínuo!</p>
+        <p>Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto. Eu me esforço para um desenvolvimento consistente e aprendizado contínuo!</p>
 
         <div class="center">
-            <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+            <img width="90%" alt="Gráfico de atividade recente do GitHub de Gerivan" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
         </div>
 
         <div class="stats-grid">
             <div>
-                <img alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+                <img alt="Estatísticas de sequência do GitHub de Gerivan" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
             </div>
             <div>
-                <img alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
+                <img alt="Principais linguagens de Gerivan" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
             </div>
         </div>
 
         <!-- Profile summary section -->
         <h2 id="profile-summary">🎯 Resumo do Perfil</h2>
-        <p>Um instantâneo da minha atividade e contribuições no GitHub, mostrando meu compromisso com a programação e projetos de código aberto.</p>
+        <p>Um instantâneo da minha atividade e contribuições no GitHub, mostrando meu compromisso com a codificação e projetos de código aberto.</p>
 
         <div class="center">
-            <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
+            <img width="90%" alt="Detalhes do Perfil" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
         </div>
 
         <div class="stats-grid">
             <div>
-                <img alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
+                <img alt="Estatísticas" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
             </div>
             <div>
-                <img alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
+                <img alt="Tempo Produtivo" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/>
             </div>
         </div>
 
@@ -2029,14 +2082,14 @@
             
             <h3>Foco Profissional:</h3>
             <ul>
-                <li>🧠 <strong>Aberto para colaborações e projetos de pesquisa</strong></li>
-                <li>🔒 <strong>Criação e desenvolvimento focado em segurança</strong></li>
+                <li>🧠 <strong>Aberto a colaborações e projetos de pesquisa</strong></li>
+                <li>🔒 <strong>Criação e desenvolvimento focados em segurança.</strong></li>
                 <li>🌐 <strong>Ativo em contribuições para a comunidade de código aberto</strong></li>
             </ul>
             
             <div style="margin-top: 20px; text-align: center;">
                 <a href="mailto:ask@gerivan.me" class="btn">Enviar Email</a>
-                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil GitHub</a>
+                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil do GitHub</a>
                 <a href="https://github.com/gerivanc?tab=repositories" class="btn btn-secondary">Repositórios</a>
             </div>
         </div>
@@ -2058,13 +2111,13 @@
 
         <!-- Final quote with floating box design -->
         <div style="
-            background: rgba(0, 191, 255, 0.1);
-            border: 1px solid var(--neon-green);
+            background: rgba(255, 213, 79, 0.1);
+            border: 1px solid var(--accent-color);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 213, 79, 0.3);
             backdrop-filter: blur(10px);
         ">
             <p style="
@@ -2073,7 +2126,7 @@
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1.2em;
                 font-weight: 500;
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+                text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
             ">"Não é sobre quantas linhas você escreve. É sobre o impacto que elas causam quando são executadas."</p>
         </div>
 
@@ -2082,26 +2135,27 @@
         .center p {
             margin: 2px 0;
             line-height: 1.2;
-            color: --neon-green; /* Dodger Blue color for copyright text */
+            color: var(--primary-color);
             transition: color 0.3s ease; /* Smooth transition effect */
         }
         .center p:hover {
-            color: #1E90FF; /* azul vibrante - Portuguese version */
+            color: var(--secondary-color);
         }
         </style>
 
-        <!-- Copyright footer - Portuguese language -->
+        <!-- Copyright footer styles - Portuguese language -->
         <div class="center">          
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
+            <p><strong>🎄 Feliz Natal e Próspero Ano Novo! 🎅</strong></p>
         </div>
     </div>
 
-		<!-- Botão Flutuante Mobile -->
-		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Ação principal">
-			<span class="fab-icon">⚡</span>
+		<!-- Mobile Floating Button -->
+		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
+			<span class="fab-icon">🎄</span>
 		</button>
 
-		<!-- Menu de Ações Flutuante (Opcional) -->
+		<!-- Floating Actions Menu (Optional) -->
 		<div class="fab-menu-mobile" id="fabMenuMobile">
 			<button class="fab-action-mobile" data-action="scroll-top">
 				<span>⬆️</span>
@@ -2118,6 +2172,30 @@
 		</div>
 
     <script>
+        // Christmas Snow Animation
+        function createSnowflakes() {
+            const snowflakesContainer = document.getElementById('snowflakes');
+            const snowflakeCount = 50;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                
+                const size = Math.random() * 1.5 + 0.5;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+                
+                snowflake.style.fontSize = size + 'em';
+                snowflake.style.left = posX + 'vw';
+                snowflake.style.animationDuration = duration + 's';
+                snowflake.style.animationDelay = delay + 's';
+                
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
+
         // Theme Switching
         const themeButtons = document.querySelectorAll('.theme-btn');
         const body = document.body;
@@ -2156,7 +2234,7 @@
             canvas.height = window.innerHeight;
             
             // Matrix characters
-            const chars = "01010101010101010101010101010101";
+            const chars = "🎄🎅❄️🌟🔴🟢🎁";
             const charArray = chars.split("");
             const font_size = 14;
             const columns = canvas.width / font_size;
@@ -2172,7 +2250,7 @@
                 ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
-                ctx.fillStyle = "#00ff41";
+                ctx.fillStyle = "#d32f2f";
                 ctx.font = font_size + "px monospace";
                 
                 for (let i = 0; i < drops.length; i++) {
@@ -2502,6 +2580,7 @@
 		console.log('🚀 Initializing all components...');
 		
 		// Initialize components in the correct order
+		createSnowflakes();
 		createParticles();
 		secureExternalLinks();
 		
@@ -2860,6 +2939,7 @@
 
         // Initialize animations
         document.addEventListener('DOMContentLoaded', () => {
+            createSnowflakes();
             createParticles();
             createNeuralNetwork();
 			secureExternalLinks();
@@ -2897,6 +2977,6 @@
                 marquee.style.animationPlayState = 'running';
             });
         }
-    </script>
+    </script>		
 </body>
 </html>
