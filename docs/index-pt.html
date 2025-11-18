@@ -12,8 +12,8 @@
                    img-src 'self' data: https://*.githubusercontent.com https://img.shields.io https://komarev.com https://github-readme-activity-graph.vercel.app https://nirzak-streak-stats.vercel.app https://github-readme-stats.vercel.app https://github-profile-summary-cards.vercel.app https://vercel.app https://vercel.live;
                    frame-src 'self' https://gerivan.me https://*.githubusercontent.com;">
     <!-- Favicon -->
-    <link rel="icon" href="/g4.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/g4.ico" type="image/x-icon">
+    <link rel="icon" href="/g3.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.json">
@@ -44,36 +44,76 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        [data-theme="light"] {
-            --primary-color: #c62828;
-            --secondary-color: #2e7d32;
-            --accent-color: #ffb300;
-            --success-color: #388e3c;
-            --warning-color: #ef6c00;
-            --dark-bg: #f5f5f5;
-            --darker-bg: #e0e0e0;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --card-border: rgba(198, 40, 40, 0.3);
-            --text-color: #212121;
-            --text-muted: #5d4037;
-            --neon-green: #c62828;
-            --neon-green-dark: #b71c1c;
-        }
-
-        [data-theme="matrix"] {
-            --primary-color: #d32f2f;
-            --secondary-color: #388e3c;
-            --accent-color: #ffd54f;
+        /* Theme Cyber (Natalino) - Padrão */
+        [data-theme="cyber"] {
+            --primary-color: #ff0000;
+            --secondary-color: #008000;
+            --accent-color: #F8F8FF;
             --success-color: #4caf50;
             --warning-color: #ff9800;
-            --dark-bg: #0d3010;
-            --darker-bg: #061a08;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --card-border: rgba(211, 47, 47, 0.3);
-            --text-color: #1a1a1a;
-            --text-muted: #5d4037;
-            --neon-green: #d32f2f;
-            --neon-green-dark: #b71c1c;
+            --dark-bg: #008000;
+            --darker-bg: #006400;
+            --card-bg: #008000;
+            --card-border: rgba(255, 0, 0, 0.5);
+            --text-color: #F8F8FF;
+            --text-muted: #F8F8FF;
+            --neon-green: #ff0000;
+            --neon-green-dark: #cc0000;
+        }
+
+        /* Theme Light */
+        [data-theme="light"] {
+            --primary-color: #00FF00;
+            --secondary-color: #2e7d32;
+            --accent-color: #F8F8FF;
+            --success-color: #388e3c;
+            --warning-color: #ef6c00;
+            --dark-bg: #9e9ea2;
+            --darker-bg: #8a8a8e;
+            --card-bg: #9e9ea2;
+            --card-border: rgba(0, 128, 0, 0.5);
+            --text-color: #F8F8FF;
+            --text-muted: #F8F8FF;
+            --neon-green: #00FF00;
+            --neon-green-dark: #006400;
+        }
+
+        /* Theme Matrix */
+        [data-theme="matrix"] {
+            --primary-color: #00FF00;
+            --secondary-color: #00cc00;
+            --accent-color: #F8F8FF;
+            --success-color: #00FF00;
+            --warning-color: #00FF00;
+            --dark-bg: #013220;
+            --darker-bg: #001a10;
+            --card-bg: #013220;
+            --card-border: rgba(0, 255, 0, 0.5);
+            --text-color: #F8F8FF;
+            --text-muted: #F8F8FF;
+            --neon-green: #00FF00;
+            --neon-green-dark: #00cc00;
+        }
+
+        /* A correction has been added for subtitles: red color in the Cyber ​​theme */
+        [data-theme="cyber"] h4,
+        [data-theme="cyber"] .project-card h4,
+        [data-theme="cyber"] .timeline-item h4 {
+            color: #ffff00 !important;
+        }
+
+        /* A correction has been added for subtitles: red color in the Light theme */
+        [data-theme="light"] h4,
+        [data-theme="light"] .project-card h4,
+        [data-theme="light"] .timeline-item h4 {
+            color: #ffff00 !important;
+        }
+
+        /* A correction has been added for subtitles: red color in the Matrix ​​theme */
+        [data-theme="matrix"] h4,
+        [data-theme="matrix"] .project-card h4,
+        [data-theme="matrix"] .timeline-item h4 {
+            color: #ffff00 !important;
         }
         
         /* Specific rules for card colors in light mode for accessibility */
@@ -88,8 +128,8 @@
         [data-theme="light"] .note,
         [data-theme="light"] .alert,
         [data-theme="light"] .toc {
-            background: rgba(198, 40, 40, 0.15);
-            border-color: rgba(198, 40, 40, 0.4);		
+            background: rgba(0, 128, 0, 0.15);
+            border-color: rgba(0, 128, 0, 0.4);		
         }
 
         /* Reset and base styles */
@@ -117,8 +157,8 @@
 
         body.matrix-theme {
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 0, 0.1) 0%, transparent 20%);
         }
         
         /* Main container with glassmorphism effect */
@@ -200,9 +240,9 @@
             box-shadow: 0 0 10px var(--primary-color);
         }
 
-        .theme-cyber { background: linear-gradient(45deg, #d32f2f, #388e3c); }
-        .theme-light { background: linear-gradient(45deg, #c62828, #66bb6a); color: white; }
-        .theme-matrix { background: linear-gradient(45deg, #d32f2f, #2e7d32); }
+        .theme-cyber { background: linear-gradient(45deg, #ff0000, #008000); }
+        .theme-light { background: linear-gradient(45deg, #008000, #66bb6a); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #00FF00, #2e7d32); }
         
         /* Typography hierarchy with Orbitron font for headings */
         h1, h2, h3, h4 {
@@ -210,6 +250,7 @@
             font-family: 'Orbitron', sans-serif;
             text-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
             transition: var(--transition);
+            font-weight: bold;
         }
         
         h1 {
@@ -431,11 +472,11 @@
         
         /* Project card styling */
         .project-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card-bg);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid var(--card-border);
             box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
             position: relative;
@@ -557,11 +598,11 @@
 
         /* Welcome section styling */
         .welcome-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid var(--card-border);
             box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
             transition: var(--transition);
             position: relative;
@@ -826,7 +867,7 @@
         .neural-network {
             position: relative;
             height: 300px;
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card-bg);
             border-radius: 10px;
             margin: 30px 0;
             border: 1px solid var(--card-border);
@@ -1293,7 +1334,7 @@
 			}
 		}
 
-		/* Para telas muito pequenas */
+		/* For very small screens */
 		@media (max-width: 480px) {
 			.floating-btn-mobile {
 				width: 52px;
@@ -1411,12 +1452,12 @@
             
             /* Better contrast for mobile */
             .status-item {
-                background: rgba(255, 255, 255, 0.95) !important;
+                background: var(--card-bg) !important;
                 backdrop-filter: blur(5px);
             }
             
             [data-theme="light"] .status-item {
-                background: rgba(255, 255, 255, 0.98) !important;
+                background: var(--card-bg) !important;
             }
             
             /* CONTRAST ENHANCEMENT FOR MOBILE */
@@ -1428,7 +1469,7 @@
             .alert,
             .toc,
             .contact-info {
-                background: rgba(255, 255, 255, 0.95) !important;
+                background: var(--card-bg) !important;
                 backdrop-filter: blur(5px);
                 border: 1px solid var(--card-border);
             }
@@ -1442,8 +1483,8 @@
             [data-theme="light"] .alert,
             [data-theme="light"] .toc,
             [data-theme="light"] .contact-info {
-                background: rgba(255, 255, 255, 0.98) !important;
-                border: 1px solid rgba(198, 40, 40, 0.3);
+                background: var(--card-bg) !important;
+                border: 1px solid var(--card-border);
             }
             
             /* Increase text contrast */
@@ -1451,17 +1492,17 @@
             [data-theme="light"] .welcome-card p,
             [data-theme="light"] .project-card li,
             [data-theme="light"] .welcome-card li {
-                color: #1a202c !important;
+                color: var(--text-color) !important;
             }
             
             /* More solid main container */
             .container {
-                background: rgba(255, 255, 255, 0.98);
+                background: var(--card-bg);
                 backdrop-filter: blur(10px);
             }
             
             [data-theme="light"] .container {
-                background: rgba(255, 255, 255, 0.98);
+                background: var(--card-bg);
             }
             
             /* Text justification for mobile */
@@ -1876,14 +1917,14 @@
 
         <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
-            <h3>🚀 XPHRASE GENERATION — Gerador de frases expressivas — forte, moderno e minimalista</h3>
+            <h3>🧩 XPHRASE GENERATION — Gerador de frases expressivas — forte, moderno e minimalista</h3>
             <p>XPhrase Generation é um gerador de frases multilíngue projetado para uso em interface de linha de comando (CLI). Ele cria frases expressivas e randomizadas usando palavras do português, inglês e alemão, interligadas com caracteres especiais e dígitos.</p>
             
             <h4>Características Principais:</h4>
             <ul>
-			<li>💯 <strong>Contém 4.000 palavras específicas e únicas</strong>: selecionadas do vocabulário de três idiomas diferentes.</li>
-			<li>🖥️ <strong>Saída Única e Complexa</strong>: Este projeto foi criado selecionando palavras para gerar sentenças em três idiomas: inglês, português e alemão.</li>
-			<li>🌐 <strong>Inovação Interdisciplinar</strong>: As palavras são selecionadas aleatoriamente e misturadas entre idiomas.</li>
+			<li>💯 <strong>Contém 4.000 palavras</strong>: A aleatoriedade permite aproximadamente mais de 12,6 trilhões de combinações possíveis, interligando palavras nos três idiomas com caracteres especiais e dígitos.</li>
+			<li>🎲 <strong>Saída Única e Complexa</strong>: Este projeto foi criado selecionando palavras para gerar sentenças em três idiomas: inglês, português e alemão.</li>
+			<li>🔀 <strong>Inovação Interdisciplinar</strong>: As palavras são selecionadas aleatoriamente e misturadas entre idiomas.</li>
             </ul>
             
             <div class="center">
