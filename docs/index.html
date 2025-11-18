@@ -11,6 +11,17 @@
                    font-src 'self' https://fonts.gstatic.com; 
                    img-src 'self' data: https://*.githubusercontent.com https://img.shields.io https://komarev.com https://github-readme-activity-graph.vercel.app https://nirzak-streak-stats.vercel.app https://github-readme-stats.vercel.app https://github-profile-summary-cards.vercel.app https://vercel.app https://vercel.live;
                    frame-src 'self' https://gerivan.me https://*.githubusercontent.com;">
+
+	<!-- Preloading of critical resources -->
+	<link rel="preconnect" href="https://img.shields.io">
+	<link rel="preconnect" href="https://github-readme-activity-graph.vercel.app">
+	<link rel="preconnect" href="https://nirzak-streak-stats.vercel.app">
+	<link rel="preconnect" href="https://github-readme-stats.vercel.app">
+	<link rel="preconnect" href="https://github-profile-summary-cards.vercel.app">
+
+	<!-- Pre-loading of the most important images -->
+	<link rel="preload" href="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true" as="image">
+
     <!-- Favicon -->
     <link rel="icon" href="/g3.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
@@ -175,6 +186,37 @@
             position: relative;
             overflow: hidden;
         }
+
+		/* Styles for lazy loading */
+		img[data-src] {
+			opacity: 0;
+			transform: scale(0.95);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+
+		img.loaded {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		.badges img, .stats-grid img, .center img {
+			transition: opacity 0.3s ease, transform 0.3s ease;
+		}
+
+		/* Optimizations for slow connections */
+		.slow-connection .stats-grid,
+		.slow-connection .github-stats {
+			opacity: 0.9;
+		}
+
+		.slow-connection img:not(.badges img) {
+			filter: blur(1px);
+			transition: filter 0.3s ease;
+		}
+
+		.slow-connection img.loaded {
+			filter: blur(0);
+		}
 
         /* Christmas decorations */
         .container::before {
@@ -2080,18 +2122,24 @@
         <h2 id="github-stats">📊 GitHub Statistics</h2>
         <p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects. I strive for consistent development and continuous learning!</p>
 
-        <div class="center">
-            <img width="90%" alt="Gerivan's recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
-        </div>
+		<div class="center">
+			<img width="90%" alt="Gerivan's recent GitHub activity graph" 
+				 data-src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
+				 loading="lazy">
+		</div>
 
-        <div class="stats-grid">
-            <div>
-                <img alt="Gerivan's GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
-            </div>
-            <div>
-                <img alt="Gerivan's top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
-            </div>
-        </div>
+		<div class="stats-grid">
+			<div>
+				<img alt="Gerivan's GitHub streak stats" 
+					 data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
+					 loading="lazy">
+			</div>
+			<div>
+				<img alt="Gerivan's top languages" 
+					 data-src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"
+					 loading="lazy">
+			</div>
+		</div>
 
         <!-- Profile summary section -->
         <h2 id="profile-summary">🎯 Profile Summary</h2>
@@ -2497,6 +2545,90 @@
         // Start typing animation
         setTimeout(typeCommand, 2000);
 
+		// Image Loading Optimization
+		function optimizeImageLoading() {
+			// Configurar Intersection Observer para lazy loading
+			const imageObserver = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const img = entry.target;
+						
+						if (img.dataset.src) {
+							img.src = img.dataset.src;
+							img.classList.remove('lazy');
+						}
+						
+						img.classList.add('loaded');
+						imageObserver.unobserve(img);
+					}
+				});
+			}, {
+				rootMargin: '50px', // Start loading 50px before the image enters the viewport.
+				threshold: 0.1
+			});
+
+			// Apply lazy loading to all external images.
+			const externalImages = document.querySelectorAll(`
+				.badges img,
+				.stats-grid img, 
+				.center img,
+				[src*="github-readme"],
+				[src*="img.shields.io"],
+				[src*="komarev.com"]
+			`);
+
+			externalImages.forEach(img => {
+				// Mark images for lazy loading.
+				if (!img.loading) {
+					img.loading = 'lazy';
+				}
+				
+				// Add smooth transition
+				img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+				
+				// View only images that are not in the initial viewport.
+				const rect = img.getBoundingClientRect();
+				if (rect.top > window.innerHeight) {
+					imageObserver.observe(img);
+				}
+			});
+
+			console.log(`🔧 Optimized loading of ${externalImages.length} external images`);
+		}
+
+		// Priority Loading for Elements Above the Fold
+		function loadCriticalContent() {
+			// Make sure badges load first (they're small and important)
+			const badgeImages = document.querySelectorAll('.badges img');
+			badgeImages.forEach(img => {
+				if (img.dataset.src) {
+					img.src = img.dataset.src;
+				}
+			});
+		}
+
+		// Initialize optimizations when the DOM is ready
+		document.addEventListener('DOMContentLoaded', function() {
+			// Upload critical content immediately
+			loadCriticalContent();
+			
+			// Initialize lazy loading for non-critical content
+			setTimeout(optimizeImageLoading, 100);
+			
+			// Optimize even further after the initial load
+			window.addEventListener('load', optimizeImageLoading);
+		});
+
+		// Optimize for slow connections
+		if (navigator.connection) {
+			const connection = navigator.connection;
+			
+			if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+				// Reduce image quality or quantity for slow connections
+				document.documentElement.classList.add('slow-connection');
+			}
+		}
+
 		// Neural Network Visualization - MOBILE FIX
 		const neuralNetwork = document.getElementById('neuralNetwork');
 		let neuralInterval;
@@ -2619,6 +2751,10 @@
 		// Single DOMContentLoaded listener
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('🚀 Initializing all components...');
+
+		// 🔥 ADDITION: Loading optimization
+			loadCriticalContent();
+			setTimeout(optimizeImageLoading, 500);
 		
 		// Initialize components in the correct order
 		createSnowflakes();
