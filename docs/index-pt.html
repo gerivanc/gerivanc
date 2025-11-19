@@ -2233,7 +2233,7 @@
         </style>
 
         <!-- Copyright footer styles - Portuguese language -->
-        <div class="center">          
+        <div class="center" id="finishing-section">          
             <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
             <p><strong>🎄 Feliz Natal e Próspero Ano Novo! 🎅</strong></p>
         </div>
@@ -2244,7 +2244,7 @@
 			<span class="fab-icon">🎄</span>
 		</button>
 
-		<!-- Floating Actions Menu (Optional) -->
+		<!-- Floating Actions Menu  + New Button finishing-->
 		<div class="fab-menu-mobile" id="fabMenuMobile">
 			<button class="fab-action-mobile" data-action="scroll-top">
 				<span>⬆️</span>
@@ -2257,6 +2257,10 @@
 			<button class="fab-action-mobile" data-action="contact">
 				<span>📧</span>
 				<span class="action-label">Contato</span>
+			</button>
+			<button class="fab-action-mobile" data-action="scroll-finishing">
+				<span>⬇️</span>
+				<span class="action-label">Final</span>
 			</button>
 		</div>
 
@@ -3034,6 +3038,9 @@
 					case 'contact':
 						this.scrollToContact();
 						break;
+					case 'scroll-finishing':
+						this.scrollToFinishing();
+						break;
 					default:
 						console.warn('⚠️ Unknown action:', action);
 				}
@@ -3061,6 +3068,27 @@
 					console.error('❌ Scroll error:', error);
 					// Method 3: Direct scroll as last resort
 					window.scrollTo(0, 0);
+				}
+			}
+			
+			scrollToFinishing() {
+				console.log('⬇️ Scrolling to finishing section...');
+				
+				const finishingSection = document.getElementById('finishing-section');
+				if (finishingSection) {
+					// Smooth scroll to the finishing section
+					finishingSection.scrollIntoView({
+						behavior: 'smooth',
+						block: 'end'
+					});
+					console.log('✅ Scrolled to finishing section');
+				} else {
+					console.error('❌ Finishing section not found');
+					// Fallback: scroll to the bottom of the page
+					window.scrollTo({
+						top: document.body.scrollHeight,
+						behavior: 'smooth'
+					});
 				}
 			}
 			
