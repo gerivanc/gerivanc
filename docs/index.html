@@ -2443,7 +2443,7 @@
 				<!-- Control Panel -->
 				<div class="control-panel">
 					<div class="panel-header">
-						<h3>CONTROL SYSTEMS</h3>
+						<h3>ACTIVATION OF CONTROLS</h3>
 						<div class="status-indicators">
 							<div class="status-indicator" id="statusPower"></div>
 							<div class="status-indicator" id="statusData"></div>
@@ -3878,7 +3878,10 @@
 						'DATA STREAM OPTIMAL',
 						'SECURITY PROTOCOLS ENGAGED',
 						'SYNCHRONIZATION COMPLETE',
-						'NEURAL INTERFACE ONLINE'
+						'NEURAL INTERFACE ONLINE',
+						'DEEP LEARNING ALGORITHM',
+						'EFFICIENT ENCRYPTED TRANSMISSION',
+						'SYNCHRONIZATION COMPLETED'
 					];
 					
 					const randomText = texts[Math.floor(Math.random() * texts.length)];
@@ -3889,7 +3892,7 @@
 					if (!isActive) return;
 					
 					const originalWords = ['SECURITY', 'NEURAL', 'NETWORK'];
-					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*';
+					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*_-+=[]{}|\\:;\'",.<>/?';
 					
 					// Add scrambling animation
 					scrambledWords.forEach(word => {
