@@ -1661,6 +1661,418 @@
 
         .snowflake:nth-child(5n) { color: #ffd54f; }
         .snowflake:nth-child(3n) { color: #e8f5e9; }
+
+			/* Cyber Interface Section Styles */
+			.cyber-interface-section {
+				margin: 40px 0;
+				padding: 30px;
+				background: var(--card-bg);
+				border-radius: 15px;
+				border: 1px solid var(--card-border);
+				box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
+				position: relative;
+				overflow: hidden;
+			}
+
+	        .cyber-interface-section::before {
+            content: "🎁";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+    
+    .cyber-interface-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+        text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.2em;
+    }
+    
+    .cyber-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        height: 500px;
+    }
+    
+    /* Cyber Display */
+    .cyber-display {
+        position: relative;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+    }
+    
+    /* Binary Rain */
+    .binary-rain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.3;
+    }
+    
+    .binary-digit {
+        position: absolute;
+        color: var(--success-color);
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        animation: binaryFall linear infinite;
+    }
+    
+    @keyframes binaryFall {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(520px);
+            opacity: 0;
+        }
+    }
+    
+    /* Hologram */
+    .hologram-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hologram-circle {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hologram-core {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        box-shadow: 0 0 20px var(--primary-color);
+        animation: pulseCore 2s infinite alternate;
+    }
+    
+    .hologram-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid var(--primary-color);
+        box-shadow: 0 0 10px var(--primary-color);
+        animation: rotateRing linear infinite;
+    }
+    
+    .ring-1 {
+        width: 80px;
+        height: 80px;
+        animation-duration: 8s;
+    }
+    
+    .ring-2 {
+        width: 120px;
+        height: 120px;
+        animation-duration: 12s;
+        animation-direction: reverse;
+    }
+    
+    .ring-3 {
+        width: 150px;
+        height: 150px;
+        animation-duration: 15s;
+    }
+    
+    .hologram-text {
+        margin-top: 20px;
+        color: var(--primary-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 14px;
+        text-align: center;
+        text-shadow: 0 0 5px var(--primary-color);
+        animation: textFlicker 3s infinite alternate;
+    }
+    
+    @keyframes pulseCore {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+        100% {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px var(--primary-color);
+        }
+    }
+    
+    @keyframes rotateRing {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes textFlicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            opacity: 1;
+        }
+        20%, 24%, 55% {
+            opacity: 0.5;
+        }
+    }
+    
+    /* Connection Nodes */
+    .connection-nodes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    
+    .node {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        box-shadow: 0 0 10px var(--primary-color);
+        animation: nodePulse 3s infinite alternate;
+    }
+    
+    #node1 { top: 20%; left: 15%; animation-delay: 0s; }
+    #node2 { top: 15%; right: 20%; animation-delay: 0.5s; }
+    #node3 { bottom: 25%; left: 10%; animation-delay: 1s; }
+    #node4 { bottom: 15%; right: 15%; animation-delay: 1.5s; }
+    #node5 { top: 40%; right: 30%; animation-delay: 2s; }
+    #node6 { bottom: 40%; left: 25%; animation-delay: 2.5s; }
+    
+    @keyframes nodePulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+        100% {
+            transform: scale(1.5);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+    }
+    
+    /* Data Streams */
+    .data-streams {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    
+    .data-stream {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        transform-origin: left center;
+        opacity: 0.7;
+    }
+    
+    /* Scrambled Words */
+    .scrambled-words {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .word-container {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .scrambled-word {
+        color: var(--primary-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 18px;
+        text-shadow: 0 0 5px var(--primary-color);
+        transition: all 0.3s ease;
+    }
+    
+    .scrambled-word.scrambling {
+        animation: scramble 0.1s infinite;
+    }
+    
+    @keyframes scramble {
+        0%, 100% {
+            transform: translateX(0) rotate(0deg);
+        }
+        25% {
+            transform: translateX(-2px) rotate(-1deg);
+        }
+        75% {
+            transform: translateX(2px) rotate(1deg);
+        }
+    }
+    
+    /* Control Panel */
+    .control-panel {
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+    }
+    
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--primary-color);
+    }
+    
+    .panel-header h3 {
+        color: var(--primary-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .status-indicators {
+        display: flex;
+        gap: 8px;
+    }
+    
+    .status-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #444;
+        transition: all 0.3s ease;
+    }
+    
+    .status-indicator.active {
+        background: var(--success-color);
+        box-shadow: 0 0 10px var(--success-color);
+    }
+    
+    .panel-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .cyber-btn {
+        padding: 12px;
+        background: transparent;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .cyber-btn:hover {
+        background: rgba(211, 47, 47, 0.2);
+        box-shadow: 0 0 10px var(--primary-color);
+        transform: translateY(-2px);
+    }
+    
+    .cyber-btn:active {
+        transform: translateY(0);
+    }
+    
+    .panel-metrics {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .metric {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .metric-label {
+        color: var(--text-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 12px;
+    }
+    
+    .metric-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .metric-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-color), var(--neon-green-dark));
+        border-radius: 4px;
+        width: 0%;
+        transition: width 1s ease;
+    }
+    
+    .metric-value {
+        color: var(--primary-color);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 12px;
+        text-align: right;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .cyber-container {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+        
+        .cyber-display {
+            height: 400px;
+        }
+        
+        .hologram-container {
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+        
+        .word-container {
+            gap: 15px;
+        }
+        
+        .scrambled-word {
+            font-size: 14px;
+        }
+    }		
     </style>
 </head>
 <body>
@@ -1771,7 +2183,8 @@
             <ul>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
-                <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>				
+                <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
+                <li><a href="#cyber-interface">👾 Axon Connect</a></li>				
                 <li><a href="#project-timeline">📅 Linha do Tempo do Projeto</a></li>
                 <li><a href="#terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</a></li>
                 <li><a href="#github-stats">📊 Estatísticas do GitHub</a></li>
@@ -1980,6 +2393,98 @@
                 </div>
             </div>
         </div>
+
+		<!-- Cyber Neural Interface Section -->
+		<h2 id="cyber-interface">👾 Axon Connect</h2>
+
+		<div class="cyber-interface-section">
+			<h2>CONEXÃO DE ONDAS CEREBRAIS</h2>
+			
+			<div class="cyber-container">
+				<!-- Main Display -->
+				<div class="cyber-display">
+					<!-- Binary Rain -->
+					<div class="binary-rain" id="binaryRain"></div>
+					
+					<!-- Connection Nodes -->
+					<div class="connection-nodes">
+						<div class="node" id="node1"></div>
+						<div class="node" id="node2"></div>
+						<div class="node" id="node3"></div>
+						<div class="node" id="node4"></div>
+						<div class="node" id="node5"></div>
+						<div class="node" id="node6"></div>
+					</div>
+					
+					<!-- Data Streams -->
+					<div class="data-streams" id="dataStreams"></div>
+					
+					<!-- Hologram -->
+					<div class="hologram-container">
+						<div class="hologram-circle">
+							<div class="hologram-core"></div>
+							<div class="hologram-ring ring-1"></div>
+							<div class="hologram-ring ring-2"></div>
+							<div class="hologram-ring ring-3"></div>
+						</div>
+						<div class="hologram-text" id="hologramText">INITIALIZING NEURAL LINK</div>
+					</div>
+					
+					<!-- Scrambled Words -->
+					<div class="scrambled-words">
+						<div class="word-container">
+							<div class="scrambled-word" id="scrambledWord1">SECURITY</div>
+							<div class="scrambled-word" id="scrambledWord2">NEURAL</div>
+							<div class="scrambled-word" id="scrambledWord3">NETWORK</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Control Panel -->
+				<div class="control-panel">
+					<div class="panel-header">
+						<h3>CONTROL SYSTEMS</h3>
+						<div class="status-indicators">
+							<div class="status-indicator" id="statusPower"></div>
+							<div class="status-indicator" id="statusData"></div>
+							<div class="status-indicator" id="statusLink"></div>
+						</div>
+					</div>
+					
+					<div class="panel-controls">
+						<button class="cyber-btn" id="btnActivate">ACTIVATE INTERFACE</button>
+						<button class="cyber-btn" id="btnScramble">SCRAMBLE DATA</button>
+						<button class="cyber-btn" id="btnReset">SYSTEM RESET</button>
+					</div>
+					
+					<div class="panel-metrics">
+						<div class="metric">
+							<div class="metric-label">NEURAL ACTIVITY</div>
+							<div class="metric-bar">
+								<div class="metric-fill" id="metricActivity" style="width: 0%"></div>
+							</div>
+							<div class="metric-value" id="metricActivityValue">0%</div>
+						</div>
+						
+						<div class="metric">
+							<div class="metric-label">DATA FLOW</div>
+							<div class="metric-bar">
+								<div class="metric-fill" id="metricDataFlow" style="width: 0%"></div>
+							</div>
+							<div class="metric-value" id="metricDataFlowValue">0%</div>
+						</div>
+						
+						<div class="metric">
+							<div class="metric-label">CONNECTION STABILITY</div>
+							<div class="metric-bar">
+								<div class="metric-fill" id="metricConnection" style="width: 0%"></div>
+							</div>
+							<div class="metric-value" id="metricConnectionValue">0%</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
         <!-- Project Timeline -->
         <h2 id="project-timeline">📅 Linha do Tempo do Projeto</h2>
@@ -3181,6 +3686,306 @@
                 marquee.style.animationPlayState = 'running';
             });
         }
+
+			// Cyber Interface JavaScript
+			document.addEventListener('DOMContentLoaded', function() {
+				// Elements
+				const binaryRain = document.getElementById('binaryRain');
+				const hologramText = document.getElementById('hologramText');
+				const dataStreams = document.getElementById('dataStreams');
+				const scrambledWords = [
+					document.getElementById('scrambledWord1'),
+					document.getElementById('scrambledWord2'),
+					document.getElementById('scrambledWord3')
+				];
+				
+				const btnActivate = document.getElementById('btnActivate');
+				const btnScramble = document.getElementById('btnScramble');
+				const btnReset = document.getElementById('btnReset');
+				
+				const statusPower = document.getElementById('statusPower');
+				const statusData = document.getElementById('statusData');
+				const statusLink = document.getElementById('statusLink');
+				
+				const metricActivity = document.getElementById('metricActivity');
+				const metricDataFlow = document.getElementById('metricDataFlow');
+				const metricConnection = document.getElementById('metricConnection');
+				
+				const metricActivityValue = document.getElementById('metricActivityValue');
+				const metricDataFlowValue = document.getElementById('metricDataFlowValue');
+				const metricConnectionValue = document.getElementById('metricConnectionValue');
+				
+				// State
+				let isActive = false;
+				let binaryInterval;
+				let dataStreamInterval;
+				let hologramTextInterval;
+				
+				// Initialize
+				initBinaryRain();
+				updateMetrics(0, 0, 0);
+				
+				// Event Listeners
+				btnActivate.addEventListener('click', toggleInterface);
+				btnScramble.addEventListener('click', scrambleWords);
+				btnReset.addEventListener('click', resetInterface);
+				
+				// Functions
+				function initBinaryRain() {
+					// Create initial binary digits
+					for (let i = 0; i < 50; i++) {
+						createBinaryDigit();
+					}
+				}
+				
+				function createBinaryDigit() {
+					const digit = document.createElement('div');
+					digit.className = 'binary-digit';
+					digit.textContent = Math.random() > 0.5 ? '1' : '0';
+					digit.style.left = Math.random() * 100 + '%';
+					digit.style.animationDuration = (Math.random() * 5 + 3) + 's';
+					digit.style.animationDelay = Math.random() * 5 + 's';
+					binaryRain.appendChild(digit);
+					
+					// Remove digit after animation completes
+					setTimeout(() => {
+						if (digit.parentNode === binaryRain) {
+							binaryRain.removeChild(digit);
+						}
+					}, 8000);
+					
+					// Create new digit to maintain count
+					setTimeout(createBinaryDigit, Math.random() * 500 + 200);
+				}
+				
+				function toggleInterface() {
+					isActive = !isActive;
+					
+					if (isActive) {
+						// Activate interface
+						btnActivate.textContent = 'DEACTIVATE INTERFACE';
+						statusPower.classList.add('active');
+						
+						// Start data streams
+						startDataStreams();
+						
+						// Update hologram text
+						updateHologramText();
+						hologramTextInterval = setInterval(updateHologramText, 3000);
+						
+						// Update metrics gradually
+						animateMetrics(85, 70, 90);
+						
+						// Update status indicators
+						setTimeout(() => statusData.classList.add('active'), 1000);
+						setTimeout(() => statusLink.classList.add('active'), 2000);
+					} else {
+						// Deactivate interface
+						btnActivate.textContent = 'ACTIVATE INTERFACE';
+						statusPower.classList.remove('active');
+						statusData.classList.remove('active');
+						statusLink.classList.remove('active');
+						
+						// Stop data streams
+						stopDataStreams();
+						
+						// Stop hologram text updates
+						clearInterval(hologramTextInterval);
+						hologramText.textContent = 'SYSTEM OFFLINE';
+						
+						// Reset metrics
+						animateMetrics(0, 0, 0);
+					}
+				}
+				
+				function startDataStreams() {
+					// Clear any existing streams
+					dataStreams.innerHTML = '';
+					
+					// Create data streams between nodes
+					const nodes = [
+						document.getElementById('node1'),
+						document.getElementById('node2'),
+						document.getElementById('node3'),
+						document.getElementById('node4'),
+						document.getElementById('node5'),
+						document.getElementById('node6')
+					];
+					
+					// Create connections between random nodes
+					dataStreamInterval = setInterval(() => {
+						// Remove old streams
+						const oldStreams = dataStreams.querySelectorAll('.data-stream');
+						if (oldStreams.length > 10) {
+							for (let i = 0; i < 3; i++) {
+								if (oldStreams[i]) {
+									dataStreams.removeChild(oldStreams[i]);
+								}
+							}
+						}
+						
+						// Create new stream between two random nodes
+						const node1 = nodes[Math.floor(Math.random() * nodes.length)];
+						const node2 = nodes[Math.floor(Math.random() * nodes.length)];
+						
+						if (node1 !== node2) {
+							createDataStream(node1, node2);
+						}
+					}, 500);
+				}
+				
+				function createDataStream(node1, node2) {
+					const stream = document.createElement('div');
+					stream.className = 'data-stream';
+					
+					const rect1 = node1.getBoundingClientRect();
+					const rect2 = node2.getBoundingClientRect();
+					const containerRect = dataStreams.getBoundingClientRect();
+					
+					const x1 = rect1.left + rect1.width/2 - containerRect.left;
+					const y1 = rect1.top + rect1.height/2 - containerRect.top;
+					const x2 = rect2.left + rect2.width/2 - containerRect.left;
+					const y2 = rect2.top + rect2.height/2 - containerRect.top;
+					
+					const dx = x2 - x1;
+					const dy = y2 - y1;
+					const length = Math.sqrt(dx * dx + dy * dy);
+					const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+					
+					stream.style.width = length + 'px';
+					stream.style.left = x1 + 'px';
+					stream.style.top = y1 + 'px';
+					stream.style.transform = `rotate(${angle}deg)`;
+					
+					dataStreams.appendChild(stream);
+					
+					// Remove stream after animation
+					setTimeout(() => {
+						if (stream.parentNode === dataStreams) {
+							dataStreams.removeChild(stream);
+						}
+					}, 2000);
+				}
+				
+				function stopDataStreams() {
+					clearInterval(dataStreamInterval);
+					dataStreams.innerHTML = '';
+				}
+				
+				function updateHologramText() {
+					const texts = [
+						'NEURAL LINK ACTIVE',
+						'DATA STREAM OPTIMAL',
+						'SECURITY PROTOCOLS ENGAGED',
+						'SYNCHRONIZATION COMPLETE',
+						'NEURAL INTERFACE ONLINE'
+					];
+					
+					const randomText = texts[Math.floor(Math.random() * texts.length)];
+					hologramText.textContent = randomText;
+				}
+				
+				function scrambleWords() {
+					if (!isActive) return;
+					
+					const originalWords = ['SECURITY', 'NEURAL', 'NETWORK'];
+					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*';
+					
+					// Add scrambling animation
+					scrambledWords.forEach(word => {
+						word.classList.add('scrambling');
+					});
+					
+					// Scramble words
+					let scrambleCount = 0;
+					const scrambleInterval = setInterval(() => {
+						scrambledWords.forEach((word, index) => {
+							let scrambled = '';
+							for (let i = 0; i < originalWords[index].length; i++) {
+								scrambled += chars.charAt(Math.floor(Math.random() * chars.length));
+							}
+							word.textContent = scrambled;
+						});
+						
+						scrambleCount++;
+						
+						if (scrambleCount > 10) {
+							clearInterval(scrambleInterval);
+							
+							// Restore original words
+							setTimeout(() => {
+								scrambledWords.forEach((word, index) => {
+									word.textContent = originalWords[index];
+									word.classList.remove('scrambling');
+								});
+							}, 500);
+						}
+					}, 100);
+				}
+				
+				function resetInterface() {
+					if (isActive) {
+						toggleInterface();
+					}
+					
+					// Reset all elements to initial state
+					hologramText.textContent = 'INITIALIZING NEURAL LINK';
+					statusPower.classList.remove('active');
+					statusData.classList.remove('active');
+					statusLink.classList.remove('active');
+					
+					// Reset metrics
+					updateMetrics(0, 0, 0);
+					
+					// Clear any active intervals
+					clearInterval(dataStreamInterval);
+					clearInterval(hologramTextInterval);
+					
+					// Reset button text
+					btnActivate.textContent = 'ACTIVATE INTERFACE';
+					
+					isActive = false;
+				}
+				
+				function animateMetrics(activity, dataFlow, connection) {
+					const duration = 2000; // 2 seconds
+					const steps = 60;
+					const stepTime = duration / steps;
+					
+					let currentActivity = parseInt(metricActivity.style.width) || 0;
+					let currentDataFlow = parseInt(metricDataFlow.style.width) || 0;
+					let currentConnection = parseInt(metricConnection.style.width) || 0;
+					
+					const activityStep = (activity - currentActivity) / steps;
+					const dataFlowStep = (dataFlow - currentDataFlow) / steps;
+					const connectionStep = (connection - currentConnection) / steps;
+					
+					let step = 0;
+					const metricInterval = setInterval(() => {
+						currentActivity += activityStep;
+						currentDataFlow += dataFlowStep;
+						currentConnection += connectionStep;
+						
+						updateMetrics(currentActivity, currentDataFlow, currentConnection);
+						
+						step++;
+						if (step >= steps) {
+							clearInterval(metricInterval);
+							updateMetrics(activity, dataFlow, connection);
+						}
+					}, stepTime);
+				}
+				
+				function updateMetrics(activity, dataFlow, connection) {
+					metricActivity.style.width = activity + '%';
+					metricDataFlow.style.width = dataFlow + '%';
+					metricConnection.style.width = connection + '%';
+					
+					metricActivityValue.textContent = Math.round(activity) + '%';
+					metricDataFlowValue.textContent = Math.round(dataFlow) + '%';
+					metricConnectionValue.textContent = Math.round(connection) + '%';
+				}
+			});		
     </script>		
 </body>
 </html>
