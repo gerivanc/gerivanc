@@ -2427,15 +2427,15 @@
 							<div class="hologram-ring ring-2"></div>
 							<div class="hologram-ring ring-3"></div>
 						</div>
-						<div class="hologram-text" id="hologramText">INITIALIZING NEURAL LINK</div>
+						<div class="hologram-text" id="hologramText">INICIALIZANDO A CONEXÃO NEURAL</div>
 					</div>
 					
 					<!-- Scrambled Words -->
 					<div class="scrambled-words">
 						<div class="word-container">
-							<div class="scrambled-word" id="scrambledWord1">SECURITY</div>
-							<div class="scrambled-word" id="scrambledWord2">NEURAL</div>
-							<div class="scrambled-word" id="scrambledWord3">NETWORK</div>
+							<div class="scrambled-word" id="scrambledWord1">SEGURANÇA</div>
+							<div class="scrambled-word" id="scrambledWord2">REDE NEURAL</div>
+							<div class="scrambled-word" id="scrambledWord3">REDE</div>
 						</div>
 					</div>
 				</div>
@@ -2443,7 +2443,7 @@
 				<!-- Control Panel -->
 				<div class="control-panel">
 					<div class="panel-header">
-						<h3>CONTROL SYSTEMS</h3>
+						<h3>ATIVAÇÃO DOS CONTROLES</h3>
 						<div class="status-indicators">
 							<div class="status-indicator" id="statusPower"></div>
 							<div class="status-indicator" id="statusData"></div>
@@ -2452,14 +2452,14 @@
 					</div>
 					
 					<div class="panel-controls">
-						<button class="cyber-btn" id="btnActivate">ACTIVATE INTERFACE</button>
-						<button class="cyber-btn" id="btnScramble">SCRAMBLE DATA</button>
-						<button class="cyber-btn" id="btnReset">SYSTEM RESET</button>
+						<button class="cyber-btn" id="btnActivate">ATIVAR INTERFACE</button>
+						<button class="cyber-btn" id="btnScramble">DADOS EMBARALHADOS</button>
+						<button class="cyber-btn" id="btnReset">RESTAURAR SISTEMA</button>
 					</div>
 					
 					<div class="panel-metrics">
 						<div class="metric">
-							<div class="metric-label">NEURAL ACTIVITY</div>
+							<div class="metric-label">ATIVIDADE NEURAL</div>
 							<div class="metric-bar">
 								<div class="metric-fill" id="metricActivity" style="width: 0%"></div>
 							</div>
@@ -2467,7 +2467,7 @@
 						</div>
 						
 						<div class="metric">
-							<div class="metric-label">DATA FLOW</div>
+							<div class="metric-label">FLUXO DE DADOS</div>
 							<div class="metric-bar">
 								<div class="metric-fill" id="metricDataFlow" style="width: 0%"></div>
 							</div>
@@ -2475,7 +2475,7 @@
 						</div>
 						
 						<div class="metric">
-							<div class="metric-label">CONNECTION STABILITY</div>
+							<div class="metric-label">ESTABILIDADE DA CONEXÃO</div>
 							<div class="metric-bar">
 								<div class="metric-fill" id="metricConnection" style="width: 0%"></div>
 							</div>
@@ -3874,11 +3874,14 @@
 				
 				function updateHologramText() {
 					const texts = [
-						'NEURAL LINK ACTIVE',
-						'DATA STREAM OPTIMAL',
-						'SECURITY PROTOCOLS ENGAGED',
-						'SYNCHRONIZATION COMPLETE',
-						'NEURAL INTERFACE ONLINE'
+						'CONEXÃO NEURAL ATIVA',
+						'FLUXO DE DADOS ÓTIMO',
+						'PROTOCOLOS DE SEGURANÇA ATIVADOS',
+						'SINCRONIZAÇÃO CONCLUÍDA',
+						'INTERFACE NEURAL ONLINE',
+						'ALGORITMO DE APRENDIZAGEM PROFUNDA',
+						'TRANSMISSÃO CRIPTOGRAFADA EFICIENTE',
+						'SINCRONIZAÇÃO CONCLUÍDA'		
 					];
 					
 					const randomText = texts[Math.floor(Math.random() * texts.length)];
@@ -3888,8 +3891,8 @@
 				function scrambleWords() {
 					if (!isActive) return;
 					
-					const originalWords = ['SECURITY', 'NEURAL', 'NETWORK'];
-					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*';
+					const originalWords = ['SEGURANÇA', 'NEURAL', 'REDE'];
+					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*_-+=[]{}|\\:;\'",.<>/?';
 					
 					// Add scrambling animation
 					scrambledWords.forEach(word => {
