@@ -16,6 +16,7 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
 ![g++](https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white)
 ![Git](https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white)
 ![CMake](https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white)
+![Cybersecurity & AI Projects](https://img.shields.io/badge/Cybersecurity%20&%20AI-Projects-1E90FF?style=flat-square&logo=brain&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white)
 ![Profile Views](https://komarev.com/ghpvc/?username=gerivanc&style=flat-square)
 
