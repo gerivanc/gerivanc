@@ -37,111 +37,133 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <style>
-        /* CSS Variables for consistent theming - Theme Cyber ​​(Christmas) - Standard */
-        :root {
-            --primary-color: #ff0000;
-            --secondary-color: #ffff00;
-            --accent-color: #F8F8FF;
-            --success-color: #4caf50;
-            --warning-color: #ff9800;
-            --dark-bg: #008000;
-            --darker-bg: #006400;
-            --card-bg: #008000;
-            --card-border: rgba(255, 0, 0, 0.5);
-            --text-color: #F8F8FF;
-            --text-muted: #F8F8FF;
-            --neon-red: #ff0000;
-            --neon-green-dark: #cc0000;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+		/* ============================================= */
+		/*UPDATED AND OPTIMIZED THEMES*/
+		/* ============================================= */
 
-        /* Theme Cyber ​​(Christmas) - Standard */
-        [data-theme="cyber"] {
-            --primary-color: #ff0000;
-            --secondary-color: #ffff00;
-            --accent-color: #F8F8FF;
-            --success-color: #4caf50;
-            --warning-color: #ff9800;
-            --dark-bg: #008000;
-            --darker-bg: #006400;
-            --card-bg: #008000;
-            --card-border: rgba(255, 0, 0, 0.5);
-            --text-color: #F8F8FF;
-            --text-muted: #F8F8FF;
-            --neon-red: #ff0000;
-            --neon-green-dark: #cc0000;
-        }
+		/* === THEME CYBER (Standard – Cyberpunk Christmas) === */
+		:root {
+			--primary-color:        #e60000;     /* Christmas red */
+			--secondary-color:      #ffd700;     /* Sophisticated gold */
+			--accent-color:         #f8f8ff;
+			--success-color:        #00ff41;     /* Intense neon green */
+			--warning-color:        #ff6b00;
+			--dark-bg:              #001a00;     /* Very dark green, almost black (depth) */
+			--darker-bg:            #001100;
+			--card-bg:              rgba(0, 30, 0, 0.85);
+			--card-border:          rgba(230, 0, 0, 0.6);
+			--text-color:           #f0fff0;     /* White with a slight green tint for harmony. */
+			--text-muted:           #a0ffa0;
+			--neon-red:             #ff0033;
+			--neon-green-dark:      #00cc00;
+			--transition:           all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		}
 
-        /* Theme Light */
-        [data-theme="light"] {
-            --primary-color: #ff0000;
-            --secondary-color: #2e7d32;
-            --accent-color: #F8F8FF;
-            --success-color: #388e3c;
-            --warning-color: #ef6c00;
-            --dark-bg: #9e9ea2;
-            --darker-bg: #8a8a8e;
-            --card-bg: #9e9ea2;
-            --card-border: rgba(0, 128, 0, 0.5);
-            --text-color: #F8F8FF;
-            --text-muted: #F8F8FF;
-            --neon-red: #ff0000;
-            --neon-green-dark: #006400;
-        }
+		/* === THEME LIGHT (clear and accessible) === */
+		[data-theme="light"] {
+			--primary-color:        #c62828;     /* A softer and more elegant Christmas red */
+			--secondary-color:      #2e7d32;     /* Clean green forest */
+			--accent-color:         #ffffff;
+			--success-color:        #388e3c;
+			--warning-color:        #f57c00;
+			--dark-bg:              #f8fafc;     /* Super light off-white background */
+			--darker-bg:            #e2e8f0;
+			--card-bg:              #ffffff;     /* Pure white cards */
+			--card-border:          rgba(0, 128, 0, 0.25);
+			--text-color:           #1a1a1a;     /* Near-black text (excellent contrast) */
+			--text-muted:           #555555;
+			--neon-red:             #c62828;
+			--neon-green-dark:      #2e7d32;
+		}
 
-        /* Theme Matrix */
-        [data-theme="matrix"] {
-            --primary-color: #ff0000;
-            --secondary-color: #00cc00;
-            --accent-color: #F8F8FF;
-            --success-color: #00FF00;
-            --warning-color: #00FF00;
-            --dark-bg: #013220;
-            --darker-bg: #001a10;
-            --card-bg: #013220;
-            --card-border: rgba(0, 255, 0, 0.5);
-            --text-color: #F8F8FF;
-            --text-muted: #F8F8FF;
-            --neon-red: #ff0000;
-            --neon-green-dark: #00cc00;
-        }
+		/* === THEME MATRIX (Pure neon green, true to the film.) === */
+		[data-theme="matrix"] {
+			--primary-color:        #00ff41;     /* Classic Green Matrix */
+			--secondary-color:      #39ff14;
+			--accent-color:         #ffffff;
+			--success-color:        #00ff41;
+			--warning-color:        #ffff00;     /* Yellow for warnings (differentiation) */
+			--dark-bg:              #000d00;     /* Deep green-black */
+			--darker-bg:            #000a00;
+			--card-bg:              rgba(0, 20, 0, 0.88);
+			--card-border:          rgba(0, 255, 65, 0.7);
+			--text-color:           #00ff41;     /* Neon green text */
+			--text-muted:           #00cc33;
+			--neon-red:             #00ff41;
+			--neon-green-dark:      #00ff41;
+		}
 
-        /* A correction has been added for subtitles: red color in the Cyber ​​theme */
-        [data-theme="cyber"] h4,
-        [data-theme="cyber"] .project-card h4,
-        [data-theme="cyber"] .timeline-item h4 {
-            color: #ffff00 !important;
-        }
+		/* ============================================= */
+		/*         FINAL ADJUSTMENTS BY THEME                */
+		/* ============================================= */
 
-        /* A correction has been added for subtitles: red color in the Light theme */
-        [data-theme="light"] h4,
-        [data-theme="light"] .project-card h4,
-        [data-theme="light"] .timeline-item h4 {
-            color: #ffff00 !important;
-        }
+		/* Subtitles (h4) – harmonious and less aggressive colors */
+		h4,
+		.project-card h4,
+		.timeline-item h4 {
+			color: var(--secondary-color) !important;
+			text-shadow: none !important;
+		}
 
-        /* A correction has been added for subtitles: red color in the Matrix ​​theme */
-        [data-theme="matrix"] h4,
-        [data-theme="matrix"] .project-card h4,
-        [data-theme="matrix"] .timeline-item h4 {
-            color: #ffff00 !important;
-        }
-        
-        /* Specific rules for card colors in light mode for accessibility */
-        [data-theme="light"] .project-card,
-        [data-theme="light"] .welcome-card,
-        [data-theme="light"] .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        [data-theme="light"] .note,
-        [data-theme="light"] .alert,
-        [data-theme="light"] .toc {
-            background: rgba(0, 128, 0, 0.15);
-            border-color: rgba(0, 128, 0, 0.4);		
-        }
+		/* Light Theme: Dark text on a light background (perfect accessibility) */
+		[data-theme="light"] h4,
+		[data-theme="light"] .project-card h4,
+		[data-theme="light"] .timeline-item h4 {
+			color: #2e7d32 !important;         /* Elegant green */
+		}
+
+		/* Matrix theme: subtitles in lighter neon green */
+		[data-theme="matrix"] h4,
+		[data-theme="matrix"] .project-card h4,
+		[data-theme="matrix"] .timeline-item h4 {
+			color: #39ff14 !important;
+			text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+		}
+
+		/* Cards and highlight elements in Light (white background + soft border) */
+		[data-theme="light"] .project-card,
+		[data-theme="light"] .welcome-card,
+		[data-theme="light"] .stat-card,
+		[data-theme="light"] .terminal,
+		[data-theme="light"] .note,
+		[data-theme="light"] .alert,
+		[data-theme="light"] .toc,
+		[data-theme="light"] .contact-info {
+			background: var(--card-bg) !important;
+			border: 1px solid var(--card-border);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+			color: var(--text-color);
+		}
+
+		/* Specific adjustment for note/alert boxes in Light. */
+		[data-theme="light"] .note,
+		[data-theme="light"] .alert {
+			background: rgba(76, 175, 80, 0.12) !important;
+			border-left: 4px solid #4caf50;
+		}
+
+		/* Body background with subtle gradient in all themes */
+		body {
+			background-color: var(--dark-bg);
+			background-image: 
+				radial-gradient(circle at 15% 20%, rgba(230, 0, 0, 0.12) 0%, transparent 25%),
+				radial-gradient(circle at 85% 80%, rgba(0, 200, 0, 0.1) 0%, transparent 30%);
+			color: var(--text-color);
+		}
+
+		/* Matrix: Stronger Green Rain */
+		body.matrix-theme {
+			background-image: 
+				radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.15) 0%, transparent 20%),
+				radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.12) 0%, transparent 20%);
+		}
+
+		/* Light: clean and airy background */
+		[data-theme="light"] body {
+			background-image: 
+				radial-gradient(circle at 20% 30%, rgba(198, 40, 40, 0.06) 0%, transparent 30%),
+				radial-gradient(circle at 80% 70%, rgba(46, 125, 50, 0.06) 0%, transparent 30%);
+		}
 
         /* Reset and base styles */
         * {
