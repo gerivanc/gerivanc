@@ -27,7 +27,6 @@ Did you like a project? Give it a star! 🌟. I consider it an incentive to keep
 - Highlights password security with a dash of humor, mixing phrases in English and Portuguese.  
 - Features a dynamic typing effect in a terminal-style interface.
 - Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
-Enhance your digital world with this animation, keep your accounts hack-proof, and code with the same passion as EntroPy and DNAPass!.
 
 Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **204 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.  
 Review your knowledge of password security and 2FA. View now!
