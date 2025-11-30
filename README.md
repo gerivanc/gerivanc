@@ -1,10 +1,11 @@
 # 👋 Welcome to My Digital Universe  
 
-> 🇧🇷 Prefer to read in Portuguese? [Click here for the Portuguese version](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)  
+> 🇧🇷 Prefer Portuguese? [Versão em Português](https://github.com/gerivanc/gerivanc/blob/main/README.pt.md)  
 
-I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.  
+I'm **Gerivan Costa** — developer passionate about **security, science, and creativity**.  
+Here you'll find projects that blend innovation with purpose, always focused on **continuous learning** and **open-source contributions**.  
 
-Did you like a project? Give it a star! 🌟. I consider it an incentive to keep learning, coding, and sharing with the developer community, because one idea generates another, even better idea!  
+⭐ If you like a project, give it a star — it keeps ideas flowing!  
 
 ---
 
@@ -22,177 +23,57 @@ Did you like a project? Give it a star! 🌟. I consider it an incentive to keep
 
 ---
 
-## 📘 Enhance your digital world with this animation, keep your accounts hack-proof  
-### 🔒 **Why it's awesome**:  
-- Highlights password security with a dash of humor, mixing phrases in English and Portuguese.  
-- Features a dynamic typing effect in a terminal-style interface.
-- Perfectly matches the neon aesthetic of the CyberSnake Activity Matrix.
+## 🔐 Featured Projects  
 
-Dive into the digital grid with my **Typing Animation**, a neon-filled display inspired by CyberSnake's Activity Matrix! This interactive resource features **204 unique witty phrases** about strong passwords and two-factor authentication (2FA), perfect for security- and style-obsessed developers and startups. Built with HTML, CSS, and JavaScript, it's a stylish addition to your projects, echoing the vibe of exclusive tools like Dealsbe.  
-Review your knowledge of password security and 2FA. View now!
-📸 **Watch it live**: [Watch the typing animation](https://gerivan.me/typing-animation.html)
-📂 **Source code**: [Constphrases](https://github.com/gerivanc/gerivanc/blob/main/typing-animation.html)
-
----
-
-# 📢✅ Project Completed Alert 📢✅   
-XPhrase Project: Innovation Completed and Available! 🐍 XPhrase is ready to use! A powerful Python tool that generates words intelligently, safely, and versatilely!  
-
-📢 Check it out now! [XPhrase](https://xphrase.gerivan.me/xphrase.html)💥
+| Project | Description | Demo | Repo |
+|---------|-------------|------|------|
+| **XPhrase** | Multilingual phrase generator with cryptographic randomness | [Live Demo](https://xphrase.gerivan.me/xphrase.html) | [Repo](https://github.com/gerivanc/xphrase) |
+| **Cyber Neural Network & Transformers** | Interactive visualization of neural networks | [Demo](https://transformers.gerivan.me/neural.html) | [Repo](https://github.com/gerivanc/transformers) |
+| **DNAPass** | Genetic password generator using DNA sequences | [Demo](https://dnapass.gerivan.me/dnapass.html) | [Repo](https://github.com/gerivanc/dnapass-password-generator) |
+| **EntroPy Web** | Browser-based entropy password generator | [Demo](https://entropy.gerivan.me/entropyweb.html) | [Repo](https://github.com/gerivanc/entropy-password-web) |
+| **EntroPy (Python)** | Entropy-driven password generator | — | [Repo](https://github.com/gerivanc/entropy-password-generator) |
 
 ---
 
-## 📌 Table of Contents  
-- [🔐 Featured Projects](#-featured-projects)
-- [📊 GitHub Stats](#-github-stats)
-- [🎯 Profile Summary](#-profile-summary)
-- [📬 Contact](#-contact)
-- [📜 License](#-license)
-- [🌐 Language Support](#-language-support)
-
----
-
-## 🔐 Featured Projects
-
----
-
-### ✨💡🔤 XPhrase Generation —  Expressive phrase generator — strong, modern, and minimalist
-XPhrase Generation is a multilingual phrase generator designed for command-line interface (CLI) usage. It creates expressive, randomized phrases using words from 🇬🇧 English, 🇩🇪 German, and 🇧🇷 Portuguese, interlinked with special characters and digits.
-
-Cryptographic-strength randomization via CSPRNG, achieved through the combination of words in different languages, special characters, and digits. This construction significantly increases the entropy of the phrase, making it unfeasible to break using traditional brute-force methods, even in shorter phrases.
-
-**Key Features:**
-- ✨ **Interactive Network Configuration**: Configurable hidden layers (1-5).
-- 🔢 At least one special character: **!@#$%^&*()_+-=[]{}|;:,.<>?~\\**.
-- 🔢 At least one digit character: **0123456789**. 
-- 💯 Written **100% in Python**: Generates phrases with 3 to 21 words.
-- 🌍 **Live Demo**: [Try it now!](https://xphrase.gerivan.me/xphrase.html)
-- 📚 **Interactive Docs**: [Complete Documentation](https://xphrase.gerivan.me/)
-- 📦 **Repository**: [XPhrase](https://github.com/gerivanc/xphrase)
-
-> _“Unleash your creativity — Create unique phrases with XPhrase!.”_
-
----
-
-### 🤖 Cyber Neural Network Visualization & 🧠 Transformers Neural Network — Interactive Visualizer
-Dual-mode interactive tool for visualizing artificial neural networks and Transformer architectures, illustrating complex machine learning concepts through real-time visual representations.
-
-**Key Features:**
-- 🧩 **Interactive Network Configuration**: Configurable hidden layers (1-5).
-- 🧠 **Real-time Visualization**: Visual representation of neurons and connections.
-- 🎓 **Educational Components**: Step-by-step activation propagation.
-- 🌍 **Live Demo**: [Transformers Neural Network](https://transformers.gerivan.me/transformers.html)
-- 🌍 **Live Demo**: [Cyber Neural Network](https://transformers.gerivan.me/neural.html)
-- 📚 **Interactive Docs**: [Complete Documentation](https://transformers.gerivan.me/)
-- 📦 **Repository**: [Transformers ](https://github.com/gerivanc/transformers)
-
-> _“Unleash the power of attention — visualize, explore, and transform neural intelligence in real time.”_
-
----
-
-### 🧬 DNAPass Password Generator — Genetic Password Generator
-DNAPass is an innovative tool that transforms DNA sequences into complex, secure passwords. By encoding biological data into cryptographic formats, DNAPass introduces a novel approach to password generation that bridges biotechnology and digital security.
-
-**Key Features:**
-- 🧬 **Biological Encoding**: Converts DNA sequences into password strings.
-- 🔐 **Unique & Complex Output**: Each password is biologically inspired and mathematically robust.
-- 🌐 **Cross-Disciplinary Innovation**: Ideal for bioinformatics, research labs, and security enthusiasts.
-- 🌍 **Live Demo**: [Try it now!](https://dnapass.gerivan.me/dnapass.html)
-- 📚 **Interactive Docs**: [Complete Documentation](https://dnapass.gerivan.me/)
-- 📦 **Repository**: [DNAPass](https://github.com/gerivanc/dnapass-password-generator)
-- 💾 **View the code in action**: [C++](https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp)
-
-> _“Where biology meets cybersecurity — and innovation begins.”_
-
----
-
-### 🌐 EntroPy Password Generator - Web Version **(Browser-Based Password Generator)**
-EntroPy Web brings the powerful entropy-based password generation to your browser! This responsive web version maintains all the security features of the original Python implementation while offering an intuitive graphical interface accessible from any device.
-
-**Key Features:**
-- 🎨 **Three Block Interface**: Predefined modes (1-20) + custom configuration
-- 📱 **Fully Responsive**: Works perfectly on desktop and mobile devices
-- 🔒 **Real-time Entropy Calculation**: Visual strength indicator and security warnings
-- ⚡ **Instant Generation**: Fast, client-side password generation
-- 🌍 **Live Demo**: [Try it now!](https://entropy.gerivan.me/entropyweb.html)
-- 📚 **Interactive Docs**: [Complete Documentation](https://entropy.gerivan.me)
-- 📦 **Repository**: [EntroPy Web](https://github.com/gerivanc/entropy-password-web)
-
-> _“Enterprise-grade password security, now accessible in your browser.”_
-
----
-
-### 🧠 EntroPy Password Generator - a secure and customizable password generator developed in Python
-EntroPy is a cutting-edge password generator that leverages real entropy to produce highly secure and unpredictable passwords. Unlike traditional generators that rely on pseudo-random algorithms, EntroPy taps into entropy sources to ensure maximum randomness and resistance to brute-force attacks.
-
-**Key Features:**
-- 🔒 **Entropy-Driven Security**: Uses real entropy to avoid predictable patterns.
-- 🧪 **Custom Algorithms**: Designed for cryptographic strength and uniqueness.
-- 🧠 **Security-Oriented Design**: Ideal for developers, researchers, and cybersecurity professionals.
-- 📦 **Repository**: [EntroPy](https://github.com/gerivanc/entropy-password-generator)
-- 💾 **View the code in action**: [Python](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py)
-
-> _“Security isn’t just a feature — it’s the foundation.”_
-
----
-
-# 📊 GitHub Stats
-Charts highlighting my recent activity, contribution streak, and engagement with open-source projects. I strive for consistent development and continuous learning!
+## 📊 GitHub Stats  
 
 <div align="center">
-  <img width="90%" alt="Gerivan recent GitHub activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+  <img width="90%" alt="Activity Graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
   <br/><br/>
-
-  <table>
-    <tr>
-      <td><img width="100%" alt="Gerivan GitHub streak stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/></td>
-      <td><img width="100%" alt="Gerivan top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/></td>
-    </tr>
-  </table>
+  <img width="45%" alt="Streak Stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
+  <img width="45%" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
 </div>
 
 ---
 
-# 🎯 Profile Summary
-A snapshot of my GitHub activity and contributions, showcasing my commitment to coding and open-source projects.
+## 🎯 Profile Summary  
 
 <div align="center">
   <img width="90%" alt="Profile Details" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
-  <br/><br/>
-
-  <table>
-    <tr>
-      <td><img width="100%" alt="Stats" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/></td>
-      <td><img width="100%" alt="Productive Time" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=gerivanc&utcOffset=10&theme=github_dark"/></td>
-    </tr>
-  </table>
 </div>
 
 ---
 
-# 📬 Contact
+## 📬 Contact  
 
-If you'd like to collaborate, share ideas, or just chat about security and science, feel free to reach out:
-
-- 📫 Reach me at: **`ask@gerivan.me`**.
-- 🌍 Location: Brazil.
-- 🧠 Open to collaborations and research projects.
+- 📫 Email: **ask@gerivan.me**  
+- 🌍 Location: Brazil  
+- 🤝 Open to collaborations and research projects  
 
 ---
 
-# 📜 License
-This repository is licensed under the [MIT License](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).
+## 📜 License  
+Licensed under the [MIT License](https://github.com/gerivanc/gerivanc/blob/main/LICENSE.md).  
 
 ---
 
-# 🌐 Language Support
-- 🇺🇸 English — You're here!
-- 🇧🇷 [Portuguese Version](http://gerivan.me/index-pt.html)
+## 🌐 Language Support  
+- 🇺🇸 English  
+- 🇧🇷 [Portuguese](http://gerivan.me/index-pt.html)  
 
 ---
 
 > _“It's not about how many lines you write. It's about the impact they make when executed.”_
 
 ---
-
 #### Copyright © 2025 Gerivan Costa dos Santos
