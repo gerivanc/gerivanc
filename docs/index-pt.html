@@ -2152,6 +2152,97 @@
                     gap: 10px !important;
                 }
             }
+
+            /* Theme-specific styles for language buttons */
+            [data-theme="cyber"] .language-btn {
+                background: rgba(0, 30, 0, 0.85) !important;
+                border-color: rgba(230, 0, 0, 0.6) !important;
+                color: #f0fff0 !important;
+            }
+            
+            [data-theme="cyber"] .language-btn:hover {
+                box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3) !important;
+                border-color: #e60000 !important;
+            }
+            
+            [data-theme="light"] .language-btn {
+                background: #ffffff !important;
+                border-color: rgba(0, 128, 0, 0.25) !important;
+                color: #1a1a1a !important;
+            }
+            
+            [data-theme="light"] .language-btn:hover {
+                box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2) !important;
+                border-color: #2e7d32 !important;
+            }
+            
+            [data-theme="matrix"] .language-btn {
+                background: rgba(0, 20, 0, 0.88) !important;
+                border-color: rgba(0, 255, 65, 0.7) !important;
+                color: #00ff41 !important;
+            }
+            
+            [data-theme="matrix"] .language-btn:hover {
+                box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+                border-color: #00ff41 !important;
+            }
+            
+            /* Active state for current language button */
+            .language-btn:first-child {
+                position: relative;
+            }
+            
+            .language-btn:first-child::after {
+                content: '✓';
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: var(--primary-color);
+                color: white;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            
+            /* Mobile responsiveness for language buttons */
+            @media (max-width: 768px) {
+                .language-btn {
+                    min-width: 180px !important;
+                    padding: 10px 20px !important;
+                    font-size: 0.95em !important;
+                }
+                
+                .language-btn:first-child::after {
+                    top: -6px;
+                    right: -6px;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 11px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .language-btn {
+                    min-width: 160px !important;
+                    padding: 8px 16px !important;
+                    font-size: 0.9em !important;
+                    min-width: 100% !important;
+                }
+                
+                div[style*="display: flex; justify-content: center;"] {
+                    flex-direction: column;
+                    gap: 15px !important;
+                }
+                
+                .language-btn span {
+                    font-size: 1.2em !important;
+                }
+            }	
         </style>
     </style>
 </head>
@@ -2773,15 +2864,65 @@
 
         <!-- Language support section -->
         <h2 id="language-support">🌐 Suporte de Idioma</h2>
-        <div class="language-switcher">
-            <a href="https://gerivan.me">
-                <span style="font-size: 1.2em;">🇺🇸</span> Versão em Inglês
+        <div style="
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        ">
+            <a href="#" 
+               class="language-btn"
+               style="
+                    padding: 12px 24px;
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 8px;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    font-family: 'Exo 2', sans-serif;
+                    font-weight: 500;
+                    font-size: 1em;
+                    backdrop-filter: blur(10px);
+                    transition: var(--transition);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 200px;
+               "
+               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+                <span style="margin-right: 10px; font-size: 1.4em;">🇧🇷</span> 
+                <span>Português — Você está aqui!</span>
             </a>
-            <a href="https://gerivan.me/index-pt.html">
-                <span style="font-size: 1.2em;">🇧🇷</span> Português — Você está aqui!
+            
+            <a href="https://gerivan.me/" 
+               class="language-btn"
+               style="
+                    padding: 12px 24px;
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 8px;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    font-family: 'Exo 2', sans-serif;
+                    font-weight: 500;
+                    font-size: 1em;
+                    backdrop-filter: blur(10px);
+                    transition: var(--transition);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 200px;
+               "
+               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+                <span style="margin-right: 10px; font-size: 1.4em;">🇺🇸</span> 
+                <span>Versão em Inglês</span>
             </a>
         </div>
-
         <!-- Final quote with floating box design -->
         <div style="
             background: rgba(255, 213, 79, 0.1);
