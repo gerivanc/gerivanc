@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noarchive">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data:;
+        connect-src 'none';
+        frame-src 'none';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'none';
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://gerivan.me/favicon-256x256.png" sizes="256x256">
+    <link rel="icon" type="image/x-icon" href="https://gerivan.me/web-app-manifest-784x789.png">
+    <link rel="shortcut icon" href="https://gerivan.me/web-app-manifest-784x789.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="https://gerivan.me/apple-touch-icon-256x256.png">
+    <link rel="manifest" href="https://gerivan.me/site.webmanifest">
+
+    <!-- Meta tags for PWA -->
+    <meta name="theme-color" content="#0a0a16">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Privacy Policy - Gerivan Costa Portfolio">
+    
+    <title>Privacy Policy - Gerivan Costa</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a0a16;
+            --card: #111128;
+            --accent: #00ffff;
+            --success: #39ff14;
+            --danger: #ff6600;
+            --warning: #f9ca24;
+            --grad: #ff4d4d;
+            --neon-cyan: #00ffff;
+            --neon-green: #39ff14;
+            --neon-orange: #ff6600;
+            --text-primary: #e0e0ff;
+            --head-colors: #ff6600, #39ff14, #00ffff, #f9ca24, #6c5ce7, #a29bfe, #fd79a8, #fdcb6e;
+        }
+        
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body {
+            font-family: 'Fira Code', monospace;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            padding: 10px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 100, 0, 0.05) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+            position: relative;
+            border: 1px solid var(--accent);
+            flex: 1;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            opacity: 0.8;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin-bottom: 20px;
+            color: var(--neon-orange);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Content Styling */
+        .content-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 255, 0.08) 0%, 
+                rgba(57, 255, 20, 0.08) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-left: 4px solid var(--neon-green);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(0, 255, 255, 0.1), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .content-section:hover::before {
+            left: 100%;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: var(--neon-cyan);
+            margin: 25px 0 15px 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--neon-green);
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-orange);
+            margin: 20px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+        }
+
+        .contact-info {
+            background: rgba(57, 255, 20, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            margin: 25px 0;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: #0a0a0a;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0f0f1a;
+            box-shadow: 0 0 20px #00ffff;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .content-section::before,
+            .content-section:hover {
+                transition: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+    <div class="container">
+        <h1>🔒 PRIVACY POLICY</h1>
+        <p class="subtitle">Last Updated: December 3, 2025</p>
+        
+        <div class="content-section">
+            <h2>📋 INTRODUCTION</h2>
+            <p>Welcome to Gerivan Costa's portfolio website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+
+            <h2>⚖️ COMPLIANCE FRAMEWORK</h2>
+            
+            <h3>🇧🇷 Brazilian LGPD Compliance</h3>
+            <p>This website complies with the Brazilian General Data Protection Law (Lei Geral de Proteção de Dados - LGPD), Law No. 13.709/2018. Our data processing activities follow LGPD principles:</p>
+            <ul>
+                <li><strong>Purpose:</strong> Data is collected for specific, explicit, and legitimate purposes</li>
+                <li><strong>Adequacy:</strong> Processing is compatible with the communicated purposes</li>
+                <li><strong>Necessity:</strong> Only necessary data is collected</li>
+                <li><strong>Free Access:</strong> Data subjects have easy access to information</li>
+                <li><strong>Quality:</strong> Data accuracy, clarity, and relevance are maintained</li>
+                <li><strong>Transparency:</strong> Clear information about data processing</li>
+                <li><strong>Security:</strong> Technical and administrative protection measures</li>
+                <li><strong>Prevention:</strong> Prevention against damages</li>
+                <li><strong>Non-Discrimination:</strong> Data is not used for discriminatory purposes</li>
+                <li><strong>Accountability:</strong> Demonstration of compliance</li>
+            </ul>
+
+            <h3>🇪🇺 EU GDPR Compliance</h3>
+            <p>For visitors from the European Union, this website complies with the General Data Protection Regulation (GDPR). Key principles include:</p>
+            <ul>
+                <li>Lawfulness, fairness, and transparency</li>
+                <li>Purpose limitation</li>
+                <li>Data minimization</li>
+                <li>Accuracy</li>
+                <li>Storage limitation</li>
+                <li>Integrity and confidentiality</li>
+                <li>Accountability</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>IMPORTANT:</strong> This is a static portfolio website. We do not collect personal data through forms, analytics, or tracking tools. Any data collection mentioned is hypothetical for compliance purposes.</p>
+            </div>
+
+            <h2>🔍 DATA COLLECTION</h2>
+            <h3>Information You Provide</h3>
+            <p>Currently, this website does not collect personal information through forms, registrations, or subscriptions.</p>
+
+            <h3>Automatically Collected Information</h3>
+            <p>As a static website served via GitHub Pages, we do not use:</p>
+            <ul>
+                <li>Cookies or tracking technologies</li>
+                <li>Analytics tools (Google Analytics, etc.)</li>
+                <li>Behavioral tracking</li>
+                <li>Personal data collection mechanisms</li>
+            </ul>
+
+            <p>However, GitHub Pages may collect:</p>
+            <ul>
+                <li>IP addresses for security and logging</li>
+                <li>Browser type and version</li>
+                <li>Operating system</li>
+                <li>Referring URLs</li>
+                <li>Pages visited and time spent</li>
+            </ul>
+
+            <h2>🔐 DATA SECURITY</h2>
+            <p>We implement security measures designed to protect your information:</p>
+            <ul>
+                <li>HTTPS encryption (SSL/TLS)</li>
+                <li>Content Security Policy (CSP) headers</li>
+                <li>X-Frame-Options protection</li>
+                <li>X-Content-Type-Options security</li>
+                <li>Referrer-Policy headers</li>
+                <li>No external tracking scripts</li>
+            </ul>
+
+            <h2>📁 DATA RETENTION</h2>
+            <p>Since we do not actively collect personal data, there is no data retention period. Any server logs maintained by GitHub Pages are subject to GitHub's privacy policy.</p>
+
+            <h2>🌍 INTERNATIONAL DATA TRANSFERS</h2>
+            <p>This website is hosted on GitHub Pages, which may involve data transfers outside your country of residence. GitHub complies with international data transfer mechanisms including Standard Contractual Clauses.</p>
+
+            <h2>👤 YOUR RIGHTS</h2>
+            <p>Under LGPD and GDPR, you have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Rectify inaccurate data</li>
+                <li>Request data deletion</li>
+                <li>Restrict processing</li>
+                <li>Data portability</li>
+                <li>Object to processing</li>
+                <li>Not be subject to automated decision-making</li>
+            </ul>
+
+            <h2>👶 CHILDREN'S PRIVACY</h2>
+            <p>This website is not directed to children under 13 (or 16 under GDPR). We do not knowingly collect information from children.</p>
+
+            <h2>🔄 CHANGES TO THIS POLICY</h2>
+            <p>We may update this Privacy Policy periodically. The updated version will be indicated by an updated "Last Updated" date and the updated version will be effective as soon as it is accessible.</p>
+
+            <div class="contact-info">
+                <h3>📧 CONTACT INFORMATION</h3>
+                <p>If you have questions about this Privacy Policy, please contact:</p>
+                <p><strong>Gerivan Costa dos Santos</strong></p>
+                <p><strong>Email:</strong> ask@gerivan.me</p>
+                <p><strong>Website:</strong> <a href="https://gerivan.me" style="color: var(--neon-cyan);">https://gerivan.me</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Gerivan Costa dos Santos</p>
+            <p>Privacy Policy • LGPD & GDPR Compliant</p>
+            <p>Secure Connection • No Data Collection Active</p>
+        </div>
+    </footer>
+
+    <script>
+        // Protection Scripts
+        document.onkeydown = function(e) {
+            if (
+                e.keyCode == 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
+                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) ||
+                (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        };
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onselectstart = () => false;
+    </script>
+</body>
+</html>
