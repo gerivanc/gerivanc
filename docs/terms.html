@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noarchive">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data:;
+        connect-src 'none';
+        frame-src 'none';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'none';
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://gerivan.me/favicon-256x256.png" sizes="256x256">
+    <link rel="icon" type="image/x-icon" href="https://gerivan.me/web-app-manifest-784x789.png">
+    <link rel="shortcut icon" href="https://gerivan.me/web-app-manifest-784x789.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="https://gerivan.me/apple-touch-icon-256x256.png">
+    <link rel="manifest" href="https://gerivan.me/site.webmanifest">
+
+    <!-- Meta tags for PWA -->
+    <meta name="theme-color" content="#0a0a16">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Terms of Use - Gerivan Costa Portfolio">
+    
+    <title>Terms of Use - Gerivan Costa</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a0a16;
+            --card: #111128;
+            --accent: #00ffff;
+            --success: #39ff14;
+            --danger: #ff6600;
+            --warning: #f9ca24;
+            --grad: #ff4d4d;
+            --neon-cyan: #00ffff;
+            --neon-green: #39ff14;
+            --neon-orange: #ff6600;
+            --text-primary: #e0e0ff;
+            --head-colors: #ff6600, #39ff14, #00ffff, #f9ca24, #6c5ce7, #a29bfe, #fd79a8, #fdcb6e;
+        }
+        
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body {
+            font-family: 'Fira Code', monospace;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            padding: 10px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 100, 0, 0.05) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+            position: relative;
+            border: 1px solid var(--accent);
+            flex: 1;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            opacity: 0.8;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin-bottom: 20px;
+            color: var(--neon-orange);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Content Styling */
+        .content-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 255, 0.08) 0%, 
+                rgba(57, 255, 20, 0.08) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-left: 4px solid var(--neon-green);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(0, 255, 255, 0.1), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .content-section:hover::before {
+            left: 100%;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: var(--neon-cyan);
+            margin: 25px 0 15px 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--neon-green);
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-orange);
+            margin: 20px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+        }
+
+        .warning {
+            background: rgba(255, 102, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+            margin: 25px 0;
+        }
+
+        .warning h3 {
+            color: var(--neon-orange);
+        }
+
+        .contact-info {
+            background: rgba(57, 255, 20, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            margin: 25px 0;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: #0a0a0a;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0f0f1a;
+            box-shadow: 0 0 20px #00ffff;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .content-section::before,
+            .content-section:hover {
+                transition: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+    <div class="container">
+        <h1>⚖️ TERMS OF USE</h1>
+        <p class="subtitle">Last Updated: December 3, 2025</p>
+        
+        <div class="content-section">
+            <h2>📋 ACCEPTANCE OF TERMS</h2>
+            <p>By accessing and using Gerivan Costa's portfolio website ("the Website"), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.</p>
+
+            <h2>⚖️ LEGAL FRAMEWORK</h2>
+            
+            <h3>🇧🇷 Brazilian Law Compliance</h3>
+            <p>This Website operates in compliance with Brazilian laws, including:</p>
+            <ul>
+                <li><strong>LGPD (Law No. 13.709/2018):</strong> Brazilian General Data Protection Law</li>
+                <li><strong>Marco Civil da Internet (Law No. 12.965/2014):</strong> Brazilian Internet Civil Framework</li>
+                <li><strong>Consumer Defense Code (Law No. 8.078/1990):</strong> For any service-related aspects</li>
+                <li><strong>Software Law (Law No. 9.609/1998):</strong> Regarding software and source code</li>
+            </ul>
+
+            <h3>🇪🇺 European Union Compliance</h3>
+            <p>For users in the European Union, these Terms comply with:</p>
+            <ul>
+                <li><strong>GDPR:</strong> General Data Protection Regulation (EU) 2016/679</li>
+                <li><strong>ePrivacy Directive:</strong> Directive 2002/58/EC</li>
+                <li><strong>Unfair Commercial Practices Directive:</strong> Directive 2005/29/EC</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>DISCLAIMER:</strong> This is a personal portfolio website showcasing projects and skills. All information is provided "as is" without warranties of any kind.</p>
+            </div>
+
+            <h2>📄 INTELLECTUAL PROPERTY</h2>
+            <h3>Ownership</h3>
+            <p>All content on this Website, including but not limited to:</p>
+            <ul>
+                <li>Text, graphics, and images</li>
+                <li>Software code and algorithms</li>
+                <li>Project demonstrations and visualizations</li>
+                <li>Design elements and layout</li>
+            </ul>
+            <p>are the intellectual property of Gerivan Costa dos Santos, unless otherwise stated.</p>
+
+            <h3>Open Source Projects</h3>
+            <p>Projects marked as "Open Source" are licensed under their respective licenses (typically MIT License). Source code availability and license terms are specified in each project's repository.</p>
+
+            <h3>Limited License</h3>
+            <p>You are granted a limited, non-exclusive, non-transferable license to:</p>
+            <ul>
+                <li>Access and view the Website content</li>
+                <li>Use open source projects according to their licenses</li>
+                <li>Reference the portfolio for informational purposes</li>
+            </ul>
+
+            <h2>🚫 PROHIBITED ACTIVITIES</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Reverse engineer, decompile, or disassemble any website components</li>
+                <li>Use automated systems to access the Website</li>
+                <li>Attempt to gain unauthorized access to any part of the Website</li>
+                <li>Use the Website for any illegal or unauthorized purpose</li>
+                <li>Copy, modify, or create derivative works without explicit permission</li>
+                <li>Use the Website to infringe on others' intellectual property rights</li>
+            </ul>
+
+            <div class="warning">
+                <h3>⚠️ SECURITY NOTICE</h3>
+                <p>This Website implements advanced security measures. Attempting to bypass security features, including but not limited to:</p>
+                <ul>
+                    <li>Content Security Policy bypass attempts</li>
+                    <li>Cross-Site Scripting (XSS) attacks</li>
+                    <li>Clickjacking attempts</li>
+                    <li>Code injection attempts</li>
+                </ul>
+                <p>is strictly prohibited and may result in legal action.</p>
+            </div>
+
+            <h2>🔗 EXTERNAL LINKS</h2>
+            <p>The Website may contain links to third-party websites. These links are provided for convenience only. We:</p>
+            <ul>
+                <li>Do not control these third-party websites</li>
+                <li>Are not responsible for their content</li>
+                <li>Do not endorse or make representations about them</li>
+                <li>Include security attributes (noopener, noreferrer) for protection</li>
+            </ul>
+
+            <h2>📊 DISCLAIMER OF WARRANTIES</h2>
+            <p>The Website is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, including:</p>
+            <ul>
+                <li>Accuracy, completeness, or reliability of content</li>
+                <li>Uninterrupted or error-free operation</li>
+                <li>Freedom from viruses or other harmful components</li>
+                <li>Results from using any demonstrated technologies</li>
+            </ul>
+
+            <h2>⚖️ LIMITATION OF LIABILITY</h2>
+            <p>To the fullest extent permitted by applicable law, Gerivan Costa dos Santos shall not be liable for:</p>
+            <ul>
+                <li>Direct, indirect, incidental, or consequential damages</li>
+                <li>Loss of profits, data, or business opportunities</li>
+                <li>Security incidents resulting from user actions</li>
+                <li>Issues arising from third-party services or links</li>
+            </ul>
+
+            <h2>📝 INDEMNIFICATION</h2>
+            <p>You agree to indemnify and hold harmless Gerivan Costa dos Santos from any claims, damages, or expenses arising from:</p>
+            <ul>
+                <li>Your use of the Website</li>
+                <li>Your violation of these Terms</li>
+                <li>Your infringement of any rights</li>
+                <li>Your conduct in relation to the Website</li>
+            </ul>
+
+            <h2>🌍 JURISDICTION AND GOVERNING LAW</h2>
+            <h3>Primary Jurisdiction</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of Brazil, without regard to its conflict of law provisions.</p>
+
+            <h3>Dispute Resolution</h3>
+            <p>Any disputes arising from these Terms shall be resolved:</p>
+            <ul>
+                <li>First through good faith negotiations</li>
+                <li>If unresolved, through mediation in Brazil</li>
+                <li>As a last resort, through competent Brazilian courts</li>
+            </ul>
+
+            <h3>EU Users</h3>
+            <p>For users in the European Union, you may have additional rights under your local consumer protection laws.</p>
+
+            <h2>🔄 CHANGES TO TERMS</h2>
+            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the Website constitutes acceptance of the modified Terms.</p>
+
+            <h2>📞 CONTACT AND NOTICES</h2>
+            <div class="contact-info">
+                <h3>📧 CONTACT INFORMATION</h3>
+                <p>For questions about these Terms of Use, please contact:</p>
+                <p><strong>Gerivan Costa dos Santos</strong></p>
+                <p><strong>Email:</strong> ask@gerivan.me</p>
+                <p><strong>Website:</strong> <a href="https://gerivan.me" style="color: var(--neon-cyan);">https://gerivan.me</a></p>
+                <p><strong>Response Time:</strong> We aim to respond within 7 business days</p>
+            </div>
+
+            <h2>⚖️ SEVERABILITY</h2>
+            <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+            <h2>⏰ ENTIRE AGREEMENT</h2>
+            <p>These Terms constitute the entire agreement between you and Gerivan Costa dos Santos regarding the use of the Website, superseding any prior agreements.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Gerivan Costa dos Santos</p>
+            <p>Terms of Use • LGPD & GDPR Compliant</p>
+            <p>All Rights Reserved • Secure Connection Active</p>
+        </div>
+    </footer>
+
+    <script>
+        // Protection Scripts
+        document.onkeydown = function(e) {
+            if (
+                e.keyCode == 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
+                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) ||
+                (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        };
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onselectstart = () => false;
+    </script>
+</body>
+</html>
