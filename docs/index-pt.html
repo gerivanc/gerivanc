@@ -2095,6 +2095,64 @@
             font-size: 14px;
         }
     }		
+
+        <!-- Add CSS for theme-specific button styles -->
+        <style>
+            /* Theme-specific button styles */
+            [data-theme="cyber"] .footer-btn {
+                background: rgba(0, 30, 0, 0.85) !important;
+                border-color: rgba(230, 0, 0, 0.6) !important;
+                color: #f0fff0 !important;
+            }
+            
+            [data-theme="cyber"] .footer-btn:hover {
+                box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3) !important;
+                border-color: #e60000 !important;
+            }
+            
+            [data-theme="light"] .footer-btn {
+                background: #ffffff !important;
+                border-color: rgba(0, 128, 0, 0.25) !important;
+                color: #1a1a1a !important;
+            }
+            
+            [data-theme="light"] .footer-btn:hover {
+                box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2) !important;
+                border-color: #2e7d32 !important;
+            }
+            
+            [data-theme="matrix"] .footer-btn {
+                background: rgba(0, 20, 0, 0.88) !important;
+                border-color: rgba(0, 255, 65, 0.7) !important;
+                color: #00ff41 !important;
+            }
+            
+            [data-theme="matrix"] .footer-btn:hover {
+                box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+                border-color: #00ff41 !important;
+            }
+            
+            /* Mobile responsiveness for footer buttons */
+            @media (max-width: 768px) {
+                .footer-btn {
+                    min-width: 140px !important;
+                    padding: 10px 20px !important;
+                    font-size: 0.95em !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .footer-btn {
+                    min-width: 120px !important;
+                    padding: 8px 16px !important;
+                    font-size: 0.9em !important;
+                }
+                
+                div[style*="display: flex; justify-content: center;"] {
+                    gap: 10px !important;
+                }
+            }
+        </style>
     </style>
 </head>
 <body>
@@ -2743,6 +2801,65 @@
                 font-weight: 500;
                 text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
             ">"Não é sobre quantas linhas você escreve. É sobre o impacto que elas causam quando são executadas."</p>
+        </div>
+
+        <!-- Privacy Policy and Terms of Use Footer Buttons -->
+        <div style="
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        ">
+            <a href="http://gerivan.me/privacy" 
+               class="footer-btn"
+               style="
+                    padding: 12px 24px;
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 8px;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    font-family: 'Exo 2', sans-serif;
+                    font-weight: 500;
+                    font-size: 1em;
+                    backdrop-filter: blur(10px);
+                    transition: var(--transition);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 160px;
+               "
+               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+                <span style="margin-right: 8px;">🔒</span> Política de Privacidade
+            </a>
+            
+            <a href="http://gerivan.me/terms" 
+               class="footer-btn"
+               style="
+                    padding: 12px 24px;
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 8px;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    font-family: 'Exo 2', sans-serif;
+                    font-weight: 500;
+                    font-size: 1em;
+                    backdrop-filter: blur(10px);
+                    transition: var(--transition);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 160px;
+               "
+               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+                <span style="margin-right: 8px;">📄</span> Termos de Uso
+            </a>
         </div>
 
         <!-- Copyright footer styles - Portuguese language -->
