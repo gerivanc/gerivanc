@@ -27,7 +27,7 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
 | Projeto | Descrição | Demo | Repositório |
 |---------|-----------|------|-------------|
 | **XPhrase** | Gerador de frases multilíngue com randomização criptográfica | [Demo](https://xphrase.gerivan.me/xphrase.html) | [Repo](https://github.com/gerivanc/xphrase) |
-| **Cyber Neural Network & Transformers** | Visualização interativa de redes neurais e Transformers | [Demo](https://transformers.gerivan.me/neural.html) | [Repo](https://github.com/gerivanc/transformers) |
+| **Cyber Neural Network & Transformers** | Visualização interativa de redes neurais e Transformers | [Demo transformers](https://transformers.gerivan.me/neural.html) —  [Cyber Neural](https://transformers.gerivan.me/neural.html) | [Repo](https://github.com/gerivanc/transformers) |
 | **DNAPass** | Gera senhas complexas a partir de sequências de DNA | [Demo](https://dnapass.gerivan.me/dnapass.html) | [Repo](https://github.com/gerivanc/dnapass-password-generator) |
 | **EntroPy Web** | Gerador de senhas baseado em entropia no navegador | [Demo](https://entropy.gerivan.me/entropyweb.html) | [Repo](https://github.com/gerivanc/entropy-password-web) |
 | **EntroPy (Python)** | Gerador de senhas com entropia real | — | [Repo](https://github.com/gerivanc/entropy-password-generator) |
