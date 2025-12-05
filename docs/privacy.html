@@ -23,7 +23,7 @@
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta name="format-detection" content="telephone=no">
     
-	<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="/g3.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
@@ -110,13 +110,19 @@
             letter-spacing: 2px;
         }
 
-        /* Content Styling */
-        .content-section {
+        /* Cards Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
             margin-top: 30px;
-            padding: 25px;
+        }
+
+        .spec-item {
             background: linear-gradient(135deg, 
                 rgba(0, 255, 255, 0.08) 0%, 
                 rgba(57, 255, 20, 0.08) 100%);
+            padding: 25px;
             border-radius: 12px;
             border: 1px solid rgba(0, 255, 255, 0.3);
             border-left: 4px solid var(--neon-green);
@@ -125,7 +131,7 @@
             overflow: hidden;
         }
 
-        .content-section::before {
+        .spec-item::before {
             content: '';
             position: absolute;
             top: 0;
@@ -139,20 +145,20 @@
             transition: left 0.6s ease;
         }
 
-        .content-section:hover::before {
+        .spec-item:hover::before {
             left: 100%;
         }
 
-        .content-section:hover {
+        .spec-item:hover {
             transform: translateY(-5px);
             border-color: var(--neon-cyan);
             box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
         }
 
-        h2 {
+        .spec-item h4 {
             color: var(--neon-cyan);
-            margin: 25px 0 15px 0;
-            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: flex;
@@ -160,49 +166,73 @@
             gap: 10px;
         }
 
-        h3 {
-            color: var(--neon-green);
-            margin: 20px 0 10px 0;
-            font-size: 1.2rem;
-        }
-
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        ul, ol {
-            margin: 15px 0 15px 30px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .highlight {
-            background: rgba(0, 255, 255, 0.1);
+        .spec-details {
+            margin-bottom: 20px;
+            background: rgba(0, 255, 255, 0.05);
             padding: 15px;
             border-radius: 8px;
-            border-left: 3px solid var(--neon-orange);
-            margin: 20px 0;
+            border: 1px solid rgba(0, 255, 255, 0.1);
         }
 
-        .highlight p {
-            margin: 0;
+        .spec-property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         }
 
-        .contact-info {
-            background: rgba(57, 255, 20, 0.05);
+        .spec-property:last-child {
+            border-bottom: none;
+        }
+
+        .property-name {
+            color: var(--neon-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .property-value {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .justified-text {
+            text-align: justify;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            margin: 25px 0;
             padding: 20px;
+            background: rgba(255, 102, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .highlight-box h5 {
+            color: var(--neon-orange);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(57, 255, 20, 0.05);
             border-radius: 8px;
             border: 1px solid rgba(57, 255, 20, 0.3);
-            margin: 25px 0;
         }
 
-        .contact-info p {
-            margin: 10px 0;
+        .contact-info h5 {
+            color: var(--neon-green);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         /* Footer */
@@ -230,53 +260,73 @@
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .content-section {
+            .specs-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .spec-item {
                 padding: 20px;
             }
 
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            h3 {
+            .spec-item h4 {
                 font-size: 1.1rem;
             }
 
-            ul, ol {
-                margin-left: 20px;
+            .spec-property {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .property-value {
+                text-align: left;
+                font-size: 0.8rem;
             }
         }
 
         @media (max-width: 480px) {
-            .content-section {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-item {
                 padding: 15px;
             }
 
-            h1 {
-                font-size: 1.4rem;
+            .spec-details {
+                padding: 12px;
             }
 
-            h2 {
-                font-size: 1.1rem;
+            .property-name, .property-value {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .spec-item:hover {
+                transform: none;
+                border-color: rgba(0, 255, 255, 0.3);
             }
 
-            h3 {
-                font-size: 1rem;
+            .spec-item:active {
+                transform: scale(0.98);
+                border-color: var(--neon-cyan);
             }
+        }
 
-            p, li {
-                font-size: 0.9rem;
+        /* High-DPI display optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .spec-item {
+                border-width: 1.5px;
             }
         }
 
         /* Reduced motion preferences */
         @media (prefers-reduced-motion: reduce) {
-            .content-section::before,
-            .content-section:hover {
+            .spec-item::before,
+            .spec-item:hover {
                 transition: none;
                 animation: none;
             }
@@ -288,106 +338,243 @@
         <h1>🔒 PRIVACY POLICY</h1>
         <p class="subtitle">Last Updated: December 3, 2025</p>
         
-        <div class="content-section">
-            <h2>📋 INTRODUCTION</h2>
-            <p>Welcome to Gerivan Costa's portfolio website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
-
-            <h2>⚖️ COMPLIANCE FRAMEWORK</h2>
-            
-            <h3>🇧🇷 Brazilian LGPD Compliance</h3>
-            <p>This website complies with the Brazilian General Data Protection Law (Lei Geral de Proteção de Dados - LGPD), Law No. 13.709/2018. Our data processing activities follow LGPD principles:</p>
-            <ul>
-                <li><strong>Purpose:</strong> Data is collected for specific, explicit, and legitimate purposes</li>
-                <li><strong>Adequacy:</strong> Processing is compatible with the communicated purposes</li>
-                <li><strong>Necessity:</strong> Only necessary data is collected</li>
-                <li><strong>Free Access:</strong> Data subjects have easy access to information</li>
-                <li><strong>Quality:</strong> Data accuracy, clarity, and relevance are maintained</li>
-                <li><strong>Transparency:</strong> Clear information about data processing</li>
-                <li><strong>Security:</strong> Technical and administrative protection measures</li>
-                <li><strong>Prevention:</strong> Prevention against damages</li>
-                <li><strong>Non-Discrimination:</strong> Data is not used for discriminatory purposes</li>
-                <li><strong>Accountability:</strong> Demonstration of compliance</li>
-            </ul>
-
-            <h3>🇪🇺 EU GDPR Compliance</h3>
-            <p>For visitors from the European Union, this website complies with the General Data Protection Regulation (GDPR). Key principles include:</p>
-            <ul>
-                <li>Lawfulness, fairness, and transparency</li>
-                <li>Purpose limitation</li>
-                <li>Data minimization</li>
-                <li>Accuracy</li>
-                <li>Storage limitation</li>
-                <li>Integrity and confidentiality</li>
-                <li>Accountability</li>
-            </ul>
-
-            <div class="highlight">
-                <p><strong>IMPORTANT:</strong> This is a static portfolio website. We do not collect personal data through forms, analytics, or tracking tools. Any data collection mentioned is hypothetical for compliance purposes.</p>
+        <div class="specs-grid">
+            <!-- Introduction -->
+            <div class="spec-item">
+                <h4>📋 INTRODUCTION</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Document Type:</span>
+                        <span class="property-value">Privacy Policy</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Website:</span>
+                        <span class="property-value">Gerivan Costa Portfolio</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Purpose:</span>
+                        <span class="property-value">Data Protection Information</span>
+                    </div>
+                </div>
+                <p class="justified-text">Welcome to Gerivan Costa's portfolio website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
             </div>
 
-            <h2>🔍 DATA COLLECTION</h2>
-            <h3>Information You Provide</h3>
-            <p>Currently, this website does not collect personal information through forms, registrations, or subscriptions.</p>
+            <!-- Compliance Framework -->
+            <div class="spec-item">
+                <h4>⚖️ COMPLIANCE FRAMEWORK</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Primary Law (BR):</span>
+                        <span class="property-value">LGPD 13.709/2018</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Primary Law (EU):</span>
+                        <span class="property-value">GDPR 2016/679</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Additional Standards:</span>
+                        <span class="property-value">Marco Civil da Internet</span>
+                    </div>
+                </div>
+                <p class="justified-text">This website operates in full compliance with Brazilian and European data protection regulations, implementing all required principles and safeguards for user privacy.</p>
+            </div>
 
-            <h3>Automatically Collected Information</h3>
-            <p>As a static website served via GitHub Pages, we do not use:</p>
-            <ul>
-                <li>Cookies or tracking technologies</li>
-                <li>Analytics tools (Google Analytics, etc.)</li>
-                <li>Behavioral tracking</li>
-                <li>Personal data collection mechanisms</li>
-            </ul>
+            <!-- Brazilian LGPD Compliance -->
+            <div class="spec-item">
+                <h4>🇧🇷 BRAZILIAN LGPD COMPLIANCE</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Law Number:</span>
+                        <span class="property-value">13.709/2018</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Enforcement:</span>
+                        <span class="property-value">ANPD (National Authority)</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Principles:</span>
+                        <span class="property-value">10 Core Principles</span>
+                    </div>
+                </div>
+                <p class="justified-text">Our data processing follows LGPD principles including purpose limitation, data minimization, transparency, security, and accountability. All data subjects have guaranteed rights under Brazilian law.</p>
+            </div>
 
-            <p>However, GitHub Pages may collect:</p>
-            <ul>
-                <li>IP addresses for security and logging</li>
-                <li>Browser type and version</li>
-                <li>Operating system</li>
-                <li>Referring URLs</li>
-                <li>Pages visited and time spent</li>
-            </ul>
+            <!-- EU GDPR Compliance -->
+            <div class="spec-item">
+                <h4>🇪🇺 EU GDPR COMPLIANCE</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Regulation:</span>
+                        <span class="property-value">EU 2016/679</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Applicability:</span>
+                        <span class="property-value">EU Visitors</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Data Rights:</span>
+                        <span class="property-value">8 Fundamental Rights</span>
+                    </div>
+                </div>
+                <p class="justified-text">For European Union visitors, we comply with GDPR requirements including lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, and confidentiality.</p>
+            </div>
 
-            <h2>🔐 DATA SECURITY</h2>
-            <p>We implement security measures designed to protect your information:</p>
-            <ul>
-                <li>HTTPS encryption (SSL/TLS)</li>
-                <li>Content Security Policy (CSP) headers</li>
-                <li>X-Frame-Options protection</li>
-                <li>X-Content-Type-Options security</li>
-                <li>Referrer-Policy headers</li>
-                <li>No external tracking scripts</li>
-            </ul>
+            <!-- Important Notice -->
+            <div class="highlight-box">
+                <h5>⚠️ IMPORTANT NOTICE</h5>
+                <p class="justified-text"><strong>This is a static portfolio website.</strong> We do not collect personal data through forms, analytics, or tracking tools. Any data collection mentioned is hypothetical for compliance demonstration purposes. GitHub Pages may collect basic server logs as outlined in their privacy policy.</p>
+            </div>
 
-            <h2>📁 DATA RETENTION</h2>
-            <p>Since we do not actively collect personal data, there is no data retention period. Any server logs maintained by GitHub Pages are subject to GitHub's privacy policy.</p>
+            <!-- Data Collection -->
+            <div class="spec-item">
+                <h4>🔍 DATA COLLECTION</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Forms/Registration:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Cookies/Tracking:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Analytics Tools:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">GitHub Pages Logs:</span>
+                        <span class="property-value">IP, Browser, OS</span>
+                    </div>
+                </div>
+                <p class="justified-text">As a static website, we implement a privacy-by-design approach. No active data collection mechanisms are deployed. GitHub Pages (hosting provider) may collect standard server logs for security and maintenance.</p>
+            </div>
 
-            <h2>🌍 INTERNATIONAL DATA TRANSFERS</h2>
-            <p>This website is hosted on GitHub Pages, which may involve data transfers outside your country of residence. GitHub complies with international data transfer mechanisms including Standard Contractual Clauses.</p>
+            <!-- Data Security -->
+            <div class="spec-item">
+                <h4>🔐 DATA SECURITY</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Encryption:</span>
+                        <span class="property-value">HTTPS (SSL/TLS)</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Security Headers:</span>
+                        <span class="property-value">CSP, X-Frame, X-Content</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">External Scripts:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Tracking Protection:</span>
+                        <span class="property-value">Full</span>
+                    </div>
+                </div>
+                <p class="justified-text">Enterprise-grade security measures including HTTPS encryption, Content Security Policy, frame protection, MIME type validation, and referrer policy. No external tracking or analytics scripts are loaded.</p>
+            </div>
 
-            <h2>👤 YOUR RIGHTS</h2>
-            <p>Under LGPD and GDPR, you have the right to:</p>
-            <ul>
-                <li>Access your personal data</li>
-                <li>Rectify inaccurate data</li>
-                <li>Request data deletion</li>
-                <li>Restrict processing</li>
-                <li>Data portability</li>
-                <li>Object to processing</li>
-                <li>Not be subject to automated decision-making</li>
-            </ul>
+            <!-- Data Retention -->
+            <div class="spec-item">
+                <h4>📁 DATA RETENTION</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Active Collection:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Retention Period:</span>
+                        <span class="property-value">N/A</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">GitHub Logs:</span>
+                        <span class="property-value">Subject to GitHub Policy</span>
+                    </div>
+                </div>
+                <p class="justified-text">Since no personal data is actively collected, no retention periods apply. Any server logs maintained by GitHub Pages are governed by GitHub's privacy policy and standard retention practices.</p>
+            </div>
 
-            <h2>👶 CHILDREN'S PRIVACY</h2>
-            <p>This website is not directed to children under 13 (or 16 under GDPR). We do not knowingly collect information from children.</p>
+            <!-- Your Rights -->
+            <div class="spec-item">
+                <h4>👤 YOUR RIGHTS</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Access:</span>
+                        <span class="property-value">Right to Access</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Rectification:</span>
+                        <span class="property-value">Right to Correct</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Deletion:</span>
+                        <span class="property-value">Right to Erasure</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Portability:</span>
+                        <span class="property-value">Right to Data Portability</span>
+                    </div>
+                </div>
+                <p class="justified-text">Under both LGPD and GDPR, you have comprehensive rights regarding your personal data. These include access, rectification, deletion, restriction of processing, data portability, objection to processing, and protection against automated decision-making.</p>
+            </div>
 
-            <h2>🔄 CHANGES TO THIS POLICY</h2>
-            <p>We may update this Privacy Policy periodically. The updated version will be indicated by an updated "Last Updated" date and the updated version will be effective as soon as it is accessible.</p>
+            <!-- Children's Privacy -->
+            <div class="spec-item">
+                <h4>👶 CHILDREN'S PRIVACY</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Age Restriction (US):</span>
+                        <span class="property-value">Under 13</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Age Restriction (EU):</span>
+                        <span class="property-value">Under 16</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Data Collection:</span>
+                        <span class="property-value">None</span>
+                    </div>
+                </div>
+                <p class="justified-text">This website is not directed to children under 13 (United States) or 16 (European Union). We do not knowingly collect information from children. The content is technical and intended for professional audiences.</p>
+            </div>
 
+            <!-- Policy Changes -->
+            <div class="spec-item">
+                <h4>🔄 POLICY CHANGES</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Update Method:</span>
+                        <span class="property-value">Periodic Review</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Effective Date:</span>
+                        <span class="property-value">Immediate Upon Posting</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Notification:</span>
+                        <span class="property-value">Updated "Last Updated" Date</span>
+                    </div>
+                </div>
+                <p class="justified-text">We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. The updated version will be effective immediately upon posting, with the "Last Updated" date indicating the most recent revision.</p>
+            </div>
+
+            <!-- Contact Information -->
             <div class="contact-info">
-                <h3>📧 CONTACT INFORMATION</h3>
-                <p>If you have questions about this Privacy Policy, please contact:</p>
-                <p><strong>Gerivan Costa dos Santos</strong></p>
-                <p><strong>Email:</strong> ask@gerivan.me</p>
-                <p><strong>Website:</strong> <a href="https://gerivan.me" style="color: var(--neon-cyan);">https://gerivan.me</a></p>
+                <h5>📧 CONTACT INFORMATION</h5>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Responsible:</span>
+                        <span class="property-value">Gerivan Costa dos Santos</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Email:</span>
+                        <span class="property-value">ask@gerivan.me</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Website:</span>
+                        <span class="property-value">https://gerivan.me</span>
+                    </div>
+                </div>
+                <p class="justified-text">For any questions about this Privacy Policy, data protection inquiries, or to exercise your rights under LGPD/GDPR, please contact us using the information above. We aim to respond within 7 business days.</p>
             </div>
         </div>
     </div>
@@ -416,6 +603,22 @@
 
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onselectstart = () => false;
+
+        // Mobile touch optimizations
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            const specItems = document.querySelectorAll('.spec-item');
+            specItems.forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                item.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
     </script>
 </body>
 </html>
