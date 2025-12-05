@@ -23,7 +23,7 @@
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta name="format-detection" content="telephone=no">
     
-	<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="/g3.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
@@ -110,13 +110,19 @@
             letter-spacing: 2px;
         }
 
-        /* Content Styling */
-        .content-section {
+        /* Cards Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
             margin-top: 30px;
-            padding: 25px;
+        }
+
+        .spec-item {
             background: linear-gradient(135deg, 
                 rgba(0, 255, 255, 0.08) 0%, 
                 rgba(57, 255, 20, 0.08) 100%);
+            padding: 25px;
             border-radius: 12px;
             border: 1px solid rgba(0, 255, 255, 0.3);
             border-left: 4px solid var(--neon-green);
@@ -125,7 +131,7 @@
             overflow: hidden;
         }
 
-        .content-section::before {
+        .spec-item::before {
             content: '';
             position: absolute;
             top: 0;
@@ -139,20 +145,20 @@
             transition: left 0.6s ease;
         }
 
-        .content-section:hover::before {
+        .spec-item:hover::before {
             left: 100%;
         }
 
-        .content-section:hover {
+        .spec-item:hover {
             transform: translateY(-5px);
             border-color: var(--neon-cyan);
             box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
         }
 
-        h2 {
+        .spec-item h4 {
             color: var(--neon-cyan);
-            margin: 25px 0 15px 0;
-            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: flex;
@@ -160,61 +166,88 @@
             gap: 10px;
         }
 
-        h3 {
-            color: var(--neon-green);
-            margin: 20px 0 10px 0;
-            font-size: 1.2rem;
-        }
-
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        ul, ol {
-            margin: 15px 0 15px 30px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .highlight {
-            background: rgba(0, 255, 255, 0.1);
+        .spec-details {
+            margin-bottom: 20px;
+            background: rgba(0, 255, 255, 0.05);
             padding: 15px;
             border-radius: 8px;
-            border-left: 3px solid var(--neon-orange);
-            margin: 20px 0;
+            border: 1px solid rgba(0, 255, 255, 0.1);
         }
 
-        .highlight p {
-            margin: 0;
+        .spec-property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         }
 
-        .warning {
-            background: rgba(255, 102, 0, 0.1);
+        .spec-property:last-child {
+            border-bottom: none;
+        }
+
+        .property-name {
+            color: var(--neon-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .property-value {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .justified-text {
+            text-align: justify;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            margin: 25px 0;
             padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-orange);
+        }
+
+        .highlight-box h5 {
+            color: var(--neon-orange);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 102, 0, 0.1);
             border-radius: 8px;
             border: 1px solid rgba(255, 102, 0, 0.3);
-            margin: 25px 0;
         }
 
-        .warning h3 {
+        .warning-box h5 {
             color: var(--neon-orange);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
+        /* Contact Info */
         .contact-info {
-            background: rgba(57, 255, 20, 0.05);
+            margin: 25px 0;
             padding: 20px;
+            background: rgba(57, 255, 20, 0.05);
             border-radius: 8px;
             border: 1px solid rgba(57, 255, 20, 0.3);
-            margin: 25px 0;
         }
 
-        .contact-info p {
-            margin: 10px 0;
+        .contact-info h5 {
+            color: var(--neon-green);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         /* Footer */
@@ -242,53 +275,73 @@
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .content-section {
+            .specs-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .spec-item {
                 padding: 20px;
             }
 
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            h3 {
+            .spec-item h4 {
                 font-size: 1.1rem;
             }
 
-            ul, ol {
-                margin-left: 20px;
+            .spec-property {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .property-value {
+                text-align: left;
+                font-size: 0.8rem;
             }
         }
 
         @media (max-width: 480px) {
-            .content-section {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-item {
                 padding: 15px;
             }
 
-            h1 {
-                font-size: 1.4rem;
+            .spec-details {
+                padding: 12px;
             }
 
-            h2 {
-                font-size: 1.1rem;
+            .property-name, .property-value {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .spec-item:hover {
+                transform: none;
+                border-color: rgba(0, 255, 255, 0.3);
             }
 
-            h3 {
-                font-size: 1rem;
+            .spec-item:active {
+                transform: scale(0.98);
+                border-color: var(--neon-cyan);
             }
+        }
 
-            p, li {
-                font-size: 0.9rem;
+        /* High-DPI display optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .spec-item {
+                border-width: 1.5px;
             }
         }
 
         /* Reduced motion preferences */
         @media (prefers-reduced-motion: reduce) {
-            .content-section::before,
-            .content-section:hover {
+            .spec-item::before,
+            .spec-item:hover {
                 transition: none;
                 animation: none;
             }
@@ -300,147 +353,300 @@
         <h1>⚖️ TERMS OF USE</h1>
         <p class="subtitle">Last Updated: December 3, 2025</p>
         
-        <div class="content-section">
-            <h2>📋 ACCEPTANCE OF TERMS</h2>
-            <p>By accessing and using Gerivan Costa's portfolio website ("the Website"), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.</p>
-
-            <h2>⚖️ LEGAL FRAMEWORK</h2>
-            
-            <h3>🇧🇷 Brazilian Law Compliance</h3>
-            <p>This Website operates in compliance with Brazilian laws, including:</p>
-            <ul>
-                <li><strong>LGPD (Law No. 13.709/2018):</strong> Brazilian General Data Protection Law</li>
-                <li><strong>Marco Civil da Internet (Law No. 12.965/2014):</strong> Brazilian Internet Civil Framework</li>
-                <li><strong>Consumer Defense Code (Law No. 8.078/1990):</strong> For any service-related aspects</li>
-                <li><strong>Software Law (Law No. 9.609/1998):</strong> Regarding software and source code</li>
-            </ul>
-
-            <h3>🇪🇺 European Union Compliance</h3>
-            <p>For users in the European Union, these Terms comply with:</p>
-            <ul>
-                <li><strong>GDPR:</strong> General Data Protection Regulation (EU) 2016/679</li>
-                <li><strong>ePrivacy Directive:</strong> Directive 2002/58/EC</li>
-                <li><strong>Unfair Commercial Practices Directive:</strong> Directive 2005/29/EC</li>
-            </ul>
-
-            <div class="highlight">
-                <p><strong>DISCLAIMER:</strong> This is a personal portfolio website showcasing projects and skills. All information is provided "as is" without warranties of any kind.</p>
+        <div class="specs-grid">
+            <!-- Acceptance of Terms -->
+            <div class="spec-item">
+                <h4>📋 ACCEPTANCE OF TERMS</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Website:</span>
+                        <span class="property-value">Gerivan Costa Portfolio</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Effective Date:</span>
+                        <span class="property-value">December 3, 2025</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Agreement Type:</span>
+                        <span class="property-value">Binding Legal Contract</span>
+                    </div>
+                </div>
+                <p class="justified-text">By accessing and using Gerivan Costa's portfolio website ("the Website"), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.</p>
             </div>
 
-            <h2>📄 INTELLECTUAL PROPERTY</h2>
-            <h3>Ownership</h3>
-            <p>All content on this Website, including but not limited to:</p>
-            <ul>
-                <li>Text, graphics, and images</li>
-                <li>Software code and algorithms</li>
-                <li>Project demonstrations and visualizations</li>
-                <li>Design elements and layout</li>
-            </ul>
-            <p>are the intellectual property of Gerivan Costa dos Santos, unless otherwise stated.</p>
-
-            <h3>Open Source Projects</h3>
-            <p>Projects marked as "Open Source" are licensed under their respective licenses (typically MIT License). Source code availability and license terms are specified in each project's repository.</p>
-
-            <h3>Limited License</h3>
-            <p>You are granted a limited, non-exclusive, non-transferable license to:</p>
-            <ul>
-                <li>Access and view the Website content</li>
-                <li>Use open source projects according to their licenses</li>
-                <li>Reference the portfolio for informational purposes</li>
-            </ul>
-
-            <h2>🚫 PROHIBITED ACTIVITIES</h2>
-            <p>You agree not to:</p>
-            <ul>
-                <li>Reverse engineer, decompile, or disassemble any website components</li>
-                <li>Use automated systems to access the Website</li>
-                <li>Attempt to gain unauthorized access to any part of the Website</li>
-                <li>Use the Website for any illegal or unauthorized purpose</li>
-                <li>Copy, modify, or create derivative works without explicit permission</li>
-                <li>Use the Website to infringe on others' intellectual property rights</li>
-            </ul>
-
-            <div class="warning">
-                <h3>⚠️ SECURITY NOTICE</h3>
-                <p>This Website implements advanced security measures. Attempting to bypass security features, including but not limited to:</p>
-                <ul>
-                    <li>Content Security Policy bypass attempts</li>
-                    <li>Cross-Site Scripting (XSS) attacks</li>
-                    <li>Clickjacking attempts</li>
-                    <li>Code injection attempts</li>
-                </ul>
-                <p>is strictly prohibited and may result in legal action.</p>
+            <!-- Legal Framework -->
+            <div class="spec-item">
+                <h4>⚖️ LEGAL FRAMEWORK</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Primary Jurisdiction:</span>
+                        <span class="property-value">Brazil</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Governing Law (BR):</span>
+                        <span class="property-value">Brazilian Law</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">EU Compliance:</span>
+                        <span class="property-value">GDPR Standards</span>
+                    </div>
+                </div>
+                <p class="justified-text">These Terms operate under Brazilian legal framework while maintaining compliance with European Union regulations for international visitors.</p>
             </div>
 
-            <h2>🔗 EXTERNAL LINKS</h2>
-            <p>The Website may contain links to third-party websites. These links are provided for convenience only. We:</p>
-            <ul>
-                <li>Do not control these third-party websites</li>
-                <li>Are not responsible for their content</li>
-                <li>Do not endorse or make representations about them</li>
-                <li>Include security attributes (noopener, noreferrer) for protection</li>
-            </ul>
+            <!-- Brazilian Law Compliance -->
+            <div class="spec-item">
+                <h4>🇧🇷 BRAZILIAN LAW COMPLIANCE</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">LGPD:</span>
+                        <span class="property-value">Law 13.709/2018</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Marco Civil:</span>
+                        <span class="property-value">Law 12.965/2014</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Consumer Code:</span>
+                        <span class="property-value">Law 8.078/1990</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Software Law:</span>
+                        <span class="property-value">Law 9.609/1998</span>
+                    </div>
+                </div>
+                <p class="justified-text">Full compliance with Brazilian legislation including data protection (LGPD), internet regulations (Marco Civil), consumer rights, and software intellectual property laws.</p>
+            </div>
 
-            <h2>📊 DISCLAIMER OF WARRANTIES</h2>
-            <p>The Website is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, including:</p>
-            <ul>
-                <li>Accuracy, completeness, or reliability of content</li>
-                <li>Uninterrupted or error-free operation</li>
-                <li>Freedom from viruses or other harmful components</li>
-                <li>Results from using any demonstrated technologies</li>
-            </ul>
+            <!-- European Union Compliance -->
+            <div class="spec-item">
+                <h4>🇪🇺 EUROPEAN UNION COMPLIANCE</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">GDPR:</span>
+                        <span class="property-value">Regulation 2016/679</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">ePrivacy:</span>
+                        <span class="property-value">Directive 2002/58/EC</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Commercial Practices:</span>
+                        <span class="property-value">Directive 2005/29/EC</span>
+                    </div>
+                </div>
+                <p class="justified-text">For EU visitors, these Terms comply with General Data Protection Regulation, ePrivacy Directive for electronic communications, and Unfair Commercial Practices Directive.</p>
+            </div>
 
-            <h2>⚖️ LIMITATION OF LIABILITY</h2>
-            <p>To the fullest extent permitted by applicable law, Gerivan Costa dos Santos shall not be liable for:</p>
-            <ul>
-                <li>Direct, indirect, incidental, or consequential damages</li>
-                <li>Loss of profits, data, or business opportunities</li>
-                <li>Security incidents resulting from user actions</li>
-                <li>Issues arising from third-party services or links</li>
-            </ul>
+            <!-- Disclaimer -->
+            <div class="highlight-box">
+                <h5>⚠️ DISCLAIMER</h5>
+                <p class="justified-text"><strong>This is a personal portfolio website showcasing projects and skills.</strong> All information is provided "as is" without warranties of any kind. The content represents technical demonstrations and should not be considered professional advice.</p>
+            </div>
 
-            <h2>📝 INDEMNIFICATION</h2>
-            <p>You agree to indemnify and hold harmless Gerivan Costa dos Santos from any claims, damages, or expenses arising from:</p>
-            <ul>
-                <li>Your use of the Website</li>
-                <li>Your violation of these Terms</li>
-                <li>Your infringement of any rights</li>
-                <li>Your conduct in relation to the Website</li>
-            </ul>
+            <!-- Intellectual Property -->
+            <div class="spec-item">
+                <h4>📄 INTELLECTUAL PROPERTY</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Owner:</span>
+                        <span class="property-value">Gerivan Costa dos Santos</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Content Types:</span>
+                        <span class="property-value">Text, Code, Design, Media</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Open Source:</span>
+                        <span class="property-value">MIT Licensed Projects</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">License Type:</span>
+                        <span class="property-value">Limited, Non-Exclusive</span>
+                    </div>
+                </div>
+                <p class="justified-text">All website content is intellectual property of Gerivan Costa unless otherwise stated. Open source projects follow their specified licenses. Users receive limited viewing rights only.</p>
+            </div>
 
-            <h2>🌍 JURISDICTION AND GOVERNING LAW</h2>
-            <h3>Primary Jurisdiction</h3>
-            <p>These Terms shall be governed by and construed in accordance with the laws of Brazil, without regard to its conflict of law provisions.</p>
+            <!-- Prohibited Activities -->
+            <div class="spec-item">
+                <h4>🚫 PROHIBITED ACTIVITIES</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Reverse Engineering:</span>
+                        <span class="property-value">Strictly Prohibited</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Automated Access:</span>
+                        <span class="property-value">Not Allowed</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Unauthorized Use:</span>
+                        <span class="property-value">Legal Action Possible</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Derivative Works:</span>
+                        <span class="property-value">Requires Permission</span>
+                    </div>
+                </div>
+                <p class="justified-text">Users may not reverse engineer components, use automated access systems, attempt unauthorized access, use for illegal purposes, create derivative works without permission, or infringe others' rights.</p>
+            </div>
 
-            <h3>Dispute Resolution</h3>
-            <p>Any disputes arising from these Terms shall be resolved:</p>
-            <ul>
-                <li>First through good faith negotiations</li>
-                <li>If unresolved, through mediation in Brazil</li>
-                <li>As a last resort, through competent Brazilian courts</li>
-            </ul>
+            <!-- Security Notice -->
+            <div class="warning-box">
+                <h5>🔒 SECURITY NOTICE</h5>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Security Level:</span>
+                        <span class="property-value">Advanced Protection</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Threat Coverage:</span>
+                        <span class="property-value">XSS, Clickjacking, MITM</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Response:</span>
+                        <span class="property-value">Legal Action for Attacks</span>
+                    </div>
+                </div>
+                <p class="justified-text">This Website implements advanced security measures. Attempting to bypass security features including CSP bypass, XSS attacks, clickjacking, or code injection is strictly prohibited and may result in legal action.</p>
+            </div>
 
-            <h3>EU Users</h3>
-            <p>For users in the European Union, you may have additional rights under your local consumer protection laws.</p>
+            <!-- External Links -->
+            <div class="spec-item">
+                <h4>🔗 EXTERNAL LINKS</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Control:</span>
+                        <span class="property-value">No Control</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Responsibility:</span>
+                        <span class="property-value">Not Responsible</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Endorsement:</span>
+                        <span class="property-value">No Endorsement</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Security Attributes:</span>
+                        <span class="property-value">noopener, noreferrer</span>
+                    </div>
+                </div>
+                <p class="justified-text">External links are provided for convenience only. We do not control, endorse, or assume responsibility for third-party websites. All external links include security attributes for user protection.</p>
+            </div>
 
-            <h2>🔄 CHANGES TO TERMS</h2>
-            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the Website constitutes acceptance of the modified Terms.</p>
+            <!-- Disclaimer of Warranties -->
+            <div class="spec-item">
+                <h4>📊 DISCLAIMER OF WARRANTIES</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Basis:</span>
+                        <span class="property-value">"AS IS" & "AS AVAILABLE"</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Accuracy:</span>
+                        <span class="property-value">Not Guaranteed</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Operation:</span>
+                        <span class="property-value">No Interruption Guarantee</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Security:</span>
+                        <span class="property-value">No Virus Guarantee</span>
+                    </div>
+                </div>
+                <p class="justified-text">The Website is provided without warranties of any kind. No guarantees are made regarding accuracy, uninterrupted operation, freedom from harmful components, or results from demonstrated technologies.</p>
+            </div>
 
-            <h2>📞 CONTACT AND NOTICES</h2>
+            <!-- Limitation of Liability -->
+            <div class="spec-item">
+                <h4>⚖️ LIMITATION OF LIABILITY</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Scope:</span>
+                        <span class="property-value">Maximum Permitted by Law</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Damages Excluded:</span>
+                        <span class="property-value">Direct, Indirect, Consequential</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Loss Types:</span>
+                        <span class="property-value">Profits, Data, Opportunities</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Third-Party Issues:</span>
+                        <span class="property-value">Not Liable</span>
+                    </div>
+                </div>
+                <p class="justified-text">To the fullest extent permitted by law, Gerivan Costa dos Santos shall not be liable for direct, indirect, incidental, or consequential damages, loss of profits or data, security incidents from user actions, or third-party service issues.</p>
+            </div>
+
+            <!-- Jurisdiction and Governing Law -->
+            <div class="spec-item">
+                <h4>🌍 JURISDICTION AND GOVERNING LAW</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Primary Law:</span>
+                        <span class="property-value">Brazilian Law</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Dispute Resolution:</span>
+                        <span class="property-value">Negotiation → Mediation → Courts</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">EU Rights:</span>
+                        <span class="property-value">Additional Protections Apply</span>
+                    </div>
+                </div>
+                <p class="justified-text">These Terms are governed by Brazilian law. Disputes are resolved through negotiation, then mediation in Brazil, and finally through competent Brazilian courts. EU users retain local consumer protection rights.</p>
+            </div>
+
+            <!-- Changes to Terms -->
+            <div class="spec-item">
+                <h4>🔄 CHANGES TO TERMS</h4>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Modification Right:</span>
+                        <span class="property-value">Reserved</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Effective Time:</span>
+                        <span class="property-value">Immediate Upon Posting</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Acceptance Method:</span>
+                        <span class="property-value">Continued Use</span>
+                    </div>
+                </div>
+                <p class="justified-text">We reserve the right to modify these Terms at any time. Changes become effective immediately upon posting. Continued Website use constitutes acceptance of modified Terms.</p>
+            </div>
+
+            <!-- Contact Information -->
             <div class="contact-info">
-                <h3>📧 CONTACT INFORMATION</h3>
-                <p>For questions about these Terms of Use, please contact:</p>
-                <p><strong>Gerivan Costa dos Santos</strong></p>
-                <p><strong>Email:</strong> ask@gerivan.me</p>
-                <p><strong>Website:</strong> <a href="https://gerivan.me" style="color: var(--neon-cyan);">https://gerivan.me</a></p>
-                <p><strong>Response Time:</strong> We aim to respond within 7 business days</p>
+                <h5>📧 CONTACT INFORMATION</h5>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Contact Person:</span>
+                        <span class="property-value">Gerivan Costa dos Santos</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Email:</span>
+                        <span class="property-value">ask@gerivan.me</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Website:</span>
+                        <span class="property-value">https://gerivan.me</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Response Time:</span>
+                        <span class="property-value">7 Business Days</span>
+                    </div>
+                </div>
+                <p class="justified-text">For questions about these Terms of Use, please contact us using the information above. We aim to respond within 7 business days to all legitimate inquiries.</p>
             </div>
-
-            <h2>⚖️ SEVERABILITY</h2>
-            <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
-
-            <h2>⏰ ENTIRE AGREEMENT</h2>
-            <p>These Terms constitute the entire agreement between you and Gerivan Costa dos Santos regarding the use of the Website, superseding any prior agreements.</p>
         </div>
     </div>
 
@@ -468,6 +674,22 @@
 
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onselectstart = () => false;
+
+        // Mobile touch optimizations
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            const specItems = document.querySelectorAll('.spec-item');
+            specItems.forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                item.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
     </script>
 </body>
 </html>
