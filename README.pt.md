@@ -40,7 +40,6 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
   <img width="90%" alt="Gráfico de atividade" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
   <br/><br/>
   <img width="45%" alt="Streak Stats" src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"/>
-  <img width="45%" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gerivanc&theme=dark&hide_border=true&layout=compact"/>
 </div>
 
 ---
