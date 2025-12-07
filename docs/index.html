@@ -2094,6 +2094,17 @@
         .scrambled-word {
             font-size: 14px;
         }
+		
+	/* GitHub stats images */
+		.github-stats-img {
+			max-width: 95% !important;
+			height: auto !important;
+		}
+		
+		.streak-img {
+			max-width: 85% !important;
+			min-width: 300px !important;
+		}
     }				
 
         <!-- Add CSS for theme-specific button styles -->
@@ -2242,6 +2253,44 @@
                 .language-btn span {
                     font-size: 1.2em !important;
                 }
+            }	
+		/* Styles for GitHub Streak Stats - Responsive */
+		.streak-stats-container {
+			display: flex;
+			justify-content: center;
+			margin: 20px 0;
+		}
+
+		.streak-stats-container img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* For mobile - Specific settings */
+		@media (max-width: 768px) {
+			.streak-stats-container img {
+				max-width: 90%;
+				transform: scale(0.9);
+				transform-origin: center;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.streak-stats-container img {
+				max-width: 85%;
+				transform: scale(0.85);
+			}
+			
+			/* Adjust margins for mobile */
+			.streak-stats-container {
+				margin: 15px 0;
+				padding: 0 5px;
+			}
+			.streak-img {
+					max-width: 80% !important;
+					min-width: 280px !important;
+				}
             }
     </style>
 </head>
@@ -2792,22 +2841,23 @@
             </div>			
         </div>
 
-        <!-- GitHub Statistics section -->
-        <h2 id="github-stats">📊 GitHub Statistics</h2>
-        <p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects. I strive for consistent development and continuous learning!</p>
+		<!-- GitHub Statistics section -->
+		<h2 id="github-stats">📊 GitHub Statistics</h2>
+		<p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects.</p>
 
 		<div class="center">
 			<img width="90%" alt="Gerivan's recent GitHub activity graph" 
 				 data-src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
-				 loading="lazy">
+				 loading="lazy"
+				 class="github-stats-img">
 		</div>
 
-        <div class="center">
-			<div>
+		<div class="center">
+			<div class="streak-container">
 				<img alt="Gerivan's GitHub streak stats" 
 					 data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
-					 loading="lazy">
-			</div>
+					 loading="lazy"
+					 class="github-stats-img streak-img">
 		</div>
 
         <!-- Profile summary section -->
