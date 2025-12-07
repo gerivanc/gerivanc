@@ -2094,17 +2094,6 @@
         .scrambled-word {
             font-size: 14px;
         }
-		
-	/* GitHub stats images */
-		.github-stats-img {
-			max-width: 95% !important;
-			height: auto !important;
-		}
-		
-		.streak-img {
-			max-width: 85% !important;
-			min-width: 300px !important;
-		}
     }				
 
         <!-- Add CSS for theme-specific button styles -->
@@ -2235,7 +2224,17 @@
                     height: 18px;
                     font-size: 11px;
                 }
-            }
+
+			/* GitHub stats images */
+				.github-stats-img {
+					max-width: 95% !important;
+					height: auto !important;
+				}
+				
+				.streak-img {
+					max-width: 85% !important;
+					min-width: 300px !important;
+				}
             
             @media (max-width: 480px) {
                 .language-btn {
@@ -2253,45 +2252,12 @@
                 .language-btn span {
                     font-size: 1.2em !important;
                 }
-            }	
-		/* Styles for GitHub Streak Stats - Responsive */
-		.streak-stats-container {
-			display: flex;
-			justify-content: center;
-			margin: 20px 0;
-		}
 
-		.streak-stats-container img {
-			max-width: 100%;
-			height: auto;
-			border-radius: 8px;
-		}
-
-		/* For mobile - Specific settings */
-		@media (max-width: 768px) {
-			.streak-stats-container img {
-				max-width: 90%;
-				transform: scale(0.9);
-				transform-origin: center;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.streak-stats-container img {
-				max-width: 85%;
-				transform: scale(0.85);
-			}
-			
-			/* Adjust margins for mobile */
-			.streak-stats-container {
-				margin: 15px 0;
-				padding: 0 5px;
-			}
-			.streak-img {
-					max-width: 80% !important;
-					min-width: 280px !important;
+				.streak-img {
+						max-width: 80% !important;
+						min-width: 280px !important;
 				}
-            }
+			}
     </style>
 </head>
 <body>
@@ -2858,6 +2824,7 @@
 					 data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
 					 loading="lazy"
 					 class="github-stats-img streak-img">
+			</div>
 		</div>
 
         <!-- Profile summary section -->
