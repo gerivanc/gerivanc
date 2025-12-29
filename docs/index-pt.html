@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#d32f2f">
+    <meta name="theme-color" content="#00ffff">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' 'unsafe-inline'; 
@@ -22,149 +22,104 @@
 	<!-- Pre-loading of the most important images -->
 	<link rel="preload" href="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true" as="image">
 
-    <!-- Favicon -->
-    <link rel="icon" href="/g3.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
-    <!-- Manifest -->
-    <link rel="manifest" href="/manifest.json">
+	<!-- Favicon -->
+	<link rel="icon" href="/g2.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/g2.ico" type="image/x-icon">
 
-    <!-- Meta tags for PWA -->
-    <meta name="theme-color" content="#c62828">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="Gerivan Costa - Developer passionate about security, science, and creativity">
-    <title>Gerivan Costa - Feliz Natal! Building secure tools with open source</title>
+	<!-- Manifest -->
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- Meta tags para PWA -->
+	<meta name="theme-color" content="#000000">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <title>Gerivan Costa - Construindo ferramentas seguras com código aberto</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <style>
-		/* ============================================= */
-		/*UPDATED AND OPTIMIZED THEMES*/
-		/* ============================================= */
+        /* CSS Variables for consistent theming */
+        :root {
+		  --primary-color: #00f0ff;
+		  --secondary-color: #ffcc00;
+		  --accent-color: #ff00aa;
+		  --success-color: #39ff14;
+		  --dark-bg: #0d001a;
+		  --darker-bg: #050510;
+		  --card-bg: rgba(15, 25, 40, 0.75);
+		  --card-border: rgba(255, 204, 0, 0.35);
+		  --text-color: #e0ffff;
+		  --text-muted: #00cccc;
+          --neon-green: #00BFFF;
+          --neon-green-dark: #1E90FF;
+          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-		/* === THEME CYBER (Standard – Cyberpunk Christmas) === */
-		:root {
-			--primary-color:        #e60000;     /* Christmas red */
-			--secondary-color:      #ffd700;     /* Sophisticated gold */
-			--accent-color:         #f8f8ff;
-			--success-color:        #00ff41;     /* Intense neon green */
-			--warning-color:        #ff6b00;
-			--dark-bg:              #001a00;     /* Very dark green, almost black (depth) */
-			--darker-bg:            #001100;
-			--card-bg:              rgba(0, 30, 0, 0.85);
-			--card-border:          rgba(230, 0, 0, 0.6);
-			--text-color:           #f0fff0;     /* White with a slight green tint for harmony. */
-			--text-muted:           #a0ffa0;
-			--neon-red:             #ff0033;
-			--neon-green-dark:      #00cc00;
-			--transition:           all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-		}
+        [data-theme="light"] {
+		--primary-color: #0066ff;
+		--secondary-color: #00d0ff;
+		--accent-color: #00bfff;
+		--dark-bg: #f8faff;
+		--card-bg: #ffffff;
+		--card-border: rgba(0, 102, 255, 0.3);
+		--text-color: #0f172a;
+		--text-muted: #475569;
+		--neon-red: #ff0000;
+		--neon-green-dark: #006400;
+        }
 
-		/* === THEME LIGHT (clear and accessible) === */
-		[data-theme="light"] {
-			--primary-color:        #c62828;     /* A softer and more elegant Christmas red */
-			--secondary-color:      #2e7d32;     /* Clean green forest */
-			--accent-color:         #ffffff;
-			--success-color:        #388e3c;
-			--warning-color:        #f57c00;
-			--dark-bg:              #f8fafc;     /* Super light off-white background */
-			--darker-bg:            #e2e8f0;
-			--card-bg:              #ffffff;     /* Pure white cards */
-			--card-border:          rgba(0, 128, 0, 0.25);
-			--text-color:           #1a1a1a;     /* Near-black text (excellent contrast) */
-			--text-muted:           #555555;
-			--neon-red:             #c62828;
-			--neon-green-dark:      #2e7d32;
-		}
+        /* A correction has been added for subtitles: red color in the Cyber ​​theme */
+        [data-theme="cyber"] h4,
+        [data-theme="cyber"] .project-card h4,
+        [data-theme="cyber"] .timeline-item h4 {
+            color: #FF5C00 !important;
+        }
 
-		/* === THEME MATRIX (Pure neon green, true to the film.) === */
-		[data-theme="matrix"] {
-			--primary-color:        #00ff41;     /* Classic Green Matrix */
-			--secondary-color:      #39ff14;
-			--accent-color:         #ffffff;
-			--success-color:        #00ff41;
-			--warning-color:        #ffff00;     /* Yellow for warnings (differentiation) */
-			--dark-bg:              #000d00;     /* Deep green-black */
-			--darker-bg:            #000a00;
-			--card-bg:              rgba(0, 20, 0, 0.88);
-			--card-border:          rgba(0, 255, 65, 0.7);
-			--text-color:           #00ff41;     /* Neon green text */
-			--text-muted:           #00cc33;
-			--neon-red:             #00ff41;
-			--neon-green-dark:      #00ff41;
-		}
+        /* A correction has been added for subtitles: red color in the Light theme */
+        [data-theme="light"] h4,
+        [data-theme="light"] .project-card h4,
+        [data-theme="light"] .timeline-item h4 {
+            color: #FF5C00 !important;
+        }
 
-		/* ============================================= */
-		/*         FINAL ADJUSTMENTS BY THEME                */
-		/* ============================================= */
+        /* A correction has been added for subtitles: red color in the Matrix ​​theme */
+        [data-theme="matrix"] h4,
+        [data-theme="matrix"] .project-card h4,
+        [data-theme="matrix"] .timeline-item h4 {
+            color: #FF5C00 !important;
+        }
 
-		/* Subtitles (h4) – harmonious and less aggressive colors */
-		h4,
-		.project-card h4,
-		.timeline-item h4 {
-			color: var(--secondary-color) !important;
-			text-shadow: none !important;
-		}
+        /* Specific rules for card colors in light mode for accessibility */
+        [data-theme="light"] .project-card,
+        [data-theme="light"] .welcome-card,
+        [data-theme="light"] .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="light"] .note,
+        [data-theme="light"] .alert,
+        [data-theme="light"] .toc {
+            background: rgba(0, 102, 204, 0.15);
+            border-color: rgba(0, 102, 204, 0.4);		
+        }
 
-		/* Light Theme: Dark text on a light background (perfect accessibility) */
-		[data-theme="light"] h4,
-		[data-theme="light"] .project-card h4,
-		[data-theme="light"] .timeline-item h4 {
-			color: #2e7d32 !important;         /* Elegant green */
-		}
-
-		/* Matrix theme: subtitles in lighter neon green */
-		[data-theme="matrix"] h4,
-		[data-theme="matrix"] .project-card h4,
-		[data-theme="matrix"] .timeline-item h4 {
-			color: #39ff14 !important;
-			text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
-		}
-
-		/* Cards and highlight elements in Light (white background + soft border) */
-		[data-theme="light"] .project-card,
-		[data-theme="light"] .welcome-card,
-		[data-theme="light"] .stat-card,
-		[data-theme="light"] .terminal,
-		[data-theme="light"] .note,
-		[data-theme="light"] .alert,
-		[data-theme="light"] .toc,
-		[data-theme="light"] .contact-info {
-			background: var(--card-bg) !important;
-			border: 1px solid var(--card-border);
-			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-			color: var(--text-color);
-		}
-
-		/* Specific adjustment for note/alert boxes in Light. */
-		[data-theme="light"] .note,
-		[data-theme="light"] .alert {
-			background: rgba(76, 175, 80, 0.12) !important;
-			border-left: 4px solid #4caf50;
-		}
-
-		/* Body background with subtle gradient in all themes */
-		body {
-			background-color: var(--dark-bg);
-			background-image: 
-				radial-gradient(circle at 15% 20%, rgba(230, 0, 0, 0.12) 0%, transparent 25%),
-				radial-gradient(circle at 85% 80%, rgba(0, 200, 0, 0.1) 0%, transparent 30%);
-			color: var(--text-color);
-		}
-
-		/* Matrix: Stronger Green Rain */
-		body.matrix-theme {
-			background-image: 
-				radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.15) 0%, transparent 20%),
-				radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.12) 0%, transparent 20%);
-		}
-
-		/* Light: clean and airy background */
-		[data-theme="light"] body {
-			background-image: 
-				radial-gradient(circle at 20% 30%, rgba(198, 40, 40, 0.06) 0%, transparent 30%),
-				radial-gradient(circle at 80% 70%, rgba(46, 125, 50, 0.06) 0%, transparent 30%);
-		}
-
+        [data-theme="matrix"] {
+		--primary-color: #00ff9f;
+		--secondary-color: #00cc77;
+		--accent-color: #00ff6e;
+		--success-color: #00ff9f;
+		--dark-bg: #000000;
+		--darker-bg: #000000;
+		--card-bg: rgba(0, 20, 10, 0.88);
+		--card-border: rgba(0, 255, 150, 0.4);
+		--text-color: #00ff9f;
+		--text-muted: #00cc77;
+		--neon-green: #00ff41;
+		--neon-green-dark: #008f39;
+        }
+        
         /* Reset and base styles */
         * {
             margin: 0;
@@ -180,9 +135,9 @@
             padding: 20px;
             background-color: var(--dark-bg);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(255, 213, 79, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(0, 50, 100, 0.1) 0%, transparent 50%);
             color: var(--text-color);
             min-height: 100vh;
             transition: var(--transition);
@@ -190,8 +145,8 @@
 
         body.matrix-theme {
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 0, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 20%);
         }
         
         /* Main container with glassmorphism effect */
@@ -201,14 +156,12 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
             border: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
         }
-
+  
 		/* Styles for lazy loading */
 		img[data-src] {
 			opacity: 0;
@@ -239,32 +192,13 @@
 		.slow-connection img.loaded {
 			filter: blur(0);
 		}
-
-        /* Christmas decorations */
-        .container::before {
-            content: "🎄";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            z-index: 1;
-        }
-
-        .container::after {
-            content: "❄️";
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-size: 20px;
-            z-index: 1;
-        }
-        
+  
         /* Header section styling */
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
         }
         
         /* Theme Switcher */
@@ -304,17 +238,16 @@
             box-shadow: 0 0 10px var(--primary-color);
         }
 
-        .theme-cyber { background: linear-gradient(45deg, #ff0000, #008000); }
-        .theme-light { background: linear-gradient(45deg, #008000, #66bb6a); color: white; }
-        .theme-matrix { background: linear-gradient(45deg, #00FF00, #2e7d32); }
+        .theme-cyber { background: linear-gradient(45deg, #00ffff, #0080ff); }
+        .theme-light { background: linear-gradient(45deg, #0080ff, #66b3ff); color: white; }
+        .theme-matrix { background: linear-gradient(45deg, #00ff41, #008f39); }
         
         /* Typography hierarchy with Orbitron font for headings */
         h1, h2, h3, h4 {
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
             transition: var(--transition);
-            font-weight: bold;
         }
         
         h1 {
@@ -330,7 +263,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
             font-weight: 500;
         }
         
@@ -365,7 +298,7 @@
         }
         
         a:hover {
-            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
         }
         
         /* Badges container for technology icons */
@@ -391,12 +324,12 @@
             border: 1px solid var(--card-border);
             border-radius: 8px;
             margin: 20px 0;
-            box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
         }
         
         /* Note box for important information */
         .note {
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(0, 100, 255, 0.1);
             padding: 15px;
             border-left: 4px solid var(--primary-color);
             margin: 20px 0;
@@ -408,7 +341,7 @@
             display: block;
             margin-top: 8px;
             padding: 8px;
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(0, 100, 255, 0.1);
             border-radius: 4px;
             border: 1px solid var(--card-border);
             text-align: center;
@@ -417,9 +350,9 @@
         
         /* Blockquote styling for quotes */
         blockquote {
-            background: rgba(255, 213, 79, 0.1);
+            background: rgba(0, 191, 255, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--neon-green);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -435,28 +368,28 @@
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
         }
         
         .table th, .table td {
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
             padding: 12px;
             text-align: left;
         }
         
         .table th {
-            background: rgba(211, 47, 47, 0.2);
+            background: rgba(0, 100, 255, 0.2);
             color: var(--primary-color);
             font-family: 'Orbitron', sans-serif;
             font-weight: 500;
         }
         
         .table tr:nth-child(even) {
-            background-color: rgba(211, 47, 47, 0.1);
+            background-color: rgba(0, 50, 100, 0.1);
         }
         
         .table tr:hover {
-            background-color: rgba(211, 47, 47, 0.1);
+            background-color: rgba(0, 150, 255, 0.1);
         }
         
         /* List styling */
@@ -482,14 +415,14 @@
             border-radius: 8px;
             overflow-x: auto;
             margin: 20px 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
             color: var(--primary-color);
             font-family: 'Courier New', monospace;
         }
         
         /* Inline code styling */
         code {
-            background: rgba(211, 47, 47, 0.2);
+            background: rgba(0, 100, 255, 0.2);
             padding: 2px 6px;
             border-radius: 4px;
             color: var(--primary-color);
@@ -500,18 +433,18 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
             color: white;
             border-radius: 5px;
             font-weight: 600;
             margin: 10px;
-            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
             transition: var(--transition);
             text-decoration: none;
         }
         
         .btn:hover {
-            box-shadow: 0 6px 16px rgba(211, 47, 47, 0.6);
+            box-shadow: 0 6px 16px rgba(0, 191, 255, 0.6);
             transform: translateY(-2px);
             color: white;
         }
@@ -536,34 +469,25 @@
         
         /* Project card styling */
         .project-card {
-            background: var(--card-bg);
+            background: rgba(15, 25, 35, 0.7);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
             transition: var(--transition);
-            position: relative;
-        }
-
-        .project-card::before {
-            content: "🎁";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
             border-color: var(--primary-color);
         }
         
         /* Alert box for important notices */
         .alert {
-            background: rgba(255, 213, 79, 0.1);
-            border: 1px solid rgba(255, 213, 79, 0.3);
+            background: rgba(255, 200, 0, 0.1);
+            border: 1px solid rgba(255, 200, 0, 0.3);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
@@ -577,7 +501,7 @@
         
         /* Glow effect for text */
         .glow {
-            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
         
         /* Fade in animation */
@@ -592,11 +516,11 @@
 
         /* Table of contents styling */
         .toc {
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(0, 100, 255, 0.1);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.2);
         }
         
         .toc ul {
@@ -610,7 +534,7 @@
             break-inside: avoid;
             margin: 12px 0;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(211, 47, 47, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         }
 
         .toc li:last-child {
@@ -625,8 +549,8 @@
         }
 
         .toc a:hover {
-            background: rgba(211, 47, 47, 0.1);
-            text-shadow: 0 0 8px rgba(211, 47, 47, 0.6);
+            background: rgba(0, 191, 255, 0.1);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
         }
         
         /* Contact information section */
@@ -634,9 +558,9 @@
             text-align: left;
             margin: 30px 0;
             padding: 25px;
-            background: rgba(255, 213, 79, 0.1);
+            background: rgba(0, 191, 255, 0.1);
             border-radius: 8px;
-            border: 1px solid var(--accent-color);
+            border: 1px solid var(--neon-green);
         }
         
         /* Language switcher styling */
@@ -649,25 +573,25 @@
             display: inline-block;
             margin: 0 10px;
             padding: 8px 16px;
-            background: rgba(211, 47, 47, 0.1);
-            border: 1px solid var(--primary-color);
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--neon-green);
             border-radius: 5px;
             transition: var(--transition);
         }
         
         .language-switcher a:hover {
-            background: rgba(211, 47, 47, 0.2);
-            box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+            background: rgba(0, 191, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
         }
 
         /* Welcome section styling */
         .welcome-card {
-            background: var(--card-bg);
+            background: rgba(15, 25, 35, 0.7);
             padding: 30px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -675,7 +599,7 @@
         
         .welcome-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
             border-color: var(--primary-color);
         }
         
@@ -691,9 +615,9 @@
         }
         
         .welcome-quote {
-            background: rgba(255, 213, 79, 0.1);
+            background: rgba(0, 191, 255, 0.1);
             padding: 20px;
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--neon-green);
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
@@ -706,7 +630,7 @@
             top: -10px;
             left: 10px;
             font-size: 4em;
-            color: var(--accent-color);
+            color: var(--neon-green);
             opacity: 0.3;
             font-family: serif;
         }
@@ -750,7 +674,7 @@
             background: var(--card-bg);
             border-radius: 10px;
             border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
             transition: var(--transition);
         }
 
@@ -764,7 +688,7 @@
 
         .timeline-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
         }
 
         .timeline-date {
@@ -783,7 +707,7 @@
             margin: 30px 0;
             font-family: 'Courier New', monospace;
             color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
         }
 
         .terminal-header {
@@ -847,7 +771,7 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
         }
 
         .stat-number {
@@ -894,7 +818,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8em;
             color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         @keyframes marquee {
@@ -915,7 +839,7 @@
             border: 1px solid var(--primary-color);
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.3);
             z-index: 1000;
             transform: translateY(100px);
             opacity: 0;
@@ -931,7 +855,7 @@
         .neural-network {
             position: relative;
             height: 300px;
-            background: var(--card-bg);
+            background: rgba(10, 20, 30, 0.7);
             border-radius: 10px;
             margin: 30px 0;
             border: 1px solid var(--card-border);
@@ -972,14 +896,14 @@
 
         .skill-bar {
             height: 8px;
-            background: rgba(211, 47, 47, 0.2);
+            background: rgba(0, 100, 255, 0.2);
             border-radius: 4px;
             overflow: hidden;
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--neon-green-dark));
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-dark));
             border-radius: 4px;
             transition: width 1.5s ease-in-out;
             position: relative;
@@ -1045,7 +969,7 @@
 
         .status-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
             border-color: var(--primary-color);
         }
 
@@ -1100,12 +1024,12 @@
         }
 
         .status-indicator.armor-encryption {
-            background: var(--primary-color);
-            box-shadow: 0 0 15px var(--primary-color);
+            background: var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
         }
 
         .status-indicator.armor-encryption::after {
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--neon-green);
         }
 
         .status-indicator.code-quality {
@@ -1118,12 +1042,12 @@
         }
         
         .status-indicator.activity-monitor {
-            background: var(--primary-color);
-            box-shadow: 0 0 15px var(--primary-color);
+            background: var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
         }
 
         .status-indicator.activity-monitor::after {
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--neon-green);
         }
         
         .status-indicator.data-stream {
@@ -1145,7 +1069,7 @@
         .status-value {
             color: var(--primary-color);
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
             transition: all 0.3s ease;
         }
 
@@ -1180,7 +1104,7 @@
         }
 
         .status-item:nth-child(3) .status-pulse {
-            background: var(--primary-color);
+            background: var(--neon-green);
             animation-delay: 2s;
         }
 
@@ -1296,12 +1220,12 @@
 			min-width: 44px;
 			min-height: 44px;
 			border-radius: 50%;
-			background: linear-gradient(135deg, var(--primary-color), var(--neon-green-dark));
+			background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
 			color: white;
 			border: none;
 			font-size: 24px;
 			cursor: pointer;
-			box-shadow: 0 4px 20px rgba(211, 47, 47, 0.4);
+			box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
 			z-index: 1001;
 			transition: var(--transition);
 			touch-action: manipulation;
@@ -1314,7 +1238,7 @@
 
 		.floating-btn-mobile:active {
 			transform: scale(0.95);
-			box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
+			box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
 		}
 
 		/* Actions Menu */
@@ -1398,7 +1322,7 @@
 			}
 		}
 
-		/* For very small screens */
+		/* Para telas muito pequenas */
 		@media (max-width: 480px) {
 			.floating-btn-mobile {
 				width: 52px;
@@ -1490,7 +1414,7 @@
                 width: calc(100% - 60px);
                 left: 40px !important;
             }
-            
+                        
             .stats-dashboard {
                 grid-template-columns: 1fr;
             }
@@ -1516,12 +1440,12 @@
             
             /* Better contrast for mobile */
             .status-item {
-                background: var(--card-bg) !important;
+                background: rgba(15, 25, 35, 0.95) !important;
                 backdrop-filter: blur(5px);
             }
             
             [data-theme="light"] .status-item {
-                background: var(--card-bg) !important;
+                background: rgba(255, 255, 255, 0.98) !important;
             }
             
             /* CONTRAST ENHANCEMENT FOR MOBILE */
@@ -1533,7 +1457,7 @@
             .alert,
             .toc,
             .contact-info {
-                background: var(--card-bg) !important;
+                background: rgba(15, 25, 35, 0.95) !important;
                 backdrop-filter: blur(5px);
                 border: 1px solid var(--card-border);
             }
@@ -1547,8 +1471,8 @@
             [data-theme="light"] .alert,
             [data-theme="light"] .toc,
             [data-theme="light"] .contact-info {
-                background: var(--card-bg) !important;
-                border: 1px solid var(--card-border);
+                background: rgba(255, 255, 255, 0.98) !important;
+                border: 1px solid rgba(0, 102, 204, 0.3);
             }
             
             /* Increase text contrast */
@@ -1556,17 +1480,17 @@
             [data-theme="light"] .welcome-card p,
             [data-theme="light"] .project-card li,
             [data-theme="light"] .welcome-card li {
-                color: var(--text-color) !important;
+                color: #1a202c !important;
             }
             
             /* More solid main container */
             .container {
-                background: var(--card-bg);
+                background: rgba(15, 25, 35, 0.98);
                 backdrop-filter: blur(10px);
             }
             
             [data-theme="light"] .container {
-                background: var(--card-bg);
+                background: rgba(255, 255, 255, 0.98);
             }
             
             /* Text justification for mobile */
@@ -1579,10 +1503,10 @@
             }
             
             .intro-text {
-                background: rgba(211, 47, 47, 0.1);
+                background: rgba(0, 100, 255, 0.1);
                 padding: 15px;
                 border-radius: 8px;
-                border: 1px solid rgba(211, 47, 47, 0.2);
+                border: 1px solid rgba(0, 255, 255, 0.2);
                 margin: 15px 0;
                 backdrop-filter: blur(5px);
             }
@@ -1659,50 +1583,17 @@
             }
         }
 
-        /* Christmas Snow Animation */
-        @keyframes snow {
-            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            color: #fff;
-            font-size: 1em;
-            text-shadow: 0 0 5px #fff;
-            user-select: none;
-            z-index: 1000;
-            pointer-events: none;
-            animation-name: snow;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-        }
-
-        .snowflake:nth-child(5n) { color: #ffd54f; }
-        .snowflake:nth-child(3n) { color: #e8f5e9; }
-
 			/* Cyber Interface Section Styles */
 			.cyber-interface-section {
 				margin: 40px 0;
 				padding: 30px;
 				background: var(--card-bg);
 				border-radius: 15px;
-				border: 1px solid var(--card-border);
+				border: 1px solid var(--primary-color);
 				box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
 				position: relative;
 				overflow: hidden;
 			}
-
-	        .cyber-interface-section::before {
-            content: "🎁";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-        }
     
     .cyber-interface-section h2 {
         text-align: center;
@@ -1794,16 +1685,16 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background: var(--primary-color);
-        box-shadow: 0 0 20px var(--primary-color);
+        background: var(--secondary-color);
+        box-shadow: 0 0 20px var(--secondary-color);
         animation: pulseCore 2s infinite alternate;
     }
     
     .hologram-ring {
         position: absolute;
         border-radius: 50%;
-        border: 2px solid var(--primary-color);
-        box-shadow: 0 0 10px var(--primary-color);
+        border: 2px solid var(--secondary-color);
+        box-shadow: 0 0 10px var(--secondary-color);
         animation: rotateRing linear infinite;
     }
     
@@ -1828,11 +1719,11 @@
     
     .hologram-text {
         margin-top: 20px;
-        color: var(--primary-color);
+        color: var(--secondary-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 14px;
         text-align: center;
-        text-shadow: 0 0 5px var(--primary-color);
+        text-shadow: 0 0 5px var(--secondary-color);
         animation: textFlicker 3s infinite alternate;
     }
     
@@ -1912,7 +1803,7 @@
     .data-stream {
         position: absolute;
         height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
         transform-origin: left center;
         opacity: 0.7;
     }
@@ -1933,10 +1824,10 @@
     }
     
     .scrambled-word {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 18px;
-        text-shadow: 0 0 5px var(--primary-color);
+        text-shadow: 0 0 5px var(--secondary-color);
         transition: all 0.3s ease;
     }
     
@@ -1977,7 +1868,7 @@
     }
     
     .panel-header h3 {
-        color: var(--primary-color);
+        color: var(--warning-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 16px;
         margin: 0;
@@ -2011,8 +1902,8 @@
     .cyber-btn {
         padding: 12px;
         background: transparent;
-        border: 1px solid var(--primary-color);
-        color: var(--primary-color);
+        border: 1px solid var(--secondary-color);
+        color: var(--secondary-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 14px;
         cursor: pointer;
@@ -2023,7 +1914,7 @@
     
     .cyber-btn:hover {
         background: rgba(211, 47, 47, 0.2);
-        box-shadow: 0 0 10px var(--primary-color);
+        box-shadow: 0 0 10px var(--secondary-color);
         transform: translateY(-2px);
     }
     
@@ -2045,7 +1936,7 @@
     }
     
     .metric-label {
-        color: var(--text-color);
+        color: var(--secondary-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 12px;
     }
@@ -2059,14 +1950,14 @@
     
     .metric-fill {
         height: 100%;
-        background: linear-gradient(90deg, var(--primary-color), var(--neon-green-dark));
+        background: linear-gradient(90deg, var(--secondary-color), var(--neon-green-dark));
         border-radius: 4px;
         width: 0%;
         transition: width 1s ease;
     }
     
     .metric-value {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         font-family: 'Orbitron', sans-serif;
         font-size: 12px;
         text-align: right;
@@ -2094,136 +1985,211 @@
         .scrambled-word {
             font-size: 14px;
         }
-    }		
+    }
 
-        <!-- Add CSS for theme-specific button styles -->
-        <style>
-            /* Theme-specific button styles */
-            [data-theme="cyber"] .footer-btn {
-                background: rgba(0, 30, 0, 0.85) !important;
-                border-color: rgba(230, 0, 0, 0.6) !important;
-                color: #f0fff0 !important;
-            }
-            
-            [data-theme="cyber"] .footer-btn:hover {
-                box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3) !important;
-                border-color: #e60000 !important;
-            }
-            
-            [data-theme="light"] .footer-btn {
-                background: #ffffff !important;
-                border-color: rgba(0, 128, 0, 0.25) !important;
-                color: #1a1a1a !important;
-            }
-            
-            [data-theme="light"] .footer-btn:hover {
-                box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2) !important;
-                border-color: #2e7d32 !important;
-            }
-            
-            [data-theme="matrix"] .footer-btn {
-                background: rgba(0, 20, 0, 0.88) !important;
-                border-color: rgba(0, 255, 65, 0.7) !important;
-                color: #00ff41 !important;
-            }
-            
-            [data-theme="matrix"] .footer-btn:hover {
-                box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
-                border-color: #00ff41 !important;
-            }
-            
-            /* Mobile responsiveness for footer buttons */
-            @media (max-width: 768px) {
-                .footer-btn {
-                    min-width: 140px !important;
-                    padding: 10px 20px !important;
-                    font-size: 0.95em !important;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .footer-btn {
-                    min-width: 120px !important;
-                    padding: 8px 16px !important;
-                    font-size: 0.9em !important;
-                }
-                
-                div[style*="display: flex; justify-content: center;"] {
-                    gap: 10px !important;
-                }
-            }
+	/* Reading Progress Bar */
+	.reading-progress-container {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		width: 6px;
+		z-index: 9999;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(5px);
+		display: none; /* Initially hidden for desktop */
+	}
 
-            /* Theme-specific styles for language buttons */
-            [data-theme="cyber"] .language-btn {
-                background: rgba(0, 30, 0, 0.85) !important;
-                border-color: rgba(230, 0, 0, 0.6) !important;
-                color: #f0fff0 !important;
-            }
-            
-            [data-theme="cyber"] .language-btn:hover {
-                box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3) !important;
-                border-color: #e60000 !important;
-            }
-            
-            [data-theme="light"] .language-btn {
-                background: #ffffff !important;
-                border-color: rgba(0, 128, 0, 0.25) !important;
-                color: #1a1a1a !important;
-            }
-            
-            [data-theme="light"] .language-btn:hover {
-                box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2) !important;
-                border-color: #2e7d32 !important;
-            }
-            
-            [data-theme="matrix"] .language-btn {
-                background: rgba(0, 20, 0, 0.88) !important;
-                border-color: rgba(0, 255, 65, 0.7) !important;
-                color: #00ff41 !important;
-            }
-            
-            [data-theme="matrix"] .language-btn:hover {
-                box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
-                border-color: #00ff41 !important;
-            }
-            
-            /* Active state for current language button */
-            .language-btn:first-child {
-                position: relative;
-            }
-            
-            .language-btn:first-child::after {
-                content: '✓';
-                position: absolute;
-                top: -8px;
-                right: -8px;
-                background: var(--primary-color);
-                color: white;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 12px;
-                font-weight: bold;
-            }
-            
-            /* Mobile responsiveness for language buttons */
-            @media (max-width: 768px) {
-                .language-btn {
-                    min-width: 180px !important;
-                    padding: 10px 20px !important;
-                    font-size: 0.95em !important;
-                }
-                
-                .language-btn:first-child::after {
-                    top: -6px;
-                    right: -6px;
-                    width: 18px;
-                    height: 18px;
-                    font-size: 11px;
-                }
+	.reading-progress-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0%;
+		background: linear-gradient(to bottom, var(--neon-green), var(--primary-color));
+		box-shadow: 0 0 10px var(--neon-green);
+		transition: height 0.1s ease-out;
+		border-radius: 0 0 3px 3px;
+	}
+
+	.reading-progress-percentage {
+		position: absolute;
+		bottom: -25px;
+		right: 10px;
+		color: var(--primary-color);
+		font-family: 'Orbitron', sans-serif;
+		font-size: 12px;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		background: var(--card-bg);
+		padding: 2px 6px;
+		border-radius: 3px;
+		border: 1px solid var(--card-border);
+	}
+
+	.reading-progress-container:hover .reading-progress-percentage {
+		opacity: 1;
+	}
+
+	/* Show only on large screens. */
+	@media (min-width: 769px) {
+		.reading-progress-container {
+			display: block;
+		}
+	}
+
+	/* For clear theme */
+	[data-theme="light"] .reading-progress-container {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	[data-theme="light"] .reading-progress-percentage {
+		background: rgba(255, 255, 255, 0.95);
+		color: var(--text-color);
+	}
+
+	/* For the Matrix theme */
+	[data-theme="matrix"] .reading-progress-bar {
+		background: linear-gradient(to bottom, #00ff41, #00ff9f);
+		box-shadow: 0 0 10px #00ff41;
+	}
+
+	<!-- Add CSS for theme-specific button styles -->
+		/* Theme-specific button styles */
+		[data-theme="cyber"] .footer-btn {
+			background: rgba(0, 30, 0, 0.85) !important;
+			border-color: rgba(13,0,26) !important;
+			color: #00f0ff !important;
+		}
+		
+		[data-theme="cyber"] .footer-btn:hover {
+			box-shadow: 0 6px 20px rgba(13,0,26) !important;
+			border-color: #0d001a !important;
+		}
+		
+		[data-theme="light"] .footer-btn {
+			background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
+			border-color: rgba(30, 144, 255, 0.7) !important;
+			color: #FFFFFF !important;
+		}
+		
+		[data-theme="light"] .footer-btn:hover {
+			background: linear-gradient(135deg, #0066CC, #004C99) !important;
+			box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
+			border-color: #1E90FF !important;
+			color: #FFFFFF !important;
+		}
+		
+		[data-theme="matrix"] .footer-btn {
+			background: rgba(0, 20, 0, 0.88) !important;
+			border-color: rgba(0, 255, 65, 0.7) !important;
+			color: #00ff41 !important;
+		}
+		
+		[data-theme="matrix"] .footer-btn:hover {
+			box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+			border-color: #00ff41 !important;
+		}
+		
+		/* Mobile responsiveness for footer buttons */
+		@media (max-width: 768px) {
+			.footer-btn {
+				min-width: 140px !important;
+				padding: 10px 20px !important;
+				font-size: 0.95em !important;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			.footer-btn {
+				min-width: 120px !important;
+				padding: 8px 16px !important;
+				font-size: 0.9em !important;
+			}
+			
+			div[style*="display: flex; justify-content: center;"] {
+				gap: 10px !important;
+			}
+		}
+
+		/* Theme-specific styles for language buttons */
+		[data-theme="cyber"] .language-btn {
+			background: rgba(0, 30, 0, 0.85) !important;
+			border-color: rgba(0, 240, 255) !important;
+			color: #00f0ff !important;
+		}
+		
+		[data-theme="cyber"] .language-btn:hover {
+			box-shadow: 0 6px 20px rgba(0, 240, 255) !important;
+			border-color: #0d001a !important;
+		}
+		
+		[data-theme="light"] .language-btn {
+			background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
+			border-color: rgba(30, 144, 255, 0.7) !important;
+			color: #FFFFFF !important;
+		}
+		
+		[data-theme="light"] .language-btn:hover {
+			background: linear-gradient(135deg, #0066CC, #004C99) !important;
+			box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
+			border-color: #1E90FF !important;
+			color: #FFFFFF !important;
+		}
+		
+		[data-theme="matrix"] .language-btn {
+			background: rgba(0, 20, 0, 0.88) !important;
+			border-color: rgba(0, 255, 65, 0.7) !important;
+			color: #00ff41 !important;
+		}
+		
+		[data-theme="matrix"] .language-btn:hover {
+			box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+			border-color: #00ff41 !important;
+		}
+		
+		/* Active state for current language button */
+		.language-btn:first-child {
+			position: relative;
+		}
+		
+		.language-btn:first-child::after {
+			content: '✓';
+			position: absolute;
+			top: -8px;
+			right: -8px;
+			background: var(--primary-color);
+			color: white;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		
+		/* Ajuste para o tema light no indicador de idioma ativo */
+		[data-theme="light"] .language-btn:first-child::after {
+			background: #1E90FF !important;
+		}
+		
+		/* Mobile responsiveness for language buttons */
+		@media (max-width: 768px) {
+			.language-btn {
+				min-width: 180px !important;
+				padding: 10px 20px !important;
+				font-size: 0.95em !important;
+			}
+			
+			.language-btn:first-child::after {
+				top: -6px;
+				right: -6px;
+				width: 18px;
+				height: 18px;
+				font-size: 11px;
+			}
 
 			/* GitHub stats images */
 				.github-stats-img {
@@ -2235,7 +2201,7 @@
 					max-width: 85% !important;
 					min-width: 300px !important;
 				}
-            
+		
             @media (max-width: 480px) {
                 .language-btn {
                     min-width: 160px !important;
@@ -2261,8 +2227,11 @@
     </style>
 </head>
 <body>
-    <!-- Christmas Snowflakes -->
-    <div id="snowflakes"></div>
+	<!-- Reading Progress Bar -->
+	<div class="reading-progress-container" id="readingProgress">
+		<div class="reading-progress-bar" id="progressBar"></div>
+		<div class="reading-progress-percentage" id="progressPercentage">0%</div>
+	</div>
 
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
@@ -2272,34 +2241,35 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Christmas Theme">🎄</div>
-        <div class="theme-btn theme-light" data-theme="light" title="Light Theme">☀️</div>
-        <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme">🟩</div>
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber">🔷</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix">🟩</div>
     </div>
 
     <!-- Install Prompt -->
     <div class="install-prompt" id="installPrompt">
-        <p>Install this app for better experience?</p>
-        <button class="btn" id="installBtn">Install</button>
-        <button class="btn btn-secondary" id="dismissBtn">Dismiss</button>
+        <p>Instalar este app para melhor experiência?</p>
+        <button class="btn" id="installBtn">Instalar</button>
+        <button class="btn btn-secondary" id="dismissBtn">Dispensar</button>
     </div>
 
     <div class="container">
         <header>
-            <!-- TV Marquee Title - UPDATED: Christmas message -->
+            <!-- TV Marquee Title -->
             <div class="marquee-container">
                 <div class="marquee-content">
-                    🎄 Feliz Natal! Que esta época traga paz, alegria e segurança digital para todos! 🎅
+                    A segurança de suas credenciais é uma escolha! Qual caminho você escolherá?
+					
                 </div>
             </div>
             
             <!-- Embedded typing animation iframe -->
-            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
+            <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Animação de Digitação Grok"></iframe>
             
             <!-- CORRECTION APPLIED: Link always visible on all screens -->
             <div style="text-align: center; margin-top: 20px;">
-                <div style="display: inline-block; padding: 10px 20px; background: rgba(211, 47, 47, 0.1); border-radius: 8px; border: 1px solid var(--accent-color);">
-                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🎁 <strong>Presente de Natal:</strong> Para a experiência interativa completa, visite | <a href="https://gerivan.me/typing-animation.html">Frases constantes</a></p>
+                <div style="display: inline-block; padding: 10px 20px; background: rgba(0, 191, 255, 0.1); border-radius: 8px; border: 1px solid var(--neon-green);">
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡<strong>Nota:</strong> Para a experiência interativa completa, visite | <a href="https://gerivan.me/typing-animation.html">Frases constantes</a></p>
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌍 <strong>Suporte de idioma para esta página</strong>, português (você está aqui!) , visite | <a href="https://gerivan.me/">English</a></p>
                 </div>
         </header>
@@ -2315,56 +2285,53 @@
             <img src="https://img.shields.io/badge/g++-A41E23?style=flat-square&logo=gnu&logoColor=white" alt="g++">
             <img src="https://img.shields.io/badge/git-E44C30?style=flat-square&logo=git&logoColor=white" alt="Git">
             <img src="https://img.shields.io/badge/cmake-0288D1?style=flat-square&logo=cmake&logoColor=white" alt="CMake">
-            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="License">
-            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Profile Views">
+            <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=balance-scale&logoColor=white" alt="Licença">
+            <img src="https://komarev.com/ghpvc/?username=gerivanc&style=flat-square" alt="Visualizações do Perfil">
         </div>
 
-        <!-- Typing animation project card - UPDATED: Christmas theme -->
+        <!-- Typing animation project card - UPDATED: Moved 204 phrases description here -->
+        <h2>🔒Animação de digitação — Por que é incrível:</h2>
         <div class="project-card" data-categories="web security">
-            <h3>🎁 Typing Animation — Presente de Natal Especial:</h3>
-            <p style="text-align: justify;">Experimente minha <strong>Typing Animation</strong> - um módulo de conscientização de segurança de alto desempenho em HTML/CSS/JavaScript. Apresentando <strong>204 frases cuidadosamente selecionadas</strong> que desafiam suposições sobre higiene de senhas e 2FA, esta ferramenta transforma a educação em segurança em uma experiência visual envolvente.</p>
-            <p style="text-align: justify;">Combinando impacto visual com atrito comportamental, incentiva os usuários a repensar as práticas de senha antes de digitar padrões previsíveis como "123456" novamente. Isso não é apenas estética - é uma experiência de usuário de segurança inteligente que torna seu ambiente digital mais resiliente.</p>			
-            <p style="text-align: justify;">Apresenta um impacto visual combinado com atrito comportamental, transformando a educação em segurança em uma experiência envolvente que incentiva os usuários a repensar suas práticas de senha.</p>
+            <p style="text-align: justify;">Experimente minha <strong>animação de digitação</strong> — um módulo de conscientização sobre segurança de alto desempenho em HTML/CSS/JavaScript. Com <strong>204 frases selecionadas</strong> que desafiam suposições sobre higiene de senhas e autenticação de dois fatores (2FA), esta ferramenta transforma a educação em segurança em uma experiência visual envolvente.</p>
+            <p style="text-align: justify;">Ao combinar impacto visual com fricção comportamental, ela incentiva os usuários a repensarem suas práticas de senha antes de digitarem padrões previsíveis como "123456" novamente. Isso não é apenas estética — é uma experiência de usuário inteligente em segurança que torna seu ambiente digital mais resiliente.</p>			
+            <p style="text-align: justify;">Apresenta impacto visual com atrito comportamental, ele transforma a educação em segurança em uma experiência envolvente que incentiva os usuários a repensarem suas práticas de senhas.</p>
             <ul>
                 <li>Destaca a segurança de senhas com um toque de humor, misturando frases em inglês e português.</li>
-                <li>Apresenta um efeito de digitação dinâmica em uma interface estilo terminal.</li>
-                <li>Combina perfeitamente com a estética natalina do Portfólio.</li>
-            </ul>
-            
+                <li>Apresenta um efeito de digitação dinâmico em uma interface estilo terminal.</li>
+                <li>Combina perfeitamente com a estética neon da Matrix de Atividade do CyberSnake.</li>
+            </ul>           
             <div class="center">
-                <a href="https://gerivan.me/typing-animation.html" class="btn">🎄 Ver ao vivo</a>
-                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📦 Código fonte</a>
-            </div>
-            
-            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seu conhecimento com 204 frases animadas, proteja suas contas com senhas fortes, biometria e 2FA, e revise suas práticas de segurança.</em></p>
+                <a href="https://gerivan.me/typing-animation.html" class="btn">📸 Assista ao vivo</a>
+                <a href="https://github.com/gerivanc/gerivanc/blob/main/docs/typing-animation.html" class="btn btn-secondary">📂 Código fonte</a>
+            </div>            
+            <p style="text-align: center; margin-top: 15px;"><em>Aprimore seus conhecimentos com as 204 frases animadas, proteja suas contas com senhas fortes, biometria e 2FA, e reveja suas práticas de segurança.</em></p>
         </div>
 
-        <!-- Welcome section - UPDATED: Christmas theme -->
-        <h2>🎅 Bem-vindo ao Meu Universo Digital de Natal</h2>
-        
+        <!-- Welcome section - UPDATED: Expanded with project information and justified text -->
+        <h2>👋 Bem-vindo ao Meu Universo Digital</h2>        
         <div class="welcome-card">
             <div class="welcome-quote">
-                <p>"Se sua segurança depende apenas de impressões digitais e códigos SMS, parabéns — você já perdeu para o hacker e para a tia curiosa que viu você desbloquear o telefone."</p>
+                <p>"Se sua segurança depende só da digital e do código por SMS, parabéns: você já perdeu para o hacker e para a tia curiosa que viu você desbloquear o celular."</p>
             </div>
             
-            <p style="text-align: justify;">Sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que combinam inovação com propósito, sempre focados no aprendizado contínuo e em contribuições significativas para a comunidade de código aberto.</p>
-            
-            <p style="text-align: justify;">Meu portfólio apresenta ferramentas de ponta como o <strong>Transformers Interactive Neural Network Visualizer</strong>, que demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos por meio de sistemas de inteligência artificial.</p>
-  
-            <p style="text-align: justify;">O visualizador de <strong>Cyber Neural Network</strong> demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. É baseado em uma arquitetura <strong>Multi-Layer Perceptron (MLP)</strong>, <strong>(introduzida no artigo "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, apresentando visualização de propagação direta em tempo real. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos dentro de sistemas de inteligência artificial.</p>
-			
-            <p style="text-align: justify;">O visualizador de <strong>Transformer Neural Network</strong> refere-se, no contexto da IA moderna, especificamente à arquitetura <strong>"Transformer"</strong> (introduzida no artigo "Attention is All You Need" – Vaswani et al., 2017), usada em modelos como <strong>BERT, GPT e Grok</strong>. Esta arquitetura é revolucionária por substituir redes recorrentes <strong>(RNN/LSTM)</strong> por mecanismos de <strong>auto-atenção</strong>, permitindo o processamento paralelo eficiente de sequências inteiras sem dependências temporais estritas. Ela "transforma" representações de dados por meio de blocos <strong>encoder/decoder</strong> com atenção de <strong>múltiplas cabeças</strong>.</p>			
-  
-            <p style="text-align: justify;">Explore soluções de segurança inovadoras como o <strong>DNAPass Password Generator</strong>, que une biotecnologia e segurança digital transformando sequências de DNA em senhas criptograficamente seguras. Esta abordagem inovadora introduz codificação biológica na geração de senhas, criando sistemas de autenticação verdadeiramente únicos e complexos.</p>
-            
-            <p style="text-align: justify;">Descubra o ecossistema <strong>EntroPy Password Generator</strong>, apresentando versões Python CLI para Windows/Linux e implementações web responsivas. O modelo de segurança orientado por entropia garante máxima aleatoriedade e resistência a ataques de força bruta, aproveitando fontes de entropia reais em vez de algoritmos pseudo-aleatórios previsíveis.</p>
+			<p style="text-align: justify;">Sou Gerivan Costa — um desenvolvedor apaixonado por segurança, ciência e criatividade. Aqui você encontrará projetos que unem inovação e propósito, sempre com foco em aprendizado contínuo e contribuições significativas para a comunidade de código aberto.</p>
 
-			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivo que <strong>usa 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou várias frases, sempre com um comprimento entre 3 e 21 palavras. No modo de frase única, o sistema pergunta pelo número desejado de palavras e produz uma sentença de acordo. No modo de múltiplas frases, ele primeiro define o número de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no comprimento. Cada palavra deve conter pelo menos um caractere especial e um dígito, e a palavra final deve terminar com uma letra maiúscula. A ordem dos idiomas é randomizada, tornando a saída variada e dinâmica.</p>
+			<p style="text-align: justify;">Meu portfólio apresenta ferramentas de ponta como os visualizadores interativos: <strong>Visualização de Redes Neurais Cibernéticas</strong> e <strong>Redes Neurais Transformers</strong>.</p>
+
+			<p style="text-align: justify;">O visualizador de <strong>Redes Neurais Cibernéticas</strong> que demonstra o futuro da visualização de informações por meio de redes neurais interconectadas. É baseado em uma arquitetura de <strong>Multi-Layer Perceptron (MLP)</strong>, <strong>(apresentada no artigo: "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, com visualização de propagação forward em tempo real. Isso representa a próxima fronteira na compreensão de fluxos de dados complexos em sistemas de inteligência artificial.</p>
+
+			<p style="text-align: justify;"><p style="text-align: justify;">O visualizador de <strong>Redes Neurais Transformers</strong>, que no contexto da IA moderna, <strong>"Transformers"</strong> refere-se especificamente à <strong>arquitetura Transformer</strong> (introduzida no paper “Attention is All You Need” – Vaswani et al., 2017), usada em modelos como <strong>BERT, GPT e Grok</strong>. Essa arquitetura é revolucionária por substituir redes recorrentes <strong>(RNN/LSTM)</strong> por mecanismos de atenção <strong>self-attention</strong>, permitindo processar sequências inteiras em paralelo de forma eficiente, sem dependência temporal estrita. Ela <strong>"transforma"</strong> representações de dados através de blocos de <strong>encoders/decoders</strong> com <strong>heads</strong> de atenção múltipla.</p>
+
+			<p style="text-align: justify;">Explore soluções inovadoras de segurança como o <strong>Gerador de Senhas DNAPass</strong>, que conecta biotecnologia e segurança digital ao transformar sequências de DNA em senhas criptograficamente seguras. Essa abordagem revolucionária introduz a codificação biológica na geração de senhas, criando sistemas de autenticação verdadeiramente únicos e complexos.</p>
+
+			<p style="text-align: justify;">Descubra o <strong>ecossistema EntroPy Password Generator</strong>, com versões em Python via linha de comando para Windows/Linux e implementações web responsivas. O modelo de segurança baseado em entropia garante máxima aleatoriedade e resistência a ataques de força bruta ao utilizar fontes reais de entropia em vez de algoritmos pseudoaleatórios previsíveis.</p>
+
+			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivas que <strong>utiliza 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou múltiplas frases, sempre com comprimento entre 3 e 21 palavras. No modo de frase única, o sistema solicita a quantidade desejada de palavras e produz uma sentença correspondente. No modo de múltiplas frases, primeiro é definida a quantidade de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no tamanho. Cada palavra deve conter ao menos um caractere especial e um dígito, e a última palavra precisa terminar com letra maiúscula. A ordem dos idiomas é aleatória, tornando o resultado variado e dinâmico.</p>
         </div>
-
+		
 		        <!-- Table of Contents -->
+        <h2>📑 Índice</h2>
         <div class="toc">
-            <h3>📑 Índice</h3>
             <ul>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
@@ -2393,16 +2360,13 @@
 			<li>💯 <strong>Contém 4.000 palavras específicas e únicas</strong>: selecionadas do vocabulário de três idiomas diferentes.</li>
 			<li>🖥️ <strong>Saída Única e Complexa</strong>: Este projeto foi criado selecionando palavras para gerar frases em três idiomas: inglês, português e alemão.</li>
 			<li>🌐 <strong>Inovação Interdisciplinar</strong>: As palavras são selecionadas aleatoriamente e misturadas entre os idiomas.</li>
-            </ul>
-            
+            </ul>           
             <div class="center">
-
 				<a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Demo Ao Vivo - XPhrase Generation</a>	
                 <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>		
                 <a href="https://github.com/gerivanc/xphrase/" class="btn">📦 Repository</a>
                 <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 Veja o código</a>
-            </div>
-            
+            </div>            
             <blockquote>
                 <p>"Liberte a sua criatividade — Gere frases únicas com XPhrase!."</p>
             </blockquote>
@@ -2418,15 +2382,13 @@
                 <li>🧬 <strong>Codificação Biológica</strong>: Converte sequências de DNA em strings de senha.</li>
                 <li>🔐 <strong>Saída Única e Complexa</strong>: Cada senha é inspirada biologicamente e matematicamente robusta.</li>
                 <li>🌐 <strong>Inovação Interdisciplinar</strong>: Ideal para bioinformática, laboratórios de pesquisa e entusiastas de segurança.</li>
-            </ul>
-            
+            </ul>            
             <div class="center">
                 <a href="https://dnapass.gerivan.me/dnapass.html" class="btn">🌍 Demo Ao Vivo</a>
                 <a href="https://dnapass.gerivan.me" class="btn btn-secondary">📚 Documentação Interativa</a>				
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn">📦 Repositório</a>
                 <a href="https://github.com/gerivanc/dnapass-password-generator/blob/main/dnapass_password_generator/dnapass_generator.cpp" class="btn btn-secondary">💾 Veja o código</a>
-            </div>
-            
+            </div>            
             <blockquote>
                 <p>"Onde a biologia encontra a cybersecurity — e a inovação começa."</p>
             </blockquote>
@@ -2443,37 +2405,31 @@
                 <li>📱 <strong>Totalmente Responsivo</strong>: Funciona perfeitamente em dispositivos desktop e móveis</li>
                 <li>🔒 <strong>Cálculo de Entropia em Tempo Real</strong>: Indicador visual de força e avisos de segurança</li>
                 <li>⚡ <strong>Geração Instantânea</strong>: Geração rápida de senhas no lado do cliente</li>
-            </ul>
-            
+            </ul>            
             <div class="center">
                 <a href="https://entropy.gerivan.me/entropyweb.html" class="btn">🌍 Demo Ao Vivo</a>
                 <a href="https://entropy.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>				
                 <a href="https://github.com/gerivanc/entropy-password-web" class="btn">📦 Repositório</a>
-            </div>
-            
+            </div>            
             <blockquote>
                 <p>"Segurança de senhas de nível empresarial, agora acessível em seu navegador."</p>
             </blockquote>
         </div>
 
         <!-- Neural Network Visualizer Section -->
-        <h2 id="neural-network">🧠 Rede Neural Transformers e 🤖 Rede Neural Cibernética</h2>
-        
-        <div class="project-card" data-categories="ai web">
-            <h3>Visualizador de Rede Neural</h3>
-            <p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprendendo e se adaptando em tempo real, com conexões dinâmicas de nós e padrões de ativação.</p>
-            
-            <div class="neural-network" id="neuralNetwork">
+        <div class="project-card" data-categories="ai web">		
+        <h3 id="neural-network">🧠 Rede Neural Transformers e 🤖 Rede Neural Cibernética</h3>        
+            <h4>Visualizador de Rede Neural</h4>
+            <p>Uma ferramenta de visualização avançada que traz a inteligência artificial à vida! Observe as redes neurais aprendendo e se adaptando em tempo real, com conexões dinâmicas de nós e padrões de ativação.</p>            
+            <div class="neural-network" id="neuralNetwork">			
                 <!-- Neural network will be generated by JavaScript -->
             </div>
-
             <div class="center">
 				<button class="btn" id="startTraining">Iniciar Visualização de Treinamento</button>
 				<button class="btn btn-secondary" id="resetNetwork">Reiniciar Rede</button>					
-            </div>
-            
-            <h3>Duplo sistema - Principais características:</h4>
-			<h4>🧠 Rede Neural Transformers</h2>
+            </div>           
+            <h4>Duplo sistema - Principais características:</h4>
+			<h3>🧠 Rede Neural Transformers</h3>
 			<p>Implementação completa da arquitetura Transformer, apresentando:</p>
 			<ul>
 				<li>🎯 <strong>Treinamento em tempo real com TensorFlow.js no navegador.</strong>: Implementações de mecanismos de atenção</li>
@@ -2481,22 +2437,19 @@
 				<li>📊 <strong>Visualização da atenção de múltiplas cabeças com cabeças de atenção codificadas por cores.</strong>: Padrões de atenção multi-cabeça</li>
 				<li>⚡ <strong>Propagação animada para frente/para trás com visualização de fluxo de gradiente.</strong>: Projeção de imagens incorporadas ao vivo em espaço 2D</li>
 			</ul>
-
-			<h4>🤖 Rede Neural Cibernética</h2>
+			<h3>🤖 Rede Neural Cibernética</h3>
 			<p>Uma representação artística abstrata dos princípios das redes neurais, apresentando:</p>
 			<ul>
 				<li>🎯 <strong>Renderização em modo duplo (modos estéticos Cyber/Tech vs. Complexo).</strong>: Princípios da teoria dos grafos e da topologia de redes</li>
 				<li>🔍 <strong>Motor de física interativo com repulsão nodal e cálculos de força.</strong>: Hierarquia visual e codificação de informações</li>
 				<li>📊 <strong>Otimização de desempenho em tempo real com algoritmos de particionamento espacial .</strong>: Simulações interativas de física</li>
 				<li>⚡ <strong>Efeitos visuais avançados, incluindo brilho multicamadas e conexões de gradiente.</strong>: Técnicas de otimização de desempenho</li>
-			</ul>
-          
+			</ul>         
             <div class="center">
                 <a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Demo Ao Vivo - Rede Neural Transformers</a>	
                 <a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Demo Ao Vivo - Rede Neural Cibernética</a>			
                 <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Documentação Interativa</a>		
-            </div>
-            
+            </div>           
             <blockquote>
                 <p>"Visualizar redes neurais não é apenas sobre entender IA—é sobre ver a inteligência nascendo."</p>
             </blockquote>
@@ -2512,13 +2465,11 @@
                 <li>🔒 <strong>Segurança Baseada em Entropia</strong>: Usa entropia real para evitar padrões previsíveis.</li>
                 <li>🧪 <strong>Algoritmos Personalizados</strong>: Projetados para força criptográfica e singularidade.</li>
                 <li>🧠 <strong>Design Orientado à Segurança</strong>: Ideal para desenvolvedores, pesquisadores e profissionais de cybersecurity.</li>
-            </ul>
-            
+            </ul>           
             <div class="center">
                 <a href="https://github.com/gerivanc/entropy-password-generator" class="btn">📦 Repositório</a>
                 <a href="https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/password_generator.py" class="btn btn-secondary">💾 Ver código</a>
-            </div>
-            
+            </div>            
             <blockquote>
                 <p>"Segurança não é apenas um recurso — é a fundação."</p>
             </blockquote>
@@ -2526,7 +2477,6 @@
 
         <!-- Skills & Technologies Section -->
         <h2 id="skills">💻 Habilidades & Tecnologias</h2>
-        
         <div class="skills-container">
             <div class="skill-item">
                 <div class="skill-name">
@@ -2536,8 +2486,7 @@
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="25"></div>
                 </div>
-            </div>
-            
+            </div>            
             <div class="skill-item">
                 <div class="skill-name">
                     <span>Segurança Web</span>
@@ -2546,8 +2495,7 @@
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="20"></div>
                 </div>
-            </div>
-            
+            </div>            
             <div class="skill-item">
                 <div class="skill-name">
                     <span>Machine Learning</span>
@@ -2556,8 +2504,7 @@
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="20"></div>
                 </div>
-            </div>
-            
+            </div>            
             <div class="skill-item">
                 <div class="skill-name">
                     <span>Administração Linux</span>
@@ -2566,8 +2513,7 @@
                 <div class="skill-bar">
                     <div class="skill-progress" data-width="20"></div>
                 </div>
-            </div>
-            
+            </div>            
             <div class="skill-item">
                 <div class="skill-name">
                     <span>Programação C++</span>
@@ -2581,16 +2527,13 @@
 
 		<!-- Cyber Neural Interface Section -->
 		<h2 id="cyber-interface">👾 Axon Connect</h2>
-
 		<div class="cyber-interface-section">
-			<h2>CONEXÃO DE ONDAS CEREBRAIS</h2>
-			
+			<h3>CONEXÃO DE ONDAS CEREBRAIS</h3>			
 			<div class="cyber-container">
 				<!-- Main Display -->
 				<div class="cyber-display">
 					<!-- Binary Rain -->
-					<div class="binary-rain" id="binaryRain"></div>
-					
+					<div class="binary-rain" id="binaryRain"></div>					
 					<!-- Connection Nodes -->
 					<div class="connection-nodes">
 						<div class="node" id="node1"></div>
@@ -2599,11 +2542,9 @@
 						<div class="node" id="node4"></div>
 						<div class="node" id="node5"></div>
 						<div class="node" id="node6"></div>
-					</div>
-					
+					</div>					
 					<!-- Data Streams -->
-					<div class="data-streams" id="dataStreams"></div>
-					
+					<div class="data-streams" id="dataStreams"></div>					
 					<!-- Hologram -->
 					<div class="hologram-container">
 						<div class="hologram-circle">
@@ -2613,8 +2554,7 @@
 							<div class="hologram-ring ring-3"></div>
 						</div>
 						<div class="hologram-text" id="hologramText">INICIALIZANDO A CONEXÃO NEURAL</div>
-					</div>
-					
+					</div>					
 					<!-- Scrambled Words -->
 					<div class="scrambled-words">
 						<div class="word-container">
@@ -2634,14 +2574,12 @@
 							<div class="status-indicator" id="statusData"></div>
 							<div class="status-indicator" id="statusLink"></div>
 						</div>
-					</div>
-					
+					</div>					
 					<div class="panel-controls">
 						<button class="cyber-btn" id="btnActivate">ATIVAR INTERFACE</button>
 						<button class="cyber-btn" id="btnScramble">DADOS EMBARALHADOS</button>
 						<button class="cyber-btn" id="btnReset">RESTAURAR SISTEMA</button>
-					</div>
-					
+					</div>					
 					<div class="panel-metrics">
 						<div class="metric">
 							<div class="metric-label">ATIVIDADE NEURAL</div>
@@ -2649,16 +2587,14 @@
 								<div class="metric-fill" id="metricActivity" style="width: 0%"></div>
 							</div>
 							<div class="metric-value" id="metricActivityValue">0%</div>
-						</div>
-						
+						</div>						
 						<div class="metric">
 							<div class="metric-label">FLUXO DE DADOS</div>
 							<div class="metric-bar">
 								<div class="metric-fill" id="metricDataFlow" style="width: 0%"></div>
 							</div>
 							<div class="metric-value" id="metricDataFlowValue">0%</div>
-						</div>
-						
+						</div>						
 						<div class="metric">
 							<div class="metric-label">ESTABILIDADE DA CONEXÃO</div>
 							<div class="metric-bar">
@@ -2671,8 +2607,8 @@
 			</div>
 		</div>
 
-        <!-- Project Timeline -->
-        <h2 id="project-timeline">📅 Linha do Tempo do Projeto</h2>
+        <!-- Project Timeline  -->
+        <h2 id="project-timeline">📅 Linha do Tempo dos Projetos</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date">Abril 2025 - Presente</div>
@@ -2682,14 +2618,14 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Julho 2025 - Presente</div>
-                <h4>GitHub Profile & Digital Universe</h4>
-                <p>Portfólio pessoal apresentando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
+                <h4>Perfil GitHub & Universo Digital</h4>
+                <p>Portfólio pessoal mostrando projetos de segurança, contribuições de código aberto e jornada do desenvolvedor.</p>
                 <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visitar Perfil</a>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Julho 2025 - Presente</div>
                 <h4>DNAPass Password Generator</h4>
-                <p>Gerador de senhas inovador baseado na codificação de sequências de DNA e princípios de criptografia biológica.</p>
+                <p>Gerador de senhas inovador baseado em codificação de sequência de DNA e princípios de criptografia biológica.</p>
                 <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
@@ -2700,34 +2636,20 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Outubro 2025 - Presente</div>
-                <h4>Transformers Neural Network & Cyber Neural Network</h4>
-                <p>Ferramenta de visualização de IA interativa que torna o aprendizado de máquina acessível e compreensível.</p>
+                <h4>Rede Neural Transformers e Rede Neural Cibernética</h4>
+                <p>Ferramenta de visualização de IA interativa que torna o machine learning acessível e compreensível.</p>
                 <a href="https://github.com/gerivanc/transformers" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">Novembro 2025 - Presente</div>
-                <h4>XPHRASE GENERATION</h4>
+                <h4>XPHRASE - Gerador de Frases </h4>
                 <p>Gerador de frases expressivas — forte, moderno e minimalista.</p>
                 <a href="https://github.com/gerivanc/xphrase" class="btn" style="margin: 10px 0; display: inline-block;">Ver Repositório</a>
             </div>			
         </div>
-
-		<!-- Upcoming project alert -->
-		<div class="alert">
-			<h3>🚨🚧 Alerta de Projeto Concluído 🚧🚨</h3>
-			<p>Projeto XPhrase: Inovação Concluída e Disponível! 🐍 XPhrase está pronto para uso! Uma ferramenta Python poderosa que gera palavras de forma inteligente, segura e versátil!</p>
-			<ul>
-			<li>🎛️ <strong>Modo Aleatório</strong>: baseado em padrões ou com controle de entropia — você escolhe como criar.</li>
-			<li>🔐 <strong>Projetado para ser seguro</strong>: criativo e altamente personalizável.</li>
-			</ul>
-			<div class="center">
-				<a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Documentação Interativa</a>	
-			</div>
-		</div>
-
+		
         <!-- Terminal with updated title -->
-        <h2 id="terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</h2>
-        
+        <h2 id="terminal-session">📟 Sessão Terminal [gerivan@universo-digital:~]</h2>        
         <!-- Interactive Terminal -->
         <div class="terminal">
             <div class="terminal-header">
@@ -2739,21 +2661,18 @@
                 </div>
             </div>
             <div class="terminal-content">
-                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~]</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">total 26648</span></div>
                 <div>-rw------- 1 user user | 3434 May 27 00:42 | 'eval "$(ssh-agent -s)"'</div>
                 <div>drwxr-xr-x 1 user user | 2534 Oct 22  2023 | .encryptpad</div>
-                <div>lrwxrwxrwx 1 user user | 5 Oct 22  2023 | .face.icon -> .face</div>
-                <div>drwxr-xr-x 1 user user | 0 Jul 17 15:03 | build</div>
-                <div>-rw------- 1 user user | 3389 May 27 00:38 | celular</div>
                 <div>drwxr-xr-x 1 user user | 288 Oct  5 01:41 | dnapass-password-generator</div>
                 <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
                 <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
                 <br>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~]</span></div>				
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~/entropy-password-generator]</span></div>				
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>		
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>				
 				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">total 136</span></div>
 				<div>-rw-r--r-- 1 user user | 434 Oct  5 01:32 | .gitignore</div>
@@ -2767,7 +2686,7 @@
 				<div>-rw-r--r-- 1 user user | 4152 Oct  5 01:32 | SECURITY.md</div>
 				<div>drwxr-xr-x 1 user user | 86 Oct  5 01:32 | entropy_password_generator</div>
 				<div>-rw-r--r-- 1 user user | 1398 Oct  5 01:32 | pyproject.toml</div>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿construindo)-[~/entropy-password-generator]</span></div>
+				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>
 				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ </span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
             </div>
@@ -2817,7 +2736,6 @@
 				 loading="lazy"
 				 class="github-stats-img">
 		</div>
-
 		<div class="center">
 			<div class="streak-container">
 				<img alt="Gerivan's GitHub streak stats" 
@@ -2834,7 +2752,6 @@
         <div class="center">
             <img width="90%" alt="Detalhes do Perfil" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gerivanc&theme=github_dark"/>
         </div>
-
         <div class="stats-grid">
             <div>
                 <img alt="Estatísticas" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=gerivanc&theme=github_dark"/>
@@ -2845,26 +2762,23 @@
         </div>
 
         <!-- Contact information section - Improved formatting -->
-        <h2 id="contact">📬 Informações de Contato</h2>
-        
+        <h2 id="contact">📬 Informações de Contato</h2>        
         <div class="contact-info">
             <h3>Contato:</h3>
             <ul>
                 <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/gerivanc">github.com/gerivanc</a></li>
                 <li>📫 <strong>Email:</strong> ask@gerivan.me</li>
                 <li>🌍 <strong>Localização:</strong> Brasil</li>
-            </ul>
-            
+            </ul>            
             <h3>Foco Profissional:</h3>
             <ul>
-                <li>🧠 <strong>Aberto a colaborações e projetos de pesquisa</strong></li>
-                <li>🔒 <strong>Criação e desenvolvimento focados em segurança.</strong></li>
+                <li>🧠 <strong>Aberto para colaborações e projetos de pesquisa</strong></li>
+                <li>🔒 <strong>Criação e desenvolvimento focado em segurança</strong></li>
                 <li>🌐 <strong>Ativo em contribuições para a comunidade de código aberto</strong></li>
-            </ul>
-            
+            </ul>            
             <div style="margin-top: 20px; text-align: center;">
                 <a href="mailto:ask@gerivan.me" class="btn">Enviar Email</a>
-                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil do GitHub</a>
+                <a href="https://github.com/gerivanc" class="btn btn-secondary">Perfil GitHub</a>
                 <a href="https://github.com/gerivanc?tab=repositories" class="btn btn-secondary">Repositórios</a>
             </div>
         </div>
@@ -2934,15 +2848,16 @@
                 <span>Versão em Inglês</span>
             </a>
         </div>
+
         <!-- Final quote with floating box design -->
         <div style="
-            background: rgba(255, 213, 79, 0.1);
-            border: 1px solid var(--accent-color);
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--neon-green);
             border-radius: 8px;
             padding: 20px;
             margin: 25px 0;
             text-align: center;
-            box-shadow: 0 0 20px rgba(255, 213, 79, 0.3);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
             backdrop-filter: blur(10px);
         ">
             <p style="
@@ -2951,7 +2866,7 @@
                 font-family: 'Orbitron', sans-serif;
                 font-size: 1.2em;
                 font-weight: 500;
-                text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
             ">"Não é sobre quantas linhas você escreve. É sobre o impacto que elas causam quando são executadas."</p>
         </div>
 
@@ -3013,29 +2928,30 @@
                 <span style="margin-right: 8px;">📄</span> Termos de Uso
             </a>
         </div>
+
         <!-- Copyright footer styles - Portuguese language -->
         <style>
         .center p {
             margin: 2px 0;
             line-height: 1.2;
-            color: var(--primary-color);
+            color: --neon-green; /* Dodger Blue color for copyright text */
             transition: color 0.3s ease; /* Smooth transition effect */
         }
         .center p:hover {
-            color: var(--secondary-color);
+            color: #1E90FF; /* azul vibrante - Portuguese version */
         }
         </style>
 
-        <!-- Copyright footer styles - Portuguese language -->
+        <!-- Copyright footer - Portuguese language -->
         <div class="center" id="finishing-section">          
-            <p><strong>Copyright © 2025 Gerivan Costa dos Santos</strong></p>
-            <p><strong>🎄 Feliz Natal e Próspero Ano Novo! 🎅</strong></p>
+            <p><strong>Copyright © 2025-2026 Gerivan Costa dos Santos</strong></p>
+            <p><strong>Todos os direitos reservados</strong></p>
         </div>
     </div>
 
-		<!-- Mobile Floating Button -->
-		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
-			<span class="fab-icon">🎄</span>
+		<!-- Botão Flutuante Mobile -->
+		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Ação principal">
+			<span class="fab-icon">⚡</span>
 		</button>
 
 		<!-- Floating Actions Menu  + New Button finishing-->
@@ -3059,124 +2975,100 @@
 		</div>
 
     <script>
-        // Christmas Snow Animation
-        function createSnowflakes() {
-            const snowflakesContainer = document.getElementById('snowflakes');
-            const snowflakeCount = 50;
-            
-            for (let i = 0; i < snowflakeCount; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.innerHTML = '❄';
-                
-                const size = Math.random() * 1.5 + 0.5;
-                const posX = Math.random() * 100;
-                const duration = Math.random() * 10 + 10;
-                const delay = Math.random() * 5;
-                
-                snowflake.style.fontSize = size + 'em';
-                snowflake.style.left = posX + 'vw';
-                snowflake.style.animationDuration = duration + 's';
-                snowflake.style.animationDelay = delay + 's';
-                
-                snowflakesContainer.appendChild(snowflake);
-            }
-        }
+		// Theme Switching
+		const themeButtons = document.querySelectorAll('.theme-btn');
+		const body = document.body;
+		const matrixCanvas = document.getElementById('matrix-canvas');
 
-        // Theme Switching
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const body = document.body;
-        const matrixCanvas = document.getElementById('matrix-canvas');
+		themeButtons.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const theme = btn.dataset.theme;
+				
+				// Update active button
+				themeButtons.forEach(b => b.classList.remove('active'));
+				btn.classList.add('active');
+				
+				// Update body theme
+				body.setAttribute('data-theme', theme);
+				
+				// Handle matrix theme
+				if (theme === 'matrix') {
+					body.classList.add('matrix-theme');
+					initMatrixRain();
+				} else {
+					body.classList.remove('matrix-theme');
+					stopMatrixRain();
+				}
+			});
+		});
 
-        themeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.dataset.theme;
-                
-                // Update active button
-                themeButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Update body theme
-                body.setAttribute('data-theme', theme);
-                
-                // Handle matrix theme
-                if (theme === 'matrix') {
-                    body.classList.add('matrix-theme');
-                    initMatrixRain();
-                } else {
-                    body.classList.remove('matrix-theme');
-                    stopMatrixRain();
-                }
-            });
-        });
+		// Matrix Rain Effect
+		let matrixRainInterval;
+		function initMatrixRain() {
+			const canvas = matrixCanvas;
+			const ctx = canvas.getContext('2d');
+			
+			// Set canvas size
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			
+			// Matrix characters
+			const chars = "01010101010101010101010101010101";
+			const charArray = chars.split("");
+			const font_size = 14;
+			const columns = canvas.width / font_size;
+			const drops = [];
+			
+			// Initialize drops
+			for (let x = 0; x < columns; x++) {
+				drops[x] = Math.floor(Math.random() * canvas.height / font_size);
+			}
+			
+			function draw() {
+				// Semi-transparent black background for trail effect
+				ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+				
+				ctx.fillStyle = "#00ff41";
+				ctx.font = font_size + "px monospace";
+				
+				for (let i = 0; i < drops.length; i++) {
+					const text = charArray[Math.floor(Math.random() * charArray.length)];
+					ctx.fillText(text, i * font_size, drops[i] * font_size);
+					
+					if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+						drops[i] = 0;
+					}
+					drops[i]++;
+				}
+			}
+			
+			// Store interval ID to stop later
+			matrixRainInterval = setInterval(draw, 35);
+		}
 
-        // Matrix Rain Effect
-        let matrixRainInterval;
-        function initMatrixRain() {
-            const canvas = matrixCanvas;
-            const ctx = canvas.getContext('2d');
-            
-            // Set canvas size
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            // Matrix characters
-            const chars = "🎄🎅❄️🌟🔴🟢🎁";
-            const charArray = chars.split("");
-            const font_size = 14;
-            const columns = canvas.width / font_size;
-            const drops = [];
-            
-            // Initialize drops
-            for (let x = 0; x < columns; x++) {
-                drops[x] = Math.floor(Math.random() * canvas.height / font_size);
-            }
-            
-            function draw() {
-                // Semi-transparent black background for trail effect
-                ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                ctx.fillStyle = "#d32f2f";
-                ctx.font = font_size + "px monospace";
-                
-                for (let i = 0; i < drops.length; i++) {
-                    const text = charArray[Math.floor(Math.random() * charArray.length)];
-                    ctx.fillText(text, i * font_size, drops[i] * font_size);
-                    
-                    if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                    drops[i]++;
-                }
-            }
-            
-            // Store interval ID to stop later
-            matrixRainInterval = setInterval(draw, 35);
-        }
+		function stopMatrixRain() {
+			if (matrixRainInterval) {
+				clearInterval(matrixRainInterval);
+				const ctx = matrixCanvas.getContext('2d');
+				ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+			}
+		}
 
-        function stopMatrixRain() {
-            if (matrixRainInterval) {
-                clearInterval(matrixRainInterval);
-                const ctx = matrixCanvas.getContext('2d');
-                ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-            }
-        }
-
-        // Animated Stats Counter
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
+		// Animated Stats Counter
+		function animateValue(element, start, end, duration) {
+			let startTimestamp = null;
+			const step = (timestamp) => {
+				if (!startTimestamp) startTimestamp = timestamp;
+				const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+				const value = Math.floor(progress * (end - start) + start);
+				element.textContent = value.toLocaleString();
+				if (progress < 1) {
+					window.requestAnimationFrame(step);
+				}
+			};
+			window.requestAnimationFrame(step);
+		}
 
 		// System Status Animation
 		const statusObserver = new IntersectionObserver((entries) => {
@@ -3250,102 +3142,81 @@
 			}, 5000);
 		}
 
-        // Skills Animation
-        const skillProgresses = document.querySelectorAll('.skill-progress');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    skillProgresses.forEach(progress => {
-                        const width = progress.getAttribute('data-width');
-                        progress.style.width = width + '%';
-                    });
-                    skillObserver.disconnect();
-                }
-            });
-        });
+		// Skills Animation
+		const skillProgresses = document.querySelectorAll('.skill-progress');
+		const skillObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					skillProgresses.forEach(progress => {
+						const width = progress.getAttribute('data-width');
+						progress.style.width = width + '%';
+					});
+					skillObserver.disconnect();
+				}
+			});
+		});
 
-        const skillsContainer = document.querySelector('.skills-container');
-        if (skillsContainer) {
-            skillObserver.observe(skillsContainer);
-        }
+		const skillsContainer = document.querySelector('.skills-container');
+		if (skillsContainer) {
+			skillObserver.observe(skillsContainer);
+		}
 
-        // Terminal Typing Animation - UPDATED: Added installation and usage commands
-        const commands = [
-            "📦 Stable Version Installation (PyPI)",
-            "python3 -m venv venv-stablepypi",
-            "source venv-stablepypi/bin/activate",
-            "python -m ensurepip --upgrade",
-            "pip install --upgrade pip",
-            "pip install entropy-password-generator",
-            "pip list",
-            "",
-            "🧪 Development Version Installation (Test PyPI)",
-            "python3 -m venv venv-testpypi",
-            "source venv-testpypi/bin/activate",
-            "python -m ensurepip --upgrade",
-            "pip install --upgrade pip",
-            "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
-            "pip list",
-            "",
-            "🧩 Block I (All with ambiguous characters, length 24)",
-            "python3 entropy_password_generator/password_generator.py --mode 1:",
-            "Generated password: &\\]*y>fhqs*e<.+fl=~ijy-i",
-            "Entropy: 138.75 bits;",
-            "",
-            "python3 entropy_password_generator/password_generator.py --mode 2:",
-            "Generated password: JRYAHHASE[|&`M`B)!!EQ$RD",
-            "Entropy: 138.75 bits;",
-            "",
-            "🌀 Block II (Mixed configurations)",
-            "python3 entropy_password_generator/password_generator.py --mode 11:",
-            "Generated password: ?*WjM\\MR-.JkQr5",
-            "Entropy: 95.10 bits;",
-            "",
-            "python3 entropy_password_generator/password_generator.py --mode 15:",
-            "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
-            "Entropy: 152.16 bits.",
-            "",
-            "🎨 Block III (Using Custom Configuration)",
-            "python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous:",
-            "Generated password: P#Zm+e;7Lv{iI9W",
-            "Entropy: 97.62 bits.",
-            "",
-            "python3 entropy_password_generator/password_generator.py --length 72 --with-ambiguous:",
-            "Generated password: J:w=!nAWqNCvQ(2?_374)gbt2wPsH%N*qh_%9,*23f\Skq%#0s`&,ob*>KUuDLBbvPF*7NqK",
-            "Entropy: 468.56 bits."
-        ];
+		// Terminal Typing Animation
+		const commands = [
+			"python3 -m venv venv-stablepypi",
+			"source venv-stablepypi/bin/activate",
+			"python -m ensurepip --upgrade",
+			"pip install --upgrade pip",
+			"pip install entropy-password-generator",
+			"pip list",
+			"",
+			"python3 -m venv venv-testpypi",
+			"source venv-testpypi/bin/activate",
+			"python -m ensurepip --upgrade",
+			"pip install --upgrade pip",
+			"pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
+			"pip list",
+			"",
+			"python3 entropy_password_generator/password_generator.py --mode 11:",
+			"Generated password: ?*WjM\\MR-.JkQr5",
+			"Entropy: 95.10 bits;",
+			"",
+			"python3 entropy_password_generator/password_generator.py --mode 15:",
+			"Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
+			"Entropy: 152.16 bits.",
+			"",
+			"python3 entropy_password_generator/password_generator.py --length 72 --with-ambiguous:",
+			"Generated password: Ttej[@@!9D,fbu|NGo?1lcmU\\}R!*ep[!N[3IT#G*kX=)5h%4<GbQk}Q*!3]~u79:EJ#`1tW",
+			"Entropy: 468.56 bits."
+		];
 
-        let currentCommand = 0;
-        let currentChar = 0;
-        const typingElement = document.getElementById('typing-command');
+		let currentCommand = 0;
+		let currentChar = 0;
+		const typingElement = document.getElementById('typing-command');
 
-        function typeCommand() {
-            if (currentChar < commands[currentCommand].length) {
-                typingElement.textContent += commands[currentCommand].charAt(currentChar);
-                currentChar++;
-                setTimeout(typeCommand, 100);
-            } else {
-                setTimeout(eraseCommand, 1000);
-            }
-        }
+		function typeCommand() {
+			if (currentChar < commands[currentCommand].length) {
+				typingElement.textContent += commands[currentCommand].charAt(currentChar);
+				currentChar++;
+				setTimeout(typeCommand, 100);
+			} else {
+				setTimeout(eraseCommand, 1000);
+			}
+		}
 
-        function eraseCommand() {
-            if (currentChar > 0) {
-                typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
-                currentChar--;
-                setTimeout(eraseCommand, 50);
-            } else {
-                currentCommand = (currentCommand + 1) % commands.length;
-                setTimeout(typeCommand, 500);
-            }
-        }
-
-        // Start typing animation
-        setTimeout(typeCommand, 2000);
+		function eraseCommand() {
+			if (currentChar > 0) {
+				typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
+				currentChar--;
+				setTimeout(eraseCommand, 50);
+			} else {
+				currentCommand = (currentCommand + 1) % commands.length;
+				setTimeout(typeCommand, 500);
+			}
+		}
 
 		// Image Loading Optimization
 		function optimizeImageLoading() {
-			// Configurar Intersection Observer para lazy loading
 			const imageObserver = new IntersectionObserver((entries, observer) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
@@ -3361,11 +3232,10 @@
 					}
 				});
 			}, {
-				rootMargin: '50px', // Start loading 50px before the image enters the viewport.
+				rootMargin: '50px',
 				threshold: 0.1
 			});
 
-			// Apply lazy loading to all external images.
 			const externalImages = document.querySelectorAll(`
 				.badges img,
 				.stats-grid img, 
@@ -3376,15 +3246,12 @@
 			`);
 
 			externalImages.forEach(img => {
-				// Mark images for lazy loading.
 				if (!img.loading) {
 					img.loading = 'lazy';
 				}
 				
-				// Add smooth transition
 				img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 				
-				// View only images that are not in the initial viewport.
 				const rect = img.getBoundingClientRect();
 				if (rect.top > window.innerHeight) {
 					imageObserver.observe(img);
@@ -3396,7 +3263,6 @@
 
 		// Priority Loading for Elements Above the Fold
 		function loadCriticalContent() {
-			// Make sure badges load first (they're small and important)
 			const badgeImages = document.querySelectorAll('.badges img');
 			badgeImages.forEach(img => {
 				if (img.dataset.src) {
@@ -3405,33 +3271,13 @@
 			});
 		}
 
-		// Initialize optimizations when the DOM is ready
-		document.addEventListener('DOMContentLoaded', function() {
-			// Upload critical content immediately
-			loadCriticalContent();
-			
-			// Initialize lazy loading for non-critical content
-			setTimeout(optimizeImageLoading, 100);
-			
-			// Optimize even further after the initial load
-			window.addEventListener('load', optimizeImageLoading);
-		});
-
-		// Optimize for slow connections
-		if (navigator.connection) {
-			const connection = navigator.connection;
-			
-			if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-				// Reduce image quality or quantity for slow connections
-				document.documentElement.classList.add('slow-connection');
-			}
-		}
-
-		// Neural Network Visualization - MOBILE FIX
+		// Neural Network Visualization
 		const neuralNetwork = document.getElementById('neuralNetwork');
 		let neuralInterval;
 
 		function createNeuralNetwork() {
+			if (!neuralNetwork) return;
+			
 			neuralNetwork.innerHTML = '';
 			const layers = [4, 6, 8, 6, 4];
 			const nodePositions = [];
@@ -3441,7 +3287,6 @@
 					const node = document.createElement('div');
 					node.className = 'neural-node';
 					
-					// Use clientWidth/clientHeight for more reliable dimensions
 					const containerWidth = neuralNetwork.clientWidth || neuralNetwork.offsetWidth;
 					const containerHeight = neuralNetwork.clientHeight || neuralNetwork.offsetHeight;
 					
@@ -3494,39 +3339,15 @@
 			});
 		}
 
-		// FIXED: Improved mobile event handling
 		function initNeuralNetwork() {
 			const startBtn = document.getElementById('startTraining');
 			const resetBtn = document.getElementById('resetNetwork');
 			
 			if (startBtn && resetBtn) {
-				// Clear any existing event listeners first
-				startBtn.replaceWith(startBtn.cloneNode(true));
-				resetBtn.replaceWith(resetBtn.cloneNode(true));
+				startBtn.addEventListener('click', startTraining);
+				resetBtn.addEventListener('click', resetTraining);
 				
-				// Get new references after cloning
-				const newStartBtn = document.getElementById('startTraining');
-				const newResetBtn = document.getElementById('resetNetwork');
-				
-				// Add both click and touch events with proper handling
-				const handleStart = (e) => {
-					if (e.cancelable) e.preventDefault();
-					startTraining();
-				};
-				
-				const handleReset = (e) => {
-					if (e.cancelable) e.preventDefault();
-					resetTraining();
-				};
-				
-				// Add event listeners
-				newStartBtn.addEventListener('click', handleStart);
-				newStartBtn.addEventListener('touchstart', handleStart, { passive: false });
-				
-				newResetBtn.addEventListener('click', handleReset);
-				newResetBtn.addEventListener('touchstart', handleReset, { passive: false });
-				
-				console.log('🧠 Neural Network buttons initialized with mobile support');
+				console.log('🧠 Neural Network buttons initialized');
 			}
 		}
 
@@ -3546,161 +3367,88 @@
 			console.log('🔄 Network reset');
 		}
 
-		// Single DOMContentLoaded listener
-	document.addEventListener('DOMContentLoaded', function() {
-		console.log('🚀 Initializing all components...');
-
-		// 🔥 ADDITION: Loading optimization
-			loadCriticalContent();
-			setTimeout(optimizeImageLoading, 500);
-		
-		// Initialize components in the correct order
-		createSnowflakes();
-		createParticles();
-		secureExternalLinks();
-		
-		// Neural Network
-		if (document.getElementById('neuralNetwork')) {
-			createNeuralNetwork();
+		// Particle Animation
+		function createParticles() {
+			const particlesContainer = document.getElementById('particles');
+			if (!particlesContainer) return;
 			
-			// Initialize buttons with retry mechanism
-			let initAttempts = 0;
-			const maxInitAttempts = 3;
+			const particleCount = 50;
 			
-			const tryInitButtons = () => {
-				if (document.getElementById('startTraining') && document.getElementById('resetNetwork')) {
-					initNeuralNetwork();
-				} else if (initAttempts < maxInitAttempts) {
-					initAttempts++;
-					setTimeout(tryInitButtons, 500);
-				} else {
-					console.warn('⚠️ Neural network buttons not found after maximum attempts');
-				}
-			};
-			
-			setTimeout(tryInitButtons, 100);
+			for (let i = 0; i < particleCount; i++) {
+				const particle = document.createElement('div');
+				particle.className = 'particle';
+				
+				const size = Math.random() * 3 + 1;
+				const posX = Math.random() * 100;
+				const posY = Math.random() * 100;
+				const duration = Math.random() * 20 + 10;
+				
+				particle.style.width = size + 'px';
+				particle.style.height = size + 'px';
+				particle.style.left = posX + 'vw';
+				particle.style.top = posY + 'vh';
+				particle.style.animation = `float ${duration}s linear infinite`;
+				
+				particlesContainer.appendChild(particle);
+			}
 		}
-		
-		// ✅ INITIALIZE FLOATING BUTTON
-		initFloatingButton();
-		
-		// Terminal animation
-		setTimeout(typeCommand, 2000);
-		
-		console.log('✅ All components initialized successfully');
-	});
 
-		// Enhanced responsive handling
-		window.addEventListener('resize', () => {
-			if (document.getElementById('neuralNetwork')) {
-				// Debounce resize events for performance
-				clearTimeout(window.neuralResizeTimeout);
-				window.neuralResizeTimeout = setTimeout(() => {
-					createNeuralNetwork();
-				}, 250);
+		// Add floating animation for particles
+		const style = document.createElement('style');
+		style.textContent = `
+			@keyframes float {
+				0% { transform: translateY(0) translateX(0); opacity: 0; }
+				10% { opacity: 1; }
+				90% { opacity: 1; }
+				100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
 			}
-		});
+		`;
+		document.head.appendChild(style);
 
-        // Particle Animation
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const size = Math.random() * 3 + 1;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const duration = Math.random() * 20 + 10;
-                
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = posX + 'vw';
-                particle.style.top = posY + 'vh';
-                particle.style.animation = `float ${duration}s linear infinite`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
+		// PWA Installation
+		let deferredPrompt;
+		const installPrompt = document.getElementById('installPrompt');
+		const installBtn = document.getElementById('installBtn');
+		const dismissBtn = document.getElementById('dismissBtn');
 
-        // Add floating animation for particles
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0% { transform: translateY(0) translateX(0); opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
+		if (installPrompt && installBtn && dismissBtn) {
+			window.addEventListener('beforeinstallprompt', (e) => {
+				e.preventDefault();
+				deferredPrompt = e;
+				setTimeout(() => {
+					installPrompt.classList.add('show');
+				}, 3000);
+			});
 
-        // PWA Installation
-        let deferredPrompt;
-        const installPrompt = document.getElementById('installPrompt');
-        const installBtn = document.getElementById('installBtn');
-        const dismissBtn = document.getElementById('dismissBtn');
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            setTimeout(() => {
-                installPrompt.classList.add('show');
-            }, 3000);
-        });
-
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    installPrompt.classList.remove('show');
-                }
-                deferredPrompt = null;
-            }
-        });
-
-        dismissBtn.addEventListener('click', () => {
-            installPrompt.classList.remove('show');
-        });
-
-		// === 🔒 SANITIZATION OF INPUT FOR FORMS ===
-			function sanitizeInput(input) {
-				if (typeof input !== 'string') return '';
-				const div = document.createElement('div');
-				div.textContent = input;
-				return div.innerHTML;
-			}
-
-			function validateEmail(email) {
-				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-				return emailRegex.test(email);
-			}
-
-			function validateURL(url) {
-				try {
-					new URL(url);
-					return true;
-				} catch {
-					return false;
-				}
-			}
-
-		// === 🔗 PROTECTION OF EXTERNAL LINKS ===
-			function secureExternalLinks() {
-				document.querySelectorAll('a[href^="http"]').forEach(link => {
-					if (link.hostname !== window.location.hostname && 
-						!link.href.includes('gerivan.me')) {
-						link.setAttribute('rel', 'noopener noreferrer');
-						link.setAttribute('target', '_blank');
+			installBtn.addEventListener('click', async () => {
+				if (deferredPrompt) {
+					deferredPrompt.prompt();
+					const { outcome } = await deferredPrompt.userChoice;
+					if (outcome === 'accepted') {
+						installPrompt.classList.remove('show');
 					}
-				});
-				console.log('🔒 External links protected with noopener/noreferrer');
-			}
+					deferredPrompt = null;
+				}
+			});
 
-		// === MOBILE FLOATING BUTTON ===
+			dismissBtn.addEventListener('click', () => {
+				installPrompt.classList.remove('show');
+			});
+		}
+
+		// External Links Protection
+		function secureExternalLinks() {
+			document.querySelectorAll('a[href^="http"]').forEach(link => {
+				if (link.hostname !== window.location.hostname && 
+					!link.href.includes('gerivan.me')) {
+					link.setAttribute('rel', 'noopener noreferrer');
+					link.setAttribute('target', '_blank');
+				}
+			});
+			console.log('🔒 External links protected with noopener/noreferrer');
+		}
+
+		// Mobile Floating Button - CORRECTED VERSION
 		class FloatingButtonMobile {
 			constructor() {
 				this.floatingBtn = document.getElementById('floatingBtnMobile');
@@ -3722,32 +3470,16 @@
 					return;
 				}
 				
-				if (!this.fabMenu) {
-					console.warn('⚠️ Floating menu element not found, continuing without menu');
-				}
-				
 				// Main event with touch and click support
-				this.floatingBtn.addEventListener('click', this.toggleMenu.bind(this));
-				this.floatingBtn.addEventListener('touchend', (e) => {
-					e.preventDefault();
-					this.toggleMenu(e);
-				});
+				this.floatingBtn.addEventListener('click', (e) => this.toggleMenu(e));
 				
 				// Close menu when tapping away
-				document.addEventListener('click', this.handleOutsideClick.bind(this));
-				document.addEventListener('touchstart', this.handleOutsideClick.bind(this));
+				document.addEventListener('click', (e) => this.handleOutsideClick(e));
 				
-				// Prevent closing when touching menu buttons
+				// Handle menu actions
 				if (this.fabMenu) {
-					this.fabMenu.addEventListener('click', (e) => {
-						e.stopPropagation();
-						this.handleAction(e);
-					});
+					this.fabMenu.addEventListener('click', (e) => this.handleAction(e));
 				}
-				
-				// Visual feedback during touch
-				this.floatingBtn.addEventListener('touchstart', this.handleTouchStart.bind(this));
-				this.floatingBtn.addEventListener('touchend', this.handleTouchEnd.bind(this));
 				
 				console.log('✅ Floating button initialized successfully');
 			}
@@ -3757,7 +3489,6 @@
 				
 				if (e) {
 					e.stopPropagation();
-					e.preventDefault();
 				}
 				
 				this.isMenuOpen = !this.isMenuOpen;
@@ -3786,16 +3517,6 @@
 						this.fabMenu.classList.remove('open');
 					}
 					this.floatingBtn.style.transform = 'rotate(0)';
-				}
-			}
-			
-			handleTouchStart() {
-				this.floatingBtn.style.transform = 'scale(0.95)';
-			}
-			
-			handleTouchEnd() {
-				if (!this.isMenuOpen) {
-					this.floatingBtn.style.transform = 'scale(1)';
 				}
 			}
 			
@@ -3843,26 +3564,12 @@
 			scrollToTop() {
 				console.log('⬆️ Scrolling to top...');
 				
-				// Multiple methods for compatibility
-				try {
-					// Method 1: Smooth scroll (modern browsers)
-					window.scrollTo({
-						top: 0,
-						behavior: 'smooth'
-					});
-					
-					// Method 2: Fallback for older browsers
-					setTimeout(() => {
-						document.documentElement.scrollTop = 0;
-						document.body.scrollTop = 0;
-					}, 100);
-					
-					console.log('✅ Scroll to top executed');
-				} catch (error) {
-					console.error('❌ Scroll error:', error);
-					// Method 3: Direct scroll as last resort
-					window.scrollTo(0, 0);
-				}
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+				
+				console.log('✅ Scroll to top executed');
 			}
 			
 			scrollToFinishing() {
@@ -3870,7 +3577,6 @@
 				
 				const finishingSection = document.getElementById('finishing-section');
 				if (finishingSection) {
-					// Smooth scroll to the finishing section
 					finishingSection.scrollIntoView({
 						behavior: 'smooth',
 						block: 'end'
@@ -3920,62 +3626,101 @@
 			}
 		}
 
-		// ✅ Floating button secure boot with error handling
+		// Floating button initialization with error handling
 		function initFloatingButton() {
 			console.log('🔧 Initializing floating button...');
 			
-			if (document.getElementById('floatingBtnMobile')) {
-				try {
-					new FloatingButtonMobile();
-					console.log('✅ Floating button initialized successfully');
-				} catch (error) {
-					console.error('❌ Floating button initialization failed:', error);
+			// Wait a bit to ensure DOM is fully loaded
+			setTimeout(() => {
+				if (document.getElementById('floatingBtnMobile')) {
+					try {
+						new FloatingButtonMobile();
+						console.log('✅ Floating button initialized successfully');
+					} catch (error) {
+						console.error('❌ Floating button initialization failed:', error);
+					}
+				} else {
+					console.error('❌ Floating button element not found in DOM');
 				}
-			} else {
-				console.error('❌ Floating button element not found in DOM');
-			}
+			}, 100);
 		}
 
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', () => {
-            createSnowflakes();
-            createParticles();
-            createNeuralNetwork();
+		// Single DOMContentLoaded listener
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log('🚀 Initializing all components...');
+
+			// Initialize components
+			loadCriticalContent();
+			createParticles();
 			secureExternalLinks();
-        });
+			
+			// Neural Network
+			if (document.getElementById('neuralNetwork')) {
+				createNeuralNetwork();
+				initNeuralNetwork();
+			}
+			
+			// Initialize floating button
+			initFloatingButton();
+			
+			// Terminal animation
+			if (typingElement) {
+				setTimeout(typeCommand, 2000);
+			}
+			
+			// Image optimization
+			setTimeout(optimizeImageLoading, 500);
+			
+			console.log('✅ All components initialized successfully');
+		});
 
-        // Responsive canvas resize
-        window.addEventListener('resize', () => {
-            if (body.classList.contains('matrix-theme')) {
-                matrixCanvas.width = window.innerWidth;
-                matrixCanvas.height = window.innerHeight;
-            }
-            createNeuralNetwork();
-        });
+		// Enhanced responsive handling
+		window.addEventListener('resize', () => {
+			if (document.getElementById('neuralNetwork')) {
+				clearTimeout(window.neuralResizeTimeout);
+				window.neuralResizeTimeout = setTimeout(() => {
+					createNeuralNetwork();
+				}, 250);
+			}
+			
+			if (body.classList.contains('matrix-theme')) {
+				matrixCanvas.width = window.innerWidth;
+				matrixCanvas.height = window.innerHeight;
+			}
+		});
 
-        // Add loading animation to images
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('load', function() {
-                this.style.opacity = '1';
-                this.style.transform = 'scale(1)';
-            });
-            
-            img.style.opacity = '0';
-            img.style.transform = 'scale(0.9)';
-            img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        });
+		// Add loading animation to images
+		document.querySelectorAll('img').forEach(img => {
+			img.addEventListener('load', function() {
+				this.style.opacity = '1';
+				this.style.transform = 'scale(1)';
+			});
+			
+			img.style.opacity = '0';
+			img.style.transform = 'scale(0.9)';
+			img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+		});
 
-        // Marquee animation pause on hover
-        const marquee = document.querySelector('.marquee-content');
-        if (marquee) {
-            marquee.addEventListener('mouseenter', () => {
-                marquee.style.animationPlayState = 'paused';
-            });
-            
-            marquee.addEventListener('mouseleave', () => {
-                marquee.style.animationPlayState = 'running';
-            });
-        }
+		// Marquee animation pause on hover
+		const marquee = document.querySelector('.marquee-content');
+		if (marquee) {
+			marquee.addEventListener('mouseenter', () => {
+				marquee.style.animationPlayState = 'paused';
+			});
+			
+			marquee.addEventListener('mouseleave', () => {
+				marquee.style.animationPlayState = 'running';
+			});
+		}
+
+		// Optimize for slow connections
+		if (navigator.connection) {
+			const connection = navigator.connection;
+			
+			if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+				document.documentElement.classList.add('slow-connection');
+			}
+		}
 
 			// Cyber Interface JavaScript
 			document.addEventListener('DOMContentLoaded', function() {
@@ -4278,7 +4023,51 @@
 					metricDataFlowValue.textContent = Math.round(dataFlow) + '%';
 					metricConnectionValue.textContent = Math.round(connection) + '%';
 				}
-			});		
-    </script>		
+			});
+
+		// Reading Progress Bar
+		function initReadingProgress() {
+			const progressBar = document.getElementById('progressBar');
+			const progressPercentage = document.getElementById('progressPercentage');
+			const readingProgress = document.getElementById('readingProgress');
+			
+			if (!progressBar || !progressPercentage) return;
+			
+			function updateProgress() {
+				const windowHeight = window.innerHeight;
+				const documentHeight = document.documentElement.scrollHeight - windowHeight;
+				const scrolled = window.scrollY;
+				
+				if (documentHeight <= 0) return;
+				
+				const percentage = (scrolled / documentHeight) * 100;
+				const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
+				
+				progressBar.style.height = clampedPercentage + '%';
+				progressPercentage.textContent = Math.round(clampedPercentage) + '%';
+				
+				// The percentage indicator moves along with the bar.
+				progressPercentage.style.bottom = `calc(${100 - clampedPercentage}% - 25px)`;
+			}
+			
+			// Update progress on scroll
+			window.addEventListener('scroll', updateProgress);
+			
+			// It also updates on resize (if the height changes).
+			window.addEventListener('resize', updateProgress);
+			
+			// Initialize the progress bar when scrolling the page.
+			updateProgress();
+			
+			console.log('📊 Reading progress bar initialized');
+		}
+
+		// Initializes when the DOM is ready.
+		document.addEventListener('DOMContentLoaded', function() {
+			
+			// Initialize progress bar
+			initReadingProgress();
+		});
+    </script>
 </body>
 </html>
