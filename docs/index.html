@@ -12,15 +12,15 @@
                    img-src 'self' data: https://*.githubusercontent.com https://img.shields.io https://komarev.com https://github-readme-activity-graph.vercel.app https://nirzak-streak-stats.vercel.app https://github-readme-stats.vercel.app https://github-profile-summary-cards.vercel.app https://vercel.app https://vercel.live;
                    frame-src 'self' https://gerivan.me https://*.githubusercontent.com;">
 
-	<!-- Preloading of critical resources -->
-	<link rel="preconnect" href="https://img.shields.io">
-	<link rel="preconnect" href="https://github-readme-activity-graph.vercel.app">
-	<link rel="preconnect" href="https://nirzak-streak-stats.vercel.app">
-	<link rel="preconnect" href="https://github-readme-stats.vercel.app">
-	<link rel="preconnect" href="https://github-profile-summary-cards.vercel.app">
+    <!-- Preloading critical resources -->
+    <link rel="preconnect" href="https://img.shields.io">
+    <link rel="preconnect" href="https://github-readme-activity-graph.vercel.app">
+    <link rel="preconnect" href="https://nirzak-streak-stats.vercel.app">
+    <link rel="preconnect" href="https://github-readme-stats.vercel.app">
+    <link rel="preconnect" href="https://github-profile-summary-cards.vercel.app">
 
-	<!-- Pre-loading of the most important images -->
-	<link rel="preload" href="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true" as="image">
+    <!-- Preload most important images -->
+    <link rel="preload" href="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true" as="image">
 
     <!-- Favicon -->
     <link rel="icon" href="/g3.ico" type="image/x-icon">
@@ -39,49 +39,49 @@
     <style>
         /* CSS Variables for consistent theming */
         :root {
-		  --primary-color: #00f0ff;
-		  --secondary-color: #ffcc00;
-		  --accent-color: #ff00aa;
-		  --success-color: #39ff14;
-		  --dark-bg: #0d001a;
-		  --darker-bg: #050510;
-		  --card-bg: rgba(15, 25, 40, 0.75);
-		  --card-border: rgba(255, 204, 0, 0.35);
-		  --text-color: #e0ffff;
-		  --text-muted: #00cccc;
-          --neon-green: #00BFFF;
-          --neon-green-dark: #1E90FF;
-          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-color: #00f0ff;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff00aa;
+            --success-color: #39ff14;
+            --dark-bg: #0d001a;
+            --darker-bg: #050510;
+            --card-bg: rgba(15, 25, 40, 0.75);
+            --card-border: rgba(255, 204, 0, 0.35);
+            --text-color: #e0ffff;
+            --text-muted: #00cccc;
+            --neon-green: #00BFFF;
+            --neon-green-dark: #1E90FF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
-		--primary-color: #0066ff;
-		--secondary-color: #00d0ff;
-		--accent-color: #00bfff;
-		--dark-bg: #f8faff;
-		--card-bg: #ffffff;
-		--card-border: rgba(0, 102, 255, 0.3);
-		--text-color: #0f172a;
-		--text-muted: #475569;
-		--neon-red: #ff0000;
-		--neon-green-dark: #006400;
+            --primary-color: #0066ff;
+            --secondary-color: #00d0ff;
+            --accent-color: #00bfff;
+            --dark-bg: #f8faff;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 102, 255, 0.3);
+            --text-color: #0f172a;
+            --text-muted: #475569;
+            --neon-red: #ff0000;
+            --neon-green-dark: #006400;
         }
 
-        /* A correction has been added for subtitles: red color in the Cyber ​​theme */
+        /* Correction for subtitles: red color in Cyber theme */
         [data-theme="cyber"] h4,
         [data-theme="cyber"] .project-card h4,
         [data-theme="cyber"] .timeline-item h4 {
             color: #FF5C00 !important;
         }
 
-        /* A correction has been added for subtitles: red color in the Light theme */
+        /* Correction for subtitles: red color in Light theme */
         [data-theme="light"] h4,
         [data-theme="light"] .project-card h4,
         [data-theme="light"] .timeline-item h4 {
             color: #FF5C00 !important;
         }
 
-        /* A correction has been added for subtitles: red color in the Matrix ​​theme */
+        /* Correction for subtitles: red color in Matrix theme */
         [data-theme="matrix"] h4,
         [data-theme="matrix"] .project-card h4,
         [data-theme="matrix"] .timeline-item h4 {
@@ -105,18 +105,18 @@
         }
 
         [data-theme="matrix"] {
-		--primary-color: #00ff9f;
-		--secondary-color: #00cc77;
-		--accent-color: #00ff6e;
-		--success-color: #00ff9f;
-		--dark-bg: #000000;
-		--darker-bg: #000000;
-		--card-bg: rgba(0, 20, 10, 0.88);
-		--card-border: rgba(0, 255, 150, 0.4);
-		--text-color: #00ff9f;
-		--text-muted: #00cc77;
-		--neon-green: #00ff41;
-		--neon-green-dark: #008f39;
+            --primary-color: #00ff9f;
+            --secondary-color: #00cc77;
+            --accent-color: #00ff6e;
+            --success-color: #00ff9f;
+            --dark-bg: #000000;
+            --darker-bg: #000000;
+            --card-bg: rgba(0, 20, 10, 0.88);
+            --card-border: rgba(0, 255, 150, 0.4);
+            --text-color: #00ff9f;
+            --text-muted: #00cc77;
+            --neon-green: #00ff41;
+            --neon-green-dark: #008f39;
         }
         
         /* Reset and base styles */
@@ -161,36 +161,36 @@
             transition: var(--transition);
         }
 
-		/* Styles for lazy loading */
-		img[data-src] {
-			opacity: 0;
-			transform: scale(0.95);
-			transition: opacity 0.5s ease, transform 0.5s ease;
-		}
+        /* Styles for lazy loading */
+        img[data-src] {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
 
-		img.loaded {
-			opacity: 1;
-			transform: scale(1);
-		}
+        img.loaded {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-		.badges img, .stats-grid img, .center img {
-			transition: opacity 0.3s ease, transform 0.3s ease;
-		}
+        .badges img, .stats-grid img, .center img {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
 
-		/* Optimizations for slow connections */
-		.slow-connection .stats-grid,
-		.slow-connection .github-stats {
-			opacity: 0.9;
-		}
+        /* Optimizations for slow connections */
+        .slow-connection .stats-grid,
+        .slow-connection .github-stats {
+            opacity: 0.9;
+        }
 
-		.slow-connection img:not(.badges img) {
-			filter: blur(1px);
-			transition: filter 0.3s ease;
-		}
+        .slow-connection img:not(.badges img) {
+            filter: blur(1px);
+            transition: filter 0.3s ease;
+        }
 
-		.slow-connection img.loaded {
-			filter: blur(0);
-		}
+        .slow-connection img.loaded {
+            filter: blur(0);
+        }
         
         /* Header section styling */
         header {
@@ -646,55 +646,252 @@
             100% { transform: scale(1); }
         }
 
-        /* Timeline */
-        .timeline {
+        /* ====== NEW TIMELINE DESIGN ====== */
+        .timeline-section {
+            margin: 40px 0;
             position: relative;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px 0;
         }
 
-        .timeline::before {
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Desktop: Horizontal carousel */
+        .timeline-carousel {
+            display: none; /* Hidden on mobile */
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0;
+        }
+
+        .timeline-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+            padding: 20px;
+        }
+
+        .timeline-card {
+            flex: 0 0 320px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 8px 25px rgba(0, 100, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+
+        .timeline-card::before {
             content: '';
             position: absolute;
-            left: 50%;
             top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin: 40px 0;
-            width: 45%;
-            padding: 20px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 5px 15px rgba(0, 100, 255, 0.1);
-            transition: var(--transition);
-        }
-
-        .timeline-item:nth-child(odd) {
             left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
         }
 
-        .timeline-item:nth-child(even) {
-            left: 55%;
+        .timeline-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 150, 255, 0.25);
+            border-color: var(--primary-color);
         }
 
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
+        .timeline-card.active {
+            background: rgba(0, 191, 255, 0.1);
+            border-color: var(--neon-green);
         }
 
         .timeline-date {
             font-family: 'Orbitron', sans-serif;
             color: var(--primary-color);
-            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-date::before {
+            content: '🕐';
+            font-size: 1.2em;
+        }
+
+        .timeline-card h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 1.3em;
+        }
+
+        .timeline-card p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .timeline-card .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        /* Carousel navigation */
+        .timeline-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .timeline-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--primary-color);
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .timeline-nav-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+
+        .timeline-dots {
+            display: flex;
+            gap: 15px;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .timeline-dot.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Progress bar */
+        .timeline-progress {
+            height: 4px;
+            background: rgba(0, 100, 255, 0.2);
+            border-radius: 2px;
+            margin: 30px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-green), var(--primary-color));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 2px;
+        }
+
+        /* Mobile: Vertical timeline */
+        .timeline-vertical {
+            display: none; /* Hidden on desktop */
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-vertical::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+        }
+
+        .timeline-vertical-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .timeline-vertical-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .timeline-vertical-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary-color);
+        }
+
+        .timeline-vertical-date {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            font-size: 1em;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Mobile accordion */
+        .timeline-vertical-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .timeline-vertical-item.active .timeline-vertical-content {
+            max-height: 500px;
+        }
+
+        .timeline-vertical-toggle {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 5px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-vertical-item.active .timeline-vertical-toggle {
+            transform: rotate(180deg);
         }
 
         /* Terminal */
@@ -888,7 +1085,7 @@
 
         .skill-name {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             margin-bottom: 8px;
             font-family: 'Orbitron', sans-serif;
         }
@@ -1141,195 +1338,195 @@
             transition: opacity 0.3s ease; /* Smooth transition */
         }		
 
-		/* Enhanced Mobile Neural Network Styles */
-		@media (max-width: 768px) {
-			.neural-network {
-				height: 250px !important;
-				min-height: 250px;
-				touch-action: manipulation;
-				-webkit-overflow-scrolling: touch;
-			}
-			
-			.neural-node {
-				width: 16px !important;
-				height: 16px !important;
-				transition: all 0.2s ease !important;
-			}
-			
-			.neural-connection {
-				height: 1px !important;
-				transition: opacity 0.2s ease !important;
-			}
-			
-			/* Improved touch targets */
-			#startTraining, #resetNetwork {
-				min-height: 44px;
-				min-width: 44px;
-				padding: 12px 20px;
-				font-size: 16px;
-				cursor: pointer;
-				-webkit-tap-highlight-color: transparent;
-				touch-action: manipulation;
-				user-select: none;
-				border: 2px solid transparent;
-				transition: all 0.2s ease;
-			}
-			
-			/* Active state feedback */
-			#startTraining:active, #resetNetwork:active {
-				transform: scale(0.95);
-				border-color: var(--primary-color);
-			}
-		}
+        /* Enhanced Mobile Neural Network Styles */
+        @media (max-width: 768px) {
+            .neural-network {
+                height: 250px !important;
+                min-height: 250px;
+                touch-action: manipulation;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .neural-node {
+                width: 16px !important;
+                height: 16px !important;
+                transition: all 0.2s ease !important;
+            }
+            
+            .neural-connection {
+                height: 1px !important;
+                transition: opacity 0.2s ease !important;
+            }
+            
+            /* Improved touch targets */
+            #startTraining, #resetNetwork {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 12px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+                user-select: none;
+                border: 2px solid transparent;
+                transition: all 0.2s ease;
+            }
+            
+            /* Active state feedback */
+            #startTraining:active, #resetNetwork:active {
+                transform: scale(0.95);
+                border-color: var(--primary-color);
+            }
+        }
 
-		/* Specific touch device optimizations */
-		@media (hover: none) and (pointer: coarse) {
-			.neural-network {
-				/* Improve scrolling performance */
-				transform: translateZ(0);
-				backface-visibility: hidden;
-				perspective: 1000;
-			}
-			
-			/* Prevent text selection on buttons */
-			#startTraining, #resetNetwork {
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-		}
+        /* Specific touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .neural-network {
+                /* Improve scrolling performance */
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                perspective: 1000;
+            }
+            
+            /* Prevent text selection on buttons */
+            #startTraining, #resetNetwork {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        }
 
-		/* High-resolution display optimizations */
-		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-			.neural-node {
-				/* Crisper rendering on retina displays */
-				image-rendering: -webkit-optimize-contrast;
-				image-rendering: crisp-edges;
-			}
-		}
+        /* High-resolution display optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .neural-node {
+                /* Crisper rendering on retina displays */
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
 
-		/* === MOBILE FLOATING BUTTON === */
-		.floating-btn-mobile {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			width: 60px;
-			height: 60px;
-			min-width: 44px;
-			min-height: 44px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
-			color: white;
-			border: none;
-			font-size: 24px;
-			cursor: pointer;
-			box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
-			z-index: 1001;
-			transition: var(--transition);
-			touch-action: manipulation;
-			-webkit-tap-highlight-color: transparent;
-			user-select: none;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
+        /* === MOBILE FLOATING BUTTON === */
+        .floating-btn-mobile {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            min-width: 44px;
+            min-height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-green-dark));
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+            z-index: 1001;
+            transition: var(--transition);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-		.floating-btn-mobile:active {
-			transform: scale(0.95);
-			box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
-		}
+        .floating-btn-mobile:active {
+            transform: scale(0.95);
+            box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
+        }
 
-		/* Actions Menu */
-		.fab-menu-mobile {
-			position: fixed;
-			bottom: 90px;
-			right: 20px;
-			display: none;
-			flex-direction: column;
-			gap: 15px;
-			z-index: 1000;
-		}
+        /* Actions Menu */
+        .fab-menu-mobile {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
 
-		.fab-menu-mobile.open {
-			display: flex;
-		}
+        .fab-menu-mobile.open {
+            display: flex;
+        }
 
-		.fab-action-mobile {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			background: var(--card-bg);
-			border: 1px solid var(--card-border);
-			color: var(--text-color);
-			cursor: pointer;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			font-size: 18px;
-			transition: var(--transition);
-			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-		}
+        .fab-action-mobile {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
 
-		.fab-action-mobile:active {
-			transform: scale(0.9);
-		}
+        .fab-action-mobile:active {
+            transform: scale(0.9);
+        }
 
-		.action-label {
-			font-size: 10px;
-			margin-top: 2px;
-			font-family: 'Exo 2', sans-serif;
-		}
+        .action-label {
+            font-size: 10px;
+            margin-top: 2px;
+            font-family: 'Exo 2', sans-serif;
+        }
 
-		/* Menu Animations */
-		.fab-action-mobile {
-			animation: fabAppear 0.3s ease-out forwards;
-			opacity: 0;
-			transform: translateY(20px) scale(0.8);
-		}
+        /* Menu Animations */
+        .fab-action-mobile {
+            animation: fabAppear 0.3s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+        }
 
-		.fab-menu-mobile.open .fab-action-mobile:nth-child(1) { animation-delay: 0.1s; }
-		.fab-menu-mobile.open .fab-action-mobile:nth-child(2) { animation-delay: 0.2s; }
-		.fab-menu-mobile.open .fab-action-mobile:nth-child(3) { animation-delay: 0.3s; }
+        .fab-menu-mobile.open .fab-action-mobile:nth-child(1) { animation-delay: 0.1s; }
+        .fab-menu-mobile.open .fab-action-mobile:nth-child(2) { animation-delay: 0.2s; }
+        .fab-menu-mobile.open .fab-action-mobile:nth-child(3) { animation-delay: 0.3s; }
 
-		@keyframes fabAppear {
-			to {
-				opacity: 1;
-				transform: translateY(0) scale(1);
-			}
-		}
+        @keyframes fabAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
 
-		/* Responsividade Mobile */
-		@media (max-width: 768px) {
-			.floating-btn-mobile {
-				width: 56px;
-				height: 56px;
-				bottom: 16px;
-				right: 16px;
-			}
-			
-			.fab-menu-mobile {
-				bottom: 82px;
-				right: 16px;
-			}
-			
-			.fab-action-mobile {
-				width: 48px;
-				height: 48px;
-				font-size: 16px;
-			}
-		}
+        /* Responsiveness Mobile */
+        @media (max-width: 768px) {
+            .floating-btn-mobile {
+                width: 56px;
+                height: 56px;
+                bottom: 16px;
+                right: 16px;
+            }
+            
+            .fab-menu-mobile {
+                bottom: 82px;
+                right: 16px;
+            }
+            
+            .fab-action-mobile {
+                width: 48px;
+                height: 48px;
+                font-size: 16px;
+            }
+        }
 
-		/* Para telas muito pequenas */
-		@media (max-width: 480px) {
-			.floating-btn-mobile {
-				width: 52px;
-				height: 52px;
-				bottom: 12px;
-				right: 12px;
-			}
-		}
+        /* For very small screens */
+        @media (max-width: 480px) {
+            .floating-btn-mobile {
+                width: 52px;
+                height: 52px;
+                bottom: 12px;
+                right: 12px;
+            }
+        }
 
         /* Responsive design for mobile devices */
         @media (max-width: 768px) {
@@ -1405,13 +1602,17 @@
                 flex-direction: column;
             }
             
-            .timeline::before {
-                left: 20px;
+            /* Timeline responsive adjustments */
+            .timeline-carousel {
+                display: none !important; /* Hide carousel on mobile */
             }
             
-            .timeline-item {
-                width: calc(100% - 60px);
-                left: 40px !important;
+            .timeline-vertical {
+                display: block !important; /* Show vertical timeline on mobile */
+            }
+            
+            .timeline-progress {
+                margin: 20px auto;
             }
             
             .stats-dashboard {
@@ -1580,657 +1781,680 @@
             .status-text {
                 font-size: 0.95em;
             }
+            
+            .timeline-vertical {
+                padding-left: 20px;
+            }
+            
+            .timeline-vertical-item {
+                padding: 15px;
+            }
+            
+            .timeline-vertical-item::before {
+                left: -26px;
+            }
         }
 
-			/* Cyber Interface Section Styles */
-			.cyber-interface-section {
-				margin: 40px 0;
-				padding: 30px;
-				background: var(--card-bg);
-				border-radius: 15px;
-				border: 1px solid var(--primary-color);
-				box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
-				position: relative;
-				overflow: hidden;
-			}
-    
-    .cyber-interface-section h2 {
-        text-align: center;
-        margin-bottom: 30px;
-        color: var(--primary-color);
-        text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 2.2em;
-    }
-    
-    .cyber-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-        height: 500px;
-    }
-    
-    /* Cyber Display */
-    .cyber-display {
-        position: relative;
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid var(--primary-color);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
-    }
-    
-    /* Binary Rain */
-    .binary-rain {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        opacity: 0.3;
-    }
-    
-    .binary-digit {
-        position: absolute;
-        color: var(--success-color);
-        font-family: 'Courier New', monospace;
-        font-size: 14px;
-        animation: binaryFall linear infinite;
-    }
-    
-    @keyframes binaryFall {
-        0% {
-            transform: translateY(-20px);
-            opacity: 0;
+        /* Desktop: show carousel, hide vertical */
+        @media (min-width: 769px) {
+            .timeline-carousel {
+                display: block !important;
+            }
+            
+            .timeline-vertical {
+                display: none !important;
+            }
         }
-        10% {
-            opacity: 1;
+
+        /* Cyber Interface Section Styles */
+        .cyber-interface-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(211, 47, 47, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        90% {
-            opacity: 1;
+    
+        .cyber-interface-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2em;
         }
-        100% {
-            transform: translateY(520px);
-            opacity: 0;
-        }
-    }
     
-    /* Hologram */
-    .hologram-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 200px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .hologram-circle {
-        position: relative;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .hologram-core {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: var(--secondary-color);
-        box-shadow: 0 0 20px var(--secondary-color);
-        animation: pulseCore 2s infinite alternate;
-    }
-    
-    .hologram-ring {
-        position: absolute;
-        border-radius: 50%;
-        border: 2px solid var(--secondary-color);
-        box-shadow: 0 0 10px var(--secondary-color);
-        animation: rotateRing linear infinite;
-    }
-    
-    .ring-1 {
-        width: 80px;
-        height: 80px;
-        animation-duration: 8s;
-    }
-    
-    .ring-2 {
-        width: 120px;
-        height: 120px;
-        animation-duration: 12s;
-        animation-direction: reverse;
-    }
-    
-    .ring-3 {
-        width: 150px;
-        height: 150px;
-        animation-duration: 15s;
-    }
-    
-    .hologram-text {
-        margin-top: 20px;
-        color: var(--secondary-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 14px;
-        text-align: center;
-        text-shadow: 0 0 5px var(--secondary-color);
-        animation: textFlicker 3s infinite alternate;
-    }
-    
-    @keyframes pulseCore {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 0 20px var(--primary-color);
-        }
-        100% {
-            transform: scale(1.2);
-            box-shadow: 0 0 30px var(--primary-color);
-        }
-    }
-    
-    @keyframes rotateRing {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-    
-    @keyframes textFlicker {
-        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-            opacity: 1;
-        }
-        20%, 24%, 55% {
-            opacity: 0.5;
-        }
-    }
-    
-    /* Connection Nodes */
-    .connection-nodes {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-    
-    .node {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        box-shadow: 0 0 10px var(--primary-color);
-        animation: nodePulse 3s infinite alternate;
-    }
-    
-    #node1 { top: 20%; left: 15%; animation-delay: 0s; }
-    #node2 { top: 15%; right: 20%; animation-delay: 0.5s; }
-    #node3 { bottom: 25%; left: 10%; animation-delay: 1s; }
-    #node4 { bottom: 15%; right: 15%; animation-delay: 1.5s; }
-    #node5 { top: 40%; right: 30%; animation-delay: 2s; }
-    #node6 { bottom: 40%; left: 25%; animation-delay: 2.5s; }
-    
-    @keyframes nodePulse {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 0 10px var(--primary-color);
-        }
-        100% {
-            transform: scale(1.5);
-            box-shadow: 0 0 20px var(--primary-color);
-        }
-    }
-    
-    /* Data Streams */
-    .data-streams {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-    
-    .data-stream {
-        position: absolute;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
-        transform-origin: left center;
-        opacity: 0.7;
-    }
-    
-    /* Scrambled Words */
-    .scrambled-words {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .word-container {
-        display: flex;
-        gap: 30px;
-    }
-    
-    .scrambled-word {
-        color: var(--secondary-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 18px;
-        text-shadow: 0 0 5px var(--secondary-color);
-        transition: all 0.3s ease;
-    }
-    
-    .scrambled-word.scrambling {
-        animation: scramble 0.1s infinite;
-    }
-    
-    @keyframes scramble {
-        0%, 100% {
-            transform: translateX(0) rotate(0deg);
-        }
-        25% {
-            transform: translateX(-2px) rotate(-1deg);
-        }
-        75% {
-            transform: translateX(2px) rotate(1deg);
-        }
-    }
-    
-    /* Control Panel */
-    .control-panel {
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid var(--primary-color);
-        border-radius: 10px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
-    }
-    
-    .panel-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--primary-color);
-    }
-    
-    .panel-header h3 {
-        color: var(--warning-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 16px;
-        margin: 0;
-    }
-    
-    .status-indicators {
-        display: flex;
-        gap: 8px;
-    }
-    
-    .status-indicator {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #444;
-        transition: all 0.3s ease;
-    }
-    
-    .status-indicator.active {
-        background: var(--success-color);
-        box-shadow: 0 0 10px var(--success-color);
-    }
-    
-    .panel-controls {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 25px;
-    }
-    
-    .cyber-btn {
-        padding: 12px;
-        background: transparent;
-        border: 1px solid var(--secondary-color);
-        color: var(--secondary-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .cyber-btn:hover {
-        background: rgba(211, 47, 47, 0.2);
-        box-shadow: 0 0 10px var(--secondary-color);
-        transform: translateY(-2px);
-    }
-    
-    .cyber-btn:active {
-        transform: translateY(0);
-    }
-    
-    .panel-metrics {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    
-    .metric {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .metric-label {
-        color: var(--secondary-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 12px;
-    }
-    
-    .metric-bar {
-        height: 8px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-    }
-    
-    .metric-fill {
-        height: 100%;
-        background: linear-gradient(90deg, var(--secondary-color), var(--neon-green-dark));
-        border-radius: 4px;
-        width: 0%;
-        transition: width 1s ease;
-    }
-    
-    .metric-value {
-        color: var(--secondary-color);
-        font-family: 'Orbitron', sans-serif;
-        font-size: 12px;
-        text-align: right;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
         .cyber-container {
-            grid-template-columns: 1fr;
-            height: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            height: 500px;
         }
-        
+    
+        /* Cyber Display */
         .cyber-display {
-            height: 400px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
         }
-        
-        .hologram-container {
-            transform: translate(-50%, -50%) scale(0.8);
+    
+        /* Binary Rain */
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
         }
-        
-        .word-container {
-            gap: 15px;
-        }
-        
-        .scrambled-word {
+    
+        .binary-digit {
+            position: absolute;
+            color: var(--success-color);
+            font-family: 'Courier New', monospace;
             font-size: 14px;
+            animation: binaryFall linear infinite;
         }
-    }
+    
+        @keyframes binaryFall {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(520px);
+                opacity: 0;
+            }
+        }
+    
+        /* Hologram */
+        .hologram-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .hologram-circle {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .hologram-core {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            box-shadow: 0 0 20px var(--secondary-color);
+            animation: pulseCore 2s infinite alternate;
+        }
+    
+        .hologram-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 0 10px var(--secondary-color);
+            animation: rotateRing linear infinite;
+        }
+    
+        .ring-1 {
+            width: 80px;
+            height: 80px;
+            animation-duration: 8s;
+        }
+    
+        .ring-2 {
+            width: 120px;
+            height: 120px;
+            animation-duration: 12s;
+            animation-direction: reverse;
+        }
+    
+        .ring-3 {
+            width: 150px;
+            height: 150px;
+            animation-duration: 15s;
+        }
+    
+        .hologram-text {
+            margin-top: 20px;
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            text-align: center;
+            text-shadow: 0 0 5px var(--secondary-color);
+            animation: textFlicker 3s infinite alternate;
+        }
+    
+        @keyframes pulseCore {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px var(--primary-color);
+            }
+            100% {
+                transform: scale(1.2);
+                box-shadow: 0 0 30px var(--primary-color);
+            }
+        }
+    
+        @keyframes rotateRing {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    
+        @keyframes textFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+    
+        /* Connection Nodes */
+        .connection-nodes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    
+        .node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+            animation: nodePulse 3s infinite alternate;
+        }
+    
+        #node1 { top: 20%; left: 15%; animation-delay: 0s; }
+        #node2 { top: 15%; right: 20%; animation-delay: 0.5s; }
+        #node3 { bottom: 25%; left: 10%; animation-delay: 1s; }
+        #node4 { bottom: 15%; right: 15%; animation-delay: 1.5s; }
+        #node5 { top: 40%; right: 30%; animation-delay: 2s; }
+        #node6 { bottom: 40%; left: 25%; animation-delay: 2.5s; }
+    
+        @keyframes nodePulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 10px var(--primary-color);
+            }
+            100% {
+                transform: scale(1.5);
+                box-shadow: 0 0 20px var(--primary-color);
+            }
+        }
+    
+        /* Data Streams */
+        .data-streams {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    
+        .data-stream {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+            transform-origin: left center;
+            opacity: 0.7;
+        }
+    
+        /* Scrambled Words */
+        .scrambled-words {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .word-container {
+            display: flex;
+            gap: 30px;
+        }
+    
+        .scrambled-word {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            text-shadow: 0 0 5px var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+    
+        .scrambled-word.scrambling {
+            animation: scramble 0.1s infinite;
+        }
+    
+        @keyframes scramble {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-2px) rotate(-1deg);
+            }
+            75% {
+                transform: translateX(2px) rotate(1deg);
+            }
+        }
+    
+        /* Control Panel */
+        .control-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.3);
+        }
+    
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+    
+        .panel-header h3 {
+            color: var(--warning-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            margin: 0;
+        }
+    
+        .status-indicators {
+            display: flex;
+            gap: 8px;
+        }
+    
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+            transition: all 0.3s ease;
+        }
+    
+        .status-indicator.active {
+            background: var(--success-color);
+            box-shadow: 0 0 10px var(--success-color);
+        }
+    
+        .panel-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+    
+        .cyber-btn {
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    
+        .cyber-btn:hover {
+            background: rgba(211, 47, 47, 0.2);
+            box-shadow: 0 0 10px var(--secondary-color);
+            transform: translateY(-2px);
+        }
+    
+        .cyber-btn:active {
+            transform: translateY(0);
+        }
+    
+        .panel-metrics {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    
+        .metric-label {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+        }
+    
+        .metric-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--neon-green-dark));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+    
+        .metric-value {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            text-align: right;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cyber-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .cyber-display {
+                height: 400px;
+            }
+            
+            .hologram-container {
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            
+            .word-container {
+                gap: 15px;
+            }
+            
+            .scrambled-word {
+                font-size: 14px;
+            }
+        }
 
-	/* Reading Progress Bar */
-	.reading-progress-container {
-		position: fixed;
-		top: 0;
-		right: 0;
-		height: 100vh;
-		width: 6px;
-		z-index: 9999;
-		background: rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(5px);
-		display: none; /* Initially hidden for desktop */
-	}
+        /* Reading Progress Bar */
+        .reading-progress-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 6px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            display: none; /* Initially hidden for desktop */
+        }
 
-	.reading-progress-bar {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 0%;
-		background: linear-gradient(to bottom, var(--neon-green), var(--primary-color));
-		box-shadow: 0 0 10px var(--neon-green);
-		transition: height 0.1s ease-out;
-		border-radius: 0 0 3px 3px;
-	}
+        .reading-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--neon-green), var(--primary-color));
+            box-shadow: 0 0 10px var(--neon-green);
+            transition: height 0.1s ease-out;
+            border-radius: 0 0 3px 3px;
+        }
 
-	.reading-progress-percentage {
-		position: absolute;
-		bottom: -25px;
-		right: 10px;
-		color: var(--primary-color);
-		font-family: 'Orbitron', sans-serif;
-		font-size: 12px;
-		opacity: 0;
-		transition: opacity 0.3s ease;
-		background: var(--card-bg);
-		padding: 2px 6px;
-		border-radius: 3px;
-		border: 1px solid var(--card-border);
-	}
+        .reading-progress-percentage {
+            position: absolute;
+            bottom: -25px;
+            right: 10px;
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: var(--card-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid var(--card-border);
+        }
 
-	.reading-progress-container:hover .reading-progress-percentage {
-		opacity: 1;
-	}
+        .reading-progress-container:hover .reading-progress-percentage {
+            opacity: 1;
+        }
 
-	/* Show only on large screens. */
-	@media (min-width: 769px) {
-		.reading-progress-container {
-			display: block;
-		}
-	}
+        /* Show only on large screens. */
+        @media (min-width: 769px) {
+            .reading-progress-container {
+                display: block;
+            }
+        }
 
-	/* For clear theme */
-	[data-theme="light"] .reading-progress-container {
-		background: rgba(0, 0, 0, 0.1);
-	}
+        /* For clear theme */
+        [data-theme="light"] .reading-progress-container {
+            background: rgba(0, 0, 0, 0.1);
+        }
 
-	[data-theme="light"] .reading-progress-percentage {
-		background: rgba(255, 255, 255, 0.95);
-		color: var(--text-color);
-	}
+        [data-theme="light"] .reading-progress-percentage {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-color);
+        }
 
-	/* For the Matrix theme */
-	[data-theme="matrix"] .reading-progress-bar {
-		background: linear-gradient(to bottom, #00ff41, #00ff9f);
-		box-shadow: 0 0 10px #00ff41;
-	}
+        /* For the Matrix theme */
+        [data-theme="matrix"] .reading-progress-bar {
+            background: linear-gradient(to bottom, #00ff41, #00ff9f);
+            box-shadow: 0 0 10px #00ff41;
+        }
 
-	<!-- Add CSS for theme-specific button styles -->
-		/* Theme-specific button styles */
-		[data-theme="cyber"] .footer-btn {
-			background: rgba(0, 30, 0, 0.85) !important;
-			border-color: rgba(13,0,26) !important;
-			color: #00f0ff !important;
-		}
-		
-		[data-theme="cyber"] .footer-btn:hover {
-			box-shadow: 0 6px 20px rgba(13,0,26) !important;
-			border-color: #0d001a !important;
-		}
-		
-		[data-theme="light"] .footer-btn {
-			background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
-			border-color: rgba(30, 144, 255, 0.7) !important;
-			color: #FFFFFF !important;
-		}
-		
-		[data-theme="light"] .footer-btn:hover {
-			background: linear-gradient(135deg, #0066CC, #004C99) !important;
-			box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
-			border-color: #1E90FF !important;
-			color: #FFFFFF !important;
-		}
-		
-		[data-theme="matrix"] .footer-btn {
-			background: rgba(0, 20, 0, 0.88) !important;
-			border-color: rgba(0, 255, 65, 0.7) !important;
-			color: #00ff41 !important;
-		}
-		
-		[data-theme="matrix"] .footer-btn:hover {
-			box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
-			border-color: #00ff41 !important;
-		}
-		
-		/* Mobile responsiveness for footer buttons */
-		@media (max-width: 768px) {
-			.footer-btn {
-				min-width: 140px !important;
-				padding: 10px 20px !important;
-				font-size: 0.95em !important;
-			}
-		}
-		
-		@media (max-width: 480px) {
-			.footer-btn {
-				min-width: 120px !important;
-				padding: 8px 16px !important;
-				font-size: 0.9em !important;
-			}
-			
-			div[style*="display: flex; justify-content: center;"] {
-				gap: 10px !important;
-			}
-		}
+        /* Theme-specific button styles */
+        [data-theme="cyber"] .footer-btn {
+            background: rgba(0, 30, 0, 0.85) !important;
+            border-color: rgba(13,0,26) !important;
+            color: #00f0ff !important;
+        }
+        
+        [data-theme="cyber"] .footer-btn:hover {
+            box-shadow: 0 6px 20px rgba(13,0,26) !important;
+            border-color: #0d001a !important;
+        }
+        
+        [data-theme="light"] .footer-btn {
+            background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
+            border-color: rgba(30, 144, 255, 0.7) !important;
+            color: #FFFFFF !important;
+        }
+        
+        [data-theme="light"] .footer-btn:hover {
+            background: linear-gradient(135deg, #0066CC, #004C99) !important;
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
+            border-color: #1E90FF !important;
+            color: #FFFFFF !important;
+        }
+        
+        [data-theme="matrix"] .footer-btn {
+            background: rgba(0, 20, 0, 0.88) !important;
+            border-color: rgba(0, 255, 65, 0.7) !important;
+            color: #00ff41 !important;
+        }
+        
+        [data-theme="matrix"] .footer-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+            border-color: #00ff41 !important;
+        }
+        
+        /* Mobile responsiveness for footer buttons */
+        @media (max-width: 768px) {
+            .footer-btn {
+                min-width: 140px !important;
+                padding: 10px 20px !important;
+                font-size: 0.95em !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-btn {
+                min-width: 120px !important;
+                padding: 8px 16px !important;
+                font-size: 0.9em !important;
+            }
+            
+            div[style*="display: flex; justify-content: center;"] {
+                gap: 10px !important;
+            }
+        }
 
-		/* Theme-specific styles for language buttons */
-		[data-theme="cyber"] .language-btn {
-			background: rgba(0, 30, 0, 0.85) !important;
-			border-color: rgba(0, 240, 255) !important;
-			color: #00f0ff !important;
-		}
-		
-		[data-theme="cyber"] .language-btn:hover {
-			box-shadow: 0 6px 20px rgba(0, 240, 255) !important;
-			border-color: #0d001a !important;
-		}
-		
-		[data-theme="light"] .language-btn {
-			background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
-			border-color: rgba(30, 144, 255, 0.7) !important;
-			color: #FFFFFF !important;
-		}
-		
-		[data-theme="light"] .language-btn:hover {
-			background: linear-gradient(135deg, #0066CC, #004C99) !important;
-			box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
-			border-color: #1E90FF !important;
-			color: #FFFFFF !important;
-		}
-		
-		[data-theme="matrix"] .language-btn {
-			background: rgba(0, 20, 0, 0.88) !important;
-			border-color: rgba(0, 255, 65, 0.7) !important;
-			color: #00ff41 !important;
-		}
-		
-		[data-theme="matrix"] .language-btn:hover {
-			box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
-			border-color: #00ff41 !important;
-		}
-		
-		/* Active state for current language button */
-		.language-btn:first-child {
-			position: relative;
-		}
-		
-		.language-btn:first-child::after {
-			content: '✓';
-			position: absolute;
-			top: -8px;
-			right: -8px;
-			background: var(--primary-color);
-			color: white;
-			width: 20px;
-			height: 20px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 12px;
-			font-weight: bold;
-		}
-		
-		/* Ajuste para o tema light no indicador de idioma ativo */
-		[data-theme="light"] .language-btn:first-child::after {
-			background: #1E90FF !important;
-		}
-		
-		/* Mobile responsiveness for language buttons */
-		@media (max-width: 768px) {
-			.language-btn {
-				min-width: 180px !important;
-				padding: 10px 20px !important;
-				font-size: 0.95em !important;
-			}
-			
-			.language-btn:first-child::after {
-				top: -6px;
-				right: -6px;
-				width: 18px;
-				height: 18px;
-				font-size: 11px;
-			}
+        /* Theme-specific styles for language buttons */
+        [data-theme="cyber"] .language-btn {
+            background: rgba(0, 30, 0, 0.85) !important;
+            border-color: rgba(0, 240, 255) !important;
+            color: #00f0ff !important;
+        }
+        
+        [data-theme="cyber"] .language-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 240, 255) !important;
+            border-color: #0d001a !important;
+        }
+        
+        [data-theme="light"] .language-btn {
+            background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
+            border-color: rgba(30, 144, 255, 0.7) !important;
+            color: #FFFFFF !important;
+        }
+        
+        [data-theme="light"] .language-btn:hover {
+            background: linear-gradient(135deg, #0066CC, #004C99) !important;
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
+            border-color: #1E90FF !important;
+            color: #FFFFFF !important;
+        }
+        
+        [data-theme="matrix"] .language-btn {
+            background: rgba(0, 20, 0, 0.88) !important;
+            border-color: rgba(0, 255, 65, 0.7) !important;
+            color: #00ff41 !important;
+        }
+        
+        [data-theme="matrix"] .language-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3) !important;
+            border-color: #00ff41 !important;
+        }
+        
+        /* Active state for current language button */
+        .language-btn:first-child {
+            position: relative;
+        }
+        
+        .language-btn:first-child::after {
+            content: '✓';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary-color);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Ajuste para o tema light no indicador de idioma ativo */
+        [data-theme="light"] .language-btn:first-child::after {
+            background: #1E90FF !important;
+        }
+        
+        /* Mobile responsiveness for language buttons */
+        @media (max-width: 768px) {
+            .language-btn {
+                min-width: 180px !important;
+                padding: 10px 20px !important;
+                font-size: 0.95em !important;
+            }
+            
+            .language-btn:first-child::after {
+                top: -6px;
+                right: -6px;
+                width: 18px;
+                height: 18px;
+                font-size: 11px;
+            }
 
-			/* GitHub stats images */
-				.github-stats-img {
-					max-width: 95% !important;
-					height: auto !important;
-				}
-				
-				.streak-img {
-					max-width: 85% !important;
-					min-width: 300px !important;
-				}
-		
-            @media (max-width: 480px) {
-                .language-btn {
-                    min-width: 160px !important;
-                    padding: 8px 16px !important;
-                    font-size: 0.9em !important;
-                    min-width: 100% !important;
-                }
-                
-                div[style*="display: flex; justify-content: center;"] {
-                    flex-direction: column;
-                    gap: 15px !important;
-                }
-                
-                .language-btn span {
-                    font-size: 1.2em !important;
-                }
+            /* GitHub stats images */
+            .github-stats-img {
+                max-width: 95% !important;
+                height: auto !important;
+            }
+            
+            .streak-img {
+                max-width: 85% !important;
+                min-width: 300px !important;
+            }
+        }
 
-				.streak-img {
-						max-width: 80% !important;
-						min-width: 280px !important;
-				}
-			}
+        @media (max-width: 480px) {
+            .language-btn {
+                min-width: 160px !important;
+                padding: 8px 16px !important;
+                font-size: 0.9em !important;
+                min-width: 100% !important;
+            }
+            
+            div[style*="display: flex; justify-content: center;"] {
+                flex-direction: column;
+                gap: 15px !important;
+            }
+            
+            .language-btn span {
+                font-size: 1.2em !important;
+            }
+
+            .streak-img {
+                max-width: 80% !important;
+                min-width: 280px !important;
+            }
+        }
     </style>
 </head>
 <body>
-	<!-- Reading Progress Bar -->
-	<div class="reading-progress-container" id="readingProgress">
-		<div class="reading-progress-bar" id="progressBar"></div>
-		<div class="reading-progress-percentage" id="progressPercentage">0%</div>
-	</div>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-container" id="readingProgress">
+        <div class="reading-progress-bar" id="progressBar"></div>
+        <div class="reading-progress-percentage" id="progressPercentage">0%</div>
+    </div>
 
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
@@ -2270,6 +2494,7 @@
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">💡 <strong>Note:</strong> For the full interactive experience, visit | <a href="https://gerivan.me/typing-animation.html">Constant phrases</a></p>
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">🌍 <strong>Language support for this page:</strong> English (You're here!) , visit | <a href="https://gerivan.me/index-pt.html">Portuguese</a></p>
                 </div>
+            </div>
         </header>
 
         <!-- Technology badges section -->
@@ -2309,7 +2534,7 @@
         <h2>👋 Welcome to My Digital Universe</h2>        
         <div class="welcome-card">
             <div class="welcome-quote">
-                <p>"If your security relies solely on fingerprints and SMS codes, congrats — you’ve already lost to the hacker and the nosy aunt who watched you unlock your phone."</p>
+                <p>"If your security relies solely on fingerprints and SMS codes, congrats — you've already lost to the hacker and the nosy aunt who watched you unlock your phone."</p>
             </div>
             
             <p style="text-align: justify;">I'm Gerivan Costa — a developer passionate about security, science, and creativity. Here you'll find projects that blend innovation with purpose, always focused on continuous learning and meaningful contributions to the open-source community.</p>
@@ -2318,13 +2543,13 @@
   
             <p style="text-align: justify;">The <strong>Cyber Neural Network</strong> visualizer demonstrates the future of information visualization through interconnected neural networks. It is based on a <strong>Multi-Layer Perceptron (MLP)</strong> architecture, <strong>(introduced in the paper "AIive: Interactive Visualization and Sonification of Neural Networks in Virtual Reality" – Lyu; Li; Wang, 2021)</strong>, featuring real-time forward propagation visualization. This represents the next frontier in understanding complex data flows within artificial intelligence systems.</p>
 			
-            <p style="text-align: justify;">The <strong>Transformer Neural Network</strong> visualizer refers, in the context of modern AI, specifically to the <strong>"Transformer"</strong> architecture (introduced in the paper “Attention is All You Need” – Vaswani et al., 2017), used in models like <strong>BERT, GPT, and Grok</strong>. This architecture is revolutionary for replacing recurrent networks <strong>(RNN/LSTM)</strong> with <strong>self-attention</strong> mechanisms, enabling efficient parallel processing of entire sequences without strict temporal dependencies. It "transforms" data representations through <strong>encoder/decoder</strong> blocks with </strong>multi-head</strong> attention.</p>			
+            <p style="text-align: justify;">The <strong>Transformer Neural Network</strong> visualizer refers, in the context of modern AI, specifically to the <strong>"Transformer"</strong> architecture (introduced in the paper "Attention is All You Need" – Vaswani et al., 2017), used in models like <strong>BERT, GPT, and Grok</strong>. This architecture is revolutionary for replacing recurrent networks <strong>(RNN/LSTM)</strong> with <strong>self-attention</strong> mechanisms, enabling efficient parallel processing of entire sequences without strict temporal dependencies. It "transforms" data representations through <strong>encoder/decoder</strong> blocks with <strong>multi-head</strong> attention.</p>			
   
             <p style="text-align: justify;">Explore innovative security solutions like <strong>DNAPass Password Generator</strong>, which bridges biotechnology and digital security by transforming DNA sequences into cryptographically secure passwords. This groundbreaking approach introduces biological encoding to password generation, creating truly unique and complex authentication systems.</p>
             
             <p style="text-align: justify;">Discover the <strong>EntroPy Password Generator ecosystem</strong>, featuring both Python CLI versions for Windows/Linux and responsive web implementations. The entropy-driven security model ensures maximum randomness and brute-force resistance by leveraging real entropy sources rather than predictable pseudo-random algorithms.</p>
 
-			<p style="text-align: justify;"><strong>XPhrase Generation</strong> is an expressive phrase generator that <strong>uses 4,000 specific words selected from three languages — English, Portuguese, and German</strong>  — to create sentences. The project allows generating either a single phrase or multiple phrases, always with a length between 3 and 21 words. In single-phrase mode, the system asks for the desired word count and produces one sentence accordingly. In multiple-phrase mode, it first defines the number of words per phrase and then the number of phrases, between 5 and 10, ensuring consistency in length. Each word must contain at least one special character and one digit, and the final word must end with a capital letter. The order of languages is randomized, making the output varied and dynamic.</p>
+            <p style="text-align: justify;"><strong>XPhrase Generation</strong> is an expressive phrase generator that <strong>uses 4,000 specific words selected from three languages — English, Portuguese, and German</strong> — to create sentences. The project allows generating either a single phrase or multiple phrases, always with a length between 3 and 21 words. In single-phrase mode, the system asks for the desired word count and produces one sentence accordingly. In multiple-phrase mode, it first defines the number of words per phrase and then the number of phrases, between 5 and 10, ensuring consistency in length. Each word must contain at least one special character and one digit, and the final word must end with a capital letter. The order of languages is randomized, making the output varied and dynamic.</p>
         </div>
 
         <!-- Table of Contents -->
@@ -2355,12 +2580,12 @@
             <p>The principle of randomness enables the generation of over <strong>12.6 trillion unique combinations</strong> by interconnecting words from three languages, along with the inclusion of special characters and numerical digits.</p>            
             <h4>Key Features:</h4>
             <ul>
-			<li>💯 <strong>It contains 4,000 specific and unique words</strong>: selected from the vocabulary of three different languages.</li>
-			<li>🖥️ <strong>Unique and Complex Output</strong>: This project was created by selecting words to generate sentences in three languages: English, Portuguese, and German.</li>
-			<li>🌐 <strong>Interdisciplinary Innovation</strong>: Words are randomly selected and mixed across languages.</li>
+            <li>💯 <strong>It contains 4,000 specific and unique words</strong>: selected from the vocabulary of three different languages.</li>
+            <li>🖥️ <strong>Unique and Complex Output</strong>: This project was created by selecting words to generate sentences in three languages: English, Portuguese, and German.</li>
+            <li>🌐 <strong>Interdisciplinary Innovation</strong>: Words are randomly selected and mixed across languages.</li>
             </ul>            
             <div class="center">
-				<a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Live Demo - XPhrase Generation</a>
+                <a href="https://xphrase.gerivan.me/xphrase.html" class="btn">🌍 Live Demo - XPhrase Generation</a>
                 <a href="https://xphrase.gerivan.me/" class="btn btn-secondary">📚 Interactive Docs</a>				
                 <a href="https://github.com/gerivanc/xphrase/" class="btn">📦 Repository</a>
                 <a href="https://github.com/gerivanc/xphrase/tree/main/data" class="btn btn-secondary">💾 View the code</a>
@@ -2414,44 +2639,44 @@
             </blockquote>
         </div>
 
-	<!-- Neural Network Visualizer Section -->
-		<div class="project-card" data-categories="ai web">	
-		<h3 id="neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</h3>
-			<h4>Neural Network Visualizer</h4>
-			<p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>			
-			<div class="neural-network" id="neuralNetwork">			
-				<!-- Neural network will be generated by JavaScript -->
-			</div>
-		<div class="center">
-			<button class="btn" id="startTraining">Start Training Visualization</button>
-			<button class="btn btn-secondary" id="resetNetwork">Reset Network</button>		
-		</div>    
-		<h4>Dual System - Key Features:</h4>
-		<h3>🧠 Transformer Neural Network</h3>
-		<p>Full implementation of the Transformer architecture, featuring:</p>
-		<ul>
-			<li>🎯 <strong>Real-time training with TensorFlow.js in the browser.</strong>: Attention mechanism implementations</li>
-			<li>🔍 <strong>Dual architecture modes (decoder-only GPT style vs encoder-decoder T5 style).</strong>: Real transformer architecture mathematics</li>
-			<li>📊 <strong>Multi-head attention visualization with color-coded attention heads.</strong>: Multi-head attention patterns</li>
-			<li>⚡ <strong>Animated forward/backward propagation with gradient flow visualization.</strong>: Live embedded image projection in 2D space</li>
-		</ul>
-		<h3>🤖 Cyber Neural Network</h3>
-		<p>An abstract artistic representation of neural network principles, featuring:</p>
-		<ul>
-			<li>🎯 <strong>Dual-mode rendering (Cyber/Tech aesthetic vs Complex modes).</strong>: Graph theory and network topology principles</li>
-			<li>🔍 <strong>Interactive physics engine with nodal repulsion and force calculations.</strong>: Visual hierarchy and information encoding</li>
-			<li>📊 <strong>Real-time performance optimization with spatial partitioning algorithms.</strong>: Interactive physics simulations</li>
-			<li>⚡ <strong>Advanced visual effects including multi-layer glow and gradient connections.</strong>: Performance optimization techniques</li>
-		</ul>   
-		<div class="center">
-			<a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Live Demo - Transformers Neural Network</a>
-			<a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Live Demo - Cyber Neural Network</a>		
-			<a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Interactive Docs</a>
-		</div>    
-		<blockquote>
-			<p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
-			</blockquote>
-		</div>
+        <!-- Neural Network Visualizer Section -->
+        <div class="project-card" data-categories="ai web">	
+        <h3 id="neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</h3>
+            <h4>Neural Network Visualizer</h4>
+            <p>An advanced visualization tool that brings artificial intelligence to life! Watch as neural networks learn and adapt in real-time, with dynamic node connections and activation patterns.</p>			
+            <div class="neural-network" id="neuralNetwork">			
+                <!-- Neural network will be generated by JavaScript -->
+            </div>
+        <div class="center">
+            <button class="btn" id="startTraining">Start Training Visualization</button>
+            <button class="btn btn-secondary" id="resetNetwork">Reset Network</button>		
+        </div>    
+        <h4>Dual System - Key Features:</h4>
+        <h3>🧠 Transformer Neural Network</h3>
+        <p>Full implementation of the Transformer architecture, featuring:</p>
+        <ul>
+            <li>🎯 <strong>Real-time training with TensorFlow.js in the browser.</strong>: Attention mechanism implementations</li>
+            <li>🔍 <strong>Dual architecture modes (decoder-only GPT style vs encoder-decoder T5 style).</strong>: Real transformer architecture mathematics</li>
+            <li>📊 <strong>Multi-head attention visualization with color-coded attention heads.</strong>: Multi-head attention patterns</li>
+            <li>⚡ <strong>Animated forward/backward propagation with gradient flow visualization.</strong>: Live embedded image projection in 2D space</li>
+        </ul>
+        <h3>🤖 Cyber Neural Network</h3>
+        <p>An abstract artistic representation of neural network principles, featuring:</p>
+        <ul>
+            <li>🎯 <strong>Dual-mode rendering (Cyber/Tech aesthetic vs Complex modes).</strong>: Graph theory and network topology principles</li>
+            <li>🔍 <strong>Interactive physics engine with nodal repulsion and force calculations.</strong>: Visual hierarchy and information encoding</li>
+            <li>📊 <strong>Real-time performance optimization with spatial partitioning algorithms.</strong>: Interactive physics simulations</li>
+            <li>⚡ <strong>Advanced visual effects including multi-layer glow and gradient connections.</strong>: Performance optimization techniques</li>
+        </ul>   
+        <div class="center">
+            <a href="https://transformers.gerivan.me/transformers.html" class="btn">🌍 Live Demo - Transformers Neural Network</a>
+            <a href="https://transformers.gerivan.me/neural.html" class="btn">🌍 Live Demo - Cyber Neural Network</a>		
+            <a href="https://transformers.gerivan.me" class="btn btn-secondary">📚 Interactive Docs</a>
+        </div>    
+        <blockquote>
+            <p>"Visualizing neural networks isn't just about understanding AI—it's about seeing intelligence being born."</p>
+        </blockquote>
+        </div>
 
         <!-- EntroPy Password Generator project card -->
         <div class="project-card" data-categories="security python">
@@ -2523,127 +2748,117 @@
             </div>
         </div>
 
-		<!-- Cyber Neural Interface Section -->
-		<h2 id="cyber-interface">👾 Axon Connect</h2>
-		<div class="cyber-interface-section">
-			<h3>BRAIN WAVE CONNECT</h3>			
-			<div class="cyber-container">
-				<!-- Main Display -->
-				<div class="cyber-display">
-					<!-- Binary Rain -->
-					<div class="binary-rain" id="binaryRain"></div>					
-					<!-- Connection Nodes -->
-					<div class="connection-nodes">
-						<div class="node" id="node1"></div>
-						<div class="node" id="node2"></div>
-						<div class="node" id="node3"></div>
-						<div class="node" id="node4"></div>
-						<div class="node" id="node5"></div>
-						<div class="node" id="node6"></div>
-					</div>					
-					<!-- Data Streams -->
-					<div class="data-streams" id="dataStreams"></div>					
-					<!-- Hologram -->
-					<div class="hologram-container">
-						<div class="hologram-circle">
-							<div class="hologram-core"></div>
-							<div class="hologram-ring ring-1"></div>
-							<div class="hologram-ring ring-2"></div>
-							<div class="hologram-ring ring-3"></div>
-						</div>
-						<div class="hologram-text" id="hologramText">INITIALIZING NEURAL LINK</div>
-					</div>					
-					<!-- Scrambled Words -->
-					<div class="scrambled-words">
-						<div class="word-container">
-							<div class="scrambled-word" id="scrambledWord1">SECURITY</div>
-							<div class="scrambled-word" id="scrambledWord2">NEURAL</div>
-							<div class="scrambled-word" id="scrambledWord3">NETWORK</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Control Panel -->
-				<div class="control-panel">
-					<div class="panel-header">
-						<h3>ACTIVATION OF CONTROLS</h3>
-						<div class="status-indicators">
-							<div class="status-indicator" id="statusPower"></div>
-							<div class="status-indicator" id="statusData"></div>
-							<div class="status-indicator" id="statusLink"></div>
-						</div>
-					</div>					
-					<div class="panel-controls">
-						<button class="cyber-btn" id="btnActivate">ACTIVATE INTERFACE</button>
-						<button class="cyber-btn" id="btnScramble">SCRAMBLE DATA</button>
-						<button class="cyber-btn" id="btnReset">SYSTEM RESET</button>
-					</div>					
-					<div class="panel-metrics">
-						<div class="metric">
-							<div class="metric-label">NEURAL ACTIVITY</div>
-							<div class="metric-bar">
-								<div class="metric-fill" id="metricActivity" style="width: 0%"></div>
-							</div>
-							<div class="metric-value" id="metricActivityValue">0%</div>
-						</div>						
-						<div class="metric">
-							<div class="metric-label">DATA FLOW</div>
-							<div class="metric-bar">
-								<div class="metric-fill" id="metricDataFlow" style="width: 0%"></div>
-							</div>
-							<div class="metric-value" id="metricDataFlowValue">0%</div>
-						</div>						
-						<div class="metric">
-							<div class="metric-label">CONNECTION STABILITY</div>
-							<div class="metric-bar">
-								<div class="metric-fill" id="metricConnection" style="width: 0%"></div>
-							</div>
-							<div class="metric-value" id="metricConnectionValue">0%</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <!-- Cyber Neural Interface Section -->
+        <h2 id="cyber-interface">👾 Axon Connect</h2>
+        <div class="cyber-interface-section">
+            <h3>BRAIN WAVE CONNECT</h3>			
+            <div class="cyber-container">
+                <!-- Main Display -->
+                <div class="cyber-display">
+                    <!-- Binary Rain -->
+                    <div class="binary-rain" id="binaryRain"></div>					
+                    <!-- Connection Nodes -->
+                    <div class="connection-nodes">
+                        <div class="node" id="node1"></div>
+                        <div class="node" id="node2"></div>
+                        <div class="node" id="node3"></div>
+                        <div class="node" id="node4"></div>
+                        <div class="node" id="node5"></div>
+                        <div class="node" id="node6"></div>
+                    </div>					
+                    <!-- Data Streams -->
+                    <div class="data-streams" id="dataStreams"></div>					
+                    <!-- Hologram -->
+                    <div class="hologram-container">
+                        <div class="hologram-circle">
+                            <div class="hologram-core"></div>
+                            <div class="hologram-ring ring-1"></div>
+                            <div class="hologram-ring ring-2"></div>
+                            <div class="hologram-ring ring-3"></div>
+                        </div>
+                        <div class="hologram-text" id="hologramText">INITIALIZING NEURAL LINK</div>
+                    </div>					
+                    <!-- Scrambled Words -->
+                    <div class="scrambled-words">
+                        <div class="word-container">
+                            <div class="scrambled-word" id="scrambledWord1">SECURITY</div>
+                            <div class="scrambled-word" id="scrambledWord2">NEURAL</div>
+                            <div class="scrambled-word" id="scrambledWord3">NETWORK</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <h3>ACTIVATION OF CONTROLS</h3>
+                        <div class="status-indicators">
+                            <div class="status-indicator" id="statusPower"></div>
+                            <div class="status-indicator" id="statusData"></div>
+                            <div class="status-indicator" id="statusLink"></div>
+                        </div>
+                    </div>					
+                    <div class="panel-controls">
+                        <button class="cyber-btn" id="btnActivate">ACTIVATE INTERFACE</button>
+                        <button class="cyber-btn" id="btnScramble">SCRAMBLE DATA</button>
+                        <button class="cyber-btn" id="btnReset">SYSTEM RESET</button>
+                    </div>					
+                    <div class="panel-metrics">
+                        <div class="metric">
+                            <div class="metric-label">NEURAL ACTIVITY</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" id="metricActivity" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-value" id="metricActivityValue">0%</div>
+                        </div>						
+                        <div class="metric">
+                            <div class="metric-label">DATA FLOW</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" id="metricDataFlow" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-value" id="metricDataFlowValue">0%</div>
+                        </div>						
+                        <div class="metric">
+                            <div class="metric-label">CONNECTION STABILITY</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" id="metricConnection" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-value" id="metricConnectionValue">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Project Timeline -->
-        <h2 id="project-timeline">📅 Project Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">April 2025 - Present</div>
-                <h4>EntroPy Password Generator</h4>
-                <p>Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.</p>
-                <a href="https://github.com/gerivanc/entropy-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
+        <!-- ====== NEW TIMELINE DESIGN ====== -->
+        <div class="timeline-section">
+            <h2 id="project-timeline">📅 Project Timeline</h2>
+            
+            <!-- Desktop: Horizontal Carousel -->
+            <div class="timeline-carousel" id="timelineCarousel">
+                <div class="timeline-track" id="timelineTrack">
+                    <!-- Timeline cards will be populated by JavaScript -->
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="timeline-progress">
+                    <div class="timeline-progress-bar" id="timelineProgress"></div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="timeline-nav">
+                    <button class="timeline-nav-btn" id="timelinePrev">←</button>
+                    <div class="timeline-dots" id="timelineDots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                    <button class="timeline-nav-btn" id="timelineNext">→</button>
+                </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
-                <h4>GitHub Profile & Digital Universe</h4>
-                <p>Personal portfolio showcasing security projects, open-source contributions, and developer journey.</p>
-                <a href="https://github.com/gerivanc" class="btn" style="margin: 10px 0; display: inline-block;">Visit Profile</a>
+            
+            <!-- Mobile: Vertical Timeline -->
+            <div class="timeline-vertical" id="timelineVertical">
+                <!-- Vertical items will be populated by JavaScript -->
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2025 - Present</div>
-                <h4>DNAPass Password Generator</h4>
-                <p>Innovative password generator based on DNA sequence encoding and biological cryptography principles.</p>
-                <a href="https://github.com/gerivanc/dnapass-password-generator" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">August 2025 - Present</div>
-                <h4>EntroPy Password Generator - Web Version</h4>
-                <p>Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.</p>
-                <a href="https://github.com/gerivanc/entropy-password-web" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">October 2025 - Present</div>
-                <h4>Transformers Neural Network & Cyber Neural Network</h4>
-                <p>Interactive AI visualization tool that makes machine learning accessible and understandable.</p>
-                <a href="https://github.com/gerivanc/transformers" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">November 2025 - Present</div>
-                <h4>XPHRASE GENERATION</h4>
-                <p>Expressive phrase generator — strong, modern, and minimalist.</p>
-                <a href="https://github.com/gerivanc/xphrase" class="btn" style="margin: 10px 0; display: inline-block;">View Repository</a>
-            </div>			
         </div>
 
         <!-- Terminal with updated title -->
@@ -2668,31 +2883,31 @@
                 <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
                 <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
                 <br>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>				
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>				
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ ls -la</span></div>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">total 136</span></div>
-				<div>-rw-r--r-- 1 user user | 434 Oct  5 01:32 | .gitignore</div>
-				<div>-rw-r--r-- 1 user user | 36098 Oct  5 01:32 | CHANGELOG.md</div>
-				<div>-rw-r--r-- 1 user user | 8579 Oct  5 01:32 | CONTRIBUTING.md</div>
-				<div>-rw-r--r-- 1 user user | 10273 Oct  5 01:32 | GETTING_STARTED_WINDOWS.md</div>
-				<div>-rw-r--r-- 1 user user | 1084 Oct  5 01:32 | LICENSE.md</div>
-				<div>-rw-r--r-- 1 user user | 8646 Oct  5 01:32 | PASSWORDENTROPYCALCULATION.md</div>
-				<div>-rw-r--r-- 1 user user | 31142 Oct  5 01:32 | README.md</div>
-				<div>-rw-r--r-- 1 user user | 8573 Oct  5 01:32 | RELEASE.md</div>
-				<div>-rw-r--r-- 1 user user | 4152 Oct  5 01:32 | SECURITY.md</div>
-				<div>drwxr-xr-x 1 user user | 86 Oct  5 01:32 | entropy_password_generator</div>
-				<div>-rw-r--r-- 1 user user | 1398 Oct  5 01:32 | pyproject.toml</div>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>
-				<div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ </span></div>				
+                <div>-rw-r--r-- 1 user user | 434 Oct  5 01:32 | .gitignore</div>
+                <div>-rw-r--r-- 1 user user | 36098 Oct  5 01:32 | CHANGELOG.md</div>
+                <div>-rw-r--r-- 1 user user | 8579 Oct  5 01:32 | CONTRIBUTING.md</div>
+                <div>-rw-r--r-- 1 user user | 10273 Oct  5 01:32 | GETTING_STARTED_WINDOWS.md</div>
+                <div>-rw-r--r-- 1 user user | 1084 Oct  5 01:32 | LICENSE.md</div>
+                <div>-rw-r--r-- 1 user user | 8646 Oct  5 01:32 | PASSWORDENTROPYCALCULATION.md</div>
+                <div>-rw-r--r-- 1 user user | 31142 Oct  5 01:32 | README.md</div>
+                <div>-rw-r--r-- 1 user user | 8573 Oct  5 01:32 | RELEASE.md</div>
+                <div>-rw-r--r-- 1 user user | 4152 Oct  5 01:32 | SECURITY.md</div>
+                <div>drwxr-xr-x 1 user user | 86 Oct  5 01:32 | entropy_password_generator</div>
+                <div>-rw-r--r-- 1 user user | 1398 Oct  5 01:32 | pyproject.toml</div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~/entropy-password-generator]</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ </span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command"><span id="typing-command"></span><span class="cursor">|</span></span></div>
             </div>
         </div>
 
         <!-- Animated Stats Dashboard -->
-		<div class="system-status">
-			    <div class="status-item">
+        <div class="system-status">
+            <div class="status-item">
                 <div class="status-indicator security-matrix" data-status="authentication is not optional"></div>
                 <div class="status-text">Security Matrix: <span class="status-value">AUTHENTICATION IS NOT OPTIONAL</span></div>
                 <div class="status-pulse"></div>
@@ -2724,23 +2939,23 @@
             </div>			
         </div>
 
-		<!-- GitHub Statistics section -->
-		<h2 id="github-stats">📊 GitHub Statistics</h2>
-		<p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects.</p>
-		<div class="center">
-			<img width="90%" alt="Gerivan's recent GitHub activity graph" 
-				 data-src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
-				 loading="lazy"
-				 class="github-stats-img">
-		</div>
-		<div class="center">
-			<div class="streak-container">
-				<img alt="Gerivan's GitHub streak stats" 
-					 data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
-					 loading="lazy"
-					 class="github-stats-img streak-img">
-			</div>
-		</div>
+        <!-- GitHub Statistics section -->
+        <h2 id="github-stats">📊 GitHub Statistics</h2>
+        <p>Graphs highlighting my recent activity, contribution streak, and engagement with open source projects.</p>
+        <div class="center">
+            <img width="90%" alt="Gerivan's recent GitHub activity graph" 
+                 data-src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
+                 loading="lazy"
+                 class="github-stats-img">
+        </div>
+        <div class="center">
+            <div class="streak-container">
+                <img alt="Gerivan's GitHub streak stats" 
+                     data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
+                     loading="lazy"
+                     class="github-stats-img streak-img">
+            </div>
+        </div>
 
         <!-- Profile summary section -->
         <h2 id="profile-summary">🎯 Profile Summary</h2>
@@ -2930,7 +3145,7 @@
         .center p {
             margin: 2px 0;
             line-height: 1.2;
-            color: --neon-green; /* Dodger Blue color for copyright text */
+            color: var(--neon-green); /* Dodger Blue color for copyright text */
             transition: color 0.3s ease; /* Smooth transition effect */
         }
         .center p:hover {
@@ -2945,1125 +3160,1403 @@
         </div>
     </div>
 
-		<!-- Mobile Floating Button -->
-		<button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
-			<span class="fab-icon">⚡</span>
-		</button>
+    <!-- Mobile Floating Button -->
+    <button class="floating-btn-mobile" id="floatingBtnMobile" aria-label="Main action">
+        <span class="fab-icon">⚡</span>
+    </button>
 
-		<!-- Floating Actions Menu  + New Button finishing-->
-		<div class="fab-menu-mobile" id="fabMenuMobile">
-			<button class="fab-action-mobile" data-action="scroll-top">
-				<span>⬆️</span>
-				<span class="action-label">Top</span>
-			</button>
-			<button class="fab-action-mobile" data-action="theme-switch">
-				<span>🎨</span>
-				<span class="action-label">Theme</span>
-			</button>
-			<button class="fab-action-mobile" data-action="contact">
-				<span>📧</span>
-				<span class="action-label">Contact</span>
-			</button>
-			<button class="fab-action-mobile" data-action="scroll-finishing">
-				<span>⬇️</span>
-				<span class="action-label">Finishing</span>
-			</button>
-		</div>
+    <!-- Floating Actions Menu  + New Button finishing-->
+    <div class="fab-menu-mobile" id="fabMenuMobile">
+        <button class="fab-action-mobile" data-action="scroll-top">
+            <span>⬆️</span>
+            <span class="action-label">Top</span>
+        </button>
+        <button class="fab-action-mobile" data-action="theme-switch">
+            <span>🎨</span>
+            <span class="action-label">Theme</span>
+        </button>
+        <button class="fab-action-mobile" data-action="contact">
+            <span>📧</span>
+            <span class="action-label">Contact</span>
+        </button>
+        <button class="fab-action-mobile" data-action="scroll-finishing">
+            <span>⬇️</span>
+            <span class="action-label">Finishing</span>
+        </button>
+    </div>
 
     <script>
-		// Theme Switching
-		const themeButtons = document.querySelectorAll('.theme-btn');
-		const body = document.body;
-		const matrixCanvas = document.getElementById('matrix-canvas');
+        // ====== TIMELINE DATA ======
+        const timelineData = [
+            {
+                date: "April 2025 - Present",
+                title: "EntroPy Password Generator",
+                description: "Advanced password generator using real entropy sources for maximum security. Python-based with cryptographic algorithms.",
+                link: "https://github.com/gerivanc/entropy-password-generator",
+                icon: "🔐"
+            },
+            {
+                date: "July 2025 - Present",
+                title: "GitHub Profile & Digital Universe",
+                description: "Personal portfolio showcasing security projects, open-source contributions, and developer journey.",
+                link: "https://github.com/gerivanc",
+                icon: "🌌"
+            },
+            {
+                date: "July 2025 - Present",
+                title: "DNAPass Password Generator",
+                description: "Innovative password generator based on DNA sequence encoding and biological cryptography principles.",
+                link: "https://github.com/gerivanc/dnapass-password-generator",
+                icon: "🧬"
+            },
+            {
+                date: "August 2025 - Present",
+                title: "EntroPy Password Generator - Web Version",
+                description: "Browser-based implementation of the entropy password generator with responsive design and real-time security indicators.",
+                link: "https://github.com/gerivanc/entropy-password-web",
+                icon: "🌐"
+            },
+            {
+                date: "October 2025 - Present",
+                title: "Transformers Neural Network & Cyber Neural Network",
+                description: "Interactive AI visualization tool that makes machine learning accessible and understandable.",
+                link: "https://github.com/gerivanc/transformers",
+                icon: "🧠"
+            },
+            {
+                date: "November 2025 - Present",
+                title: "XPHRASE GENERATION",
+                description: "Expressive phrase generator — strong, modern, and minimalist.",
+                link: "https://github.com/gerivanc/xphrase",
+                icon: "🚀"
+            }
+        ];
 
-		themeButtons.forEach(btn => {
-			btn.addEventListener('click', () => {
-				const theme = btn.dataset.theme;
-				
-				// Update active button
-				themeButtons.forEach(b => b.classList.remove('active'));
-				btn.classList.add('active');
-				
-				// Update body theme
-				body.setAttribute('data-theme', theme);
-				
-				// Handle matrix theme
-				if (theme === 'matrix') {
-					body.classList.add('matrix-theme');
-					initMatrixRain();
-				} else {
-					body.classList.remove('matrix-theme');
-					stopMatrixRain();
-				}
-			});
-		});
+        // ====== TIMELINE INITIALIZATION ======
+        function initTimeline() {
+            const carousel = document.getElementById('timelineCarousel');
+            const track = document.getElementById('timelineTrack');
+            const vertical = document.getElementById('timelineVertical');
+            
+            if (!carousel || !track || !vertical) return;
+            
+            // Clear existing content
+            track.innerHTML = '';
+            vertical.innerHTML = '';
+            
+            // Create carousel cards for desktop
+            timelineData.forEach((item, index) => {
+                // Carousel card
+                const card = document.createElement('div');
+                card.className = 'timeline-card';
+                card.innerHTML = `
+                    <div class="timeline-date">${item.icon} ${item.date}</div>
+                    <h4>${item.title}</h4>
+                    <p>${item.description}</p>
+                    <a href="${item.link}" class="btn" target="_blank" rel="noopener noreferrer">View Details</a>
+                `;
+                track.appendChild(card);
+                
+                // Vertical item for mobile
+                const verticalItem = document.createElement('div');
+                verticalItem.className = 'timeline-vertical-item';
+                verticalItem.innerHTML = `
+                    <button class="timeline-vertical-toggle">▼</button>
+                    <div class="timeline-vertical-date">${item.icon} ${item.date}</div>
+                    <h4>${item.title}</h4>
+                    <div class="timeline-vertical-content">
+                        <p>${item.description}</p>
+                        <a href="${item.link}" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; display: inline-block;">View Details</a>
+                    </div>
+                `;
+                vertical.appendChild(verticalItem);
+            });
+            
+            // Initialize carousel functionality
+            initCarousel();
+            
+            // Initialize vertical accordion for mobile
+            initVerticalAccordion();
+        }
 
-		// Matrix Rain Effect
-		let matrixRainInterval;
-		function initMatrixRain() {
-			const canvas = matrixCanvas;
-			const ctx = canvas.getContext('2d');
-			
-			// Set canvas size
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			
-			// Matrix characters
-			const chars = "01010101010101010101010101010101";
-			const charArray = chars.split("");
-			const font_size = 14;
-			const columns = canvas.width / font_size;
-			const drops = [];
-			
-			// Initialize drops
-			for (let x = 0; x < columns; x++) {
-				drops[x] = Math.floor(Math.random() * canvas.height / font_size);
-			}
-			
-			function draw() {
-				// Semi-transparent black background for trail effect
-				ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-				ctx.fillRect(0, 0, canvas.width, canvas.height);
-				
-				ctx.fillStyle = "#00ff41";
-				ctx.font = font_size + "px monospace";
-				
-				for (let i = 0; i < drops.length; i++) {
-					const text = charArray[Math.floor(Math.random() * charArray.length)];
-					ctx.fillText(text, i * font_size, drops[i] * font_size);
-					
-					if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
-						drops[i] = 0;
-					}
-					drops[i]++;
-				}
-			}
-			
-			// Store interval ID to stop later
-			matrixRainInterval = setInterval(draw, 35);
-		}
+        // ====== CAROUSEL FUNCTIONALITY ======
+        function initCarousel() {
+            const track = document.getElementById('timelineTrack');
+            const cards = document.querySelectorAll('.timeline-card');
+            const prevBtn = document.getElementById('timelinePrev');
+            const nextBtn = document.getElementById('timelineNext');
+            const dotsContainer = document.getElementById('timelineDots');
+            const progressBar = document.getElementById('timelineProgress');
+            
+            if (!track || !cards.length) return;
+            
+            let currentIndex = 0;
+            const cardWidth = cards[0].offsetWidth + 30; // width + gap
+            const totalCards = cards.length;
+            const maxIndex = totalCards - 1;
+            
+            // Create dots
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'timeline-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Update active states
+            function updateActiveStates() {
+                // Update cards
+                cards.forEach((card, index) => {
+                    card.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Update dots
+                const dots = document.querySelectorAll('.timeline-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Update progress bar
+                const progress = ((currentIndex + 1) / totalCards) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                // Update track position
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+            
+            // Navigation functions
+            function goToSlide(index) {
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                updateActiveStates();
+            }
+            
+            function nextSlide() {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop to beginning
+                }
+                updateActiveStates();
+            }
+            
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = maxIndex; // Loop to end
+                }
+                updateActiveStates();
+            }
+            
+            // Event listeners
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            
+            // Auto-advance every 5 seconds
+            let autoSlide = setInterval(nextSlide, 5000);
+            
+            // Pause auto-slide on hover
+            track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            track.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+            
+            // Touch/swipe support for mobile
+            let startX = 0;
+            let endX = 0;
+            
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            
+            track.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left
+                    } else {
+                        prevSlide(); // Swipe right
+                    }
+                }
+            }
+            
+            // Initialize
+            updateActiveStates();
+        }
 
-		function stopMatrixRain() {
-			if (matrixRainInterval) {
-				clearInterval(matrixRainInterval);
-				const ctx = matrixCanvas.getContext('2d');
-				ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-			}
-		}
+        // ====== VERTICAL ACCORDION FOR MOBILE ======
+        function initVerticalAccordion() {
+            const items = document.querySelectorAll('.timeline-vertical-item');
+            
+            items.forEach((item, index) => {
+                const toggle = item.querySelector('.timeline-vertical-toggle');
+                const content = item.querySelector('.timeline-vertical-content');
+                
+                // First item open by default
+                if (index === 0) {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+                
+                toggle.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    items.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        const otherContent = otherItem.querySelector('.timeline-vertical-content');
+                        otherContent.style.maxHeight = null;
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        }
 
-		// Animated Stats Counter
-		function animateValue(element, start, end, duration) {
-			let startTimestamp = null;
-			const step = (timestamp) => {
-				if (!startTimestamp) startTimestamp = timestamp;
-				const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-				const value = Math.floor(progress * (end - start) + start);
-				element.textContent = value.toLocaleString();
-				if (progress < 1) {
-					window.requestAnimationFrame(step);
-				}
-			};
-			window.requestAnimationFrame(step);
-		}
+        // Theme Switching
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        const matrixCanvas = document.getElementById('matrix-canvas');
 
-		// System Status Animation
-		const statusObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					animateSystemStatus();
-					statusObserver.unobserve(entry.target);
-				}
-			});
-		});
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                
+                // Update active button
+                themeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update body theme
+                body.setAttribute('data-theme', theme);
+                
+                // Handle matrix theme
+                if (theme === 'matrix') {
+                    body.classList.add('matrix-theme');
+                    initMatrixRain();
+                } else {
+                    body.classList.remove('matrix-theme');
+                    stopMatrixRain();
+                }
+            });
+        });
 
-		// Start observing system status
-		const systemStatusElement = document.querySelector('.system-status');
-		if (systemStatusElement) {
-			statusObserver.observe(systemStatusElement);
-		}
+        // Matrix Rain Effect
+        let matrixRainInterval;
+        function initMatrixRain() {
+            const canvas = matrixCanvas;
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Matrix characters
+            const chars = "01010101010101010101010101010101";
+            const charArray = chars.split("");
+            const font_size = 14;
+            const columns = canvas.width / font_size;
+            const drops = [];
+            
+            // Initialize drops
+            for (let x = 0; x < columns; x++) {
+                drops[x] = Math.floor(Math.random() * canvas.height / font_size);
+            }
+            
+            function draw() {
+                // Semi-transparent black background for trail effect
+                ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = "#00ff41";
+                ctx.font = font_size + "px monospace";
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * font_size, drops[i] * font_size);
+                    
+                    if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            // Store interval ID to stop later
+            matrixRainInterval = setInterval(draw, 35);
+        }
 
-		function animateSystemStatus() {
-			const statusItems = document.querySelectorAll('.status-item');
-			const statusValues = document.querySelectorAll('.status-value');
-			
-			// Animate items entrance
-			statusItems.forEach((item, index) => {
-				item.style.opacity = '0';
-				item.style.transform = 'translateX(-50px)';
-				
-				setTimeout(() => {
-					item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-					item.style.opacity = '1';
-					item.style.transform = 'translateX(0)';
-				}, index * 200);
-			});
-			
-			// Animate status values with typing effect
-			statusValues.forEach((value, index) => {
-				const originalText = value.textContent;
-				value.textContent = '';
-				
-				setTimeout(() => {
-					typeStatusText(value, originalText, 0);
-				}, 1000 + (index * 300));
-			});
-			
-			// Add random status fluctuations for realism
-			startStatusFluctuations();
-		}
+        function stopMatrixRain() {
+            if (matrixRainInterval) {
+                clearInterval(matrixRainInterval);
+                const ctx = matrixCanvas.getContext('2d');
+                ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+            }
+        }
 
-		function typeStatusText(element, text, index) {
-			if (index < text.length) {
-				element.textContent += text.charAt(index);
-				setTimeout(() => typeStatusText(element, text, index + 1), 100);
-			}
-		}
+        // Animated Stats Counter
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
 
-		function startStatusFluctuations() {
-			setInterval(() => {
-				const statusItems = document.querySelectorAll('.status-item');
-				const randomIndex = Math.floor(Math.random() * statusItems.length);
-				const randomItem = statusItems[randomIndex];
-				const statusIndicator = randomItem.querySelector('.status-indicator');
-				const statusValue = randomItem.querySelector('.status-value');
-				
-				// Brief fluctuation effect
-				statusIndicator.style.transform = 'scale(1.3)';
-				statusValue.style.color = 'var(--accent-color)';
-				
-				setTimeout(() => {
-					statusIndicator.style.transform = 'scale(1)';
-					statusValue.style.color = 'var(--primary-color)';
-				}, 300);
-			}, 5000);
-		}
+        // System Status Animation
+        const statusObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSystemStatus();
+                    statusObserver.unobserve(entry.target);
+                }
+            });
+        });
 
-		// Skills Animation
-		const skillProgresses = document.querySelectorAll('.skill-progress');
-		const skillObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					skillProgresses.forEach(progress => {
-						const width = progress.getAttribute('data-width');
-						progress.style.width = width + '%';
-					});
-					skillObserver.disconnect();
-				}
-			});
-		});
+        // Start observing system status
+        const systemStatusElement = document.querySelector('.system-status');
+        if (systemStatusElement) {
+            statusObserver.observe(systemStatusElement);
+        }
 
-		const skillsContainer = document.querySelector('.skills-container');
-		if (skillsContainer) {
-			skillObserver.observe(skillsContainer);
-		}
+        function animateSystemStatus() {
+            const statusItems = document.querySelectorAll('.status-item');
+            const statusValues = document.querySelectorAll('.status-value');
+            
+            // Animate items entrance
+            statusItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-50px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 200);
+            });
+            
+            // Animate status values with typing effect
+            statusValues.forEach((value, index) => {
+                const originalText = value.textContent;
+                value.textContent = '';
+                
+                setTimeout(() => {
+                    typeStatusText(value, originalText, 0);
+                }, 1000 + (index * 300));
+            });
+            
+            // Add random status fluctuations for realism
+            startStatusFluctuations();
+        }
 
-		// Terminal Typing Animation
-		const commands = [
-			"python3 -m venv venv-stablepypi",
-			"source venv-stablepypi/bin/activate",
-			"python -m ensurepip --upgrade",
-			"pip install --upgrade pip",
-			"pip install entropy-password-generator",
-			"pip list",
-			"",
-			"python3 -m venv venv-testpypi",
-			"source venv-testpypi/bin/activate",
-			"python -m ensurepip --upgrade",
-			"pip install --upgrade pip",
-			"pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
-			"pip list",
-			"",
-			"python3 entropy_password_generator/password_generator.py --mode 11:",
-			"Generated password: ?*WjM\\MR-.JkQr5",
-			"Entropy: 95.10 bits;",
-			"",
-			"python3 entropy_password_generator/password_generator.py --mode 15:",
-			"Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
-			"Entropy: 152.16 bits.",
-			"",
-			"python3 entropy_password_generator/password_generator.py --length 72 --with-ambiguous:",
-			"Generated password: Ttej[@@!9D,fbu|NGo?1lcmU\\}R!*ep[!N[3IT#G*kX=)5h%4<GbQk}Q*!3]~u79:EJ#`1tW",
-			"Entropy: 468.56 bits."
-		];
+        function typeStatusText(element, text, index) {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                setTimeout(() => typeStatusText(element, text, index + 1), 100);
+            }
+        }
 
-		let currentCommand = 0;
-		let currentChar = 0;
-		const typingElement = document.getElementById('typing-command');
+        function startStatusFluctuations() {
+            setInterval(() => {
+                const statusItems = document.querySelectorAll('.status-item');
+                const randomIndex = Math.floor(Math.random() * statusItems.length);
+                const randomItem = statusItems[randomIndex];
+                const statusIndicator = randomItem.querySelector('.status-indicator');
+                const statusValue = randomItem.querySelector('.status-value');
+                
+                // Brief fluctuation effect
+                statusIndicator.style.transform = 'scale(1.3)';
+                statusValue.style.color = 'var(--accent-color)';
+                
+                setTimeout(() => {
+                    statusIndicator.style.transform = 'scale(1)';
+                    statusValue.style.color = 'var(--primary-color)';
+                }, 300);
+            }, 5000);
+        }
 
-		function typeCommand() {
-			if (currentChar < commands[currentCommand].length) {
-				typingElement.textContent += commands[currentCommand].charAt(currentChar);
-				currentChar++;
-				setTimeout(typeCommand, 100);
-			} else {
-				setTimeout(eraseCommand, 1000);
-			}
-		}
+        // Skills Animation
+        const skillProgresses = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skillProgresses.forEach(progress => {
+                        const width = progress.getAttribute('data-width');
+                        progress.style.width = width + '%';
+                    });
+                    skillObserver.disconnect();
+                }
+            });
+        });
 
-		function eraseCommand() {
-			if (currentChar > 0) {
-				typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
-				currentChar--;
-				setTimeout(eraseCommand, 50);
-			} else {
-				currentCommand = (currentCommand + 1) % commands.length;
-				setTimeout(typeCommand, 500);
-			}
-		}
+        const skillsContainer = document.querySelector('.skills-container');
+        if (skillsContainer) {
+            skillObserver.observe(skillsContainer);
+        }
 
-		// Image Loading Optimization
-		function optimizeImageLoading() {
-			const imageObserver = new IntersectionObserver((entries, observer) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const img = entry.target;
-						
-						if (img.dataset.src) {
-							img.src = img.dataset.src;
-							img.classList.remove('lazy');
-						}
-						
-						img.classList.add('loaded');
-						imageObserver.unobserve(img);
-					}
-				});
-			}, {
-				rootMargin: '50px',
-				threshold: 0.1
-			});
+        // Terminal Typing Animation
+        const commands = [
+            "python3 -m venv venv-stablepypi",
+            "source venv-stablepypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install entropy-password-generator",
+            "pip list",
+            "",
+            "python3 -m venv venv-testpypi",
+            "source venv-testpypi/bin/activate",
+            "python -m ensurepip --upgrade",
+            "pip install --upgrade pip",
+            "pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator",
+            "pip list",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 11:",
+            "Generated password: ?*WjM\\MR-.JkQr5",
+            "Entropy: 95.10 bits;",
+            "",
+            "python3 entropy_password_generator/password_generator.py --mode 15:",
+            "Generated password: #Cxn8S$G8q&PrGF*9F$}(UDd",
+            "Entropy: 152.16 bits.",
+            "",
+            "python3 entropy_password_generator/password_generator.py --length 72 --with-ambiguous:",
+            "Generated password: Ttej[@@!9D,fbu|NGo?1lcmU\\}R!*ep[!N[3IT#G*kX=)5h%4<GbQk}Q*!3]~u79:EJ#`1tW",
+            "Entropy: 468.56 bits."
+        ];
 
-			const externalImages = document.querySelectorAll(`
-				.badges img,
-				.stats-grid img, 
-				.center img,
-				[src*="github-readme"],
-				[src*="img.shields.io"],
-				[src*="komarev.com"]
-			`);
+        let currentCommand = 0;
+        let currentChar = 0;
+        const typingElement = document.getElementById('typing-command');
 
-			externalImages.forEach(img => {
-				if (!img.loading) {
-					img.loading = 'lazy';
-				}
-				
-				img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-				
-				const rect = img.getBoundingClientRect();
-				if (rect.top > window.innerHeight) {
-					imageObserver.observe(img);
-				}
-			});
+        function typeCommand() {
+            if (currentChar < commands[currentCommand].length) {
+                typingElement.textContent += commands[currentCommand].charAt(currentChar);
+                currentChar++;
+                setTimeout(typeCommand, 100);
+            } else {
+                setTimeout(eraseCommand, 1000);
+            }
+        }
 
-			console.log(`🔧 Optimized loading of ${externalImages.length} external images`);
-		}
+        function eraseCommand() {
+            if (currentChar > 0) {
+                typingElement.textContent = commands[currentCommand].substring(0, currentChar - 1);
+                currentChar--;
+                setTimeout(eraseCommand, 50);
+            } else {
+                currentCommand = (currentCommand + 1) % commands.length;
+                setTimeout(typeCommand, 500);
+            }
+        }
 
-		// Priority Loading for Elements Above the Fold
-		function loadCriticalContent() {
-			const badgeImages = document.querySelectorAll('.badges img');
-			badgeImages.forEach(img => {
-				if (img.dataset.src) {
-					img.src = img.dataset.src;
-				}
-			});
-		}
+        // Image Loading Optimization
+        function optimizeImageLoading() {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                        }
+                        
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px',
+                threshold: 0.1
+            });
 
-		// Neural Network Visualization
-		const neuralNetwork = document.getElementById('neuralNetwork');
-		let neuralInterval;
+            const externalImages = document.querySelectorAll(`
+                .badges img,
+                .stats-grid img, 
+                .center img,
+                [src*="github-readme"],
+                [src*="img.shields.io"],
+                [src*="komarev.com"]
+            `);
 
-		function createNeuralNetwork() {
-			if (!neuralNetwork) return;
-			
-			neuralNetwork.innerHTML = '';
-			const layers = [4, 6, 8, 6, 4];
-			const nodePositions = [];
-			
-			layers.forEach((nodeCount, layerIndex) => {
-				for (let i = 0; i < nodeCount; i++) {
-					const node = document.createElement('div');
-					node.className = 'neural-node';
-					
-					const containerWidth = neuralNetwork.clientWidth || neuralNetwork.offsetWidth;
-					const containerHeight = neuralNetwork.clientHeight || neuralNetwork.offsetHeight;
-					
-					const x = (layerIndex + 1) * (containerWidth / (layers.length + 1));
-					const y = (i + 1) * (containerHeight / (nodeCount + 1));
-					
-					node.style.left = x + 'px';
-					node.style.top = y + 'px';
-					
-					neuralNetwork.appendChild(node);
-					nodePositions.push({x, y, layer: layerIndex});
-				}
-			});
-			
-			// Create connections
-			nodePositions.forEach((node, index) => {
-				nodePositions.forEach((targetNode, targetIndex) => {
-					if (node.layer < targetNode.layer && Math.random() > 0.7) {
-						const connection = document.createElement('div');
-						connection.className = 'neural-connection';
-						
-						const dx = targetNode.x - node.x;
-						const dy = targetNode.y - node.y;
-						const length = Math.sqrt(dx * dx + dy * dy);
-						const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-						
-						connection.style.width = length + 'px';
-						connection.style.left = node.x + 'px';
-						connection.style.top = node.y + 'px';
-						connection.style.transform = `rotate(${angle}deg)`;
-						connection.style.opacity = Math.random() * 0.5 + 0.3;
-						
-						neuralNetwork.appendChild(connection);
-					}
-				});
-			});
-		}
+            externalImages.forEach(img => {
+                if (!img.loading) {
+                    img.loading = 'lazy';
+                }
+                
+                img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                const rect = img.getBoundingClientRect();
+                if (rect.top > window.innerHeight) {
+                    imageObserver.observe(img);
+                }
+            });
 
-		function animateNeuralNetwork() {
-			const nodes = document.querySelectorAll('.neural-node');
-			const connections = document.querySelectorAll('.neural-connection');
-			
-			nodes.forEach(node => {
-				node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
-				node.style.opacity = 0.5 + Math.random() * 0.5;
-			});
-			
-			connections.forEach(conn => {
-				conn.style.opacity = 0.2 + Math.random() * 0.3;
-			});
-		}
+            console.log(`🔧 Optimized loading of ${externalImages.length} external images`);
+        }
 
-		function initNeuralNetwork() {
-			const startBtn = document.getElementById('startTraining');
-			const resetBtn = document.getElementById('resetNetwork');
-			
-			if (startBtn && resetBtn) {
-				startBtn.addEventListener('click', startTraining);
-				resetBtn.addEventListener('click', resetTraining);
-				
-				console.log('🧠 Neural Network buttons initialized');
-			}
-		}
+        // Priority Loading for Elements Above the Fold
+        function loadCriticalContent() {
+            const badgeImages = document.querySelectorAll('.badges img');
+            badgeImages.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+        }
 
-		function startTraining() {
-			createNeuralNetwork();
-			if (neuralInterval) clearInterval(neuralInterval);
-			neuralInterval = setInterval(animateNeuralNetwork, 500);
-			console.log('🚀 Training started');
-		}
+        // Neural Network Visualization
+        const neuralNetwork = document.getElementById('neuralNetwork');
+        let neuralInterval;
 
-		function resetTraining() {
-			if (neuralInterval) {
-				clearInterval(neuralInterval);
-				neuralInterval = null;
-			}
-			createNeuralNetwork();
-			console.log('🔄 Network reset');
-		}
+        function createNeuralNetwork() {
+            if (!neuralNetwork) return;
+            
+            neuralNetwork.innerHTML = '';
+            const layers = [4, 6, 8, 6, 4];
+            const nodePositions = [];
+            
+            layers.forEach((nodeCount, layerIndex) => {
+                for (let i = 0; i < nodeCount; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'neural-node';
+                    
+                    const containerWidth = neuralNetwork.clientWidth || neuralNetwork.offsetWidth;
+                    const containerHeight = neuralNetwork.clientHeight || neuralNetwork.offsetHeight;
+                    
+                    const x = (layerIndex + 1) * (containerWidth / (layers.length + 1));
+                    const y = (i + 1) * (containerHeight / (nodeCount + 1));
+                    
+                    node.style.left = x + 'px';
+                    node.style.top = y + 'px';
+                    
+                    neuralNetwork.appendChild(node);
+                    nodePositions.push({x, y, layer: layerIndex});
+                }
+            });
+            
+            // Create connections
+            nodePositions.forEach((node, index) => {
+                nodePositions.forEach((targetNode, targetIndex) => {
+                    if (node.layer < targetNode.layer && Math.random() > 0.7) {
+                        const connection = document.createElement('div');
+                        connection.className = 'neural-connection';
+                        
+                        const dx = targetNode.x - node.x;
+                        const dy = targetNode.y - node.y;
+                        const length = Math.sqrt(dx * dx + dy * dy);
+                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                        
+                        connection.style.width = length + 'px';
+                        connection.style.left = node.x + 'px';
+                        connection.style.top = node.y + 'px';
+                        connection.style.transform = `rotate(${angle}deg)`;
+                        connection.style.opacity = Math.random() * 0.5 + 0.3;
+                        
+                        neuralNetwork.appendChild(connection);
+                    }
+                });
+            });
+        }
 
-		// Particle Animation
-		function createParticles() {
-			const particlesContainer = document.getElementById('particles');
-			if (!particlesContainer) return;
-			
-			const particleCount = 50;
-			
-			for (let i = 0; i < particleCount; i++) {
-				const particle = document.createElement('div');
-				particle.className = 'particle';
-				
-				const size = Math.random() * 3 + 1;
-				const posX = Math.random() * 100;
-				const posY = Math.random() * 100;
-				const duration = Math.random() * 20 + 10;
-				
-				particle.style.width = size + 'px';
-				particle.style.height = size + 'px';
-				particle.style.left = posX + 'vw';
-				particle.style.top = posY + 'vh';
-				particle.style.animation = `float ${duration}s linear infinite`;
-				
-				particlesContainer.appendChild(particle);
-			}
-		}
+        function animateNeuralNetwork() {
+            const nodes = document.querySelectorAll('.neural-node');
+            const connections = document.querySelectorAll('.neural-connection');
+            
+            nodes.forEach(node => {
+                node.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
+                node.style.opacity = 0.5 + Math.random() * 0.5;
+            });
+            
+            connections.forEach(conn => {
+                conn.style.opacity = 0.2 + Math.random() * 0.3;
+            });
+        }
 
-		// Add floating animation for particles
-		const style = document.createElement('style');
-		style.textContent = `
-			@keyframes float {
-				0% { transform: translateY(0) translateX(0); opacity: 0; }
-				10% { opacity: 1; }
-				90% { opacity: 1; }
-				100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
-			}
-		`;
-		document.head.appendChild(style);
+        function initNeuralNetwork() {
+            const startBtn = document.getElementById('startTraining');
+            const resetBtn = document.getElementById('resetNetwork');
+            
+            if (startBtn && resetBtn) {
+                startBtn.addEventListener('click', startTraining);
+                resetBtn.addEventListener('click', resetTraining);
+                
+                console.log('🧠 Neural Network buttons initialized');
+            }
+        }
 
-		// PWA Installation
-		let deferredPrompt;
-		const installPrompt = document.getElementById('installPrompt');
-		const installBtn = document.getElementById('installBtn');
-		const dismissBtn = document.getElementById('dismissBtn');
+        function startTraining() {
+            createNeuralNetwork();
+            if (neuralInterval) clearInterval(neuralInterval);
+            neuralInterval = setInterval(animateNeuralNetwork, 500);
+            console.log('🚀 Training started');
+        }
 
-		if (installPrompt && installBtn && dismissBtn) {
-			window.addEventListener('beforeinstallprompt', (e) => {
-				e.preventDefault();
-				deferredPrompt = e;
-				setTimeout(() => {
-					installPrompt.classList.add('show');
-				}, 3000);
-			});
+        function resetTraining() {
+            if (neuralInterval) {
+                clearInterval(neuralInterval);
+                neuralInterval = null;
+            }
+            createNeuralNetwork();
+            console.log('🔄 Network reset');
+        }
 
-			installBtn.addEventListener('click', async () => {
-				if (deferredPrompt) {
-					deferredPrompt.prompt();
-					const { outcome } = await deferredPrompt.userChoice;
-					if (outcome === 'accepted') {
-						installPrompt.classList.remove('show');
-					}
-					deferredPrompt = null;
-				}
-			});
+        // Particle Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+            
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = posX + 'vw';
+                particle.style.top = posY + 'vh';
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
 
-			dismissBtn.addEventListener('click', () => {
-				installPrompt.classList.remove('show');
-			});
-		}
+        // Add floating animation for particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0) translateX(0); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
-		// External Links Protection
-		function secureExternalLinks() {
-			document.querySelectorAll('a[href^="http"]').forEach(link => {
-				if (link.hostname !== window.location.hostname && 
-					!link.href.includes('gerivan.me')) {
-					link.setAttribute('rel', 'noopener noreferrer');
-					link.setAttribute('target', '_blank');
-				}
-			});
-			console.log('🔒 External links protected with noopener/noreferrer');
-		}
+        // PWA Installation
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+        const dismissBtn = document.getElementById('dismissBtn');
 
-		// Mobile Floating Button - CORRECTED VERSION
-		class FloatingButtonMobile {
-			constructor() {
-				this.floatingBtn = document.getElementById('floatingBtnMobile');
-				this.fabMenu = document.getElementById('fabMenuMobile');
-				this.isMenuOpen = false;
-				
-				console.log('🔧 FloatingButtonMobile constructor called');
-				console.log('🔧 Button element:', this.floatingBtn);
-				console.log('🔧 Menu element:', this.fabMenu);
-				
-				this.init();
-			}
-			
-			init() {
-				console.log('🚀 Initializing floating button...');
-				
-				if (!this.floatingBtn) {
-					console.error('❌ Floating button element not found!');
-					return;
-				}
-				
-				// Main event with touch and click support
-				this.floatingBtn.addEventListener('click', (e) => this.toggleMenu(e));
-				
-				// Close menu when tapping away
-				document.addEventListener('click', (e) => this.handleOutsideClick(e));
-				
-				// Handle menu actions
-				if (this.fabMenu) {
-					this.fabMenu.addEventListener('click', (e) => this.handleAction(e));
-				}
-				
-				console.log('✅ Floating button initialized successfully');
-			}
-			
-			toggleMenu(e) {
-				console.log('🎯 Toggle menu called, current state:', this.isMenuOpen);
-				
-				if (e) {
-					e.stopPropagation();
-				}
-				
-				this.isMenuOpen = !this.isMenuOpen;
-				
-				if (this.fabMenu) {
-					this.fabMenu.classList.toggle('open', this.isMenuOpen);
-					console.log('📱 Menu open state:', this.isMenuOpen);
-				}
-				
-				// Haptic feedback if available
-				if (navigator.vibrate) {
-					navigator.vibrate(10);
-				}
-				
-				// Animate the main button
-				this.floatingBtn.style.transform = this.isMenuOpen ? 'rotate(45deg)' : 'rotate(0)';
-			}
-			
-			handleOutsideClick(e) {
-				if (this.isMenuOpen && 
-					!this.floatingBtn.contains(e.target) && 
-					(!this.fabMenu || !this.fabMenu.contains(e.target))) {
-					console.log('👆 Outside click detected, closing menu');
-					this.isMenuOpen = false;
-					if (this.fabMenu) {
-						this.fabMenu.classList.remove('open');
-					}
-					this.floatingBtn.style.transform = 'rotate(0)';
-				}
-			}
-			
-			handleAction(e) {
-				const actionBtn = e.target.closest('.fab-action-mobile');
-				if (!actionBtn) return;
-				
-				const action = actionBtn.dataset.action;
-				console.log('🎯 Action triggered:', action);
-				
-				// Visual feedback
-				actionBtn.style.transform = 'scale(0.9)';
-				setTimeout(() => {
-					actionBtn.style.transform = 'scale(1)';
-				}, 150);
-				
-				// Execute action
-				this.executeAction(action);
-				
-				// Close menu after action
-				this.toggleMenu();
-			}
-			
-			executeAction(action) {
-				console.log('⚡ Executing action:', action);
-				
-				switch(action) {
-					case 'scroll-top':
-						this.scrollToTop();
-						break;
-					case 'theme-switch':
-						this.cycleTheme();
-						break;
-					case 'contact':
-						this.scrollToContact();
-						break;
-					case 'scroll-finishing':
-						this.scrollToFinishing();
-						break;
-					default:
-						console.warn('⚠️ Unknown action:', action);
-				}
-			}
-			
-			scrollToTop() {
-				console.log('⬆️ Scrolling to top...');
-				
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
-				});
-				
-				console.log('✅ Scroll to top executed');
-			}
-			
-			scrollToFinishing() {
-				console.log('⬇️ Scrolling to finishing section...');
-				
-				const finishingSection = document.getElementById('finishing-section');
-				if (finishingSection) {
-					finishingSection.scrollIntoView({
-						behavior: 'smooth',
-						block: 'end'
-					});
-					console.log('✅ Scrolled to finishing section');
-				} else {
-					console.error('❌ Finishing section not found');
-					// Fallback: scroll to the bottom of the page
-					window.scrollTo({
-						top: document.body.scrollHeight,
-						behavior: 'smooth'
-					});
-				}
-			}
-			
-			cycleTheme() {
-				console.log('🎨 Cycling theme...');
-				const themes = ['cyber', 'light', 'matrix'];
-				const currentTheme = document.body.getAttribute('data-theme') || 'cyber';
-				const currentIndex = themes.indexOf(currentTheme);
-				const nextIndex = (currentIndex + 1) % themes.length;
-				const nextTheme = themes[nextIndex];
-				
-				console.log('🔄 Switching to theme:', nextTheme);
-				
-				// Trigger click on corresponding theme button
-				const themeBtn = document.querySelector(`[data-theme="${nextTheme}"]`);
-				if (themeBtn) {
-					themeBtn.click();
-				} else {
-					console.error('❌ Theme button not found for:', nextTheme);
-				}
-			}
-			
-			scrollToContact() {
-				console.log('📧 Scrolling to contact...');
-				const contactSection = document.getElementById('contact');
-				if (contactSection) {
-					contactSection.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-					console.log('✅ Scrolled to contact section');
-				} else {
-					console.error('❌ Contact section not found');
-				}
-			}
-		}
+        if (installPrompt && installBtn && dismissBtn) {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                setTimeout(() => {
+                    installPrompt.classList.add('show');
+                }, 3000);
+            });
 
-		// Floating button initialization with error handling
-		function initFloatingButton() {
-			console.log('🔧 Initializing floating button...');
-			
-			// Wait a bit to ensure DOM is fully loaded
-			setTimeout(() => {
-				if (document.getElementById('floatingBtnMobile')) {
-					try {
-						new FloatingButtonMobile();
-						console.log('✅ Floating button initialized successfully');
-					} catch (error) {
-						console.error('❌ Floating button initialization failed:', error);
-					}
-				} else {
-					console.error('❌ Floating button element not found in DOM');
-				}
-			}, 100);
-		}
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        installPrompt.classList.remove('show');
+                    }
+                    deferredPrompt = null;
+                }
+            });
 
-		// Single DOMContentLoaded listener
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log('🚀 Initializing all components...');
+            dismissBtn.addEventListener('click', () => {
+                installPrompt.classList.remove('show');
+            });
+        }
 
-			// Initialize components
-			loadCriticalContent();
-			createParticles();
-			secureExternalLinks();
-			
-			// Neural Network
-			if (document.getElementById('neuralNetwork')) {
-				createNeuralNetwork();
-				initNeuralNetwork();
-			}
-			
-			// Initialize floating button
-			initFloatingButton();
-			
-			// Terminal animation
-			if (typingElement) {
-				setTimeout(typeCommand, 2000);
-			}
-			
-			// Image optimization
-			setTimeout(optimizeImageLoading, 500);
-			
-			console.log('✅ All components initialized successfully');
-		});
+        // External Links Protection
+        function secureExternalLinks() {
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                if (link.hostname !== window.location.hostname && 
+                    !link.href.includes('gerivan.me')) {
+                    link.setAttribute('rel', 'noopener noreferrer');
+                    link.setAttribute('target', '_blank');
+                }
+            });
+            console.log('🔒 External links protected with noopener/noreferrer');
+        }
 
-		// Enhanced responsive handling
-		window.addEventListener('resize', () => {
-			if (document.getElementById('neuralNetwork')) {
-				clearTimeout(window.neuralResizeTimeout);
-				window.neuralResizeTimeout = setTimeout(() => {
-					createNeuralNetwork();
-				}, 250);
-			}
-			
-			if (body.classList.contains('matrix-theme')) {
-				matrixCanvas.width = window.innerWidth;
-				matrixCanvas.height = window.innerHeight;
-			}
-		});
+        // Mobile Floating Button - CORRECTED VERSION
+        class FloatingButtonMobile {
+            constructor() {
+                this.floatingBtn = document.getElementById('floatingBtnMobile');
+                this.fabMenu = document.getElementById('fabMenuMobile');
+                this.isMenuOpen = false;
+                
+                console.log('🔧 FloatingButtonMobile constructor called');
+                console.log('🔧 Button element:', this.floatingBtn);
+                console.log('🔧 Menu element:', this.fabMenu);
+                
+                this.init();
+            }
+            
+            init() {
+                console.log('🚀 Initializing floating button...');
+                
+                if (!this.floatingBtn) {
+                    console.error('❌ Floating button element not found!');
+                    return;
+                }
+                
+                // Main event with touch and click support
+                this.floatingBtn.addEventListener('click', (e) => this.toggleMenu(e));
+                
+                // Close menu when tapping away
+                document.addEventListener('click', (e) => this.handleOutsideClick(e));
+                
+                // Handle menu actions
+                if (this.fabMenu) {
+                    this.fabMenu.addEventListener('click', (e) => this.handleAction(e));
+                }
+                
+                console.log('✅ Floating button initialized successfully');
+            }
+            
+            toggleMenu(e) {
+                console.log('🎯 Toggle menu called, current state:', this.isMenuOpen);
+                
+                if (e) {
+                    e.stopPropagation();
+                }
+                
+                this.isMenuOpen = !this.isMenuOpen;
+                
+                if (this.fabMenu) {
+                    this.fabMenu.classList.toggle('open', this.isMenuOpen);
+                    console.log('📱 Menu open state:', this.isMenuOpen);
+                }
+                
+                // Haptic feedback if available
+                if (navigator.vibrate) {
+                    navigator.vibrate(10);
+                }
+                
+                // Animate the main button
+                this.floatingBtn.style.transform = this.isMenuOpen ? 'rotate(45deg)' : 'rotate(0)';
+            }
+            
+            handleOutsideClick(e) {
+                if (this.isMenuOpen && 
+                    !this.floatingBtn.contains(e.target) && 
+                    (!this.fabMenu || !this.fabMenu.contains(e.target))) {
+                    console.log('👆 Outside click detected, closing menu');
+                    this.isMenuOpen = false;
+                    if (this.fabMenu) {
+                        this.fabMenu.classList.remove('open');
+                    }
+                    this.floatingBtn.style.transform = 'rotate(0)';
+                }
+            }
+            
+            handleAction(e) {
+                const actionBtn = e.target.closest('.fab-action-mobile');
+                if (!actionBtn) return;
+                
+                const action = actionBtn.dataset.action;
+                console.log('🎯 Action triggered:', action);
+                
+                // Visual feedback
+                actionBtn.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    actionBtn.style.transform = 'scale(1)';
+                }, 150);
+                
+                // Execute action
+                this.executeAction(action);
+                
+                // Close menu after action
+                this.toggleMenu();
+            }
+            
+            executeAction(action) {
+                console.log('⚡ Executing action:', action);
+                
+                switch(action) {
+                    case 'scroll-top':
+                        this.scrollToTop();
+                        break;
+                    case 'theme-switch':
+                        this.cycleTheme();
+                        break;
+                    case 'contact':
+                        this.scrollToContact();
+                        break;
+                    case 'scroll-finishing':
+                        this.scrollToFinishing();
+                        break;
+                    default:
+                        console.warn('⚠️ Unknown action:', action);
+                }
+            }
+            
+            scrollToTop() {
+                console.log('⬆️ Scrolling to top...');
+                
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                console.log('✅ Scroll to top executed');
+            }
+            
+            scrollToFinishing() {
+                console.log('⬇️ Scrolling to finishing section...');
+                
+                const finishingSection = document.getElementById('finishing-section');
+                if (finishingSection) {
+                    finishingSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'end'
+                    });
+                    console.log('✅ Scrolled to finishing section');
+                } else {
+                    console.error('❌ Finishing section not found');
+                    // Fallback: scroll to the bottom of the page
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            cycleTheme() {
+                console.log('🎨 Cycling theme...');
+                const themes = ['cyber', 'light', 'matrix'];
+                const currentTheme = document.body.getAttribute('data-theme') || 'cyber';
+                const currentIndex = themes.indexOf(currentTheme);
+                const nextIndex = (currentIndex + 1) % themes.length;
+                const nextTheme = themes[nextIndex];
+                
+                console.log('🔄 Switching to theme:', nextTheme);
+                
+                // Trigger click on corresponding theme button
+                const themeBtn = document.querySelector(`[data-theme="${nextTheme}"]`);
+                if (themeBtn) {
+                    themeBtn.click();
+                } else {
+                    console.error('❌ Theme button not found for:', nextTheme);
+                }
+            }
+            
+            scrollToContact() {
+                console.log('📧 Scrolling to contact...');
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    console.log('✅ Scrolled to contact section');
+                } else {
+                    console.error('❌ Contact section not found');
+                }
+            }
+        }
 
-		// Add loading animation to images
-		document.querySelectorAll('img').forEach(img => {
-			img.addEventListener('load', function() {
-				this.style.opacity = '1';
-				this.style.transform = 'scale(1)';
-			});
-			
-			img.style.opacity = '0';
-			img.style.transform = 'scale(0.9)';
-			img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-		});
+        // Floating button initialization with error handling
+        function initFloatingButton() {
+            console.log('🔧 Initializing floating button...');
+            
+            // Wait a bit to ensure DOM is fully loaded
+            setTimeout(() => {
+                if (document.getElementById('floatingBtnMobile')) {
+                    try {
+                        new FloatingButtonMobile();
+                        console.log('✅ Floating button initialized successfully');
+                    } catch (error) {
+                        console.error('❌ Floating button initialization failed:', error);
+                    }
+                } else {
+                    console.error('❌ Floating button element not found in DOM');
+                }
+            }, 100);
+        }
 
-		// Marquee animation pause on hover
-		const marquee = document.querySelector('.marquee-content');
-		if (marquee) {
-			marquee.addEventListener('mouseenter', () => {
-				marquee.style.animationPlayState = 'paused';
-			});
-			
-			marquee.addEventListener('mouseleave', () => {
-				marquee.style.animationPlayState = 'running';
-			});
-		}
+        // Single DOMContentLoaded listener
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Initializing all components...');
 
-		// Optimize for slow connections
-		if (navigator.connection) {
-			const connection = navigator.connection;
-			
-			if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-				document.documentElement.classList.add('slow-connection');
-			}
-		}
+            // Initialize components
+            loadCriticalContent();
+            createParticles();
+            secureExternalLinks();
+            
+            // Neural Network
+            if (document.getElementById('neuralNetwork')) {
+                createNeuralNetwork();
+                initNeuralNetwork();
+            }
+            
+            // Initialize timeline
+            initTimeline();
+            
+            // Initialize floating button
+            initFloatingButton();
+            
+            // Terminal animation
+            if (typingElement) {
+                setTimeout(typeCommand, 2000);
+            }
+            
+            // Image optimization
+            setTimeout(optimizeImageLoading, 500);
+            
+            // Cyber Interface
+            initCyberInterface();
+            
+            // Reading progress bar
+            initReadingProgress();
+            
+            console.log('✅ All components initialized successfully');
+        });
 
-			// Cyber Interface JavaScript
-			document.addEventListener('DOMContentLoaded', function() {
-				// Elements
-				const binaryRain = document.getElementById('binaryRain');
-				const hologramText = document.getElementById('hologramText');
-				const dataStreams = document.getElementById('dataStreams');
-				const scrambledWords = [
-					document.getElementById('scrambledWord1'),
-					document.getElementById('scrambledWord2'),
-					document.getElementById('scrambledWord3')
-				];
-				
-				const btnActivate = document.getElementById('btnActivate');
-				const btnScramble = document.getElementById('btnScramble');
-				const btnReset = document.getElementById('btnReset');
-				
-				const statusPower = document.getElementById('statusPower');
-				const statusData = document.getElementById('statusData');
-				const statusLink = document.getElementById('statusLink');
-				
-				const metricActivity = document.getElementById('metricActivity');
-				const metricDataFlow = document.getElementById('metricDataFlow');
-				const metricConnection = document.getElementById('metricConnection');
-				
-				const metricActivityValue = document.getElementById('metricActivityValue');
-				const metricDataFlowValue = document.getElementById('metricDataFlowValue');
-				const metricConnectionValue = document.getElementById('metricConnectionValue');
-				
-				// State
-				let isActive = false;
-				let binaryInterval;
-				let dataStreamInterval;
-				let hologramTextInterval;
-				
-				// Initialize
-				initBinaryRain();
-				updateMetrics(0, 0, 0);
-				
-				// Event Listeners
-				btnActivate.addEventListener('click', toggleInterface);
-				btnScramble.addEventListener('click', scrambleWords);
-				btnReset.addEventListener('click', resetInterface);
-				
-				// Functions
-				function initBinaryRain() {
-					// Create initial binary digits
-					for (let i = 0; i < 50; i++) {
-						createBinaryDigit();
-					}
-				}
-				
-				function createBinaryDigit() {
-					const digit = document.createElement('div');
-					digit.className = 'binary-digit';
-					digit.textContent = Math.random() > 0.5 ? '1' : '0';
-					digit.style.left = Math.random() * 100 + '%';
-					digit.style.animationDuration = (Math.random() * 5 + 3) + 's';
-					digit.style.animationDelay = Math.random() * 5 + 's';
-					binaryRain.appendChild(digit);
-					
-					// Remove digit after animation completes
-					setTimeout(() => {
-						if (digit.parentNode === binaryRain) {
-							binaryRain.removeChild(digit);
-						}
-					}, 8000);
-					
-					// Create new digit to maintain count
-					setTimeout(createBinaryDigit, Math.random() * 500 + 200);
-				}
-				
-				function toggleInterface() {
-					isActive = !isActive;
-					
-					if (isActive) {
-						// Activate interface
-						btnActivate.textContent = 'DEACTIVATE INTERFACE';
-						statusPower.classList.add('active');
-						
-						// Start data streams
-						startDataStreams();
-						
-						// Update hologram text
-						updateHologramText();
-						hologramTextInterval = setInterval(updateHologramText, 3000);
-						
-						// Update metrics gradually
-						animateMetrics(85, 70, 90);
-						
-						// Update status indicators
-						setTimeout(() => statusData.classList.add('active'), 1000);
-						setTimeout(() => statusLink.classList.add('active'), 2000);
-					} else {
-						// Deactivate interface
-						btnActivate.textContent = 'ACTIVATE INTERFACE';
-						statusPower.classList.remove('active');
-						statusData.classList.remove('active');
-						statusLink.classList.remove('active');
-						
-						// Stop data streams
-						stopDataStreams();
-						
-						// Stop hologram text updates
-						clearInterval(hologramTextInterval);
-						hologramText.textContent = 'SYSTEM OFFLINE';
-						
-						// Reset metrics
-						animateMetrics(0, 0, 0);
-					}
-				}
-				
-				function startDataStreams() {
-					// Clear any existing streams
-					dataStreams.innerHTML = '';
-					
-					// Create data streams between nodes
-					const nodes = [
-						document.getElementById('node1'),
-						document.getElementById('node2'),
-						document.getElementById('node3'),
-						document.getElementById('node4'),
-						document.getElementById('node5'),
-						document.getElementById('node6')
-					];
-					
-					// Create connections between random nodes
-					dataStreamInterval = setInterval(() => {
-						// Remove old streams
-						const oldStreams = dataStreams.querySelectorAll('.data-stream');
-						if (oldStreams.length > 10) {
-							for (let i = 0; i < 3; i++) {
-								if (oldStreams[i]) {
-									dataStreams.removeChild(oldStreams[i]);
-								}
-							}
-						}
-						
-						// Create new stream between two random nodes
-						const node1 = nodes[Math.floor(Math.random() * nodes.length)];
-						const node2 = nodes[Math.floor(Math.random() * nodes.length)];
-						
-						if (node1 !== node2) {
-							createDataStream(node1, node2);
-						}
-					}, 500);
-				}
-				
-				function createDataStream(node1, node2) {
-					const stream = document.createElement('div');
-					stream.className = 'data-stream';
-					
-					const rect1 = node1.getBoundingClientRect();
-					const rect2 = node2.getBoundingClientRect();
-					const containerRect = dataStreams.getBoundingClientRect();
-					
-					const x1 = rect1.left + rect1.width/2 - containerRect.left;
-					const y1 = rect1.top + rect1.height/2 - containerRect.top;
-					const x2 = rect2.left + rect2.width/2 - containerRect.left;
-					const y2 = rect2.top + rect2.height/2 - containerRect.top;
-					
-					const dx = x2 - x1;
-					const dy = y2 - y1;
-					const length = Math.sqrt(dx * dx + dy * dy);
-					const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-					
-					stream.style.width = length + 'px';
-					stream.style.left = x1 + 'px';
-					stream.style.top = y1 + 'px';
-					stream.style.transform = `rotate(${angle}deg)`;
-					
-					dataStreams.appendChild(stream);
-					
-					// Remove stream after animation
-					setTimeout(() => {
-						if (stream.parentNode === dataStreams) {
-							dataStreams.removeChild(stream);
-						}
-					}, 2000);
-				}
-				
-				function stopDataStreams() {
-					clearInterval(dataStreamInterval);
-					dataStreams.innerHTML = '';
-				}
-				
-				function updateHologramText() {
-					const texts = [
-						'NEURAL LINK ACTIVE',
-						'DATA STREAM OPTIMAL',
-						'SECURITY PROTOCOLS ENGAGED',
-						'SYNCHRONIZATION COMPLETE',
-						'NEURAL INTERFACE ONLINE',
-						'DEEP LEARNING ALGORITHM',
-						'EFFICIENT ENCRYPTED TRANSMISSION',
-						'SYNCHRONIZATION COMPLETED'
-					];
-					
-					const randomText = texts[Math.floor(Math.random() * texts.length)];
-					hologramText.textContent = randomText;
-				}
-				
-				function scrambleWords() {
-					if (!isActive) return;
-					
-					const originalWords = ['SECURITY', 'NEURAL', 'NETWORK'];
-					const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*_-+=[]{}|\\:;\'",.<>/?';
-					
-					// Add scrambling animation
-					scrambledWords.forEach(word => {
-						word.classList.add('scrambling');
-					});
-					
-					// Scramble words
-					let scrambleCount = 0;
-					const scrambleInterval = setInterval(() => {
-						scrambledWords.forEach((word, index) => {
-							let scrambled = '';
-							for (let i = 0; i < originalWords[index].length; i++) {
-								scrambled += chars.charAt(Math.floor(Math.random() * chars.length));
-							}
-							word.textContent = scrambled;
-						});
-						
-						scrambleCount++;
-						
-						if (scrambleCount > 10) {
-							clearInterval(scrambleInterval);
-							
-							// Restore original words
-							setTimeout(() => {
-								scrambledWords.forEach((word, index) => {
-									word.textContent = originalWords[index];
-									word.classList.remove('scrambling');
-								});
-							}, 500);
-						}
-					}, 100);
-				}
-				
-				function resetInterface() {
-					if (isActive) {
-						toggleInterface();
-					}
-					
-					// Reset all elements to initial state
-					hologramText.textContent = 'INITIALIZING NEURAL LINK';
-					statusPower.classList.remove('active');
-					statusData.classList.remove('active');
-					statusLink.classList.remove('active');
-					
-					// Reset metrics
-					updateMetrics(0, 0, 0);
-					
-					// Clear any active intervals
-					clearInterval(dataStreamInterval);
-					clearInterval(hologramTextInterval);
-					
-					// Reset button text
-					btnActivate.textContent = 'ACTIVATE INTERFACE';
-					
-					isActive = false;
-				}
-				
-				function animateMetrics(activity, dataFlow, connection) {
-					const duration = 2000; // 2 seconds
-					const steps = 60;
-					const stepTime = duration / steps;
-					
-					let currentActivity = parseInt(metricActivity.style.width) || 0;
-					let currentDataFlow = parseInt(metricDataFlow.style.width) || 0;
-					let currentConnection = parseInt(metricConnection.style.width) || 0;
-					
-					const activityStep = (activity - currentActivity) / steps;
-					const dataFlowStep = (dataFlow - currentDataFlow) / steps;
-					const connectionStep = (connection - currentConnection) / steps;
-					
-					let step = 0;
-					const metricInterval = setInterval(() => {
-						currentActivity += activityStep;
-						currentDataFlow += dataFlowStep;
-						currentConnection += connectionStep;
-						
-						updateMetrics(currentActivity, currentDataFlow, currentConnection);
-						
-						step++;
-						if (step >= steps) {
-							clearInterval(metricInterval);
-							updateMetrics(activity, dataFlow, connection);
-						}
-					}, stepTime);
-				}
-				
-				function updateMetrics(activity, dataFlow, connection) {
-					metricActivity.style.width = activity + '%';
-					metricDataFlow.style.width = dataFlow + '%';
-					metricConnection.style.width = connection + '%';
-					
-					metricActivityValue.textContent = Math.round(activity) + '%';
-					metricDataFlowValue.textContent = Math.round(dataFlow) + '%';
-					metricConnectionValue.textContent = Math.round(connection) + '%';
-				}
-			});
+        // Enhanced responsive handling
+        window.addEventListener('resize', () => {
+            if (document.getElementById('neuralNetwork')) {
+                clearTimeout(window.neuralResizeTimeout);
+                window.neuralResizeTimeout = setTimeout(() => {
+                    createNeuralNetwork();
+                }, 250);
+            }
+            
+            if (body.classList.contains('matrix-theme')) {
+                matrixCanvas.width = window.innerWidth;
+                matrixCanvas.height = window.innerHeight;
+            }
+            
+            // Re-initialize timeline on resize for proper carousel sizing
+            initTimeline();
+        });
 
-		// Reading Progress Bar
-		function initReadingProgress() {
-			const progressBar = document.getElementById('progressBar');
-			const progressPercentage = document.getElementById('progressPercentage');
-			const readingProgress = document.getElementById('readingProgress');
-			
-			if (!progressBar || !progressPercentage) return;
-			
-			function updateProgress() {
-				const windowHeight = window.innerHeight;
-				const documentHeight = document.documentElement.scrollHeight - windowHeight;
-				const scrolled = window.scrollY;
-				
-				if (documentHeight <= 0) return;
-				
-				const percentage = (scrolled / documentHeight) * 100;
-				const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
-				
-				progressBar.style.height = clampedPercentage + '%';
-				progressPercentage.textContent = Math.round(clampedPercentage) + '%';
-				
-				// The percentage indicator moves along with the bar.
-				progressPercentage.style.bottom = `calc(${100 - clampedPercentage}% - 25px)`;
-			}
-			
-			// Update progress on scroll
-			window.addEventListener('scroll', updateProgress);
-			
-			// It also updates on resize (if the height changes).
-			window.addEventListener('resize', updateProgress);
-			
-			// Initialize the progress bar when scrolling the page.
-			updateProgress();
-			
-			console.log('📊 Reading progress bar initialized');
-		}
+        // Add loading animation to images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1)';
+            });
+            
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.9)';
+            img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
 
-		// Initializes when the DOM is ready.
-		document.addEventListener('DOMContentLoaded', function() {
-			
-			// Initialize progress bar
-			initReadingProgress();
-		});
+        // Marquee animation pause on hover
+        const marquee = document.querySelector('.marquee-content');
+        if (marquee) {
+            marquee.addEventListener('mouseenter', () => {
+                marquee.style.animationPlayState = 'paused';
+            });
+            
+            marquee.addEventListener('mouseleave', () => {
+                marquee.style.animationPlayState = 'running';
+            });
+        }
+
+        // Optimize for slow connections
+        if (navigator.connection) {
+            const connection = navigator.connection;
+            
+            if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+                document.documentElement.classList.add('slow-connection');
+            }
+        }
+
+        // Cyber Interface JavaScript
+        function initCyberInterface() {
+            // Elements
+            const binaryRain = document.getElementById('binaryRain');
+            const hologramText = document.getElementById('hologramText');
+            const dataStreams = document.getElementById('dataStreams');
+            const scrambledWords = [
+                document.getElementById('scrambledWord1'),
+                document.getElementById('scrambledWord2'),
+                document.getElementById('scrambledWord3')
+            ];
+            
+            const btnActivate = document.getElementById('btnActivate');
+            const btnScramble = document.getElementById('btnScramble');
+            const btnReset = document.getElementById('btnReset');
+            
+            const statusPower = document.getElementById('statusPower');
+            const statusData = document.getElementById('statusData');
+            const statusLink = document.getElementById('statusLink');
+            
+            const metricActivity = document.getElementById('metricActivity');
+            const metricDataFlow = document.getElementById('metricDataFlow');
+            const metricConnection = document.getElementById('metricConnection');
+            
+            const metricActivityValue = document.getElementById('metricActivityValue');
+            const metricDataFlowValue = document.getElementById('metricDataFlowValue');
+            const metricConnectionValue = document.getElementById('metricConnectionValue');
+            
+            // State
+            let isActive = false;
+            let binaryInterval;
+            let dataStreamInterval;
+            let hologramTextInterval;
+            
+            // Initialize
+            initBinaryRain();
+            updateMetrics(0, 0, 0);
+            
+            // Event Listeners
+            if (btnActivate) btnActivate.addEventListener('click', toggleInterface);
+            if (btnScramble) btnScramble.addEventListener('click', scrambleWords);
+            if (btnReset) btnReset.addEventListener('click', resetInterface);
+            
+            // Functions
+            function initBinaryRain() {
+                if (!binaryRain) return;
+                
+                // Create initial binary digits
+                for (let i = 0; i < 50; i++) {
+                    createBinaryDigit();
+                }
+            }
+            
+            function createBinaryDigit() {
+                if (!binaryRain) return;
+                
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.textContent = Math.random() > 0.5 ? '1' : '0';
+                digit.style.left = Math.random() * 100 + '%';
+                digit.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                digit.style.animationDelay = Math.random() * 5 + 's';
+                binaryRain.appendChild(digit);
+                
+                // Remove digit after animation completes
+                setTimeout(() => {
+                    if (digit.parentNode === binaryRain) {
+                        binaryRain.removeChild(digit);
+                    }
+                }, 8000);
+                
+                // Create new digit to maintain count
+                setTimeout(createBinaryDigit, Math.random() * 500 + 200);
+            }
+            
+            function toggleInterface() {
+                isActive = !isActive;
+                
+                if (isActive) {
+                    // Activate interface
+                    if (btnActivate) btnActivate.textContent = 'DEACTIVATE INTERFACE';
+                    if (statusPower) statusPower.classList.add('active');
+                    
+                    // Start data streams
+                    startDataStreams();
+                    
+                    // Update hologram text
+                    updateHologramText();
+                    hologramTextInterval = setInterval(updateHologramText, 3000);
+                    
+                    // Update metrics gradually
+                    animateMetrics(85, 70, 90);
+                    
+                    // Update status indicators
+                    setTimeout(() => {
+                        if (statusData) statusData.classList.add('active');
+                    }, 1000);
+                    setTimeout(() => {
+                        if (statusLink) statusLink.classList.add('active');
+                    }, 2000);
+                } else {
+                    // Deactivate interface
+                    if (btnActivate) btnActivate.textContent = 'ACTIVATE INTERFACE';
+                    if (statusPower) statusPower.classList.remove('active');
+                    if (statusData) statusData.classList.remove('active');
+                    if (statusLink) statusLink.classList.remove('active');
+                    
+                    // Stop data streams
+                    stopDataStreams();
+                    
+                    // Stop hologram text updates
+                    clearInterval(hologramTextInterval);
+                    if (hologramText) hologramText.textContent = 'SYSTEM OFFLINE';
+                    
+                    // Reset metrics
+                    animateMetrics(0, 0, 0);
+                }
+            }
+            
+            function startDataStreams() {
+                if (!dataStreams) return;
+                
+                // Clear any existing streams
+                dataStreams.innerHTML = '';
+                
+                // Create data streams between nodes
+                const nodes = [
+                    document.getElementById('node1'),
+                    document.getElementById('node2'),
+                    document.getElementById('node3'),
+                    document.getElementById('node4'),
+                    document.getElementById('node5'),
+                    document.getElementById('node6')
+                ].filter(node => node !== null);
+                
+                // Create connections between random nodes
+                dataStreamInterval = setInterval(() => {
+                    // Remove old streams
+                    const oldStreams = dataStreams.querySelectorAll('.data-stream');
+                    if (oldStreams.length > 10) {
+                        for (let i = 0; i < 3; i++) {
+                            if (oldStreams[i]) {
+                                dataStreams.removeChild(oldStreams[i]);
+                            }
+                        }
+                    }
+                    
+                    // Create new stream between two random nodes
+                    if (nodes.length >= 2) {
+                        const node1 = nodes[Math.floor(Math.random() * nodes.length)];
+                        const node2 = nodes[Math.floor(Math.random() * nodes.length)];
+                        
+                        if (node1 !== node2) {
+                            createDataStream(node1, node2);
+                        }
+                    }
+                }, 500);
+            }
+            
+            function createDataStream(node1, node2) {
+                if (!dataStreams || !node1 || !node2) return;
+                
+                const stream = document.createElement('div');
+                stream.className = 'data-stream';
+                
+                const rect1 = node1.getBoundingClientRect();
+                const rect2 = node2.getBoundingClientRect();
+                const containerRect = dataStreams.getBoundingClientRect();
+                
+                const x1 = rect1.left + rect1.width/2 - containerRect.left;
+                const y1 = rect1.top + rect1.height/2 - containerRect.top;
+                const x2 = rect2.left + rect2.width/2 - containerRect.left;
+                const y2 = rect2.top + rect2.height/2 - containerRect.top;
+                
+                const dx = x2 - x1;
+                const dy = y2 - y1;
+                const length = Math.sqrt(dx * dx + dy * dy);
+                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                
+                stream.style.width = length + 'px';
+                stream.style.left = x1 + 'px';
+                stream.style.top = y1 + 'px';
+                stream.style.transform = `rotate(${angle}deg)`;
+                
+                dataStreams.appendChild(stream);
+                
+                // Remove stream after animation
+                setTimeout(() => {
+                    if (stream.parentNode === dataStreams) {
+                        dataStreams.removeChild(stream);
+                    }
+                }, 2000);
+            }
+            
+            function stopDataStreams() {
+                clearInterval(dataStreamInterval);
+                if (dataStreams) {
+                    dataStreams.innerHTML = '';
+                }
+            }
+            
+            function updateHologramText() {
+                if (!hologramText) return;
+                
+                const texts = [
+                    'NEURAL LINK ACTIVE',
+                    'DATA STREAM OPTIMAL',
+                    'SECURITY PROTOCOLS ENGAGED',
+                    'SYNCHRONIZATION COMPLETE',
+                    'NEURAL INTERFACE ONLINE',
+                    'DEEP LEARNING ALGORITHM',
+                    'EFFICIENT ENCRYPTED TRANSMISSION',
+                    'SYNCHRONIZATION COMPLETED'
+                ];
+                
+                const randomText = texts[Math.floor(Math.random() * texts.length)];
+                hologramText.textContent = randomText;
+            }
+            
+            function scrambleWords() {
+                if (!isActive) return;
+                
+                const originalWords = ['SECURITY', 'NEURAL', 'NETWORK'];
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*_-+=[]{}|\\:;\'",.<>/?';
+                
+                // Add scrambling animation
+                scrambledWords.forEach(word => {
+                    if (word) word.classList.add('scrambling');
+                });
+                
+                // Scramble words
+                let scrambleCount = 0;
+                const scrambleInterval = setInterval(() => {
+                    scrambledWords.forEach((word, index) => {
+                        if (!word) return;
+                        
+                        let scrambled = '';
+                        for (let i = 0; i < originalWords[index].length; i++) {
+                            scrambled += chars.charAt(Math.floor(Math.random() * chars.length));
+                        }
+                        word.textContent = scrambled;
+                    });
+                    
+                    scrambleCount++;
+                    
+                    if (scrambleCount > 10) {
+                        clearInterval(scrambleInterval);
+                        
+                        // Restore original words
+                        setTimeout(() => {
+                            scrambledWords.forEach((word, index) => {
+                                if (!word) return;
+                                
+                                word.textContent = originalWords[index];
+                                word.classList.remove('scrambling');
+                            });
+                        }, 500);
+                    }
+                }, 100);
+            }
+            
+            function resetInterface() {
+                if (isActive) {
+                    toggleInterface();
+                }
+                
+                // Reset all elements to initial state
+                if (hologramText) hologramText.textContent = 'INITIALIZING NEURAL LINK';
+                if (statusPower) statusPower.classList.remove('active');
+                if (statusData) statusData.classList.remove('active');
+                if (statusLink) statusLink.classList.remove('active');
+                
+                // Reset metrics
+                updateMetrics(0, 0, 0);
+                
+                // Clear any active intervals
+                clearInterval(dataStreamInterval);
+                clearInterval(hologramTextInterval);
+                
+                // Reset button text
+                if (btnActivate) btnActivate.textContent = 'ACTIVATE INTERFACE';
+                
+                isActive = false;
+            }
+            
+            function animateMetrics(activity, dataFlow, connection) {
+                const duration = 2000; // 2 seconds
+                const steps = 60;
+                const stepTime = duration / steps;
+                
+                let currentActivity = parseInt(metricActivity ? metricActivity.style.width : 0) || 0;
+                let currentDataFlow = parseInt(metricDataFlow ? metricDataFlow.style.width : 0) || 0;
+                let currentConnection = parseInt(metricConnection ? metricConnection.style.width : 0) || 0;
+                
+                const activityStep = (activity - currentActivity) / steps;
+                const dataFlowStep = (dataFlow - currentDataFlow) / steps;
+                const connectionStep = (connection - currentConnection) / steps;
+                
+                let step = 0;
+                const metricInterval = setInterval(() => {
+                    currentActivity += activityStep;
+                    currentDataFlow += dataFlowStep;
+                    currentConnection += connectionStep;
+                    
+                    updateMetrics(currentActivity, currentDataFlow, currentConnection);
+                    
+                    step++;
+                    if (step >= steps) {
+                        clearInterval(metricInterval);
+                        updateMetrics(activity, dataFlow, connection);
+                    }
+                }, stepTime);
+            }
+            
+            function updateMetrics(activity, dataFlow, connection) {
+                if (metricActivity) {
+                    metricActivity.style.width = activity + '%';
+                }
+                if (metricDataFlow) {
+                    metricDataFlow.style.width = dataFlow + '%';
+                }
+                if (metricConnection) {
+                    metricConnection.style.width = connection + '%';
+                }
+                
+                if (metricActivityValue) {
+                    metricActivityValue.textContent = Math.round(activity) + '%';
+                }
+                if (metricDataFlowValue) {
+                    metricDataFlowValue.textContent = Math.round(dataFlow) + '%';
+                }
+                if (metricConnectionValue) {
+                    metricConnectionValue.textContent = Math.round(connection) + '%';
+                }
+            }
+        }
+
+        // Reading Progress Bar
+        function initReadingProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressPercentage = document.getElementById('progressPercentage');
+            const readingProgress = document.getElementById('readingProgress');
+            
+            if (!progressBar || !progressPercentage) return;
+            
+            function updateProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrolled = window.scrollY;
+                
+                if (documentHeight <= 0) return;
+                
+                const percentage = (scrolled / documentHeight) * 100;
+                const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
+                
+                progressBar.style.height = clampedPercentage + '%';
+                progressPercentage.textContent = Math.round(clampedPercentage) + '%';
+                
+                // The percentage indicator moves along with the bar.
+                progressPercentage.style.bottom = `calc(${100 - clampedPercentage}% - 25px)`;
+            }
+            
+            // Update progress on scroll
+            window.addEventListener('scroll', updateProgress);
+            
+            // It also updates on resize (if the height changes).
+            window.addEventListener('resize', updateProgress);
+            
+            // Initialize the progress bar when scrolling the page.
+            updateProgress();
+            
+            console.log('📊 Reading progress bar initialized');
+        }
     </script>		
 </body>
 </html>
