@@ -163,4 +163,4 @@ Thank you for helping make my portfolio better! Your contributions help ensure i
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
