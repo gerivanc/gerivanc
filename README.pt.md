@@ -1,4 +1,4 @@
-# 👋 Bem-vindo ao Meu Universo Digital  
+# 👋 Bem-vindo ao Meu Universo Digital
 
 Eu sou **Gerivan Costa** — desenvolvedor apaixonado por **segurança, ciência e criatividade**.  
 Aqui você encontrará projetos que unem inovação e propósito, sempre com foco em **aprendizado contínuo** e **contribuições para o código aberto**.  
