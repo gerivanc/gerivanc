@@ -76,4 +76,4 @@ Licensed under the [MIT License](https://github.com/gerivanc/gerivanc/blob/main/
 > _“It's not about how many lines you write. It's about the impact they make when executed.”_
 
 ---
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
