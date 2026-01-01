@@ -74,4 +74,4 @@ Este repositório está licenciado sob a [Licença MIT](https://github.com/geriv
 > _“Não é sobre quantas linhas você escreve. É sobre o impacto que elas causam quando são executadas.”_
 
 ---
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
