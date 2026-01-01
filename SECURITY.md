@@ -223,4 +223,4 @@ Your responsible disclosure helps protect not just my work, but everyone who vis
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
