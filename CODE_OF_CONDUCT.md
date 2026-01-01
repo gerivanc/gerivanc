@@ -147,4 +147,4 @@ By following this Code of Conduct, we aim to create an environment where:
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
