@@ -39,7 +39,7 @@ Here you'll find projects that blend innovation with purpose, always focused on 
 ## 📊 GitHub Stats  
 
 <div align="center">
-  <img width="90%" alt="Activity Graph" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+  <img width="90%" alt="Activity Graph" src="https://github-activity-chart.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
   <br/><br/>
 </div>
 
