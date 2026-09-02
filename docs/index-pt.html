@@ -2,13 +2,15 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#00ffff">
     <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self' 'unsafe-inline'; 
-                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-                   font-src 'self' https://fonts.gstatic.com; 
+          content="default-src 'self';
+                   base-uri 'self';
+                   object-src 'none';
+                   script-src 'self' 'unsafe-inline';
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                   font-src 'self' https://fonts.gstatic.com;
                    img-src 'self' data: https://*.githubusercontent.com https://img.shields.io https://komarev.com https://github-readme-activity-graph.vercel.app https://nirzak-streak-stats.vercel.app https://github-readme-stats.vercel.app https://github-profile-summary-cards.vercel.app https://vercel.app https://vercel.live;
                    frame-src 'self' https://gerivan.me https://*.githubusercontent.com;">
 
@@ -30,12 +32,25 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- Meta tags for PWA -->
-    <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <link rel="canonical" href="https://gerivan.me/index-pt.html">
     <title>Gerivan Costa - Construindo ferramentas seguras com código aberto</title>
+
+    <!-- Open Graph / Twitter Card (pré-visualização de link em redes sociais e apps de chat) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gerivan Costa">
+    <meta property="og:url" content="https://gerivan.me/index-pt.html">
+    <meta property="og:title" content="Gerivan Costa - Construindo ferramentas seguras com código aberto">
+    <meta property="og:description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <meta property="og:image" content="https://gerivan.me/g3.ico">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gerivan Costa - Construindo ferramentas seguras com código aberto">
+    <meta name="twitter:description" content="Gerivan Costa - Desenvolvedor apaixonado por segurança, ciência e criatividade">
+    <meta name="twitter:image" content="https://gerivan.me/g3.ico">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
     <style>
         /* CSS Variables for consistent theming - Portuguese version */
         :root {
@@ -51,6 +66,7 @@
             --text-muted: #00cccc;
             --neon-green: #00BFFF;
             --neon-green-dark: #1E90FF;
+            --warning-color: #ffb300;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -63,7 +79,6 @@
             --card-border: rgba(0, 102, 255, 0.3);
             --text-color: #0f172a;
             --text-muted: #475569;
-            --neon-red: #ff0000;
             --neon-green-dark: #006400;
         }
 
@@ -97,11 +112,9 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        [data-theme="light"] .note,
-        [data-theme="light"] .alert,
         [data-theme="light"] .toc {
             background: rgba(0, 102, 204, 0.15);
-            border-color: rgba(0, 102, 204, 0.4);		
+            border-color: rgba(0, 102, 204, 0.4);
         }
 
         [data-theme="matrix"] {
@@ -326,27 +339,6 @@
             box-shadow: 0 0 20px rgba(0, 100, 255, 0.2);
         }
         
-        /* Note box for important information */
-        .note {
-            background: rgba(0, 100, 255, 0.1);
-            padding: 15px;
-            border-left: 4px solid var(--primary-color);
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .note-link {
-            word-break: break-all;
-            display: block;
-            margin-top: 8px;
-            padding: 8px;
-            background: rgba(0, 100, 255, 0.1);
-            border-radius: 4px;
-            border: 1px solid var(--card-border);
-            text-align: center;
-            font-size: 0.9em;
-        }
-        
         /* Blockquote styling for quotes */
         blockquote {
             background: rgba(0, 191, 255, 0.1);
@@ -360,35 +352,6 @@
         blockquote p {
             margin: 0;
             color: var(--text-color);
-        }
-        
-        /* Table styling */
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-        }
-        
-        .table th, .table td {
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            padding: 12px;
-            text-align: left;
-        }
-        
-        .table th {
-            background: rgba(0, 100, 255, 0.2);
-            color: var(--primary-color);
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 500;
-        }
-        
-        .table tr:nth-child(even) {
-            background-color: rgba(0, 50, 100, 0.1);
-        }
-        
-        .table tr:hover {
-            background-color: rgba(0, 150, 255, 0.1);
         }
         
         /* List styling */
@@ -481,21 +444,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 150, 255, 0.2);
             border-color: var(--primary-color);
-        }
-        
-        /* Alert box for important notices */
-        .alert {
-            background: rgba(255, 200, 0, 0.1);
-            border: 1px solid rgba(255, 200, 0, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 25px 0;
-            color: var(--warning-color);
-        }
-        
-        .alert h3 {
-            color: var(--warning-color);
-            margin-top: 0;
         }
         
         /* Glow effect for text */
@@ -1653,22 +1601,18 @@
             .welcome-card,
             .stat-card,
             .terminal,
-            .note,
-            .alert,
             .toc,
             .contact-info {
                 background: rgba(15, 25, 35, 0.95) !important;
                 backdrop-filter: blur(5px);
                 border: 1px solid var(--card-border);
             }
-            
+
             /* For the light theme on mobile */
             [data-theme="light"] .project-card,
             [data-theme="light"] .welcome-card,
             [data-theme="light"] .stat-card,
             [data-theme="light"] .terminal,
-            [data-theme="light"] .note,
-            [data-theme="light"] .alert,
             [data-theme="light"] .toc,
             [data-theme="light"] .contact-info {
                 background: rgba(255, 255, 255, 0.98) !important;
@@ -1756,7 +1700,7 @@
                 padding: 15px;
             }
 
-            .note, .alert, .toc {
+            .toc {
                 padding: 12px;
             }
 
@@ -1764,11 +1708,6 @@
                 padding: 15px;
             }
 
-            .note-link {
-                font-size: 0.85em;
-                padding: 6px;
-            }
-			
             .system-status {
                 gap: 12px;
             }
@@ -2101,16 +2040,16 @@
             display: flex;
             gap: 8px;
         }
-    
-        .status-indicator {
+
+        .panel-status-indicator {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             background: #444;
             transition: all 0.3s ease;
         }
-    
-        .status-indicator.active {
+
+        .panel-status-indicator.active {
             background: var(--success-color);
             box-shadow: 0 0 10px var(--success-color);
         }
@@ -2463,10 +2402,10 @@
     <div class="particles-container" id="particles"></div>
 
     <!-- Theme Switcher -->
-    <div class="theme-switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber">🔷</div>
-        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro">☀️</div>
-        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix">🟩</div>
+    <div class="theme-switcher" role="group" aria-label="Seletor de tema">
+        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Tema Cyber" role="button" tabindex="0" aria-pressed="true" aria-label="Tema Cyber">🔷</div>
+        <div class="theme-btn theme-light" data-theme="light" title="Tema Claro" role="button" tabindex="0" aria-pressed="false" aria-label="Tema Claro">☀️</div>
+        <div class="theme-btn theme-matrix" data-theme="matrix" title="Tema Matrix" role="button" tabindex="0" aria-pressed="false" aria-label="Tema Matrix">🟩</div>
     </div>
 
     <!-- Install Prompt -->
@@ -2793,9 +2732,9 @@
 					<div class="panel-header">
 						<h3>ATIVAÇÃO DOS CONTROLES</h3>
 						<div class="status-indicators">
-							<div class="status-indicator" id="statusPower"></div>
-							<div class="status-indicator" id="statusData"></div>
-							<div class="status-indicator" id="statusLink"></div>
+							<div class="panel-status-indicator" id="statusPower"></div>
+							<div class="panel-status-indicator" id="statusData"></div>
+							<div class="panel-status-indicator" id="statusLink"></div>
 						</div>
 					</div>					
 					<div class="panel-controls">
@@ -2943,17 +2882,27 @@
         <h2 id="github-stats">📊 Estatísticas do GitHub</h2>
         <p>Gráficos destacando minha atividade recente, sequência de contribuições e engajamento com projetos de código aberto.</p>
         <div class="center">
-            <img width="90%" alt="Gráfico de atividade recente no GitHub de Gerivan" 
+            <img width="90%" alt="Gráfico de atividade recente no GitHub de Gerivan"
                  data-src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
                  loading="lazy"
                  class="github-stats-img">
+            <noscript>
+                <img width="90%" alt="Gráfico de atividade recente no GitHub de Gerivan"
+                     src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"
+                     class="github-stats-img">
+            </noscript>
         </div>
         <div class="center">
             <div class="streak-container">
-                <img alt="Estatísticas de sequência do GitHub de Gerivan" 
+                <img alt="Estatísticas de sequência do GitHub de Gerivan"
                      data-src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
                      loading="lazy"
                      class="github-stats-img streak-img">
+                <noscript>
+                    <img alt="Estatísticas de sequência do GitHub de Gerivan"
+                         src="https://nirzak-streak-stats.vercel.app/?user=gerivanc&theme=dark&hide_border=true"
+                         class="github-stats-img streak-img">
+                </noscript>
             </div>
         </div>
 
@@ -3089,7 +3038,7 @@
             margin: 30px 0;
             flex-wrap: wrap;
         ">
-            <a href="http://gerivan.me/privacy.html" 
+            <a href="https://gerivan.me/privacy.html"
                class="footer-btn"
                style="
                     padding: 12px 24px;
@@ -3114,7 +3063,7 @@
                 <span style="margin-right: 8px;">🔒</span> Política de Privacidade
             </a>
             
-            <a href="http://gerivan.me/terms.html" 
+            <a href="https://gerivan.me/terms.html" 
                class="footer-btn"
                style="
                     padding: 12px 24px;
@@ -3456,24 +3405,38 @@
         const body = document.body;
         const matrixCanvas = document.getElementById('matrix-canvas');
 
+        function activateThemeButton(btn) {
+            const theme = btn.dataset.theme;
+
+            // Update active button
+            themeButtons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+
+            // Update body theme
+            body.setAttribute('data-theme', theme);
+
+            // Handle matrix theme
+            if (theme === 'matrix') {
+                body.classList.add('matrix-theme');
+                initMatrixRain();
+            } else {
+                body.classList.remove('matrix-theme');
+                stopMatrixRain();
+            }
+        }
+
         themeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.dataset.theme;
-                
-                // Update active button
-                themeButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Update body theme
-                body.setAttribute('data-theme', theme);
-                
-                // Handle matrix theme
-                if (theme === 'matrix') {
-                    body.classList.add('matrix-theme');
-                    initMatrixRain();
-                } else {
-                    body.classList.remove('matrix-theme');
-                    stopMatrixRain();
+            btn.addEventListener('click', () => activateThemeButton(btn));
+
+            // Suporte a teclado (Enter/Espaço), já que estes são divs com role="button"
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    activateThemeButton(btn);
                 }
             });
         });
@@ -3915,8 +3878,12 @@
         // External Links Protection
         function secureExternalLinks() {
             document.querySelectorAll('a[href^="http"]').forEach(link => {
-                if (link.hostname !== window.location.hostname && 
-                    !link.href.includes('gerivan.me')) {
+                // Comparação exata de hostname (ou subdomínio real) em vez de
+                // um teste por substring, que poderia ser burlado por hosts
+                // como "gerivan.me.atacante.com" ou "fakegerivan.me".
+                const isOwnDomain = link.hostname === 'gerivan.me' ||
+                    link.hostname.endsWith('.gerivan.me');
+                if (!isOwnDomain) {
                     link.setAttribute('rel', 'noopener noreferrer');
                     link.setAttribute('target', '_blank');
                 }
@@ -4243,9 +4210,33 @@
             let binaryInterval;
             let dataStreamInterval;
             let hologramTextInterval;
-            
+            let binaryRainRunning = false;
+
             // Initialize
-            initBinaryRain();
+            // A chuva binária antes começava no carregamento da página e
+            // rodava para sempre via uma cadeia recursiva de setTimeout,
+            // mesmo com a seção fora da tela. Agora só liga/desliga
+            // conforme a seção "Axon Connect" entra/sai da viewport.
+            const cyberInterfaceSection = document.querySelector('.cyber-interface-section');
+            if (cyberInterfaceSection && 'IntersectionObserver' in window) {
+                const cyberSectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!binaryRainRunning) {
+                                binaryRainRunning = true;
+                                initBinaryRain();
+                            }
+                        } else {
+                            binaryRainRunning = false;
+                        }
+                    });
+                }, { threshold: 0.1 });
+                cyberSectionObserver.observe(cyberInterfaceSection);
+            } else {
+                // Alternativa para navegadores sem suporte a IntersectionObserver
+                binaryRainRunning = true;
+                initBinaryRain();
+            }
             updateMetrics(0, 0, 0);
             
             // Event Listeners
@@ -4280,9 +4271,12 @@
                         binaryRain.removeChild(digit);
                     }
                 }, 8000);
-                
-                // Create new digit to maintain count
-                setTimeout(createBinaryDigit, Math.random() * 500 + 200);
+
+                // Create new digit to maintain count, but only while the
+                // "Axon Connect" section is actually visible.
+                if (binaryRainRunning) {
+                    setTimeout(createBinaryDigit, Math.random() * 500 + 200);
+                }
             }
             
             function toggleInterface() {
