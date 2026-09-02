@@ -37,7 +37,7 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
 ## 📊 Estatísticas do GitHub  
 
 <div align="center">
-  <img width="90%" alt="Gráfico de atividade" src="https://github-readme-activity-graph.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
+  <img width="90%" alt="Gráfico de atividade" src="https://github-activity-chart.vercel.app/graph?username=gerivanc&theme=rogue&bg_color=transparent&color=4CAF50&line=4CAF50&point=EE0000&hide_border=true"/>
   <br/><br/>
 </div>
 
