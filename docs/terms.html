@@ -7,9 +7,9 @@
     <meta name="robots" content="noarchive">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
-        script-src 'self' 'unsafe-inline';
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com;
+        script-src 'none';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+        font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
         img-src 'self' data:;
         connect-src 'none';
         frame-src 'none';
@@ -18,6 +18,13 @@
         form-action 'none';
         upgrade-insecure-requests;
     ">
+    <!--
+        Note: X-Frame-Options (and CSP's frame-ancestors, which is not supported when CSP is
+        delivered via a <meta> tag) only take effect as real HTTP response headers - browsers
+        ignore both when set this way via <meta>. This tag is left here for scanners/documentation,
+        but actual clickjacking protection requires setting the header at the hosting/CDN layer
+        (GitHub Pages does not support custom response headers; a proxy such as Cloudflare would).
+    -->
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
@@ -65,10 +72,6 @@
             background: var(--bg);
             color: var(--text-primary);
             overflow-x: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             padding: 10px;
             min-height: 100vh;
             display: flex;
@@ -155,7 +158,7 @@
             box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
         }
 
-        .spec-item h4 {
+        .spec-item h2 {
             color: var(--neon-cyan);
             margin-bottom: 20px;
             font-size: 1.3rem;
@@ -214,7 +217,7 @@
             border-left: 3px solid var(--neon-orange);
         }
 
-        .highlight-box h5 {
+        .highlight-box h2 {
             color: var(--neon-orange);
             margin-bottom: 10px;
             font-size: 1.1rem;
@@ -229,7 +232,7 @@
             border: 1px solid rgba(255, 102, 0, 0.3);
         }
 
-        .warning-box h5 {
+        .warning-box h2 {
             color: var(--neon-orange);
             margin-bottom: 15px;
             font-size: 1.1rem;
@@ -244,7 +247,7 @@
             border: 1px solid rgba(57, 255, 20, 0.3);
         }
 
-        .contact-info h5 {
+        .contact-info h2 {
             color: var(--neon-green);
             margin-bottom: 15px;
             font-size: 1.1rem;
@@ -284,7 +287,7 @@
                 padding: 20px;
             }
 
-            .spec-item h4 {
+            .spec-item h2 {
                 font-size: 1.1rem;
             }
 
@@ -348,7 +351,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+<body>
     <div class="container">
         <h1>⚖️ TERMS OF USE</h1>
         <p class="subtitle">Last Updated: December 3, 2025</p>
@@ -356,7 +359,7 @@
         <div class="specs-grid">
             <!-- Acceptance of Terms -->
             <div class="spec-item">
-                <h4>📋 ACCEPTANCE OF TERMS</h4>
+                <h2>📋 ACCEPTANCE OF TERMS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Website:</span>
@@ -376,7 +379,7 @@
 
             <!-- Legal Framework -->
             <div class="spec-item">
-                <h4>⚖️ LEGAL FRAMEWORK</h4>
+                <h2>⚖️ LEGAL FRAMEWORK</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Primary Jurisdiction:</span>
@@ -396,7 +399,7 @@
 
             <!-- Brazilian Law Compliance -->
             <div class="spec-item">
-                <h4>🇧🇷 BRAZILIAN LAW COMPLIANCE</h4>
+                <h2>🇧🇷 BRAZILIAN LAW COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">LGPD:</span>
@@ -420,7 +423,7 @@
 
             <!-- European Union Compliance -->
             <div class="spec-item">
-                <h4>🇪🇺 EUROPEAN UNION COMPLIANCE</h4>
+                <h2>🇪🇺 EUROPEAN UNION COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">GDPR:</span>
@@ -440,7 +443,7 @@
 
             <!-- Intellectual Property -->
             <div class="spec-item">
-                <h4>📄 INTELLECTUAL PROPERTY</h4>
+                <h2>📄 INTELLECTUAL PROPERTY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Owner:</span>
@@ -464,7 +467,7 @@
 
             <!-- Prohibited Activities -->
             <div class="spec-item">
-                <h4>🚫 PROHIBITED ACTIVITIES</h4>
+                <h2>🚫 PROHIBITED ACTIVITIES</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Reverse Engineering:</span>
@@ -488,7 +491,7 @@
 
             <!-- External Links -->
             <div class="spec-item">
-                <h4>🔗 EXTERNAL LINKS</h4>
+                <h2>🔗 EXTERNAL LINKS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Control:</span>
@@ -512,7 +515,7 @@
 
             <!-- Disclaimer of Warranties -->
             <div class="spec-item">
-                <h4>📊 DISCLAIMER OF WARRANTIES</h4>
+                <h2>📊 DISCLAIMER OF WARRANTIES</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Basis:</span>
@@ -536,7 +539,7 @@
 
             <!-- Limitation of Liability -->
             <div class="spec-item">
-                <h4>⚖️ LIMITATION OF LIABILITY</h4>
+                <h2>⚖️ LIMITATION OF LIABILITY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Scope:</span>
@@ -560,7 +563,7 @@
 
             <!-- Jurisdiction and Governing Law -->
             <div class="spec-item">
-                <h4>🌍 JURISDICTION AND GOVERNING LAW</h4>
+                <h2>🌍 JURISDICTION AND GOVERNING LAW</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Primary Law:</span>
@@ -580,7 +583,7 @@
 
             <!-- Changes to Terms -->
             <div class="spec-item">
-                <h4>🔄 CHANGES TO TERMS</h4>
+                <h2>🔄 CHANGES TO TERMS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Modification Right:</span>
@@ -600,15 +603,15 @@
 
             <!-- Security Implementation -->
             <div class="spec-item">
-                <h4>🛡️ SECURITY IMPLEMENTATION</h4>
+                <h2>🛡️ SECURITY IMPLEMENTATION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Content Security Policy:</span>
-                        <span class="property-value">CSP Level 3 Active</span>
+                        <span class="property-value">Active (no scripts, no frames)</span>
                     </div>
                     <div class="spec-property">
                         <span class="property-name">Frame Protection:</span>
-                        <span class="property-value">X-Frame-Options: DENY</span>
+                        <span class="property-value">Declared; requires HTTP header to be enforced</span>
                     </div>
                     <div class="spec-property">
                         <span class="property-name">MIME Sniffing:</span>
@@ -619,12 +622,12 @@
                         <span class="property-value">no-referrer</span>
                     </div>
                 </div>
-                <p class="justified-text">Enterprise-grade security headers are actively enforced. CSP restricts resource loading, frame options prevent clickjacking, MIME validation blocks content sniffing, and referrer policy protects browsing privacy.</p>
+                <p class="justified-text">Security headers are declared for this page. The Content Security Policy is enforced by the browser and restricts resource loading and script execution. MIME validation and referrer policy are also active. Note that X-Frame-Options only takes effect when sent as an HTTP response header rather than a &lt;meta&gt; tag; on static hosting without custom headers, full clickjacking protection depends on the hosting/CDN layer.</p>
             </div>
 
             <!-- Security Notice -->
             <div class="warning-box">
-                <h5>🔒 SECURITY NOTICE</h5>
+                <h2>🔒 SECURITY NOTICE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Security Level:</span>
@@ -644,13 +647,13 @@
 
             <!-- Disclaimer -->
             <div class="highlight-box">
-                <h5>⚠️ DISCLAIMER</h5>
+                <h2>⚠️ DISCLAIMER</h2>
                 <p class="justified-text"><strong>This is a personal portfolio website showcasing projects and skills.</strong> All information is provided "as is" without warranties of any kind. The content represents technical demonstrations and should not be considered professional advice.</p>
             </div>
 
             <!-- Contact Information -->
             <div class="contact-info">
-                <h5>📧 CONTACT INFORMATION</h5>
+                <h2>📧 CONTACT INFORMATION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
                         <span class="property-name">Contact Person:</span>
@@ -682,38 +685,5 @@
         </div>
     </footer>
 
-    <script>
-        // Protection Scripts
-        document.onkeydown = function(e) {
-            if (
-                e.keyCode == 123 || // F12
-                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
-                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) ||
-                (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))
-            ) {
-                e.preventDefault();
-                return false;
-            }
-        };
-
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.onselectstart = () => false;
-
-        // Mobile touch optimizations
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-            
-            const specItems = document.querySelectorAll('.spec-item');
-            specItems.forEach(item => {
-                item.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                item.addEventListener('touchend', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-        }
-    </script>
 </body>
 </html>
