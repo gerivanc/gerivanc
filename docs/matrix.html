@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="controls">
-        <button onclick="toggleRain()">⏸️ Pause</button>
+        <button id="toggleBtn" onclick="toggleRain()">⏸️ Pause</button>
         <button onclick="changeSpeed(1)">⏩ Faster</button>
         <button onclick="changeSpeed(-1)">⏪ Slower</button>
         <button onclick="changeColor()">🎨 Color</button>
@@ -57,21 +57,23 @@
         let color = '#0f0';
         const colors = ['#0f0', '#0ff', '#f0f', '#ff0', '#f00', '#00f'];
 
-        // Configurar canvas
-        function setupCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
         // Caracteres para o efeito Matrix
         const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const charArray = chars.split('');
         const fontSize = 14;
-        const columns = canvas.width / fontSize;
+        let columns = 0;
         const drops = [];
+
+        // Configurar canvas
+        function setupCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / fontSize);
+        }
 
         // Inicializar gotas
         function initDrops() {
+            drops.length = 0;
             for (let i = 0; i < columns; i++) {
                 drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
             }
@@ -108,6 +110,7 @@
         // Controles
         function toggleRain() {
             isRaining = !isRaining;
+            document.getElementById('toggleBtn').textContent = isRaining ? '⏸️ Pause' : '▶️ Play';
             if (isRaining) {
                 animate();
             }
