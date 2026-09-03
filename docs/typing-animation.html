@@ -625,6 +625,10 @@
         function startTimer() {
             if (!startTime) {
                 startTime = Date.now();
+            }
+            // Re-arm the interval separately from startTime so resuming after
+            // a pause restarts the display updates instead of staying frozen
+            if (!timerInterval) {
                 timerInterval = setInterval(updateTimer, 1000);
             }
         }
@@ -642,9 +646,11 @@
             const currentText = texts[currentTextIndex];
 
             if (isDeleting) {
-                // Deleting text
-                textElement.textContent = currentText.substring(0, charIndex--);
-                if (charIndex < 0) {
+                // Deleting text (decrement first so the last frame shown is the
+                // fully-typed text, not a repeated one after it's already full)
+                charIndex--;
+                textElement.textContent = currentText.substring(0, charIndex);
+                if (charIndex <= 0) {
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
                     timeoutId = setTimeout(type, 500);
@@ -653,10 +659,12 @@
                 }
                 timeoutId = setTimeout(type, deletingSpeed);
             } else {
-                // Typing text
-                textElement.textContent = currentText.substring(0, charIndex++);
-                
-                if (charIndex > currentText.length) {
+                // Typing text (increment first so completion is detected the
+                // instant the last character is shown, instead of one frame late)
+                charIndex++;
+                textElement.textContent = currentText.substring(0, charIndex);
+
+                if (charIndex >= currentText.length) {
                     // Text completed
                     textElement.classList.add('text-complete');
                     setTimeout(() => {
@@ -680,6 +688,7 @@
             }
             if (timerInterval) {
                 clearInterval(timerInterval);
+                timerInterval = null; // Clear the handle so startTimer() knows to re-arm it on resume
             }
             pauseBtn.style.display = 'none';
             resumeBtn.style.display = 'inline-block';
@@ -704,8 +713,12 @@
             isDeleting = false;
             currentTextIndex = (currentTextIndex + 1) % texts.length;
             charIndex = 0;
+            textElement.textContent = ''; // Keep the display in sync with the counter even while paused
             updateStatus();
-            type();
+            // type() returns immediately when paused, so don't rely on it to clear the text above
+            if (!isPaused) {
+                type();
+            }
         }
 
         // Change theme
