@@ -3691,10 +3691,7 @@
                 
                 img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 
-                const rect = img.getBoundingClientRect();
-                if (rect.top > window.innerHeight) {
-                    imageObserver.observe(img);
-                }
+                imageObserver.observe(img);
             });
 
             console.log(`🔧 Otimizado carregamento de ${externalImages.length} imagens externas`);
