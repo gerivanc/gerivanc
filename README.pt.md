@@ -51,6 +51,32 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
 
 ---
 
+## 🧭 Diretrizes da Comunidade
+
+> [!IMPORTANT]
+> **Antes de abrir uma Issue, criar um Fork ou uma Branch, fazer um Commit, enviar um Pull Request ou realizar qualquer outra ação neste repositório, é obrigatório comunicar previamente o responsável e criador do repositório pelos canais oficiais:** o formulário "Fale comigo", o e-mail [ask@gerivan.me](mailto:ask@gerivan.me) ou as [Issues do GitHub](https://github.com/gerivanc/gerivanc/issues).
+
+Essa comunicação prévia é obrigatória. Ela torna a nossa comunidade de colaboradores e criadores de código mais forte e harmoniosa, um espaço onde todos se sentem acolhidos e com verdadeiro senso de pertencimento. Saber com antecedência o que cada pessoa pretende fazer permite coordenar esforços, evitar trabalho duplicado e dar a cada contribuição a atenção que ela merece.
+
+> [!WARNING]
+> **Quaisquer ações não amigáveis, como o desrespeito ao criador do repositório, serão denunciadas ao GitHub**, que tomará todas as ações cabíveis que lhe são atribuídas conforme sua política de conteúdo e de usuários ([Diretrizes da Comunidade GitHub](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies)).
+
+### Como contribuir, passo a passo
+
+1. **Fazer Fork do Repositório — crie uma cópia na sua conta.** Vá até o repositório original no GitHub e clique no botão **Fork** no canto superior direito. Isso criará uma cópia exata do projeto no seu próprio perfil.
+2. **Clonar e Criar uma Branch — trabalhe de forma isolada.** Clone o repositório que está na sua conta para a sua máquina (`git clone ...`). Em seguida, crie uma nova branch para a sua alteração:
+   ```bash
+   git checkout -b minha-correcao
+   ```
+3. **Fazer as Alterações e Commit — documente bem o que mudou.** Faça as modificações necessárias no código ou na documentação, teste localmente e faça o commit com mensagens claras:
+   ```bash
+   git commit -m "docs: corrige link quebrado no README"
+   ```
+
+📌 **Referência:** [Diretrizes da Comunidade GitHub](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies)
+
+---
+
 ## 📬 Contato  
 
 - 📫 Email: **ask@gerivan.me**  
