@@ -53,12 +53,12 @@ Aqui você encontrará projetos que unem inovação e propósito, sempre com foc
 
 ## 🧭 Diretrizes da Comunidade
 
-> [!IMPORTANTE]
+> [!IMPORTANT]
 > **Antes de abrir uma Issue, criar um Fork ou uma Branch, fazer um Commit, enviar um Pull Request ou realizar qualquer outra ação neste repositório, é obrigatório comunicar previamente o responsável e criador do repositório pelos canais oficiais:** o formulário "Fale comigo", o e-mail [ask@gerivan.me](mailto:ask@gerivan.me) ou as [Issues do GitHub](https://github.com/gerivanc/gerivanc/issues).
 
 Essa comunicação prévia é obrigatória. Ela torna a nossa comunidade de colaboradores e criadores de código mais forte e harmoniosa, um espaço onde todos se sentem acolhidos e com verdadeiro senso de pertencimento. Saber com antecedência o que cada pessoa pretende fazer permite coordenar esforços, evitar trabalho duplicado e dar a cada contribuição a atenção que ela merece.
 
-> [!Aviso]
+> [!WARNING]
 > **Quaisquer ações não amigáveis, como o desrespeito ao criador do repositório, serão denunciadas ao GitHub**, que tomará todas as ações cabíveis que lhe são atribuídas conforme sua política de conteúdo e de usuários ([Diretrizes da Comunidade GitHub](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies)).
 
 ### Como contribuir, passo a passo
