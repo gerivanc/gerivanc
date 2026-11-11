@@ -110,6 +110,32 @@ For substantial changes to structure, content, or design:
 
 ---
 
+## 🧭 Community Guidelines
+
+> [!IMPORTANT]
+> **Before opening an Issue, creating a Fork or a Branch, making a Commit, submitting a Pull Request, or taking any other action on this repository, you must notify the repository owner and creator in advance through the official channels:** the contact form ("contact me"), email at [ask@gerivan.me](mailto:ask@gerivan.me), or [GitHub Issues](https://github.com/gerivanc/gerivanc/issues).
+
+This prior communication is mandatory. It makes our community of contributors and code creators stronger and more harmonious, a place where everyone feels welcome and has a real sense of belonging. Knowing in advance what each person intends to do lets us coordinate efforts, avoid duplicated work and give every contribution the attention it deserves.
+
+> [!WARNING]
+> **Any unfriendly conduct, including disrespect toward the repository creator, will be reported to GitHub**, which will take all appropriate actions within its authority under its content and user policies ([GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies)).
+
+### How to contribute, step by step
+
+1. **Fork the repository — create a copy in your account.** Go to the original repository on GitHub and click the **Fork** button in the upper-right corner. This creates an exact copy of the project in your own profile.
+2. **Clone and create a branch — work in isolation.** Clone the repository from your account to your machine (`git clone ...`). Then create a new branch for your change:
+   ```bash
+   git checkout -b my-fix
+   ```
+3. **Make your changes and commit — document clearly what changed.** Make the necessary changes to the code or documentation, test locally, and commit with clear messages:
+   ```bash
+   git commit -m "docs: fix broken link in README"
+   ```
+
+📌 **Reference:** [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies)
+
+---
+
 ## 💬 Communication Guidelines
 
 - **Be respectful and constructive** in all interactions
