@@ -11,7 +11,7 @@
                connect-src 'none';
                media-src 'none';
                object-src 'none';">
-    <title>Typing Animation - Security Tips</title>
+    <title>Typing Animation - Security Tips | Merry Christmas</title>
     <style>
         :root {
             --primary-color: #00ffff; /* CYAN as primary color */
@@ -322,9 +322,56 @@
                 min-height: 45px;
             }
         }
+
+        /* 🎄 Christmas theme (palette of the Christmas 2025 site) — default */
+        [data-theme="christmas"] {
+            --primary-color: #d32f2f;
+            --background-dark: #ffffff;
+            --background-gradient: linear-gradient(135deg, #0d3010 0%, #1b5e20 55%, #2e7d32 100%);
+            --text-color: #c62828;
+            --container-bg: rgba(255, 255, 255, 0.92);
+            --shadow-color: rgba(255, 213, 79, 0.55);
+        }
+        [data-theme="christmas"] .typing-container {
+            border: 2px solid #ffd54f;
+            border-right: 3px solid #d32f2f;
+            text-shadow: none;
+            font-weight: 600;
+            box-shadow: 0 0 14px rgba(255, 213, 79, 0.55), inset 0 0 0 1px rgba(211, 47, 47, 0.15);
+        }
+        [data-theme="christmas"] .control-btn {
+            background: #d32f2f;
+            color: #ffffff;
+            border-color: #ffd54f;
+        }
+        [data-theme="christmas"] .control-btn:hover { background: #ffffff; color: #d32f2f; }
+        [data-theme="christmas"] .status { color: #ffffff; opacity: 0.95; }
+        [data-theme="christmas"] .progress-container { background: rgba(255, 255, 255, 0.25); }
+        [data-theme="christmas"] .progress-bar {
+            background: repeating-linear-gradient(-45deg, #d32f2f 0 8px, #ffffff 8px 16px); /* candy cane */
+        }
+        [data-theme="christmas"] .particle { background: #ffffff; width: 4px; height: 4px; }
+        [data-theme="christmas"] .particle:nth-child(4n) { background: #ffd54f; }
+        [data-theme="christmas"] .particle { animation-name: snowfall; }
+        @keyframes snowfall {
+            0%   { transform: translate(0, -20px); opacity: 0; }
+            10%  { opacity: 0.9; }
+            50%  { transform: translate(18px, 50vh); }
+            90%  { opacity: 0.9; }
+            100% { transform: translate(-10px, 100vh); opacity: 0; }
+        }
+        @keyframes completeGlowXmas {
+            0%, 100% { text-shadow: none; }
+            50% { text-shadow: 0 0 8px rgba(255, 213, 79, 0.9); }
+        }
+        [data-theme="christmas"] .text-complete { animation: completeGlowXmas 0.5s ease; }
+        .theme-christmas { background: conic-gradient(#d32f2f 0 50%, #2e7d32 50% 100%); }
+        @media (prefers-reduced-motion: reduce) {
+            .particle { animation: none !important; opacity: 0 !important; }
+        }
     </style>
 </head>
-<body data-theme="dark">
+<body data-theme="christmas">
     <div class="particles" id="particles"></div>
     
     <div class="controls">
@@ -335,7 +382,8 @@
         </div>
         
         <div class="theme-selector">
-            <div class="theme-btn theme-cyan active" data-theme="dark"></div>
+            <div class="theme-btn theme-christmas active" data-theme="christmas" title="Christmas / Natal"></div>
+            <div class="theme-btn theme-cyan" data-theme="dark"></div>
             <div class="theme-btn theme-blue" data-theme="light"></div>
             <div class="theme-btn theme-green" data-theme="green"></div>
             <div class="theme-btn theme-orange" data-theme="orange"></div>
@@ -349,14 +397,26 @@
             <div class="progress-bar" id="progress-bar"></div>
         </div>
         <div class="status" id="status">
-            <span id="phrase-counter">Playing: 1/204</span>
+            <span id="phrase-counter">Playing: 1/216</span>
             <span id="timer">Time: 0:00</span>
         </div>
     </div>
 
     <script>
-        // Text phrases array - 204 COMPLETE sentences
+        // Text phrases array - 216 COMPLETE sentences (12 Christmas phrases first)
         const texts = [
+            "Merry Christmas! The best gift for your accounts is 2FA!",
+            "Feliz Natal! O melhor presente para suas contas é o 2FA!",
+            "Santa checks his list twice. Check your logins with 2FA!",
+            "O Papai Noel confere a lista duas vezes. Confira seus logins com 2FA!",
+            "Unwrap gifts, not your passwords!",
+            "Abra presentes, não suas senhas!",
+            "A FIDO2 key under the tree: phishing-proof Christmas!",
+            "Uma chave FIDO2 debaixo da árvore: Natal à prova de phishing!",
+            "'Your package is delayed' text? Don't click, it's no Christmas gift!",
+            "SMS de 'encomenda retida'? Não clique, não é presente de Natal!",
+            "New Year's resolution: one unique password per account!",
+            "Resolução de Ano Novo: uma senha única para cada conta!",
             "Forgot your password? Better be unique!",
             "Esqueceu a senha? Melhor que seja única!",
             "Secure password with 120 characters + 2FA: impenetrable protection against the darkest tricks of hackers!",
