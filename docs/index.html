@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ffff">
+    <meta name="theme-color" content="#1b5e20">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self';
                    base-uri 'self';
@@ -69,7 +69,8 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        [data-theme="light"] {
+        [data-theme="light"],
+        [data-theme="christmas"] {
             --primary-color: #0066ff;
             --secondary-color: #00d0ff;
             --accent-color: #00bfff;
@@ -91,7 +92,10 @@
         /* Correction for subtitles: red color in Light theme */
         [data-theme="light"] h4,
         [data-theme="light"] .project-card h4,
-        [data-theme="light"] .timeline-item h4 {
+        [data-theme="light"] .timeline-item h4,
+        [data-theme="christmas"] h4,
+        [data-theme="christmas"] .project-card h4,
+        [data-theme="christmas"] .timeline-item h4 {
             color: #FF5C00 !important;
         }
 
@@ -105,13 +109,18 @@
         /* Specific rules for card colors in light mode for accessibility */
         [data-theme="light"] .project-card,
         [data-theme="light"] .welcome-card,
-        [data-theme="light"] .stat-card {
+        [data-theme="light"] .stat-card,
+        [data-theme="christmas"] .project-card,
+        [data-theme="christmas"] .welcome-card,
+        [data-theme="christmas"] .stat-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        [data-theme="light"] .toc {
+        [data-theme="light"] .toc,
+        
+        [data-theme="christmas"] .toc {
             background: rgba(0, 102, 204, 0.15);
             border-color: rgba(0, 102, 204, 0.4);
         }
@@ -1591,7 +1600,9 @@
                 backdrop-filter: blur(5px);
             }
             
-            [data-theme="light"] .status-item {
+            [data-theme="light"] .status-item,
+            
+            [data-theme="christmas"] .status-item {
                 background: rgba(255, 255, 255, 0.98) !important;
             }
             
@@ -1613,7 +1624,13 @@
             [data-theme="light"] .stat-card,
             [data-theme="light"] .terminal,
             [data-theme="light"] .toc,
-            [data-theme="light"] .contact-info {
+            [data-theme="light"] .contact-info,
+            [data-theme="christmas"] .project-card,
+            [data-theme="christmas"] .welcome-card,
+            [data-theme="christmas"] .stat-card,
+            [data-theme="christmas"] .terminal,
+            [data-theme="christmas"] .toc,
+            [data-theme="christmas"] .contact-info {
                 background: rgba(255, 255, 255, 0.98) !important;
                 border: 1px solid rgba(0, 102, 204, 0.3);
             }
@@ -1622,7 +1639,11 @@
             [data-theme="light"] .project-card p,
             [data-theme="light"] .welcome-card p,
             [data-theme="light"] .project-card li,
-            [data-theme="light"] .welcome-card li {
+            [data-theme="light"] .welcome-card li,
+            [data-theme="christmas"] .project-card p,
+            [data-theme="christmas"] .welcome-card p,
+            [data-theme="christmas"] .project-card li,
+            [data-theme="christmas"] .welcome-card li {
                 color: #1a202c !important;
             }
             
@@ -1632,7 +1653,9 @@
                 backdrop-filter: blur(10px);
             }
             
-            [data-theme="light"] .container {
+            [data-theme="light"] .container,
+            
+            [data-theme="christmas"] .container {
                 background: rgba(255, 255, 255, 0.98);
             }
             
@@ -2200,11 +2223,13 @@
         }
 
         /* For clear theme */
-        [data-theme="light"] .reading-progress-container {
+        [data-theme="light"] .reading-progress-container,
+        [data-theme="christmas"] .reading-progress-container {
             background: rgba(0, 0, 0, 0.1);
         }
 
-        [data-theme="light"] .reading-progress-percentage {
+        [data-theme="light"] .reading-progress-percentage,
+        [data-theme="christmas"] .reading-progress-percentage {
             background: rgba(255, 255, 255, 0.95);
             color: var(--text-color);
         }
@@ -2227,13 +2252,17 @@
             border-color: #0d001a !important;
         }
         
-        [data-theme="light"] .footer-btn {
+        [data-theme="light"] .footer-btn,
+        
+        [data-theme="christmas"] .footer-btn {
             background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
             border-color: rgba(30, 144, 255, 0.7) !important;
             color: #FFFFFF !important;
         }
         
-        [data-theme="light"] .footer-btn:hover {
+        [data-theme="light"] .footer-btn:hover,
+        
+        [data-theme="christmas"] .footer-btn:hover {
             background: linear-gradient(135deg, #0066CC, #004C99) !important;
             box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
             border-color: #1E90FF !important;
@@ -2284,13 +2313,17 @@
             border-color: #0d001a !important;
         }
         
-        [data-theme="light"] .language-btn {
+        [data-theme="light"] .language-btn,
+        
+        [data-theme="christmas"] .language-btn {
             background: linear-gradient(135deg, #1E90FF, #0066CC) !important;
             border-color: rgba(30, 144, 255, 0.7) !important;
             color: #FFFFFF !important;
         }
         
-        [data-theme="light"] .language-btn:hover {
+        [data-theme="light"] .language-btn:hover,
+        
+        [data-theme="christmas"] .language-btn:hover {
             background: linear-gradient(135deg, #0066CC, #004C99) !important;
             box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4) !important;
             border-color: #1E90FF !important;
@@ -2331,7 +2364,8 @@
         }
         
         /* Ajuste para o tema light no indicador de idioma ativo */
-        [data-theme="light"] .language-btn:first-child::after {
+        [data-theme="light"] .language-btn:first-child::after,
+        [data-theme="christmas"] .language-btn:first-child::after {
             background: #1E90FF !important;
         }
         
@@ -2385,14 +2419,192 @@
                 min-width: 280px !important;
             }
         }
+
+        /* =====================================================================
+           🎄 CHRISTMAS THEME 2026 — "Secure Holidays"
+           4th theme. Auto-activates from Dec 1 to Jan 6 (see XMAS_SEASON in JS)
+           unless the visitor picked another theme. Respects prefers-reduced-motion.
+           ===================================================================== */
+        [data-theme="christmas"] {
+            /* Christmas 2025 palette */
+            --primary-color: #d32f2f;
+            --secondary-color: #388e3c;
+            --accent-color: #ffd54f;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --dark-bg: #1b5e20;
+            --darker-bg: #0d3010;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(211, 47, 47, 0.3);
+            --text-color: #1a1a1a;
+            --text-muted: #5d4037;
+            --neon-green: #d32f2f;
+            --neon-green-dark: #b71c1c;
+        }
+        body[data-theme="christmas"] {
+            background-color: #1b5e20;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(56, 142, 60, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 213, 79, 0.1) 0%, transparent 50%);
+        }
+        [data-theme="christmas"] .container {
+            box-shadow: 0 0 40px rgba(255, 77, 94, 0.18), 0 0 90px rgba(126, 224, 161, 0.08);
+        }
+        [data-theme="christmas"] h4,
+        [data-theme="christmas"] .project-card h4,
+        [data-theme="christmas"] .timeline-item h4 {
+            color: #ffd166 !important;
+        }
+        [data-theme="christmas"] a { color: #ffd166; }
+        [data-theme="christmas"] a:hover { color: #7ee0a1; }
+        .theme-btn.theme-christmas.active { box-shadow: 0 0 12px #ff4d5e, 0 0 22px rgba(255, 209, 102, 0.6); }
+
+        /* Snow canvas */
+        #xmas-snow {
+            position: fixed; inset: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9; opacity: 0; transition: opacity 1.2s ease;
+        }
+        body[data-theme="christmas"] #xmas-snow { opacity: 1; }
+
+        /* Only visible in Christmas theme */
+        .xmas-only { display: none !important; }
+        body[data-theme="christmas"] .xmas-only { display: block !important; }
+
+        /* Garland of lights */
+        .xmas-lights {
+            position: relative; height: 40px; margin: -10px 0 10px;
+            overflow: hidden; pointer-events: none;
+        }
+        .xmas-lights::before {
+            content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 22px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25); border-radius: 0 0 50% 50% / 0 0 100% 100%;
+        }
+        .xmas-lights ul { list-style: none; display: flex; justify-content: space-between; margin: 0; padding: 0 2%; }
+        .xmas-lights li {
+            position: relative; width: 10px; height: 16px; margin-top: 18px;
+            border-radius: 50%; background: var(--bulb); box-shadow: 0 2px 14px 2px var(--bulb);
+            animation: xmasTwinkle 1.6s ease-in-out infinite alternate; animation-delay: var(--d);
+        }
+        .xmas-lights li::before {
+            content: ""; position: absolute; top: -5px; left: 2px; width: 6px; height: 6px;
+            background: #3b4a3f; border-radius: 2px;
+        }
+        @keyframes xmasTwinkle {
+            0%   { opacity: 1;    box-shadow: 0 2px 16px 3px var(--bulb); }
+            100% { opacity: 0.35; box-shadow: 0 2px 4px 0 var(--bulb); }
+        }
+
+        /* Countdown + 12 days of security gifts */
+        .xmas-panel {
+            margin: 18px auto 6px; max-width: 760px; padding: 16px 20px; text-align: center;
+            border: 1px dashed rgba(255, 209, 102, 0.55); border-radius: 14px;
+            background: linear-gradient(135deg, rgba(255, 77, 94, 0.10), rgba(126, 224, 161, 0.08));
+        }
+        .xmas-countdown {
+            font-family: 'Orbitron', sans-serif; font-size: 1.05em; letter-spacing: 0.5px;
+            color: #ffd166; margin-bottom: 10px;
+        }
+        .xmas-gift-btn {
+            font: inherit; cursor: pointer; padding: 9px 18px; border-radius: 999px;
+            border: 1px solid #ffd166; background: rgba(255, 77, 94, 0.85); color: #fff;
+            transition: var(--transition);
+        }
+        .xmas-gift-btn:hover, .xmas-gift-btn:focus-visible { transform: translateY(-2px); background: #ff4d5e; box-shadow: 0 6px 18px rgba(255, 77, 94, 0.45); outline: none; }
+        .xmas-gift-btn.shake { animation: xmasShake 0.5s ease; }
+        @keyframes xmasShake { 0%,100%{transform:rotate(0)} 20%{transform:rotate(-8deg)} 40%{transform:rotate(7deg)} 60%{transform:rotate(-5deg)} 80%{transform:rotate(3deg)} }
+        .xmas-tip {
+            margin: 14px auto 0; max-width: 640px; text-align: left; line-height: 1.55;
+            padding: 12px 16px; border-left: 3px solid #7ee0a1; border-radius: 8px;
+            background: rgba(0, 0, 0, 0.25); color: var(--text-color);
+            animation: xmasReveal 0.45s ease;
+        }
+        .xmas-tip[hidden] { display: none; }
+        .xmas-tip strong { color: #7ee0a1; }
+        @keyframes xmasReveal { from { opacity: 0; transform: translateY(-6px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .xmas-lights li, .xmas-gift-btn.shake, .xmas-tip { animation: none !important; }
+        }
+
+
+        /* 🎄 Christmas 2026 — classic Christmas 2025 look */
+        [data-theme="christmas"] .container { box-shadow: 0 0 30px rgba(211, 47, 47, 0.2); }
+        [data-theme="christmas"] h1, [data-theme="christmas"] h2, [data-theme="christmas"] h3 {
+            color: #d32f2f; text-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+        }
+        [data-theme="christmas"] h4,
+        [data-theme="christmas"] .project-card h4,
+        [data-theme="christmas"] .timeline-item h4 { color: #2e7d32 !important; }
+        [data-theme="christmas"] a { color: #d32f2f; }
+        [data-theme="christmas"] a:hover { color: #b71c1c; text-shadow: 0 0 8px rgba(211, 47, 47, 0.4); }
+        [data-theme="christmas"] .marquee-content { color: #d32f2f; text-shadow: 0 0 10px rgba(211, 47, 47, 0.5); }
+        [data-theme="christmas"] header { border-bottom-color: rgba(211, 47, 47, 0.2); }
+        [data-theme="christmas"] .project-card,
+        [data-theme="christmas"] .welcome-card,
+        [data-theme="christmas"] .timeline-item {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid rgba(211, 47, 47, 0.2) !important;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1) !important;
+        }
+        [data-theme="christmas"] blockquote { background: rgba(255, 213, 79, 0.12) !important; border-left-color: #ffd54f; }
+        [data-theme="christmas"] .toc { background: rgba(211, 47, 47, 0.08) !important; border-color: rgba(211, 47, 47, 0.2) !important; }
+        [data-theme="christmas"] .contact-info { background: rgba(255, 213, 79, 0.1) !important; border-color: #ffd54f !important; }
+        [data-theme="christmas"] .btn,
+        [data-theme="christmas"] .floating-btn-mobile {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+        }
+        [data-theme="christmas"] .btn-secondary { background: linear-gradient(135deg, #388e3c, #1b5e20) !important; color: #fff !important; }
+        [data-theme="christmas"] .btn:hover { box-shadow: 0 6px 16px rgba(211, 47, 47, 0.6); }
+        [data-theme="christmas"] .theme-btn.theme-christmas.active { border-color: #d32f2f; box-shadow: 0 0 10px #d32f2f; }
+        /* snow stays visible over the light card */
+        [data-theme="christmas"] #xmas-snow { filter: drop-shadow(0 0 1.5px rgba(27, 94, 32, 0.6)); }
+        /* countdown + gifts on light background */
+        [data-theme="christmas"] .xmas-panel { background: linear-gradient(135deg, rgba(211, 47, 47, 0.06), rgba(56, 142, 60, 0.08)); border-color: rgba(211, 47, 47, 0.45); }
+        [data-theme="christmas"] .xmas-countdown { color: #c62828; }
+        [data-theme="christmas"] .xmas-gift-btn { background: #d32f2f; color: #fff; border-color: #ffd54f; }
+        [data-theme="christmas"] .xmas-gift-btn:hover,
+        [data-theme="christmas"] .xmas-gift-btn:focus-visible { background: #b71c1c; color: #fff; box-shadow: 0 6px 18px rgba(211, 47, 47, 0.35); }
+        [data-theme="christmas"] .xmas-tip { background: rgba(56, 142, 60, 0.08); color: #1a1a1a; border-left-color: #388e3c; }
+        [data-theme="christmas"] .xmas-tip strong { color: #2e7d32; }
+        [data-theme="christmas"] .xmas-lights::before { border-bottom-color: rgba(27, 94, 32, 0.45); }
+
+        /* 🎄 Live countdown (Christmas + New Year), ticks every second */
+        .xmas-timers { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 6px 0 14px; }
+        .xmas-timer {
+            padding: 12px 10px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.75); border: 1px solid rgba(211, 47, 47, 0.25);
+        }
+        .xmas-timer-label { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
+        .xmas-timer-date { font-weight: 400; font-size: 0.85em; color: #5d4037; }
+        .xmas-timer-clock { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; min-height: 58px; align-items: center; }
+        .xmas-unit {
+            min-width: 58px; padding: 6px 4px; border-radius: 8px;
+            background: linear-gradient(160deg, #d32f2f, #b71c1c); color: #fff;
+            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+        }
+        .xmas-unit b { display: block; font-family: 'Orbitron', sans-serif; font-size: 1.45em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+        .xmas-unit small { display: block; font-size: 0.72em; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.9; }
+        .xmas-celebrate { font-family: 'Orbitron', sans-serif; font-size: 1.25em; color: #d32f2f; animation: xmasPulse 1.4s ease-in-out infinite; }
+        @keyframes xmasPulse { 50% { transform: scale(1.06); } }
+        @media (max-width: 640px) {
+            .xmas-timers { grid-template-columns: 1fr; }
+            .xmas-unit { min-width: 52px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .xmas-celebrate { animation: none; } }
     </style>
 </head>
-<body>
+<body data-theme="christmas">
     <!-- Reading Progress Bar -->
     <div class="reading-progress-container" id="readingProgress">
         <div class="reading-progress-bar" id="progressBar"></div>
         <div class="reading-progress-percentage" id="progressPercentage">0%</div>
     </div>
+
+    <!-- 🎄 Christmas 2026 Snow Canvas -->
+    <canvas id="xmas-snow" aria-hidden="true"></canvas>
 
     <!-- Matrix Rain Canvas -->
     <canvas id="matrix-canvas"></canvas>
@@ -2402,9 +2614,10 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher" role="group" aria-label="Theme switcher">
-        <div class="theme-btn theme-cyber active" data-theme="cyber" title="Cyber Theme" role="button" tabindex="0" aria-pressed="true" aria-label="Cyber Theme">🔷</div>
+        <div class="theme-btn theme-cyber" data-theme="cyber" title="Cyber Theme" role="button" tabindex="0" aria-pressed="false" aria-label="Cyber Theme">🔷</div>
         <div class="theme-btn theme-light" data-theme="light" title="Light Theme" role="button" tabindex="0" aria-pressed="false" aria-label="Light Theme">☀️</div>
         <div class="theme-btn theme-matrix" data-theme="matrix" title="Matrix Theme" role="button" tabindex="0" aria-pressed="false" aria-label="Matrix Theme">🟩</div>
+        <div class="theme-btn theme-christmas active" data-theme="christmas" title="Christmas Theme" role="button" tabindex="0" aria-pressed="true" aria-label="Christmas Theme">🎄</div>
     </div>
 
     <!-- Install Prompt -->
@@ -2416,6 +2629,8 @@
 
     <div class="container">
         <header>
+            <!-- 🎄 Christmas 2026: garland (bulbs generated by JS) -->
+            <div class="xmas-lights xmas-only" aria-hidden="true"><ul id="xmasLights"></ul></div>
             <!-- TV Marquee Title - UPDATED: New impactful phrase -->
             <div class="marquee-container">
                 <div class="marquee-content">
@@ -2423,6 +2638,23 @@
                 </div>
             </div>
             
+            <!-- 🎄 Christmas 2026: countdown + 12 Days of Secure Christmas -->
+            <div class="xmas-panel xmas-only">
+                <div class="xmas-countdown">🎅 Live countdown</div>
+                <div class="xmas-timers">
+                    <div class="xmas-timer" id="xmasTimerXmas">
+                        <div class="xmas-timer-label">🎄 Christmas <span class="xmas-timer-date"></span></div>
+                        <div class="xmas-timer-clock" role="timer" aria-live="off"></div>
+                    </div>
+                    <div class="xmas-timer" id="xmasTimerNY">
+                        <div class="xmas-timer-label">🎆 New Year <span class="xmas-timer-date"></span></div>
+                        <div class="xmas-timer-clock" role="timer" aria-live="off"></div>
+                    </div>
+                </div>
+                <button type="button" class="xmas-gift-btn" id="xmasGiftBtn" aria-controls="xmasTip" aria-expanded="false">🎁 Open today's security gift</button>
+                <div class="xmas-tip" id="xmasTip" hidden aria-live="polite"></div>
+            </div>
+
             <!-- Embedded typing animation iframe -->
             <iframe src="https://gerivan.me/typing-animation.html" frameborder="0" title="Grok Typing Animation"></iframe>
             
@@ -3129,6 +3361,7 @@
         <!-- Copyright footer - English language -->
         <div class="center" id="finishing-section">         
             <p><strong>Copyright © 2025-2026 Gerivan Costa dos Santos</strong></p>
+            <p class="xmas-only"><strong>🎄 Merry Christmas and a secure, happy New Year! 🎅</strong></p>
             <p><strong>All rights reserved</strong></p>
         </div>
     </div>
@@ -4032,7 +4265,7 @@
             
             cycleTheme() {
                 console.log('🎨 Cycling theme...');
-                const themes = ['cyber', 'light', 'matrix'];
+                const themes = ['cyber', 'light', 'matrix', 'christmas'];
                 const currentTheme = document.body.getAttribute('data-theme') || 'cyber';
                 const currentIndex = themes.indexOf(currentTheme);
                 const nextIndex = (currentIndex + 1) % themes.length;
@@ -4572,6 +4805,284 @@
             
             console.log('📊 Reading progress bar initialized');
         }
+
+        /* =====================================================================
+           🎄 CHRISTMAS THEME 2026 — snow engine, garland, countdown, gifts
+           ===================================================================== */
+        (function () {
+            'use strict';
+            const L = {"marquee": "🎄 Merry Christmas! May this season bring peace, joy and strong authentication for everyone! Enable your 2FA before opening the gifts 🎁", "gift": "🎁 Open today's security gift", "next": "🎁 Next gift", "title": "12 Days of Secure Christmas", "day": "Day", "cd_days": "{n} days until Christmas", "cd_eve": "It's Christmas Eve — 1 day to go!", "cd_xmas": "Merry Christmas! 🎄", "cd_ny": "{n} days until {y}", "cd_ny1": "1 day until {y}!", "cd_hny": "Happy New Year {y}! 🎆", "tips": ["Turn on 2FA for your main email first — it is the master key that resets every other account.", "Prefer FIDO2 security keys or passkeys: they are phishing-resistant by design, unlike SMS codes.", "Use a password manager and one unique password per site. Reuse turns one leak into many.", "Length beats complexity: a long random passphrase is stronger than a short 'P@ssw0rd!'.", "Got a 'holiday deal' email? Check SPF, DKIM and DMARC results in the headers before you click.", "'Your package is on hold' text messages are a classic smishing lure. Go to the carrier's site yourself.", "Keep your 2FA recovery codes offline, somewhere safe — not in the same inbox they protect.", "Update phones and laptops before you travel: patches close holes attackers already know about.", "Skip banking on public Wi-Fi. Use mobile data or a VPN you trust.", "A 'boss' asking for gift cards by message is a scam. Confirm through another channel.", "Review which apps can access your Google or Microsoft account and revoke the ones you no longer use.", "Give yourself a backup: the 3-2-1 rule — 3 copies, 2 different media, 1 off-site."]};
+            // Season in which the Christmas theme turns on by itself (months are 0-based)
+            const XMAS_SEASON = { start: { m: 11, d: 1 }, end: { m: 0, d: 6 } };
+            const STORAGE_KEY = 'gerivan-theme';
+            const DEFAULT_THEME = 'christmas';   // change to 'cyber' after the holidays
+            const VALID = ['cyber', 'light', 'matrix', 'christmas'];
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const bodyEl = document.body;
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            const originalMetaColor = '#00ffff';
+            const marquee = document.querySelector('.marquee-content');
+            const originalMarquee = marquee ? marquee.textContent : '';
+
+            function inSeason(now) {
+                const m = now.getMonth(), d = now.getDate();
+                return (m === XMAS_SEASON.start.m && d >= XMAS_SEASON.start.d) ||
+                       (m === XMAS_SEASON.end.m && d <= XMAS_SEASON.end.d);
+            }
+            const store = {
+                get() { try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } },
+                set(v) { try { localStorage.setItem(STORAGE_KEY, v); } catch (e) { /* storage unavailable */ } }
+            };
+
+            /* ---------- Snow (canvas, depth layers, wind follows the pointer) ---------- */
+            const canvas = document.getElementById('xmas-snow');
+            const ctx = canvas ? canvas.getContext('2d') : null;
+            let flakes = [], sparks = [], rafId = null, running = false, wind = 0, targetWind = 0, W = 0, H = 0;
+
+            function makeFlake(randomY) {
+                const z = Math.random();               // 0 = far, 1 = near
+                return {
+                    x: Math.random() * W,
+                    y: randomY ? Math.random() * H : -10,
+                    r: 0.6 + z * 2.8,
+                    z: z,
+                    vy: 0.35 + z * 1.25,
+                    phase: Math.random() * Math.PI * 2,
+                    sway: 0.2 + Math.random() * 0.5,
+                    gold: Math.random() < 0.08
+                };
+            }
+            function resize() {
+                if (!canvas) return;
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                W = window.innerWidth; H = window.innerHeight;
+                canvas.width = W * dpr; canvas.height = H * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                const target = Math.round(Math.min(170, (W * H) / 8500) * (reduceMotion ? 0.4 : 1));
+                while (flakes.length < target) flakes.push(makeFlake(true));
+                flakes.length = target;
+                if (!running) drawFrame(false);
+            }
+            function drawFrame(step) {
+                ctx.clearRect(0, 0, W, H);
+                wind += (targetWind - wind) * 0.02;
+                for (const f of flakes) {
+                    if (step) {
+                        f.phase += 0.012;
+                        f.y += f.vy;
+                        f.x += Math.sin(f.phase) * f.sway + wind * (0.4 + f.z);
+                        if (f.y > H + 10) { Object.assign(f, makeFlake(false)); }
+                        if (f.x > W + 10) f.x = -10; else if (f.x < -10) f.x = W + 10;
+                    }
+                    const a = 0.25 + f.z * 0.65;
+                    ctx.beginPath();
+                    ctx.fillStyle = f.gold ? 'rgba(255,209,102,' + a + ')' : 'rgba(255,255,255,' + a + ')';
+                    ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                for (let i = sparks.length - 1; i >= 0; i--) {
+                    const s = sparks[i];
+                    s.x += s.vx; s.y += s.vy; s.vy += 0.06; s.life -= 0.02;
+                    if (s.life <= 0) { sparks.splice(i, 1); continue; }
+                    ctx.beginPath();
+                    ctx.fillStyle = 'hsla(' + s.h + ',95%,65%,' + s.life + ')';
+                    ctx.arc(s.x, s.y, 1.8, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            function loop() { drawFrame(true); rafId = requestAnimationFrame(loop); }
+            function startSnow() {
+                if (!ctx) return;
+                resize();
+                if (reduceMotion) { drawFrame(false); return; }   // static snowfall
+                if (!running) { running = true; loop(); }
+            }
+            function stopSnow() {
+                running = false;
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = null;
+                if (ctx) ctx.clearRect(0, 0, W, H);
+            }
+
+            window.addEventListener('pointermove', (e) => {
+                targetWind = ((e.clientX / Math.max(W, 1)) - 0.5) * 2.4;
+            }, { passive: true });
+            function burst(x, y, amount) {
+                if (!running || reduceMotion) return;
+                const n = amount || 18, hues = [355, 45, 140];   // red, gold, green
+                for (let i = 0; i < n; i++) {
+                    const ang = (Math.PI * 2 * i) / n, sp = 1.5 + Math.random() * 2.5;
+                    sparks.push({ x: x, y: y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 1, life: 1, h: hues[i % 3] });
+                }
+            }
+            window.addEventListener('pointerdown', (e) => burst(e.clientX, e.clientY), { passive: true });
+            let resizeT;
+            window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => { if (isXmas()) resize(); buildLights(); }, 200); });
+            document.addEventListener('visibilitychange', () => {
+                if (!isXmas()) return;
+                if (document.hidden) stopSnow(); else startSnow();
+            });
+
+            /* ---------- Garland ---------- */
+            function buildLights() {
+                const ul = document.getElementById('xmasLights');
+                if (!ul) return;
+                const colors = ['#ff4d5e', '#ffd166', '#7ee0a1', '#6ecbff', '#ff8fd1'];
+                const n = Math.max(10, Math.min(34, Math.round((ul.clientWidth || 900) / 32)));
+                if (ul.children.length === n) return;
+                ul.innerHTML = '';
+                for (let i = 0; i < n; i++) {
+                    const li = document.createElement('li');
+                    li.style.setProperty('--bulb', colors[i % colors.length]);
+                    li.style.setProperty('--d', (Math.random() * 1.6).toFixed(2) + 's');
+                    ul.appendChild(li);
+                }
+            }
+
+            /* ---------- Countdown ---------- */
+            function countdownText(now) {
+                const y = now.getFullYear(), m = now.getMonth(), d = now.getDate();
+                const today = new Date(y, m, d);
+                const days = (target) => Math.round((target - today) / 864e5);
+                if (m === 0 && d <= 6) return L.cd_hny.replace('{y}', y);
+                if (m === 11 && d === 25) return L.cd_xmas;
+                if (m === 11 && d > 25) {
+                    const n = days(new Date(y + 1, 0, 1));
+                    return (n === 1 ? L.cd_ny1 : L.cd_ny).replace('{n}', n).replace('{y}', y + 1);
+                }
+                const n = days(new Date(y, 11, 25));
+                return n === 1 ? L.cd_eve : L.cd_days.replace('{n}', n);
+            }
+            /* ---------- Live countdown: Christmas + New Year (visitor's local time) ---------- */
+            const CD = {"title": "Live countdown", "xmas": "Christmas", "ny": "New Year", "units": ["days", "hours", "min", "sec"], "unit1": ["day", "hour", "min", "sec"], "xmasNow": "Merry Christmas! 🎄", "nyNow": "Happy New Year {y}! 🎆", "locale": "en-US"};
+            const pad = (n) => String(n).padStart(2, '0');
+            const fmtDate = (d) => d.toLocaleDateString(CD.locale, { day: '2-digit', month: '2-digit', year: 'numeric' });
+            const timerState = {};
+            function renderTimer(id, target, celebrating, message) {
+                const box = document.getElementById(id);
+                if (!box) return;
+                const clock = box.querySelector('.xmas-timer-clock');
+                box.querySelector('.xmas-timer-date').textContent = '· ' + fmtDate(target);
+                const st = timerState[id] || (timerState[id] = { mode: null, nums: [], labels: [] });
+                if (celebrating) {
+                    if (st.mode !== 'party') {
+                        clock.innerHTML = '';
+                        const p = document.createElement('div');
+                        p.className = 'xmas-celebrate';
+                        p.textContent = message;
+                        clock.appendChild(p);
+                        st.mode = 'party';
+                        if (st.wasCounting) {                       // it just hit zero: fireworks!
+                            const r = box.getBoundingClientRect();
+                            for (let k = 0; k < 4; k++) setTimeout(() => burst(r.left + Math.random() * r.width, r.top + r.height / 2, 28), k * 250);
+                        }
+                    }
+                    return;
+                }
+                if (st.mode !== 'count') {                          // build the 4 boxes once
+                    clock.innerHTML = '';
+                    st.nums = []; st.labels = [];
+                    for (let i = 0; i < 4; i++) {
+                        const u = document.createElement('div'); u.className = 'xmas-unit';
+                        const b = document.createElement('b'); const s = document.createElement('small');
+                        u.appendChild(b); u.appendChild(s); clock.appendChild(u);
+                        st.nums.push(b); st.labels.push(s);
+                    }
+                    st.mode = 'count';
+                }
+                st.wasCounting = true;
+                const diff = Math.max(0, target - new Date());
+                const total = Math.floor(diff / 1000);
+                const vals = [Math.floor(total / 86400), Math.floor(total / 3600) % 24, Math.floor(total / 60) % 60, total % 60];
+                vals.forEach((v, i) => {
+                    st.nums[i].textContent = i === 0 ? String(v) : pad(v);
+                    st.labels[i].textContent = v === 1 ? CD.unit1[i] : CD.units[i];
+                });
+                clock.setAttribute('aria-label', vals[0] + ' ' + CD.units[0] + ', ' + vals[1] + ' ' + CD.units[1] + ', ' + vals[2] + ' ' + CD.units[2]);
+            }
+            function updateCountdown() {
+                const now = new Date();
+                const y = now.getFullYear(), m = now.getMonth(), d = now.getDate();
+                // Christmas: Dec 25 00:00. On the 25th itself we celebrate; from the 26th we aim at next year.
+                const isXmasDay = (m === 11 && d === 25);
+                const xmasTarget = (m === 11 && d >= 26) ? new Date(y + 1, 11, 25) : new Date(y, 11, 25);
+                renderTimer('xmasTimerXmas', xmasTarget, isXmasDay, CD.xmasNow);
+                // New Year: Jan 1 00:00. On Jan 1st we celebrate.
+                const isNewYearDay = (m === 0 && d === 1);
+                const nyTarget = isNewYearDay ? new Date(y, 0, 1) : new Date(y + 1, 0, 1);
+                renderTimer('xmasTimerNY', nyTarget, isNewYearDay, CD.nyNow.replace('{y}', y));
+            }
+            function tick() {
+                if (isXmas() && !document.hidden) updateCountdown();
+                setTimeout(tick, 1000 - (Date.now() % 1000) + 5);   // aligned to the next full second
+            }
+
+            /* ---------- 12 Days of Secure Christmas ---------- */
+            let tipIndex = null;
+            function todayTipIndex() {
+                const now = new Date();
+                if (now.getMonth() === 11) return (now.getDate() - 1) % 12;
+                const start = new Date(now.getFullYear(), 0, 0);
+                return Math.floor((now - start) / 864e5) % 12;
+            }
+            function initGifts() {
+                const btn = document.getElementById('xmasGiftBtn');
+                const tip = document.getElementById('xmasTip');
+                if (!btn || !tip) return;
+                btn.addEventListener('click', () => {
+                    tipIndex = tipIndex === null ? todayTipIndex() : (tipIndex + 1) % L.tips.length;
+                    tip.innerHTML = '';
+                    const strong = document.createElement('strong');
+                    strong.textContent = '🎄 ' + L.title + ' — ' + L.day + ' ' + (tipIndex + 1) + '/12: ';
+                    tip.appendChild(strong);
+                    tip.appendChild(document.createTextNode(L.tips[tipIndex]));
+                    tip.hidden = false;
+                    // restart reveal animation
+                    tip.style.animation = 'none'; void tip.offsetWidth; tip.style.animation = '';
+                    btn.textContent = L.next;
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.classList.remove('shake'); void btn.offsetWidth; btn.classList.add('shake');
+                });
+            }
+
+            /* ---------- Theme glue ---------- */
+            function isXmas() { return bodyEl.getAttribute('data-theme') === 'christmas'; }
+            function syncXmas() {
+                if (isXmas()) {
+                    buildLights();
+                    updateCountdown();
+                    if (marquee) marquee.textContent = L.marquee;
+                    if (metaTheme) metaTheme.setAttribute('content', '#1b5e20');
+                    startSnow();
+                } else {
+                    stopSnow();
+                    if (marquee) marquee.textContent = originalMarquee;
+                    if (metaTheme && originalMetaColor) metaTheme.setAttribute('content', originalMetaColor);
+                }
+            }
+            new MutationObserver(syncXmas).observe(bodyEl, { attributes: true, attributeFilter: ['data-theme'] });
+
+            // Remember only choices the visitor actually made (not automatic ones)
+            document.querySelectorAll('.theme-btn').forEach((btn) => {
+                const remember = (e) => { if (e.isTrusted) store.set(btn.dataset.theme); };
+                btn.addEventListener('click', remember);
+                btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') remember(e); });
+            });
+
+            function applyInitialTheme() {
+                let saved = store.get();
+                if (!VALID.includes(saved)) saved = null;
+                const wanted = saved || DEFAULT_THEME;   // Christmas is the main theme
+                if (!wanted) return;
+                const btn = document.querySelector('.theme-btn[data-theme="' + wanted + '"]');
+                if (btn && !btn.classList.contains('active')) btn.click();
+            }
+
+            initGifts();
+            tick();
+            applyInitialTheme();
+            syncXmas();
+        })();
     </script>		
 </body>
 </html>
