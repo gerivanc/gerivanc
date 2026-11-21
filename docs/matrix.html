@@ -112,7 +112,15 @@
         }
         .decrypted-msg .line2 span.ok { color: #ffd54f; text-shadow: 0 0 6px #ff3b3b, 0 0 14px rgba(255, 59, 59, 0.5); }
         @media (max-width: 480px) {
-            .decrypt-status { font-size: 11px; padding: 5px 10px; }
+            .decrypt-status {
+                font-size: 11px;
+                padding: 5px 10px;
+                white-space: normal;
+                width: max-content;
+                max-width: calc(100% - 24px);
+                box-sizing: border-box;
+                text-align: center;
+            }
             .decrypt-bar { width: 70px; }
         }
     </style>
@@ -219,7 +227,7 @@
             const controlsEl = document.querySelector('.controls');
             const topRows = Math.max(Math.round(usableRows * 0.06), Math.ceil(((controlsEl ? controlsEl.offsetHeight : 30) + 16) / fontSize));
             // Reserve room for the message below the tree (two lines of real text)
-            const msgFont = Math.max(14, Math.min(54, Math.floor((window.innerWidth * 0.9) / (15 * 0.8))));
+            const msgFont = Math.max(14, Math.min(54, Math.floor((window.innerWidth * 0.9) / (15 * 0.8)), Math.floor(window.innerHeight * 0.07)));
             const textBlock = Math.ceil((msgFont * 2.6) / fontSize) + 1;
             const treeH = Math.max(8, Math.round(Math.min(usableRows * 0.66, (usableRows - textBlock - topRows - 3) / 1.2)));
             const treeW = Math.min(columns * 0.9, treeH * 1.3);
@@ -486,8 +494,17 @@
         }
 
         // Animation loop
+        // When embedded in the main site, the parent page pauses the rain while it is off-screen
+        let embeddedHidden = false;
+        window.addEventListener('message', (e) => {
+            if (e.origin !== window.location.origin || !e.data || e.data.type !== 'matrix-visibility') return;
+            embeddedHidden = !e.data.visible;
+            clearTimeout(loopTimer);
+            if (!embeddedHidden && isRaining) animate();
+        });
+
         function animate() {
-            if (!isRaining) return;
+            if (!isRaining || embeddedHidden) return;
             drawMatrix();
             twinkle();
             loopTimer = setTimeout(() => requestAnimationFrame(animate), 1000 / speed);
