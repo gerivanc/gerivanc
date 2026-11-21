@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Rain</title>
+    <title>Matrix Rain — Decrypting Christmas</title>
     <style>
         body {
             margin: 0;
@@ -14,27 +14,106 @@
         }
         canvas {
             display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
+        /* Layer with the "decrypted" Christmas tree and message */
+        #overlay {
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity 2s ease;
+        }
+        #overlay.fading, .decrypted-msg.fading { opacity: 0; }
+        .decrypted-msg { transition: opacity 2s ease; }
         .controls {
             position: absolute;
             top: 10px;
             left: 10px;
-            color: #0f0;
+            color: #2ecc71;
             font-size: 12px;
             z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            max-width: calc(100% - 20px);
         }
         .controls button {
             background: #000;
-            color: #0f0;
-            border: 1px solid #0f0;
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
             padding: 5px 10px;
-            margin: 2px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
         }
-        .controls button:hover {
-            background: #0f0;
+        .controls button:hover,
+        .controls button:focus-visible {
+            background: #2ecc71;
             color: #000;
+            outline: none;
+        }
+        /* Decryption status */
+        .decrypt-status {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            color: #2ecc71;
+            font-size: 13px;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(46, 204, 113, 0.5);
+            padding: 6px 14px;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: color 0.5s, border-color 0.5s;
+        }
+        .decrypt-bar {
+            display: inline-block;
+            width: 120px;
+            height: 6px;
+            margin-left: 8px;
+            vertical-align: middle;
+            background: rgba(46, 204, 113, 0.2);
+        }
+        .decrypt-bar i {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #2ecc71, #ffd54f, #ff3b3b);
+            transition: width 0.3s;
+        }
+        .decrypt-status.granted {
+            color: #ffd54f;
+            border-color: #ffd54f;
+            text-shadow: 0 0 8px rgba(255, 213, 79, 0.8);
+        }
+        .decrypt-status.granted .decrypt-bar { display: none; }
+        /* Message that "decrypts" letter by letter along with the progress */
+        .decrypted-msg {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            text-align: center;
+            pointer-events: none;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+            white-space: pre;
+        }
+        .decrypted-msg span { color: #2ecc71; opacity: 0.55; }
+        .decrypted-msg span.ok {
+            color: #ffffff;
+            opacity: 1;
+            text-shadow: 0 0 6px #ffd54f, 0 0 16px rgba(255, 213, 79, 0.6);
+        }
+        .decrypted-msg .line2 span.ok { color: #ffd54f; text-shadow: 0 0 6px #ff3b3b, 0 0 14px rgba(255, 59, 59, 0.5); }
+        @media (max-width: 480px) {
+            .decrypt-status { font-size: 11px; padding: 5px 10px; }
+            .decrypt-bar { width: 70px; }
         }
     </style>
 </head>
@@ -43,35 +122,84 @@
         <button id="toggleBtn" onclick="toggleRain()">⏸️ Pause</button>
         <button onclick="changeSpeed(1)">⏩ Faster</button>
         <button onclick="changeSpeed(-1)">⏪ Slower</button>
-        <button onclick="changeColor()">🎨 Color</button>
+        <button id="colorBtn" onclick="changeColor()">🎨 Color</button>
+        <button onclick="restartCycle(true)">🎄 Decrypt again</button>
     </div>
-    <canvas id="matrix"></canvas>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <canvas id="overlay" aria-hidden="true"></canvas>
+    <div class="decrypted-msg" id="decryptedMsg" aria-label="Feliz Natal — Merry Christmas"><div class="line1"></div><div class="line2"></div></div>
+    <div class="decrypt-status" id="decryptStatus" role="status" aria-live="polite">
+        <span id="decryptText">DECRYPTING CHRISTMAS… 0%</span><span class="decrypt-bar"><i id="decryptBar"></i></span>
+    </div>
 
     <script>
+        /*
+         * Matrix Rain — "Decrypting Christmas" (Christmas 2026 edition)
+         * The code rain works as a decryption process: every time a drop passes over
+         * a hidden cell, that cell is "decrypted" and stays lit, slowly revealing a
+         * Christmas tree, a star and the message FELIZ NATAL / MERRY CHRISTMAS.
+         * At 100% the status turns into ACCESS GRANTED; after a while the cycle restarts.
+         */
         const canvas = document.getElementById('matrix');
         const ctx = canvas.getContext('2d');
+        const overlay = document.getElementById('overlay');
+        const octx = overlay.getContext('2d');
+        const statusBox = document.getElementById('decryptStatus');
+        const statusText = document.getElementById('decryptText');
+        const statusBar = document.getElementById('decryptBar');
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Configuração inicial
+        // Initial settings
         let isRaining = true;
         let speed = 15;
-        let color = '#0f0';
-        const colors = ['#0f0', '#0ff', '#f0f', '#ff0', '#f00', '#00f'];
+        let loopTimer = null;
 
-        // Caracteres para o efeito Matrix
-        const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const charArray = chars.split('');
+        // Color palettes: the first one is Christmas (mostly green, with red and gold glyphs)
+        const palettes = [
+            { name: '🎄 Christmas', colors: ['#2ecc71', '#2ecc71', '#2ecc71', '#27ae60', '#27ae60', '#ff3b3b', '#ffd54f'] },
+            { name: 'Green', colors: ['#0f0'] },
+            { name: 'Cyan', colors: ['#0ff'] },
+            { name: 'Magenta', colors: ['#f0f'] },
+            { name: 'Yellow', colors: ['#ff0'] },
+            { name: 'Red', colors: ['#f00'] },
+            { name: 'Blue', colors: ['#00f'] }
+        ];
+        let paletteIndex = 0;
+
+        // Characters for the Matrix effect (+ a few Christmas symbols)
+        const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ★❄✦';
+        const charArray = Array.from(chars);
         const fontSize = 14;
         let columns = 0;
+        let rows = 0;
         const drops = [];
 
-        // Configurar canvas
+        // Hidden image ("ciphertext") — one entry per grid cell
+        // 0 = empty, 1 = tree, 2 = star, 3 = trunk, 4 = message
+        let mask = new Uint8Array(0);
+        let revealed = new Uint8Array(0);
+        let cellChar = [];
+        let cellColor = [];
+        let totalCells = 0;
+        let revealedCount = 0;
+        let revealedList = [];
+        let twinkleList = [];
+        let granted = false;
+        let restartTimer = null;
+
+        const TREE_COLORS = ['#1faa59', '#2ecc71', '#27ae60', '#3ddc84'];
+        const ORNAMENT_COLORS = ['#ff3b3b', '#ffd54f', '#9be7ff', '#ff7ad9'];
+        const randomChar = () => charArray[Math.floor(Math.random() * charArray.length)];
+
+        // Configure canvases
         function setupCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = overlay.width = window.innerWidth;
+            canvas.height = overlay.height = window.innerHeight;
             columns = Math.floor(canvas.width / fontSize);
+            rows = Math.ceil(canvas.height / fontSize);
         }
 
-        // Inicializar gotas
+        // Initialize drops
         function initDrops() {
             drops.length = 0;
             for (let i = 0; i < columns; i++) {
@@ -79,41 +207,298 @@
             }
         }
 
-        // Desenhar matriz
-        function drawMatrix() {
-            if (!isRaining) return;
+        // Draw the hidden picture at 1 pixel per grid cell, then read it back
+        function buildMask() {
+            const m = document.createElement('canvas');
+            m.width = columns;
+            m.height = rows;
+            const c = m.getContext('2d');
+            const cx = columns / 2;
+            const statusEl = document.getElementById('decryptStatus');
+            const usableRows = rows - Math.ceil(((statusEl ? statusEl.offsetHeight : 30) + 24) / fontSize);  // keep the status bar free
+            const controlsEl = document.querySelector('.controls');
+            const topRows = Math.max(Math.round(usableRows * 0.06), Math.ceil(((controlsEl ? controlsEl.offsetHeight : 30) + 16) / fontSize));
+            // Reserve room for the message below the tree (two lines of real text)
+            const msgFont = Math.max(14, Math.min(54, Math.floor((window.innerWidth * 0.9) / (15 * 0.8))));
+            const textBlock = Math.ceil((msgFont * 2.6) / fontSize) + 1;
+            const treeH = Math.max(8, Math.round(Math.min(usableRows * 0.66, (usableRows - textBlock - topRows - 3) / 1.2)));
+            const treeW = Math.min(columns * 0.9, treeH * 1.3);
+            const starR = Math.max(2, treeH * 0.075);
+            const starY = topRows + starR;
+            const top = starY + starR * 0.6;
 
-            // Fundo semi-transparente para efeito de rastro
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Star (yellow)
+            c.fillStyle = 'rgb(255,255,0)';
+            c.beginPath();
+            for (let k = 0; k < 10; k++) {
+                const r = k % 2 === 0 ? starR : starR * 0.45;
+                const a = -Math.PI / 2 + (k * Math.PI) / 5;
+                c.lineTo(cx + Math.cos(a) * r, starY + Math.sin(a) * r);
+            }
+            c.closePath();
+            c.fill();
 
-            ctx.fillStyle = color;
-            ctx.font = `${fontSize}px 'Courier New'`;
+            // Tree: three tiers (green)
+            c.fillStyle = 'rgb(0,255,0)';
+            for (let t = 0; t < 3; t++) {
+                const y0 = top + t * treeH * 0.27;
+                const y1 = y0 + treeH * 0.4;
+                const w = treeW * (0.5 + 0.25 * t);
+                c.beginPath();
+                c.moveTo(cx, y0);
+                c.lineTo(cx - w / 2, y1);
+                c.lineTo(cx + w / 2, y1);
+                c.closePath();
+                c.fill();
+            }
 
-            for (let i = 0; i < drops.length; i++) {
-                const text = charArray[Math.floor(Math.random() * charArray.length)];
-                const x = i * fontSize;
-                const y = drops[i] * fontSize;
+            // Trunk (red channel)
+            const trunkW = Math.max(2, treeW * 0.12);
+            const trunkTop = top + treeH * 0.94;
+            c.fillStyle = 'rgb(255,0,0)';
+            c.fillRect(cx - trunkW / 2, trunkTop, trunkW, Math.max(2, treeH * 0.12));
 
-                ctx.fillText(text, x, y);
+            // Message position: right below the trunk
+            const msgEl = document.getElementById('decryptedMsg');
+            msgEl.style.fontSize = msgFont + 'px';
+            msgEl.style.top = Math.round((trunkTop + Math.max(2, treeH * 0.12) + 1.2) * fontSize) + 'px';
 
-                // Reiniciar gota quando chegar ao final
-                if (y > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
+            const data = c.getImageData(0, 0, columns, rows).data;
+            mask = new Uint8Array(columns * rows);
+            totalCells = 0;
+            for (let p = 0; p < columns * rows; p++) {
+                const r = data[p * 4], g = data[p * 4 + 1], b = data[p * 4 + 2], a = data[p * 4 + 3];
+                if (a < 110) continue;
+                let type = 0;
+                if (r > 200 && g > 200 && b > 200) type = 4;      // message
+                else if (r > 200 && g > 200) type = 2;            // star
+                else if (r > 200) type = 3;                       // trunk
+                else if (g > 150) type = 1;                       // tree
+                if (type) { mask[p] = type; totalCells++; }
+            }
+            resetReveal();
+        }
+
+        function resetReveal() {
+            revealed = new Uint8Array(columns * rows);
+            cellChar = new Array(columns * rows);
+            cellColor = new Array(columns * rows);
+            revealedCount = 0;
+            revealedList = [];
+            twinkleList = [];
+            granted = false;
+            buildMessage();
+            octx.clearRect(0, 0, overlay.width, overlay.height);
+            statusBox.classList.remove('granted');
+            updateStatus();
+        }
+
+        // Draw one decrypted cell on the persistent overlay
+        function drawCell(idx, alpha) {
+            const x = (idx % columns) * fontSize;
+            const y = Math.floor(idx / columns) * fontSize;
+            octx.clearRect(x, y, fontSize, fontSize);
+            octx.globalAlpha = alpha;
+            octx.font = `bold ${fontSize}px 'Courier New', monospace`;
+            octx.textBaseline = 'top';
+            octx.shadowColor = cellColor[idx];
+            octx.shadowBlur = mask[idx] === 4 ? 6 : 4;
+            octx.fillStyle = cellColor[idx];
+            octx.fillText(cellChar[idx], x, y);
+            octx.globalAlpha = 1;
+            octx.shadowBlur = 0;
+        }
+
+        function reveal(idx) {
+            revealed[idx] = 1;
+            revealedCount++;
+            revealedList.push(idx);
+            const type = mask[idx];
+            let color;
+            if (type === 1) {
+                if (Math.random() < 0.12) {                       // Christmas ornament
+                    color = ORNAMENT_COLORS[Math.floor(Math.random() * ORNAMENT_COLORS.length)];
+                    twinkleList.push(idx);
+                } else {
+                    color = TREE_COLORS[Math.floor(Math.random() * TREE_COLORS.length)];
                 }
+            } else if (type === 2) {
+                color = '#ffd54f';
+                twinkleList.push(idx);
+            } else if (type === 3) {
+                color = '#c8893b';
+            } else {
+                color = '#ffffff';
+            }
+            cellColor[idx] = color;
+            cellChar[idx] = type === 2 ? '★' : randomChar();
+            drawCell(idx, 1);
+        }
 
-                // Mover gota
-                drops[i]++;
+        // Each letter resolves at its own (random) percentage, scrambling until then
+        const MSG_LINES = ['FELIZ NATAL', 'MERRY CHRISTMAS'];
+        const SCRAMBLE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&@*';
+        let msgSlots = [];
+        function buildMessage() {
+            msgSlots = [];
+            const el = document.getElementById('decryptedMsg');
+            MSG_LINES.forEach((line, li) => {
+                const box = el.querySelector('.line' + (li + 1));
+                box.innerHTML = '';
+                Array.from(line).forEach((ch) => {
+                    const s = document.createElement('span');
+                    s.textContent = ch === ' ' ? ' ' : randomChar();
+                    box.appendChild(s);
+                    if (ch !== ' ') msgSlots.push({ el: s, ch: ch, at: 0.15 + Math.random() * 0.83, done: false });
+                });
+            });
+        }
+        function updateMessage(frac) {
+            for (const s of msgSlots) {
+                if (s.done) continue;
+                if (frac >= s.at || granted) {
+                    s.el.textContent = s.ch;
+                    s.el.classList.add('ok');
+                    s.done = true;
+                } else if (Math.random() < 0.5) {
+                    s.el.textContent = SCRAMBLE[Math.floor(Math.random() * SCRAMBLE.length)];
+                }
             }
         }
 
-        // Controles
+        function updateStatus() {
+            updateMessage(totalCells ? revealedCount / totalCells : 0);
+            const pct = totalCells ? Math.floor((revealedCount / totalCells) * 100) : 0;
+            statusBar.style.width = pct + '%';
+            if (granted) {
+                statusText.textContent = 'ACCESS GRANTED 🎄 MERRY CHRISTMAS · FELIZ NATAL';
+            } else {
+                statusText.textContent = 'DECRYPTING CHRISTMAS… ' + pct + '%';
+            }
+        }
+
+        function checkGranted() {
+            if (granted || !totalCells || revealedCount < totalCells) return;
+            granted = true;
+            statusBox.classList.add('granted');
+            updateStatus();
+            clearTimeout(restartTimer);
+            if (!reduceMotion) restartTimer = setTimeout(() => restartCycle(false), 15000);
+        }
+
+        // Fade out the picture and start decrypting again
+        function restartCycle(immediate) {
+            clearTimeout(restartTimer);
+            if (immediate || reduceMotion) {
+                resetReveal();
+                if (reduceMotion) revealAll();
+                return;
+            }
+            overlay.classList.add('fading');
+            document.getElementById('decryptedMsg').classList.add('fading');
+            restartTimer = setTimeout(() => {
+                resetReveal();
+                overlay.classList.remove('fading');
+                document.getElementById('decryptedMsg').classList.remove('fading');
+            }, 2000);
+        }
+
+        function revealAll() {
+            for (let p = 0; p < mask.length; p++) if (mask[p] && !revealed[p]) reveal(p);
+            checkGranted();
+        }
+
+        // Ornaments twinkle and some decrypted glyphs keep "mutating"
+        function twinkle() {
+            for (let k = 0; k < 6 && twinkleList.length; k++) {
+                const idx = twinkleList[Math.floor(Math.random() * twinkleList.length)];
+                drawCell(idx, 0.45 + Math.random() * 0.55);
+            }
+            for (let k = 0; k < 8 && revealedList.length; k++) {
+                const idx = revealedList[Math.floor(Math.random() * revealedList.length)];
+                if (mask[idx] === 2) continue;
+                cellChar[idx] = randomChar();
+                drawCell(idx, 1);
+            }
+        }
+
+        // Mouse / touch interaction — drops near the cursor speed up
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('pointermove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }, { passive: true });
+
+        function interactiveEffect() {
+            if (mouseX > 0 && mouseY > 0) {
+                const col = Math.floor(mouseX / fontSize);
+                const row = Math.floor(mouseY / fontSize);
+                for (let i = Math.max(0, col - 5); i < Math.min(columns, col + 5); i++) {
+                    if (Math.abs(drops[i] - row) < 10) {
+                        drops[i] += 2;
+                    }
+                }
+            }
+            mouseX = mouseY = 0;
+        }
+
+        // Draw the matrix rain
+        function drawMatrix() {
+            interactiveEffect();
+
+            // Semi-transparent background for the trail effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = `${fontSize}px 'Courier New'`;
+
+            const pal = palettes[paletteIndex].colors;
+            for (let i = 0; i < drops.length; i++) {
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+                ctx.fillStyle = pal[Math.floor(Math.random() * pal.length)];
+                ctx.fillText(randomChar(), x, y);
+
+                // Decrypt the hidden cell under the head of the drop
+                const row = drops[i] - 1;
+                if (row >= 0 && row < rows) {
+                    const idx = row * columns + i;
+                    if (mask[idx] && !revealed[idx] && Math.random() < 0.6) reveal(idx);
+                }
+
+                // Restart the drop when it reaches the bottom
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+
+            // Final stretch: past 96%, decrypt the last few cells quickly
+            if (!granted && totalCells && revealedCount >= totalCells * 0.96) {
+                const left = [];
+                for (let p = 0; p < mask.length; p++) if (mask[p] && !revealed[p]) left.push(p);
+                for (let k = 0; k < 25 && left.length; k++) {
+                    reveal(left.splice(Math.floor(Math.random() * left.length), 1)[0]);
+                }
+            }
+            updateStatus();
+            checkGranted();
+        }
+
+        // Animation loop
+        function animate() {
+            if (!isRaining) return;
+            drawMatrix();
+            twinkle();
+            loopTimer = setTimeout(() => requestAnimationFrame(animate), 1000 / speed);
+        }
+
+        // Controls
         function toggleRain() {
             isRaining = !isRaining;
             document.getElementById('toggleBtn').textContent = isRaining ? '⏸️ Pause' : '▶️ Play';
-            if (isRaining) {
-                animate();
-            }
+            clearTimeout(loopTimer);                              // avoids running two loops at once
+            if (isRaining) animate();
         }
 
         function changeSpeed(delta) {
@@ -121,59 +506,35 @@
         }
 
         function changeColor() {
-            const currentIndex = colors.indexOf(color);
-            color = colors[(currentIndex + 1) % colors.length];
+            paletteIndex = (paletteIndex + 1) % palettes.length;
+            document.getElementById('colorBtn').textContent = '🎨 ' + palettes[paletteIndex].name;
         }
 
-        // Loop de animação
-        function animate() {
-            if (isRaining) {
-                drawMatrix();
-                setTimeout(() => requestAnimationFrame(animate), 1000 / speed);
-            }
-        }
-
-        // Inicialização
+        // Initialization
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            setupCanvas();
-            initDrops();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setupCanvas();
+                initDrops();
+                buildMask();
+                if (reduceMotion) revealAll();
+            }, 200);
         });
 
         setupCanvas();
         initDrops();
-        animate();
+        buildMask();
+        document.getElementById('colorBtn').textContent = '🎨 ' + palettes[paletteIndex].name;
 
-        // Adicionar interação com o mouse
-        let mouseX = 0;
-        let mouseY = 0;
-
-        canvas.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Efeito interativo - as gotas "fogem" do mouse
-        function interactiveEffect() {
-            if (mouseX > 0 && mouseY > 0) {
-                const col = Math.floor(mouseX / fontSize);
-                const row = Math.floor(mouseY / fontSize);
-                
-                // Afetar gotas próximas ao cursor
-                for (let i = Math.max(0, col - 5); i < Math.min(columns, col + 5); i++) {
-                    if (Math.abs(drops[i] - row) < 10) {
-                        drops[i] += 2; // Acelera as gotas próximas
-                    }
-                }
-            }
-            mouseX = mouseY = 0; // Reset para evitar efeito contínuo
+        if (reduceMotion) {
+            // No falling rain for visitors who prefer reduced motion: show the result directly
+            isRaining = false;
+            document.getElementById('toggleBtn').textContent = '▶️ Play';
+            revealAll();
+        } else {
+            animate();
         }
-
-        // Adicionar efeito interativo ao loop principal
-        const originalDraw = drawMatrix;
-        drawMatrix = function() {
-            interactiveEffect();
-            originalDraw();
-        };
     </script>
 </body>
 </html>
