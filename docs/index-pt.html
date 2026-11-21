@@ -2595,6 +2595,27 @@
             .xmas-unit { min-width: 52px; }
         }
         @media (prefers-reduced-motion: reduce) { .xmas-celebrate { animation: none; } }
+
+        /* 🎄 Embedded Matrix "Decrypting Christmas" */
+        .xmas-matrix-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000;
+            margin: 15px 0;
+            box-shadow: 0 0 0 2px #ffd54f, 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+        .xmas-matrix-frame iframe {
+            display: block;
+            width: 100%;
+            height: 520px;
+            margin: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            background: #000;
+        }
+        @media (max-width: 768px) { .xmas-matrix-frame iframe { height: 460px; } }
+        @media (max-width: 480px) { .xmas-matrix-frame iframe { height: 420px; } }
     </style>
 </head>
 <body data-theme="christmas">
@@ -2701,6 +2722,23 @@
             <p style="text-align: center; margin-top: 15px;"><em>Aprimore seus conhecimentos com as 204 frases animadas, proteja suas contas com senhas fortes, biometria e 2FA, e reveja suas práticas de segurança.</em></p>
         </div>
 
+        <!-- 🎄 Christmas 2026: Matrix "Decrypting Christmas" (embedded page) -->
+        <h2 id="matrix-christmas">🎄 Matrix — Decifrando o Natal</h2>
+        <div class="project-card xmas-matrix-card" data-categories="web security">
+            <p style="text-align: justify;">A clássica chuva de código da Matrix virou um <strong>processo de descriptografia</strong>: cada gota que passa sobre uma célula escondida a decifra, revelando aos poucos uma árvore de Natal feita de caracteres, com enfeites que piscam e uma estrela dourada. Enquanto isso, a mensagem <strong>FELIZ NATAL / MERRY CHRISTMAS</strong> é decifrada letra por letra até a tela exibir <strong>ACCESS GRANTED</strong>.</p>
+            <div class="xmas-matrix-frame">
+                <iframe id="xmasMatrixFrame" src="https://gerivan.me/matrix_natal-2026.html" title="Matrix — Decifrando o Natal" loading="lazy"></iframe>
+            </div>
+            <ul>
+                <li>Passe o mouse sobre a chuva para acelerar as gotas.</li>
+                <li>Use os controles para pausar, mudar a velocidade e trocar a paleta de cores.</li>
+                <li>Respeita a configuração de movimento reduzido do seu sistema.</li>
+            </ul>
+            <div class="center">
+                <a href="https://gerivan.me/matrix_natal-2026.html" class="btn" target="_blank" rel="noopener">🖥️ Abrir em tela cheia</a>
+            </div>
+        </div>
+
         <!-- Welcome section - UPDATED: Expanded with project information and justified text -->
         <h2>👋 Bem-vindo ao Meu Universo Digital</h2>        
         <div class="welcome-card">
@@ -2727,6 +2765,7 @@
         <h2>📑 Índice</h2>
         <div class="toc">
             <ul>
+                <li><a href="#matrix-christmas">🎄 Matrix — Decifrando o Natal</a></li>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
                 <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
@@ -5084,6 +5123,22 @@
             tick();
             applyInitialTheme();
             syncXmas();
+        })();
+
+        // 🎄 Pause the embedded Matrix animation while it is off-screen (saves CPU/battery)
+        (function () {
+            const frame = document.getElementById('xmasMatrixFrame');
+            if (!frame || !('IntersectionObserver' in window)) return;
+            let target;
+            try { target = new URL(frame.src, window.location.href).origin; } catch (e) { return; }
+            const send = (visible) => {
+                try { frame.contentWindow.postMessage({ type: 'matrix-visibility', visible: visible }, target); } catch (e) { /* not loaded yet */ }
+            };
+            let visibleNow = false;
+            new IntersectionObserver((entries) => {
+                entries.forEach((en) => { visibleNow = en.isIntersecting; send(visibleNow); });
+            }, { threshold: 0 }).observe(frame);
+            frame.addEventListener('load', () => send(visibleNow));
         })();
     </script>		
 </body>
