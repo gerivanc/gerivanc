@@ -34,6 +34,9 @@
     <link rel="icon" href="/g3.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gerivan.me/privacy.html">
+
     <!-- Meta tags for PWA -->
     <meta name="theme-color" content="#0a0a16">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -334,16 +337,169 @@
                 animation: none;
             }
         }
+        /* ===== Standardized header (shared with code-of-conduct.html) ===== */
+        html { scroll-behavior: smooth; }
+
+        a { color: var(--neon-cyan); text-decoration: underline; text-underline-offset: 3px; }
+        a:hover, a:focus-visible { color: var(--neon-green); }
+        a:focus-visible { outline: 2px dashed var(--neon-green); outline-offset: 3px; border-radius: 4px; }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            background: var(--neon-green);
+            color: #000;
+            padding: 8px 14px;
+            border-radius: 6px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 10px; color: #000; }
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            border-radius: 8px;
+            background: rgba(0, 255, 255, 0.06);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .nav-btn:hover, .nav-btn:focus-visible {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .nav-btn[aria-current="page"] {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            box-shadow: 0 0 12px rgba(57, 255, 20, 0.25);
+        }
+
+        .subtitle { margin-bottom: 8px; }
+
+        .subtitle-secondary {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .toc {
+            margin: 25px auto 10px;
+            padding: 18px 22px;
+            max-width: 1100px;
+            background: rgba(0, 255, 255, 0.04);
+            border: 1px dashed rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .toc h2 {
+            color: var(--neon-cyan);
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .toc ol {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 6px 20px;
+            list-style: decimal-leading-zero inside;
+            font-size: 0.85rem;
+            color: var(--neon-green);
+        }
+
+        .toc a { color: var(--text-primary); text-decoration: none; }
+        .toc a:hover, .toc a:focus-visible { color: var(--neon-cyan); text-decoration: underline; }
+
+        .spec-item, .highlight-box, .warning-box, .contact-info { scroll-margin-top: 20px; }
+        .spec-item::before { pointer-events: none; }
+
+        .back-top {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            font-size: 0.85rem;
+        }
+
+        footer a { color: #e0e0e0; }
+
+        @media (max-width: 480px) {
+            .nav-btn { flex: 1 1 100%; justify-content: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .nav-btn { transition: none; transform: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            .container, footer .container { box-shadow: none; border: none; background: #fff; }
+            .top-nav, .toc, .back-top, .skip-link { display: none; }
+            .spec-item { break-inside: avoid; background: none; border: 1px solid #999; }
+            h1, h2, .property-name { color: #000 !important; text-shadow: none !important; }
+            a { color: #000; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="container" id="top">
+        <nav class="top-nav" aria-label="Legal pages">
+            <a class="nav-btn" href="https://gerivan.me/"><span aria-hidden="true">🏠</span> Home</a>
+            <a class="nav-btn" href="https://gerivan.me/privacy.html" aria-current="page"><span aria-hidden="true">🔒</span> Privacy Policy</a>
+            <a class="nav-btn" href="https://gerivan.me/terms.html"><span aria-hidden="true">📄</span> Terms of Use</a>
+            <a class="nav-btn" href="https://gerivan.me/code-of-conduct.html"><span aria-hidden="true">🤝</span> Code of Conduct</a>
+        </nav>
+
         <h1>🔒 PRIVACY POLICY</h1>
         <p class="subtitle">Last Updated: December 3, 2025</p>
+        <p class="subtitle-secondary">Effective Date: December 3, 2025</p>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h2>📑 Contents</h2>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#compliance-framework">Compliance Framework</a></li>
+                <li><a href="#brazilian-lgpd-compliance">Brazilian LGPD Compliance</a></li>
+                <li><a href="#eu-gdpr-compliance">EU GDPR Compliance</a></li>
+                <li><a href="#data-collection">Data Collection</a></li>
+                <li><a href="#data-security">Data Security</a></li>
+                <li><a href="#data-retention">Data Retention</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#childrens-privacy">Children's Privacy</a></li>
+                <li><a href="#policy-changes">Policy Changes</a></li>
+                <li><a href="#important-notice">Important Notice</a></li>
+                <li><a href="#contact-information">Contact Information</a></li>
+            </ol>
+        </nav>
         
-        <div class="specs-grid">
+        <div class="specs-grid" id="main" role="main">
             <!-- Introduction -->
-            <div class="spec-item">
+            <div class="spec-item" id="introduction">
                 <h2>📋 INTRODUCTION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -363,7 +519,7 @@
             </div>
 
             <!-- Compliance Framework -->
-            <div class="spec-item">
+            <div class="spec-item" id="compliance-framework">
                 <h2>⚖️ COMPLIANCE FRAMEWORK</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -383,7 +539,7 @@
             </div>
 
             <!-- Brazilian LGPD Compliance -->
-            <div class="spec-item">
+            <div class="spec-item" id="brazilian-lgpd-compliance">
                 <h2>🇧🇷 BRAZILIAN LGPD COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -403,7 +559,7 @@
             </div>
 
             <!-- EU GDPR Compliance -->
-            <div class="spec-item">
+            <div class="spec-item" id="eu-gdpr-compliance">
                 <h2>🇪🇺 EU GDPR COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -423,7 +579,7 @@
             </div>
 
             <!-- Data Collection -->
-            <div class="spec-item">
+            <div class="spec-item" id="data-collection">
                 <h2>🔍 DATA COLLECTION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -447,7 +603,7 @@
             </div>
 
             <!-- Data Security -->
-            <div class="spec-item">
+            <div class="spec-item" id="data-security">
                 <h2>🔐 DATA SECURITY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -471,7 +627,7 @@
             </div>
 
             <!-- Data Retention -->
-            <div class="spec-item">
+            <div class="spec-item" id="data-retention">
                 <h2>📁 DATA RETENTION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -491,7 +647,7 @@
             </div>
 
             <!-- Your Rights -->
-            <div class="spec-item">
+            <div class="spec-item" id="your-rights">
                 <h2>👤 YOUR RIGHTS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -515,7 +671,7 @@
             </div>
 
             <!-- Children's Privacy -->
-            <div class="spec-item">
+            <div class="spec-item" id="childrens-privacy">
                 <h2>👶 CHILDREN'S PRIVACY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -535,7 +691,7 @@
             </div>
 
             <!-- Policy Changes -->
-            <div class="spec-item">
+            <div class="spec-item" id="policy-changes">
                 <h2>🔄 POLICY CHANGES</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -555,13 +711,13 @@
             </div>
 
             <!-- Important Notice -->
-            <div class="highlight-box">
+            <div class="highlight-box" id="important-notice">
                 <h2>⚠️ IMPORTANT NOTICE</h2>
                 <p class="justified-text"><strong>This is a static portfolio website.</strong> We do not collect personal data through forms, analytics, or tracking tools. Any data collection mentioned is hypothetical for compliance demonstration purposes. GitHub Pages may collect basic server logs as outlined in their privacy policy.</p>
             </div>
 
             <!-- Contact Information -->
-            <div class="contact-info">
+            <div class="contact-info" id="contact-information">
                 <h2>📧 CONTACT INFORMATION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -580,13 +736,14 @@
                 <p class="justified-text">For any questions about this Privacy Policy, data protection inquiries, or to exercise your rights under LGPD/GDPR, please contact us using the information above. We aim to respond within 7 business days.</p>
             </div>
         </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
     </div>
 
     <footer>
         <div class="container">
             <p>Copyright © 2025-2026 Gerivan Costa dos Santos</p>
-            <p>Privacy Policy • LGPD & GDPR Compliant</p>
-            <p>Secure Connection • No Data Collection Active</p>
+            <p>Privacy Policy • <a href="https://gerivan.me/terms.html">Terms of Use</a> • <a href="https://gerivan.me/code-of-conduct.html">Code of Conduct</a></p>
+            <p>All Rights Reserved • Secure Connection Active</p>
         </div>
     </footer>
 
