@@ -3301,109 +3301,91 @@
             ">"Não é sobre quantas linhas você escreve. É sobre o impacto que elas fazem quando executadas."</p>
         </div>
 
-       <!-- Privacy Policy and Terms of Use Footer Buttons -->
-        <div style="
+       <!-- ================================================================
+             Standardized Site Footer · v2026.11 · Portuguese language
+             - CSS-only hover/focus (no inline JS event handlers)
+             - Theme overrides ([data-theme] .footer-btn) still apply
+             ================================================================ -->
+        <style>
+        .site-footer { margin: 30px 0 10px; }
+        .site-footer-nav {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 30px 0;
+            margin: 0 0 22px;
             flex-wrap: wrap;
-        ">
-            <a href="https://gerivan.me/privacy.html"
-               class="footer-btn"
-               style="
-                    padding: 12px 24px;
-                    background: var(--card-bg);
-                    border: 1px solid var(--card-border);
-                    border-radius: 8px;
-                    color: var(--text-color);
-                    text-decoration: none;
-                    font-family: 'Exo 2', sans-serif;
-                    font-weight: 500;
-                    font-size: 1em;
-                    backdrop-filter: blur(10px);
-                    transition: var(--transition);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-width: 160px;
-               "
-               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
-                <span style="margin-right: 8px;">🔒</span> Política de Privacidade
-            </a>
-            
-            <a href="https://gerivan.me/terms.html" 
-               class="footer-btn"
-               style="
-                    padding: 12px 24px;
-                    background: var(--card-bg);
-                    border: 1px solid var(--card-border);
-                    border-radius: 8px;
-                    color: var(--text-color);
-                    text-decoration: none;
-                    font-family: 'Exo 2', sans-serif;
-                    font-weight: 500;
-                    font-size: 1em;
-                    backdrop-filter: blur(10px);
-                    transition: var(--transition);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-width: 160px;
-               "
-               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
-                <span style="margin-right: 8px;">📄</span> Termos de Uso
-            </a>
-
-            <a href="https://www.whatsmydns.net/#NS/gerivan.me" 
-               class="footer-btn"
-               style="
-                    padding: 12px 24px;
-                    background: var(--card-bg);
-                    border: 1px solid var(--card-border);
-                    border-radius: 8px;
-                    color: var(--text-color);
-                    text-decoration: none;
-                    font-family: 'Exo 2', sans-serif;
-                    font-weight: 500;
-                    font-size: 1em;
-                    backdrop-filter: blur(10px);
-                    transition: var(--transition);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-width: 160px;
-               "
-               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(211, 47, 47, 0.2)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
-                <span style="margin-right: 8px;">🟢</span> Status do Site
-            </a>			
-        </div>
-
-        <!-- Copyright footer styles - Portuguese language -->
-        <style>
+        }
+        .footer-btn {
+            padding: 12px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 500;
+            font-size: 1em;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 160px;
+        }
+        .footer-btn:hover,
+        .footer-btn:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.2);
+        }
+        .footer-btn:focus-visible {
+            outline: 2px dashed currentColor;
+            outline-offset: 3px;
+        }
+        .footer-btn .fb-ext { font-size: 0.8em; opacity: 0.7; }
+        @media (max-width: 480px) {
+            .site-footer-nav { gap: 10px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .footer-btn { transition: none; }
+            .footer-btn:hover,
+            .footer-btn:focus-visible { transform: none; }
+        }
         .center p {
             margin: 2px 0;
             line-height: 1.2;
-            color: var(--neon-green); /* Dodger Blue color for copyright text */
-            transition: color 0.3s ease; /* Smooth transition effect */
+            color: var(--neon-green);
+            transition: color 0.3s ease;
         }
         .center p:hover {
-            color: #1E90FF; /* Dodger Blue - Portuguese version */
+            color: #1E90FF; /* Dodger Blue */
         }
         </style>
 
-        <!-- Copyright footer - Portuguese language -->
-        <div class="center" id="finishing-section">         
-            <p><strong>Copyright © 2025-2026 Gerivan Costa dos Santos</strong></p>
-            <p class="xmas-only"><strong>🎄 Feliz Natal e um Ano Novo próspero e seguro! 🎅</strong></p>
-            <p><strong>Todos os direitos reservados</strong></p>
-        </div>
+        <footer class="site-footer">
+            <nav class="site-footer-nav" aria-label="Informações legais e do site">
+                <a href="https://gerivan.me/privacy.html" class="footer-btn">
+                    <span aria-hidden="true">🔒</span> Política de Privacidade
+                </a>
+                <a href="https://gerivan.me/terms.html" class="footer-btn">
+                    <span aria-hidden="true">📄</span> Termos de Uso
+                </a>
+                <a href="https://gerivan.me/code-of-conduct.html" class="footer-btn">
+                    <span aria-hidden="true">🤝</span> Código de Conduta
+                </a>
+                <a href="https://www.whatsmydns.net/#NS/gerivan.me" class="footer-btn" target="_blank" rel="noopener noreferrer" aria-label="Status do Site (abre em nova aba)">
+                    <span aria-hidden="true">🟢</span> Status do Site <span class="fb-ext" aria-hidden="true">↗</span>
+                </a>
+            </nav>
+
+            <!-- Copyright footer - Portuguese language -->
+            <div class="center" id="finishing-section">
+                <p><strong>Copyright © 2025-2026 Gerivan Costa dos Santos</strong></p>
+                <p class="xmas-only"><strong>🎄 Feliz Natal e um Ano Novo próspero e seguro! 🎅</strong></p>
+                <p><strong>Todos os direitos reservados</strong></p>
+            </div>
+        </footer>
     </div>
 
     <!-- Mobile Floating Button -->
