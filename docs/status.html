@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-FE4CL/1F2SoNMMkwqNRGzdjrXE3CO0oDwJFQskRaPG4='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-olu8hFITrpVg9i+egr6OUZf4+kpw1+lctkCsBjwTQBM='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
+<!-- 24/7 monitor data published by the gerivan-status repository (GitHub Actions). Edit this URL if you rename the repo. -->
+<meta name="monitor-data" content="https://raw.githubusercontent.com/gerivanc/gerivan-status/data/">
 <meta name="description" content="Live DNS propagation and status monitor for gerivan.me — checked continuously from vantage points around the world.">
 <meta name="theme-color" content="#0d001a">
 <title>DNS Status — gerivan.me</title>
@@ -209,6 +211,35 @@ table.fleet{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px
 .spark b{width:4px;border-radius:1px;background:var(--pending)}
 .spark b.operational{background:var(--ok)}.spark b.degraded{background:var(--warn)}.spark b.outage{background:var(--bad)}.spark b.unknown{background:var(--down)}
 .ffoot{font-size:12.5px;color:var(--mute);margin-top:9px}
+.mon-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.mon-state{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0;flex:1 1 300px}
+.mon-state i{width:12px;height:12px;border-radius:50%;background:var(--mc,var(--down));box-shadow:0 0 10px var(--mc,transparent);flex:none}
+.mon-state b{font-family:var(--head);color:var(--mc,var(--text));font-size:16px;letter-spacing:.5px}
+.mon-state span{font-size:12.5px;color:var(--mute)}
+.mon-up{display:flex;gap:6px;flex-wrap:wrap}
+.upill{border:1px solid var(--line);border-radius:8px;padding:4px 11px;text-align:center;background:var(--soft);min-width:74px}
+.upill small{display:block;font-family:var(--head);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--label)}
+.upill b{font-family:var(--head);font-size:14px;color:var(--uc,var(--text));font-variant-numeric:tabular-nums}
+.d90{display:grid;grid-template-columns:repeat(90,1fr);gap:2px;height:34px}
+.d90 i{border-radius:2px;background:var(--pending);transition:transform .15s}
+.d90 i:hover{transform:scaleY(1.15)}
+.d90 i.g{background:var(--ok)}.d90 i.a{background:var(--warn)}.d90 i.r{background:var(--bad)}
+.mon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:8px;margin-top:12px}
+.mchip{border:1px solid var(--line);border-left:4px solid var(--cc,var(--down));border-radius:8px;padding:7px 10px;background:var(--soft);min-width:0}
+.mchip b{display:block;font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mchip span{display:block;font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mchip em{font-style:normal;color:var(--cc);font-weight:700}
+.inc{margin-top:12px;font-size:13px}
+.inc h3{font-family:var(--head);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--label);margin:0 0 6px;font-weight:500}
+.inc .open{border:1px solid var(--bad);border-left-width:4px;border-radius:8px;padding:8px 11px;margin-bottom:10px;color:var(--text);background:var(--soft)}
+.inc .open.deg{border-color:var(--warn)}
+.inc ul{list-style:none;margin:0;padding:0}
+.inc li{padding:6px 0;border-bottom:1px dashed var(--line);color:var(--text)}
+.inc li:last-child{border-bottom:0}
+.inc li time{color:var(--secondary);margin-right:8px;font-family:var(--mono);font-size:12px}
+.inc li .st2{font-weight:700;margin-right:6px}
+.mon-off{color:var(--mute);font-size:13px;margin:0}
+.mon-off code{color:var(--link);word-break:break-all}
 .card{border:1px solid var(--line);border-radius:12px;margin-top:14px;background:var(--panel);overflow:hidden;backdrop-filter:blur(10px);position:relative}
 .card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));opacity:.75}
 .card h2{font-family:var(--head);font-size:14px;font-weight:500;letter-spacing:.6px;margin:0;padding:12px 13px 10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:baseline;background:var(--soft);color:var(--primary);text-shadow:var(--glow)}
@@ -322,6 +353,11 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
         <div class="tile" id="t-uptime"><div class="l">Uptime · 24h</div><div class="v">—</div><div class="f">seen by this monitor</div></div>
         <div class="tile" id="t-lat"><div class="l">Median latency</div><div class="v">—</div><div class="f">DNS-over-HTTPS</div></div>
         <div class="tile" id="t-https"><div class="l">Website</div><div class="v">—</div><div class="f">HTTPS probe</div></div>
+      </div>
+
+      <div class="card" id="monCard" style="margin:0 0 12px">
+        <h2>24/7 monitor · GitHub Actions <small id="monMeta">connecting…</small></h2>
+        <div class="body" id="monBody"><p class="mon-off">Loading monitor data…</p></div>
       </div>
 
       <div class="doctor" id="doctor" hidden aria-live="polite">
@@ -1168,6 +1204,86 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
   window.addEventListener('online', () => { log('g', 'Back online — re-checking'); if (!S.running) runCheck(); });
   window.addEventListener('offline', () => log('b', 'Browser offline'));
 
+  /* ======================= 24/7 monitor (GitHub Actions data) ======================= */
+  const MON_BASE = (() => {
+    const v = (document.querySelector('meta[name="monitor-data"]')?.content || '').trim();
+    try { const u = new URL(v); return u.protocol === 'https:' ? u.href.replace(/\/?$/, '/') : null; } catch { return null; }
+  })();
+  const MON_REPO = MON_BASE && (/^https:\/\/raw\.githubusercontent\.com\/([^/]+\/[^/]+)\//.exec(MON_BASE) || [])[1];
+  const ago = (iso) => { const m = Math.round((Date.now() - Date.parse(iso)) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.floor(m / 60)} h ${m % 60} min ago` : `${Math.floor(m / 1440)} d ago`; };
+  const upColor = (v) => v == null ? 'var(--mute)' : v >= 99.9 ? 'var(--ok)' : v >= 99 ? 'var(--warn)' : 'var(--bad)';
+  const fmtPct = (v) => v == null ? '—' : (v === 100 ? '100' : v.toFixed(2)) + '%';
+  async function loadMonitor() {
+    const body = $('#monBody');
+    if (!MON_BASE) { body.textContent = ''; body.append(el('p', { class: 'mon-off', text: 'Monitor URL not configured (meta name="monitor-data").' })); return; }
+    try {
+      const r = await fetch(`${MON_BASE}status.json?t=${Math.floor(Date.now() / 60000)}`, { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const d = await r.json();
+      if (d.generator !== 'gerivan-status-monitor' || !Array.isArray(d.checks)) throw new Error('unexpected file format');
+      renderMonitor(d);
+    } catch (e) {
+      $('#monMeta').textContent = 'not connected';
+      body.textContent = '';
+      body.append(el('p', { class: 'mon-off' }, ['Server-side history is not available yet (', String(e.message || e), '). Expected data at ', el('code', { text: MON_BASE + 'status.json' }), '. The live checks below keep working.']));
+    }
+  }
+  function renderMonitor(d) {
+    const body = $('#monBody'); body.textContent = '';
+    const stale = Date.now() - Date.parse(d.generatedAt) > (d.intervalMinutes || 15) * 3 * 60000;
+    const st = SM[d.overall] || SM.unknown;
+    $('#monMeta').textContent = `last run ${ago(d.generatedAt)} · every ${d.intervalMinutes || 15} min · ${d.points?.length || '?'} locations`;
+
+    const state = el('div', { class: 'mon-state' }, [el('i'), el('b', { text: stale ? 'Stale data' : st.short }),
+      el('span', { text: stale ? `No run since ${new Date(d.generatedAt).toLocaleString()} — check the Actions tab (GitHub may have delayed or paused the schedule).` : ((d.reasons || [])[0] || 'All DNS, HTTPS and certificate checks passed.') })]);
+    state.style.setProperty('--mc', stale ? 'var(--warn)' : st.color);
+    const up = el('div', { class: 'mon-up' }, [['h24', '24 h'], ['d7', '7 days'], ['d30', '30 days'], ['d90', '90 days']].map(([k, label]) => {
+      const pill = el('div', { class: 'upill', title: `Uptime over ${label} (time without a full outage)` }, [el('small', { text: label }), el('b', { text: fmtPct(d.uptime?.[k]) })]);
+      pill.style.setProperty('--uc', upColor(d.uptime?.[k])); return pill;
+    }));
+    body.append(el('div', { class: 'mon-top' }, [state, up]));
+
+    const byDay = Object.fromEntries((d.daily || []).map(x => [x.d, x]));
+    const bars = el('div', { class: 'd90', role: 'img', 'aria-label': '90-day daily uptime' });
+    for (let i = 89; i >= 0; i--) {
+      const day = new Date(Date.now() - i * 864e5).toISOString().slice(0, 10), b = byDay[day];
+      if (!b) { bars.append(el('i', { title: `${day} · no data` })); continue; }
+      const pct = 100 * (b.n - b.out) / b.n;
+      const cls = b.out && pct < 99 ? 'r' : (b.deg || b.out) ? 'a' : 'g';
+      bars.append(el('i', { class: cls, title: `${day} · ${fmtPct(+pct.toFixed(3))} uptime · ${b.n} checks${b.deg ? ` · ${b.deg} degraded` : ''}${b.out ? ` · ${b.out} outage` : ''}` }));
+    }
+    body.append(bars, el('div', { class: 'hbax' }, [el('span', { text: '90 days ago' }), el('span', { text: `${(d.daily || []).length} day(s) recorded` }), el('span', { text: 'today' })]));
+
+    const grid = el('div', { class: 'mon-grid' });
+    for (const c of d.checks) {
+      const chip = el('div', { class: 'mchip', title: (c.reasons || []).join('\n') || 'OK' }, [
+        el('b', { text: `${c.type} · ${c.host}` }),
+        el('span', {}, [el('em', { text: `${c.agree}/${c.reach} ` }), (c.majority || ['no record']).join(', ')]),
+      ]);
+      chip.style.setProperty('--cc', (SM[c.status] || SM.unknown).color); grid.append(chip);
+    }
+    for (const h of d.https || []) {
+      const chip = el('div', { class: 'mchip', title: (h.reasons || []).join('\n') || 'OK' }, [
+        el('b', { text: `HTTPS · ${h.host}` }),
+        el('span', {}, [el('em', { text: h.code ? `HTTP ${h.code} ` : (h.error || 'error') + ' ' }), `${h.ms} ms · 🔒 ${h.cert?.daysLeft ?? '?'} d${h.cert?.issuer ? ' · ' + h.cert.issuer : ''}`]),
+      ]);
+      chip.style.setProperty('--cc', (SM[h.status] || SM.unknown).color); grid.append(chip);
+    }
+    body.append(grid);
+
+    const inc = el('div', { class: 'inc' });
+    const issueLink = (n) => MON_REPO && Number.isInteger(n) ? el('a', { href: `https://github.com/${MON_REPO}/issues/${n}`, target: '_blank', rel: 'noopener noreferrer', text: ` #${n}` }) : null;
+    if (d.incident) inc.append(el('div', { class: 'open' + (d.incident.status === 'outage' ? '' : ' deg') }, [
+      el('b', { text: `Ongoing ${d.incident.status} since ${new Date(d.incident.start).toLocaleString()}: ` }), (d.incident.reasons || []).join('; '), issueLink(d.incident.issue)]));
+    inc.append(el('h3', { text: 'Recent incidents' }));
+    if (!(d.incidents || []).length) inc.append(el('p', { class: 'mon-off', text: 'No incidents recorded.' }));
+    else inc.append(el('ul', {}, d.incidents.slice(0, 5).map(i => el('li', {}, [
+      el('time', { text: new Date(i.start).toLocaleString([], { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) }),
+      el('span', { class: 'st2', text: i.status, style: { color: (SM[i.status] || SM.unknown).color } }),
+      `${i.minutes} min · ${(i.reasons || [])[0] || ''}`, issueLink(i.issue)]))));
+    body.append(inc);
+  }
+
   /* ======================= themes ======================= */
   let rainTimer = null;
   function startRain() {
@@ -1206,6 +1322,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
   setMapMode(S.mapMode === 'fleet' ? 'fleet' : 'query');
   renderFleet(); renderWatch();
   renderSecurity();
+  loadMonitor(); setInterval(loadMonitor, 5 * 60 * 1000);
   const [d0, t0] = fromHash();
   startMonitor(d0, t0, false);
 })();
