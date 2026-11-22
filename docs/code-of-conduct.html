@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noarchive">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'none';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+        font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+        img-src 'self' data:;
+        connect-src 'none';
+        frame-src 'none';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'none';
+        upgrade-insecure-requests;
+    ">
+    <!--
+        Note: X-Frame-Options (and CSP's frame-ancestors, which is not supported when CSP is
+        delivered via a <meta> tag) only take effect as real HTTP response headers - browsers
+        ignore both when set this way via <meta>. This tag is left here for scanners/documentation,
+        but actual clickjacking protection requires setting the header at the hosting/CDN layer
+        (GitHub Pages does not support custom response headers; a proxy such as Cloudflare would).
+    -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/g3.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gerivan.me/code-of-conduct.html">
+
+    <!-- Meta tags for PWA -->
+    <meta name="theme-color" content="#0a0a16">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Code of Conduct - Gerivan Costa Portfolio. Standards, scope, reporting guidelines and enforcement process for all portfolio spaces.">
+
+    <title>Code of Conduct - Gerivan Costa</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a16;
+            --card: #111128;
+            --accent: #00ffff;
+            --success: #39ff14;
+            --danger: #ff6600;
+            --warning: #f9ca24;
+            --grad: #ff4d4d;
+            --neon-cyan: #00ffff;
+            --neon-green: #39ff14;
+            --neon-orange: #ff6600;
+            --neon-red: #ff4d4d;
+            --neon-purple: #a29bfe;
+            --text-primary: #e0e0ff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            padding: 10px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 100, 0, 0.05) 0%, transparent 20%);
+        }
+
+        a { color: var(--neon-cyan); text-decoration: underline; text-underline-offset: 3px; }
+        a:hover, a:focus-visible { color: var(--neon-green); }
+        a:focus-visible { outline: 2px dashed var(--neon-green); outline-offset: 3px; border-radius: 4px; }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            background: var(--neon-green);
+            color: #000;
+            padding: 8px 14px;
+            border-radius: 6px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 10px; color: #000; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+            position: relative;
+            border: 1px solid var(--accent);
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Top navigation */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            border-radius: 8px;
+            background: rgba(0, 255, 255, 0.06);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .nav-btn:hover, .nav-btn:focus-visible {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .nav-btn[aria-current="page"] {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            box-shadow: 0 0 12px rgba(57, 255, 20, 0.25);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .subtitle {
+            text-align: center;
+            opacity: 0.8;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin-bottom: 8px;
+            color: var(--neon-orange);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .subtitle-secondary {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Table of contents */
+        .toc {
+            margin: 25px auto 10px;
+            padding: 18px 22px;
+            max-width: 1100px;
+            background: rgba(0, 255, 255, 0.04);
+            border: 1px dashed rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .toc h2 {
+            color: var(--neon-cyan);
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .toc ol {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 6px 20px;
+            list-style: decimal-leading-zero inside;
+            font-size: 0.85rem;
+            color: var(--neon-green);
+        }
+
+        .toc a { color: var(--text-primary); text-decoration: none; }
+        .toc a:hover, .toc a:focus-visible { color: var(--neon-cyan); text-decoration: underline; }
+
+        /* Cards Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .spec-item {
+            background: linear-gradient(135deg,
+                rgba(0, 255, 255, 0.08) 0%,
+                rgba(57, 255, 20, 0.08) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-left: 4px solid var(--neon-green);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            scroll-margin-top: 20px;
+        }
+
+        .spec-item.danger { border-left-color: var(--neon-red); }
+        .spec-item.wide { grid-column: 1 / -1; }
+
+        .spec-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 255, 255, 0.1),
+                transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .spec-item:hover::before { left: 100%; }
+
+        .spec-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .spec-item h2 {
+            color: var(--neon-cyan);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-item h3 {
+            color: var(--neon-orange);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin: 18px 0 10px;
+            text-transform: uppercase;
+        }
+
+        .spec-details {
+            margin-bottom: 20px;
+            background: rgba(0, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .spec-property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .spec-property:last-child { border-bottom: none; }
+
+        .property-name {
+            color: var(--neon-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .property-value {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .justified-text {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .justified-text + .justified-text { margin-top: 12px; }
+
+        /* Lists */
+        .coc-list {
+            list-style: none;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        .coc-list li {
+            padding: 7px 0 7px 26px;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.08);
+        }
+
+        .coc-list li:last-child { border-bottom: none; }
+
+        .coc-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 4px;
+            color: var(--neon-cyan);
+        }
+
+        .coc-list.good li::before { content: '✔'; color: var(--neon-green); }
+        .coc-list.bad li::before  { content: '✖'; color: var(--neon-red); }
+
+        .coc-list strong { color: var(--neon-green); }
+        .coc-list.bad strong { color: var(--neon-orange); }
+
+        .num-list {
+            counter-reset: step;
+            list-style: none;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        .num-list li {
+            counter-increment: step;
+            padding: 7px 0 7px 38px;
+            position: relative;
+        }
+
+        .num-list li::before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--bg);
+            background: var(--neon-cyan);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Enforcement / steps */
+        .steps {
+            display: grid;
+            gap: 14px;
+        }
+
+        .step {
+            padding: 16px 18px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            border-radius: 10px;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--neon-cyan);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-green);
+            color: var(--neon-green);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .severity {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .sev {
+            font-size: 0.78rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid;
+        }
+
+        .sev-1 { color: var(--warning); border-color: var(--warning); }
+        .sev-2 { color: var(--neon-orange); border-color: var(--neon-orange); }
+        .sev-3 { color: var(--neon-red); border-color: var(--neon-red); }
+        .sev-4 { color: var(--neon-purple); border-color: var(--neon-purple); }
+
+        /* Code */
+        pre {
+            margin: 10px 0 4px;
+            background: #05050d;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 8px;
+            padding: 12px 14px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+
+        pre code { color: var(--neon-green); font-family: 'Fira Code', monospace; }
+        pre code .prompt { color: var(--neon-orange); user-select: none; }
+
+        code.inline {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 0.85em;
+        }
+
+        /* Callouts (GitHub-style alerts) */
+        .callout {
+            margin: 18px 0;
+            padding: 16px 18px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .callout-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .callout.important { background: rgba(162, 155, 254, 0.08); border-color: var(--neon-purple); }
+        .callout.important .callout-title { color: var(--neon-purple); }
+        .callout.warning { background: rgba(249, 202, 36, 0.08); border-color: var(--warning); }
+        .callout.warning .callout-title { color: var(--warning); }
+
+        /* Values grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        .value-card {
+            padding: 18px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(57, 255, 20, 0.25);
+            text-align: center;
+        }
+
+        .value-card .icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+
+        .value-card h3 {
+            margin: 0 0 8px;
+            color: var(--neon-green);
+            font-size: 0.95rem;
+        }
+
+        .value-card p { font-size: 0.85rem; line-height: 1.5; }
+
+        /* Highlight / warning / contact boxes */
+        .highlight-box {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-orange);
+        }
+
+        .highlight-box h2 {
+            color: var(--neon-orange);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .warning-box {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 102, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .warning-box h2 {
+            color: var(--neon-orange);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(57, 255, 20, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+        }
+
+        .contact-info h2 {
+            color: var(--neon-green);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .report-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid var(--neon-orange);
+            color: var(--neon-orange);
+            background: rgba(255, 102, 0, 0.08);
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .report-btn:hover, .report-btn:focus-visible {
+            color: var(--neon-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 102, 0, 0.25);
+        }
+
+        .thanks {
+            text-align: center;
+            margin: 35px 0 10px;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            line-height: 1.6;
+        }
+
+        .back-top {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: #0a0a0a;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0f0f1a;
+            box-shadow: 0 0 20px #00ffff;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        footer a { color: #e0e0e0; }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .specs-grid { grid-template-columns: 1fr; gap: 20px; }
+            .spec-item { padding: 20px; }
+            .spec-item h2 { font-size: 1.1rem; }
+            .spec-property { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .property-value { text-align: left; font-size: 0.8rem; }
+            .justified-text, .callout { text-align: left; }
+        }
+
+        @media (max-width: 480px) {
+            .spec-item { padding: 15px; }
+            .spec-details { padding: 12px; }
+            .property-name, .property-value { font-size: 0.8rem; }
+            .nav-btn { flex: 1 1 100%; justify-content: center; }
+            .specs-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (hover: none) {
+            .spec-item:hover { transform: none; border-color: rgba(0, 255, 255, 0.3); }
+            .spec-item:active { transform: scale(0.98); border-color: var(--neon-cyan); }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .spec-item { border-width: 1.5px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .spec-item::before,
+            .spec-item:hover,
+            .nav-btn, .report-btn {
+                transition: none;
+                animation: none;
+                transform: none;
+            }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            .container, footer .container { box-shadow: none; border: none; background: #fff; }
+            .top-nav, .toc, .back-top, .skip-link { display: none; }
+            .spec-item { break-inside: avoid; background: none; border: 1px solid #999; }
+            h1, h2, h3, .property-name, .coc-list strong { color: #000 !important; text-shadow: none !important; }
+            a { color: #000; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="container" id="top">
+        <nav class="top-nav" aria-label="Legal pages">
+            <a class="nav-btn" href="https://gerivan.me/"><span aria-hidden="true">🏠</span> Home</a>
+            <a class="nav-btn" href="https://gerivan.me/privacy.html"><span aria-hidden="true">🔒</span> Privacy Policy</a>
+            <a class="nav-btn" href="https://gerivan.me/terms.html"><span aria-hidden="true">📄</span> Terms of Use</a>
+            <a class="nav-btn" href="https://gerivan.me/code-of-conduct.html" aria-current="page"><span aria-hidden="true">🤝</span> Code of Conduct</a>
+        </nav>
+
+        <h1>🤝 CODE OF CONDUCT</h1>
+        <p class="subtitle">Last Updated: November 11, 2026</p>
+        <p class="subtitle-secondary">Effective Date: December 3, 2025</p>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h2>📑 Contents</h2>
+            <ol>
+                <li><a href="#pledge">Our Pledge</a></li>
+                <li><a href="#standards">Our Standards</a></li>
+                <li><a href="#scope">Scope</a></li>
+                <li><a href="#responsibilities">Responsibilities</a></li>
+                <li><a href="#reporting">Reporting Guidelines</a></li>
+                <li><a href="#enforcement">Enforcement Process</a></li>
+                <li><a href="#grievances">Addressing Grievances</a></li>
+                <li><a href="#good-faith">Good Faith</a></li>
+                <li><a href="#privacy">Privacy &amp; Confidentiality</a></li>
+                <li><a href="#community">Community Guidelines</a></li>
+                <li><a href="#values">Community Values</a></li>
+                <li><a href="#attribution">Attribution &amp; Modifications</a></li>
+                <li><a href="#contact">Questions &amp; Contact</a></li>
+            </ol>
+        </nav>
+
+        <main id="main" class="specs-grid">
+
+            <!-- Our Pledge -->
+            <section class="spec-item" id="pledge">
+                <h2>🤝 OUR PLEDGE</h2>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Document:</span>
+                        <span class="property-value">Code of Conduct</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Applies To:</span>
+                        <span class="property-value">Portfolio &amp; Projects (gerivanc)</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Commitment:</span>
+                        <span class="property-value">Harassment-Free Experience</span>
+                    </div>
+                </div>
+                <p class="justified-text">In the interest of fostering an open and welcoming environment, I pledge to make participation in discussions about my portfolio and projects a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.</p>
+            </section>
+
+            <!-- Scope -->
+            <section class="spec-item" id="scope">
+                <h2>🌐 SCOPE</h2>
+                <p class="justified-text">This Code of Conduct applies within all portfolio spaces, including:</p>
+                <ul class="coc-list" style="margin-top:10px;">
+                    <li>GitHub Issues and Discussions on the repository</li>
+                    <li>Comments on portfolio website content</li>
+                    <li>Any communication regarding portfolio content</li>
+                    <li>Social media interactions about my work</li>
+                    <li>Email correspondence related to portfolio matters</li>
+                </ul>
+                <p class="justified-text" style="margin-top:12px;">It also applies when an individual is representing the portfolio or its community in public spaces, such as conferences, meetups, or online platforms.</p>
+            </section>
+
+            <!-- Encouraged Behavior -->
+            <section class="spec-item" id="standards">
+                <h2>✅ ENCOURAGED BEHAVIOR</h2>
+                <p class="justified-text" style="margin-bottom:10px;">Examples of behavior that contributes to creating a positive environment include:</p>
+                <ul class="coc-list good">
+                    <li><strong>Respectful Dialogue:</strong> Using welcoming and inclusive language</li>
+                    <li><strong>Constructive Feedback:</strong> Providing helpful, specific suggestions</li>
+                    <li><strong>Professional Courtesy:</strong> Being considerate of different viewpoints and experiences</li>
+                    <li><strong>Graceful Acceptance:</strong> Accepting constructive criticism gracefully</li>
+                    <li><strong>Focus on Content:</strong> Keeping discussions relevant to portfolio content and projects</li>
+                    <li><strong>Empathy:</strong> Showing empathy towards other community members</li>
+                </ul>
+            </section>
+
+            <!-- Unacceptable Behavior -->
+            <section class="spec-item danger" id="unacceptable">
+                <h2>❌ UNACCEPTABLE BEHAVIOR</h2>
+                <ul class="coc-list bad">
+                    <li><strong>Disrespectful Comments:</strong> Trolling, insulting/derogatory comments, and personal or political attacks</li>
+                    <li><strong>Harassment:</strong> Public or private harassment of any kind</li>
+                    <li><strong>Inappropriate Content:</strong> Publishing others' private information without explicit permission</li>
+                    <li><strong>Discrimination:</strong> Any conduct which could reasonably be considered inappropriate in a professional setting</li>
+                    <li><strong>Spam:</strong> Unsolicited promotional content or irrelevant links</li>
+                    <li><strong>Misinformation:</strong> Deliberate spreading of false information</li>
+                </ul>
+            </section>
+
+            <!-- Responsibilities -->
+            <section class="spec-item" id="responsibilities">
+                <h2>🧑‍💻 RESPONSIBILITIES</h2>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Maintainer:</span>
+                        <span class="property-value">Gerivan Costa dos Santos</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Role:</span>
+                        <span class="property-value">Portfolio Maintainer</span>
+                    </div>
+                </div>
+                <p class="justified-text" style="margin-bottom:10px;">As the portfolio maintainer, I am responsible for:</p>
+                <ul class="coc-list">
+                    <li>Clarifying the standards of acceptable behavior</li>
+                    <li>Taking appropriate and fair corrective action in response to any instances of unacceptable behavior</li>
+                    <li>Ensuring consistent enforcement of this Code of Conduct</li>
+                    <li>Maintaining a welcoming environment for all contributors and visitors</li>
+                </ul>
+            </section>
+
+            <!-- Reporting Guidelines -->
+            <section class="spec-item" id="reporting">
+                <h2>📣 REPORTING GUIDELINES</h2>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Channel:</span>
+                        <span class="property-value">ask@gerivan.me</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Subject Tag:</span>
+                        <span class="property-value">[COC Report]</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Handling:</span>
+                        <span class="property-value">Confidential</span>
+                    </div>
+                </div>
+                <p class="justified-text" style="margin-bottom:10px;">If you experience or witness unacceptable behavior, or have any other concerns, please report it. When reporting, please include:</p>
+                <ol class="num-list">
+                    <li>Your contact information</li>
+                    <li>A clear description of what happened</li>
+                    <li>When and where the incident occurred</li>
+                    <li>Any relevant context or screenshots</li>
+                    <li>Names (real, nicknames, or pseudonyms) of any individuals involved</li>
+                    <li>Other people who witnessed the incident</li>
+                </ol>
+                <p class="justified-text" style="margin-top:10px;"><strong>All reports will be kept confidential.</strong></p>
+                <a class="report-btn" href="mailto:ask@gerivan.me?subject=%5BCOC%20Report%5D%20Code%20of%20Conduct%20Concern"><span aria-hidden="true">🚩</span> Report a Concern</a>
+            </section>
+
+            <!-- Enforcement Process -->
+            <section class="spec-item wide" id="enforcement">
+                <h2>⚖️ ENFORCEMENT PROCESS</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">1</span> Review</div>
+                        <ul class="coc-list">
+                            <li>All reports will be reviewed and investigated promptly</li>
+                            <li>Confidentiality will be maintained throughout the investigation</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">2</span> Response</div>
+                        <p class="justified-text">If a participant engages in unacceptable behavior, I may take any action deemed appropriate, including:</p>
+                        <div class="severity">
+                            <span class="sev sev-1">A private warning</span>
+                            <span class="sev sev-2">Temporary restriction from participation</span>
+                            <span class="sev sev-3">Permanent ban from portfolio spaces</span>
+                            <span class="sev sev-4">Reporting to appropriate authorities if necessary</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">3</span> Appeals</div>
+                        <ul class="coc-list">
+                            <li>Participants may appeal enforcement decisions by emailing <a href="mailto:ask@gerivan.me">ask@gerivan.me</a></li>
+                            <li>Appeals will be reviewed within 7 business days</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Addressing Grievances -->
+            <section class="spec-item" id="grievances">
+                <h2>📝 ADDRESSING GRIEVANCES</h2>
+                <p class="justified-text">If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify me with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies.</p>
+            </section>
+
+            <!-- Good Faith -->
+            <section class="spec-item" id="good-faith">
+                <h2>🕊️ GOOD FAITH</h2>
+                <p class="justified-text" style="margin-bottom:10px;">All participants in portfolio spaces are expected to act in good faith when:</p>
+                <ul class="coc-list">
+                    <li>Reporting violations of this Code of Conduct</li>
+                    <li>Participating in investigations</li>
+                    <li>Enforcing this Code of Conduct</li>
+                </ul>
+                <p class="justified-text" style="margin-top:10px;">Deliberate false reporting or abuse of the reporting system is itself a violation of this Code of Conduct.</p>
+            </section>
+
+            <!-- Privacy and Confidentiality -->
+            <section class="spec-item" id="privacy">
+                <h2>🔐 PRIVACY AND CONFIDENTIALITY</h2>
+                <ul class="coc-list">
+                    <li>All communication related to Code of Conduct violations will be treated confidentially</li>
+                    <li>Personal information will only be shared with those involved in investigating and resolving the incident</li>
+                    <li>Public statements about enforcement actions will protect the privacy of victims</li>
+                </ul>
+                <p class="justified-text" style="margin-top:10px;">See also the <a href="https://gerivan.me/privacy.html">Privacy Policy</a>.</p>
+            </section>
+
+            <!-- Community Guidelines -->
+            <section class="spec-item wide" id="community">
+                <h2>🧭 COMMUNITY GUIDELINES</h2>
+
+                <div class="callout important" role="note">
+                    <div class="callout-title"><span aria-hidden="true">ℹ️</span> Important</div>
+                    <strong>Before opening an Issue, creating a Fork or a Branch, making a Commit, submitting a Pull Request, or taking any other action on the repository, you must notify the repository owner and creator in advance through the official channels:</strong> the contact form ("contact me"), email at <a href="mailto:ask@gerivan.me">ask@gerivan.me</a>, or <a href="https://github.com/gerivanc/gerivanc/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
+                </div>
+
+                <p class="justified-text">This prior communication is mandatory. It makes our community of contributors and code creators stronger and more harmonious, a place where everyone feels welcome and has a real sense of belonging. Knowing in advance what each person intends to do lets us coordinate efforts, avoid duplicated work and give every contribution the attention it deserves.</p>
+
+                <div class="callout warning" role="note">
+                    <div class="callout-title"><span aria-hidden="true">⚠️</span> Warning</div>
+                    <strong>Any unfriendly conduct, including disrespect toward the repository creator, will be reported to GitHub</strong>, which will take all appropriate actions within its authority under its content and user policies (<a href="https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies" target="_blank" rel="noopener noreferrer">GitHub Community Guidelines</a>).
+                </div>
+
+                <h3>How to contribute, step by step</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">1</span> Fork the repository</div>
+                        <p class="justified-text"><strong>Create a copy in your account.</strong> Go to the original repository on GitHub and click the <strong>Fork</strong> button in the upper-right corner. This creates an exact copy of the project in your own profile.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">2</span> Clone and create a branch</div>
+                        <p class="justified-text"><strong>Work in isolation.</strong> Clone the repository from your account to your machine (<code class="inline">git clone ...</code>). Then create a new branch for your change:</p>
+                        <pre><code><span class="prompt">$ </span>git checkout -b my-fix</code></pre>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><span class="step-badge">3</span> Make your changes and commit</div>
+                        <p class="justified-text"><strong>Document clearly what changed.</strong> Make the necessary changes to the code or documentation, test locally, and commit with clear messages:</p>
+                        <pre><code><span class="prompt">$ </span>git commit -m "docs: fix broken link in README"</code></pre>
+                    </div>
+                </div>
+
+                <p class="justified-text" style="margin-top:15px;">📌 <strong>Reference:</strong> <a href="https://docs.github.com/en/site-policy/github-terms/github-community-guidelines#what-happens-if-someone-violates-githubs-policies" target="_blank" rel="noopener noreferrer">GitHub Community Guidelines</a></p>
+            </section>
+
+            <!-- Community Values -->
+            <section class="spec-item wide" id="values">
+                <h2>🌟 OUR COMMUNITY VALUES</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="icon" aria-hidden="true">🤲</span>
+                        <h3>Collaboration Over Competition</h3>
+                        <p>We believe in working together to improve and learn, rather than competing for attention or recognition.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="icon" aria-hidden="true">📚</span>
+                        <h3>Learning Over Knowing</h3>
+                        <p>We value the process of learning and growth more than appearing to already know everything.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="icon" aria-hidden="true">💎</span>
+                        <h3>Substance Over Style</h3>
+                        <p>While presentation matters, we prioritize meaningful content and genuine contributions over superficial appearances.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="icon" aria-hidden="true">🌍</span>
+                        <h3>Inclusion Over Exclusion</h3>
+                        <p>We actively work to include diverse perspectives and make our community accessible to everyone.</p>
+                    </div>
+                </div>
+
+                <h3>🎯 Expected Outcomes</h3>
+                <p class="justified-text" style="margin-bottom:10px;">By following this Code of Conduct, we aim to create an environment where:</p>
+                <ul class="coc-list good">
+                    <li>Everyone feels safe to participate and contribute</li>
+                    <li>Discussions are productive and respectful</li>
+                    <li>Feedback leads to genuine improvement</li>
+                    <li>The portfolio accurately represents quality work and professional standards</li>
+                </ul>
+            </section>
+
+            <!-- Attribution -->
+            <section class="spec-item" id="attribution">
+                <h2>📖 ATTRIBUTION</h2>
+                <p class="justified-text" style="margin-bottom:10px;">This Code of Conduct is adapted from:</p>
+                <ul class="coc-list">
+                    <li><a href="https://www.contributor-covenant.org" target="_blank" rel="noopener noreferrer">Contributor Covenant</a>, version 2.1</li>
+                    <li><a href="http://citizencodeofconduct.org/" target="_blank" rel="noopener noreferrer">Citizen Code of Conduct</a></li>
+                    <li><a href="https://www.djangoproject.com/conduct/" target="_blank" rel="noopener noreferrer">Django Code of Conduct</a></li>
+                </ul>
+            </section>
+
+            <!-- Modifications -->
+            <section class="spec-item" id="modifications">
+                <h2>🔄 MODIFICATIONS</h2>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Revision Right:</span>
+                        <span class="property-value">Portfolio Maintainer</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Announcement:</span>
+                        <span class="property-value">Repository + Revision Date</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Last Updated:</span>
+                        <span class="property-value">November 11, 2026</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Effective Date:</span>
+                        <span class="property-value">December 3, 2025</span>
+                    </div>
+                </div>
+                <p class="justified-text">This Code of Conduct may be revised at any time by the portfolio maintainer. When changes are made, they will be announced in the repository and the revision date will be updated.</p>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="contact-info wide spec-item" id="contact">
+                <h2>❓ QUESTIONS?</h2>
+                <div class="spec-details">
+                    <div class="spec-property">
+                        <span class="property-name">Contact Person:</span>
+                        <span class="property-value">Gerivan Costa dos Santos</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Email:</span>
+                        <span class="property-value"><a href="mailto:ask@gerivan.me">ask@gerivan.me</a></span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Urgent Matters:</span>
+                        <span class="property-value">Within 48 hours</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">General Inquiries:</span>
+                        <span class="property-value">5 business days</span>
+                    </div>
+                    <div class="spec-property">
+                        <span class="property-name">Source (GitHub):</span>
+                        <span class="property-value"><a href="https://github.com/gerivanc/gerivanc/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">CODE_OF_CONDUCT.md</a></span>
+                    </div>
+                </div>
+                <p class="justified-text">If you have questions about this Code of Conduct, please contact me using the information above.</p>
+            </section>
+        </main>
+
+        <p class="thanks">Thank you for helping make this a welcoming, professional space for everyone! ✨</p>
+        <a class="back-top" href="#top">↑ Back to top</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025-2026 Gerivan Costa dos Santos</p>
+            <p>Code of Conduct • <a href="https://gerivan.me/privacy.html">Privacy Policy</a> • <a href="https://gerivan.me/terms.html">Terms of Use</a></p>
+            <p>All Rights Reserved • Secure Connection Active</p>
+        </div>
+    </footer>
+
+</body>
+</html>
