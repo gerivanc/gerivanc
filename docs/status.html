@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9TdLArwrfJ58UReLRXZ874Q7dVoHpBYL2dFkXVaPzj8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-FE4CL/1F2SoNMMkwqNRGzdjrXE3CO0oDwJFQskRaPG4='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Live DNS propagation and status monitor for gerivan.me — checked continuously from vantage points around the world.">
 <meta name="theme-color" content="#0d001a">
-
 <title>DNS Status — gerivan.me</title>
 <link rel="icon" id="favicon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -388,7 +387,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
 
 <footer>
   <div class="container">
-    <span>Copyright © 2022-<span id="yr"></span> <b>Gerivan Costa dos Santos</b> · <a href="https://gerivan.me/" id="homeLink">gerivan.me</a></span>
+    <span>© <span id="yr"></span> <b>Gerivan Costa dos Santos</b> · <a href="https://gerivan.me/" id="homeLink">gerivan.me</a></span>
     <span><kbd>R</kbd> refresh · <kbd>E</kbd> export · link format: <code>status.html#NS/gerivan.me</code></span>
   </div>
 </footer>
@@ -410,6 +409,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-b
     { id: 'bsb', city: 'Brasília, Brazil',                cc: 'br', lat: -15.79, lon: -47.88, ecs: '164.41.0.0/24' },
     { id: 'sao', city: 'São Paulo, Brazil',               cc: 'br', lat: -23.55, lon: -46.63, ecs: '143.107.0.0/24' },
     { id: 'rio', city: 'Rio de Janeiro, Brazil',          cc: 'br', lat: -22.91, lon: -43.17, ecs: '146.164.0.0/24' },
+    { id: 'scs', city: 'Santa Cruz do Sul, Brazil',       cc: 'br', lat: -29.72, lon: -52.43, ecs: '45.171.83.0/24' },  // UNISC · AS268744
     { id: 'bue', city: 'Buenos Aires, Argentina',         cc: 'ar', lat: -34.60, lon: -58.38, ecs: '157.92.0.0/24' },
     { id: 'lon', city: 'London, United Kingdom',          cc: 'gb', lat: 51.51, lon: -0.13,   ecs: '128.40.0.0/24' },
     { id: 'mad', city: 'Madrid, Spain',                   cc: 'es', lat: 40.42, lon: -3.70,   ecs: '138.4.0.0/24' },
