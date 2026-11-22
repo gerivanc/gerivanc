@@ -29,22 +29,25 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
     <meta name="format-detection" content="telephone=no">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="/g3.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/g3.ico" type="image/x-icon">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gerivan.me/terms.html">
+
     <!-- Meta tags for PWA -->
     <meta name="theme-color" content="#0a0a16">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="Terms of Use - Gerivan Costa Portfolio">
-    
+    <meta name="description" content="Terms of Use - Gerivan Costa Portfolio. Acceptance, legal framework (LGPD, Marco Civil, GDPR), intellectual property, prohibited activities and liability.">
+
     <title>Terms of Use - Gerivan Costa</title>
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg: #0a0a16;
@@ -60,13 +63,13 @@
             --text-primary: #e0e0ff;
             --head-colors: #ff6600, #39ff14, #00ffff, #f9ca24, #6c5ce7, #a29bfe, #fd79a8, #fdcb6e;
         }
-        
+
         *, *::before, *::after { 
             box-sizing: border-box; 
             margin: 0; 
             padding: 0; 
         }
-        
+
         body {
             font-family: 'Fira Code', monospace;
             background: var(--bg);
@@ -80,7 +83,7 @@
                 radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(255, 100, 0, 0.05) 0%, transparent 20%);
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -92,7 +95,7 @@
             border: 1px solid var(--accent);
             flex: 1;
         }
-        
+
         h1 {
             text-align: center;
             color: var(--neon-green);
@@ -102,7 +105,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
         }
-        
+
         .subtitle {
             text-align: center;
             opacity: 0.8;
@@ -349,16 +352,172 @@
                 animation: none;
             }
         }
+        /* ===== Standardized header (shared with code-of-conduct.html) ===== */
+        html { scroll-behavior: smooth; }
+
+        a { color: var(--neon-cyan); text-decoration: underline; text-underline-offset: 3px; }
+        a:hover, a:focus-visible { color: var(--neon-green); }
+        a:focus-visible { outline: 2px dashed var(--neon-green); outline-offset: 3px; border-radius: 4px; }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            background: var(--neon-green);
+            color: #000;
+            padding: 8px 14px;
+            border-radius: 6px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 10px; color: #000; }
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            border-radius: 8px;
+            background: rgba(0, 255, 255, 0.06);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .nav-btn:hover, .nav-btn:focus-visible {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .nav-btn[aria-current="page"] {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            box-shadow: 0 0 12px rgba(57, 255, 20, 0.25);
+        }
+
+        .subtitle { margin-bottom: 8px; }
+
+        .subtitle-secondary {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .toc {
+            margin: 25px auto 10px;
+            padding: 18px 22px;
+            max-width: 1100px;
+            background: rgba(0, 255, 255, 0.04);
+            border: 1px dashed rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .toc h2 {
+            color: var(--neon-cyan);
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .toc ol {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 6px 20px;
+            list-style: decimal-leading-zero inside;
+            font-size: 0.85rem;
+            color: var(--neon-green);
+        }
+
+        .toc a { color: var(--text-primary); text-decoration: none; }
+        .toc a:hover, .toc a:focus-visible { color: var(--neon-cyan); text-decoration: underline; }
+
+        .spec-item, .highlight-box, .warning-box, .contact-info { scroll-margin-top: 20px; }
+        .spec-item::before { pointer-events: none; }
+
+        .back-top {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            font-size: 0.85rem;
+        }
+
+        footer a { color: #e0e0e0; }
+
+        @media (max-width: 480px) {
+            .nav-btn { flex: 1 1 100%; justify-content: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .nav-btn { transition: none; transform: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            .container, footer .container { box-shadow: none; border: none; background: #fff; }
+            .top-nav, .toc, .back-top, .skip-link { display: none; }
+            .spec-item { break-inside: avoid; background: none; border: 1px solid #999; }
+            h1, h2, .property-name { color: #000 !important; text-shadow: none !important; }
+            a { color: #000; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="container" id="top">
+        <nav class="top-nav" aria-label="Legal pages">
+            <a class="nav-btn" href="https://gerivan.me/"><span aria-hidden="true">🏠</span> Home</a>
+            <a class="nav-btn" href="https://gerivan.me/privacy.html"><span aria-hidden="true">🔒</span> Privacy Policy</a>
+            <a class="nav-btn" href="https://gerivan.me/terms.html" aria-current="page"><span aria-hidden="true">📄</span> Terms of Use</a>
+            <a class="nav-btn" href="https://gerivan.me/code-of-conduct.html"><span aria-hidden="true">🤝</span> Code of Conduct</a>
+        </nav>
+
         <h1>⚖️ TERMS OF USE</h1>
-        <p class="subtitle">Last Updated: December 3, 2025</p>
-        
-        <div class="specs-grid">
+        <p class="subtitle">Last Updated: November 11, 2026</p>
+        <p class="subtitle-secondary">Effective Date: December 3, 2025</p>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h2>📑 Contents</h2>
+            <ol>
+                <li><a href="#acceptance-of-terms">Acceptance of Terms</a></li>
+                <li><a href="#legal-framework">Legal Framework</a></li>
+                <li><a href="#brazilian-law-compliance">Brazilian Law Compliance</a></li>
+                <li><a href="#european-union-compliance">European Union Compliance</a></li>
+                <li><a href="#intellectual-property">Intellectual Property</a></li>
+                <li><a href="#prohibited-activities">Prohibited Activities</a></li>
+                <li><a href="#external-links">External Links</a></li>
+                <li><a href="#disclaimer-of-warranties">Disclaimer of Warranties</a></li>
+                <li><a href="#limitation-of-liability">Limitation of Liability</a></li>
+                <li><a href="#jurisdiction-and-governing-law">Jurisdiction and Governing Law</a></li>
+                <li><a href="#changes-to-terms">Changes to Terms</a></li>
+                <li><a href="#security-implementation">Security Implementation</a></li>
+                <li><a href="#security-notice">Security Notice</a></li>
+                <li><a href="#disclaimer">Disclaimer</a></li>
+                <li><a href="#contact-information">Contact Information</a></li>
+            </ol>
+        </nav>
+
+        <div class="specs-grid" id="main" role="main">
             <!-- Acceptance of Terms -->
-            <div class="spec-item">
+            <div class="spec-item" id="acceptance-of-terms">
                 <h2>📋 ACCEPTANCE OF TERMS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -378,7 +537,7 @@
             </div>
 
             <!-- Legal Framework -->
-            <div class="spec-item">
+            <div class="spec-item" id="legal-framework">
                 <h2>⚖️ LEGAL FRAMEWORK</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -398,7 +557,7 @@
             </div>
 
             <!-- Brazilian Law Compliance -->
-            <div class="spec-item">
+            <div class="spec-item" id="brazilian-law-compliance">
                 <h2>🇧🇷 BRAZILIAN LAW COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -422,7 +581,7 @@
             </div>
 
             <!-- European Union Compliance -->
-            <div class="spec-item">
+            <div class="spec-item" id="european-union-compliance">
                 <h2>🇪🇺 EUROPEAN UNION COMPLIANCE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -442,7 +601,7 @@
             </div>
 
             <!-- Intellectual Property -->
-            <div class="spec-item">
+            <div class="spec-item" id="intellectual-property">
                 <h2>📄 INTELLECTUAL PROPERTY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -466,7 +625,7 @@
             </div>
 
             <!-- Prohibited Activities -->
-            <div class="spec-item">
+            <div class="spec-item" id="prohibited-activities">
                 <h2>🚫 PROHIBITED ACTIVITIES</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -490,7 +649,7 @@
             </div>
 
             <!-- External Links -->
-            <div class="spec-item">
+            <div class="spec-item" id="external-links">
                 <h2>🔗 EXTERNAL LINKS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -514,7 +673,7 @@
             </div>
 
             <!-- Disclaimer of Warranties -->
-            <div class="spec-item">
+            <div class="spec-item" id="disclaimer-of-warranties">
                 <h2>📊 DISCLAIMER OF WARRANTIES</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -538,7 +697,7 @@
             </div>
 
             <!-- Limitation of Liability -->
-            <div class="spec-item">
+            <div class="spec-item" id="limitation-of-liability">
                 <h2>⚖️ LIMITATION OF LIABILITY</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -562,7 +721,7 @@
             </div>
 
             <!-- Jurisdiction and Governing Law -->
-            <div class="spec-item">
+            <div class="spec-item" id="jurisdiction-and-governing-law">
                 <h2>🌍 JURISDICTION AND GOVERNING LAW</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -582,7 +741,7 @@
             </div>
 
             <!-- Changes to Terms -->
-            <div class="spec-item">
+            <div class="spec-item" id="changes-to-terms">
                 <h2>🔄 CHANGES TO TERMS</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -602,7 +761,7 @@
             </div>
 
             <!-- Security Implementation -->
-            <div class="spec-item">
+            <div class="spec-item" id="security-implementation">
                 <h2>🛡️ SECURITY IMPLEMENTATION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -626,7 +785,7 @@
             </div>
 
             <!-- Security Notice -->
-            <div class="warning-box">
+            <div class="warning-box" id="security-notice">
                 <h2>🔒 SECURITY NOTICE</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -646,13 +805,13 @@
             </div>
 
             <!-- Disclaimer -->
-            <div class="highlight-box">
+            <div class="highlight-box" id="disclaimer">
                 <h2>⚠️ DISCLAIMER</h2>
                 <p class="justified-text"><strong>This is a personal portfolio website showcasing projects and skills.</strong> All information is provided "as is" without warranties of any kind. The content represents technical demonstrations and should not be considered professional advice.</p>
             </div>
 
             <!-- Contact Information -->
-            <div class="contact-info">
+            <div class="contact-info" id="contact-information">
                 <h2>📧 CONTACT INFORMATION</h2>
                 <div class="spec-details">
                     <div class="spec-property">
@@ -675,12 +834,13 @@
                 <p class="justified-text">For questions about these Terms of Use, please contact us using the information above. We aim to respond within 7 business days to all legitimate inquiries.</p>
             </div>
         </div>
+        <a class="back-top" href="#top">↑ Back to top</a>
     </div>
 
     <footer>
         <div class="container">
             <p>Copyright © 2025-2026 Gerivan Costa dos Santos</p>
-            <p>Terms of Use • LGPD & GDPR Compliant</p>
+            <p><a href="https://gerivan.me/privacy.html">Privacy Policy</a> • Terms of Use • <a href="https://gerivan.me/code-of-conduct.html">Code of Conduct</a></p>
             <p>All Rights Reserved • Secure Connection Active</p>
         </div>
     </footer>
