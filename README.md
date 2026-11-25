@@ -26,8 +26,16 @@ Here you'll find projects that blend innovation with purpose, always focused on 
 
 ## 🔐 Featured Projects  
 
+> [!TIP]
+> **🛰️ New in orbit: [DOMAIN X-RAY - url-status](https://url-status.gerivan.me/)** — a personal satellite for any domain on the Internet. Type a domain and it interrogates six ground stations (DNS-over-HTTPS, RDAP, Team Cymru BGP, IP geolocation, Certificate Transparency, WebCrypto) and relays back registration, servers, email security (SPF · DKIM · DMARC · MTA-STS · TLS-RPT · BIMI), certificates, attack surface, global DNS propagation and an A+ to F security grade with copy-paste fixes. No backend. No API keys. Nothing but your browser.
+> A second orbit — a GitHub Actions monitor — watches the whole `gerivan.me` fleet every 15 minutes:
+
+[![gerivan.me live status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.overall&label=gerivan.me&style=for-the-badge&color=00BFFF&labelColor=0d001a&logo=statuspage&logoColor=00f0ff)](https://gerivan.me/status.html#NS/gerivan.me) [![Uptime 30d](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.uptime.d30&suffix=%25&label=uptime%2030d&style=for-the-badge&color=39ff14&labelColor=0d001a)](https://gerivan.me/status.html#NS/gerivan.me) [![DNS monitor](https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml/badge.svg)](https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml)
+
+
 | Project | Description | Demo | Repo |
 |---------|-------------|------|------|
+| **🛰️DOMAIN X-RAY - url-status** | Personal satellite for any domain: live X-Ray of registration, servers, email security, certificates, attack surface and DNS propagation, with an A+ to F security grade, plus a 24/7 monitor of the gerivan.me fleet | [Live Demo](https://url-status.gerivan.me/) — [24/7 Monitor](https://gerivan.me/status.html#NS/gerivan.me) | [Repo](https://github.com/gerivanc/url-status) |
 | **XPhrase** | Multilingual phrase generator with cryptographic randomness | [Live Demo](https://xphrase.gerivan.me/xphrase.html) | [Repo](https://github.com/gerivanc/xphrase) |
 | **Cyber Neural Network & Transformers** | Interactive visualization of neural networks | [Demo transformers](https://transformers.gerivan.me/transformers.html) —  [Cyber Neural](https://transformers.gerivan.me/neural.html) | [Repo](https://github.com/gerivanc/transformers) |
 | **DNAPass** | Genetic password generator using DNA sequences | [Demo](https://dnapass.gerivan.me/dnapass.html) | [Repo](https://github.com/gerivanc/dnapass-password-generator) |
