@@ -2759,6 +2759,8 @@
 			<p style="text-align: justify;">Descubra o <strong>ecossistema EntroPy Password Generator</strong>, com versões em Python via linha de comando para Windows/Linux e implementações web responsivas. O modelo de segurança baseado em entropia garante máxima aleatoriedade e resistência a ataques de força bruta ao utilizar fontes reais de entropia em vez de algoritmos pseudoaleatórios previsíveis.</p>
 
 			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivas que <strong>utiliza 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou múltiplas frases, sempre com comprimento entre 3 e 21 palavras. No modo de frase única, o sistema solicita a quantidade desejada de palavras e produz uma sentença correspondente. No modo de múltiplas frases, primeiro é definida a quantidade de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no tamanho. Cada palavra deve conter ao menos um caractere especial e um dígito, e a última palavra precisa terminar com letra maiúscula. A ordem dos idiomas é aleatória, tornando o resultado variado e dinâmico.</p>
+
+			<p style="text-align: justify;"><strong>🛰️DOMAIN X-RAY - url-status</strong> é o meu projeto mais recente: um satélite pessoal para qualquer domínio da Internet. Estacionado em órbita e sempre em standby, ele desperta quando você digita um nome de domínio, consulta seis estações terrestres em paralelo — <strong>DNS-over-HTTPS, registros RDAP, Team Cymru (BGP), geolocalização de IP, logs de Certificate Transparency e WebCrypto</strong> — e devolve o registro do domínio, servidores, redes, segurança de e-mail (SPF, DKIM, DMARC, MTA-STS, TLS-RPT, BIMI), certificados, superfície de ataque, propagação global de DNS e uma <strong>nota de segurança de A+ a F</strong> com correções prontas para copiar. Sem backend, sem chaves de API, apenas o seu navegador. Em uma segunda órbita, um monitor no GitHub Actions vigia toda a frota <strong>gerivan.me</strong> a cada 15 minutos, com histórico, uptime e alertas por e-mail.</p>
         </div>
 		
 		        <!-- Table of Contents -->
@@ -2767,6 +2769,7 @@
             <ul>
                 <li><a href="#matrix-christmas">🎄 Matrix — Decifrando o Natal</a></li>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
+                <li><a href="#domain-xray">🛰️ DOMAIN X-RAY - url-status</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
                 <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
                 <li><a href="#cyber-interface">👾 Axon Connect</a></li>				
@@ -2782,6 +2785,47 @@
 
         <!-- Featured projects section -->
         <h2 id="featured-projects">🔐 Projetos em Destaque</h2>
+
+        <!-- DOMAIN X-RAY (url-status) project card -->
+        <div class="project-card" id="domain-xray" data-categories="security web">
+            <h3>🛰️DOMAIN X-RAY - url-status — Um satélite pessoal para qualquer domínio da Internet</h3>
+            <p><em>Estacionado em órbita, sempre em standby. Chame-o com um nome de domínio e ele desperta, consulta seis estações terrestres e retransmite tudo para você em segundos. Sem backend. Sem chaves de API. Apenas o seu navegador.</em></p>
+            <p>Digite <strong>qualquer</strong> domínio e pressione <strong>X-RAY</strong>: a página consulta o DNS global, os registros de domínios, as tabelas de roteamento da Internet e os logs públicos de Certificate Transparency, depois avalia a postura de segurança e entrega os registros exatos para corrigi-la. O projeto funciona em duas órbitas:</p>
+            <ul>
+                <li>🛰️ <strong>Órbita sob demanda — Domain X-Ray</strong>: qualquer domínio digitado pelo visitante é escaneado ao vivo, direto do navegador do próprio visitante para fontes de dados públicas.</li>
+                <li>📡 <strong>Órbita de manutenção — monitor 24/7</strong>: o GitHub Actions verifica <code>gerivan.me</code> e seus subdomínios (dnapass, entropy, transformers, xphrase) a cada 15 minutos, mesmo sem ninguém com a página aberta, grava a telemetria no branch <code>data</code> e abre uma issue no GitHub (alerta por e-mail) quando um problema aparece em 2 execuções seguidas.</li>
+            </ul>
+            <h4>Perfil da missão:</h4>
+            <div class="center">
+                <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">💤 Standby</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📡 Uplink</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🛰️ Aquisição</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🧠 Processamento</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📶 Downlink</span>
+            </div>
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>🛡️ <strong>Nota de segurança de A+ a F</strong>: com correções prontas para copiar; a sugestão de CAA é montada a partir das autoridades certificadoras do próprio histórico de certificados do domínio.</li>
+                <li>🏛️ <strong>Registro e infraestrutura</strong>: registrador, idade, vencimento e bloqueios EPP via RDAP (RFC 9083); cada IP mapeado para seu número AS, proprietário, prefixo, DNS reverso e geolocalização, com detecção de anycast.</li>
+                <li>✉️ <strong>Segurança de e-mail</strong>: SPF com contagem recursiva de consultas (limite 10), DMARC com política herdada, DKIM em 38 seletores comuns, MTA-STS, TLS-RPT, BIMI e Null MX.</li>
+                <li>🔏 <strong>Superfície de ataque</strong>: todo hostname já publicado em um certificado (Certificate Transparency, RFC 9162), resolvido ao vivo; CNAMEs órfãos sinalizados como possível <strong>subdomain takeover</strong>.</li>
+                <li>🧩 <strong>Impressão digital tecnológica</strong>: provedor de DNS, CDN, provedor de e-mail, remetentes, autoridades certificadoras e SaaS verificados — passe o mouse sobre um serviço para ver o registro exato que o revelou.</li>
+                <li>🧬 <strong>DNA do domínio</strong>: SHA-256 de NS · MX · TXT · CAA · DS · CNAME desenhado como dupla hélice; o próximo escaneamento aponta qualquer <strong>mutação</strong> com o diff exato.</li>
+                <li>🌍 <strong>Propagação global</strong>: o mesmo registro visto de 21 cidades (EDNS Client Subnet, RFC 7871) e 5 resolvedores públicos, além de um snapshot <code>.zone</code> e um relatório JSON.</li>
+                <li>🔒 <strong>Privacidade desde a concepção</strong>: sem backend, sem cookies, sem analytics, sem contas; CSP travada por hash; terceiros recebem apenas o domínio escaneado ou os IPs dos servidores.</li>
+            </ul>
+            <h4>Telemetria ao vivo:</h4>
+            <div class="center">
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.overall&label=gerivan.me&style=for-the-badge&color=00BFFF&labelColor=0d001a&logo=statuspage&logoColor=00f0ff" alt="Status ao vivo de gerivan.me" loading="lazy"></a>
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.uptime.d30&suffix=%25&label=uptime%2030d&style=for-the-badge&color=39ff14&labelColor=0d001a" alt="Uptime de gerivan.me em 30 dias" loading="lazy"></a>
+                <a href="https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml" target="_blank" rel="noopener noreferrer"><img src="https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml/badge.svg" alt="Status do workflow DNS monitor" loading="lazy"></a>
+            </div>
+            <div class="center">
+                <a href="https://url-status.gerivan.me/" class="btn" target="_blank" rel="noopener noreferrer">🛰️ Abrir o satélite</a>
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">📡 Monitor 24/7</a>
+                <a href="https://github.com/gerivanc/url-status" class="btn" target="_blank" rel="noopener noreferrer">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/url-status/blob/main/docs/index.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">💾 Veja o código</a>
+            </div>
+            <blockquote>
+                <p>"Em standby na órbita · desperto sob chamada · retransmitindo tudo o que ouve 🛰️"</p>
+            </blockquote>
+        </div>
 
         <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
@@ -3092,6 +3136,7 @@
                 <div>drwxr-xr-x 1 user user | 288 Oct  5 01:41 | dnapass-password-generator</div>
                 <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
                 <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
+                <div>drwxr-xr-x 1 user user | 4096 Nov 24 2026 | url-status</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
@@ -3457,6 +3502,13 @@
                 description: "Gerador de frases expressivo — forte, moderno e minimalista.",
                 link: "https://github.com/gerivanc/xphrase",
                 icon: "🚀"
+            },
+            {
+                date: "Novembro 2026 - Presente",
+                title: "🛰️DOMAIN X-RAY - url-status",
+                description: "Um satélite pessoal para qualquer domínio: raio-X ao vivo de registro, servidores, segurança de e-mail, certificados, superfície de ataque e propagação de DNS, além de um monitor 24/7 da frota gerivan.me. 100% no navegador.",
+                link: "https://github.com/gerivanc/url-status",
+                icon: "🛰️"
             }
         ];
 
