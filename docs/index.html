@@ -2758,6 +2758,8 @@
             <p style="text-align: justify;">Discover the <strong>EntroPy Password Generator ecosystem</strong>, featuring both Python CLI versions for Windows/Linux and responsive web implementations. The entropy-driven security model ensures maximum randomness and brute-force resistance by leveraging real entropy sources rather than predictable pseudo-random algorithms.</p>
 
             <p style="text-align: justify;"><strong>XPhrase Generation</strong> is an expressive phrase generator that <strong>uses 4,000 specific words selected from three languages — English, Portuguese, and German</strong> — to create sentences. The project allows generating either a single phrase or multiple phrases, always with a length between 3 and 21 words. In single-phrase mode, the system asks for the desired word count and produces one sentence accordingly. In multiple-phrase mode, it first defines the number of words per phrase and then the number of phrases, between 5 and 10, ensuring consistency in length. Each word must contain at least one special character and one digit, and the final word must end with a capital letter. The order of languages is randomized, making the output varied and dynamic.</p>
+
+            <p style="text-align: justify;"><strong>🛰️DOMAIN X-RAY - url-status</strong> is my newest project: a personal satellite for any domain on the Internet. Parked in orbit and always in standby, it wakes up when you type a domain name, interrogates six ground stations in parallel — <strong>DNS-over-HTTPS, RDAP registries, Team Cymru (BGP), IP geolocation, Certificate Transparency logs and WebCrypto</strong> — and relays back the domain's registration, servers, networks, email security (SPF, DKIM, DMARC, MTA-STS, TLS-RPT, BIMI), certificates, attack surface, global DNS propagation and an <strong>A+ to F security grade</strong> with copy-paste fixes. No backend, no API keys, nothing but your browser. In a second orbit, a GitHub Actions monitor keeps the whole <strong>gerivan.me</strong> fleet under watch every 15 minutes, with history, uptime and e-mail alerts.</p>
         </div>
 
         <!-- Table of Contents -->
@@ -2766,6 +2768,7 @@
             <ul>
                 <li><a href="#matrix-christmas">🎄 Matrix — Decrypting Christmas</a></li>
                 <li><a href="#featured-projects">🔐 Featured Projects</a></li>
+                <li><a href="#domain-xray">🛰️ DOMAIN X-RAY - url-status</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
                 <li><a href="#skills">💻 Skills & Technologies</a></li>
                 <li><a href="#cyber-interface">👾 Axon Connect</a></li>
@@ -2781,6 +2784,47 @@
 
         <!-- Featured projects section -->
         <h2 id="featured-projects">🔐 Featured Projects</h2>
+
+        <!-- DOMAIN X-RAY (url-status) project card -->
+        <div class="project-card" id="domain-xray" data-categories="security web">
+            <h3>🛰️DOMAIN X-RAY - url-status — A personal satellite for any domain on the Internet</h3>
+            <p><em>Parked in orbit, always in standby. Call it with a domain name and it wakes up, interrogates six ground stations, and relays everything back to you in seconds. No backend. No API keys. Nothing but your browser.</em></p>
+            <p>Type <strong>any</strong> domain and press <strong>X-RAY</strong>: the page interrogates the global DNS, the domain registries, the Internet's routing tables and the public Certificate Transparency logs, then grades the security posture and hands you the exact records to fix it. The project works in two orbits:</p>
+            <ul>
+                <li>🛰️ <strong>On-demand orbit — Domain X-Ray</strong>: any domain a visitor types is scanned live, straight from the visitor's own browser to public data sources.</li>
+                <li>📡 <strong>Station-keeping orbit — 24/7 monitor</strong>: GitHub Actions checks <code>gerivan.me</code> and its subdomains (dnapass, entropy, transformers, xphrase) every 15 minutes, even when nobody has the page open, writing telemetry to the <code>data</code> branch and opening a GitHub issue (e-mail alert) when a problem shows up in 2 runs in a row.</li>
+            </ul>
+            <h4>Mission profile:</h4>
+            <div class="center">
+                <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">💤 Standby</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📡 Uplink</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🛰️ Acquisition</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🧠 Processing</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📶 Downlink</span>
+            </div>
+            <h4>Key Features:</h4>
+            <ul>
+                <li>🛡️ <strong>Security grade A+ to F</strong>: with copy-paste fixes; the CAA suggestion is built from the CAs in the domain's own certificate history.</li>
+                <li>🏛️ <strong>Registration &amp; infrastructure</strong>: registrar, age, expiry and EPP locks via RDAP (RFC 9083); every IP mapped to its AS number, owner, prefix, reverse DNS and geolocation, with anycast detection.</li>
+                <li>✉️ <strong>Email security</strong>: SPF with recursive lookup count (limit 10), DMARC with inherited policy, DKIM across 38 common selectors, MTA-STS, TLS-RPT, BIMI and Null MX.</li>
+                <li>🔏 <strong>Attack surface</strong>: every hostname ever published in a certificate (Certificate Transparency, RFC 9162), resolved live; dangling CNAMEs flagged as possible <strong>subdomain takeover</strong>.</li>
+                <li>🧩 <strong>Technology fingerprint</strong>: DNS host, CDN, mail provider, senders, CAs and verified SaaS — hover a service to see the exact record that gave it away.</li>
+                <li>🧬 <strong>Domain DNA</strong>: SHA-256 of NS · MX · TXT · CAA · DS · CNAME drawn as a double helix; the next scan reports any <strong>mutation</strong> with an exact diff.</li>
+                <li>🌍 <strong>Global propagation</strong>: the same record seen from 21 cities (EDNS Client Subnet, RFC 7871) and 5 public resolvers, plus a <code>.zone</code> snapshot and a JSON report.</li>
+                <li>🔒 <strong>Privacy by design</strong>: no backend, no cookies, no analytics, no accounts; hash-locked CSP; third parties only receive the scanned domain or its server IPs.</li>
+            </ul>
+            <h4>Live telemetry:</h4>
+            <div class="center">
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.overall&label=gerivan.me&style=for-the-badge&color=00BFFF&labelColor=0d001a&logo=statuspage&logoColor=00f0ff" alt="gerivan.me live status" loading="lazy"></a>
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgerivanc%2Furl-status%2Fdata%2Fstatus.json&query=%24.uptime.d30&suffix=%25&label=uptime%2030d&style=for-the-badge&color=39ff14&labelColor=0d001a" alt="gerivan.me uptime over 30 days" loading="lazy"></a>
+                <a href="https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml" target="_blank" rel="noopener noreferrer"><img src="https://github.com/gerivanc/url-status/actions/workflows/dns-monitor.yml/badge.svg" alt="DNS monitor workflow status" loading="lazy"></a>
+            </div>
+            <div class="center">
+                <a href="https://url-status.gerivan.me/" class="btn" target="_blank" rel="noopener noreferrer">🛰️ Open the satellite</a>
+                <a href="https://gerivan.me/status.html#NS/gerivan.me" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">📡 24/7 Monitor</a>
+                <a href="https://github.com/gerivanc/url-status" class="btn" target="_blank" rel="noopener noreferrer">📦 Repository</a>
+                <a href="https://github.com/gerivanc/url-status/blob/main/docs/index.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">💾 View the code</a>
+            </div>
+            <blockquote>
+                <p>"Standby in orbit · awake on call · relaying everything it hears 🛰️"</p>
+            </blockquote>
+        </div>
 
         <!-- XPHRASE project card -->
         <div class="project-card" data-categories="security cpp">
@@ -3091,6 +3135,7 @@
                 <div>drwxr-xr-x 1 user user | 288 Oct  5 01:41 | dnapass-password-generator</div>
                 <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
                 <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
+                <div>drwxr-xr-x 1 user user | 4096 Nov 24 2026 | url-status</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
@@ -3456,6 +3501,13 @@
                 description: "Expressive phrase generator — strong, modern, and minimalist.",
                 link: "https://github.com/gerivanc/xphrase",
                 icon: "🚀"
+            },
+            {
+                date: "November 2026 - Present",
+                title: "🛰️DOMAIN X-RAY - url-status",
+                description: "A personal satellite for any domain: live X-Ray of registration, servers, email security, certificates, attack surface and DNS propagation, plus a 24/7 monitor of the gerivan.me fleet. 100% in the browser.",
+                link: "https://github.com/gerivanc/url-status",
+                icon: "🛰️"
             }
         ];
 
