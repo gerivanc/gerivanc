@@ -2760,7 +2760,9 @@
 
 			<p style="text-align: justify;"><strong>XPhrase Generation</strong> é um gerador de frases expressivas que <strong>utiliza 4.000 palavras específicas selecionadas de três idiomas — inglês, português e alemão</strong> — para criar sentenças. O projeto permite gerar uma única frase ou múltiplas frases, sempre com comprimento entre 3 e 21 palavras. No modo de frase única, o sistema solicita a quantidade desejada de palavras e produz uma sentença correspondente. No modo de múltiplas frases, primeiro é definida a quantidade de palavras por frase e depois o número de frases, entre 5 e 10, garantindo consistência no tamanho. Cada palavra deve conter ao menos um caractere especial e um dígito, e a última palavra precisa terminar com letra maiúscula. A ordem dos idiomas é aleatória, tornando o resultado variado e dinâmico.</p>
 
-			<p style="text-align: justify;"><strong>🛰️DOMAIN X-RAY - url-status</strong> é o meu projeto mais recente: um satélite pessoal para qualquer domínio da Internet. Estacionado em órbita e sempre em standby, ele desperta quando você digita um nome de domínio, consulta seis estações terrestres em paralelo — <strong>DNS-over-HTTPS, registros RDAP, Team Cymru (BGP), geolocalização de IP, logs de Certificate Transparency e WebCrypto</strong> — e devolve o registro do domínio, servidores, redes, segurança de e-mail (SPF, DKIM, DMARC, MTA-STS, TLS-RPT, BIMI), certificados, superfície de ataque, propagação global de DNS e uma <strong>nota de segurança de A+ a F</strong> com correções prontas para copiar. Sem backend, sem chaves de API, apenas o seu navegador. Em uma segunda órbita, um monitor no GitHub Actions vigia toda a frota <strong>gerivan.me</strong> a cada 15 minutos, com histórico, uptime e alertas por e-mail.</p>
+			<p style="text-align: justify;"><strong>🛰️DOMAIN X-RAY - url-status</strong> é um dos meus projetos mais recentes: um satélite pessoal para qualquer domínio da Internet. Estacionado em órbita e sempre em standby, ele desperta quando você digita um nome de domínio, consulta seis estações terrestres em paralelo — <strong>DNS-over-HTTPS, registros RDAP, Team Cymru (BGP), geolocalização de IP, logs de Certificate Transparency e WebCrypto</strong> — e devolve o registro do domínio, servidores, redes, segurança de e-mail (SPF, DKIM, DMARC, MTA-STS, TLS-RPT, BIMI), certificados, superfície de ataque, propagação global de DNS e uma <strong>nota de segurança de A+ a F</strong> com correções prontas para copiar. Sem backend, sem chaves de API, apenas o seu navegador. Em uma segunda órbita, um monitor no GitHub Actions vigia toda a frota <strong>gerivan.me</strong> a cada 15 minutos, com histórico, uptime e alertas por e-mail.</p>
+
+			<p style="text-align: justify;"><strong>🔐 MTA-STS · gerivan.me</strong> é a mais nova adição ao portfólio: o porteiro invisível que obriga todo e-mail destinado a <strong>@gerivan.me</strong> a viajar dentro de um túnel criptografado. O repositório publica a <strong>política MTA-STS (RFC 8461)</strong> do domínio, que orienta os servidores de e-mail do mundo todo (Gmail, Outlook/Microsoft 365, Proton e outros) a entregar mensagens somente via <strong>TLS</strong>, somente para os servidores MX aprovados e somente com <strong>certificado válido</strong>, bloqueando ataques de downgrade do STARTTLS e de intermediário (man-in-the-middle). Junto com os relatórios <strong>TLS-RPT (RFC 8460)</strong>, SPF <code>-all</code>, DKIM, DMARC <code>p=reject</code>, DNSSEC e CAA, ele concluiu o endurecimento do domínio auditado pelo DOMAIN X-RAY, levando-o da nota <strong>C (70/100) para A+ (99/100)</strong>.</p>
         </div>
 		
 		        <!-- Table of Contents -->
@@ -2770,6 +2772,7 @@
                 <li><a href="#matrix-christmas">🎄 Matrix — Decifrando o Natal</a></li>
                 <li><a href="#featured-projects">🔐 Projetos em Destaque</a></li>
                 <li><a href="#domain-xray">🛰️ DOMAIN X-RAY - url-status</a></li>
+                <li><a href="#mta-sts">🔐 MTA-STS · gerivan.me</a></li>
                 <li><a href="#neural-network">🧠 Transformers Neural Network & 🤖 Cyber Neural Network</a></li>
                 <li><a href="#skills">💻 Habilidades & Tecnologias</a></li>
                 <li><a href="#cyber-interface">👾 Axon Connect</a></li>				
@@ -2824,6 +2827,42 @@
             </div>
             <blockquote>
                 <p>"Em standby na órbita · desperto sob chamada · retransmitindo tudo o que ouve 🛰️"</p>
+            </blockquote>
+        </div>
+
+        <!-- MTA-STS (mta-sts.gerivan.me) project card -->
+        <div class="project-card" id="mta-sts" data-categories="security web">
+            <h3>🔐 MTA-STS · gerivan.me — O porteiro invisível do e-mail do domínio</h3>
+            <p><em>Obriga todo e-mail destinado a @gerivan.me a viajar dentro de um túnel criptografado.</em></p>
+            <p>O SMTP nasceu em texto puro (1982), e a criptografia STARTTLS é apenas <strong>oportunista</strong>: um atacante posicionado entre dois servidores de e-mail pode remover a criptografia sem que nenhum dos lados perceba. Este repositório publica a <strong>política MTA-STS</strong> de <code>gerivan.me</code>, um pequeno arquivo de texto que os servidores de e-mail leem antes de entregar uma mensagem. Ele diz a eles: <em>use TLS, conecte-se somente a estes servidores aprovados, exija certificado válido e lembre-se desta regra.</em> Quem abre <code>mta-sts.gerivan.me</code> no navegador vê uma página-portal em estilo cyber e é redirecionado ao painel do DOMAIN X-RAY.</p>
+            <h4>Como uma entrega é protegida:</h4>
+            <div class="center">
+                <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🔎 Descoberta via DNS</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📥 Política via HTTPS</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🧭 MX fixado</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">🔒 TLS + certificado válido</span> → <span style="display:inline-block;margin:3px;padding:4px 10px;border:1px solid currentColor;border-radius:14px;font-size:0.85em;opacity:0.9;">📊 Relatório TLS-RPT</span>
+            </div>
+            <h4>Características Principais:</h4>
+            <ul>
+                <li>📜 <strong>Política MTA-STS (RFC 8461)</strong>: <code>STSv1</code>, servidores MX <code>mail.protonmail.ch</code> e <code>mailsec.protonmail.ch</code>, atualmente em modo <code>testing</code>, publicada em <code>/.well-known/mta-sts.txt</code>.</li>
+                <li>☠️ <strong>Bloqueia o downgrade do STARTTLS</strong>: impede ataques man-in-the-middle, o recuo para texto puro e a entrega a servidores MX falsos.</li>
+                <li>📊 <strong>TLS-RPT (RFC 8460)</strong>: um único registro unificado recebe relatórios diários em JSON sobre sessões criptografadas e falhas, tornando a passagem para <code>enforce</code> uma decisão baseada em evidências.</li>
+                <li>🧭 <strong>DNS por trás</strong>: registro TXT de descoberta <code>_mta-sts</code> com <code>id</code> datado, além de um CNAME que aponta o host da política para o GitHub Pages via HTTPS.</li>
+                <li>🏰 <strong>Pilha completa de defesa de e-mail</strong>: SPF <code>-all</code>, DKIM (chave fraca de 1024 bits removida), DMARC <code>p=reject</code>, MTA-STS, TLS-RPT, DNSSEC e CAA restrito ao Let's Encrypt.</li>
+                <li>📈 <strong>Da nota C para A+</strong>: a etapa final do endurecimento do domínio auditado pelo DOMAIN X-RAY, de 70/100 para 99/100.</li>
+                <li>🛰️ <strong>Página-portal segura</strong>: CSP rígida e redirecionamento automático para o DOMAIN X-RAY, em vez de um 404 vazio.</li>
+            </ul>
+            <h4>Protocolos:</h4>
+            <div class="center">
+                <a href="https://datatracker.ietf.org/doc/html/rfc8461" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Protocol-MTA--STS%20(RFC%208461)-00ffff?style=for-the-badge&labelColor=0d001a" alt="MTA-STS RFC 8461" loading="lazy"></a>
+                <a href="https://datatracker.ietf.org/doc/html/rfc8460" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Reporting-TLS--RPT%20(RFC%208460)-ffcc00?style=for-the-badge&labelColor=0d001a" alt="TLS-RPT RFC 8460" loading="lazy"></a>
+                <a href="https://url-status.gerivan.me/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Domain%20X--Ray-A%2B%20·%2099%2F100-00ff9d?style=for-the-badge&labelColor=0d001a" alt="Nota Domain X-Ray A+ 99/100" loading="lazy"></a>
+            </div>
+            <div class="center">
+                <a href="https://mta-sts.gerivan.me/" class="btn" target="_blank" rel="noopener noreferrer">🔐 Abrir o portal</a>
+                <a href="https://mta-sts.gerivan.me/.well-known/mta-sts.txt" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">📜 Ver a política ao vivo</a>
+                <a href="https://github.com/gerivanc/mta-sts.gerivan.me" class="btn" target="_blank" rel="noopener noreferrer">📦 Repositório</a>
+                <a href="https://github.com/gerivanc/mta-sts.gerivan.me/blob/main/docs/.well-known/mta-sts.txt" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">💾 Veja o código</a>
+            </div>
+            <blockquote>
+                <p>"Protegido por MTA-STS &amp; TLS-RPT 🔐"</p>
             </blockquote>
         </div>
 
@@ -3137,6 +3176,7 @@
                 <div>drwxr-xr-x 1 user user | 366 Oct  5 01:32 | entropy-password-generator</div>												
                 <div>drwxr-xr-x 8 user user | 4096 Nov 8 02:45 | xphrase</div>
                 <div>drwxr-xr-x 1 user user | 4096 Nov 24 2026 | url-status</div>
+                <div>drwxr-xr-x 1 user user | 4096 Nov 27 2026 | mta-sts.gerivan.me</div>
                 <br>
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">┌──(gerivan㉿building)-[~]</span></div>				
                 <div><span class="terminal-prompt">$</span> <span class="terminal-command">└─$ cd entropy-password-generator</span></div>							
@@ -3509,6 +3549,13 @@
                 description: "Um satélite pessoal para qualquer domínio: raio-X ao vivo de registro, servidores, segurança de e-mail, certificados, superfície de ataque e propagação de DNS, além de um monitor 24/7 da frota gerivan.me. 100% no navegador.",
                 link: "https://github.com/gerivanc/url-status",
                 icon: "🛰️"
+            },
+            {
+                date: "Novembro 2026 - Presente",
+                title: "🔐 MTA-STS · gerivan.me",
+                description: "O porteiro invisível que obriga todo e-mail destinado a @gerivan.me a viajar dentro de um túnel criptografado: política MTA-STS (RFC 8461) e TLS-RPT (RFC 8460), a etapa final que levou o domínio à nota A+.",
+                link: "https://github.com/gerivanc/mta-sts.gerivan.me",
+                icon: "🔐"
             }
         ];
 
